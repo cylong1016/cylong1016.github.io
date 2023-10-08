@@ -6,7 +6,7 @@
   <link href="https://www.cylong.com/atom.xml" rel="self"/>
   
   <link href="https://www.cylong.com/"/>
-  <updated>2021-03-01T03:35:35.000Z</updated>
+  <updated>2023-10-08T08:30:47.000Z</updated>
   <id>https://www.cylong.com/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>国内如何注册ChatGPT账号</title>
+    <link href="https://www.cylong.com/blog/2023/10/08/sign-up-chatgpt/"/>
+    <id>https://www.cylong.com/blog/2023/10/08/sign-up-chatgpt/</id>
+    <published>2023-10-08T08:30:47.000Z</published>
+    <updated>2023-10-08T08:30:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>OpenAI公司是一家位于美国的人工智能研究与开发公司，成立于2015年，致力于推动人工智能技术的发展。该公司的使命是确保人工智能技术对整个人类社会的利益产生积极影响。OpenAI在自然语言处理领域取得了重要突破，其中的一个产品就是ChatGPT。<br>ChatGPT是OpenAI开发的一款强大的自然语言处理模型。它可以理解和生成人类语言，能够回答问题、执行任务、进行对话等多种应用。ChatGPT可以用于在线客服、智能助手、内容生成、教育支持等众多领域，为用户提供自然而流畅的文本交互体验。<br>OpenAI不断改进和扩展ChatGPT，以提供更准确、有用和安全的服务。这一技术的发展代表了人工智能在改善人们的生活、工作和沟通方面的潜力，并在多个领域产生了广泛的应用。</p><p>在国内并不支持OpenAI账号注册，多数会提示：<code>OpenAI&#39;s services are not available in your country</code>，查阅了一些资料后发现以下方式可以注册成功。</p><h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><ol><li>国外梯子。</li><li>一个能收验证码的国外手机号，如果没有的话可以通过 <a href="https://sms-activate.org/" title="SMS-Activate是在线接收短信的虚拟号码服务">SMS-Activate</a> 注册一个（收费，但是很便宜）</li></ol><span id="more"></span><h1 id="注册ChatGPT账号"><a href="#注册ChatGPT账号" class="headerlink" title="注册ChatGPT账号"></a>注册ChatGPT账号</h1><ol><li>访问 <a href="https://openai.com/" title="OpenAI">OpenAI</a> 右上角注册（建议使用国外IP），可以使用 Google、Microsoft、Apple 或者直接使用邮箱注册<img src="/blog/2023/10/08/sign-up-chatgpt/%E6%B3%A8%E5%86%8CChatGPT.png" class="" title="注册ChatGPT"></li><li>这里输入你国外的手机号，如果没有的话，参考下文注册 <a href="https://sms-activate.org/" title="SMS-Activate是在线接收短信的虚拟号码服务">SMS-Activate</a><img src="/blog/2023/10/08/sign-up-chatgpt/%E9%AA%8C%E8%AF%81%E6%89%8B%E6%9C%BA%E5%8F%B7.png" class="" title="验证手机号"></li><li>OpenAI 产品列表，选择 ChatGPT（DALL·E有兴趣可以玩玩，可以生成与文本描述相关的图像，收费）<img src="/blog/2023/10/08/sign-up-chatgpt/OpenAI%E4%BA%A7%E5%93%81%E5%88%97%E8%A1%A8.png" class="" title="OpenAI产品列表"></li><li>初体验 ChatGPT，免费的是 ChatGPT-3.5，想要使用 ChatGPT-4 需要 ChatGPT Plus，收费20$/月<img src="/blog/2023/10/08/sign-up-chatgpt/%E5%88%9D%E4%BD%93%E9%AA%8CChatGPT.png" class="" title="初体验ChatGPT"></li></ol><h1 id="注册短信服务"><a href="#注册短信服务" class="headerlink" title="注册短信服务"></a>注册短信服务</h1><ol><li>打开 <a href="https://sms-activate.org/" title="SMS-Activate是在线接收短信的虚拟号码服务">SMS-Activate</a> 右上角注册登录，登录后右上角充值<img src="/blog/2023/10/08/sign-up-chatgpt/SMS-Activate%E5%85%85%E5%80%BC.png" class="" title="SMS-Activate充值"></li><li>往下拉选择支付宝，最低充值2$（吐槽一下，之前没有最低充值额度的，估计是发现了商机😒）<img src="/blog/2023/10/08/sign-up-chatgpt/SMS-Activate%E6%94%AF%E4%BB%98%E5%AE%9D%E5%85%85%E5%80%BC.jpg" class="" title="SMS-Activate支付宝充值"></li><li>左侧服务选择搜索 <code>OpenAI</code><img src="/blog/2023/10/08/sign-up-chatgpt/SMS-Activate%E6%9C%8D%E5%8A%A1%E9%80%89%E6%8B%A9.jpg" class="" title="SMS-Activate服务选择"></li><li>国家选择印度并购买<img src="/blog/2023/10/08/sign-up-chatgpt/SMS-Activate%E5%9B%BD%E5%AE%B6%E9%80%89%E6%8B%A9.png" class="" title="SMS-Activate国家选择"></li><li>此时你就有了一个可以接收验证码的国外手机号，用于后续注册ChatGPT使用，此号码在20分钟有效期内并且未使用的情况下可以退款取消注册，如果注册ChatGPT过程中一直收不到验证码，可以多试几次，我是一次就成功了哈哈哈😁<img src="/blog/2023/10/08/sign-up-chatgpt/SMS-Activate%E5%8F%B7%E7%A0%81.png" class="" title="SMS-Activate号码"></li></ol><h1 id="一些感想"><a href="#一些感想" class="headerlink" title="一些感想"></a>一些感想</h1><p>自从接触 ChatGPT 之后，平时写文章，写代码都会想到先问问 ChatGPT，确实能得到很多不错的答案。网络上各行各业的人使用后发出感叹，大部分人要失业了。我认为 ChatGPT 不会让大部分人失业，但是会让不会用 ChatGPT 的人失业。</p><img src="/blog/2023/10/08/sign-up-chatgpt/ChatGPT%E4%BC%9A%E8%AE%A9%E5%A4%A7%E9%83%A8%E5%88%86%E4%BA%BA%E5%A4%B1%E4%B8%9A%E4%B9%88.png" class="" title="ChatGPT会让大部分人失业么"><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><blockquote><p><a href="https://v2ex.com/t/900126" title="OpenAI 推出超神 ChatGPT 注册攻略来了 - V2EX">OpenAI 推出超神 ChatGPT 注册攻略来了 - V2E</a><br><a href="https://cloud.tencent.com/developer/article/2192253" title="最近很火的ChatGPT，带你注册体验全攻略 - 腾讯云开发者社区">最近很火的ChatGPT，带你注册体验全攻略 - 腾讯云开发者社区</a><br><a href="https://readdevdocs.com/blog/tech/%E5%A6%82%E4%BD%95%E7%BC%96%E7%A8%8B%E8%B0%83%E7%94%A8OpenAI%E7%9A%84ChatGPT%20API%E6%8E%A5%E5%8F%A3.html" title="如何编程调用OpenAI的ChatGPT API接口 | Read dev Docs 博客">如何编程调用OpenAI的ChatGPT API接口 | Read dev Docs 博客</a></p></blockquote><hr><blockquote><p>文章标题：<a href='https://www.cylong.com/blog/2023/10/08/sign-up-chatgpt/' title='国内如何注册ChatGPT账号' >国内如何注册ChatGPT账号</a><br>文章作者：<a href="/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2023/10/08/sign-up-chatgpt/' title='国内如何注册ChatGPT账号' >https://www.cylong.com/blog/2023/10/08/sign-up-chatgpt/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p></blockquote>]]></content>
+    
+    
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;OpenAI公司是一家位于美国的人工智能研究与开发公司，成立于2015年，致力于推动人工智能技术的发展。该公司的使命是确保人工智能技术对整个人类社会的利益产生积极影响。OpenAI在自然语言处理领域取得了重要突破，其中的一个产品就是ChatGPT。&lt;br&gt;ChatGPT是OpenAI开发的一款强大的自然语言处理模型。它可以理解和生成人类语言，能够回答问题、执行任务、进行对话等多种应用。ChatGPT可以用于在线客服、智能助手、内容生成、教育支持等众多领域，为用户提供自然而流畅的文本交互体验。&lt;br&gt;OpenAI不断改进和扩展ChatGPT，以提供更准确、有用和安全的服务。这一技术的发展代表了人工智能在改善人们的生活、工作和沟通方面的潜力，并在多个领域产生了广泛的应用。&lt;/p&gt;
+&lt;p&gt;在国内并不支持OpenAI账号注册，多数会提示：&lt;code&gt;OpenAI&amp;#39;s services are not available in your country&lt;/code&gt;，查阅了一些资料后发现以下方式可以注册成功。&lt;/p&gt;
+&lt;h1 id=&quot;前期准备&quot;&gt;&lt;a href=&quot;#前期准备&quot; class=&quot;headerlink&quot; title=&quot;前期准备&quot;&gt;&lt;/a&gt;前期准备&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;国外梯子。&lt;/li&gt;
+&lt;li&gt;一个能收验证码的国外手机号，如果没有的话可以通过 &lt;a href=&quot;https://sms-activate.org/&quot; title=&quot;SMS-Activate是在线接收短信的虚拟号码服务&quot;&gt;SMS-Activate&lt;/a&gt; 注册一个（收费，但是很便宜）&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="人工智能" scheme="https://www.cylong.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    
+    <category term="人工智能" scheme="https://www.cylong.com/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    <category term="OpenAI" scheme="https://www.cylong.com/tags/OpenAI/"/>
+    
+    <category term="ChatGPT" scheme="https://www.cylong.com/tags/ChatGPT/"/>
+    
+    <category term="AIGC" scheme="https://www.cylong.com/tags/AIGC/"/>
+    
+    <category term="AGI" scheme="https://www.cylong.com/tags/AGI/"/>
+    
+  </entry>
   
   <entry>
     <title>2022届实习生-蚂蚁集团-支付宝事业线</title>
@@ -172,9 +207,9 @@
     
     <category term="双指针" scheme="https://www.cylong.com/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
-    <category term="递归" scheme="https://www.cylong.com/tags/%E9%80%92%E5%BD%92/"/>
-    
     <category term="贪心算法" scheme="https://www.cylong.com/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="递归" scheme="https://www.cylong.com/tags/%E9%80%92%E5%BD%92/"/>
     
   </entry>
   
@@ -721,9 +756,9 @@
     
     <category term="学习笔记" scheme="https://www.cylong.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="递归" scheme="https://www.cylong.com/tags/%E9%80%92%E5%BD%92/"/>
-    
     <category term="贪心算法" scheme="https://www.cylong.com/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="递归" scheme="https://www.cylong.com/tags/%E9%80%92%E5%BD%92/"/>
     
     <category term="树" scheme="https://www.cylong.com/tags/%E6%A0%91/"/>
     
@@ -868,45 +903,6 @@
     <category term="字符串" scheme="https://www.cylong.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
     <category term="数学" scheme="https://www.cylong.com/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>被围绕的区域</title>
-    <link href="https://www.cylong.com/blog/2020/08/11/surrounded-regions/"/>
-    <id>https://www.cylong.com/blog/2020/08/11/surrounded-regions/</id>
-    <published>2020-08-10T16:27:08.000Z</published>
-    <updated>2020-08-10T16:27:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个二维的矩阵，包含 ‘X’ 和 ‘O’（字母 O）。找到所有被 ‘X’ 围绕的区域，并将这些区域里所有的 ‘O’ 用 ‘X’ 填充。</p><p><strong>示例:</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">输入：</span><br><span class="line"></span><br><span class="line">X X X X</span><br><span class="line">X O O X</span><br><span class="line">X X O X</span><br><span class="line">X O X X</span><br><span class="line"></span><br><span class="line">运行你的函数后，矩阵变为：</span><br><span class="line"></span><br><span class="line">X X X X</span><br><span class="line">X X X X</span><br><span class="line">X X X X</span><br><span class="line">X O X X</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><strong>解释:</strong> 被围绕的区间不会存在于边界上，换句话说，任何边界上的 ‘O’ 都不会被填充为 ‘X’。 任何不在边界上，或不与边界上的 ‘O’ 相连的 ‘O’ 最终都会被填充为 ‘X’。如果两个元素在水平或垂直方向相邻，则称它们是“相连”的。</p><span id="more"></span><h1 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h1><p>遇到矩阵的问题，无非就是广度优先搜索或者深度优先搜索，我个人比较喜欢使用递归方式的深度优先搜索，也是比较容易理解的一种方式。本题要求将所有被字母 ‘X’ 包围的字母 ‘O’ 都变为字母 ‘X’ ，但很难判断哪些 ‘O’ 是被包围的，哪些 ‘O’ 不是被包围的。但是我们注意题目中的一句话：任何边界上的 ‘O’ 都不会被填充为 ‘X’。与边界上的 ‘O’ 相连的 ‘O’ 也都不会被填充为 ‘X’。根据这个思路，我们只要遍历矩阵的边界上的 ‘O’，以边界上的所有 ‘O’ 此为起点，找到所有与边界相连的字母 ‘O’，最后我们遍历整个矩阵，针对每个字母，如果这个字母被标记了，那么就保持原来的 ‘O’，如果没有被标记，那么就置为 ‘X’ 即可。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">solve</span><span class="params">(<span class="type">char</span>[][] board)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (board == <span class="literal">null</span> || board.length == <span class="number">0</span> || board[<span class="number">0</span>].length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">rowLen</span> <span class="operator">=</span> board.length;</span><br><span class="line">    <span class="type">int</span> <span class="variable">colLen</span> <span class="operator">=</span> board[<span class="number">0</span>].length;</span><br><span class="line">    <span class="type">int</span>[][] direct = <span class="keyword">new</span> <span class="title class_">int</span>[][]&#123;&#123;<span class="number">0</span>, <span class="number">1</span>&#125;, &#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">0</span>, -<span class="number">1</span>&#125;, &#123;-<span class="number">1</span>, <span class="number">0</span>&#125;&#125;;</span><br><span class="line">    <span class="type">int</span> <span class="variable">directIndex</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">row</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">col</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">boolean</span>[][] visited = <span class="keyword">new</span> <span class="title class_">boolean</span>[rowLen][colLen];</span><br><span class="line">    <span class="comment">// 顺时针遍历矩阵的边界</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt;= ((rowLen + colLen) &lt;&lt; <span class="number">1</span>) - <span class="number">4</span>; i++) &#123;</span><br><span class="line">        updateBoard(board, row, col, visited);</span><br><span class="line">        <span class="type">int</span> <span class="variable">nextRow</span> <span class="operator">=</span> row + direct[directIndex][<span class="number">0</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">nextCol</span> <span class="operator">=</span> col + direct[directIndex][<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (nextRow &lt; <span class="number">0</span> || nextRow &gt;= rowLen || nextCol &lt; <span class="number">0</span> || nextCol &gt;= colLen) &#123;</span><br><span class="line">            directIndex = (directIndex + <span class="number">1</span>) % <span class="number">4</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        row += direct[directIndex][<span class="number">0</span>];</span><br><span class="line">        col += direct[directIndex][<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 针对每个字母，如果这个字母被标记了，那么就保持原来的 &#x27;O&#x27;，如果没有被标记，那么就置为 &#x27;X&#x27;。</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; rowLen; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; colLen; j++) &#123;</span><br><span class="line">            board[i][j] = visited[i][j] ? <span class="string">&#x27;O&#x27;</span> : <span class="string">&#x27;X&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">updateBoard</span><span class="params">(<span class="type">char</span>[][] board, <span class="type">int</span> x, <span class="type">int</span> y, <span class="type">boolean</span>[][] visited)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (x &lt; <span class="number">0</span> || y &lt; <span class="number">0</span> || x &gt;= board.length || y &gt;= board[<span class="number">0</span>].length || visited[x][y] || board[x][y] == <span class="string">&#x27;X&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    visited[x][y] = <span class="literal">true</span>;</span><br><span class="line">    updateBoard(board, x + <span class="number">1</span>, y, visited);</span><br><span class="line">    updateBoard(board, x, y + <span class="number">1</span>, visited);</span><br><span class="line">    updateBoard(board, x - <span class="number">1</span>, y, visited);</span><br><span class="line">    updateBoard(board, x, y - <span class="number">1</span>, visited);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这里使用了 <code>visited[x][y]</code> 表示是否被标记，其实可以遍历到 ‘O’ 的时候，将此位置的字符改成任何其他字符，比如 ‘#’，之后遍历整个矩阵的时候，我们将其还原为 ‘O’ 即可，这样就不用使用额外的空间来标记了。另外遍历矩阵的边界，我使用的是从 <code>board[0][0]</code> 开始顺时针遍历矩阵的边界，其实不用这么麻烦，只要分别遍历矩阵的第一行，最后一行，第一列，最后一列即可，我这样做主要是为了复习下之前的一道题：</p><blockquote><p><a href="/blog/2020/06/05/shun-shi-zhen-da-yin-ju-zhen-lcof/" title="顺时针打印矩阵 | 笑话人生">顺时针打印矩阵 | 笑话人生</a></p></blockquote><h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul><li>时间复杂度：O(n × m)，其中 n 和 m 分别为矩阵的行数和列数。深度优先搜索过程中，每一个点至多只会被标记一次。</li><li>空间复杂度：O(n × m)，其中 n 和 m 分别为矩阵的行数和列数。主要为深度优先搜索的栈的开销。</li></ul><h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote><p><a href="https://leetcode-cn.com/problems/surrounded-regions/" title="被围绕的区域 | 力扣（LeetCode）">被围绕的区域 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/surrounded-regions/solution/bei-wei-rao-de-qu-yu-by-leetcode-solution/" title="被围绕的区域 | 题解（LeetCode）">被围绕的区域 | 题解（LeetCode）</a></p></blockquote><hr><blockquote><p>文章标题：<a href='https://www.cylong.com/blog/2020/08/11/surrounded-regions/' title='被围绕的区域' >被围绕的区域</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2020/08/11/surrounded-regions/' title='被围绕的区域' >https://www.cylong.com/blog/2020/08/11/surrounded-regions/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p></blockquote>]]></content>
-    
-    
-    <summary type="html">&lt;hr&gt;
-&lt;h1 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h1&gt;&lt;p&gt;给定一个二维的矩阵，包含 ‘X’ 和 ‘O’（字母 O）。找到所有被 ‘X’ 围绕的区域，并将这些区域里所有的 ‘O’ 用 ‘X’ 填充。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;示例:&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;输入：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;X X X X&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;X O O X&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;X X O X&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;X O X X&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;运行你的函数后，矩阵变为：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;X X X X&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;X X X X&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;X X X X&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;X O X X&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;解释:&lt;/strong&gt; 被围绕的区间不会存在于边界上，换句话说，任何边界上的 ‘O’ 都不会被填充为 ‘X’。 任何不在边界上，或不与边界上的 ‘O’ 相连的 ‘O’ 最终都会被填充为 ‘X’。如果两个元素在水平或垂直方向相邻，则称它们是“相连”的。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="https://www.cylong.com/categories/LeetCode/"/>
-    
-    
-    <category term="Java" scheme="https://www.cylong.com/tags/Java/"/>
-    
-    <category term="LeetCode" scheme="https://www.cylong.com/tags/LeetCode/"/>
-    
-    <category term="学习笔记" scheme="https://www.cylong.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="递归" scheme="https://www.cylong.com/tags/%E9%80%92%E5%BD%92/"/>
-    
-    <category term="回溯算法" scheme="https://www.cylong.com/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/"/>
-    
-    <category term="矩阵" scheme="https://www.cylong.com/tags/%E7%9F%A9%E9%98%B5/"/>
-    
-    <category term="深度优先搜索" scheme="https://www.cylong.com/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
-    
-    <category term="广度优先搜索" scheme="https://www.cylong.com/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
     
   </entry>
   

@@ -323,6 +323,40 @@ f1g1ns2.dnspod.net
       </tags>
   </entry>
   <entry>
+    <title>Apache 如何设置 404 错误页面</title>
+    <url>/blog/2016/04/29/apache-404/</url>
+    <content><![CDATA[<hr>
+<p>当我们浏览网站的时候，有时候会发现访问的页面不存在了，页面会有“你访问的页面不存在了，跳转到主页”或者“404 Not Found”等等的提示。我们通常称之为 404 页面。所谓的 404 页面就是当用户输入一个错误或非存在的链接时，显示的一个页面。当 Web 服务器接到类似请求时，会返回一个 404 状态码，告诉浏览器要请求的资源并不存在。显示的 404 页面主要作用是告诉用户，你输入的网址多请求的页面是不存在的或者是一个错误的链接，引导用户进入网站的其他页面。但是 Web 的默认 404 页面非常的简陋，对用户很不友好，这就需要我们自己定义个性化的 404 页面，提升用户体验。</p>
+<span id="more"></span>
+
+<h1 id="Apache-设置-404-错误页面"><a href="#Apache-设置-404-错误页面" class="headerlink" title="Apache 设置 404 错误页面"></a>Apache 设置 404 错误页面</h1><p>在 <code>.htaccess</code> 文件中加入代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ErrorDocument 404 /404.html</span><br></pre></td></tr></table></figure>
+
+<p>之后在网站根目录建立一个 <code>404.html</code> 文件，编写你的 404 页面。</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<li>  不要将 404 页面直接指向到网站主页，这可能导致你的首页不被搜索引擎收录。</li>
+<li>  /404.html 不要带域名，比如(错误写法：<a href="http://www.cylong.com/404.html">http://www.cylong.com/404.html</a>)，否则返回的状态码不是 404，而是 302、200。</li>
+</ul>
+<h1 id="SEO-搜索引擎优化"><a href="#SEO-搜索引擎优化" class="headerlink" title="SEO(搜索引擎优化)"></a>SEO(搜索引擎优化)</h1><p>404 状态码对搜索引擎是非常重要的。需要注意的是，有时候我们看到一个 404 的错误页面，但返回的状态码可能并不是 404。用户并不会关心状态码是多少，但是对于搜索引擎就不一样了。当搜索引擎获取到404 状态码，就表示此 URL 已经失效，页面已经不存在了。搜索引擎就不会索引这个页面，并且删除数据库中的索引。若返回的是 200，搜索引擎就会对此 URL 建立索引，这样就会产生多个不同的 URL 具有相同的页面内容，搜索引擎就认为你的网站有大量重复的内容，可能会被降权。</p>
+<p>所以当我们自定义错误页面的时候，一定要保证状态码也是 404，不仅要对用户友好，也要对搜索引擎友好。</p>
+<h1 id="参考资料-amp-感谢"><a href="#参考资料-amp-感谢" class="headerlink" title="参考资料&amp;感谢"></a>参考资料&amp;感谢</h1><blockquote>
+<p><a href="http://bbs.20z.com/thread-5162-1-1.html" title="网站如何设置404页面，什么是404错误，404页面代码怎么写">网站如何设置404页面，什么是404错误，404页面代码怎么写</a><br><a href="http://www.yzznl.cn/archives/19.html" title="园子博客 - 如何设置404页面">园子博客 - 如何设置404页面</a></p>
+</blockquote>
+<hr>
+<blockquote>
+<p>文章标题：<a href='https://www.cylong.com/blog/2016/04/29/apache-404/' title='Apache 如何设置 404 错误页面' >Apache 如何设置 404 错误页面</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2016/04/29/apache-404/' title='Apache 如何设置 404 错误页面' >https://www.cylong.com/blog/2016/04/29/apache-404/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Apache</category>
+      </categories>
+      <tags>
+        <tag>Apache</tag>
+        <tag>SEO</tag>
+        <tag>htaccess</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo 集成多说评论 + 多说分享 + 美化多说</title>
     <url>/blog/2016/04/25/hexo-next-duoshuo/</url>
     <content><![CDATA[<hr>
@@ -396,40 +430,6 @@ f1g1ns2.dnspod.net
         <tag>Hexo</tag>
         <tag>Next</tag>
         <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Apache 如何设置 404 错误页面</title>
-    <url>/blog/2016/04/29/apache-404/</url>
-    <content><![CDATA[<hr>
-<p>当我们浏览网站的时候，有时候会发现访问的页面不存在了，页面会有“你访问的页面不存在了，跳转到主页”或者“404 Not Found”等等的提示。我们通常称之为 404 页面。所谓的 404 页面就是当用户输入一个错误或非存在的链接时，显示的一个页面。当 Web 服务器接到类似请求时，会返回一个 404 状态码，告诉浏览器要请求的资源并不存在。显示的 404 页面主要作用是告诉用户，你输入的网址多请求的页面是不存在的或者是一个错误的链接，引导用户进入网站的其他页面。但是 Web 的默认 404 页面非常的简陋，对用户很不友好，这就需要我们自己定义个性化的 404 页面，提升用户体验。</p>
-<span id="more"></span>
-
-<h1 id="Apache-设置-404-错误页面"><a href="#Apache-设置-404-错误页面" class="headerlink" title="Apache 设置 404 错误页面"></a>Apache 设置 404 错误页面</h1><p>在 <code>.htaccess</code> 文件中加入代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ErrorDocument 404 /404.html</span><br></pre></td></tr></table></figure>
-
-<p>之后在网站根目录建立一个 <code>404.html</code> 文件，编写你的 404 页面。</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
-<li>  不要将 404 页面直接指向到网站主页，这可能导致你的首页不被搜索引擎收录。</li>
-<li>  /404.html 不要带域名，比如(错误写法：<a href="http://www.cylong.com/404.html">http://www.cylong.com/404.html</a>)，否则返回的状态码不是 404，而是 302、200。</li>
-</ul>
-<h1 id="SEO-搜索引擎优化"><a href="#SEO-搜索引擎优化" class="headerlink" title="SEO(搜索引擎优化)"></a>SEO(搜索引擎优化)</h1><p>404 状态码对搜索引擎是非常重要的。需要注意的是，有时候我们看到一个 404 的错误页面，但返回的状态码可能并不是 404。用户并不会关心状态码是多少，但是对于搜索引擎就不一样了。当搜索引擎获取到404 状态码，就表示此 URL 已经失效，页面已经不存在了。搜索引擎就不会索引这个页面，并且删除数据库中的索引。若返回的是 200，搜索引擎就会对此 URL 建立索引，这样就会产生多个不同的 URL 具有相同的页面内容，搜索引擎就认为你的网站有大量重复的内容，可能会被降权。</p>
-<p>所以当我们自定义错误页面的时候，一定要保证状态码也是 404，不仅要对用户友好，也要对搜索引擎友好。</p>
-<h1 id="参考资料-amp-感谢"><a href="#参考资料-amp-感谢" class="headerlink" title="参考资料&amp;感谢"></a>参考资料&amp;感谢</h1><blockquote>
-<p><a href="http://bbs.20z.com/thread-5162-1-1.html" title="网站如何设置404页面，什么是404错误，404页面代码怎么写">网站如何设置404页面，什么是404错误，404页面代码怎么写</a><br><a href="http://www.yzznl.cn/archives/19.html" title="园子博客 - 如何设置404页面">园子博客 - 如何设置404页面</a></p>
-</blockquote>
-<hr>
-<blockquote>
-<p>文章标题：<a href='https://www.cylong.com/blog/2016/04/29/apache-404/' title='Apache 如何设置 404 错误页面' >Apache 如何设置 404 错误页面</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2016/04/29/apache-404/' title='Apache 如何设置 404 错误页面' >https://www.cylong.com/blog/2016/04/29/apache-404/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Apache</category>
-      </categories>
-      <tags>
-        <tag>Apache</tag>
-        <tag>SEO</tag>
-        <tag>htaccess</tag>
       </tags>
   </entry>
   <entry>
@@ -906,6 +906,36 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
+    <title>稳耐风波愿始从</title>
+    <url>/blog/2016/06/09/iverson/</url>
+    <content><![CDATA[<hr>
+<p>夕阳西下。<br>我看着AI坐在斯台普斯客队替补席上，呆呆望着场内发生的一切。他看着科比在他面前超越了他领先十三年的得分，听着为24号的喝彩，再看着记分牌上一点点被拉大的分数，他只是呆坐，眼神迷茫，无动于衷，仿佛自己来自另一个世界。惨败，又是惨败，第三次惨败。哨声响起，他低着头，快步走出球员通道。我看得到他的背影看不到他的落寞。<br>怎么能低头离开斯台普斯？就在一年前他还是昂首走出去。八年前他只手遮天，梦想就断裂在这金黄的球馆，唯一一次六月的征战，旧队友，老照片，八年的风霜，未改的容颜，怎敢遗忘那些瞬间？最震耳欲聋的欢呼，让洛杉矶的轻歌曼舞画上一道休止符，晃倒泰龙卢，最骄傲的迈步，是谁再说，他踏上的是一条荆棘密布，无人可能成功的路？<br>只是，八年了，我们早已认不出那块泰龙卢摔倒的地板。<br>物是人非。<br>隔了个半个地球，有人在心痛。</p>
+<span id="more"></span>
+
+<p>隔了半个美国，也会有人难过吗？<br>流年，剪影，十年。<br>费城，1996，状元，三号，金链子，狐朋狗友，唱片，嘘声，对神的挑战，拉里布朗，训练，爱恨交错，忠诚，2001，洛杉矶，MVP，得分王……<br>时间，路途，前进的光，没有回望。<br>以为会与费城到地老天荒，只是寥寥的胜场，深深的惆怅，时光在云顶嘹亮地唱，分别的波澜轻轻地荡，刻不下的时光，注定一人去流浪。<br>再见了，我爱的费城；<br>再见了，我们爱的AI。<br>断肠人去天涯。<br>天涯远吗？不远，他在天涯，天涯怎么会远！</p>
+<p>谁道飘零不可怜，断肠人去自经年。<br>那个精灵飞翔的故事还在上演，只是不再属于瓦乔维亚球馆。只是那个夜晚，是个例外——<br>那个夜晚很美，他们的欢呼他们的笑，他们的拥抱他们记得他的好。他的亲吻他的奔跑，他微微润湿的双眼，告诉我们他同样忘不掉。<br>WELCOME BACK, AI，THANKS FOR TEN GREAT YEARS OF HEART&amp;SOUL.<br>轻轻把手放在耳边，绕场慢慢的跑，聆听。<br>还记得吗？费城的欢呼是世界上最美妙的音乐。<br>俯身，深深的亲吻。<br>WE MISS YOU,AI.<br>费城的天空，我们想你时，它落泪了。<br>风雨中，陪你走，不要相忘于江湖。<br>可，踏上回丹佛的飞机，便是陌路。<br>天咫尺，人南北。</p>
+<p>叹人生，几番离合，便成迟暮。<br>三年了，沧海桑田，人事变迁，谁会相信什么永远。<br>当他终于回到家，发现一切都变了样，是熟悉的让人陌生？还是恍如隔世陌生的让人难过？<br>曾经的一代枭雄，走到穷途末路，不甘就此推出，于是来场豪赌，一次搭上全部，输了就退出江湖。<br>感谢我爱的费城——他的退役宣言里这样说。<br>终于等到了费城的橄榄枝。<br>我们爱的AI，请回家。<br>有一种答案叫落叶归根。<br>俯身，深深的亲吻，第二次。<br>弧线不同了是吗，可那份情意此生不变。<br>谁谓我生，我思议如风，历历人生。</p>
+<p>莫回首斜阳下，诉不尽离人话。<br>当费城故事确定未完待续时，我高兴的快要疯掉，你没有去湖人，谁在乎什么总冠军？我只要你幸福。<br>有些泪水是坚硬的，它从英雄的脸上滑过，但与懦弱无关。<br>AI说，那是看到家门后的鼻酸反应。<br>多好！爱费城的AI又回到了爱AI的费城。<br>从此无关胜负，誓死守护。<br>陪君醉笑三万场，不用诉离殇。</p>
+<p>落魄江湖还载酒，一种悲凉滋味。<br>当两个费城之子相遇在费城——他出生成长的地方，他扬名立万的地方。他们早已不如十三年前那般锋芒毕露。久经沙场，看惯人世冷暖，他们，已不再年轻。<br>只是他正如日中天，他似乎已日薄西山。<br>有悬念吗？有奇迹吗？有人相信吗？<br>似乎费城倒戈喊几声MVP也是正常的。<br>只是他摇头，说不。<br>那美妙的第三节，十五分，已无需我赘述。<br>兄弟友爱之城的尊严，从来都要他来维护。<br>没有悬念，没有奇迹，剧本已写好，不会改变，我们输了，只是，我们开始相信：<br>弯弓射日，看我卷土重来。</p>
+<p>谁谓我悲，意如花信，瞳清若水。<br>我从未想过有一天还会看到阿伦艾弗森穿上那件印有SIXER的球衣——那件神圣的为曾有旁人触动过的球衣，自始至终只属于一个人的球衣。<br>我看着你在费城，看着你与费城荣辱与共，休戚相关，还你那份倔强，许你那份坚强。享受你的每一场胜利与失败——我也不清楚这样的日子还会有多久，如果费城真的是你的最后一站，我们陪你走完，直到你离开你最爱的篮球场，直到那件三号球衣在瓦乔维亚上空飘扬。</p>
+<p>任往事随风，他们自随波逐流，自始至终，稳耐风波愿始从。</p>
+<hr>
+<p>这篇文章是我女票大概在2009年【那个时候她真是青涩又可爱(/▽＼=)】写在百度空间里的，但是百度空间在15年就关闭了。然后我就要来发到自己的博客里，作为一种回忆 o(^▽^)o【<del>还是自己的网站靠谱~</del>】</p>
+<hr>
+<blockquote>
+<p>文章标题：<a href='https://www.cylong.com/blog/2016/06/09/iverson/' title='稳耐风波愿始从' >稳耐风波愿始从</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2016/06/09/iverson/' title='稳耐风波愿始从' >https://www.cylong.com/blog/2016/06/09/iverson/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>艾已成诗</category>
+      </categories>
+      <tags>
+        <tag>艾弗森</tag>
+        <tag>艾已成诗</tag>
+        <tag>篮球</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用 Eclipse 根据 WSDL 生成 Java 代码</title>
     <url>/blog/2016/07/01/wsdl-to-java/</url>
     <content><![CDATA[<hr>
@@ -939,36 +969,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>WSDL</tag>
         <tag>Web Service Client</tag>
         <tag>Eclipse</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>稳耐风波愿始从</title>
-    <url>/blog/2016/06/09/iverson/</url>
-    <content><![CDATA[<hr>
-<p>夕阳西下。<br>我看着AI坐在斯台普斯客队替补席上，呆呆望着场内发生的一切。他看着科比在他面前超越了他领先十三年的得分，听着为24号的喝彩，再看着记分牌上一点点被拉大的分数，他只是呆坐，眼神迷茫，无动于衷，仿佛自己来自另一个世界。惨败，又是惨败，第三次惨败。哨声响起，他低着头，快步走出球员通道。我看得到他的背影看不到他的落寞。<br>怎么能低头离开斯台普斯？就在一年前他还是昂首走出去。八年前他只手遮天，梦想就断裂在这金黄的球馆，唯一一次六月的征战，旧队友，老照片，八年的风霜，未改的容颜，怎敢遗忘那些瞬间？最震耳欲聋的欢呼，让洛杉矶的轻歌曼舞画上一道休止符，晃倒泰龙卢，最骄傲的迈步，是谁再说，他踏上的是一条荆棘密布，无人可能成功的路？<br>只是，八年了，我们早已认不出那块泰龙卢摔倒的地板。<br>物是人非。<br>隔了个半个地球，有人在心痛。</p>
-<span id="more"></span>
-
-<p>隔了半个美国，也会有人难过吗？<br>流年，剪影，十年。<br>费城，1996，状元，三号，金链子，狐朋狗友，唱片，嘘声，对神的挑战，拉里布朗，训练，爱恨交错，忠诚，2001，洛杉矶，MVP，得分王……<br>时间，路途，前进的光，没有回望。<br>以为会与费城到地老天荒，只是寥寥的胜场，深深的惆怅，时光在云顶嘹亮地唱，分别的波澜轻轻地荡，刻不下的时光，注定一人去流浪。<br>再见了，我爱的费城；<br>再见了，我们爱的AI。<br>断肠人去天涯。<br>天涯远吗？不远，他在天涯，天涯怎么会远！</p>
-<p>谁道飘零不可怜，断肠人去自经年。<br>那个精灵飞翔的故事还在上演，只是不再属于瓦乔维亚球馆。只是那个夜晚，是个例外——<br>那个夜晚很美，他们的欢呼他们的笑，他们的拥抱他们记得他的好。他的亲吻他的奔跑，他微微润湿的双眼，告诉我们他同样忘不掉。<br>WELCOME BACK, AI，THANKS FOR TEN GREAT YEARS OF HEART&amp;SOUL.<br>轻轻把手放在耳边，绕场慢慢的跑，聆听。<br>还记得吗？费城的欢呼是世界上最美妙的音乐。<br>俯身，深深的亲吻。<br>WE MISS YOU,AI.<br>费城的天空，我们想你时，它落泪了。<br>风雨中，陪你走，不要相忘于江湖。<br>可，踏上回丹佛的飞机，便是陌路。<br>天咫尺，人南北。</p>
-<p>叹人生，几番离合，便成迟暮。<br>三年了，沧海桑田，人事变迁，谁会相信什么永远。<br>当他终于回到家，发现一切都变了样，是熟悉的让人陌生？还是恍如隔世陌生的让人难过？<br>曾经的一代枭雄，走到穷途末路，不甘就此推出，于是来场豪赌，一次搭上全部，输了就退出江湖。<br>感谢我爱的费城——他的退役宣言里这样说。<br>终于等到了费城的橄榄枝。<br>我们爱的AI，请回家。<br>有一种答案叫落叶归根。<br>俯身，深深的亲吻，第二次。<br>弧线不同了是吗，可那份情意此生不变。<br>谁谓我生，我思议如风，历历人生。</p>
-<p>莫回首斜阳下，诉不尽离人话。<br>当费城故事确定未完待续时，我高兴的快要疯掉，你没有去湖人，谁在乎什么总冠军？我只要你幸福。<br>有些泪水是坚硬的，它从英雄的脸上滑过，但与懦弱无关。<br>AI说，那是看到家门后的鼻酸反应。<br>多好！爱费城的AI又回到了爱AI的费城。<br>从此无关胜负，誓死守护。<br>陪君醉笑三万场，不用诉离殇。</p>
-<p>落魄江湖还载酒，一种悲凉滋味。<br>当两个费城之子相遇在费城——他出生成长的地方，他扬名立万的地方。他们早已不如十三年前那般锋芒毕露。久经沙场，看惯人世冷暖，他们，已不再年轻。<br>只是他正如日中天，他似乎已日薄西山。<br>有悬念吗？有奇迹吗？有人相信吗？<br>似乎费城倒戈喊几声MVP也是正常的。<br>只是他摇头，说不。<br>那美妙的第三节，十五分，已无需我赘述。<br>兄弟友爱之城的尊严，从来都要他来维护。<br>没有悬念，没有奇迹，剧本已写好，不会改变，我们输了，只是，我们开始相信：<br>弯弓射日，看我卷土重来。</p>
-<p>谁谓我悲，意如花信，瞳清若水。<br>我从未想过有一天还会看到阿伦艾弗森穿上那件印有SIXER的球衣——那件神圣的为曾有旁人触动过的球衣，自始至终只属于一个人的球衣。<br>我看着你在费城，看着你与费城荣辱与共，休戚相关，还你那份倔强，许你那份坚强。享受你的每一场胜利与失败——我也不清楚这样的日子还会有多久，如果费城真的是你的最后一站，我们陪你走完，直到你离开你最爱的篮球场，直到那件三号球衣在瓦乔维亚上空飘扬。</p>
-<p>任往事随风，他们自随波逐流，自始至终，稳耐风波愿始从。</p>
-<hr>
-<p>这篇文章是我女票大概在2009年【那个时候她真是青涩又可爱(/▽＼=)】写在百度空间里的，但是百度空间在15年就关闭了。然后我就要来发到自己的博客里，作为一种回忆 o(^▽^)o【<del>还是自己的网站靠谱~</del>】</p>
-<hr>
-<blockquote>
-<p>文章标题：<a href='https://www.cylong.com/blog/2016/06/09/iverson/' title='稳耐风波愿始从' >稳耐风波愿始从</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2016/06/09/iverson/' title='稳耐风波愿始从' >https://www.cylong.com/blog/2016/06/09/iverson/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>艾已成诗</category>
-      </categories>
-      <tags>
-        <tag>艾弗森</tag>
-        <tag>艾已成诗</tag>
-        <tag>篮球</tag>
       </tags>
   </entry>
   <entry>
@@ -1390,6 +1390,35 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
+    <title>愚人节快乐</title>
+    <url>/blog/2019/04/01/april-fools-day/</url>
+    <content><![CDATA[<hr>
+<p>事情起因是看到一个面试题，原题大概是，生成 N 个 1 到 1000 之间的随机数(N &lt;= 1000)，对于重复的数字，只取其中一个，并对结果进行从小到大排序。正好前几天了解了下 Java 的 Lambda 表达式和 Stream API，突然想起来，这可以一行代码搞定啊。于是就尝试的写了一下。【原题还是比较复杂的，我就提取了精华部分】</p>
+<span id="more"></span>
+
+<p>一行代码能搞定的事情从不会多写【为了美观我还是换行了】。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">IntStream.range(<span class="number">0</span>, <span class="number">100</span>)</span><br><span class="line">    .map(x -&gt; (<span class="type">int</span>)(Math.random() * <span class="number">1000</span> + <span class="number">1</span>))</span><br><span class="line">    .distinct()</span><br><span class="line">    .sorted()</span><br><span class="line">    .forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+
+<p>自从 Java 8 增加了 Lambda 表达式和 Stream API 后，很多操作都非常的方便，可以参考我上一篇博客：</p>
+<blockquote>
+<p><a href="http://www.cylong.com/blog/2019/03/18/lambda/" title="Java 8 的 Lambda 表达式和 Stream API | 笑话人生">Java 8 的 Lambda 表达式和 Stream API | 笑话人生</a></p>
+</blockquote>
+<p><span style="background-color:#000000">其实这就是一篇愚人节凑数用的博客，顺便祝愿下女票可以找到心仪的实习，相信自己，努力终将不会白费 (^_^)</span></p>
+<hr>
+<blockquote>
+<p>文章标题：<a href='https://www.cylong.com/blog/2019/04/01/april-fools-day/' title='愚人节快乐' >愚人节快乐</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2019/04/01/april-fools-day/' title='愚人节快乐' >https://www.cylong.com/blog/2019/04/01/april-fools-day/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>随笔</tag>
+        <tag>Lambda</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java 8 的 Lambda 表达式和 Stream API</title>
     <url>/blog/2019/03/18/lambda/</url>
     <content><![CDATA[<hr>
@@ -1484,35 +1513,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>Java</tag>
         <tag>Lambda</tag>
         <tag>流API</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>愚人节快乐</title>
-    <url>/blog/2019/04/01/april-fools-day/</url>
-    <content><![CDATA[<hr>
-<p>事情起因是看到一个面试题，原题大概是，生成 N 个 1 到 1000 之间的随机数(N &lt;= 1000)，对于重复的数字，只取其中一个，并对结果进行从小到大排序。正好前几天了解了下 Java 的 Lambda 表达式和 Stream API，突然想起来，这可以一行代码搞定啊。于是就尝试的写了一下。【原题还是比较复杂的，我就提取了精华部分】</p>
-<span id="more"></span>
-
-<p>一行代码能搞定的事情从不会多写【为了美观我还是换行了】。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">IntStream.range(<span class="number">0</span>, <span class="number">100</span>)</span><br><span class="line">    .map(x -&gt; (<span class="type">int</span>)(Math.random() * <span class="number">1000</span> + <span class="number">1</span>))</span><br><span class="line">    .distinct()</span><br><span class="line">    .sorted()</span><br><span class="line">    .forEach(System.out::println);</span><br></pre></td></tr></table></figure>
-
-<p>自从 Java 8 增加了 Lambda 表达式和 Stream API 后，很多操作都非常的方便，可以参考我上一篇博客：</p>
-<blockquote>
-<p><a href="http://www.cylong.com/blog/2019/03/18/lambda/" title="Java 8 的 Lambda 表达式和 Stream API | 笑话人生">Java 8 的 Lambda 表达式和 Stream API | 笑话人生</a></p>
-</blockquote>
-<p><span style="background-color:#000000">其实这就是一篇愚人节凑数用的博客，顺便祝愿下女票可以找到心仪的实习，相信自己，努力终将不会白费 (^_^)</span></p>
-<hr>
-<blockquote>
-<p>文章标题：<a href='https://www.cylong.com/blog/2019/04/01/april-fools-day/' title='愚人节快乐' >愚人节快乐</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2019/04/01/april-fools-day/' title='愚人节快乐' >https://www.cylong.com/blog/2019/04/01/april-fools-day/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>随笔</tag>
-        <tag>Lambda</tag>
       </tags>
   </entry>
   <entry>
@@ -2264,6 +2264,57 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
+    <title>根据身高重建队列</title>
+    <url>/blog/2020/04/09/queue-reconstruction-by-height/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>假设有打乱顺序的一群人站成一个队列。 每个人由一个整数对(h, k)表示，其中h是这个人的身高，k是排在这个人前面且身高大于或等于h的人数。 编写一个算法来重建这个队列。</p>
+<p><strong>注意：</strong> 总人数少于1100人。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<p>输入: [[7, 0], [4, 4], [7, 1], [5, 0], [6, 1], [5, 2]]<br>输出: [[5, 0], [7, 0], [5, 2], [6, 1], [4, 4], [7, 1]]</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>让我们从最简单的情况下思考，当队列中所有人的 (h, k) 都是相同的高度 h，只有 k 不同时，解决方案很简单：每个人在队列的索引 index = k。</p>
+<img src="/blog/2020/04/09/queue-reconstruction-by-height/%E6%89%80%E6%9C%89%E4%BA%BA%E7%AD%89%E9%AB%98.jpg" class="" title="所有人等高的情况">
+
+<p>即使不是所有人都是同一高度，这个策略也是可行的。因为个子矮的人相对于个子高的人是 “看不见” 的，所以可以先安排个子高的人。下图中我们先安排身高为 7 的人，将它放置在与 k 值相等的索引上；再安排身高为 6 的人，同样的将它放置在与 k 值相等的索引上。</p>
+<img src="/blog/2020/04/09/queue-reconstruction-by-height/%E4%B8%8D%E7%AD%89%E9%AB%98.jpg" class="" title="不等高的情况">
+
+<p>该策略可以递归进行：</p>
+<ul>
+<li>将最高的人按照 k 值升序排序，然后将它们放置到输出队列中与 k 值相等的索引位置上。</li>
+<li>按降序取下一个高度，同样按 k 值对该身高的人升序排序，然后逐个插入到输出队列中与 k 值相等的索引位置上。</li>
+<li>直到完成为止。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span>[][] reconstructQueue(<span class="type">int</span>[][] people) &#123;</span><br><span class="line">    <span class="comment">// 按照高度降序排列，同高度的人，按照k值升序排列。</span></span><br><span class="line">    Arrays.sort(people, (o1, o2) -&gt; o1[<span class="number">0</span>] == o2[<span class="number">0</span>] ? o1[<span class="number">1</span>] - o2[<span class="number">1</span>] : o2[<span class="number">0</span>] - o1[<span class="number">0</span>]);</span><br><span class="line">    LinkedList&lt;<span class="type">int</span>[]&gt; list = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">    <span class="comment">// 逐个地把它们放在输出队列中，索引等于它们的 k 值。</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span>[] person : people) &#123;</span><br><span class="line">        list.add(person[<span class="number">1</span>], person);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list.toArray(<span class="keyword">new</span> <span class="title class_">int</span>[list.size()][]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：O(N²)，排序使用了 O(NlogN) 的时间，每个人插入到输出队列中需要 O(k) 的时间，其中 k 是当前输出队列的元素个数。总共的时间复杂度为O(N²)。</li>
+<li>空间复杂度：O(N)，输出队列使用的空间。</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/queue-reconstruction-by-height/" title="根据身高重建队列 | 力扣（LeetCode）">根据身高重建队列 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/queue-reconstruction-by-height/solution/gen-ju-shen-gao-zhong-jian-dui-lie-by-leetcode/" title="根据身高重建队列 | 题解（LeetCode）">根据身高重建队列 | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+<blockquote>
+<p>文章标题：<a href='https://www.cylong.com/blog/2020/04/09/queue-reconstruction-by-height/' title='根据身高重建队列' >根据身高重建队列</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2020/04/09/queue-reconstruction-by-height/' title='根据身高重建队列' >https://www.cylong.com/blog/2020/04/09/queue-reconstruction-by-height/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>数组</tag>
+        <tag>链表</tag>
+        <tag>贪心算法</tag>
+        <tag>排序</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>打家劫舍</title>
     <url>/blog/2020/05/29/house-robber/</url>
     <content><![CDATA[<hr>
@@ -2327,57 +2378,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>记忆化</tag>
         <tag>动态规划</tag>
         <tag>滚动数组</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>根据身高重建队列</title>
-    <url>/blog/2020/04/09/queue-reconstruction-by-height/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>假设有打乱顺序的一群人站成一个队列。 每个人由一个整数对(h, k)表示，其中h是这个人的身高，k是排在这个人前面且身高大于或等于h的人数。 编写一个算法来重建这个队列。</p>
-<p><strong>注意：</strong> 总人数少于1100人。</p>
-<p><strong>示例</strong></p>
-<blockquote>
-<p>输入: [[7, 0], [4, 4], [7, 1], [5, 0], [6, 1], [5, 2]]<br>输出: [[5, 0], [7, 0], [5, 2], [6, 1], [4, 4], [7, 1]]</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>让我们从最简单的情况下思考，当队列中所有人的 (h, k) 都是相同的高度 h，只有 k 不同时，解决方案很简单：每个人在队列的索引 index = k。</p>
-<img src="/blog/2020/04/09/queue-reconstruction-by-height/%E6%89%80%E6%9C%89%E4%BA%BA%E7%AD%89%E9%AB%98.jpg" class="" title="所有人等高的情况">
-
-<p>即使不是所有人都是同一高度，这个策略也是可行的。因为个子矮的人相对于个子高的人是 “看不见” 的，所以可以先安排个子高的人。下图中我们先安排身高为 7 的人，将它放置在与 k 值相等的索引上；再安排身高为 6 的人，同样的将它放置在与 k 值相等的索引上。</p>
-<img src="/blog/2020/04/09/queue-reconstruction-by-height/%E4%B8%8D%E7%AD%89%E9%AB%98.jpg" class="" title="不等高的情况">
-
-<p>该策略可以递归进行：</p>
-<ul>
-<li>将最高的人按照 k 值升序排序，然后将它们放置到输出队列中与 k 值相等的索引位置上。</li>
-<li>按降序取下一个高度，同样按 k 值对该身高的人升序排序，然后逐个插入到输出队列中与 k 值相等的索引位置上。</li>
-<li>直到完成为止。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span>[][] reconstructQueue(<span class="type">int</span>[][] people) &#123;</span><br><span class="line">    <span class="comment">// 按照高度降序排列，同高度的人，按照k值升序排列。</span></span><br><span class="line">    Arrays.sort(people, (o1, o2) -&gt; o1[<span class="number">0</span>] == o2[<span class="number">0</span>] ? o1[<span class="number">1</span>] - o2[<span class="number">1</span>] : o2[<span class="number">0</span>] - o1[<span class="number">0</span>]);</span><br><span class="line">    LinkedList&lt;<span class="type">int</span>[]&gt; list = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">    <span class="comment">// 逐个地把它们放在输出队列中，索引等于它们的 k 值。</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span>[] person : people) &#123;</span><br><span class="line">        list.add(person[<span class="number">1</span>], person);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list.toArray(<span class="keyword">new</span> <span class="title class_">int</span>[list.size()][]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(N²)，排序使用了 O(NlogN) 的时间，每个人插入到输出队列中需要 O(k) 的时间，其中 k 是当前输出队列的元素个数。总共的时间复杂度为O(N²)。</li>
-<li>空间复杂度：O(N)，输出队列使用的空间。</li>
-</ul>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/queue-reconstruction-by-height/" title="根据身高重建队列 | 力扣（LeetCode）">根据身高重建队列 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/queue-reconstruction-by-height/solution/gen-ju-shen-gao-zhong-jian-dui-lie-by-leetcode/" title="根据身高重建队列 | 题解（LeetCode）">根据身高重建队列 | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-<blockquote>
-<p>文章标题：<a href='https://www.cylong.com/blog/2020/04/09/queue-reconstruction-by-height/' title='根据身高重建队列' >根据身高重建队列</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2020/04/09/queue-reconstruction-by-height/' title='根据身高重建队列' >https://www.cylong.com/blog/2020/04/09/queue-reconstruction-by-height/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>数组</tag>
-        <tag>链表</tag>
-        <tag>贪心算法</tag>
-        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -3236,6 +3236,63 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
+    <title>验证二叉搜索树</title>
+    <url>/blog/2020/07/15/validate-binary-search-tree/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个二叉树，判断其是否是一个有效的二叉搜索树。假设一个二叉搜索树具有如下特征：</p>
+<ul>
+<li>节点的左子树只包含小于当前节点的数。</li>
+<li>节点的右子树只包含大于当前节点的数。</li>
+<li>所有左子树和右子树自身必须也是二叉搜索树。</li>
+</ul>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入:</span><br><span class="line">    2</span><br><span class="line">   / \</span><br><span class="line">  1   3</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入:</span><br><span class="line">    5</span><br><span class="line">   / \</span><br><span class="line">  1   4</span><br><span class="line">     / \</span><br><span class="line">    3   6</span><br><span class="line">输出: false</span><br><span class="line">解释: 输入为: [5, 1, 4, null, null, 3, 6]。根节点的值为 5 ，但是其右子节点值为 4 。</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><p>由题目给出的信息我们可以知道：如果该二叉树的左子树不为空，则左子树上所有节点的值均小于它的根节点的值；若它的右子树不空，则右子树上所有节点的值均大于它的根节点的值；它的左右子树也为二叉搜索树。</p>
+<p>于是我们设计一个递归函数 <code>isValidBST(root, lower, upper)</code> 来递归判断，函数表示考虑以 root 为根的子树，判断子树中所有节点的值是否都在 (l, r) 的范围内（注意是开区间）。如果 root 节点的值 val 不在 ((l, r) 的范围内说明不满足条件直接返回，否则我们要继续递归调用检查它的左右子树是否满足，如果都满足才说明这是一棵二叉搜索树。</p>
+<p>那么根据二叉搜索树的性质，在递归调用左子树时，我们需要把上界 upper 改为 root.val，即调用 <code>isValidBST(root.left, lower, root.val)</code>，因为左子树里所有节点的值均小于它的根节点的值。同理递归调用右子树时，我们需要把下界 lower 改为 root.val，即调用 <code>isValidBST(root.right, root.val, upper)</code>。函数递归调用的入口为 <code>isValidBST(root, -inf, +inf)</code>， inf 表示一个无穷大的值。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isValidBST</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="comment">// 无穷大和无穷小用null表示，这里不能用Integer.MAX_VALUE和Integer.MIN_VALUE</span></span><br><span class="line">    <span class="keyword">return</span> isValidBST(root, <span class="literal">null</span>, <span class="literal">null</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isValidBST</span><span class="params">(TreeNode node, Integer lower, Integer upper)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">val</span> <span class="operator">=</span> node.val;</span><br><span class="line">    <span class="keyword">if</span> (lower != <span class="literal">null</span> &amp;&amp; val &lt;= lower) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (upper != <span class="literal">null</span> &amp;&amp; val &gt;= upper) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!isValidBST(node.right, val, upper)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!isValidBST(node.left, lower, val)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TreeNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    TreeNode left;</span><br><span class="line">    TreeNode right;</span><br><span class="line"></span><br><span class="line">    TreeNode(<span class="type">int</span> x) &#123;</span><br><span class="line">        val = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：O(n)，其中 n 为二叉树的节点个数。在递归调用的时候二叉树的每个节点最多被访问一次，因此时间复杂度为 O(n)。</li>
+<li>空间复杂度：O(n)，其中 n 为二叉树的节点个数。递归函数在递归过程中需要为每一层递归函数分配栈空间，所以这里需要额外的空间且该空间取决于递归的深度，即二叉树的高度。最坏情况下二叉树为一条链，树的高度为 n ，递归最深达到 n 层，故最坏情况下空间复杂度为 O(n) 。</li>
+</ul>
+<h1 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h1><p>我们知道二叉搜索树「中序遍历」得到的值构成的序列一定是升序的，中序遍历是二叉树的一种遍历方式，它先遍历左子树，再遍历根节点，最后遍历右子树。而我们二叉搜索树保证了左子树的节点的值均小于根节点的值，根节点的值均小于右子树的值，因此中序遍历以后得到的序列一定是升序序列。这启示我们在中序遍历的时候实时检查当前节点的值是否大于前一个中序遍历到的节点的值即可。如果均大于说明这个序列是升序的，整棵树是二叉搜索树，否则不是。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">long</span> <span class="variable">pre</span> <span class="operator">=</span> Long.MIN_VALUE;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isValidBST</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 访问左子树</span></span><br><span class="line">    <span class="keyword">if</span> (!isValidBST(root.left)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 访问当前节点：如果当前节点小于等于中序遍历的前一个节点，说明不满足BST，返回 false；否则继续遍历。</span></span><br><span class="line">    <span class="keyword">if</span> (root.val &lt;= pre) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    pre = root.val;</span><br><span class="line">    <span class="comment">// 访问右子树</span></span><br><span class="line">    <span class="keyword">return</span> isValidBST(root.right);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">TreeNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    TreeNode left;</span><br><span class="line">    TreeNode right;</span><br><span class="line"></span><br><span class="line">    TreeNode(<span class="type">int</span> x) &#123;</span><br><span class="line">        val = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：O(n)，其中 n 为二叉树的节点个数。在递归调用的时候二叉树的每个节点最多被访问一次，因此时间复杂度为 O(n)。</li>
+<li>空间复杂度：O(n)，其中 n 为二叉树的节点个数。递归函数在递归过程中需要为每一层递归函数分配栈空间，所以这里需要额外的空间且该空间取决于递归的深度，即二叉树的高度。最坏情况下二叉树为一条链，树的高度为 n ，递归最深达到 n 层，故最坏情况下空间复杂度为 O(n) 。</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/validate-binary-search-tree/" title="验证二叉搜索树 | 力扣（LeetCode）">验证二叉搜索树 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/validate-binary-search-tree/solution/yan-zheng-er-cha-sou-suo-shu-by-leetcode-solution/" title="验证二叉搜索树 | 题解（LeetCode）">验证二叉搜索树 | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+<blockquote>
+<p>文章标题：<a href='https://www.cylong.com/blog/2020/07/15/validate-binary-search-tree/' title='验证二叉搜索树' >验证二叉搜索树</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2020/07/15/validate-binary-search-tree/' title='验证二叉搜索树' >https://www.cylong.com/blog/2020/07/15/validate-binary-search-tree/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>递归</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
+        <tag>深度优先搜索</tag>
+        <tag>中序遍历</tag>
+        <tag>二叉搜索树</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>反转链表</title>
     <url>/blog/2020/07/16/reverse-linked-list/</url>
     <content><![CDATA[<hr>
@@ -3406,63 +3463,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>LeetCode</tag>
         <tag>学习笔记</tag>
         <tag>数学归纳法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>验证二叉搜索树</title>
-    <url>/blog/2020/07/15/validate-binary-search-tree/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个二叉树，判断其是否是一个有效的二叉搜索树。假设一个二叉搜索树具有如下特征：</p>
-<ul>
-<li>节点的左子树只包含小于当前节点的数。</li>
-<li>节点的右子树只包含大于当前节点的数。</li>
-<li>所有左子树和右子树自身必须也是二叉搜索树。</li>
-</ul>
-<p><strong>示例 1:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入:</span><br><span class="line">    2</span><br><span class="line">   / \</span><br><span class="line">  1   3</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入:</span><br><span class="line">    5</span><br><span class="line">   / \</span><br><span class="line">  1   4</span><br><span class="line">     / \</span><br><span class="line">    3   6</span><br><span class="line">输出: false</span><br><span class="line">解释: 输入为: [5, 1, 4, null, null, 3, 6]。根节点的值为 5 ，但是其右子节点值为 4 。</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><p>由题目给出的信息我们可以知道：如果该二叉树的左子树不为空，则左子树上所有节点的值均小于它的根节点的值；若它的右子树不空，则右子树上所有节点的值均大于它的根节点的值；它的左右子树也为二叉搜索树。</p>
-<p>于是我们设计一个递归函数 <code>isValidBST(root, lower, upper)</code> 来递归判断，函数表示考虑以 root 为根的子树，判断子树中所有节点的值是否都在 (l, r) 的范围内（注意是开区间）。如果 root 节点的值 val 不在 ((l, r) 的范围内说明不满足条件直接返回，否则我们要继续递归调用检查它的左右子树是否满足，如果都满足才说明这是一棵二叉搜索树。</p>
-<p>那么根据二叉搜索树的性质，在递归调用左子树时，我们需要把上界 upper 改为 root.val，即调用 <code>isValidBST(root.left, lower, root.val)</code>，因为左子树里所有节点的值均小于它的根节点的值。同理递归调用右子树时，我们需要把下界 lower 改为 root.val，即调用 <code>isValidBST(root.right, root.val, upper)</code>。函数递归调用的入口为 <code>isValidBST(root, -inf, +inf)</code>， inf 表示一个无穷大的值。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isValidBST</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="comment">// 无穷大和无穷小用null表示，这里不能用Integer.MAX_VALUE和Integer.MIN_VALUE</span></span><br><span class="line">    <span class="keyword">return</span> isValidBST(root, <span class="literal">null</span>, <span class="literal">null</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isValidBST</span><span class="params">(TreeNode node, Integer lower, Integer upper)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">val</span> <span class="operator">=</span> node.val;</span><br><span class="line">    <span class="keyword">if</span> (lower != <span class="literal">null</span> &amp;&amp; val &lt;= lower) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (upper != <span class="literal">null</span> &amp;&amp; val &gt;= upper) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!isValidBST(node.right, val, upper)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!isValidBST(node.left, lower, val)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TreeNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    TreeNode left;</span><br><span class="line">    TreeNode right;</span><br><span class="line"></span><br><span class="line">    TreeNode(<span class="type">int</span> x) &#123;</span><br><span class="line">        val = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(n)，其中 n 为二叉树的节点个数。在递归调用的时候二叉树的每个节点最多被访问一次，因此时间复杂度为 O(n)。</li>
-<li>空间复杂度：O(n)，其中 n 为二叉树的节点个数。递归函数在递归过程中需要为每一层递归函数分配栈空间，所以这里需要额外的空间且该空间取决于递归的深度，即二叉树的高度。最坏情况下二叉树为一条链，树的高度为 n ，递归最深达到 n 层，故最坏情况下空间复杂度为 O(n) 。</li>
-</ul>
-<h1 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h1><p>我们知道二叉搜索树「中序遍历」得到的值构成的序列一定是升序的，中序遍历是二叉树的一种遍历方式，它先遍历左子树，再遍历根节点，最后遍历右子树。而我们二叉搜索树保证了左子树的节点的值均小于根节点的值，根节点的值均小于右子树的值，因此中序遍历以后得到的序列一定是升序序列。这启示我们在中序遍历的时候实时检查当前节点的值是否大于前一个中序遍历到的节点的值即可。如果均大于说明这个序列是升序的，整棵树是二叉搜索树，否则不是。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">long</span> <span class="variable">pre</span> <span class="operator">=</span> Long.MIN_VALUE;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isValidBST</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 访问左子树</span></span><br><span class="line">    <span class="keyword">if</span> (!isValidBST(root.left)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 访问当前节点：如果当前节点小于等于中序遍历的前一个节点，说明不满足BST，返回 false；否则继续遍历。</span></span><br><span class="line">    <span class="keyword">if</span> (root.val &lt;= pre) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    pre = root.val;</span><br><span class="line">    <span class="comment">// 访问右子树</span></span><br><span class="line">    <span class="keyword">return</span> isValidBST(root.right);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">TreeNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    TreeNode left;</span><br><span class="line">    TreeNode right;</span><br><span class="line"></span><br><span class="line">    TreeNode(<span class="type">int</span> x) &#123;</span><br><span class="line">        val = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(n)，其中 n 为二叉树的节点个数。在递归调用的时候二叉树的每个节点最多被访问一次，因此时间复杂度为 O(n)。</li>
-<li>空间复杂度：O(n)，其中 n 为二叉树的节点个数。递归函数在递归过程中需要为每一层递归函数分配栈空间，所以这里需要额外的空间且该空间取决于递归的深度，即二叉树的高度。最坏情况下二叉树为一条链，树的高度为 n ，递归最深达到 n 层，故最坏情况下空间复杂度为 O(n) 。</li>
-</ul>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/validate-binary-search-tree/" title="验证二叉搜索树 | 力扣（LeetCode）">验证二叉搜索树 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/validate-binary-search-tree/solution/yan-zheng-er-cha-sou-suo-shu-by-leetcode-solution/" title="验证二叉搜索树 | 题解（LeetCode）">验证二叉搜索树 | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-<blockquote>
-<p>文章标题：<a href='https://www.cylong.com/blog/2020/07/15/validate-binary-search-tree/' title='验证二叉搜索树' >验证二叉搜索树</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2020/07/15/validate-binary-search-tree/' title='验证二叉搜索树' >https://www.cylong.com/blog/2020/07/15/validate-binary-search-tree/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>递归</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
-        <tag>深度优先搜索</tag>
-        <tag>中序遍历</tag>
-        <tag>二叉搜索树</tag>
       </tags>
   </entry>
   <entry>
@@ -4334,8 +4334,8 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>学习笔记</tag>
-        <tag>递归</tag>
         <tag>贪心算法</tag>
+        <tag>递归</tag>
         <tag>树</tag>
         <tag>二叉树</tag>
         <tag>深度优先搜索</tag>
@@ -5245,8 +5245,8 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>字符串</tag>
         <tag>指针</tag>
         <tag>双指针</tag>
-        <tag>递归</tag>
         <tag>贪心算法</tag>
+        <tag>递归</tag>
       </tags>
   </entry>
   <entry>
@@ -5433,6 +5433,57 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       <tags>
         <tag>招聘</tag>
         <tag>实习生</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>国内如何注册ChatGPT账号</title>
+    <url>/blog/2023/10/08/sign-up-chatgpt/</url>
+    <content><![CDATA[<hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>OpenAI公司是一家位于美国的人工智能研究与开发公司，成立于2015年，致力于推动人工智能技术的发展。该公司的使命是确保人工智能技术对整个人类社会的利益产生积极影响。OpenAI在自然语言处理领域取得了重要突破，其中的一个产品就是ChatGPT。<br>ChatGPT是OpenAI开发的一款强大的自然语言处理模型。它可以理解和生成人类语言，能够回答问题、执行任务、进行对话等多种应用。ChatGPT可以用于在线客服、智能助手、内容生成、教育支持等众多领域，为用户提供自然而流畅的文本交互体验。<br>OpenAI不断改进和扩展ChatGPT，以提供更准确、有用和安全的服务。这一技术的发展代表了人工智能在改善人们的生活、工作和沟通方面的潜力，并在多个领域产生了广泛的应用。</p>
+<p>在国内并不支持OpenAI账号注册，多数会提示：<code>OpenAI&#39;s services are not available in your country</code>，查阅了一些资料后发现以下方式可以注册成功。</p>
+<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><ol>
+<li>国外梯子。</li>
+<li>一个能收验证码的国外手机号，如果没有的话可以通过 <a href="https://sms-activate.org/" title="SMS-Activate是在线接收短信的虚拟号码服务">SMS-Activate</a> 注册一个（收费，但是很便宜）</li>
+</ol>
+<span id="more"></span>
+
+<h1 id="注册ChatGPT账号"><a href="#注册ChatGPT账号" class="headerlink" title="注册ChatGPT账号"></a>注册ChatGPT账号</h1><ol>
+<li>访问 <a href="https://openai.com/" title="OpenAI">OpenAI</a> 右上角注册（建议使用国外IP），可以使用 Google、Microsoft、Apple 或者直接使用邮箱注册<img src="/blog/2023/10/08/sign-up-chatgpt/%E6%B3%A8%E5%86%8CChatGPT.png" class="" title="注册ChatGPT"></li>
+<li>这里输入你国外的手机号，如果没有的话，参考下文注册 <a href="https://sms-activate.org/" title="SMS-Activate是在线接收短信的虚拟号码服务">SMS-Activate</a><img src="/blog/2023/10/08/sign-up-chatgpt/%E9%AA%8C%E8%AF%81%E6%89%8B%E6%9C%BA%E5%8F%B7.png" class="" title="验证手机号"></li>
+<li>OpenAI 产品列表，选择 ChatGPT（DALL·E有兴趣可以玩玩，可以生成与文本描述相关的图像，收费）<img src="/blog/2023/10/08/sign-up-chatgpt/OpenAI%E4%BA%A7%E5%93%81%E5%88%97%E8%A1%A8.png" class="" title="OpenAI产品列表"></li>
+<li>初体验 ChatGPT，免费的是 ChatGPT-3.5，想要使用 ChatGPT-4 需要 ChatGPT Plus，收费20$/月<img src="/blog/2023/10/08/sign-up-chatgpt/%E5%88%9D%E4%BD%93%E9%AA%8CChatGPT.png" class="" title="初体验ChatGPT">
+
+</li>
+</ol>
+<h1 id="注册短信服务"><a href="#注册短信服务" class="headerlink" title="注册短信服务"></a>注册短信服务</h1><ol>
+<li>打开 <a href="https://sms-activate.org/" title="SMS-Activate是在线接收短信的虚拟号码服务">SMS-Activate</a> 右上角注册登录，登录后右上角充值<img src="/blog/2023/10/08/sign-up-chatgpt/SMS-Activate%E5%85%85%E5%80%BC.png" class="" title="SMS-Activate充值"></li>
+<li>往下拉选择支付宝，最低充值2$（吐槽一下，之前没有最低充值额度的，估计是发现了商机😒）<img src="/blog/2023/10/08/sign-up-chatgpt/SMS-Activate%E6%94%AF%E4%BB%98%E5%AE%9D%E5%85%85%E5%80%BC.jpg" class="" title="SMS-Activate支付宝充值"></li>
+<li>左侧服务选择搜索 <code>OpenAI</code><img src="/blog/2023/10/08/sign-up-chatgpt/SMS-Activate%E6%9C%8D%E5%8A%A1%E9%80%89%E6%8B%A9.jpg" class="" title="SMS-Activate服务选择"></li>
+<li>国家选择印度并购买<img src="/blog/2023/10/08/sign-up-chatgpt/SMS-Activate%E5%9B%BD%E5%AE%B6%E9%80%89%E6%8B%A9.png" class="" title="SMS-Activate国家选择"></li>
+<li>此时你就有了一个可以接收验证码的国外手机号，用于后续注册ChatGPT使用，此号码在20分钟有效期内并且未使用的情况下可以退款取消注册，如果注册ChatGPT过程中一直收不到验证码，可以多试几次，我是一次就成功了哈哈哈😁<img src="/blog/2023/10/08/sign-up-chatgpt/SMS-Activate%E5%8F%B7%E7%A0%81.png" class="" title="SMS-Activate号码">
+
+</li>
+</ol>
+<h1 id="一些感想"><a href="#一些感想" class="headerlink" title="一些感想"></a>一些感想</h1><p>自从接触 ChatGPT 之后，平时写文章，写代码都会想到先问问 ChatGPT，确实能得到很多不错的答案。网络上各行各业的人使用后发出感叹，大部分人要失业了。我认为 ChatGPT 不会让大部分人失业，但是会让不会用 ChatGPT 的人失业。</p>
+<img src="/blog/2023/10/08/sign-up-chatgpt/ChatGPT%E4%BC%9A%E8%AE%A9%E5%A4%A7%E9%83%A8%E5%88%86%E4%BA%BA%E5%A4%B1%E4%B8%9A%E4%B9%88.png" class="" title="ChatGPT会让大部分人失业么">
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><blockquote>
+<p><a href="https://v2ex.com/t/900126" title="OpenAI 推出超神 ChatGPT 注册攻略来了 - V2EX">OpenAI 推出超神 ChatGPT 注册攻略来了 - V2E</a><br><a href="https://cloud.tencent.com/developer/article/2192253" title="最近很火的ChatGPT，带你注册体验全攻略 - 腾讯云开发者社区">最近很火的ChatGPT，带你注册体验全攻略 - 腾讯云开发者社区</a><br><a href="https://readdevdocs.com/blog/tech/%E5%A6%82%E4%BD%95%E7%BC%96%E7%A8%8B%E8%B0%83%E7%94%A8OpenAI%E7%9A%84ChatGPT%20API%E6%8E%A5%E5%8F%A3.html" title="如何编程调用OpenAI的ChatGPT API接口 | Read dev Docs 博客">如何编程调用OpenAI的ChatGPT API接口 | Read dev Docs 博客</a></p>
+</blockquote>
+<hr>
+<blockquote>
+<p>文章标题：<a href='https://www.cylong.com/blog/2023/10/08/sign-up-chatgpt/' title='国内如何注册ChatGPT账号' >国内如何注册ChatGPT账号</a><br>文章作者：<a href="/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2023/10/08/sign-up-chatgpt/' title='国内如何注册ChatGPT账号' >https://www.cylong.com/blog/2023/10/08/sign-up-chatgpt/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>人工智能</category>
+      </categories>
+      <tags>
+        <tag>人工智能</tag>
+        <tag>OpenAI</tag>
+        <tag>ChatGPT</tag>
+        <tag>AIGC</tag>
+        <tag>AGI</tag>
       </tags>
   </entry>
 </search>
