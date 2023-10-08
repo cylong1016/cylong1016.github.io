@@ -1,0 +1,13 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+Allow: /archives/
+
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /lib/
+Disallow: /fancybox/
+
+Sitemap: http://www.cylong.com/sitemap.xml
+Sitemap: http://www.cylong.com/baidusitemap.xml
