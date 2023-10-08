@@ -1223,20 +1223,6 @@
   </url>
   
   <url>
-    <loc>https://www.cylong.com/tags/DOM/</loc>
-    <lastmod>2023-10-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.cylong.com/tags/XML/</loc>
-    <lastmod>2023-10-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.cylong.com/tags/Jackson/</loc>
     <lastmod>2023-10-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -1251,7 +1237,14 @@
   </url>
   
   <url>
-    <loc>https://www.cylong.com/tags/SwitchyOmega/</loc>
+    <loc>https://www.cylong.com/tags/DOM/</loc>
+    <lastmod>2023-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.cylong.com/tags/XML/</loc>
     <lastmod>2023-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1259,6 +1252,20 @@
   
   <url>
     <loc>https://www.cylong.com/tags/Disqus/</loc>
+    <lastmod>2023-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.cylong.com/tags/SwitchyOmega/</loc>
+    <lastmod>2023-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.cylong.com/tags/%E5%A4%B4%E6%96%87%E4%BB%B6/</loc>
     <lastmod>2023-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1273,13 +1280,6 @@
   
   <url>
     <loc>https://www.cylong.com/tags/%E6%B5%81API/</loc>
-    <lastmod>2023-10-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.cylong.com/tags/%E5%A4%B4%E6%96%87%E4%BB%B6/</loc>
     <lastmod>2023-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -233,9 +233,11 @@ f1g1ns2.dnspod.net
 <p>上面的代码是 _config.yml 中部署的代码，分别是部署到 Github 和 Coding 上的两种方式，使用 HTTPS 方式的话每次部署都需要输入用户名和密码，很麻烦。</p>
 <img src="/blog/2016/04/25/hexo-faq/OpenSSH.png" class="" title="OpenSSH">
 <p>所以我选择使用 SSH 的方式，此方式是本机与远程仓库建立对接，这样部署的时候就不需要输入用户名和密码了。但是需要以下的配置：</p>
-<p>打开终端或者 Git Bash，依次输入：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> ~/.ssh    <span class="comment"># 如果之前没有这个文件夹就创建此文件夹</span></span><br><span class="line"><span class="built_in">cd</span> ~/.ssh       <span class="comment"># 进入到 .ssh 文件夹中</span></span><br><span class="line"></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail@example.com&quot;</span>    <span class="comment"># 生成密钥</span></span><br><span class="line"><span class="comment"># 接着会提示输入 file 和 passphrase，直接回车就行。</span></span><br><span class="line"><span class="comment"># 接着会看到下面的输出：</span></span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /home/cylong/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /home/cylong/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">fd:56:db:23:db:bf:<span class="built_in">df</span>:54:0a:6a:43:51:13:34:22:b6 youremail@example.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 接着输入</span></span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
-<p>然后打开 <a href="https://github.com/settings/ssh">https://github.com/settings/ssh</a>【Github】，点击 <code>New SSH key</code>，复制 <code>id_rsa.pub</code> 中的所有内容到 Key 框中，在 Title 框中输入方便自己记忆的名字【比如我的是 Personal Ubuntu】。<a href="https://coding.net/user/account/setting/keys">https://coding.net/user/account/setting/keys</a>【Coding】也一样，但是需要注意的是注册邮箱要一样，否则要两个 SSH。最后输入 <code>ssh -T git@github.com</code> 和 <code>ssh -T git@git.coding.net</code> 测试是否配置成功。</p>
+<ol>
+<li>打开终端或者 Git Bash，依次输入：<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> ~/.ssh    <span class="comment"># 如果之前没有这个文件夹就创建此文件夹</span></span><br><span class="line"><span class="built_in">cd</span> ~/.ssh       <span class="comment"># 进入到 .ssh 文件夹中</span></span><br><span class="line"></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail@example.com&quot;</span>    <span class="comment"># 生成密钥</span></span><br><span class="line"><span class="comment"># 接着会提示输入 file 和 passphrase，直接回车就行。</span></span><br><span class="line"><span class="comment"># 接着会看到下面的输出：</span></span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /home/cylong/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /home/cylong/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">fd:56:db:23:db:bf:<span class="built_in">df</span>:54:0a:6a:43:51:13:34:22:b6 youremail@example.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 接着输入</span></span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure></li>
+<li>打开 <a href="https://github.com/settings/ssh">https://github.com/settings/ssh</a>【Github】，点击 <code>New SSH key</code>，复制 <code>id_rsa.pub</code> 中的所有内容到 Key 框中，在 Title 框中输入方便自己记忆的名字【比如我的是 Personal Ubuntu】。<a href="https://coding.net/user/account/setting/keys">https://coding.net/user/account/setting/keys</a>【Coding】也一样，但是需要注意的是注册邮箱要一样，否则要两个 SSH。</li>
+<li>输入 <code>ssh -T git@github.com</code> 和 <code>ssh -T git@git.coding.net</code> 测试是否配置成功。</li>
+</ol>
 <p>参考：<a href="https://xuanwo.io/2015/02/07/generate-a-ssh-key/" title="Xuanwo&#39;s Blog - 使用Github SSH Key以免去Hexo部署时输入密码">Xuanwo’s Blog - 使用Github SSH Key以免去Hexo部署时输入密码</a></p>
 <h1 id="Ubuntu-下使用-Hexo"><a href="#Ubuntu-下使用-Hexo" class="headerlink" title="Ubuntu 下使用 Hexo"></a>Ubuntu 下使用 Hexo</h1><p>辗转反侧，还是忍不住使用 Ubuntu 系统。而且基本所有的人都和我说以后的开发都要使用 Linux 系统。所以最近准备使用 Ubuntu 练手，当然，博客也要在 Ubuntu 上更新了。由于我的博客已经在 Windows 系统下搭建好了，教程参考 <a href="/blog/2016/04/19/hexo-git/" title="Hexo + Git 搭建免费的个人博客 | 笑话人生">Hexo + Git 搭建免费的个人博客 | 笑话人生</a> 【虽然是 Windows 下的教程，但是其他平台步骤都是一样的】。Hexo 源码放在 <a href="https://github.com/cylong1016/HexoBlog" title="HexoBlog">Github - HexoBlog</a> 上。所以直接 clone 下来就好。下面就说说我在 Ubuntu 系统下遇到的问题。</p>
 <ol>
@@ -286,21 +288,42 @@ f1g1ns2.dnspod.net
 <li><p>参考：<a href="https://www.npmjs.com/package/hexo-wordcount" title="hexo-wordcount">hexo-wordcount</a></p>
 </li>
 </ol>
+<h1 id="Next-主题增加字数统计和阅读时长"><a href="#Next-主题增加字数统计和阅读时长" class="headerlink" title="Next 主题增加字数统计和阅读时长"></a>Next 主题增加字数统计和阅读时长</h1><ol>
+<li>安装 npm 包</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-symbols-count-time</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>修改博客根目录的 <code>_config.yml</code> 文件</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  symbols: <span class="literal">true</span>             <span class="comment"># 文章字数统计</span></span><br><span class="line">  time: <span class="literal">true</span>                <span class="comment"># 文章阅读时长</span></span><br><span class="line">  total_symbols: <span class="literal">true</span>       <span class="comment"># 站点总字数统计</span></span><br><span class="line">  total_time: <span class="literal">true</span>          <span class="comment"># 站点总阅读时长</span></span><br><span class="line">  exclude_codeblock: <span class="literal">false</span>  <span class="comment"># 排除代码字数统计</span></span><br><span class="line">  awl: 4                    <span class="comment"># 平均字长（字中的字符数）</span></span><br><span class="line">  wpm: 275                  <span class="comment"># 每分钟阅读字数</span></span><br><span class="line">  suffix: <span class="string">&quot;mins.&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>修改 Next 主题的 <code>_config.yml</code> 文件（Next 主题已经支持此插件，仅个性化修改即可）</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-symbols-count-time</span></span><br><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: <span class="literal">true</span></span><br><span class="line">  item_text_post: <span class="literal">true</span></span><br><span class="line">  item_text_total: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>参考：<blockquote>
+<p><a href="https://github.com/theme-next/hexo-symbols-count-time" title="theme-next/hexo-symbols-count-time">theme-next/hexo-symbols-count-time</a><br><a href="https://blog.csdn.net/mqdxiaoxiao/article/details/93670772" title="Hexo 博客 NexT 主题下添加字数统计和阅读时长 - CSDN 博客">Hexo 博客 NexT 主题下添加字数统计和阅读时长 - CSDN 博客</a></p>
+</blockquote>
+</li>
+</ol>
 <h1 id="LF-will-be-replaced"><a href="#LF-will-be-replaced" class="headerlink" title="LF will be replaced"></a>LF will be replaced</h1><p><code>Windows</code> 提交命令的时候出现 <code>warning: LF will be replaced by CRLF in xxx</code> 的警告。输入以下命令即可：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global core.autocrlf false</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="Windows-禁止运行脚本"><a href="#Windows-禁止运行脚本" class="headerlink" title="Windows 禁止运行脚本"></a>Windows 禁止运行脚本</h1><p><code>Windows PowerShell</code> 执行命令的时候出现如下错误：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">PS D:\Github\HexoBlog&gt; hexo v</span><br><span class="line">hexo : 无法加载文件 C:\Users\win\AppData\Roaming\npm\hexo.ps1，因为在此系统上禁止运行脚本。有关详细信息，请参阅 https:/go.microsoft.com/fwlink/?LinkID=135170 中的 about_Execution_Policies。</span><br><span class="line">所在位置 行:1 字符: 1</span><br><span class="line">+ hexo v</span><br><span class="line">+ ~~~~</span><br><span class="line">    + CategoryInfo          : SecurityError: (:) []，PSSecurityException</span><br><span class="line">    + FullyQualifiedErrorId : UnauthorizedAccess</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">PS D:\Github\HexoBlog&gt; hexo v</span><br><span class="line">hexo : 无法加载文件 C:\Users\win\AppData\Roaming\npm\hexo.ps1，因为在此系统上禁止运行脚本。有关详细信息，请参阅 https:/go.microsoft.com/fwlink/?LinkID=135170 中的 about_Execution_Policies。</span><br><span class="line">所在位置 行:1 字符: 1</span><br><span class="line">+ hexo v</span><br><span class="line">+ ~~~~</span><br><span class="line">    + CategoryInfo          : SecurityError: (:) []，PSSecurityException</span><br><span class="line">    + FullyQualifiedErrorId : UnauthorizedAccess</span><br></pre></td></tr></table></figure>
 
 <p>启动 <code>Windows PowerShell</code> 时，执行策略很可能是 <code>Restricted</code>（默认设置）。</p>
 <blockquote>
 <p><code>Restricted</code> 执行策略不允许任何脚本运行。<br><code>AllSigned</code> 和 <code>RemoteSigned</code> 执行策略可防止 <code>Windows PowerShell</code> 运行没有数字签名的脚本。</p>
 </blockquote>
 <p>查看当前执行策略，打开 <code>PowerShell</code> 输入以下命令：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">PS D:\Github\HexoBlog&gt; get-executionpolicy</span><br><span class="line">Restricted</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">PS D:\Github\HexoBlog&gt; get-executionpolicy</span><br><span class="line">Restricted</span><br></pre></td></tr></table></figure>
 
 <p>以管理员身份打开 <code>Windows PowerShell</code> 输入以下命令并输入 <code>Y</code> 即可解决：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">PS C:\WINDOWS\system32&gt; set-executionpolicy remotesigned</span><br><span class="line">执行策略更改</span><br><span class="line">执行策略可帮助你防止执行不信任的脚本。更改执行策略可能会产生安全风险，如 https:/go.microsoft.com/fwlink/?LinkID=135170</span><br><span class="line">中的 about_Execution_Policies 帮助主题所述。是否要更改执行策略?</span><br><span class="line">[Y] 是(Y)  [A] 全是(A)  [N] 否(N)  [L] 全否(L)  [S] 暂停(S)  [?] 帮助 (默认值为“N”): Y</span><br><span class="line">PS C:\WINDOWS\system32&gt; get-executionpolicy</span><br><span class="line">RemoteSigned</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">PS C:\WINDOWS\system32&gt; set-executionpolicy remotesigned</span><br><span class="line">执行策略更改</span><br><span class="line">执行策略可帮助你防止执行不信任的脚本。更改执行策略可能会产生安全风险，如 https:/go.microsoft.com/fwlink/?LinkID=135170</span><br><span class="line">中的 about_Execution_Policies 帮助主题所述。是否要更改执行策略?</span><br><span class="line">[Y] 是(Y)  [A] 全是(A)  [N] 否(N)  [L] 全否(L)  [S] 暂停(S)  [?] 帮助 (默认值为“N”): Y</span><br><span class="line">PS C:\WINDOWS\system32&gt; get-executionpolicy</span><br><span class="line">RemoteSigned</span><br></pre></td></tr></table></figure>
 
 <p>参考：<a href="https://syxdevcode.github.io/2021/09/04/PowerShell%EF%BC%9A%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%AD%A4%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%A6%81%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC%EF%BC%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" title="PowerShell：因为在此系统上禁止运行脚本，解决方法 - syxdevcode博客">PowerShell：因为在此系统上禁止运行脚本，解决方法 - syxdevcode博客</a></p>
 <h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><blockquote>
@@ -1107,46 +1130,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
-    <title>Java 通过 DOM 方式解析、创建 XML</title>
-    <url>/blog/2017/04/04/java-dom-xml/</url>
-    <content><![CDATA[<hr>
-<h1 id="DOM-简介"><a href="#DOM-简介" class="headerlink" title="DOM 简介"></a>DOM 简介</h1><p>DOM（Document Object Model) 是 W3C 处理 XML 的标准 API，不仅 Java 其他很多语言，比如 Javascript、PHP等等语言都实现了该标准。Java 类库支持 DOM 操作【也就是说不需要下载依赖其他包】。DOM 以树状结构组织节点和信息的集合，这种结构允许开发人员对 XML 文档进行增删改查。为了分析该树状结构，我们需要加载整个 XML 文档进行构造分析，所以消耗资源比较大，建议在操作小文件的时候使用。</p>
-<span id="more"></span>
-
-<h1 id="创建-XML-文档"><a href="#创建-XML-文档" class="headerlink" title="创建 XML 文档"></a>创建 XML 文档</h1><ol>
-<li>创建 XML Document 对象<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 创建 XML Document 对象</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> XML Document 对象</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> cylong</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 2017年4月5日 上午12:19:41</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> Document <span class="title function_">createXMLDocument</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">DocumentBuilderFactory</span> <span class="variable">factory</span> <span class="operator">=</span> DocumentBuilderFactory.newInstance();</span><br><span class="line">    <span class="type">DocumentBuilder</span> <span class="variable">builder</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="type">Document</span> <span class="variable">document</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        builder = factory.newDocumentBuilder();</span><br><span class="line">        document = builder.newDocument();</span><br><span class="line">        <span class="type">Element</span> <span class="variable">root</span> <span class="operator">=</span> document.createElement(<span class="string">&quot;college&quot;</span>);</span><br><span class="line">        document.appendChild(root);</span><br><span class="line"></span><br><span class="line">        <span class="type">Element</span> <span class="variable">student</span> <span class="operator">=</span> document.createElement(<span class="string">&quot;student&quot;</span>);</span><br><span class="line">        student.setAttribute(<span class="string">&quot;id&quot;</span>, <span class="string">&quot;0&quot;</span>);</span><br><span class="line">        <span class="type">Element</span> <span class="variable">name</span> <span class="operator">=</span> document.createElement(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">        name.appendChild(document.createTextNode(<span class="string">&quot;cylong&quot;</span>));</span><br><span class="line">        student.appendChild(name);</span><br><span class="line">        <span class="type">Element</span> <span class="variable">biography</span> <span class="operator">=</span> document.createElement(<span class="string">&quot;biography&quot;</span>);</span><br><span class="line">        biography.appendChild(document.createCDATASection(<span class="string">&quot;Hello&quot;</span>));</span><br><span class="line">        student.appendChild(biography);</span><br><span class="line">        <span class="type">Element</span> <span class="variable">age</span> <span class="operator">=</span> document.createElement(<span class="string">&quot;age&quot;</span>);</span><br><span class="line">        age.appendChild(document.createTextNode(<span class="string">&quot;24&quot;</span>));</span><br><span class="line">        student.appendChild(age);</span><br><span class="line"></span><br><span class="line">        <span class="type">Element</span> <span class="variable">student1</span> <span class="operator">=</span> document.createElement(<span class="string">&quot;student&quot;</span>);</span><br><span class="line">        student1.setAttribute(<span class="string">&quot;id&quot;</span>, <span class="string">&quot;1&quot;</span>);</span><br><span class="line">        <span class="type">Element</span> <span class="variable">name1</span> <span class="operator">=</span> document.createElement(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">        name1.appendChild(document.createTextNode(<span class="string">&quot;cylong1&quot;</span>));</span><br><span class="line">        student1.appendChild(name1);</span><br><span class="line">        <span class="type">Element</span> <span class="variable">biography1</span> <span class="operator">=</span> document.createElement(<span class="string">&quot;biography&quot;</span>);</span><br><span class="line">        biography1.appendChild(document.createCDATASection(<span class="string">&quot;World&quot;</span>));</span><br><span class="line">        student1.appendChild(biography1);</span><br><span class="line">        <span class="type">Element</span> <span class="variable">age1</span> <span class="operator">=</span> document.createElement(<span class="string">&quot;age&quot;</span>);</span><br><span class="line">        age1.appendChild(document.createTextNode(<span class="string">&quot;25&quot;</span>));</span><br><span class="line">        student1.appendChild(age1);</span><br><span class="line"></span><br><span class="line">        root.appendChild(document.createComment(<span class="string">&quot;学生0&quot;</span>));</span><br><span class="line">        root.appendChild(student);</span><br><span class="line">        root.appendChild(document.createComment(<span class="string">&quot;学生1&quot;</span>));</span><br><span class="line">        root.appendChild(student1);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ParserConfigurationException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> document;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>将创建的 XML Document 写入到文件中<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 将创建的 XML Document 写入到文件中</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> document</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> path 文件路径</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> cylong</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 2017年4月3日 上午2:39:32</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">writeXML</span><span class="params">(Document document, String path)</span> &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">	<span class="type">TransformerFactory</span> <span class="variable">tf</span> <span class="operator">=</span> TransformerFactory.newInstance();</span><br><span class="line">	<span class="type">Transformer</span> <span class="variable">transformer</span> <span class="operator">=</span> tf.newTransformer();</span><br><span class="line">	<span class="type">DOMSource</span> <span class="variable">source</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DOMSource</span>(document);</span><br><span class="line">	transformer.setOutputProperty(OutputKeys.ENCODING, <span class="string">&quot;utf8&quot;</span>);</span><br><span class="line">	transformer.setOutputProperty(OutputKeys.INDENT, <span class="string">&quot;yes&quot;</span>);</span><br><span class="line">	<span class="type">PrintWriter</span> <span class="variable">pw</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PrintWriter</span>(<span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(path));</span><br><span class="line">	<span class="type">StreamResult</span> <span class="variable">result</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StreamResult</span>(pw);</span><br><span class="line">    transformer.transform(source, result);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (TransformerConfigurationException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">  &#125; <span class="keyword">catch</span> (IllegalArgumentException e) &#123;</span><br><span class="line"> 	e.printStackTrace();</span><br><span class="line">  &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">  &#125; <span class="keyword">catch</span> (TransformerException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h1 id="解析-XML-文档"><a href="#解析-XML-文档" class="headerlink" title="解析 XML 文档"></a>解析 XML 文档</h1><ol>
-<li><p>解析 XML 文件</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 解析 XML 文档</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> path XML 文档路径</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> cylong</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 2017年4月3日 上午2:48:53</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">parserXML</span><span class="params">(String path)</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="type">DocumentBuilderFactory</span> <span class="variable">dbf</span> <span class="operator">=</span> DocumentBuilderFactory.newInstance();</span><br><span class="line">        <span class="type">DocumentBuilder</span> <span class="variable">db</span> <span class="operator">=</span> dbf.newDocumentBuilder();</span><br><span class="line">        <span class="type">Document</span> <span class="variable">document</span> <span class="operator">=</span> db.parse(path);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// optional, but recommended</span></span><br><span class="line">        <span class="comment">// read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work</span></span><br><span class="line">        document.getDocumentElement().normalize();</span><br><span class="line"></span><br><span class="line">        <span class="type">Element</span> <span class="variable">root</span> <span class="operator">=</span> document.getDocumentElement();</span><br><span class="line">        System.out.println(<span class="string">&quot;Root element : &quot;</span> + root.getNodeName());</span><br><span class="line">        <span class="type">NodeList</span> <span class="variable">students</span> <span class="operator">=</span> root.getElementsByTagName(<span class="string">&quot;student&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; students.getLength(); i++) &#123;</span><br><span class="line">            <span class="type">Node</span> <span class="variable">student</span> <span class="operator">=</span> students.item(i);</span><br><span class="line">            System.out.println(student.getNodeName());</span><br><span class="line"></span><br><span class="line">            <span class="type">NodeList</span> <span class="variable">info</span> <span class="operator">=</span> student.getChildNodes();</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; info.getLength(); j++) &#123;</span><br><span class="line">                <span class="type">Node</span> <span class="variable">meta</span> <span class="operator">=</span> info.item(j);</span><br><span class="line">                <span class="keyword">if</span> (meta.getNodeType() == Node.ELEMENT_NODE) &#123;</span><br><span class="line">                    System.out.println(meta.getNodeName() + <span class="string">&quot;:&quot;</span> + meta.getTextContent());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ParserConfigurationException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (SAXException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意<br>可以 <a href="http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work">点此链接</a> 了解其用处。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// optional, but recommended</span></span><br><span class="line"><span class="comment">// read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work</span></span><br><span class="line">document.getDocumentElement().normalize();</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ol>
-<h1 id="参考-amp-感谢"><a href="#参考-amp-感谢" class="headerlink" title="参考&amp;感谢"></a>参考&amp;感谢</h1><blockquote>
-<p><a href="https://github.com/cylong1016/CodeJava/blob/master/src/cylong/xml/ParserXML.java">Github 完整的代码案例</a><br><a href="https://www.mkyong.com/java/how-to-read-xml-file-in-java-dom-parser/">How to read XML file in Java – (DOM Parser)</a></p>
-</blockquote>
-<hr>
-<blockquote>
-<p>文章标题：<a href='https://www.cylong.com/blog/2017/04/04/java-dom-xml/' title='Java 通过 DOM 方式解析、创建 XML' >Java 通过 DOM 方式解析、创建 XML</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2017/04/04/java-dom-xml/' title='Java 通过 DOM 方式解析、创建 XML' >https://www.cylong.com/blog/2017/04/04/java-dom-xml/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>DOM</tag>
-        <tag>XML</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Jackson - Java Object 与 JSON 之间的转化工具</title>
     <url>/blog/2017/03/31/jackson-java-json/</url>
     <content><![CDATA[<hr>
@@ -1190,53 +1173,43 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
-    <title>Chrome 配置 SwitchyOmega</title>
-    <url>/blog/2017/04/09/chrome-SwitchyOmega/</url>
+    <title>Java 通过 DOM 方式解析、创建 XML</title>
+    <url>/blog/2017/04/04/java-dom-xml/</url>
     <content><![CDATA[<hr>
-<p>此文章是以 Shadowsocks 代理为例，若想使用 Shadowsocks 请先安装对应系统的客户端并启动。详情请参考：</p>
-<blockquote>
-<p><a href="/blog/2016/05/26/shadowsocks/" title="站在 Shadowsocks 的肩膀上发现精彩的世界">站在 Shadowsocks 的肩膀上发现精彩的世界</a></p>
-</blockquote>
-<h1 id="Chrome-浏览器"><a href="#Chrome-浏览器" class="headerlink" title="Chrome 浏览器"></a>Chrome 浏览器</h1><p>无论是用户体验、强大的功能还是丰富的扩展程序都完爆国内的各种浏览器好不好(╯‵□′)╯︵┻━┻。强烈推荐啊！目前已经可以在不翻墙的情况下去 <a href="http://www.google.cn/chrome/browser/desktop/index.html" title="Chrome（桌面版）">下载 Chrome（桌面版）</a>了，账号数据同步方面也不需要翻墙了。【鼓掌撒花★,°:.☆(￣▽￣)/$:.°★ 。】</p>
-<h1 id="SwitchyOmega"><a href="#SwitchyOmega" class="headerlink" title="SwitchyOmega"></a>SwitchyOmega</h1><p>Google Chrome 浏览器上的一个代理扩展程序，可以轻松快捷地管理和切换多个代理设置。比如我们接下来要介绍的 <code>自动切换模式</code>。</p>
+<h1 id="DOM-简介"><a href="#DOM-简介" class="headerlink" title="DOM 简介"></a>DOM 简介</h1><p>DOM（Document Object Model) 是 W3C 处理 XML 的标准 API，不仅 Java 其他很多语言，比如 Javascript、PHP等等语言都实现了该标准。Java 类库支持 DOM 操作【也就是说不需要下载依赖其他包】。DOM 以树状结构组织节点和信息的集合，这种结构允许开发人员对 XML 文档进行增删改查。为了分析该树状结构，我们需要加载整个 XML 文档进行构造分析，所以消耗资源比较大，建议在操作小文件的时候使用。</p>
 <span id="more"></span>
 
-<h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><p>点击 <a href="https://github.com/FelisCatus/SwitchyOmega/releases" title="FelisCatus/SwitchyOmega">Github-SwitchyOmega</a>，下载页面有详细的安装教程，仔细看一下就好。</p>
-<h2 id="配置-Shadowsocks-情景模式"><a href="#配置-Shadowsocks-情景模式" class="headerlink" title="配置 Shadowsocks 情景模式"></a>配置 Shadowsocks 情景模式</h2><ol>
-<li>打开 Chrome， 点击右上角的 <span class="fa fa-globe" aria-hidden="true"></span> 图标，再点击 <code>选项</code>。<img src="/blog/2017/04/09/chrome-SwitchyOmega/Shadowsocks-icon.png" class="" title="Shadowsocks 图标"></li>
-<li>点击左侧的 <code>新建情景模式</code>，输入情景模式名称 <code>Shadowsocks</code>【自己任意设置名称】，类型选择第一个<code>代理服务器</code>。创建完成后做如下配置：<img src="/blog/2017/04/09/chrome-SwitchyOmega/new.png" class="" title="新建情景模式">
-你也可以自己设置不代理的地址列表。如上图。</li>
-<li>保存后你就可以通过这个情景模式科学上网了~</li>
-</ol>
-<h2 id="配置自动切换模式"><a href="#配置自动切换模式" class="headerlink" title="配置自动切换模式"></a>配置自动切换模式</h2><p>配置好 Shadowsocks 情景模式后虽然可以使用 Chrome 浏览器科学上网了，但是这样的话无论你访问什么网站都会走代理，有时候访问国内的一些网站反而会很慢，这时候自动切换模式就解决了这个问题。下面介绍一下如何配置自动切换模式。</p>
-<ol>
-<li>点击左侧的 <code>自动切换</code>，或者自己新建情景模式，类型选择第二个 <code>自动切换模式</code>。然后做如下配置：<img src="/blog/2017/04/09/chrome-SwitchyOmega/auto.png" class="" title="自动切换模式"></li>
-</ol>
-<ul>
-<li><code>切换规则</code> 是在访问 <code>条件设置</code> 的域名时候使用后面设置的 <code>情景模式</code>。比如图中我设置 <code>*.google.com</code> 和 <code>*.github.com</code> 使用 <code>Shadowsocks</code> 情景模式【刚刚创建的那个情景模式】。我们可以点击 <code>添加条件</code> 来添加自己的规则。</li>
-<li>将图中 <code>规则列表规则</code> 前面的框打√，再将后面的 <code>情景模式</code> 设置为 <code>Shadowsocks</code>，意思是规则列表中的内容，我们使用 <code>Shadowsocks</code> 情景模式。然后 <code>规则列表设置</code> 中：<ul>
-<li>规则列表格式： AutoProxy；</li>
-<li>规则列表网址： <a href="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt">https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</a></li>
-</ul>
+<h1 id="创建-XML-文档"><a href="#创建-XML-文档" class="headerlink" title="创建 XML 文档"></a>创建 XML 文档</h1><ol>
+<li>创建 XML Document 对象<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 创建 XML Document 对象</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> XML Document 对象</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> cylong</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 2017年4月5日 上午12:19:41</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> Document <span class="title function_">createXMLDocument</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">DocumentBuilderFactory</span> <span class="variable">factory</span> <span class="operator">=</span> DocumentBuilderFactory.newInstance();</span><br><span class="line">    <span class="type">DocumentBuilder</span> <span class="variable">builder</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="type">Document</span> <span class="variable">document</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        builder = factory.newDocumentBuilder();</span><br><span class="line">        document = builder.newDocument();</span><br><span class="line">        <span class="type">Element</span> <span class="variable">root</span> <span class="operator">=</span> document.createElement(<span class="string">&quot;college&quot;</span>);</span><br><span class="line">        document.appendChild(root);</span><br><span class="line"></span><br><span class="line">        <span class="type">Element</span> <span class="variable">student</span> <span class="operator">=</span> document.createElement(<span class="string">&quot;student&quot;</span>);</span><br><span class="line">        student.setAttribute(<span class="string">&quot;id&quot;</span>, <span class="string">&quot;0&quot;</span>);</span><br><span class="line">        <span class="type">Element</span> <span class="variable">name</span> <span class="operator">=</span> document.createElement(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">        name.appendChild(document.createTextNode(<span class="string">&quot;cylong&quot;</span>));</span><br><span class="line">        student.appendChild(name);</span><br><span class="line">        <span class="type">Element</span> <span class="variable">biography</span> <span class="operator">=</span> document.createElement(<span class="string">&quot;biography&quot;</span>);</span><br><span class="line">        biography.appendChild(document.createCDATASection(<span class="string">&quot;Hello&quot;</span>));</span><br><span class="line">        student.appendChild(biography);</span><br><span class="line">        <span class="type">Element</span> <span class="variable">age</span> <span class="operator">=</span> document.createElement(<span class="string">&quot;age&quot;</span>);</span><br><span class="line">        age.appendChild(document.createTextNode(<span class="string">&quot;24&quot;</span>));</span><br><span class="line">        student.appendChild(age);</span><br><span class="line"></span><br><span class="line">        <span class="type">Element</span> <span class="variable">student1</span> <span class="operator">=</span> document.createElement(<span class="string">&quot;student&quot;</span>);</span><br><span class="line">        student1.setAttribute(<span class="string">&quot;id&quot;</span>, <span class="string">&quot;1&quot;</span>);</span><br><span class="line">        <span class="type">Element</span> <span class="variable">name1</span> <span class="operator">=</span> document.createElement(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">        name1.appendChild(document.createTextNode(<span class="string">&quot;cylong1&quot;</span>));</span><br><span class="line">        student1.appendChild(name1);</span><br><span class="line">        <span class="type">Element</span> <span class="variable">biography1</span> <span class="operator">=</span> document.createElement(<span class="string">&quot;biography&quot;</span>);</span><br><span class="line">        biography1.appendChild(document.createCDATASection(<span class="string">&quot;World&quot;</span>));</span><br><span class="line">        student1.appendChild(biography1);</span><br><span class="line">        <span class="type">Element</span> <span class="variable">age1</span> <span class="operator">=</span> document.createElement(<span class="string">&quot;age&quot;</span>);</span><br><span class="line">        age1.appendChild(document.createTextNode(<span class="string">&quot;25&quot;</span>));</span><br><span class="line">        student1.appendChild(age1);</span><br><span class="line"></span><br><span class="line">        root.appendChild(document.createComment(<span class="string">&quot;学生0&quot;</span>));</span><br><span class="line">        root.appendChild(student);</span><br><span class="line">        root.appendChild(document.createComment(<span class="string">&quot;学生1&quot;</span>));</span><br><span class="line">        root.appendChild(student1);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ParserConfigurationException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> document;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>将创建的 XML Document 写入到文件中<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 将创建的 XML Document 写入到文件中</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> document</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> path 文件路径</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> cylong</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 2017年4月3日 上午2:39:32</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">writeXML</span><span class="params">(Document document, String path)</span> &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">	<span class="type">TransformerFactory</span> <span class="variable">tf</span> <span class="operator">=</span> TransformerFactory.newInstance();</span><br><span class="line">	<span class="type">Transformer</span> <span class="variable">transformer</span> <span class="operator">=</span> tf.newTransformer();</span><br><span class="line">	<span class="type">DOMSource</span> <span class="variable">source</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DOMSource</span>(document);</span><br><span class="line">	transformer.setOutputProperty(OutputKeys.ENCODING, <span class="string">&quot;utf8&quot;</span>);</span><br><span class="line">	transformer.setOutputProperty(OutputKeys.INDENT, <span class="string">&quot;yes&quot;</span>);</span><br><span class="line">	<span class="type">PrintWriter</span> <span class="variable">pw</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PrintWriter</span>(<span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(path));</span><br><span class="line">	<span class="type">StreamResult</span> <span class="variable">result</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StreamResult</span>(pw);</span><br><span class="line">    transformer.transform(source, result);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (TransformerConfigurationException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">  &#125; <span class="keyword">catch</span> (IllegalArgumentException e) &#123;</span><br><span class="line"> 	e.printStackTrace();</span><br><span class="line">  &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">  &#125; <span class="keyword">catch</span> (TransformerException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
-<li>这样设置完成 <code>规则列表规则</code> 后就不需要在切换规则中一个一个添加条件了。</li>
-<li><code>切换规则</code> 最后一行的 <code>默认情景模式</code> 代表不在规则列表中网址我们使用 <code>直接连接</code> 情景模式，也就是说不走代理。</li>
-</ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><blockquote>
-<p><a href="https://github.com/FelisCatus/SwitchyOmega" title="FelisCatus/SwitchyOmega">Github-SwitchyOmega</a><br><a href="https://github.com/gfwlist/gfwlist" title="gfwlist/gfwlist">Github-gfwlist</a></p>
+</ol>
+<h1 id="解析-XML-文档"><a href="#解析-XML-文档" class="headerlink" title="解析 XML 文档"></a>解析 XML 文档</h1><ol>
+<li><p>解析 XML 文件</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 解析 XML 文档</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> path XML 文档路径</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> cylong</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 2017年4月3日 上午2:48:53</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">parserXML</span><span class="params">(String path)</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="type">DocumentBuilderFactory</span> <span class="variable">dbf</span> <span class="operator">=</span> DocumentBuilderFactory.newInstance();</span><br><span class="line">        <span class="type">DocumentBuilder</span> <span class="variable">db</span> <span class="operator">=</span> dbf.newDocumentBuilder();</span><br><span class="line">        <span class="type">Document</span> <span class="variable">document</span> <span class="operator">=</span> db.parse(path);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// optional, but recommended</span></span><br><span class="line">        <span class="comment">// read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work</span></span><br><span class="line">        document.getDocumentElement().normalize();</span><br><span class="line"></span><br><span class="line">        <span class="type">Element</span> <span class="variable">root</span> <span class="operator">=</span> document.getDocumentElement();</span><br><span class="line">        System.out.println(<span class="string">&quot;Root element : &quot;</span> + root.getNodeName());</span><br><span class="line">        <span class="type">NodeList</span> <span class="variable">students</span> <span class="operator">=</span> root.getElementsByTagName(<span class="string">&quot;student&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; students.getLength(); i++) &#123;</span><br><span class="line">            <span class="type">Node</span> <span class="variable">student</span> <span class="operator">=</span> students.item(i);</span><br><span class="line">            System.out.println(student.getNodeName());</span><br><span class="line"></span><br><span class="line">            <span class="type">NodeList</span> <span class="variable">info</span> <span class="operator">=</span> student.getChildNodes();</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; info.getLength(); j++) &#123;</span><br><span class="line">                <span class="type">Node</span> <span class="variable">meta</span> <span class="operator">=</span> info.item(j);</span><br><span class="line">                <span class="keyword">if</span> (meta.getNodeType() == Node.ELEMENT_NODE) &#123;</span><br><span class="line">                    System.out.println(meta.getNodeName() + <span class="string">&quot;:&quot;</span> + meta.getTextContent());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ParserConfigurationException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (SAXException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意<br>可以 <a href="http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work">点此链接</a> 了解其用处。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// optional, but recommended</span></span><br><span class="line"><span class="comment">// read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work</span></span><br><span class="line">document.getDocumentElement().normalize();</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<h1 id="参考-amp-感谢"><a href="#参考-amp-感谢" class="headerlink" title="参考&amp;感谢"></a>参考&amp;感谢</h1><blockquote>
+<p><a href="https://github.com/cylong1016/CodeJava/blob/master/src/cylong/xml/ParserXML.java">Github 完整的代码案例</a><br><a href="https://www.mkyong.com/java/how-to-read-xml-file-in-java-dom-parser/">How to read XML file in Java – (DOM Parser)</a></p>
 </blockquote>
 <hr>
 <blockquote>
-<p>文章标题：<a href='https://www.cylong.com/blog/2017/04/09/chrome-SwitchyOmega/' title='Chrome 配置 SwitchyOmega' >Chrome 配置 SwitchyOmega</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2017/04/09/chrome-SwitchyOmega/' title='Chrome 配置 SwitchyOmega' >https://www.cylong.com/blog/2017/04/09/chrome-SwitchyOmega/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
+<p>文章标题：<a href='https://www.cylong.com/blog/2017/04/04/java-dom-xml/' title='Java 通过 DOM 方式解析、创建 XML' >Java 通过 DOM 方式解析、创建 XML</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2017/04/04/java-dom-xml/' title='Java 通过 DOM 方式解析、创建 XML' >https://www.cylong.com/blog/2017/04/04/java-dom-xml/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
 </blockquote>
 ]]></content>
       <categories>
-        <category>Shadowsocks</category>
+        <category>Java</category>
       </categories>
       <tags>
-        <tag>Shadowsocks</tag>
-        <tag>翻墙</tag>
-        <tag>SwitchyOmega</tag>
+        <tag>Java</tag>
+        <tag>DOM</tag>
+        <tag>XML</tag>
       </tags>
   </entry>
   <entry>
@@ -1289,6 +1262,56 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>Hexo</tag>
         <tag>Java</tag>
         <tag>Disqus</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Chrome 配置 SwitchyOmega</title>
+    <url>/blog/2017/04/09/chrome-SwitchyOmega/</url>
+    <content><![CDATA[<hr>
+<p>此文章是以 Shadowsocks 代理为例，若想使用 Shadowsocks 请先安装对应系统的客户端并启动。详情请参考：</p>
+<blockquote>
+<p><a href="/blog/2016/05/26/shadowsocks/" title="站在 Shadowsocks 的肩膀上发现精彩的世界">站在 Shadowsocks 的肩膀上发现精彩的世界</a></p>
+</blockquote>
+<h1 id="Chrome-浏览器"><a href="#Chrome-浏览器" class="headerlink" title="Chrome 浏览器"></a>Chrome 浏览器</h1><p>无论是用户体验、强大的功能还是丰富的扩展程序都完爆国内的各种浏览器好不好(╯‵□′)╯︵┻━┻。强烈推荐啊！目前已经可以在不翻墙的情况下去 <a href="http://www.google.cn/chrome/browser/desktop/index.html" title="Chrome（桌面版）">下载 Chrome（桌面版）</a>了，账号数据同步方面也不需要翻墙了。【鼓掌撒花★,°:.☆(￣▽￣)/$:.°★ 。】</p>
+<h1 id="SwitchyOmega"><a href="#SwitchyOmega" class="headerlink" title="SwitchyOmega"></a>SwitchyOmega</h1><p>Google Chrome 浏览器上的一个代理扩展程序，可以轻松快捷地管理和切换多个代理设置。比如我们接下来要介绍的 <code>自动切换模式</code>。</p>
+<span id="more"></span>
+
+<h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><p>点击 <a href="https://github.com/FelisCatus/SwitchyOmega/releases" title="FelisCatus/SwitchyOmega">Github-SwitchyOmega</a>，下载页面有详细的安装教程，仔细看一下就好。</p>
+<h2 id="配置-Shadowsocks-情景模式"><a href="#配置-Shadowsocks-情景模式" class="headerlink" title="配置 Shadowsocks 情景模式"></a>配置 Shadowsocks 情景模式</h2><ol>
+<li>打开 Chrome， 点击右上角的 <span class="fa fa-globe" aria-hidden="true"></span> 图标，再点击 <code>选项</code>。<img src="/blog/2017/04/09/chrome-SwitchyOmega/Shadowsocks-icon.png" class="" title="Shadowsocks 图标"></li>
+<li>点击左侧的 <code>新建情景模式</code>，输入情景模式名称 <code>Shadowsocks</code>【自己任意设置名称】，类型选择第一个<code>代理服务器</code>。创建完成后做如下配置：<img src="/blog/2017/04/09/chrome-SwitchyOmega/new.png" class="" title="新建情景模式">
+你也可以自己设置不代理的地址列表。如上图。</li>
+<li>保存后你就可以通过这个情景模式科学上网了~</li>
+</ol>
+<h2 id="配置自动切换模式"><a href="#配置自动切换模式" class="headerlink" title="配置自动切换模式"></a>配置自动切换模式</h2><p>配置好 Shadowsocks 情景模式后虽然可以使用 Chrome 浏览器科学上网了，但是这样的话无论你访问什么网站都会走代理，有时候访问国内的一些网站反而会很慢，这时候自动切换模式就解决了这个问题。下面介绍一下如何配置自动切换模式。</p>
+<ol>
+<li>点击左侧的 <code>自动切换</code>，或者自己新建情景模式，类型选择第二个 <code>自动切换模式</code>。然后做如下配置：<img src="/blog/2017/04/09/chrome-SwitchyOmega/auto.png" class="" title="自动切换模式"></li>
+</ol>
+<ul>
+<li><code>切换规则</code> 是在访问 <code>条件设置</code> 的域名时候使用后面设置的 <code>情景模式</code>。比如图中我设置 <code>*.google.com</code> 和 <code>*.github.com</code> 使用 <code>Shadowsocks</code> 情景模式【刚刚创建的那个情景模式】。我们可以点击 <code>添加条件</code> 来添加自己的规则。</li>
+<li>将图中 <code>规则列表规则</code> 前面的框打√，再将后面的 <code>情景模式</code> 设置为 <code>Shadowsocks</code>，意思是规则列表中的内容，我们使用 <code>Shadowsocks</code> 情景模式。然后 <code>规则列表设置</code> 中：<ul>
+<li>规则列表格式： AutoProxy；</li>
+<li>规则列表网址： <a href="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt">https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</a></li>
+</ul>
+</li>
+<li>这样设置完成 <code>规则列表规则</code> 后就不需要在切换规则中一个一个添加条件了。</li>
+<li><code>切换规则</code> 最后一行的 <code>默认情景模式</code> 代表不在规则列表中网址我们使用 <code>直接连接</code> 情景模式，也就是说不走代理。</li>
+</ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><blockquote>
+<p><a href="https://github.com/FelisCatus/SwitchyOmega" title="FelisCatus/SwitchyOmega">Github-SwitchyOmega</a><br><a href="https://github.com/gfwlist/gfwlist" title="gfwlist/gfwlist">Github-gfwlist</a></p>
+</blockquote>
+<hr>
+<blockquote>
+<p>文章标题：<a href='https://www.cylong.com/blog/2017/04/09/chrome-SwitchyOmega/' title='Chrome 配置 SwitchyOmega' >Chrome 配置 SwitchyOmega</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2017/04/09/chrome-SwitchyOmega/' title='Chrome 配置 SwitchyOmega' >https://www.cylong.com/blog/2017/04/09/chrome-SwitchyOmega/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Shadowsocks</category>
+      </categories>
+      <tags>
+        <tag>Shadowsocks</tag>
+        <tag>翻墙</tag>
+        <tag>SwitchyOmega</tag>
       </tags>
   </entry>
   <entry>
@@ -1348,6 +1371,45 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </categories>
       <tags>
         <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C语言头文件使用总结</title>
+    <url>/blog/2018/06/25/c-header/</url>
+    <content><![CDATA[<hr>
+<p>在平时工作中看到前人写的一些C头文件，很有感触。自己在写的时候也遇到了很多问题，比如重复引用导致宏或者常量重复定义，不知道该使用双引号还是使用尖括号引用等问题，决定先总结一下。做个笔记，随时复习。o(￣▽￣)ブ</p>
+<h1 id="C语言头文件"><a href="#C语言头文件" class="headerlink" title="C语言头文件"></a>C语言头文件</h1><p>C语言头文件一般包含了函数声明，宏定义，常量等代码。我们在使用#include引用头文件。可以被多个c文件引用，避免了重复代码，减少了错误。让代码更加规范。<br>A simple practice in C 或 C++ 程序中，建议把所有的常量、宏、系统全局变量和函数原型写在头文件中，在需要的时候随时引用这些头文件。</p>
+<span id="more"></span>
+
+<h1 id="头文件引用"><a href="#头文件引用" class="headerlink" title="头文件引用"></a>头文件引用</h1><p>系统已经存在了很多头文件，当然，我们也可以自己编写。c文件引用头文件相当于直接复制到文件中，但是这样多个文件要使用这段代码的时候，就产生了很多重复代码，也不方便管理。引用存在两种引用形式。一种<code>#include &quot;cylong.h&quot;</code>，一种是 <code>#include &lt;cylong.h&gt;</code>。那这两种方式有什么区别呢？我们平时使用的时候又怎么用呢？</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cylong.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>这种形式是引用系统文件，在系统目录下搜索此头文件。比如<code>#include &lt;stdio.h&gt;</code>等</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;cylong.h&quot;</span></span></span><br></pre></td></tr></table></figure>
+<p>这种形式是引用用户文件，优先在当前目录下搜索此头文件，然后再去系统目录下搜索此头文件。</p>
+<p>所以无论是我们自己写的头文件还是引用系统头文件，使用<code>#include &quot;cylong.h&quot;</code>都不会出错。但是这样并不标准，标准规定，<b>包含标准头文件或系统头文件时应使用尖括号，包含自定义头文件时可使用双引号。</b></p>
+<h1 id="避免重复引用"><a href="#避免重复引用" class="headerlink" title="避免重复引用"></a>避免重复引用</h1><p>经常在写代码的时候，不经意间，我们会引用同一个头文件两次，那么我们会遇到很多重复定义的错误，为了避免这样的事情发生，我们需要将头文件里的内容放到编译宏中</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> CYONG_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CYLONG_H</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun</span> <span class="params">()</span></span>;</span><br><span class="line"><span class="comment">// some codes</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> CYLONG_H</span></span><br></pre></td></tr></table></figure>
+
+<p>当我们第一次引用的时候，未定义<code>CYLONG_H</code>宏，所以会继续编译下面的代码，当第二次引用的时候，<code>#ifndef CYLONG_H</code>为假，就不会编译下面的代码了，自然不会存在重复定义等问题。</p>
+<h1 id="公共头文件"><a href="#公共头文件" class="headerlink" title="公共头文件"></a>公共头文件</h1><p>在程序代码中，经常很多c文件会引用一些相同的头文件，这个时候，我们就可以定义一个包含这些相同头文件的头文件<code>common.h</code>。例如：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> COMMON_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> COMMON_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;cylong.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;lsyu.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> COMMON_H</span></span><br></pre></td></tr></table></figure>
+
+<p>然后我们就可以在每个需要的c文件中引用这个<code>common.h</code>头文件。但是需要注意的是，这个文件里除了头文件引用以外，建议不要再写其他的代码。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><blockquote>
+<p><a href="http://www.runoob.com/cprogramming/c-header-files.html" title="C 头文件 | 菜鸟教程">C 头文件 | 菜鸟教程</a><br><a href="http://c.biancheng.net/cpp/biancheng/view/66.html" title="C++ #include—尖括号和双引号的区别 | C语言中文网">C++ #include—尖括号和双引号的区别 | C语言中文网</a></p>
+</blockquote>
+<hr>
+<blockquote>
+<p>文章标题：<a href='https://www.cylong.com/blog/2018/06/25/c-header/' title='C语言头文件使用总结' >C语言头文件使用总结</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2018/06/25/c-header/' title='C语言头文件使用总结' >https://www.cylong.com/blog/2018/06/25/c-header/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>C/C++</category>
+      </categories>
+      <tags>
+        <tag>C/C++</tag>
+        <tag>头文件</tag>
       </tags>
   </entry>
   <entry>
@@ -1445,45 +1507,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>Java</tag>
         <tag>Lambda</tag>
         <tag>流API</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C语言头文件使用总结</title>
-    <url>/blog/2018/06/25/c-header/</url>
-    <content><![CDATA[<hr>
-<p>在平时工作中看到前人写的一些C头文件，很有感触。自己在写的时候也遇到了很多问题，比如重复引用导致宏或者常量重复定义，不知道该使用双引号还是使用尖括号引用等问题，决定先总结一下。做个笔记，随时复习。o(￣▽￣)ブ</p>
-<h1 id="C语言头文件"><a href="#C语言头文件" class="headerlink" title="C语言头文件"></a>C语言头文件</h1><p>C语言头文件一般包含了函数声明，宏定义，常量等代码。我们在使用#include引用头文件。可以被多个c文件引用，避免了重复代码，减少了错误。让代码更加规范。<br>A simple practice in C 或 C++ 程序中，建议把所有的常量、宏、系统全局变量和函数原型写在头文件中，在需要的时候随时引用这些头文件。</p>
-<span id="more"></span>
-
-<h1 id="头文件引用"><a href="#头文件引用" class="headerlink" title="头文件引用"></a>头文件引用</h1><p>系统已经存在了很多头文件，当然，我们也可以自己编写。c文件引用头文件相当于直接复制到文件中，但是这样多个文件要使用这段代码的时候，就产生了很多重复代码，也不方便管理。引用存在两种引用形式。一种<code>#include &quot;cylong.h&quot;</code>，一种是 <code>#include &lt;cylong.h&gt;</code>。那这两种方式有什么区别呢？我们平时使用的时候又怎么用呢？</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cylong.h&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>这种形式是引用系统文件，在系统目录下搜索此头文件。比如<code>#include &lt;stdio.h&gt;</code>等</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;cylong.h&quot;</span></span></span><br></pre></td></tr></table></figure>
-<p>这种形式是引用用户文件，优先在当前目录下搜索此头文件，然后再去系统目录下搜索此头文件。</p>
-<p>所以无论是我们自己写的头文件还是引用系统头文件，使用<code>#include &quot;cylong.h&quot;</code>都不会出错。但是这样并不标准，标准规定，<b>包含标准头文件或系统头文件时应使用尖括号，包含自定义头文件时可使用双引号。</b></p>
-<h1 id="避免重复引用"><a href="#避免重复引用" class="headerlink" title="避免重复引用"></a>避免重复引用</h1><p>经常在写代码的时候，不经意间，我们会引用同一个头文件两次，那么我们会遇到很多重复定义的错误，为了避免这样的事情发生，我们需要将头文件里的内容放到编译宏中</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> CYONG_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CYLONG_H</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun</span> <span class="params">()</span></span>;</span><br><span class="line"><span class="comment">// some codes</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> CYLONG_H</span></span><br></pre></td></tr></table></figure>
-
-<p>当我们第一次引用的时候，未定义<code>CYLONG_H</code>宏，所以会继续编译下面的代码，当第二次引用的时候，<code>#ifndef CYLONG_H</code>为假，就不会编译下面的代码了，自然不会存在重复定义等问题。</p>
-<h1 id="公共头文件"><a href="#公共头文件" class="headerlink" title="公共头文件"></a>公共头文件</h1><p>在程序代码中，经常很多c文件会引用一些相同的头文件，这个时候，我们就可以定义一个包含这些相同头文件的头文件<code>common.h</code>。例如：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> COMMON_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> COMMON_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;cylong.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;lsyu.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> COMMON_H</span></span><br></pre></td></tr></table></figure>
-
-<p>然后我们就可以在每个需要的c文件中引用这个<code>common.h</code>头文件。但是需要注意的是，这个文件里除了头文件引用以外，建议不要再写其他的代码。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><blockquote>
-<p><a href="http://www.runoob.com/cprogramming/c-header-files.html" title="C 头文件 | 菜鸟教程">C 头文件 | 菜鸟教程</a><br><a href="http://c.biancheng.net/cpp/biancheng/view/66.html" title="C++ #include—尖括号和双引号的区别 | C语言中文网">C++ #include—尖括号和双引号的区别 | C语言中文网</a></p>
-</blockquote>
-<hr>
-<blockquote>
-<p>文章标题：<a href='https://www.cylong.com/blog/2018/06/25/c-header/' title='C语言头文件使用总结' >C语言头文件使用总结</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2018/06/25/c-header/' title='C语言头文件使用总结' >https://www.cylong.com/blog/2018/06/25/c-header/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>C/C++</category>
-      </categories>
-      <tags>
-        <tag>C/C++</tag>
-        <tag>头文件</tag>
       </tags>
   </entry>
   <entry>
@@ -2922,42 +2945,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
-    <title>路径总和 II</title>
-    <url>/blog/2020/07/07/path-sum-ii/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个二叉树和一个目标和，找到所有从根节点到叶子节点路径总和等于给定目标和的路径。<br><strong>说明: 叶子节点是指没有子节点的节点。</strong></p>
-<p><strong>示例:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定如下二叉树，以及目标和 sum = 22，</span><br><span class="line">      5</span><br><span class="line">     / \</span><br><span class="line">    4   8</span><br><span class="line">   /   / \</span><br><span class="line">  11  13  4</span><br><span class="line"> /  \    / \</span><br><span class="line">7    2  5   1</span><br><span class="line">返回:</span><br><span class="line">[</span><br><span class="line">   [5,4,11,2],</span><br><span class="line">   [5,8,4,5]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>做此题之前，可以先做一道简单版的<a href="https://leetcode-cn.com/problems/path-sum/" title="路径总和 | 力扣（LeetCode）">路径总和</a>，简单版的只要遍历全部节点，遇到满足条件的路径返回 true 即可，而此题不仅要遍历全部节点，还要记录满足条件的路径。此题是典型的回溯算法，思路就是，先声明一个<code>LinkedList&lt;Integer&gt; path</code>保存路径，<code>List&lt;List&lt;Integer&gt;&gt; ans</code>保存所有路径，我们每遍历到一个节点，就将这个节点的值保存在 path 中，当判断到子节点，如果此节点的值满足 sum 等于 val，则将 path 加入到 ans 中，否则继续进行递归遍历左右子树。注意入参 root 可能为空，另外递归的结束条件也包含节点为空。当递归回溯的时候，我们就删除最后加入到 path 中的节点。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;List&lt;Integer&gt;&gt; ans = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">LinkedList&lt;Integer&gt; path = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">pathSum</span><span class="params">(TreeNode root, <span class="type">int</span> sum)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    path.add(root.val);</span><br><span class="line">    <span class="keyword">if</span> (root.left == <span class="literal">null</span> &amp;&amp; root.right == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (sum == root.val) &#123;</span><br><span class="line">            <span class="comment">// 此处new LinkedList&lt;&gt;(path)新建一个链表</span></span><br><span class="line">            <span class="comment">// 因为如果直接add(path)，ans中的路径和path是相同的引用，后面操作path后，ans中的路径也将一起被修改。</span></span><br><span class="line">            ans.add(<span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;(path));</span><br><span class="line">            <span class="comment">// 此处无需return，因为后续pathSum递归的时候root.left和root.right都为空，满足递归结束条件。</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    pathSum(root.left, sum - root.val);</span><br><span class="line">    pathSum(root.right, sum - root.val);</span><br><span class="line">    <span class="comment">// 递归回溯的时候删除最后一个节点，此处使用LinkedList提升效率</span></span><br><span class="line">    path.removeLast();</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TreeNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    TreeNode left;</span><br><span class="line">    TreeNode right;</span><br><span class="line"></span><br><span class="line">    TreeNode(<span class="type">int</span> x) &#123;</span><br><span class="line">        val = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/path-sum-ii/" title="路径总和 II | 力扣（LeetCode）">路径总和 II | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/path-sum-ii/solution/" title="路径总和 II | 题解（LeetCode）">路径总和 II | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-<blockquote>
-<p>文章标题：<a href='https://www.cylong.com/blog/2020/07/07/path-sum-ii/' title='路径总和 II' >路径总和 II</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2020/07/07/path-sum-ii/' title='路径总和 II' >https://www.cylong.com/blog/2020/07/07/path-sum-ii/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>递归</tag>
-        <tag>回溯算法</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
-        <tag>深度优先搜索</tag>
-        <tag>中序遍历</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>路经总和</title>
     <url>/blog/2020/07/06/path-sum/</url>
     <content><![CDATA[<hr>
@@ -2990,6 +2977,42 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>LeetCode</tag>
         <tag>学习笔记</tag>
         <tag>递归</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
+        <tag>深度优先搜索</tag>
+        <tag>中序遍历</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>路径总和 II</title>
+    <url>/blog/2020/07/07/path-sum-ii/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个二叉树和一个目标和，找到所有从根节点到叶子节点路径总和等于给定目标和的路径。<br><strong>说明: 叶子节点是指没有子节点的节点。</strong></p>
+<p><strong>示例:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定如下二叉树，以及目标和 sum = 22，</span><br><span class="line">      5</span><br><span class="line">     / \</span><br><span class="line">    4   8</span><br><span class="line">   /   / \</span><br><span class="line">  11  13  4</span><br><span class="line"> /  \    / \</span><br><span class="line">7    2  5   1</span><br><span class="line">返回:</span><br><span class="line">[</span><br><span class="line">   [5,4,11,2],</span><br><span class="line">   [5,8,4,5]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>做此题之前，可以先做一道简单版的<a href="https://leetcode-cn.com/problems/path-sum/" title="路径总和 | 力扣（LeetCode）">路径总和</a>，简单版的只要遍历全部节点，遇到满足条件的路径返回 true 即可，而此题不仅要遍历全部节点，还要记录满足条件的路径。此题是典型的回溯算法，思路就是，先声明一个<code>LinkedList&lt;Integer&gt; path</code>保存路径，<code>List&lt;List&lt;Integer&gt;&gt; ans</code>保存所有路径，我们每遍历到一个节点，就将这个节点的值保存在 path 中，当判断到子节点，如果此节点的值满足 sum 等于 val，则将 path 加入到 ans 中，否则继续进行递归遍历左右子树。注意入参 root 可能为空，另外递归的结束条件也包含节点为空。当递归回溯的时候，我们就删除最后加入到 path 中的节点。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;List&lt;Integer&gt;&gt; ans = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">LinkedList&lt;Integer&gt; path = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">pathSum</span><span class="params">(TreeNode root, <span class="type">int</span> sum)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    path.add(root.val);</span><br><span class="line">    <span class="keyword">if</span> (root.left == <span class="literal">null</span> &amp;&amp; root.right == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (sum == root.val) &#123;</span><br><span class="line">            <span class="comment">// 此处new LinkedList&lt;&gt;(path)新建一个链表</span></span><br><span class="line">            <span class="comment">// 因为如果直接add(path)，ans中的路径和path是相同的引用，后面操作path后，ans中的路径也将一起被修改。</span></span><br><span class="line">            ans.add(<span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;(path));</span><br><span class="line">            <span class="comment">// 此处无需return，因为后续pathSum递归的时候root.left和root.right都为空，满足递归结束条件。</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    pathSum(root.left, sum - root.val);</span><br><span class="line">    pathSum(root.right, sum - root.val);</span><br><span class="line">    <span class="comment">// 递归回溯的时候删除最后一个节点，此处使用LinkedList提升效率</span></span><br><span class="line">    path.removeLast();</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TreeNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    TreeNode left;</span><br><span class="line">    TreeNode right;</span><br><span class="line"></span><br><span class="line">    TreeNode(<span class="type">int</span> x) &#123;</span><br><span class="line">        val = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/path-sum-ii/" title="路径总和 II | 力扣（LeetCode）">路径总和 II | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/path-sum-ii/solution/" title="路径总和 II | 题解（LeetCode）">路径总和 II | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+<blockquote>
+<p>文章标题：<a href='https://www.cylong.com/blog/2020/07/07/path-sum-ii/' title='路径总和 II' >路径总和 II</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2020/07/07/path-sum-ii/' title='路径总和 II' >https://www.cylong.com/blog/2020/07/07/path-sum-ii/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>递归</tag>
+        <tag>回溯算法</tag>
         <tag>树</tag>
         <tag>二叉树</tag>
         <tag>深度优先搜索</tag>
