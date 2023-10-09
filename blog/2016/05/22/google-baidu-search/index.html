@@ -351,7 +351,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">    path: sitemap.xml</span><br><span class="line">baidusitemap:</span><br><span class="line">    path: baidusitemap.xml</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>配置成功后，在你执行 <code>hexo -g</code> 的时候，在 public 文件夹【也就是你的站点根目录】就会出现 sitemap.xml 和 baidusitemap.xml。然后在 robots.txt 中添加如下代码：</p>
-<figure class="highlight plaintext"><figcaption><span>robots.txt</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Sitemap: http://www.cylong.com/sitemap.xml</span><br><span class="line">Sitemap: http://www.cylong.com/baidusitemap.xml</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><figcaption><span>robots.txt</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Sitemap: https://www.cylong.com/sitemap.xml</span><br><span class="line">Sitemap: https://www.cylong.com/baidusitemap.xml</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>第三步中搜索引擎在抓取到 robots.txt 的时候会自动抓取站点地图。你还可以手动提交给 Google 和百度，都是带有提示的傻瓜式操作，相信大家都能解决吧(●’◡’●)</p>
 </li>
