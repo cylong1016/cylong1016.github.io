@@ -36,8 +36,8 @@
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Git">
 <meta property="article:tag" content="Node.js">
-<meta property="article:tag" content="Github">
 <meta property="article:tag" content="Next">
+<meta property="article:tag" content="GitHub">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.cylong.com/blog/2016/04/19/hexo-git/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.png">
 
@@ -313,9 +313,9 @@
 
       
         <hr>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>个人博客日益流行，大家都开始搭建自己的博客，记录成长中学习中的点点滴滴，最近觉得自己也需要有一个平台整理自己的所学所想，于是用了将近3天的时间 <del>(实际上一天就能搞定的！)</del> 使用 Hexo + Git 搭建了自己的个人博客，提高自己的学习动力，没事的时候可以拿出来温习下，提高下本人的渣渣水平。目前仍有很多功能没有添加，留着日后慢慢完善。准备将自己的第一篇博客献给 Hexo，表示对 Hexo 的感谢。下面详细介绍下搭建流程，有任何不懂的问题欢迎 <a href="/about/#%E8%81%94%E7%B3%BB%E6%88%91" title="联系我">联系我</a> 或者在下面评论。另外个人能力有限，接受任何建议或者吐槽！共同进步(●’◡’●)。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>个人博客日益流行，大家都开始搭建自己的博客，记录成长中学习中的点点滴滴，最近觉得自己也需要有一个平台整理自己的所学所想，于是用了将近3天的时间 <del>(实际上一天就能搞定的！)</del> 使用 Hexo + Git 搭建了自己的个人博客，提高自己的学习动力，没事的时候可以拿出来温习下，提高下本人的渣渣水平。目前仍有很多功能没有添加，留着日后慢慢完善。准备将自己的第一篇博客献给 Hexo，表示对 Hexo 的感谢。下面详细介绍下搭建流程，有任何不懂的问题欢迎 <a href="/about/#%E8%81%94%E7%B3%BB%E6%88%91" title="联系我">联系我</a> 或者在下面评论。另外个人能力有限，接受任何建议或者吐槽！共同进步 (●’◡’●)。</p>
 <span id="more"></span>
-<h1 id="Hexo-简介"><a href="#Hexo-简介" class="headerlink" title="Hexo 简介"></a>Hexo 简介</h1><p>大家所熟悉的博客框架莫过于 Wordpress，还有 Jekyll 等，博主在查阅了大量资料后选择了<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" title="Hexo">Hexo</a>，Hexo 是一个快速、简洁且高效的博客框架。可以方便快捷的生成博客网页。Hexo由台湾大学生 <a target="_blank" rel="noopener" href="https://twitter.com/tommy351" title="SkyArrow (@tommy351) | Twitter">tommy351</a> 开发，是一个基于Node.js的静态博客程序。支持多种主题，博主选择的是 <a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/" title="Next">NexT</a> 主题。使用 Hexo + Git 搭建博客不需要购买域名和服务器，由 Github 提供域名和网站页面空间。</p>
+<h1 id="Hexo-简介"><a href="#Hexo-简介" class="headerlink" title="Hexo 简介"></a>Hexo 简介</h1><p>大家所熟悉的博客框架莫过于 Wordpress，还有 Jekyll 等，博主在查阅了大量资料后选择了 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" title="Hexo">Hexo</a>，Hexo 是一个快速、简洁且高效的博客框架。可以方便快捷的生成博客网页。Hexo 由台湾大学生 <a target="_blank" rel="noopener" href="https://twitter.com/tommy351" title="SkyArrow (@tommy351) | Twitter">tommy351</a> 开发，是一个基于 Node.js 的静态博客程序。支持多种主题，博主选择的是 <a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/" title="Next">NexT</a> 主题。使用 Hexo + Git 搭建博客不需要购买域名和服务器，由 GitHub 提供域名和网站页面空间。</p>
 <h1 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h1><p><b>注意:</b> 本文针对 <em>Windows</em> 平台和 <em>Hexo 3.x</em> 【其实后来我也在 Ubuntu 上试了一下，完全一样的】</p>
 <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>在安装 Hexo 之前，请确认你已经安装了以下程序：</p>
 <ul>
@@ -348,7 +348,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server -p 5000 <span class="comment"># 5000为你想要修改的端口号</span></span><br></pre></td></tr></table></figure>
 
 <p>在服务器启动期间，Hexo 会监视文件变动并自动更新，您无须重启服务器。更多博客编辑技巧请参照 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/" title="Hexo 中文文档">Hexo 中文文档</a></p>
-<h1 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h1><h2 id="创建代码仓库"><a href="#创建代码仓库" class="headerlink" title="创建代码仓库"></a>创建代码仓库</h2><p>首先你需要一个 Github: <a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a> 账号，然后创建一个仓库，仓库名是 <code>yourname.github.io</code>， 比如我的是 <code>cylong1016.github.io</code>。</p>
+<h1 id="部署到-GitHub"><a href="#部署到-GitHub" class="headerlink" title="部署到 GitHub"></a>部署到 GitHub</h1><h2 id="创建代码仓库"><a href="#创建代码仓库" class="headerlink" title="创建代码仓库"></a>创建代码仓库</h2><p>首先你需要一个 <a target="_blank" rel="noopener" href="https://github.com/" title="GitHub">GitHub</a> 账号，然后创建一个仓库，仓库名是 <code>yourname.github.io</code>， 比如我的是 <code>cylong1016.github.io</code>。</p>
 <h2 id="开启-gh-pages-功能"><a href="#开启-gh-pages-功能" class="headerlink" title="开启 gh-pages 功能"></a>开启 gh-pages 功能</h2><p>创建完成后点击界面右侧的 <code>Settings</code>，向下拖动，直到看见 <code>GitHub Pages</code> ，点击 <code>Automatic page generator</code>，Github 将会自动替你创建出一个 gh-pages 的页面。<br>如果你的配置没有问题，那么大约15分钟之后，<a target="_blank" rel="noopener" href="http://cylong1016.github.io/">http://cylong1016.github.io</a> 这个网址就可以正常访问了~<br>之后打开本地博客目录下的 <code>_config.yml</code> 文件，最下面找到 <code>Deployment</code> ， 做如下修改：</p>
 <pre><code>deploy:
   type: git
@@ -357,10 +357,10 @@
   branch: master
 </code></pre>
 <p>接着在 Git Bash 中依次输入：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save    <span class="comment"># 安装使用 git 方式进行部署所需要的插件</span></span><br><span class="line">hexo d                <span class="comment"># 部署到 Github 上，按照提示输入自己 Github 的用户名和密码。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save    <span class="comment"># 安装使用 git 方式进行部署所需要的插件</span></span><br><span class="line">hexo d                <span class="comment"># 部署到 GitHub 上，按照提示输入自己 GitHub 的用户名和密码。</span></span><br></pre></td></tr></table></figure>
 
 <p>部署会强制覆盖掉你之前生成的页面，在博客的目录下会产生 <code>.deploy_git</code>文件夹，不要删除，否则你的部署记录就会不见。之后就可以通过 <a target="_blank" rel="noopener" href="http://cylong1016.github.io/">http://cylong1016.github.io</a> (cylong1016 替换成你的用户名)访问你的网站啦。在之后的部署时，建议输入以下代码:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  <span class="comment"># 清除之前 public 文件夹的内容</span></span><br><span class="line">hexo g      <span class="comment"># 生成静态的 public 文件夹，部署时候也是直接拷贝此文件夹里的文件。</span></span><br><span class="line">hexo d      <span class="comment"># 部署到 Github 上，按照提示输入自己 Github 的用户名和密码。</span></span><br><span class="line"><span class="comment"># hexo g 和 hexo d 这两条命令可以合并成 hexo d --g 或者 hexo g --d</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  <span class="comment"># 清除之前 public 文件夹的内容</span></span><br><span class="line">hexo g      <span class="comment"># 生成静态的 public 文件夹，部署时候也是直接拷贝此文件夹里的文件。</span></span><br><span class="line">hexo d      <span class="comment"># 部署到 GitHub 上，按照提示输入自己 GitHub 的用户名和密码。</span></span><br><span class="line"><span class="comment"># hexo g 和 hexo d 这两条命令可以合并成 hexo d --g 或者 hexo g --d</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><p>你可以在 <a target="_blank" rel="noopener" href="https://hexo.io/themes/" title="Themes | Hexo">Themes - Hexo</a> 找到你喜欢的主题下载下来，放在博客目录下的 <code>themes</code> 目录下，之后修改 <code>_config.yml</code> 文件：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: next # 修改成你的主题文件夹名</span><br></pre></td></tr></table></figure>
@@ -369,12 +369,12 @@
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/" title="Next 主题中文文档">NexT 主题中文文档</a></p>
 </blockquote>
-<p>本来想单独写一个博客讲述主题方面的配置，不过这些都有官方文档，写的也都很详细，没必要做文章的搬运工(<del>明明是博主很懒！</del>)。如果有问题欢迎在下面提问(●’◡’●)</p>
-<h1 id="使用自己的域名"><a href="#使用自己的域名" class="headerlink" title="使用自己的域名"></a>使用自己的域名</h1><h2 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h2><p>首先你需要一个域名。个人比较推荐 <a target="_blank" rel="noopener" href="https://wanwang.aliyun.com/" title="域名注册_虚拟主机_云服务器_企业邮箱-万网-阿里云旗下品牌">万网</a>，我的域名是在万网买的。【好不容易抢到 cylong.com 这个域名，之前被人注册了，不过在16年2月份的时候就过期了，哈哈哈】</p>
+<p>本来想单独写一个博客讲述主题方面的配置，不过这些都有官方文档，写的也都很详细，没必要做文章的搬运工(<del>明明是博主很懒！</del>)。如果有问题欢迎在下面提问 (●’◡’●)</p>
+<h1 id="使用自己的域名"><a href="#使用自己的域名" class="headerlink" title="使用自己的域名"></a>使用自己的域名</h1><h2 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h2><p>首先你需要一个域名。可以在 <a target="_blank" rel="noopener" href="https://wanwang.aliyun.com/" title="域名注册_虚拟主机_云服务器_企业邮箱-万网-阿里云旗下品牌">万网</a> 或者 <a target="_blank" rel="noopener" href="https://www.godaddy.com/" title="世界最大域名注册商 | GoDaddy">GoDaddy</a> 购买，我的域名是在万网买的。【好不容易抢到 cylong.com 这个域名，之前被人注册了，不过在16年2月份的时候就过期了，哈哈哈】</p>
 <h2 id="设置-CNAME"><a href="#设置-CNAME" class="headerlink" title="设置 CNAME"></a>设置 CNAME</h2><p>在博客目录下的 <code>source</code> 文件夹下，创建一个名称为 <code>CNAME</code> 的文件，内容为你的域名，比如我的是:</p>
 <figure class="highlight plaintext"><figcaption><span>source/CNAME</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www.cylong.com</span><br></pre></td></tr></table></figure>
 
-<p><b>注意</b>： <code>CNAME</code> 文件是不带后缀的。另外带 www 和不带 www，虽然用户在访问的时候网页内容是一样的，但是搜索引擎却认为是两个网页，最好自己选择一个首选域。更多详情请参考：<a href="https://www.cylong.com/blog/2016/05/02/preferred-domain/" title="网站首选域 | 笑话人生">网站首选域</a></p>
+<p><b>注意</b>： <code>CNAME</code> 文件是不带后缀的。另外带 www 和不带 www，虽然用户在访问的时候网页内容是一样的，但是搜索引擎却认为是两个网页，最好自己选择一个首选域。更多详情请参考：<a href="/blog/2016/05/02/preferred-domain/" title="网站首选域 | 笑话人生">网站首选域</a></p>
 <h2 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h2><p>简单来说就是让你的网站和你购买的域名对应起来。万网提供免费的 DNS 解析服务。也可以使用 <a target="_blank" rel="noopener" href="https://www.dnspod.cn/" title="DNSPod-免费智能DNS解析服务商">DNSPod</a> 的服务，但是要在域名注册商修改 DNS 服务地址为：</p>
 <pre><code>f1g1ns1.dnspod.net
 f1g1ns2.dnspod.net
@@ -390,10 +390,10 @@ f1g1ns2.dnspod.net
 
 <p>设置解析后大约几分钟就可以通过你的域名访问你的网站啦，如果你修改了 DNS 服务器，解析一般最长需要48小时生效。耐心等待吧~</p>
 <h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><blockquote>
-<p><a target="_blank" rel="noopener" href="https://xuanwo.io/2015/03/26/hexo-intor/" title="Xuanwo&#39;s Blog - 史上最详细的Hexo博客搭建图文教程">Xuanwo’s Blog - 史上最详细的 Hexo 博客搭建图文教程</a><br><a target="_blank" rel="noopener" href="https://wsgzao.github.io/post/hexo/" title="HelloDog - 使用GitHub和Hexo搭建免费静态Blog">HelloDog - 使用 GitHub 和 Hexo 搭建免费静态Blog</a><br><a target="_blank" rel="noopener" href="https://www.paopaoche.net/jiaocheng/85988.html" title="潇潇 - 搭建hexo部署到github图文教程">潇潇 - 搭建 hexo 部署到 github 图文教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://xuanwo.io/2015/03/26/hexo-intor/" title="史上最详细的 Hexo 博客搭建图文教程 | Xuanwo&#39;s Blog">史上最详细的 Hexo 博客搭建图文教程 | Xuanwo’s Blog</a><br><a target="_blank" rel="noopener" href="https://wsgzao.github.io/post/hexo/" title="使用 GitHub 和 Hexo 搭建免费静态Blog | HelloDog">使用 GitHub 和 Hexo 搭建免费静态Blog | HelloDog</a><br><a target="_blank" rel="noopener" href="https://www.paopaoche.net/jiaocheng/85988.html" title="搭建 Hexo 部署到 Github 图文教程 | 潇潇">搭建 Hexo 部署到 GitHub 图文教程 | 潇潇</a></p>
 </blockquote>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><blockquote>
-<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/" title="Hexo 中文文档">Hexo 中文文档</a><br><a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/" title="Next 主题中文文档">NexT 主题中文文档</a><br><a href="https://www.cylong.com/blog/2016/04/25/hexo-faq/" title="Hexo 使用总结 &amp; 常见问题 | 笑话人生">Hexo 使用总结 &amp; 常见问题</a><br><a href="https://www.cylong.com/categories/Hexo/" title="分类：Hexo | 笑话人生">分类：Hexo | 笑话人生</a></p>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/" title="Hexo 中文文档">Hexo 中文文档</a><br><a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/" title="Next 主题中文文档">NexT 主题中文文档</a><br><a href="/blog/2016/04/25/hexo-faq/" title="Hexo 使用总结 &amp; 常见问题 | 笑话人生">Hexo 使用总结 &amp; 常见问题</a><br><a href="/categories/Hexo/" title="分类：Hexo | 笑话人生">分类：Hexo | 笑话人生</a></p>
 </blockquote>
 <hr>
 <blockquote>
@@ -431,8 +431,8 @@ f1g1ns2.dnspod.net
               <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
               <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
               <a href="/tags/Node-js/" rel="tag"><i class="fa fa-tag"></i> Node.js</a>
-              <a href="/tags/Github/" rel="tag"><i class="fa fa-tag"></i> Github</a>
               <a href="/tags/Next/" rel="tag"><i class="fa fa-tag"></i> Next</a>
+              <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
           </div>
 
         
@@ -530,7 +530,7 @@ f1g1ns2.dnspod.net
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-%E7%AE%80%E4%BB%8B"><span class="nav-number">2.</span> <span class="nav-text">Hexo 简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Hexo"><span class="nav-number">3.</span> <span class="nav-text">安装 Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87"><span class="nav-number">3.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">3.2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%93%E9%AA%8C-Hexo"><span class="nav-number">3.3.</span> <span class="nav-text">体验 Hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-%E4%BD%BF%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">Hexo 使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0Github"><span class="nav-number">5.</span> <span class="nav-text">部署到Github</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93"><span class="nav-number">5.1.</span> <span class="nav-text">创建代码仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%90%AF-gh-pages-%E5%8A%9F%E8%83%BD"><span class="nav-number">5.2.</span> <span class="nav-text">开启 gh-pages 功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="nav-number">6.</span> <span class="nav-text">更换主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D"><span class="nav-number">7.</span> <span class="nav-text">使用自己的域名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D"><span class="nav-number">7.1.</span> <span class="nav-text">购买域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE-CNAME"><span class="nav-number">7.2.</span> <span class="nav-text">设置 CNAME</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="nav-number">7.3.</span> <span class="nav-text">域名解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%84%9F%E8%B0%A2"><span class="nav-number">8.</span> <span class="nav-text">感谢</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">9.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-%E7%AE%80%E4%BB%8B"><span class="nav-number">2.</span> <span class="nav-text">Hexo 简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Hexo"><span class="nav-number">3.</span> <span class="nav-text">安装 Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87"><span class="nav-number">3.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">3.2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%93%E9%AA%8C-Hexo"><span class="nav-number">3.3.</span> <span class="nav-text">体验 Hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-%E4%BD%BF%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">Hexo 使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0-GitHub"><span class="nav-number">5.</span> <span class="nav-text">部署到 GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93"><span class="nav-number">5.1.</span> <span class="nav-text">创建代码仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%90%AF-gh-pages-%E5%8A%9F%E8%83%BD"><span class="nav-number">5.2.</span> <span class="nav-text">开启 gh-pages 功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="nav-number">6.</span> <span class="nav-text">更换主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D"><span class="nav-number">7.</span> <span class="nav-text">使用自己的域名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D"><span class="nav-number">7.1.</span> <span class="nav-text">购买域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE-CNAME"><span class="nav-number">7.2.</span> <span class="nav-text">设置 CNAME</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="nav-number">7.3.</span> <span class="nav-text">域名解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%84%9F%E8%B0%A2"><span class="nav-number">8.</span> <span class="nav-text">感谢</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">9.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -546,20 +546,20 @@ f1g1ns2.dnspod.net
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-count">97</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">111</span>
+        <span class="site-state-item-count">112</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -637,15 +637,15 @@ f1g1ns2.dnspod.net
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">206k</span>
+    <span title="站点总字数">207k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:07</span>
+    <span title="站点阅读时长">3:08</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-    <span class="post-count">| 博客共96.3k字</span>
+    <span class="post-count">| 博客共96.8k字</span>
   </div>
 
         
