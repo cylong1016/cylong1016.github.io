@@ -370,11 +370,11 @@
 <p><a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/" title="Next 主题中文文档">NexT 主题中文文档</a></p>
 </blockquote>
 <p>本来想单独写一个博客讲述主题方面的配置，不过这些都有官方文档，写的也都很详细，没必要做文章的搬运工(<del>明明是博主很懒！</del>)。如果有问题欢迎在下面提问 (●’◡’●)</p>
-<h1 id="使用自己的域名"><a href="#使用自己的域名" class="headerlink" title="使用自己的域名"></a>使用自己的域名</h1><h2 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h2><p>首先你需要一个域名。可以在 <a target="_blank" rel="noopener" href="https://wanwang.aliyun.com/" title="域名注册_虚拟主机_云服务器_企业邮箱-万网-阿里云旗下品牌">万网</a> 或者 <a target="_blank" rel="noopener" href="https://www.godaddy.com/" title="世界最大域名注册商 | GoDaddy">GoDaddy</a> 购买，我的域名是在万网买的。【好不容易抢到 cylong.com 这个域名，之前被人注册了，不过在16年2月份的时候就过期了，哈哈哈】</p>
+<h1 id="使用自己的域名"><a href="#使用自己的域名" class="headerlink" title="使用自己的域名"></a>使用自己的域名</h1><h2 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h2><p>首先你需要一个域名。可以在 <a target="_blank" rel="noopener" href="https://wanwang.aliyun.com/" title="域名注册_虚拟主机_云服务器_企业邮箱-万网-阿里云旗下品牌">万网</a> 或者 <a target="_blank" rel="noopener" href="https://www.godaddy.com/" title="买域名 | 世界最大域名注册商 — GoDaddy">GoDaddy</a> 购买，我的域名是在万网买的。【好不容易抢到 cylong.com 这个域名，之前被人注册了，不过在16年2月份的时候就过期了，哈哈哈】</p>
 <h2 id="设置-CNAME"><a href="#设置-CNAME" class="headerlink" title="设置 CNAME"></a>设置 CNAME</h2><p>在博客目录下的 <code>source</code> 文件夹下，创建一个名称为 <code>CNAME</code> 的文件，内容为你的域名，比如我的是:</p>
 <figure class="highlight plaintext"><figcaption><span>source/CNAME</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www.cylong.com</span><br></pre></td></tr></table></figure>
 
-<p><b>注意</b>： <code>CNAME</code> 文件是不带后缀的。另外带 www 和不带 www，虽然用户在访问的时候网页内容是一样的，但是搜索引擎却认为是两个网页，最好自己选择一个首选域。更多详情请参考：<a href="/blog/2016/05/02/preferred-domain/" title="网站首选域 | 笑话人生">网站首选域</a></p>
+<p><b>注意</b>： <code>CNAME</code> 文件是不带后缀的。另外带 www 和不带 www，虽然用户在访问的时候网页内容是一样的，但是搜索引擎却认为是两个网页，最好自己选择一个首选域。更多详情请参考：<a href="/blog/2016/05/02/preferred-domain/" title="网站首选域 | 笑话人生">网站首选域 | 笑话人生</a></p>
 <h2 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h2><p>简单来说就是让你的网站和你购买的域名对应起来。万网提供免费的 DNS 解析服务。也可以使用 <a target="_blank" rel="noopener" href="https://www.dnspod.cn/" title="DNSPod-免费智能DNS解析服务商">DNSPod</a> 的服务，但是要在域名注册商修改 DNS 服务地址为：</p>
 <pre><code>f1g1ns1.dnspod.net
 f1g1ns2.dnspod.net
