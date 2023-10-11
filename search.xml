@@ -71,12 +71,8 @@
 <p>在服务器启动期间，Hexo 会监视文件变动并自动更新，您无须重启服务器。更多博客编辑技巧请参照 <a href="https://hexo.io/zh-cn/docs/" title="Hexo 中文文档">Hexo 中文文档</a></p>
 <h1 id="部署到-GitHub"><a href="#部署到-GitHub" class="headerlink" title="部署到 GitHub"></a>部署到 GitHub</h1><h2 id="创建代码仓库"><a href="#创建代码仓库" class="headerlink" title="创建代码仓库"></a>创建代码仓库</h2><p>首先你需要一个 <a href="https://github.com/" title="GitHub">GitHub</a> 账号，然后创建一个仓库，仓库名是 <code>yourname.github.io</code>， 比如我的是 <code>cylong1016.github.io</code>。</p>
 <h2 id="开启-gh-pages-功能"><a href="#开启-gh-pages-功能" class="headerlink" title="开启 gh-pages 功能"></a>开启 gh-pages 功能</h2><p>创建完成后点击界面右侧的 <code>Settings</code>，向下拖动，直到看见 <code>GitHub Pages</code> ，点击 <code>Automatic page generator</code>，Github 将会自动替你创建出一个 gh-pages 的页面。<br>如果你的配置没有问题，那么大约15分钟之后，<a href="http://cylong1016.github.io/">http://cylong1016.github.io</a> 这个网址就可以正常访问了~<br>之后打开本地博客目录下的 <code>_config.yml</code> 文件，最下面找到 <code>Deployment</code> ， 做如下修改：</p>
-<pre><code>deploy:
-  type: git
-  repo: https://github.com/cylong1016/cylong1016.github.io.git
-  # cylong1016改成你的用户名
-  branch: master
-</code></pre>
+<figure class="highlight yaml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/cylong1016/cylong1016.github.io.git</span></span><br><span class="line">  <span class="comment"># cylong1016改成你的用户名</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
 <p>接着在 Git Bash 中依次输入：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save    <span class="comment"># 安装使用 git 方式进行部署所需要的插件</span></span><br><span class="line">hexo d                <span class="comment"># 部署到 GitHub 上，按照提示输入自己 GitHub 的用户名和密码。</span></span><br></pre></td></tr></table></figure>
 
@@ -84,7 +80,7 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo clean  <span class="comment"># 清除之前 public 文件夹的内容</span></span><br><span class="line">hexo g      <span class="comment"># 生成静态的 public 文件夹，部署时候也是直接拷贝此文件夹里的文件。</span></span><br><span class="line">hexo d      <span class="comment"># 部署到 GitHub 上，按照提示输入自己 GitHub 的用户名和密码。</span></span><br><span class="line"><span class="comment"># hexo g 和 hexo d 这两条命令可以合并成 hexo d --g 或者 hexo g --d</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><p>你可以在 <a href="https://hexo.io/themes/" title="Themes | Hexo">Themes - Hexo</a> 找到你喜欢的主题下载下来，放在博客目录下的 <code>themes</code> 目录下，之后修改 <code>_config.yml</code> 文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: next # 修改成你的主题文件夹名</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span> <span class="comment"># 修改成你的主题文件夹名</span></span><br></pre></td></tr></table></figure>
 
 <p>Hexo 默认主题是 landscape，我使用的是 Next 主题，也是强烈推荐的，简洁、扁平化主题风格是我最喜欢的。配置使用 NexT 主题请参考：</p>
 <blockquote>
@@ -97,9 +93,8 @@
 
 <p><b>注意</b>： <code>CNAME</code> 文件是不带后缀的。另外带 www 和不带 www，虽然用户在访问的时候网页内容是一样的，但是搜索引擎却认为是两个网页，最好自己选择一个首选域。更多详情请参考：<a href="/blog/2016/05/02/preferred-domain/" title="网站首选域 | 笑话人生">网站首选域 | 笑话人生</a></p>
 <h2 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h2><p>简单来说就是让你的网站和你购买的域名对应起来。万网提供免费的 DNS 解析服务。也可以使用 <a href="https://www.dnspod.cn/" title="DNSPod-免费智能DNS解析服务商">DNSPod</a> 的服务，但是要在域名注册商修改 DNS 服务地址为：</p>
-<pre><code>f1g1ns1.dnspod.net
-f1g1ns2.dnspod.net
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">f1g1ns1.dnspod.net</span><br><span class="line">f1g1ns2.dnspod.net</span><br></pre></td></tr></table></figure>
+
 <p>我在万网购买的域名，所以直接进行解析配置【默认使用万网的 DNS 解析服务，没有使用 DNSPod 的服务】。配置过程如下：</p>
 <ol>
 <li>登陆 <a href="https://wanwang.aliyun.com/" title="域名注册_虚拟主机_云服务器_企业邮箱-万网-阿里云旗下品牌">万网</a>。</li>
@@ -282,7 +277,7 @@ f1g1ns2.dnspod.net
 <li><code>skip_render: test/*</code>    单个文件夹下全部文件</li>
 <li><code>skip_render: test/*.md</code> 单个文件夹下指定类型文件</li>
 <li><code>skip_render: test/**</code>   单个文件夹下全部文件以及子目录</li>
-<li>多个文件夹以及各种复杂情况：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">skip_render:</span><br><span class="line">  - `test1/*.html`</span><br><span class="line">  - `test2/**`</span><br></pre></td></tr></table></figure>
+<li>多个文件夹以及各种复杂情况：<figure class="highlight yaml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">`test1/*.html`</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">`test2/**`</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -293,7 +288,7 @@ f1g1ns2.dnspod.net
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这是摘要</span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">这是全文</span><br></pre></td></tr></table></figure>
 
 <p>需要注意的是，点击 <code>阅读全文</code> 之后，文章会自动定位到 <code>&lt;!-- more --&gt;</code> 所在位置，想要修改成从头阅读需要修改<code>主题配置文件</code> <code>_config.yml</code> 文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Automatically scroll page to section which is under &lt;!-- more --&gt; mark.</span><br><span class="line">scroll_to_more: false // NexT v7版本已经不支持</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Automatically scroll page to section which is under &lt;!-- more --&gt; mark.</span></span><br><span class="line"><span class="attr">scroll_to_more:</span> <span class="literal">false</span> <span class="string">//</span> <span class="string">NexT</span> <span class="string">v7版本已经不支持</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="部署到-Github-后，部分修改未更新"><a href="#部署到-Github-后，部分修改未更新" class="headerlink" title="部署到 Github 后，部分修改未更新"></a>部署到 Github 后，部分修改未更新</h1><p>有时候当你 <code>hexo d --g</code> 部署到 Github 的时候，发现有些地方并没有更新，比如你的主题样式。这时候就建议你输入 <code>hexo clean</code> 清除下 public 文件夹下的文件，然后再部署【部署的时候实际上是直接拷贝 public 下的文件的】。另外多说一句，<code>hexo d --g</code> 是以下两个命令的缩写：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo g  <span class="comment"># 生成本地 public 静态文件</span></span><br><span class="line">hexo d  <span class="comment"># 部署到 Github 上</span></span><br><span class="line"><span class="comment"># 也可以缩写成：hexo g --d</span></span><br></pre></td></tr></table></figure>
@@ -304,7 +299,7 @@ f1g1ns2.dnspod.net
 <p>当然，你可以直接使用 <a href="https://fontawesome.com/icons/" title="Font Awesome icons">Fort Awesome</a> 图标，下面是我在 <a href="/about/#%E8%81%94%E7%B3%BB%E6%88%91" title="联系我 | 笑话人生">关于</a> 页面写的代码：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-envelope&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> 邮箱：chenyunlong1016@gmail.com</span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;fab fa-weixin&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> 微信：cylong1016</span><br></pre></td></tr></table></figure>
 
-<h1 id="配置-SSH-公钥免去部署的时候输入密码"><a href="#配置-SSH-公钥免去部署的时候输入密码" class="headerlink" title="配置 SSH 公钥免去部署的时候输入密码"></a>配置 SSH 公钥免去部署的时候输入密码</h1><figure class="highlight sh"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo:</span><br><span class="line">    github: git@github.com:cylong1016/cylong1016.github.io.git <span class="comment"># Github SSH</span></span><br><span class="line">    <span class="comment"># github: https://github.com/cylong1016/cylong1016.github.io.git # Github HTTPS</span></span><br><span class="line">    coding: git@git.coding.net:cylong1016/cylong1016.git <span class="comment"># Coding SSH</span></span><br><span class="line">    <span class="comment"># coding: https://git.coding.net/cylong1016/cylong1016.git # Coding HTTPS</span></span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<h1 id="配置-SSH-公钥免去部署的时候输入密码"><a href="#配置-SSH-公钥免去部署的时候输入密码" class="headerlink" title="配置 SSH 公钥免去部署的时候输入密码"></a>配置 SSH 公钥免去部署的时候输入密码</h1><figure class="highlight yaml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span></span><br><span class="line">    <span class="attr">github:</span> <span class="string">git@github.com:cylong1016/cylong1016.github.io.git</span> <span class="comment"># Github SSH</span></span><br><span class="line">    <span class="comment"># github: https://github.com/cylong1016/cylong1016.github.io.git # Github HTTPS</span></span><br><span class="line">    <span class="attr">coding:</span> <span class="string">git@git.coding.net:cylong1016/cylong1016.git</span> <span class="comment"># Coding SSH</span></span><br><span class="line">    <span class="comment"># coding: https://git.coding.net/cylong1016/cylong1016.git # Coding HTTPS</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 
 <p>上面的代码是 _config.yml 中部署的代码，分别是部署到 Github 和 Coding 上的两种方式，使用 HTTPS 方式的话每次部署都需要输入用户名和密码，很麻烦。</p>
 <img src="/blog/2016/04/25/hexo-faq/OpenSSH.png" class="" title="OpenSSH">
@@ -372,12 +367,12 @@ f1g1ns2.dnspod.net
 <ol start="2">
 <li>修改博客根目录的 <code>_config.yml</code> 文件</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  symbols: <span class="literal">true</span>             <span class="comment"># 文章字数统计</span></span><br><span class="line">  time: <span class="literal">true</span>                <span class="comment"># 文章阅读时长</span></span><br><span class="line">  total_symbols: <span class="literal">true</span>       <span class="comment"># 站点总字数统计</span></span><br><span class="line">  total_time: <span class="literal">true</span>          <span class="comment"># 站点总阅读时长</span></span><br><span class="line">  exclude_codeblock: <span class="literal">false</span>  <span class="comment"># 排除代码字数统计</span></span><br><span class="line">  awl: 4                    <span class="comment"># 平均字长（字中的字符数）</span></span><br><span class="line">  wpm: 275                  <span class="comment"># 每分钟阅读字数</span></span><br><span class="line">  suffix: <span class="string">&quot;mins.&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">symbols:</span> <span class="literal">true</span>             <span class="comment"># 文章字数统计</span></span><br><span class="line">  <span class="attr">time:</span> <span class="literal">true</span>                <span class="comment"># 文章阅读时长</span></span><br><span class="line">  <span class="attr">total_symbols:</span> <span class="literal">true</span>       <span class="comment"># 站点总字数统计</span></span><br><span class="line">  <span class="attr">total_time:</span> <span class="literal">true</span>          <span class="comment"># 站点总阅读时长</span></span><br><span class="line">  <span class="attr">exclude_codeblock:</span> <span class="literal">false</span>  <span class="comment"># 排除代码字数统计</span></span><br><span class="line">  <span class="attr">awl:</span> <span class="number">4</span>                    <span class="comment"># 平均字长（字中的字符数）</span></span><br><span class="line">  <span class="attr">wpm:</span> <span class="number">275</span>                  <span class="comment"># 每分钟阅读字数</span></span><br><span class="line">  <span class="attr">suffix:</span> <span class="string">&quot;mins.&quot;</span></span><br></pre></td></tr></table></figure>
 
 <ol start="3">
 <li>修改 Next 主题的 <code>_config.yml</code> 文件（Next 主题已经支持此插件，仅个性化修改即可）</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-symbols-count-time</span></span><br><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: <span class="literal">true</span></span><br><span class="line">  item_text_post: <span class="literal">true</span></span><br><span class="line">  item_text_total: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-symbols-count-time</span></span><br><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
 <ol start="4">
 <li>参考：<blockquote>
