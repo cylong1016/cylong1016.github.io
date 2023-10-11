@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.cylong.com/blog/2023/10/10/sign-up-apple-id/</loc>
+    <loc>https://www.cylong.com/blog/2023/10/08/sign-up-chatgpt/</loc>
     <lastmod>2023-10-10</lastmod>
   </url>
   <url>
-    <loc>https://www.cylong.com/blog/2023/10/08/sign-up-chatgpt/</loc>
-    <lastmod>2023-10-08</lastmod>
+    <loc>https://www.cylong.com/blog/2023/10/10/sign-up-apple-id/</loc>
+    <lastmod>2023-10-10</lastmod>
   </url>
   <url>
     <loc>https://www.cylong.com/blog/2016/05/09/windows-linux-new-file/</loc>
@@ -69,10 +69,6 @@
     <lastmod>2023-10-08</lastmod>
   </url>
   <url>
-    <loc>https://www.cylong.com/blog/2016/04/22/activate-power-mode/</loc>
-    <lastmod>2023-10-08</lastmod>
-  </url>
-  <url>
     <loc>https://www.cylong.com/blog/2016/05/26/shadowsocks/</loc>
     <lastmod>2023-09-27</lastmod>
   </url>
@@ -90,10 +86,6 @@
   </url>
   <url>
     <loc>https://www.cylong.com/blog/2016/06/09/iverson/</loc>
-    <lastmod>2023-08-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cylong.com/blog/2011/02/24/iverson-2001-2011/</loc>
     <lastmod>2023-08-22</lastmod>
   </url>
   <url>
@@ -387,5 +379,13 @@
   <url>
     <loc>https://www.cylong.com/blog/2017/04/05/duoshuo-to-disqus/</loc>
     <lastmod>2017-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cylong.com/blog/2016/04/22/activate-power-mode/</loc>
+    <lastmod>2016-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cylong.com/blog/2011/02/24/iverson-2001-2011/</loc>
+    <lastmod>2011-02-24</lastmod>
   </url>
 </urlset> 
