@@ -100,7 +100,7 @@
 <li>登陆 <a href="https://wanwang.aliyun.com/" title="域名注册_虚拟主机_云服务器_企业邮箱-万网-阿里云旗下品牌">万网</a>。</li>
 <li>点击最上面的 <code>管理控制台</code>，再点击左侧的 <code>云解析</code>。或者直接点击首页查询域名框下面的常用链接：<code>域名解析</code>。</li>
 <li>选择你要解析的域名，点击域名后面的 <code>解析</code>。</li>
-<li>解析配置如下【看不清图片可以点击放大】：</li>
+<li>解析配置如下：</li>
 </ol>
 <img src="/blog/2016/04/19/hexo-git/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.png" class="" title="域名解析配置">
 
@@ -282,7 +282,7 @@
 </li>
 </ol>
 <h1 id="首页文章显示查看原文按钮"><a href="#首页文章显示查看原文按钮" class="headerlink" title="首页文章显示查看原文按钮"></a>首页文章显示查看原文按钮</h1><p>我们常常想在首页只显示文章的概述，而不是文章的全部，用一个 <code>阅读全文</code> 的字样代替，要怎么做呢？如下图：</p>
-<img src="/blog/2016/04/25/hexo-faq/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.png" class="" title="阅读全文">
+<img src="/blog/2016/04/25/hexo-faq/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.jpg" class="" title="阅读全文">
 
 <p>在文章中只要写成如下格式即可：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这是摘要</span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">这是全文</span><br></pre></td></tr></table></figure>
@@ -791,7 +791,7 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
 
 <h1 id="购买服务"><a href="#购买服务" class="headerlink" title="购买服务"></a>购买服务</h1><ol>
 <li>点击进入 <a href="https://portal.shadowsocks.au/aff.php?aff=8883" title="Shadowsocks">Shadowsocks</a>（<strong>此链接是我的推广链接，因为种种原因，Shadowsocks 官网常常换，所以我的推广链接也会不断更新的，官网链接也以此为准。</strong>你点击后会直接进入首页，通过这个链接购买服务后我也会获得一些好处啦，嘿嘿 🤭），进入首页后选择 <code>购买服务</code>。</li>
-<li>之后选择你想要购买的服务，点击现在订购。我选择的是 <code>Shadowsocks 普通版</code>。需要注意的是，虽然显示的价格是美元，但是在后面支付的时候会自动转化为人民币。<img src="/blog/2016/05/26/shadowsocks/Shadowsocks-basic.png" class="" title="Shadowsocks普通版"></li>
+<li>之后选择你想要购买的服务，点击现在订购。我选择的是 <code>Shadowsocks 普通版</code>。需要注意的是，虽然显示的价格是美元，但是在后面支付的时候会自动转化为人民币。<img src="/blog/2016/05/26/shadowsocks/Shadowsocks-basic.png" class="" width="970" height="506" title="Shadowsocks普通版"></li>
 <li>界面上选择你的付款年限，然后点击继续。</li>
 <li>在结账页面，你需要填写各种信息，需要认真填写，这也是在创建账号。</li>
 <li>Shadowsocks 支持 Alipay 支付宝国际版。之后付款就可以了，现在大约是 104 块钱一年。我买的时候，订购服务时显示的还是人民币，99块钱一年。虽然贵了一点点，不过还是可以接受的。</li>
@@ -828,7 +828,7 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
 <li>首先你需要下载 <a href="http://www.google.cn/chrome/browser/desktop/index.html" title="Chrome 浏览器">Chrome 浏览器</a>（不需要翻墙），已经有的小伙伴就不用重新下载了。</li>
 <li>使用如下命令安装你下载下来的 Chrome 安装包：<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i xxx-chrome-xxx.deb</span><br></pre></td></tr></table></figure></li>
 <li>通过 PPA 源安装 Shadowsocks-qt5，仅支持 Ubuntu 14.04 或更高版本。<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo add-apt-repository ppa:hzwhuang/ss-qt5</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install shadowsocks-qt5</span><br></pre></td></tr></table></figure></li>
-<li>之后就可以在应用列表里搜索到 Shadowsocks-qt5 了<img src="/blog/2016/05/26/shadowsocks/search-shadowsocks.png" class="" title="搜索应用列表"></li>
+<li>之后就可以在应用列表里搜索到 Shadowsocks-qt5 了<img src="/blog/2016/05/26/shadowsocks/search-shadowsocks.png" class="" width="1015" height="541" title="搜索应用列表"></li>
 <li>打开图形化界面，点击 <code>文件 -&gt; 从 gui-config.json 导入链接</code>，接着就会像下图一样。<img src="/blog/2016/05/26/shadowsocks/Shadowsocks-Qt5-GUI.png" class="" title="Shadowsocks-Qt5 图形界面"></li>
 <li>上图的 jp01 和 us01 都是后来配置好的，导入 gui-config.json 后还是有些需要自己配置。双击某一条连接，像我如下这样配置（默认有的配置就不要改了）：<img src="/blog/2016/05/26/shadowsocks/config.png" class="" title="连接配置"></li>
 <li>配置完成后点击 <code>OK</code>，再点击界面上面的 <code>连接</code>，测试下延迟，看看是否能连接上。可以多配置几个，方便切换~</li>
@@ -843,10 +843,10 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
 <p>最近也是人品爆表，抽奖抽到了个 IPad mini 2，自然就研究了下如何在 IOS 中试用 Shadowsocks 了。官方推荐的客户端是 <code>shadowrocket</code>，App Store 里卖6块钱（现在已经下架了，只能通过国外账号下载了）。我找到的是 <code>Lifi客户端-Shadowsocks and ShadowsocksR VPN</code>，也是在 App Store 里下载，不过是免费的。两者的配置方式基本一样，都可以扫码配置。在 Shadowsocks 官网里 <code>客户中心 -&gt; 我的产品与服务</code> 里就可以找到各个节点的二维码。</p>
 <ol>
 <li><p>Lifi 配置，在应用里选择 <code>设置 -&gt; 从二维码导入</code> 就会打开扫码界面，之后配置一下代理名称，打开系统 VPN 就可以了，非常简单（我觉得有张图挺好看的，于是强行加了张图(^_^)）</p>
-<img src="/blog/2016/05/26/shadowsocks/Shadowsocks-IOS.png" class="" title="Shadowsocks IOS">
+<img src="/blog/2016/05/26/shadowsocks/Shadowsocks-IOS.png" class="" width="1024" height="768" title="Shadowsocks IOS">
 </li>
 <li><p>Shadowrocket 配置，打开应用，点击左上角的扫码图标就可以打开扫码页面：</p>
-<img src="/blog/2016/05/26/shadowsocks/Shadowrocket.png" class="" title="Shadowrocket">
+<img src="/blog/2016/05/26/shadowsocks/Shadowrocket.png" class="" width="1024" height="768" title="Shadowrocket">
 
 </li>
 </ol>
@@ -1179,7 +1179,7 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
     <title>Java 通过 DOM 方式解析、创建 XML</title>
     <url>/blog/2017/04/04/java-dom-xml/</url>
     <content><![CDATA[<hr>
-<h1 id="DOM-简介"><a href="#DOM-简介" class="headerlink" title="DOM 简介"></a>DOM 简介</h1><p>DOM（Document Object Model) 是 W3C 处理 XML 的标准 API，不仅 Java 其他很多语言，比如 Javascript、PHP等等语言都实现了该标准。Java 类库支持 DOM 操作【也就是说不需要下载依赖其他包】。DOM 以树状结构组织节点和信息的集合，这种结构允许开发人员对 XML 文档进行增删改查。为了分析该树状结构，我们需要加载整个 XML 文档进行构造分析，所以消耗资源比较大，建议在操作小文件的时候使用。</p>
+<h1 id="DOM-简介"><a href="#DOM-简介" class="headerlink" title="DOM 简介"></a>DOM 简介</h1><p>DOM（Document Object Model） 是 W3C 处理 XML 的标准 API，不仅 Java 其他很多语言，比如 Javascript、PHP等等语言都实现了该标准。Java 类库支持 DOM 操作【也就是说不需要下载依赖其他包】。DOM 以树状结构组织节点和信息的集合，这种结构允许开发人员对 XML 文档进行增删改查。为了分析该树状结构，我们需要加载整个 XML 文档进行构造分析，所以消耗资源比较大，建议在操作小文件的时候使用。</p>
 <span id="more"></span>
 
 <h1 id="创建-XML-文档"><a href="#创建-XML-文档" class="headerlink" title="创建 XML 文档"></a>创建 XML 文档</h1><ol>
@@ -1282,13 +1282,13 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
 <h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><p>点击 <a href="https://github.com/FelisCatus/SwitchyOmega/releases" title="FelisCatus/SwitchyOmega | GitHub">SwitchyOmega</a>，下载页面有详细的安装教程，仔细看一下就好。</p>
 <h2 id="配置-Shadowsocks-情景模式"><a href="#配置-Shadowsocks-情景模式" class="headerlink" title="配置 Shadowsocks 情景模式"></a>配置 Shadowsocks 情景模式</h2><ol>
 <li>打开 Chrome， 点击右上角的 <span class="fa fa-globe" aria-hidden="true"></span> 图标，再点击 <code>选项</code>。<img src="/blog/2017/04/09/chrome-SwitchyOmega/Shadowsocks-icon.png" class="" title="Shadowsocks 图标"></li>
-<li>点击左侧的 <code>新建情景模式</code>，输入情景模式名称 <code>Shadowsocks</code>（自己任意设置名称），类型选择第一个 <code>代理服务器</code>。创建完成后做如下配置：<img src="/blog/2017/04/09/chrome-SwitchyOmega/new.png" class="" title="新建情景模式">
+<li>点击左侧的 <code>新建情景模式</code>，输入情景模式名称 <code>Shadowsocks</code>（自己任意设置名称），类型选择第一个 <code>代理服务器</code>。创建完成后做如下配置：<img src="/blog/2017/04/09/chrome-SwitchyOmega/new.png" class="" width="975" height="526" title="新建情景模式">
 你也可以自己设置不代理的地址列表。如上图。</li>
 <li>保存后你就可以通过这个情景模式科学上网了。</li>
 </ol>
 <h2 id="配置自动切换模式"><a href="#配置自动切换模式" class="headerlink" title="配置自动切换模式"></a>配置自动切换模式</h2><p>配置好 Shadowsocks 情景模式后虽然可以使用 Chrome 浏览器科学上网了，但是这样的话无论你访问什么网站都会走代理，有时候访问国内的一些网站反而会很慢，这时候自动切换模式就解决了这个问题。下面介绍一下如何配置自动切换模式。</p>
 <ol>
-<li>点击左侧的 <code>自动切换</code>，或者自己新建情景模式，类型选择第二个 <code>自动切换模式</code>。然后做如下配置：<img src="/blog/2017/04/09/chrome-SwitchyOmega/auto.png" class="" title="自动切换模式"></li>
+<li>点击左侧的 <code>自动切换</code>，或者自己新建情景模式，类型选择第二个 <code>自动切换模式</code>。然后做如下配置：<img src="/blog/2017/04/09/chrome-SwitchyOmega/auto.png" class="" width="973" height="526" title="自动切换模式"></li>
 </ol>
 <ul>
 <li><code>切换规则</code> 是在访问 <code>条件设置</code> 的域名时候使用后面设置的 <code>情景模式</code>。比如图中我设置 <code>*.google.com</code> 和 <code>*.github.com</code> 使用 <code>Shadowsocks</code> 情景模式（刚刚创建的那个情景模式）。我们可以点击 <code>添加条件</code> 来添加自己的规则。</li>
@@ -5482,7 +5482,7 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
 </li>
 </ol>
 <h1 id="注册短信服务"><a href="#注册短信服务" class="headerlink" title="注册短信服务"></a>注册短信服务</h1><ol>
-<li>打开 <a href="https://sms-activate.org/" title="SMS-Activate是在线接收短信的虚拟号码服务">SMS-Activate</a> 右上角注册登录，登录后右上角充值<img src="/blog/2023/10/08/sign-up-chatgpt/SMS-Activate%E5%85%85%E5%80%BC.png" class="" title="SMS-Activate充值"></li>
+<li>打开 <a href="https://sms-activate.org/" title="SMS-Activate是在线接收短信的虚拟号码服务">SMS-Activate</a> 右上角注册登录，登录后右上角充值<img src="/blog/2023/10/08/sign-up-chatgpt/SMS-Activate%E5%85%85%E5%80%BC.png" class="" width="1080" height="863" title="SMS-Activate充值"></li>
 <li>往下拉选择支付宝，最低充值2$（吐槽一下，之前没有最低充值额度的，估计是发现了商机😒）<img src="/blog/2023/10/08/sign-up-chatgpt/SMS-Activate%E6%94%AF%E4%BB%98%E5%AE%9D%E5%85%85%E5%80%BC.jpg" class="" title="SMS-Activate支付宝充值"></li>
 <li>左侧服务选择搜索 <code>OpenAI</code><img src="/blog/2023/10/08/sign-up-chatgpt/SMS-Activate%E6%9C%8D%E5%8A%A1%E9%80%89%E6%8B%A9.jpg" class="" title="SMS-Activate服务选择"></li>
 <li>国家选择印度并购买<img src="/blog/2023/10/08/sign-up-chatgpt/SMS-Activate%E5%9B%BD%E5%AE%B6%E9%80%89%E6%8B%A9.png" class="" title="SMS-Activate国家选择"></li>
@@ -5521,10 +5521,10 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
 <span id="more"></span>
 
 <h1 id="如何注册"><a href="#如何注册" class="headerlink" title="如何注册"></a>如何注册</h1><ol>
-<li>首先去 Apple 官网 <a href="https://appleid.apple.com/account" title="创建你的 Apple ID">创建你的 Apple ID</a>，这里 <code>国家或地区</code> 选择 <code>美国</code>，其他的填写你的真实信息，手机号可以填写中国大陆手机号，用于后续接收验证码，验证通过后你就获得了一个国外的 Apple ID ，但是还没结束。<img src="/blog/2023/10/10/sign-up-apple-id/%E5%88%9B%E5%BB%BA%E4%BD%A0%E7%9A%84-Apple-ID.png" class="" title="创建你的 Apple ID"></li>
+<li>首先去 Apple 官网 <a href="https://appleid.apple.com/account" title="创建你的 Apple ID">创建你的 Apple ID</a>，这里 <code>国家或地区</code> 选择 <code>美国</code>，其他的填写你的真实信息，手机号可以填写中国大陆手机号，用于后续接收验证码，验证通过后你就获得了一个国外的 Apple ID ，但是还没结束。<img src="/blog/2023/10/10/sign-up-apple-id/%E5%88%9B%E5%BB%BA%E4%BD%A0%E7%9A%84-Apple-ID.png" class="" width="402" height="710" title="创建你的 Apple ID"></li>
 <li>用你刚刚注册的 Apple ID 登录你的苹果设备，我用我的 iPad 做了小白鼠，第一次登录，有各种验证和同意条款等操作，确认即可。</li>
-<li><code>设置</code> 里点击你的头像，找到 <code>付款与配送</code>，编辑配送地址（如果默认跳转到添加付款方式页面，回到上一页即可），这里要选择一个美国的地址，可以通过 <a href="https://www.meiguodizhi.com/" title="美国地址生成器">美国地址生成器</a>（链接打不开的话直接去谷歌或者百度搜索关键字）随机生成填入后保存。<img src="/blog/2023/10/10/sign-up-apple-id/%E7%BC%96%E8%BE%91%E9%80%81%E8%B4%A7%E5%9C%B0%E5%9D%80.jpg" class="" title="编辑送货地址"></li>
-<li>接下来就可以尽情的在 App Store 里下载各种神秘的软件啦（第3步没设置的话，这里下载软件的时候也是会提示设置送货地址的）<img src="/blog/2023/10/10/sign-up-apple-id/%E4%B8%8B%E8%BD%BDChatGPT.jpg" class="" title="下载ChatGPT">
+<li><code>设置</code> 里点击你的头像，找到 <code>付款与配送</code>，编辑配送地址（如果默认跳转到添加付款方式页面，回到上一页即可），这里要选择一个美国的地址，可以通过 <a href="https://www.meiguodizhi.com/" title="美国地址生成器">美国地址生成器</a>（链接打不开的话直接去谷歌或者百度搜索关键字）随机生成填入后保存。<img src="/blog/2023/10/10/sign-up-apple-id/%E7%BC%96%E8%BE%91%E9%80%81%E8%B4%A7%E5%9C%B0%E5%9D%80.jpg" class="" width="1024" height="512" title="编辑送货地址"></li>
+<li>接下来就可以尽情的在 App Store 里下载各种神秘的软件啦（第3步没设置的话，这里下载软件的时候也是会提示设置送货地址的）<img src="/blog/2023/10/10/sign-up-apple-id/%E4%B8%8B%E8%BD%BDChatGPT.jpg" class="" width="1024" height="750" title="下载ChatGPT">
 
 </li>
 </ol>

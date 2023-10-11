@@ -5,27 +5,19 @@
     <lastmod>2023-10-12</lastmod>
   </url>
   <url>
-    <loc>https://www.cylong.com/blog/2016/04/25/hexo-faq/</loc>
+    <loc>https://www.cylong.com/blog/2017/04/09/chrome-SwitchyOmega/</loc>
     <lastmod>2023-10-11</lastmod>
   </url>
   <url>
-    <loc>https://www.cylong.com/blog/2023/10/08/sign-up-chatgpt/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <loc>https://www.cylong.com/blog/2016/04/25/hexo-faq/</loc>
+    <lastmod>2023-10-11</lastmod>
   </url>
   <url>
     <loc>https://www.cylong.com/blog/2023/10/10/sign-up-apple-id/</loc>
     <lastmod>2023-10-10</lastmod>
   </url>
   <url>
-    <loc>https://www.cylong.com/blog/2016/05/09/windows-linux-new-file/</loc>
-    <lastmod>2023-10-08</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cylong.com/blog/2016/07/01/wsdl-to-java/</loc>
-    <lastmod>2023-10-08</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cylong.com/blog/2016/11/08/three-number/</loc>
+    <loc>https://www.cylong.com/blog/2023/10/08/sign-up-chatgpt/</loc>
     <lastmod>2023-10-08</lastmod>
   </url>
   <url>
@@ -33,60 +25,8 @@
     <lastmod>2023-10-08</lastmod>
   </url>
   <url>
-    <loc>https://www.cylong.com/blog/2017/04/04/java-dom-xml/</loc>
-    <lastmod>2023-10-08</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cylong.com/blog/2017/03/31/jackson-java-json/</loc>
-    <lastmod>2023-10-08</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cylong.com/blog/2017/03/26/hexo-next-disqus/</loc>
-    <lastmod>2023-10-08</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cylong.com/blog/2016/09/26/git-svn/</loc>
-    <lastmod>2023-10-08</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cylong.com/blog/2016/06/07/windows-10-metro-shadowsocks/</loc>
-    <lastmod>2023-10-08</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cylong.com/blog/2016/05/19/gitignore/</loc>
-    <lastmod>2023-10-08</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cylong.com/blog/2016/05/15/windows-10-metro-error/</loc>
-    <lastmod>2023-10-08</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cylong.com/blog/2016/05/10/struts2-jsp-param/</loc>
-    <lastmod>2023-10-08</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cylong.com/blog/2016/05/02/preferred-domain/</loc>
-    <lastmod>2023-10-08</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cylong.com/blog/2016/04/29/apache-404/</loc>
-    <lastmod>2023-10-08</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cylong.com/blog/2016/04/25/hexo-next-duoshuo/</loc>
-    <lastmod>2023-10-08</lastmod>
-  </url>
-  <url>
     <loc>https://www.cylong.com/blog/2016/04/19/hexo-git/</loc>
     <lastmod>2023-09-06</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cylong.com/blog/2016/10/20/my-life-is-just-beginning/</loc>
-    <lastmod>2023-08-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cylong.com/blog/2016/06/09/iverson/</loc>
-    <lastmod>2023-08-22</lastmod>
   </url>
   <url>
     <loc>https://www.cylong.com/blog/2021/03/01/job-alipay/</loc>
@@ -373,16 +313,76 @@
     <lastmod>2017-04-12</lastmod>
   </url>
   <url>
-    <loc>https://www.cylong.com/blog/2017/04/09/chrome-SwitchyOmega/</loc>
-    <lastmod>2017-04-08</lastmod>
-  </url>
-  <url>
     <loc>https://www.cylong.com/blog/2017/04/05/duoshuo-to-disqus/</loc>
     <lastmod>2017-04-04</lastmod>
   </url>
   <url>
+    <loc>https://www.cylong.com/blog/2017/04/04/java-dom-xml/</loc>
+    <lastmod>2017-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cylong.com/blog/2017/03/31/jackson-java-json/</loc>
+    <lastmod>2017-03-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cylong.com/blog/2017/03/26/hexo-next-disqus/</loc>
+    <lastmod>2017-03-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cylong.com/blog/2016/11/08/three-number/</loc>
+    <lastmod>2016-11-07</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cylong.com/blog/2016/10/20/my-life-is-just-beginning/</loc>
+    <lastmod>2016-10-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cylong.com/blog/2016/09/26/git-svn/</loc>
+    <lastmod>2016-09-25</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cylong.com/blog/2016/07/01/wsdl-to-java/</loc>
+    <lastmod>2016-07-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cylong.com/blog/2016/06/09/iverson/</loc>
+    <lastmod>2016-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cylong.com/blog/2016/06/07/windows-10-metro-shadowsocks/</loc>
+    <lastmod>2016-06-07</lastmod>
+  </url>
+  <url>
     <loc>https://www.cylong.com/blog/2016/04/22/activate-power-mode/</loc>
     <lastmod>2016-06-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cylong.com/blog/2016/04/25/hexo-next-duoshuo/</loc>
+    <lastmod>2016-05-28</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cylong.com/blog/2016/05/19/gitignore/</loc>
+    <lastmod>2016-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cylong.com/blog/2016/05/15/windows-10-metro-error/</loc>
+    <lastmod>2016-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cylong.com/blog/2016/05/10/struts2-jsp-param/</loc>
+    <lastmod>2016-05-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cylong.com/blog/2016/05/09/windows-linux-new-file/</loc>
+    <lastmod>2016-05-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cylong.com/blog/2016/05/02/preferred-domain/</loc>
+    <lastmod>2016-05-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.cylong.com/blog/2016/04/29/apache-404/</loc>
+    <lastmod>2016-04-29</lastmod>
   </url>
   <url>
     <loc>https://www.cylong.com/blog/2011/02/24/iverson-2001-2011/</loc>
