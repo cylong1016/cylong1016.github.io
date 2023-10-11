@@ -712,28 +712,28 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
     <title>如何在 Google 和百度里搜索到自己的网站</title>
     <url>/blog/2016/05/22/google-baidu-search/</url>
     <content><![CDATA[<hr>
-<p>搭建完自己的博客或者有一个自己的网站什么的，总想着能在 Google 或者是百度里搜索到吧，这样就可以提高你的网站的知名度，说不定还会结 ♂ 交到志同道合的小伙伴呢 (●’◡’●)。下面就讲解下如何让自己的网站被搜索引擎收录~</p>
+<p>搭建完自己的博客或者有一个自己的网站什么的，总想着能在 Google 或者是百度里搜索到吧，这样就可以提高你的网站的知名度，说不定还会结 ♂ 交到志同道合的小伙伴呢 (●’◡’●)。下面就讲解下如何让自己的网站被搜索引擎收录。</p>
 <span id="more"></span>
 
 <h1 id="Google-搜索"><a href="#Google-搜索" class="headerlink" title="Google 搜索"></a>Google 搜索</h1><ol>
 <li>点击 <a href="https://www.google.com/webmasters/" title="Google 网站站长">Google 网站站长</a>，然后点击首页的 <code>SEARCH CONSOLE</code>。</li>
-<li>添加你的网站，进行人机验证【就是证明这个网站是你的】。</li>
-<li>进入到 <code>抓取-&gt;Google 抓取方式</code>。</li>
+<li>添加你的网站，进行人机验证（就是证明这个网站是你的）。</li>
+<li>进入到 <code>抓取 -&gt; Google 抓取方式</code>。</li>
 <li>点击 <code>抓取</code> 或者 <code>抓取并呈现</code>。</li>
 <li>若提示完成或者部分完成，则可以将网址 <code>提交至索引</code>，有两种提交方式：仅抓取此网址、抓取此网址及其直接链接。都有次数限制。</li>
-<li>等待一会，打开 Google，在搜索栏输入 <code>site:www.cylong.com</code>【换成你的域名】，就可以看到你网站的内容了~</li>
+<li>等待一会，打开 Google，在搜索栏输入 <code>site:www.cylong.com</code>（换成你的域名），就可以看到你网站的内容了</li>
 </ol>
-<img src="/blog/2016/05/22/google-baidu-search/google-search.png" class="" title="Github Google 抓取示例">
+<img src="/blog/2016/05/22/google-baidu-search/google-search.png" class="" title="Google 抓取示例">
 
 <h1 id="百度搜索"><a href="#百度搜索" class="headerlink" title="百度搜索"></a>百度搜索</h1><ol>
 <li>点击 <a href="http://zhanzhang.baidu.com/" title="百度站长平台">百度站长平台</a>，登陆。</li>
 <li>添加你的网站，进行人机验证。</li>
-<li>点击 <code>抓取诊断</code> 判断百度是否能够抓取到你的网站【我的博客部署在 Github 上，结果 Github 禁止百度抓取 ( ╯□╰ )，如何解决请参考：<a href="/blog/2016/05/22/github-baidu-spider-exception/" title="解决 Github Pages 禁止百度爬虫抓取的问题">解决 Github Pages 禁止百度爬虫抓取的问题</a>】</li>
-<li>点击 <code>链接提交</code> ，这里有很多种提交方式，各有各的优点，也有详细的说明。自己选择吧【实在不会就直接手动提交】</li>
+<li>点击 <code>抓取诊断</code> 判断百度是否能够抓取到你的网站。我的博客部署在 Github 上，结果 Github 禁止百度抓取 ( ╯□╰ )，如何解决请参考：<a href="/blog/2016/05/22/github-baidu-spider-exception/" title="解决 Github Pages 禁止百度爬虫抓取的问题">解决 Github Pages 禁止百度爬虫抓取的问题</a></li>
+<li>点击 <code>链接提交</code> ，这里有很多种提交方式，各有各的优点，也有详细的说明。自己选择吧（实在不会就直接手动提交）</li>
 <li>我使用的是自动提交方式，Hexo 的 NexT 主题已经部署了自动推送的代码，我们只需在主题配置文件中找到 <code>baidu_push</code> 字段 , 设置其为 <code>true</code> 即可。</li>
-<li>等待一会，打开百度，在搜索栏输入 <code>site:www.cylong.com</code>【换成你的域名】，就可以看到你网站的内容了~</li>
+<li>等待一会，打开百度，在搜索栏输入 <code>site:www.cylong.com</code>（换成你的域名），就可以看到你网站的内容了</li>
 </ol>
-<h1 id="其他的搜索引擎"><a href="#其他的搜索引擎" class="headerlink" title="其他的搜索引擎"></a>其他的搜索引擎</h1><p>其他的搜索引擎我用的也比较少，不过如果你的网站不知道什么时候也会被其收录的，我试了一下，我的博客的首页就被 Bing 收录了，当然你想像上面的那些方法在各个搜索引擎中管理你的网站也是可以的，然而我并没有闲心管那些【我猜测基本都是差不多的】，有兴趣的小伙伴可以自己试一试。</p>
+<h1 id="其他的搜索引擎"><a href="#其他的搜索引擎" class="headerlink" title="其他的搜索引擎"></a>其他的搜索引擎</h1><p>其他的搜索引擎我用的也比较少，不过如果你的网站不知道什么时候也会被其收录的，我试了一下，我的博客的首页就被 Bing 收录了，当然你想像上面的那些方法在各个搜索引擎中管理你的网站也是可以的，然而我并没有闲心管那些（我猜测基本都是差不多的），有兴趣的小伙伴可以自己试一试。</p>
 <h1 id="搜索引擎优化-SEO"><a href="#搜索引擎优化-SEO" class="headerlink" title="搜索引擎优化(SEO)"></a>搜索引擎优化(SEO)</h1><blockquote><p>搜索引擎优化（英语：search engine optimization，缩写为SEO），是一种通过了解搜索引擎的运作规则来调整网站，以及提高目的网站在有关搜索引擎内排名的方式。由于不少研究发现，搜索引擎的用户往往只会留意搜索结果最前面的几个条目，所以不少网站都希望通过各种形式来影响搜索引擎的排序，让自己的网站可以有优秀的搜索排名。当中尤以各种依靠广告维生的网站为甚。</p>
 <footer><strong>维基百科</strong><cite><a href="https://zh.wikipedia.org/wiki/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9C%80%E4%BD%B3%E5%8C%96">搜索引擎优化</a></cite></footer></blockquote>
 
@@ -748,12 +748,12 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save       <span class="comment"># 适用于提交给 Google</span></span><br><span class="line">npm install hexo-generator-baidu-sitemap --save <span class="comment"># 适用于提交给百度</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在站点的 <code>_config.yml</code> 添加以下代码：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">    path: sitemap.xml</span><br><span class="line">baidusitemap:</span><br><span class="line">    path: baidusitemap.xml</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">sitemap:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">sitemap.xml</span></span><br><span class="line"><span class="attr">baidusitemap:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">baidusitemap.xml</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>配置成功后，在你执行 <code>hexo -g</code> 的时候，在 public 文件夹【也就是你的站点根目录】就会出现 sitemap.xml 和 baidusitemap.xml。然后在 robots.txt 中添加如下代码：</p>
+<li><p>配置成功后，在你执行 <code>hexo -g</code> 的时候，在 public 文件夹（也就是你的站点根目录）就会出现 sitemap.xml 和 baidusitemap.xml。然后在 robots.txt 中添加如下代码：</p>
 <figure class="highlight plaintext"><figcaption><span>robots.txt</span></figcaption><table><tr><td class="code"><pre><span class="line">Sitemap: https://www.cylong.com/sitemap.xml</span><br><span class="line">Sitemap: https://www.cylong.com/baidusitemap.xml</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>第三步中搜索引擎在抓取到 robots.txt 的时候会自动抓取站点地图。你还可以手动提交给 Google 和百度，都是带有提示的傻瓜式操作，相信大家都能解决吧(●’◡’●)</p>
+<li><p>第三步中搜索引擎在抓取到 robots.txt 的时候会自动抓取站点地图。你还可以手动提交给 Google 和百度，都是带有提示的傻瓜式操作，相信大家都能解决吧 (●’◡’●)</p>
 </li>
 </ol>
 <ul>
@@ -764,7 +764,7 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
 <p>在我向百度提交站点地图 baidusitemap.xml 的时候提示 XML 解析失败，猜测可能是格式有问题，通过查看 <a href="http://zhanzhang.baidu.com/college/courseinfo?id=267&page=2#h2_article_title1" title="百度sitemap协议都支持哪些格式？">百度sitemap协议都支持哪些格式？</a> 发现 Hexo 生成的 baidusitemap.xml 确实有问题，不过百度支持上文中生成的 sitemap.xml 格式的 XML 文档，上传这个就正常了。</p>
 <img src="/blog/2016/05/22/google-baidu-search/baidusitemap-error.png" class="" title="XML 解析失败">
 
-<h1 id="一些小点子"><a href="#一些小点子" class="headerlink" title="一些小点子"></a>一些小点子</h1><p>你在你的各大社交网站的个人信息里贴上你的博客域名【比如知乎、Facebook、Twitter、Github 等等】会提高你网站的访问量哟，还有在各大社交网站上回答有关问题可以附上自己的博客地址，也会增加访问量o(^▽^)o。当然，更重要的还是你的博客要内容丰富精彩，才会吸引更多的人。如果是自己的某个网站什么的，多注意下 SEO 优化也是不错的选择。</p>
+<h1 id="一些小点子"><a href="#一些小点子" class="headerlink" title="一些小点子"></a>一些小点子</h1><p>你在你的各大社交网站的个人信息里贴上你的博客域名（比如知乎、Facebook、Twitter、Github 等等）会提高你网站的访问量哟，还有在各大社交网站上回答有关问题可以附上自己的博客地址，也会增加访问量 o(^▽^)o。当然，更重要的还是你的博客要内容丰富精彩，才会吸引更多的人。如果是自己的某个网站什么的，多注意下 SEO 优化也是不错的选择。</p>
 <h1 id="参考-amp-感谢"><a href="#参考-amp-感谢" class="headerlink" title="参考&amp;感谢"></a>参考&amp;感谢</h1><blockquote>
 <p><a href="http://www.yuan-ji.me/Hexo-%E4%BC%98%E5%8C%96%EF%BC%9A%E6%8F%90%E4%BA%A4sitemap%E5%8F%8A%E8%A7%A3%E5%86%B3%E7%99%BE%E5%BA%A6%E7%88%AC%E8%99%AB%E6%8A%93%E5%8F%96-GitHub-Pages-%E9%97%AE%E9%A2%98/" title="Hexo 优化：提交 sitemap 及解决百度爬虫无法抓取 GitHub Pages 链接问题">Hexo 优化：提交 sitemap 及解决百度爬虫无法抓取 GitHub Pages 链接问题</a></p>
 </blockquote>
