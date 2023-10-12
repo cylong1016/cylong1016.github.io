@@ -324,13 +324,13 @@
 <h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><p>点击 <a target="_blank" rel="noopener" href="https://github.com/FelisCatus/SwitchyOmega/releases" title="FelisCatus/SwitchyOmega | GitHub">SwitchyOmega</a>，下载页面有详细的安装教程，仔细看一下就好。</p>
 <h2 id="配置-Shadowsocks-情景模式"><a href="#配置-Shadowsocks-情景模式" class="headerlink" title="配置 Shadowsocks 情景模式"></a>配置 Shadowsocks 情景模式</h2><ol>
 <li>打开 Chrome， 点击右上角的 <span class="fa fa-globe" aria-hidden="true"></span> 图标，再点击 <code>选项</code>。<img src="/blog/2017/04/09/chrome-SwitchyOmega/Shadowsocks-icon.png" class="" title="Shadowsocks 图标"></li>
-<li>点击左侧的 <code>新建情景模式</code>，输入情景模式名称 <code>Shadowsocks</code>（自己任意设置名称），类型选择第一个 <code>代理服务器</code>。创建完成后做如下配置：<img src="/blog/2017/04/09/chrome-SwitchyOmega/new.png" class="" width="975" height="526" title="新建情景模式">
+<li>点击左侧的 <code>新建情景模式</code>，输入情景模式名称 <code>Shadowsocks</code>（自己任意设置名称），类型选择第一个 <code>代理服务器</code>。创建完成后做如下配置：<img src="/blog/2017/04/09/chrome-SwitchyOmega/new.png" class="" title="新建情景模式">
 你也可以自己设置不代理的地址列表。如上图。</li>
 <li>保存后你就可以通过这个情景模式科学上网了。</li>
 </ol>
 <h2 id="配置自动切换模式"><a href="#配置自动切换模式" class="headerlink" title="配置自动切换模式"></a>配置自动切换模式</h2><p>配置好 Shadowsocks 情景模式后虽然可以使用 Chrome 浏览器科学上网了，但是这样的话无论你访问什么网站都会走代理，有时候访问国内的一些网站反而会很慢，这时候自动切换模式就解决了这个问题。下面介绍一下如何配置自动切换模式。</p>
 <ol>
-<li>点击左侧的 <code>自动切换</code>，或者自己新建情景模式，类型选择第二个 <code>自动切换模式</code>。然后做如下配置：<img src="/blog/2017/04/09/chrome-SwitchyOmega/auto.png" class="" width="973" height="526" title="自动切换模式"></li>
+<li>点击左侧的 <code>自动切换</code>，或者自己新建情景模式，类型选择第二个 <code>自动切换模式</code>。然后做如下配置：<img src="/blog/2017/04/09/chrome-SwitchyOmega/auto.png" class="" title="自动切换模式"></li>
 </ol>
 <ul>
 <li><code>切换规则</code> 是在访问 <code>条件设置</code> 的域名时候使用后面设置的 <code>情景模式</code>。比如图中我设置 <code>*.google.com</code> 和 <code>*.github.com</code> 使用 <code>Shadowsocks</code> 情景模式（刚刚创建的那个情景模式）。我们可以点击 <code>添加条件</code> 来添加自己的规则。</li>
