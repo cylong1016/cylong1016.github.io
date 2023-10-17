@@ -282,7 +282,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -318,9 +318,6 @@
 <h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">findThreeNumber</span>(vector&lt;<span class="type">int</span>&gt; arr, <span class="type">bool</span> asc) &#123;</span><br><span class="line">	<span class="type">int</span> size = arr.<span class="built_in">size</span>();</span><br><span class="line">	vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; result;	<span class="comment">// 保存结果</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;	<span class="comment">// 保证&quot;第一个数&quot;在数组中</span></span><br><span class="line">		<span class="type">int</span> m = i + <span class="number">1</span>;</span><br><span class="line">		<span class="type">int</span> n = size - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (m &lt; n) &#123;</span><br><span class="line">			<span class="type">int</span> sum = arr[m] + arr[n];	<span class="comment">// 另外两个数的和</span></span><br><span class="line">			<span class="keyword">if</span> (sum + arr[i]  &gt; <span class="number">0</span>) &#123;</span><br><span class="line">				asc ? n-- : m++;	<span class="comment">// 升序和降序的操作不一样</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (sum + arr[i] &lt; <span class="number">0</span>) &#123;</span><br><span class="line">				asc ? m++ : n--;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;	<span class="comment">// 找到三数和为0</span></span><br><span class="line">				vector&lt;<span class="type">int</span>&gt; <span class="built_in">v</span>(<span class="number">3</span>);</span><br><span class="line">				v[<span class="number">0</span>] = arr[i];</span><br><span class="line">				v[<span class="number">1</span>] = arr[m];</span><br><span class="line">				v[<span class="number">2</span>] = arr[n];</span><br><span class="line">				result.<span class="built_in">push_back</span>(v);</span><br><span class="line"></span><br><span class="line">				<span class="comment">// &quot;第二个数&quot;和&quot;第三个数&quot;分别判断其下个数是否重复</span></span><br><span class="line">				<span class="keyword">do</span> &#123;</span><br><span class="line">					m++;</span><br><span class="line">				&#125; <span class="keyword">while</span> (m &lt; n &amp;&amp; arr[m - <span class="number">1</span>] == arr[m]);</span><br><span class="line"></span><br><span class="line">				<span class="keyword">do</span> &#123;</span><br><span class="line">					n--;</span><br><span class="line">				&#125; <span class="keyword">while</span> (m &lt; n &amp;&amp; arr[n + <span class="number">1</span>] == arr[n]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 外层循环&quot;第一个数&quot;，如果下一个&quot;第一个数&quot;相同，则为重复数据</span></span><br><span class="line">		<span class="keyword">while</span> (i &lt; size - <span class="number">2</span> &amp;&amp; arr[i + <span class="number">1</span>] == arr[i]) &#123;</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">bool</span> asc = <span class="literal">true</span>;	<span class="comment">// 升序</span></span><br><span class="line">	<span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">arr</span><span class="params">(n)</span></span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		cin &gt;&gt; arr[i];</span><br><span class="line">		<span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; arr[i] &lt; arr[i - <span class="number">1</span>]) &#123;</span><br><span class="line">			asc = <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; result = <span class="built_in">findThreeNumber</span>(arr, asc);</span><br><span class="line">	<span class="function"><span class="keyword">for</span> <span class="title">each</span> <span class="params">(vector&lt;<span class="type">int</span>&gt; v in result)</span> </span>&#123;</span><br><span class="line">		cout &lt;&lt; v[<span class="number">0</span>] &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; v[<span class="number">1</span>] &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; v[<span class="number">2</span>] &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<blockquote>
-<p>文章标题：<a href='https://www.cylong.com/blog/2016/11/08/three-number/' title='找出有序数组中 3 个和为 0 的数' >找出有序数组中 3 个和为 0 的数</a><br>文章作者：<a href="http://www.cylong.com/about/" title="cylong">cylong</a><br>文章链接：<a href='https://www.cylong.com/blog/2016/11/08/three-number/' title='找出有序数组中 3 个和为 0 的数' >https://www.cylong.com/blog/2016/11/08/three-number/</a><br>有问题或者建议欢迎在下方评论。欢迎转载、引用，但希望标明出处，感激不尽(●’◡’●)</p>
-</blockquote>
 
     </div>
 
@@ -345,6 +342,28 @@
       </div>
 
   </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-title">
+    <strong>本文标题：</strong>
+    <a href="https://www.cylong.com/blog/2016/11/08/three-number/" title="找出有序数组中 3 个和为 0 的数">找出有序数组中 3 个和为 0 的数</a>
+  </li>
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>
+    <a href="/about/" title="cylong">cylong</a>
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.cylong.com/blog/2016/11/08/three-number/" title="找出有序数组中 3 个和为 0 的数">https://www.cylong.com/blog/2016/11/08/three-number/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处 <span class="far fa-laugh-beam"></span>
+  </li>
+</ul>
 </div>
 
         
@@ -534,6 +553,9 @@
         <a href="http://weibo.com/cyl19941016" title="微博 → http:&#x2F;&#x2F;weibo.com&#x2F;cyl19941016" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>微博</a>
       </span>
   </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
 
 
   <div class="links-of-blogroll motion-element">
@@ -581,15 +603,15 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">207k</span>
+    <span title="站点总字数">195k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:08</span>
+    <span title="站点阅读时长">2:57</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-    <span class="post-count">| 博客共97k字</span>
+    <span class="post-count">| 博客共90.9k字</span>
   </div>
 
         
