@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.cylong.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Disqus 评论","order":-1},"livere":{"text":"LiveRe 评论","order":-2}},"activeClass":"disqus"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"www.cylong.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Disqus 评论","order":1},"livere":{"text":"LiveRe 评论","order":2}},"activeClass":"disqus"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="当我们在项目开发的时候，常常使用 Git 做版本控制工具。有时候，我们不希望某些文件或者文件夹被 Git 追踪，比如项目产生的中间文件【.class 、 .o】 ，比如某些编辑器的副本文件【一般文件名带有 ~ 符号】，还有一些 log 文件等等。使用命令行的小伙伴可以不使用 git add 把他们加到索引中，不过随即而来的就是一些麻烦事，在你使用 git add . 的时候还是会追踪这些文件。使">
@@ -440,22 +440,22 @@
           </div>
           
       <div class="comment-button-group">
-          <a class="btn comment-button livere">LiveRe 评论</a>
           <a class="btn comment-button disqus">Disqus 评论</a>
+          <a class="btn comment-button livere">LiveRe 评论</a>
       </div>
-        <div class="comment-position livere">
-          
-  <div class="comments">
-    <div id="lv-container" data-id="city" data-uid="MTAyMC81MTQ3MC8yNzk1MQ=="></div>
-  </div>
-  
-        </div>
         <div class="comment-position disqus">
           
   <div class="comments">
     <div id="disqus_thread">
       <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
     </div>
+  </div>
+  
+        </div>
+        <div class="comment-position livere">
+          
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MTQ3MC8yNzk1MQ=="></div>
   </div>
   
         </div>
