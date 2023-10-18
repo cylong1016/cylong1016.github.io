@@ -184,7 +184,7 @@
 </ol>
 <span id="more"></span>
 
-<h1 id="让-Hexo-不渲染-md-或者-html"><a href="#让-Hexo-不渲染-md-或者-html" class="headerlink" title="让 Hexo 不渲染 md 或者 html"></a>让 Hexo 不渲染 md 或者 html</h1><p>我们知道，在 <code>source</code> 文件夹下的所有 md 文件或者 html 文件都会被渲染，有时候我们不想这些文件被渲染怎么办？比如很多时候我们想要写一个 README.md 或者一些自定义的页面。比如百度或者谷歌在验证站长权限的时候，通常都会要求在主目录下添加一个 html 文件。</p>
+<h1 id="不渲染-md-或者-html"><a href="#不渲染-md-或者-html" class="headerlink" title="不渲染 md 或者 html"></a>不渲染 md 或者 html</h1><p>我们知道，在 <code>source</code> 文件夹下的所有 md 文件或者 html 文件都会被渲染，有时候我们不想这些文件被渲染怎么办？比如很多时候我们想要写一个 README.md 或者一些自定义的页面。比如百度或者谷歌在验证站长权限的时候，通常都会要求在主目录下添加一个 html 文件。</p>
 <h2 id="不渲染-html-文件"><a href="#不渲染-html-文件" class="headerlink" title="不渲染 html 文件"></a>不渲染 html 文件</h2><p>在不想被渲染的 html 文件最上面添加如下代码</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">layout: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
@@ -206,7 +206,18 @@
 <p>需要注意的是，点击 <code>阅读全文</code> 之后，文章会自动定位到 <code>&lt;!-- more --&gt;</code> 所在位置，想要修改成从头阅读需要修改 <code>主题配置文件</code> <code>_config.yml</code>：</p>
 <figure class="highlight yaml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Automatically scroll page to section which is under &lt;!-- more --&gt; mark.</span></span><br><span class="line"><span class="attr">scroll_to_more:</span> <span class="literal">false</span> <span class="string">//</span> <span class="string">NexT</span> <span class="string">v7版本已经不支持</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="Hexo-使用-Fort-Awesome-图标"><a href="#Hexo-使用-Fort-Awesome-图标" class="headerlink" title="Hexo 使用 Fort Awesome 图标"></a>Hexo 使用 Fort Awesome 图标</h1><p>我们知道，在我们写博客的时候，博客文件，或者自己自定义的页面，比如关于页面，都是 md 文件。最后会转化成 Html 文件。但是所支持的标签还是没有 Html 的全面，不过我们可以直接在 md 文件中写 Html 标签，比如：</p>
+<h1 id="配置-SSH-公钥免部署输入密码"><a href="#配置-SSH-公钥免部署输入密码" class="headerlink" title="配置 SSH 公钥免部署输入密码"></a>配置 SSH 公钥免部署输入密码</h1><figure class="highlight yaml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span></span><br><span class="line">    <span class="attr">github:</span> <span class="string">git@github.com:cylong1016/cylong1016.github.io.git</span> <span class="comment"># Github SSH</span></span><br><span class="line">    <span class="comment"># github: https://github.com/cylong1016/cylong1016.github.io.git # Github HTTPS</span></span><br><span class="line">    <span class="attr">coding:</span> <span class="string">git@git.coding.net:cylong1016/cylong1016.git</span> <span class="comment"># Coding SSH</span></span><br><span class="line">    <span class="comment"># coding: https://git.coding.net/cylong1016/cylong1016.git # Coding HTTPS</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的代码是 <code>站点配置文件</code> <code>_config.yml</code> 中的配置，分别是部署到 Github 和 Coding 上的两种方式，使用 HTTPS 方式的话每次部署都需要输入用户名和密码，很麻烦。</p>
+<img src="/blog/2016/04/25/hexo-faq/OpenSSH.png" class="" title="OpenSSH">
+<p>所以我选择使用 SSH 的方式，此方式是本机与远程仓库建立对接，这样部署的时候就不需要输入用户名和密码了。但是需要以下的配置：</p>
+<ol>
+<li>打开终端或者 Git Bash，依次输入：<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> ~/.ssh    <span class="comment"># 如果之前没有这个文件夹就创建此文件夹</span></span><br><span class="line"><span class="built_in">cd</span> ~/.ssh       <span class="comment"># 进入到 .ssh 文件夹中</span></span><br><span class="line"></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail@example.com&quot;</span>    <span class="comment"># 生成密钥</span></span><br><span class="line"><span class="comment"># 接着会提示输入 file 和 passphrase，直接回车就行。</span></span><br><span class="line"><span class="comment"># 接着会看到下面的输出：</span></span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /home/cylong/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /home/cylong/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">fd:56:db:23:db:bf:<span class="built_in">df</span>:54:0a:6a:43:51:13:34:22:b6 youremail@example.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 接着输入</span></span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure></li>
+<li>打开 <a href="https://github.com/settings/ssh">https://github.com/settings/ssh</a>（Github），点击 <code>New SSH key</code>，复制 <code>id_rsa.pub</code> 中的所有内容到 Key 框中，在 Title 框中输入方便自己记忆的名字（比如我的是 Personal Ubuntu）。<a href="https://coding.net/user/account/setting/keys">https://coding.net/user/account/setting/keys</a>（Coding）也一样，但是需要注意的是注册邮箱要一样，否则要两个 SSH。</li>
+<li>输入 <code>ssh -T git@github.com</code> 和 <code>ssh -T git@git.coding.net</code> 测试是否配置成功。</li>
+</ol>
+<p>参考：<a href="https://xuanwo.io/2015/02/07/generate-a-ssh-key/" title="使用 Github SSH Key 以免去 Hexo 部署时输入密码 | Xuanwo&#39;s Blog">使用 Github SSH Key 以免去 Hexo 部署时输入密码 | Xuanwo’s Blog</a></p>
+<h1 id="使用-Fort-Awesome-图标"><a href="#使用-Fort-Awesome-图标" class="headerlink" title="使用 Fort Awesome 图标"></a>使用 Fort Awesome 图标</h1><p>我们知道，在我们写博客的时候，博客文件，或者自己自定义的页面，比如关于页面，都是 md 文件。最后会转化成 Html 文件。但是所支持的标签还是没有 Html 的全面，不过我们可以直接在 md 文件中写 Html 标签，比如：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">del</span>&gt;</span>你什么都没有看见<span class="tag">&lt;/<span class="name">del</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>当然，你可以直接使用 <a href="https://fontawesome.com.cn/" title="Font Awesome icons">Fort Awesome</a> 图标，下面是我在 <a href="/about/#%E8%81%94%E7%B3%BB%E6%88%91" title="联系我 | 笑话人生">关于</a> 页面写的代码：</p>
@@ -239,6 +250,35 @@
 <p>解决办法，请参考：<a href="/blog/2016/04/25/hexo-faq/#%E9%85%8D%E7%BD%AE-SSH-%E5%85%AC%E9%92%A5%E5%85%8D%E5%8E%BB%E9%83%A8%E7%BD%B2%E7%9A%84%E6%97%B6%E5%80%99%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81" title="配置 SSH 公钥免去部署的时候输入密码">配置 SSH 公钥免去部署的时候输入密码</a></p>
 </li>
 </ol>
+<h1 id="NexT-添加版权声明"><a href="#NexT-添加版权声明" class="headerlink" title="NexT 添加版权声明"></a>NexT 添加版权声明</h1><ol>
+<li>修改 <code>主题配置文件</code> <code>_config.yml</code>，开启版权声明：<figure class="highlight yaml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Creative Commons 4.0 International License.</span></span><br><span class="line"><span class="comment"># See: https://creativecommons.org/share-your-work/licensing-types-examples</span></span><br><span class="line"><span class="comment"># Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero</span></span><br><span class="line"><span class="comment"># You can set a language value if you prefer a translated version of CC license, e.g. deed.zh</span></span><br><span class="line"><span class="comment"># CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org</span></span><br><span class="line"><span class="attr">creative_commons:</span></span><br><span class="line">  <span class="attr">license:</span> <span class="string">by-nc-sa</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">language:</span></span><br></pre></td></tr></table></figure></li>
+<li>默认的配置只有 <code>本文作者</code>、<code>本文链接</code>、<code>版权声明</code> 三个字段，于是我又新增了 <code>本文标题</code> 字段，首先修改 NexT 主题下的 <code>\layout\_partials\post\post-copyright.swig</code> 文件，添加 <code>本文标题</code> 字段，并将作者信息增加跳转链接：<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&#123;%- set ccIcon = &#x27;<span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fab fa-fw fa-creative-commons&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>&#x27; %&#125;</span><br><span class="line">&#123;%- set ccText = theme.creative_commons.license | upper %&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;post-copyright&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;post-copyright-title&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">strong</span>&gt;</span>&#123;&#123; __(&#x27;post.copyright.title&#x27;) + __(&#x27;symbol.colon&#x27;) &#125;&#125;<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">    &#123;&#123; next_url(page.permalink, page.title, &#123;title: page.title&#125;) &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;post-copyright-author&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">strong</span>&gt;</span>&#123;&#123; __(&#x27;post.copyright.author&#x27;) + __(&#x27;symbol.colon&#x27;) &#125;&#125; <span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">    &#123;&#123; next_url(&quot;/about/&quot;, page.author or author, &#123;title: page.author or author&#125;) &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;post-copyright-link&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">strong</span>&gt;</span>&#123;&#123; __(&#x27;post.copyright.link&#x27;) + __(&#x27;symbol.colon&#x27;) &#125;&#125;<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">    &#123;&#123; next_url(page.permalink, page.permalink, &#123;title: page.title&#125;) &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;post-copyright-license&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">strong</span>&gt;</span>&#123;&#123; __(&#x27;post.copyright.license_title&#x27;) + __(&#x27;symbol.colon&#x27;) &#125;&#125; <span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">    &#123;&#123;- __(&#x27;post.copyright.license_content&#x27;, next_url(ccURL, ccIcon + ccText)) &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>再修改 <code>\languages\zh-CN.yml</code> 中的版权声明文案配置：<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">copyright:</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">本文标题</span></span><br><span class="line">  <span class="attr">author:</span> <span class="string">本文作者</span></span><br><span class="line">  <span class="attr">link:</span> <span class="string">本文链接</span></span><br><span class="line">  <span class="attr">license_title:</span> <span class="string">版权声明</span></span><br><span class="line">  <span class="attr">license_content:</span> <span class="string">&quot;本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处 &lt;span class=\&quot;far fa-laugh-beam\&quot;&gt;&lt;/span&gt;&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li>效果如下：<img src="/blog/2016/04/25/hexo-faq/%E7%89%88%E6%9D%83%E5%A3%B0%E6%98%8E.png" class="" title="版权声明"></li>
+<li>BY-NC-SA 参考：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" title="CC BY-NC-SA 4.0 DEED | 署名-非商业性使用-相同方式共享 4.0 国际">CC BY-NC-SA 4.0 DEED | 署名-非商业性使用-相同方式共享 4.0 国际</a></li>
+<li>参考：<a href="https://hexo-next.readthedocs.io/zh_CN/latest/next/base/%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF/" title="版权信息 | Hexo-NexT">版权信息 | Hexo-NexT</a></li>
+</ol>
+<h1 id="NexT-添加字数统计和阅读时长"><a href="#NexT-添加字数统计和阅读时长" class="headerlink" title="NexT 添加字数统计和阅读时长"></a>NexT 添加字数统计和阅读时长</h1><ol>
+<li>安装 npm 包</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-symbols-count-time</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>修改 <code>站点配置文件</code> <code>_config.yml</code></li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">symbols:</span> <span class="literal">true</span>             <span class="comment"># 文章字数统计</span></span><br><span class="line">  <span class="attr">time:</span> <span class="literal">true</span>                <span class="comment"># 文章阅读时长</span></span><br><span class="line">  <span class="attr">total_symbols:</span> <span class="literal">true</span>       <span class="comment"># 站点总字数统计</span></span><br><span class="line">  <span class="attr">total_time:</span> <span class="literal">true</span>          <span class="comment"># 站点总阅读时长</span></span><br><span class="line">  <span class="attr">exclude_codeblock:</span> <span class="literal">false</span>  <span class="comment"># 排除代码字数统计</span></span><br><span class="line">  <span class="attr">awl:</span> <span class="number">4</span>                    <span class="comment"># 平均字长（字中的字符数）</span></span><br><span class="line">  <span class="attr">wpm:</span> <span class="number">275</span>                  <span class="comment"># 每分钟阅读字数</span></span><br><span class="line">  <span class="attr">suffix:</span> <span class="string">&quot;mins.&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>修改 NexT 主题的 <code>_config.yml</code> 文件（Next 主题已经支持此插件，仅个性化修改即可）</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-symbols-count-time</span></span><br><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>参考：<blockquote>
+<p><a href="https://github.com/theme-next/hexo-symbols-count-time" title="theme-next/hexo-symbols-count-time">theme-next/hexo-symbols-count-time</a><br><a href="https://blog.csdn.net/mqdxiaoxiao/article/details/93670772" title="Hexo 博客 NexT 主题下添加字数统计和阅读时长 | CSDN 博客">Hexo 博客 NexT 主题下添加字数统计和阅读时长 | CSDN 博客</a></p>
+</blockquote>
+</li>
+</ol>
 <h1 id="添加-RSS-订阅"><a href="#添加-RSS-订阅" class="headerlink" title="添加 RSS 订阅"></a>添加 RSS 订阅</h1><ol>
 <li><p>安装 Feed 插件</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
@@ -267,38 +307,6 @@
 <li><p>参考：<a href="https://www.npmjs.com/package/hexo-wordcount" title="hexo-wordcount">hexo-wordcount</a></p>
 </li>
 </ol>
-<h1 id="NexT-添加字数统计和阅读时长"><a href="#NexT-添加字数统计和阅读时长" class="headerlink" title="NexT 添加字数统计和阅读时长"></a>NexT 添加字数统计和阅读时长</h1><ol>
-<li>安装 npm 包</li>
-</ol>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-symbols-count-time</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>修改 <code>站点配置文件</code> <code>_config.yml</code></li>
-</ol>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">symbols:</span> <span class="literal">true</span>             <span class="comment"># 文章字数统计</span></span><br><span class="line">  <span class="attr">time:</span> <span class="literal">true</span>                <span class="comment"># 文章阅读时长</span></span><br><span class="line">  <span class="attr">total_symbols:</span> <span class="literal">true</span>       <span class="comment"># 站点总字数统计</span></span><br><span class="line">  <span class="attr">total_time:</span> <span class="literal">true</span>          <span class="comment"># 站点总阅读时长</span></span><br><span class="line">  <span class="attr">exclude_codeblock:</span> <span class="literal">false</span>  <span class="comment"># 排除代码字数统计</span></span><br><span class="line">  <span class="attr">awl:</span> <span class="number">4</span>                    <span class="comment"># 平均字长（字中的字符数）</span></span><br><span class="line">  <span class="attr">wpm:</span> <span class="number">275</span>                  <span class="comment"># 每分钟阅读字数</span></span><br><span class="line">  <span class="attr">suffix:</span> <span class="string">&quot;mins.&quot;</span></span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>修改 NexT 主题的 <code>_config.yml</code> 文件（Next 主题已经支持此插件，仅个性化修改即可）</li>
-</ol>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-symbols-count-time</span></span><br><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>参考：<blockquote>
-<p><a href="https://github.com/theme-next/hexo-symbols-count-time" title="theme-next/hexo-symbols-count-time">theme-next/hexo-symbols-count-time</a><br><a href="https://blog.csdn.net/mqdxiaoxiao/article/details/93670772" title="Hexo 博客 NexT 主题下添加字数统计和阅读时长 | CSDN 博客">Hexo 博客 NexT 主题下添加字数统计和阅读时长 | CSDN 博客</a></p>
-</blockquote>
-</li>
-</ol>
-<h1 id="配置-SSH-公钥免部署输入密码"><a href="#配置-SSH-公钥免部署输入密码" class="headerlink" title="配置 SSH 公钥免部署输入密码"></a>配置 SSH 公钥免部署输入密码</h1><figure class="highlight yaml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span></span><br><span class="line">    <span class="attr">github:</span> <span class="string">git@github.com:cylong1016/cylong1016.github.io.git</span> <span class="comment"># Github SSH</span></span><br><span class="line">    <span class="comment"># github: https://github.com/cylong1016/cylong1016.github.io.git # Github HTTPS</span></span><br><span class="line">    <span class="attr">coding:</span> <span class="string">git@git.coding.net:cylong1016/cylong1016.git</span> <span class="comment"># Coding SSH</span></span><br><span class="line">    <span class="comment"># coding: https://git.coding.net/cylong1016/cylong1016.git # Coding HTTPS</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<p>上面的代码是 <code>站点配置文件</code> <code>_config.yml</code> 中的配置，分别是部署到 Github 和 Coding 上的两种方式，使用 HTTPS 方式的话每次部署都需要输入用户名和密码，很麻烦。</p>
-<img src="/blog/2016/04/25/hexo-faq/OpenSSH.png" class="" title="OpenSSH">
-<p>所以我选择使用 SSH 的方式，此方式是本机与远程仓库建立对接，这样部署的时候就不需要输入用户名和密码了。但是需要以下的配置：</p>
-<ol>
-<li>打开终端或者 Git Bash，依次输入：<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> ~/.ssh    <span class="comment"># 如果之前没有这个文件夹就创建此文件夹</span></span><br><span class="line"><span class="built_in">cd</span> ~/.ssh       <span class="comment"># 进入到 .ssh 文件夹中</span></span><br><span class="line"></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail@example.com&quot;</span>    <span class="comment"># 生成密钥</span></span><br><span class="line"><span class="comment"># 接着会提示输入 file 和 passphrase，直接回车就行。</span></span><br><span class="line"><span class="comment"># 接着会看到下面的输出：</span></span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /home/cylong/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /home/cylong/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">fd:56:db:23:db:bf:<span class="built_in">df</span>:54:0a:6a:43:51:13:34:22:b6 youremail@example.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 接着输入</span></span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure></li>
-<li>打开 <a href="https://github.com/settings/ssh">https://github.com/settings/ssh</a>（Github），点击 <code>New SSH key</code>，复制 <code>id_rsa.pub</code> 中的所有内容到 Key 框中，在 Title 框中输入方便自己记忆的名字（比如我的是 Personal Ubuntu）。<a href="https://coding.net/user/account/setting/keys">https://coding.net/user/account/setting/keys</a>（Coding）也一样，但是需要注意的是注册邮箱要一样，否则要两个 SSH。</li>
-<li>输入 <code>ssh -T git@github.com</code> 和 <code>ssh -T git@git.coding.net</code> 测试是否配置成功。</li>
-</ol>
-<p>参考：<a href="https://xuanwo.io/2015/02/07/generate-a-ssh-key/" title="使用 Github SSH Key 以免去 Hexo 部署时输入密码 | Xuanwo&#39;s Blog">使用 Github SSH Key 以免去 Hexo 部署时输入密码 | Xuanwo’s Blog</a></p>
 <h1 id="部署到-Github-后修改未更新"><a href="#部署到-Github-后修改未更新" class="headerlink" title="部署到 Github 后修改未更新"></a>部署到 Github 后修改未更新</h1><p>有时候当你 <code>hexo d --g</code> 部署到 Github 的时候，发现有些地方并没有更新，比如你的主题样式。这时候就建议你输入 <code>hexo clean</code> 清除下 public 文件夹下的文件，然后再部署（部署的时候实际上是直接拷贝 public 下的文件的）。另外多说一句，<code>hexo d --g</code> 是以下两个命令的缩写：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo g  <span class="comment"># 生成本地 public 静态文件</span></span><br><span class="line">hexo d  <span class="comment"># 部署到 Github 上</span></span><br><span class="line"><span class="comment"># 也可以缩写成：hexo g --d</span></span><br></pre></td></tr></table></figure>
 
@@ -416,6 +424,37 @@
       </tags>
   </entry>
   <entry>
+    <title>Apache 如何设置 404 错误页面</title>
+    <url>/blog/2016/04/29/apache-404/</url>
+    <content><![CDATA[<hr>
+<p>当我们浏览网站的时候，有时候会发现访问的页面不存在了，页面会有“你访问的页面不存在了，跳转到主页”或者“404 Not Found”等等的提示。我们通常称之为 404 页面。所谓的 404 页面就是当用户输入一个错误或非存在的链接时，显示的一个页面。当 Web 服务器接到类似请求时，会返回一个 404 状态码，告诉浏览器要请求的资源并不存在。显示的 404 页面主要作用是告诉用户，你输入的网址多请求的页面是不存在的或者是一个错误的链接，引导用户进入网站的其他页面。但是 Web 的默认 404 页面非常的简陋，对用户很不友好，这就需要我们自己定义个性化的 404 页面，提升用户体验。</p>
+<span id="more"></span>
+
+<h1 id="Apache-设置-404-错误页面"><a href="#Apache-设置-404-错误页面" class="headerlink" title="Apache 设置 404 错误页面"></a>Apache 设置 404 错误页面</h1><p>在 <code>.htaccess</code> 文件中加入代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ErrorDocument 404 /404.html</span><br></pre></td></tr></table></figure>
+
+<p>之后在网站根目录建立一个 <code>404.html</code> 文件，编写你的 404 页面。</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<li>  不要将 404 页面直接指向到网站主页，这可能导致你的首页不被搜索引擎收录。</li>
+<li>  /404.html 不要带域名，比如(错误写法：<a href="http://www.cylong.com/404.html">http://www.cylong.com/404.html</a>)，否则返回的状态码不是 404，而是 302、200。</li>
+</ul>
+<h1 id="SEO-搜索引擎优化"><a href="#SEO-搜索引擎优化" class="headerlink" title="SEO(搜索引擎优化)"></a>SEO(搜索引擎优化)</h1><p>404 状态码对搜索引擎是非常重要的。需要注意的是，有时候我们看到一个 404 的错误页面，但返回的状态码可能并不是 404。用户并不会关心状态码是多少，但是对于搜索引擎就不一样了。当搜索引擎获取到404 状态码，就表示此 URL 已经失效，页面已经不存在了。搜索引擎就不会索引这个页面，并且删除数据库中的索引。若返回的是 200，搜索引擎就会对此 URL 建立索引，这样就会产生多个不同的 URL 具有相同的页面内容，搜索引擎就认为你的网站有大量重复的内容，可能会被降权。</p>
+<p>所以当我们自定义错误页面的时候，一定要保证状态码也是 404，不仅要对用户友好，也要对搜索引擎友好。</p>
+<h1 id="参考资料-amp-感谢"><a href="#参考资料-amp-感谢" class="headerlink" title="参考资料&amp;感谢"></a>参考资料&amp;感谢</h1><blockquote>
+<p><a href="http://bbs.20z.com/thread-5162-1-1.html" title="网站如何设置404页面，什么是404错误，404页面代码怎么写">网站如何设置404页面，什么是404错误，404页面代码怎么写</a><br><a href="http://www.yzznl.cn/archives/19.html" title="园子博客 - 如何设置404页面">园子博客 - 如何设置404页面</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>Apache</category>
+      </categories>
+      <tags>
+        <tag>Apache</tag>
+        <tag>SEO</tag>
+        <tag>htaccess</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>网站首选域</title>
     <url>/blog/2016/05/02/preferred-domain/</url>
     <content><![CDATA[<hr>
@@ -453,39 +492,8 @@
         <tag>Hexo</tag>
         <tag>Apache</tag>
         <tag>SEO</tag>
+        <tag>htaccess</tag>
         <tag>301重定向</tag>
-        <tag>htaccess</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Apache 如何设置 404 错误页面</title>
-    <url>/blog/2016/04/29/apache-404/</url>
-    <content><![CDATA[<hr>
-<p>当我们浏览网站的时候，有时候会发现访问的页面不存在了，页面会有“你访问的页面不存在了，跳转到主页”或者“404 Not Found”等等的提示。我们通常称之为 404 页面。所谓的 404 页面就是当用户输入一个错误或非存在的链接时，显示的一个页面。当 Web 服务器接到类似请求时，会返回一个 404 状态码，告诉浏览器要请求的资源并不存在。显示的 404 页面主要作用是告诉用户，你输入的网址多请求的页面是不存在的或者是一个错误的链接，引导用户进入网站的其他页面。但是 Web 的默认 404 页面非常的简陋，对用户很不友好，这就需要我们自己定义个性化的 404 页面，提升用户体验。</p>
-<span id="more"></span>
-
-<h1 id="Apache-设置-404-错误页面"><a href="#Apache-设置-404-错误页面" class="headerlink" title="Apache 设置 404 错误页面"></a>Apache 设置 404 错误页面</h1><p>在 <code>.htaccess</code> 文件中加入代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ErrorDocument 404 /404.html</span><br></pre></td></tr></table></figure>
-
-<p>之后在网站根目录建立一个 <code>404.html</code> 文件，编写你的 404 页面。</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
-<li>  不要将 404 页面直接指向到网站主页，这可能导致你的首页不被搜索引擎收录。</li>
-<li>  /404.html 不要带域名，比如(错误写法：<a href="http://www.cylong.com/404.html">http://www.cylong.com/404.html</a>)，否则返回的状态码不是 404，而是 302、200。</li>
-</ul>
-<h1 id="SEO-搜索引擎优化"><a href="#SEO-搜索引擎优化" class="headerlink" title="SEO(搜索引擎优化)"></a>SEO(搜索引擎优化)</h1><p>404 状态码对搜索引擎是非常重要的。需要注意的是，有时候我们看到一个 404 的错误页面，但返回的状态码可能并不是 404。用户并不会关心状态码是多少，但是对于搜索引擎就不一样了。当搜索引擎获取到404 状态码，就表示此 URL 已经失效，页面已经不存在了。搜索引擎就不会索引这个页面，并且删除数据库中的索引。若返回的是 200，搜索引擎就会对此 URL 建立索引，这样就会产生多个不同的 URL 具有相同的页面内容，搜索引擎就认为你的网站有大量重复的内容，可能会被降权。</p>
-<p>所以当我们自定义错误页面的时候，一定要保证状态码也是 404，不仅要对用户友好，也要对搜索引擎友好。</p>
-<h1 id="参考资料-amp-感谢"><a href="#参考资料-amp-感谢" class="headerlink" title="参考资料&amp;感谢"></a>参考资料&amp;感谢</h1><blockquote>
-<p><a href="http://bbs.20z.com/thread-5162-1-1.html" title="网站如何设置404页面，什么是404错误，404页面代码怎么写">网站如何设置404页面，什么是404错误，404页面代码怎么写</a><br><a href="http://www.yzznl.cn/archives/19.html" title="园子博客 - 如何设置404页面">园子博客 - 如何设置404页面</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>Apache</category>
-      </categories>
-      <tags>
-        <tag>Apache</tag>
-        <tag>SEO</tag>
-        <tag>htaccess</tag>
       </tags>
   </entry>
   <entry>
@@ -1459,84 +1467,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
-    <title>浅谈 HashMap</title>
-    <url>/blog/2019/09/10/hashmap/</url>
-    <content><![CDATA[<hr>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>HashMap 是 Java 编程中非常常用的一种数据结构，在各种面试中也是频繁出现的问题。我是一次定位问题，发现了服务后台 CPU 和内存飙升，原因是使用 HashMap 的时候，并发插入数据在 resize() 方法中产生循环链表导致死循环（JDK8 已经解决）。看到代码中大量的 HashMap，不自然的就想先了解下 HashMap 的实现原理和其线程安全问题。此文主要是介绍 HashMap 的实现原理，关于如何定位 CPU 和内存飙升问题，可以看另外一篇博客：</p>
-<blockquote>
-<p><a href="/blog/2019/09/10/jstack/" title="Jstack 使用介绍 | 笑话人生">Jstack 使用介绍 | 笑话人生</a></p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h1><p>HashMap 是一种存储 <code>key -&gt; value </code>键值对的数据结构，每一个键值对称为 Entry，这些 Entry 存储在一个 table 数组中，每个 Entry 是一个链表结构，有一个 next 指针指向下一个元素。接下来我们看一下比较重要的代码。</p>
-<img src="/blog/2019/09/10/hashmap/%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84.jpg" class="" title="存储结构">
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Basic hash bin node, used for most entries.  (See below for</span></span><br><span class="line"><span class="comment"> * TreeNode subclass, and in LinkedHashMap for its Entry subclass.)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">Node</span>&lt;K,V&gt; <span class="keyword">implements</span> <span class="title class_">Map</span>.Entry&lt;K,V&gt; &#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="type">int</span> hash;</span><br><span class="line">    <span class="keyword">final</span> K key;</span><br><span class="line">    V value;</span><br><span class="line">    Node&lt;K,V&gt; next;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * The table, initialized on first use, and resized as</span></span><br><span class="line"><span class="comment"> * necessary. When allocated, length is always a power of two.</span></span><br><span class="line"><span class="comment"> * (We also tolerate length zero in some operations to allow</span></span><br><span class="line"><span class="comment"> * bootstrapping mechanics that are currently not needed.)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">transient</span> Node&lt;K,V&gt;[] table;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * The number of key-value mappings contained in this map.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">transient</span> <span class="type">int</span> size;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * The number of times this HashMap has been structurally modified</span></span><br><span class="line"><span class="comment"> * Structural modifications are those that change the number of mappings in</span></span><br><span class="line"><span class="comment"> * the HashMap or otherwise modify its internal structure (e.g.,</span></span><br><span class="line"><span class="comment"> * rehash).  This field is used to make iterators on Collection-views of</span></span><br><span class="line"><span class="comment"> * the HashMap fail-fast.  (See ConcurrentModificationException).</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">transient</span> <span class="type">int</span> modCount;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * The next size value at which to resize (capacity * load factor).</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@serial</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">// (The javadoc description is true upon serialization.</span></span><br><span class="line"><span class="comment">// Additionally, if the table array has not been allocated, this</span></span><br><span class="line"><span class="comment">// field holds the initial array capacity, or zero signifying</span></span><br><span class="line"><span class="comment">// DEFAULT_INITIAL_CAPACITY.)</span></span><br><span class="line"><span class="type">int</span> threshold;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * The load factor for the hash table.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@serial</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">final</span> <span class="type">float</span> loadFactor;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Node 就是上面说的 Entry 的实现，用来保存键值对，实现了 Map.Entry 接口。其中 hash 的值是通过 hash() 方法计算出来，key 和 value 是存入的值，next 是出现哈希冲突的时候，会使用 next 指向链表中的下一个元素对象。</li>
-<li>table 存储 Entry 的数组，初始长度是 DEFAULT_INITIAL_CAPACITY = 16。</li>
-<li>size 是实际存储的键值对数量。</li>
-<li>modCount 记录内部结构发生的次数，比如 put、remove 操作等。常见的一边遍历元素一边删除元素的操作就会报 java.util.ConcurrentModificationException。</li>
-<li>loadFactor 负载因子，默认是 DEFAULT_LOAD_FACTOR = 0.75f。</li>
-<li>threshold 允许存储的最大元素数量是通过 table 数组长度 * loadFactor 负载因子得出。</li>
-</ul>
-<h1 id="put-操作"><a href="#put-操作" class="headerlink" title="put 操作"></a>put 操作</h1><p>在 put 操作中，将元素 key 进行 hash 计算并找到 table 的数组下标，将 Entry 直接放入数组中，作为头元素，若通过算法得到的该数组元素已经有了元素（俗称 hash 冲突，链表结构出现的实际意义也就是为了解决 hash 冲突的问题）。当新来的 Entry 映射到冲突的数组位置时，只需要插入到对应的链表即可。接下来直接在源码上解释。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Implements Map.put and related methods.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> hash hash for key</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> key the key</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> value the value to put</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> onlyIfAbsent if true, don&#x27;t change existing value</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> evict if false, the table is in creation mode.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> previous value, or null if none</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">final</span> V <span class="title function_">putVal</span><span class="params">(<span class="type">int</span> hash, K key, V value, <span class="type">boolean</span> onlyIfAbsent,</span></span><br><span class="line"><span class="params">               <span class="type">boolean</span> evict)</span> &#123;</span><br><span class="line">    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; <span class="type">int</span> n, i;</span><br><span class="line">    <span class="comment">// 首先判断 table 数组是否为空，为空则创建 table。</span></span><br><span class="line">    <span class="keyword">if</span> ((tab = table) == <span class="literal">null</span> || (n = tab.length) == <span class="number">0</span>)</span><br><span class="line">        n = (tab = resize()).length;</span><br><span class="line">    <span class="keyword">if</span> ((p = tab[i = (n - <span class="number">1</span>) &amp; hash]) == <span class="literal">null</span>)</span><br><span class="line">        <span class="comment">// 如果通过 (n - 1) &amp; hash 找到的数组元素为空，则直接创建新的 node，作为头节点。</span></span><br><span class="line">        tab[i] = newNode(hash, key, value, <span class="literal">null</span>);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        Node&lt;K,V&gt; e; K k;</span><br><span class="line">        <span class="comment">// 找到数组元素，判断是相同的 key 值。</span></span><br><span class="line">        <span class="keyword">if</span> (p.hash == hash &amp;&amp;</span><br><span class="line">            ((k = p.key) == key || (key != <span class="literal">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">            e = p;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (p <span class="keyword">instanceof</span> TreeNode)</span><br><span class="line">            <span class="comment">// 如果是红黑树结构，则向树插入数据</span></span><br><span class="line">            e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(<span class="built_in">this</span>, tab, hash, key, value);</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 该数组元素 hash 相等，key 不等，同时链表长度 &lt; 8。进行遍历寻找元素，有就覆盖无则新建</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">binCount</span> <span class="operator">=</span> <span class="number">0</span>; ; ++binCount) &#123;</span><br><span class="line">                <span class="keyword">if</span> ((e = p.next) == <span class="literal">null</span>) &#123;</span><br><span class="line">                    <span class="comment">// 向链表尾插入数据</span></span><br><span class="line">                    p.next = newNode(hash, key, value, <span class="literal">null</span>);</span><br><span class="line">                    <span class="keyword">if</span> (binCount &gt;= TREEIFY_THRESHOLD - <span class="number">1</span>) <span class="comment">// -1 for 1st</span></span><br><span class="line">                        <span class="comment">// 链表长度 &gt;=8 结构转为红黑树</span></span><br><span class="line">                        treeifyBin(tab, hash);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                    ((k = e.key) == key || (key != <span class="literal">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                p = e;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果是存在的元素，则根据条件是否覆盖之前的值。</span></span><br><span class="line">        <span class="keyword">if</span> (e != <span class="literal">null</span>) &#123; <span class="comment">// existing mapping for key</span></span><br><span class="line">            <span class="type">V</span> <span class="variable">oldValue</span> <span class="operator">=</span> e.value;</span><br><span class="line">            <span class="keyword">if</span> (!onlyIfAbsent || oldValue == <span class="literal">null</span>)</span><br><span class="line">                e.value = value;</span><br><span class="line">            afterNodeAccess(e);</span><br><span class="line">            <span class="keyword">return</span> oldValue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 内部结构变化次数 +1</span></span><br><span class="line">    ++modCount;</span><br><span class="line">    <span class="comment">// 当 map 的实际大小大于了 threshold 则进行 resize 操作，将最大存储数量变为原来的两倍。</span></span><br><span class="line">    <span class="keyword">if</span> (++size &gt; threshold)</span><br><span class="line">        resize();</span><br><span class="line">    afterNodeInsertion(evict);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这里确定 table 的数组下标使用的 hash 算法是 <code>(n - 1) &amp; hash(key)</code>，相对于取模运算，使用位运算效率更高。key 值的 hash 计算是高 16bit 不变，低 16bit 和高 16bit 做了一个异或。主要是为了保证 n 太小的时候，高低位均能参与下标的计算。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Computes key.hashCode() and spreads (XORs) higher bits of hash</span></span><br><span class="line"><span class="comment"> * to lower.  Because the table uses power-of-two masking, sets of</span></span><br><span class="line"><span class="comment"> * hashes that vary only in bits above the current mask will</span></span><br><span class="line"><span class="comment"> * always collide. (Among known examples are sets of Float keys</span></span><br><span class="line"><span class="comment"> * holding consecutive whole numbers in small tables.)  So we</span></span><br><span class="line"><span class="comment"> * apply a transform that spreads the impact of higher bits</span></span><br><span class="line"><span class="comment"> * downward. There is a tradeoff between speed, utility, and</span></span><br><span class="line"><span class="comment"> * quality of bit-spreading. Because many common sets of hashes</span></span><br><span class="line"><span class="comment"> * are already reasonably distributed (so don&#x27;t benefit from</span></span><br><span class="line"><span class="comment"> * spreading), and because we use trees to handle large sets of</span></span><br><span class="line"><span class="comment"> * collisions in bins, we just XOR some shifted bits in the</span></span><br><span class="line"><span class="comment"> * cheapest possible way to reduce systematic lossage, as well as</span></span><br><span class="line"><span class="comment"> * to incorporate impact of the highest bits that would otherwise</span></span><br><span class="line"><span class="comment"> * never be used in index calculations because of table bounds.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">hash</span><span class="params">(Object key)</span> &#123;</span><br><span class="line">    <span class="type">int</span> h;</span><br><span class="line">    <span class="keyword">return</span> (key == <span class="literal">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="get-操作"><a href="#get-操作" class="headerlink" title="get 操作"></a>get 操作</h1><p>get 方法通过 hash 寻找到 Entry 数组下标，找到头节点，然后顺着对应链表的头节点，一个一个向下来查找。由于 JDK8 引用了红黑树结构，在链表元素过多时，JDK8 的实现将比 JDK7 在 get 和 put 操作上效率高上很多。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Implements Map.get and related methods.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> hash hash for key</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> key the key</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> the node, or null if none</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">final</span> Node&lt;K,V&gt; <span class="title function_">getNode</span><span class="params">(<span class="type">int</span> hash, Object key)</span> &#123;</span><br><span class="line">    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; first, e; <span class="type">int</span> n; K k;</span><br><span class="line">    <span class="keyword">if</span> ((tab = table) != <span class="literal">null</span> &amp;&amp; (n = tab.length) &gt; <span class="number">0</span> &amp;&amp;</span><br><span class="line">        (first = tab[(n - <span class="number">1</span>) &amp; hash]) != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (first.hash == hash &amp;&amp; <span class="comment">// always check first node</span></span><br><span class="line">            ((k = first.key) == key || (key != <span class="literal">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">            <span class="keyword">return</span> first;</span><br><span class="line">        <span class="keyword">if</span> ((e = first.next) != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (first <span class="keyword">instanceof</span> TreeNode)</span><br><span class="line">                <span class="keyword">return</span> ((TreeNode&lt;K,V&gt;)first).getTreeNode(hash, key);</span><br><span class="line">            <span class="keyword">do</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                    ((k = e.key) == key || (key != <span class="literal">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">                    <span class="keyword">return</span> e;</span><br><span class="line">            &#125; <span class="keyword">while</span> ((e = e.next) != <span class="literal">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="resize-操作"><a href="#resize-操作" class="headerlink" title="resize 操作"></a>resize 操作</h1><p>当 map 的实际大小大于了 threshold 则进行 resize 操作，将最大存储数量变为原来的两倍。接下来我们看一下源码。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Initializes or doubles table size.  If null, allocates in</span></span><br><span class="line"><span class="comment"> * accord with initial capacity target held in field threshold.</span></span><br><span class="line"><span class="comment"> * Otherwise, because we are using power-of-two expansion, the</span></span><br><span class="line"><span class="comment"> * elements from each bin must either stay at same index, or move</span></span><br><span class="line"><span class="comment"> * with a power of two offset in the new table.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> the table</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">final</span> Node&lt;K,V&gt;[] resize() &#123;</span><br><span class="line">    Node&lt;K,V&gt;[] oldTab = table;</span><br><span class="line">    <span class="type">int</span> <span class="variable">oldCap</span> <span class="operator">=</span> (oldTab == <span class="literal">null</span>) ? <span class="number">0</span> : oldTab.length;</span><br><span class="line">    <span class="type">int</span> <span class="variable">oldThr</span> <span class="operator">=</span> threshold;</span><br><span class="line">    <span class="type">int</span> newCap, newThr = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (oldCap &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// 超过最大限制，不进行扩容</span></span><br><span class="line">        <span class="keyword">if</span> (oldCap &gt;= MAXIMUM_CAPACITY) &#123;</span><br><span class="line">            threshold = Integer.MAX_VALUE;</span><br><span class="line">            <span class="keyword">return</span> oldTab;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 进行原始长度2倍扩容</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> ((newCap = oldCap &lt;&lt; <span class="number">1</span>) &lt; MAXIMUM_CAPACITY &amp;&amp;</span><br><span class="line">                 oldCap &gt;= DEFAULT_INITIAL_CAPACITY)</span><br><span class="line">            newThr = oldThr &lt;&lt; <span class="number">1</span>; <span class="comment">// double threshold</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 第一次初始化</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (oldThr &gt; <span class="number">0</span>) <span class="comment">// initial capacity was placed in threshold</span></span><br><span class="line">        newCap = oldThr;</span><br><span class="line">    <span class="keyword">else</span> &#123;               <span class="comment">// zero initial threshold signifies using defaults</span></span><br><span class="line">        newCap = DEFAULT_INITIAL_CAPACITY;</span><br><span class="line">        newThr = (<span class="type">int</span>)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 第一次初始化</span></span><br><span class="line">    <span class="keyword">if</span> (newThr == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="type">float</span> <span class="variable">ft</span> <span class="operator">=</span> (<span class="type">float</span>)newCap * loadFactor;</span><br><span class="line">        newThr = (newCap &lt; MAXIMUM_CAPACITY &amp;&amp; ft &lt; (<span class="type">float</span>)MAXIMUM_CAPACITY ?</span><br><span class="line">                  (<span class="type">int</span>)ft : Integer.MAX_VALUE);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 新的最大允许元素数量值</span></span><br><span class="line">    threshold = newThr;</span><br><span class="line">    <span class="meta">@SuppressWarnings(&#123;&quot;rawtypes&quot;,&quot;unchecked&quot;&#125;)</span></span><br><span class="line">    <span class="comment">// 新的 table 数组 </span></span><br><span class="line">    Node&lt;K,V&gt;[] newTab = (Node&lt;K,V&gt;[])<span class="keyword">new</span> <span class="title class_">Node</span>[newCap];</span><br><span class="line">    table = newTab;</span><br><span class="line">    <span class="keyword">if</span> (oldTab != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="comment">// 遍历老数组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; oldCap; ++j) &#123;</span><br><span class="line">            Node&lt;K,V&gt; e;</span><br><span class="line">            <span class="keyword">if</span> ((e = oldTab[j]) != <span class="literal">null</span>) &#123;</span><br><span class="line">                oldTab[j] = <span class="literal">null</span>;</span><br><span class="line">                <span class="comment">// 直接按照原始索引放入新数组中</span></span><br><span class="line">                <span class="keyword">if</span> (e.next == <span class="literal">null</span>)</span><br><span class="line">                    newTab[e.hash &amp; (newCap - <span class="number">1</span>)] = e;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (e <span class="keyword">instanceof</span> TreeNode)</span><br><span class="line">                    ((TreeNode&lt;K,V&gt;)e).split(<span class="built_in">this</span>, newTab, j, oldCap);</span><br><span class="line">                <span class="keyword">else</span> &#123; <span class="comment">// preserve order</span></span><br><span class="line">                    <span class="comment">// 遍历链表</span></span><br><span class="line">                    Node&lt;K,V&gt; loHead = <span class="literal">null</span>, loTail = <span class="literal">null</span>;</span><br><span class="line">                    Node&lt;K,V&gt; hiHead = <span class="literal">null</span>, hiTail = <span class="literal">null</span>;</span><br><span class="line">                    Node&lt;K,V&gt; next;</span><br><span class="line">                    <span class="keyword">do</span> &#123;</span><br><span class="line">                        next = e.next;</span><br><span class="line">                        <span class="keyword">if</span> ((e.hash &amp; oldCap) == <span class="number">0</span>) &#123;</span><br><span class="line">                            <span class="keyword">if</span> (loTail == <span class="literal">null</span>)</span><br><span class="line">                                loHead = e;</span><br><span class="line">                            <span class="keyword">else</span></span><br><span class="line">                                loTail.next = e;</span><br><span class="line">                            loTail = e;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="keyword">if</span> (hiTail == <span class="literal">null</span>)</span><br><span class="line">                                hiHead = e;</span><br><span class="line">                            <span class="keyword">else</span></span><br><span class="line">                                hiTail.next = e;</span><br><span class="line">                            hiTail = e;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">while</span> ((e = next) != <span class="literal">null</span>);</span><br><span class="line">                    <span class="keyword">if</span> (loTail != <span class="literal">null</span>) &#123;</span><br><span class="line">                        loTail.next = <span class="literal">null</span>;</span><br><span class="line">                        newTab[j] = loHead;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (hiTail != <span class="literal">null</span>) &#123;</span><br><span class="line">                        hiTail.next = <span class="literal">null</span>;</span><br><span class="line">                        newTab[j + oldCap] = hiHead;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newTab;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h1><p>HashMap 是非线程安全的，在多线程环境下对某个 HashMap 进行并行操作，可能会产生很多不可预期的情况。</p>
-<h2 id="多线程-put-导致元素丢失"><a href="#多线程-put-导致元素丢失" class="headerlink" title="多线程 put 导致元素丢失"></a>多线程 put 导致元素丢失</h2><p>实验代码如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException &#123;</span><br><span class="line">    HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++) &#123;</span><br><span class="line">        list.add(i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    list.forEach(i -&gt; map.put(i, i));</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10000</span>; i &lt; <span class="number">20000</span>; i++) &#123;</span><br><span class="line">            map.put(i, i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;).start();</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">20000</span>; i &lt; <span class="number">30000</span>; i++) &#123;</span><br><span class="line">            map.put(i, i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;).start();</span><br><span class="line"></span><br><span class="line">    Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">    System.out.println(map.entrySet().size());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>输出：29402，元素少了很多。</p>
-<p>这里很好理解，我们看 put 的代码，假设我们的线程1和线程2同时在执行 put 方法。其中的的 key 值计算后落入了 table 的同一个位置。这个时候，两个线程同时执行<code>p.next = newNode(hash, key, value, null);</code>，此时两个线程的元素值就会互相覆盖掉。</p>
-<h2 id="put-的同时-get-数据，可能会导致-get-的数据为-null"><a href="#put-的同时-get-数据，可能会导致-get-的数据为-null" class="headerlink" title="put 的同时 get 数据，可能会导致 get 的数据为 null"></a>put 的同时 get 数据，可能会导致 get 的数据为 null</h2><p>put 的时候，可能会产生 resize 操作，我们发现 resize 有如下代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Node&lt;K,V&gt;[] newTab = (Node&lt;K,V&gt;[])<span class="keyword">new</span> <span class="title class_">Node</span>[newCap];</span><br><span class="line">table = newTab;</span><br></pre></td></tr></table></figure>
-
-<p>这段代码会让新的 table 为空，这个时候调用 get 方法会获取到 null 数据。</p>
-<h2 id="JDK7-中并发-put-会造成循环链表"><a href="#JDK7-中并发-put-会造成循环链表" class="headerlink" title="JDK7 中并发 put 会造成循环链表"></a>JDK7 中并发 put 会造成循环链表</h2><p>此问题在 JDK8 中已经解决，在这里是提醒下自己 JDK7 中的 resize 操作会产生循环链表导致死循环，毕竟之前项目中确确实实遇到了死循环的问题。</p>
-<blockquote>
-<p><a href="/blog/2019/09/10/jstack/" title="Jstack 使用介绍 | 笑话人生">Jstack 使用介绍 | 笑话人生</a></p>
-</blockquote>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol>
-<li><p><strong>什么时候会使用 HashMap？他有什么特点？</strong><br>是基于 Map 接口的实现，存储键值对时，它可以接收 null 的键值，HashMap 存储着 Entry 对象。HashMap 是非线程安全的。如果需要线程安全，则使用 ConcurrentHashMap，否则使用 HashMap 就足够了。</p>
-</li>
-<li><p><strong>你知道 HashMap 的工作原理吗？equals() 和 hashCode() 的都有什么作用？</strong><br>通过对 key 的 hashCode() 计算下标 <code>n - 1 &amp; hash</code>，从而获得 table 下标的位置，然后用 key.equals() 方法去链表或树中去查找对应的节点。get 和 put 方法如上介绍。</p>
-</li>
-<li><p><strong>你知道 hash 的实现吗？为什么要这样实现？</strong><br>在 Java 1.8 的实现中，是通过 key.hashCode() 的高16位异或低16位实现的：<code>(h = k.hashCode()) ^ (h &gt;&gt;&gt; 16)</code>，主要是从速度、功效、质量来考虑的，这么做可以在 table 的长度 n 比较小的时候，也能保证考虑到高低 bit 都参与到 hash 的计算中，同时不会有太大的开销。</p>
-</li>
-<li><p><strong>如果 HashMap 的大小超过了负载因子(load factor)定义的容量，怎么办？</strong><br>如果超过了负载因子(默认0.75)，则会重新 resize 一个原来长度两倍的 HashMap，并且重新调用 hash 方法。</p>
-</li>
-</ol>
-<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><blockquote>
-<p><a href="https://juejin.im/post/6844903744711163911" title="HashMap底层实现原理 | 忆逝">HashMap 底层实现原理 | 忆逝</a><br><a href="https://zhuanlan.zhihu.com/p/31610616" title="什么是HashMap | 小灰">什么是HashMap | 小灰</a><br><a href="https://yikun.github.io/2015/04/01/Java-HashMap%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/" title="Java HashMap工作原理及实现 | Yikun">Java HashMap工作原理及实现 | Yikun</a><br><a href="https://juejin.im/post/6844903796225605640" title="深入解读HashMap线程安全性问题 | Mr羽墨青衫">深入解读HashMap线程安全性问题 | Mr羽墨青衫</a><br><a href="https://crossoverjie.top/2018/07/23/java-senior/ConcurrentHashMap/" title="HashMap? ConcurrentHashMap? 相信看完这篇没人能难住你！ | crossoverJie">HashMap? ConcurrentHashMap? 相信看完这篇没人能难住你！ | crossoverJie</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>数据结构与算法</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>数据结构与算法</tag>
-        <tag>HashMap</tag>
-        <tag>红黑树</tag>
-        <tag>数组</tag>
-        <tag>链表</tag>
-        <tag>线程安全</tag>
-        <tag>面试总结</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JStack 使用介绍</title>
     <url>/blog/2019/09/10/jstack/</url>
     <content><![CDATA[<hr>
@@ -1656,6 +1586,173 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
+    <title>浅谈 HashMap</title>
+    <url>/blog/2019/09/10/hashmap/</url>
+    <content><![CDATA[<hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>HashMap 是 Java 编程中非常常用的一种数据结构，在各种面试中也是频繁出现的问题。我是一次定位问题，发现了服务后台 CPU 和内存飙升，原因是使用 HashMap 的时候，并发插入数据在 resize() 方法中产生循环链表导致死循环（JDK8 已经解决）。看到代码中大量的 HashMap，不自然的就想先了解下 HashMap 的实现原理和其线程安全问题。此文主要是介绍 HashMap 的实现原理，关于如何定位 CPU 和内存飙升问题，可以看另外一篇博客：</p>
+<blockquote>
+<p><a href="/blog/2019/09/10/jstack/" title="Jstack 使用介绍 | 笑话人生">Jstack 使用介绍 | 笑话人生</a></p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h1><p>HashMap 是一种存储 <code>key -&gt; value </code>键值对的数据结构，每一个键值对称为 Entry，这些 Entry 存储在一个 table 数组中，每个 Entry 是一个链表结构，有一个 next 指针指向下一个元素。接下来我们看一下比较重要的代码。</p>
+<img src="/blog/2019/09/10/hashmap/%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84.jpg" class="" title="存储结构">
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Basic hash bin node, used for most entries.  (See below for</span></span><br><span class="line"><span class="comment"> * TreeNode subclass, and in LinkedHashMap for its Entry subclass.)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">Node</span>&lt;K,V&gt; <span class="keyword">implements</span> <span class="title class_">Map</span>.Entry&lt;K,V&gt; &#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="type">int</span> hash;</span><br><span class="line">    <span class="keyword">final</span> K key;</span><br><span class="line">    V value;</span><br><span class="line">    Node&lt;K,V&gt; next;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * The table, initialized on first use, and resized as</span></span><br><span class="line"><span class="comment"> * necessary. When allocated, length is always a power of two.</span></span><br><span class="line"><span class="comment"> * (We also tolerate length zero in some operations to allow</span></span><br><span class="line"><span class="comment"> * bootstrapping mechanics that are currently not needed.)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">transient</span> Node&lt;K,V&gt;[] table;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * The number of key-value mappings contained in this map.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">transient</span> <span class="type">int</span> size;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * The number of times this HashMap has been structurally modified</span></span><br><span class="line"><span class="comment"> * Structural modifications are those that change the number of mappings in</span></span><br><span class="line"><span class="comment"> * the HashMap or otherwise modify its internal structure (e.g.,</span></span><br><span class="line"><span class="comment"> * rehash).  This field is used to make iterators on Collection-views of</span></span><br><span class="line"><span class="comment"> * the HashMap fail-fast.  (See ConcurrentModificationException).</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">transient</span> <span class="type">int</span> modCount;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * The next size value at which to resize (capacity * load factor).</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@serial</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">// (The javadoc description is true upon serialization.</span></span><br><span class="line"><span class="comment">// Additionally, if the table array has not been allocated, this</span></span><br><span class="line"><span class="comment">// field holds the initial array capacity, or zero signifying</span></span><br><span class="line"><span class="comment">// DEFAULT_INITIAL_CAPACITY.)</span></span><br><span class="line"><span class="type">int</span> threshold;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * The load factor for the hash table.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@serial</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">final</span> <span class="type">float</span> loadFactor;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Node 就是上面说的 Entry 的实现，用来保存键值对，实现了 Map.Entry 接口。其中 hash 的值是通过 hash() 方法计算出来，key 和 value 是存入的值，next 是出现哈希冲突的时候，会使用 next 指向链表中的下一个元素对象。</li>
+<li>table 存储 Entry 的数组，初始长度是 DEFAULT_INITIAL_CAPACITY = 16。</li>
+<li>size 是实际存储的键值对数量。</li>
+<li>modCount 记录内部结构发生的次数，比如 put、remove 操作等。常见的一边遍历元素一边删除元素的操作就会报 java.util.ConcurrentModificationException。</li>
+<li>loadFactor 负载因子，默认是 DEFAULT_LOAD_FACTOR = 0.75f。</li>
+<li>threshold 允许存储的最大元素数量是通过 table 数组长度 * loadFactor 负载因子得出。</li>
+</ul>
+<h1 id="put-操作"><a href="#put-操作" class="headerlink" title="put 操作"></a>put 操作</h1><p>在 put 操作中，将元素 key 进行 hash 计算并找到 table 的数组下标，将 Entry 直接放入数组中，作为头元素，若通过算法得到的该数组元素已经有了元素（俗称 hash 冲突，链表结构出现的实际意义也就是为了解决 hash 冲突的问题）。当新来的 Entry 映射到冲突的数组位置时，只需要插入到对应的链表即可。接下来直接在源码上解释。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Implements Map.put and related methods.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> hash hash for key</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> key the key</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> value the value to put</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> onlyIfAbsent if true, don&#x27;t change existing value</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> evict if false, the table is in creation mode.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> previous value, or null if none</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">final</span> V <span class="title function_">putVal</span><span class="params">(<span class="type">int</span> hash, K key, V value, <span class="type">boolean</span> onlyIfAbsent,</span></span><br><span class="line"><span class="params">               <span class="type">boolean</span> evict)</span> &#123;</span><br><span class="line">    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; <span class="type">int</span> n, i;</span><br><span class="line">    <span class="comment">// 首先判断 table 数组是否为空，为空则创建 table。</span></span><br><span class="line">    <span class="keyword">if</span> ((tab = table) == <span class="literal">null</span> || (n = tab.length) == <span class="number">0</span>)</span><br><span class="line">        n = (tab = resize()).length;</span><br><span class="line">    <span class="keyword">if</span> ((p = tab[i = (n - <span class="number">1</span>) &amp; hash]) == <span class="literal">null</span>)</span><br><span class="line">        <span class="comment">// 如果通过 (n - 1) &amp; hash 找到的数组元素为空，则直接创建新的 node，作为头节点。</span></span><br><span class="line">        tab[i] = newNode(hash, key, value, <span class="literal">null</span>);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        Node&lt;K,V&gt; e; K k;</span><br><span class="line">        <span class="comment">// 找到数组元素，判断是相同的 key 值。</span></span><br><span class="line">        <span class="keyword">if</span> (p.hash == hash &amp;&amp;</span><br><span class="line">            ((k = p.key) == key || (key != <span class="literal">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">            e = p;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (p <span class="keyword">instanceof</span> TreeNode)</span><br><span class="line">            <span class="comment">// 如果是红黑树结构，则向树插入数据</span></span><br><span class="line">            e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(<span class="built_in">this</span>, tab, hash, key, value);</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 该数组元素 hash 相等，key 不等，同时链表长度 &lt; 8。进行遍历寻找元素，有就覆盖无则新建</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">binCount</span> <span class="operator">=</span> <span class="number">0</span>; ; ++binCount) &#123;</span><br><span class="line">                <span class="keyword">if</span> ((e = p.next) == <span class="literal">null</span>) &#123;</span><br><span class="line">                    <span class="comment">// 向链表尾插入数据</span></span><br><span class="line">                    p.next = newNode(hash, key, value, <span class="literal">null</span>);</span><br><span class="line">                    <span class="keyword">if</span> (binCount &gt;= TREEIFY_THRESHOLD - <span class="number">1</span>) <span class="comment">// -1 for 1st</span></span><br><span class="line">                        <span class="comment">// 链表长度 &gt;=8 结构转为红黑树</span></span><br><span class="line">                        treeifyBin(tab, hash);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                    ((k = e.key) == key || (key != <span class="literal">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                p = e;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果是存在的元素，则根据条件是否覆盖之前的值。</span></span><br><span class="line">        <span class="keyword">if</span> (e != <span class="literal">null</span>) &#123; <span class="comment">// existing mapping for key</span></span><br><span class="line">            <span class="type">V</span> <span class="variable">oldValue</span> <span class="operator">=</span> e.value;</span><br><span class="line">            <span class="keyword">if</span> (!onlyIfAbsent || oldValue == <span class="literal">null</span>)</span><br><span class="line">                e.value = value;</span><br><span class="line">            afterNodeAccess(e);</span><br><span class="line">            <span class="keyword">return</span> oldValue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 内部结构变化次数 +1</span></span><br><span class="line">    ++modCount;</span><br><span class="line">    <span class="comment">// 当 map 的实际大小大于了 threshold 则进行 resize 操作，将最大存储数量变为原来的两倍。</span></span><br><span class="line">    <span class="keyword">if</span> (++size &gt; threshold)</span><br><span class="line">        resize();</span><br><span class="line">    afterNodeInsertion(evict);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里确定 table 的数组下标使用的 hash 算法是 <code>(n - 1) &amp; hash(key)</code>，相对于取模运算，使用位运算效率更高。key 值的 hash 计算是高 16bit 不变，低 16bit 和高 16bit 做了一个异或。主要是为了保证 n 太小的时候，高低位均能参与下标的计算。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Computes key.hashCode() and spreads (XORs) higher bits of hash</span></span><br><span class="line"><span class="comment"> * to lower.  Because the table uses power-of-two masking, sets of</span></span><br><span class="line"><span class="comment"> * hashes that vary only in bits above the current mask will</span></span><br><span class="line"><span class="comment"> * always collide. (Among known examples are sets of Float keys</span></span><br><span class="line"><span class="comment"> * holding consecutive whole numbers in small tables.)  So we</span></span><br><span class="line"><span class="comment"> * apply a transform that spreads the impact of higher bits</span></span><br><span class="line"><span class="comment"> * downward. There is a tradeoff between speed, utility, and</span></span><br><span class="line"><span class="comment"> * quality of bit-spreading. Because many common sets of hashes</span></span><br><span class="line"><span class="comment"> * are already reasonably distributed (so don&#x27;t benefit from</span></span><br><span class="line"><span class="comment"> * spreading), and because we use trees to handle large sets of</span></span><br><span class="line"><span class="comment"> * collisions in bins, we just XOR some shifted bits in the</span></span><br><span class="line"><span class="comment"> * cheapest possible way to reduce systematic lossage, as well as</span></span><br><span class="line"><span class="comment"> * to incorporate impact of the highest bits that would otherwise</span></span><br><span class="line"><span class="comment"> * never be used in index calculations because of table bounds.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">hash</span><span class="params">(Object key)</span> &#123;</span><br><span class="line">    <span class="type">int</span> h;</span><br><span class="line">    <span class="keyword">return</span> (key == <span class="literal">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="get-操作"><a href="#get-操作" class="headerlink" title="get 操作"></a>get 操作</h1><p>get 方法通过 hash 寻找到 Entry 数组下标，找到头节点，然后顺着对应链表的头节点，一个一个向下来查找。由于 JDK8 引用了红黑树结构，在链表元素过多时，JDK8 的实现将比 JDK7 在 get 和 put 操作上效率高上很多。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Implements Map.get and related methods.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> hash hash for key</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> key the key</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> the node, or null if none</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">final</span> Node&lt;K,V&gt; <span class="title function_">getNode</span><span class="params">(<span class="type">int</span> hash, Object key)</span> &#123;</span><br><span class="line">    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; first, e; <span class="type">int</span> n; K k;</span><br><span class="line">    <span class="keyword">if</span> ((tab = table) != <span class="literal">null</span> &amp;&amp; (n = tab.length) &gt; <span class="number">0</span> &amp;&amp;</span><br><span class="line">        (first = tab[(n - <span class="number">1</span>) &amp; hash]) != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (first.hash == hash &amp;&amp; <span class="comment">// always check first node</span></span><br><span class="line">            ((k = first.key) == key || (key != <span class="literal">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">            <span class="keyword">return</span> first;</span><br><span class="line">        <span class="keyword">if</span> ((e = first.next) != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (first <span class="keyword">instanceof</span> TreeNode)</span><br><span class="line">                <span class="keyword">return</span> ((TreeNode&lt;K,V&gt;)first).getTreeNode(hash, key);</span><br><span class="line">            <span class="keyword">do</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                    ((k = e.key) == key || (key != <span class="literal">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">                    <span class="keyword">return</span> e;</span><br><span class="line">            &#125; <span class="keyword">while</span> ((e = e.next) != <span class="literal">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="resize-操作"><a href="#resize-操作" class="headerlink" title="resize 操作"></a>resize 操作</h1><p>当 map 的实际大小大于了 threshold 则进行 resize 操作，将最大存储数量变为原来的两倍。接下来我们看一下源码。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Initializes or doubles table size.  If null, allocates in</span></span><br><span class="line"><span class="comment"> * accord with initial capacity target held in field threshold.</span></span><br><span class="line"><span class="comment"> * Otherwise, because we are using power-of-two expansion, the</span></span><br><span class="line"><span class="comment"> * elements from each bin must either stay at same index, or move</span></span><br><span class="line"><span class="comment"> * with a power of two offset in the new table.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> the table</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">final</span> Node&lt;K,V&gt;[] resize() &#123;</span><br><span class="line">    Node&lt;K,V&gt;[] oldTab = table;</span><br><span class="line">    <span class="type">int</span> <span class="variable">oldCap</span> <span class="operator">=</span> (oldTab == <span class="literal">null</span>) ? <span class="number">0</span> : oldTab.length;</span><br><span class="line">    <span class="type">int</span> <span class="variable">oldThr</span> <span class="operator">=</span> threshold;</span><br><span class="line">    <span class="type">int</span> newCap, newThr = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (oldCap &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// 超过最大限制，不进行扩容</span></span><br><span class="line">        <span class="keyword">if</span> (oldCap &gt;= MAXIMUM_CAPACITY) &#123;</span><br><span class="line">            threshold = Integer.MAX_VALUE;</span><br><span class="line">            <span class="keyword">return</span> oldTab;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 进行原始长度2倍扩容</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> ((newCap = oldCap &lt;&lt; <span class="number">1</span>) &lt; MAXIMUM_CAPACITY &amp;&amp;</span><br><span class="line">                 oldCap &gt;= DEFAULT_INITIAL_CAPACITY)</span><br><span class="line">            newThr = oldThr &lt;&lt; <span class="number">1</span>; <span class="comment">// double threshold</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 第一次初始化</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (oldThr &gt; <span class="number">0</span>) <span class="comment">// initial capacity was placed in threshold</span></span><br><span class="line">        newCap = oldThr;</span><br><span class="line">    <span class="keyword">else</span> &#123;               <span class="comment">// zero initial threshold signifies using defaults</span></span><br><span class="line">        newCap = DEFAULT_INITIAL_CAPACITY;</span><br><span class="line">        newThr = (<span class="type">int</span>)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 第一次初始化</span></span><br><span class="line">    <span class="keyword">if</span> (newThr == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="type">float</span> <span class="variable">ft</span> <span class="operator">=</span> (<span class="type">float</span>)newCap * loadFactor;</span><br><span class="line">        newThr = (newCap &lt; MAXIMUM_CAPACITY &amp;&amp; ft &lt; (<span class="type">float</span>)MAXIMUM_CAPACITY ?</span><br><span class="line">                  (<span class="type">int</span>)ft : Integer.MAX_VALUE);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 新的最大允许元素数量值</span></span><br><span class="line">    threshold = newThr;</span><br><span class="line">    <span class="meta">@SuppressWarnings(&#123;&quot;rawtypes&quot;,&quot;unchecked&quot;&#125;)</span></span><br><span class="line">    <span class="comment">// 新的 table 数组 </span></span><br><span class="line">    Node&lt;K,V&gt;[] newTab = (Node&lt;K,V&gt;[])<span class="keyword">new</span> <span class="title class_">Node</span>[newCap];</span><br><span class="line">    table = newTab;</span><br><span class="line">    <span class="keyword">if</span> (oldTab != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="comment">// 遍历老数组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; oldCap; ++j) &#123;</span><br><span class="line">            Node&lt;K,V&gt; e;</span><br><span class="line">            <span class="keyword">if</span> ((e = oldTab[j]) != <span class="literal">null</span>) &#123;</span><br><span class="line">                oldTab[j] = <span class="literal">null</span>;</span><br><span class="line">                <span class="comment">// 直接按照原始索引放入新数组中</span></span><br><span class="line">                <span class="keyword">if</span> (e.next == <span class="literal">null</span>)</span><br><span class="line">                    newTab[e.hash &amp; (newCap - <span class="number">1</span>)] = e;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (e <span class="keyword">instanceof</span> TreeNode)</span><br><span class="line">                    ((TreeNode&lt;K,V&gt;)e).split(<span class="built_in">this</span>, newTab, j, oldCap);</span><br><span class="line">                <span class="keyword">else</span> &#123; <span class="comment">// preserve order</span></span><br><span class="line">                    <span class="comment">// 遍历链表</span></span><br><span class="line">                    Node&lt;K,V&gt; loHead = <span class="literal">null</span>, loTail = <span class="literal">null</span>;</span><br><span class="line">                    Node&lt;K,V&gt; hiHead = <span class="literal">null</span>, hiTail = <span class="literal">null</span>;</span><br><span class="line">                    Node&lt;K,V&gt; next;</span><br><span class="line">                    <span class="keyword">do</span> &#123;</span><br><span class="line">                        next = e.next;</span><br><span class="line">                        <span class="keyword">if</span> ((e.hash &amp; oldCap) == <span class="number">0</span>) &#123;</span><br><span class="line">                            <span class="keyword">if</span> (loTail == <span class="literal">null</span>)</span><br><span class="line">                                loHead = e;</span><br><span class="line">                            <span class="keyword">else</span></span><br><span class="line">                                loTail.next = e;</span><br><span class="line">                            loTail = e;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="keyword">if</span> (hiTail == <span class="literal">null</span>)</span><br><span class="line">                                hiHead = e;</span><br><span class="line">                            <span class="keyword">else</span></span><br><span class="line">                                hiTail.next = e;</span><br><span class="line">                            hiTail = e;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">while</span> ((e = next) != <span class="literal">null</span>);</span><br><span class="line">                    <span class="keyword">if</span> (loTail != <span class="literal">null</span>) &#123;</span><br><span class="line">                        loTail.next = <span class="literal">null</span>;</span><br><span class="line">                        newTab[j] = loHead;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (hiTail != <span class="literal">null</span>) &#123;</span><br><span class="line">                        hiTail.next = <span class="literal">null</span>;</span><br><span class="line">                        newTab[j + oldCap] = hiHead;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newTab;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h1><p>HashMap 是非线程安全的，在多线程环境下对某个 HashMap 进行并行操作，可能会产生很多不可预期的情况。</p>
+<h2 id="多线程-put-导致元素丢失"><a href="#多线程-put-导致元素丢失" class="headerlink" title="多线程 put 导致元素丢失"></a>多线程 put 导致元素丢失</h2><p>实验代码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException &#123;</span><br><span class="line">    HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++) &#123;</span><br><span class="line">        list.add(i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    list.forEach(i -&gt; map.put(i, i));</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10000</span>; i &lt; <span class="number">20000</span>; i++) &#123;</span><br><span class="line">            map.put(i, i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;).start();</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">20000</span>; i &lt; <span class="number">30000</span>; i++) &#123;</span><br><span class="line">            map.put(i, i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;).start();</span><br><span class="line"></span><br><span class="line">    Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">    System.out.println(map.entrySet().size());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出：29402，元素少了很多。</p>
+<p>这里很好理解，我们看 put 的代码，假设我们的线程1和线程2同时在执行 put 方法。其中的的 key 值计算后落入了 table 的同一个位置。这个时候，两个线程同时执行<code>p.next = newNode(hash, key, value, null);</code>，此时两个线程的元素值就会互相覆盖掉。</p>
+<h2 id="put-的同时-get-数据，可能会导致-get-的数据为-null"><a href="#put-的同时-get-数据，可能会导致-get-的数据为-null" class="headerlink" title="put 的同时 get 数据，可能会导致 get 的数据为 null"></a>put 的同时 get 数据，可能会导致 get 的数据为 null</h2><p>put 的时候，可能会产生 resize 操作，我们发现 resize 有如下代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Node&lt;K,V&gt;[] newTab = (Node&lt;K,V&gt;[])<span class="keyword">new</span> <span class="title class_">Node</span>[newCap];</span><br><span class="line">table = newTab;</span><br></pre></td></tr></table></figure>
+
+<p>这段代码会让新的 table 为空，这个时候调用 get 方法会获取到 null 数据。</p>
+<h2 id="JDK7-中并发-put-会造成循环链表"><a href="#JDK7-中并发-put-会造成循环链表" class="headerlink" title="JDK7 中并发 put 会造成循环链表"></a>JDK7 中并发 put 会造成循环链表</h2><p>此问题在 JDK8 中已经解决，在这里是提醒下自己 JDK7 中的 resize 操作会产生循环链表导致死循环，毕竟之前项目中确确实实遇到了死循环的问题。</p>
+<blockquote>
+<p><a href="/blog/2019/09/10/jstack/" title="Jstack 使用介绍 | 笑话人生">Jstack 使用介绍 | 笑话人生</a></p>
+</blockquote>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol>
+<li><p><strong>什么时候会使用 HashMap？他有什么特点？</strong><br>是基于 Map 接口的实现，存储键值对时，它可以接收 null 的键值，HashMap 存储着 Entry 对象。HashMap 是非线程安全的。如果需要线程安全，则使用 ConcurrentHashMap，否则使用 HashMap 就足够了。</p>
+</li>
+<li><p><strong>你知道 HashMap 的工作原理吗？equals() 和 hashCode() 的都有什么作用？</strong><br>通过对 key 的 hashCode() 计算下标 <code>n - 1 &amp; hash</code>，从而获得 table 下标的位置，然后用 key.equals() 方法去链表或树中去查找对应的节点。get 和 put 方法如上介绍。</p>
+</li>
+<li><p><strong>你知道 hash 的实现吗？为什么要这样实现？</strong><br>在 Java 1.8 的实现中，是通过 key.hashCode() 的高16位异或低16位实现的：<code>(h = k.hashCode()) ^ (h &gt;&gt;&gt; 16)</code>，主要是从速度、功效、质量来考虑的，这么做可以在 table 的长度 n 比较小的时候，也能保证考虑到高低 bit 都参与到 hash 的计算中，同时不会有太大的开销。</p>
+</li>
+<li><p><strong>如果 HashMap 的大小超过了负载因子(load factor)定义的容量，怎么办？</strong><br>如果超过了负载因子(默认0.75)，则会重新 resize 一个原来长度两倍的 HashMap，并且重新调用 hash 方法。</p>
+</li>
+</ol>
+<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><blockquote>
+<p><a href="https://juejin.im/post/6844903744711163911" title="HashMap底层实现原理 | 忆逝">HashMap 底层实现原理 | 忆逝</a><br><a href="https://zhuanlan.zhihu.com/p/31610616" title="什么是HashMap | 小灰">什么是HashMap | 小灰</a><br><a href="https://yikun.github.io/2015/04/01/Java-HashMap%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/" title="Java HashMap工作原理及实现 | Yikun">Java HashMap工作原理及实现 | Yikun</a><br><a href="https://juejin.im/post/6844903796225605640" title="深入解读HashMap线程安全性问题 | Mr羽墨青衫">深入解读HashMap线程安全性问题 | Mr羽墨青衫</a><br><a href="https://crossoverjie.top/2018/07/23/java-senior/ConcurrentHashMap/" title="HashMap? ConcurrentHashMap? 相信看完这篇没人能难住你！ | crossoverJie">HashMap? ConcurrentHashMap? 相信看完这篇没人能难住你！ | crossoverJie</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>数据结构与算法</tag>
+        <tag>HashMap</tag>
+        <tag>红黑树</tag>
+        <tag>数组</tag>
+        <tag>链表</tag>
+        <tag>线程安全</tag>
+        <tag>面试总结</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>两数之和</title>
+    <url>/blog/2019/11/06/two-sum/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。<br>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</p>
+<p><strong>示例:</strong></p>
+<blockquote>
+<p>给定 nums = [2, 7, 11, 15], target = 9<br>因为 nums[0] + nums[1] = 2 + 7 = 9<br>所以返回 [0, 1]</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>使用哈希表将会使问题特别简单，首先，我们将使用一次遍历将数组中的元素加入到Map中，key是当前元素的值，value是当前元素的索引。接下来，我们进行第二次遍历，第二次遍历我们将查找当前元素的目标元素（target−nums[i]）是否在Map中，如果在，即找到目标值，返回两个元素的索引。注意一点的是，目标元素不能是当前元素！</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">    <span class="keyword">if</span> (nums == <span class="literal">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">complement</span> <span class="operator">=</span> target - nums[i];</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(complement) &amp;&amp; map.get(complement) != i) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;i, map.get(complement)&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实际上，我们把上面的两步合成一步，只用一次遍历即可完成，当遍历到第i个值后，我们把此元素的需要的目标值保存到Map中，后续遍历，找到目标的值，即完成遍历。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">    HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;(nums.length);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(nums[i])) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;map.get(nums[i]), i&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        map.put(target - nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;-<span class="number">1</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/two-sum" title="两数之和 | 力扣（LeetCode）">两数之和 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/two-sum/solution/liang-shu-zhi-he-by-leetcode-2/" title="两数之和 | 题解（LeetCode）">两数之和 | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>数组</tag>
+        <tag>哈希表</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>罗马数字转整数</title>
+    <url>/blog/2019/11/07/roman-to-integer/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">字符          数值</span><br><span class="line">I             1</span><br><span class="line">V             5</span><br><span class="line">X             10</span><br><span class="line">L             50</span><br><span class="line">C             100</span><br><span class="line">D             500</span><br><span class="line">M             1000</span><br></pre></td></tr></table></figure>
+<p>例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：</p>
+<ul>
+<li>I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。</li>
+<li>X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。 </li>
+<li>C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。</li>
+</ul>
+<p>给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。</p>
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p>输入: “III”<br>输出: 3</p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p>输入: “IV”<br>输出: 4</p>
+</blockquote>
+<p><strong>示例 3:</strong></p>
+<blockquote>
+<p>输入: “IX”<br>输出: 9</p>
+</blockquote>
+<p><strong>示例 4:</strong></p>
+<blockquote>
+<p>输入: “LVIII”<br>输出: 58<br>解释: L = 50, V= 5, III = 3.</p>
+</blockquote>
+<p><strong>示例 5:</strong></p>
+<blockquote>
+<p>输入: “MCMXCIV”<br>输出: 1994<br>解释: M = 1000, CM = 900, XC = 90, IV = 4.</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>针对题目的对应关系我们首先构建一个Map，将罗马数字与整数的对应关系建立起来。根据题意，我们只需要将罗马字符一个一个转换成整数相加就行了。对于特例情况，当小数在大数的左边的时候，原本相加的操作，要变成相减操作。代码实现上，我们在处理当前数的时候，同时获取后面的一位数，如果大于当前数，则当前操作为减去当前的数，否则为加上当前的数。</p>
+<img src="/blog/2019/11/07/roman-to-integer/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0.png" class="" title="罗马数字转整数">
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">romanToInt</span><span class="params">(String s)</span> &#123;</span><br><span class="line">    HashMap&lt;Character, Integer&gt; kv = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;(<span class="number">7</span>);</span><br><span class="line">    kv.put(<span class="string">&#x27;I&#x27;</span>, <span class="number">1</span>);</span><br><span class="line">    kv.put(<span class="string">&#x27;V&#x27;</span>, <span class="number">5</span>);</span><br><span class="line">    kv.put(<span class="string">&#x27;X&#x27;</span>, <span class="number">10</span>);</span><br><span class="line">    kv.put(<span class="string">&#x27;L&#x27;</span>, <span class="number">50</span>);</span><br><span class="line">    kv.put(<span class="string">&#x27;C&#x27;</span>, <span class="number">100</span>);</span><br><span class="line">    kv.put(<span class="string">&#x27;D&#x27;</span>, <span class="number">500</span>);</span><br><span class="line">    kv.put(<span class="string">&#x27;M&#x27;</span>, <span class="number">1000</span>);</span><br><span class="line">    <span class="type">char</span>[] roman = s.toCharArray();</span><br><span class="line">    <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; roman.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i + <span class="number">1</span> &lt; roman.length &amp;&amp; kv.get(roman[i]) &lt; kv.get(roman[i + <span class="number">1</span>])) &#123;</span><br><span class="line">            result -= kv.get(roman[i]);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            result += kv.get(roman[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/roman-to-integer/" title="罗马数字转整数 | 力扣（LeetCode）">罗马数字转整数 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/roman-to-integer/solution/yong-shi-9993nei-cun-9873jian-dan-jie-fa-by-donesp/" title="罗马数字转整数 | 题解（LeetCode）">罗马数字转整数 | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>哈希表</tag>
+        <tag>字符串</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>两数相加</title>
     <url>/blog/2019/11/25/add-two-numbers/</url>
     <content><![CDATA[<hr>
@@ -1693,50 +1790,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>学习笔记</tag>
         <tag>链表</tag>
         <tag>单向链表</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>无重复字符的最长子串</title>
-    <url>/blog/2019/11/26/longest-substring-without-repeating-characters/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个字符串，请你找出其中不含有重复字符的最长子串的长度。</p>
-<p><strong>示例 1:</strong></p>
-<blockquote>
-<p>输入: “abcabcbb”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “abc”，所以其长度为 3。</p>
-</blockquote>
-<p><strong>示例 2:</strong></p>
-<blockquote>
-<p>输入: “bbbbb”<br>输出: 1<br>解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。</p>
-</blockquote>
-<p><strong>示例 3:</strong></p>
-<blockquote>
-<p>输入: “pwwkew”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “wke”，所以其长度为 3。<br> 注意，你的答案必须是子串的长度，”pwke” 是一个子序列，不是子串。</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="队列实现"><a href="#队列实现" class="headerlink" title="队列实现"></a>队列实现</h1><p>本题是计算最长的不重复子串，而子串肯定是连续的。我们肯定都能想到，要遍历下输入的字符串，那么遍历的过程中，我们需要做什么呢？既然是计算字串的长度，那么我们遍历的过程中就要将字串保存下来。同时，每次保存新的字符的时候，需要判断原有的子串中是否包含了这个字符，如果包含了，那么我们要从字串的第一个字符开始，一直删除字符，直到不存在即将要加入的字符，然后计算当前子串的长度，与之前计算的长度比较，取较大值。拿 <code>abcdefce</code> 举例，我们遍历到第二个c字符的时候，已有的不含有重复字符的子串是 <code>abcdef</code> ，当要把c加入到已有的子串的时候，需要将前面的  <code>abc</code> 删除，那么新的子串为 <code>defc</code>。由于子串有后进后出的特性，于是我们使用队列来保存子串。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">lengthOfLongestSubstring1</span><span class="params">(String s)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    Queue&lt;Character&gt; queue = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">    <span class="type">int</span> <span class="variable">length</span> <span class="operator">=</span> s.length();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">        <span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> s.charAt(i);</span><br><span class="line">        <span class="keyword">while</span> (queue.contains(c)) &#123;</span><br><span class="line">            queue.poll();</span><br><span class="line">        &#125;</span><br><span class="line">        queue.offer(c);</span><br><span class="line">        count = Math.max(queue.size(), count);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="双指针实现"><a href="#双指针实现" class="headerlink" title="双指针实现"></a>双指针实现</h1><p>双指针实现的思路和队列的实现一致，只不过使用两个指针i和j来指向子串的两端，判断 <code>s.substring(i, j)</code> 中是否包含当前的字符，若包含，则移动左指针i++，否则移动右指针j++。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">lengthOfLongestSubstring</span><span class="params">(String s)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (s.length() &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> s.length();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">maxLength</span> <span class="operator">=</span> <span class="number">0</span>, i = <span class="number">0</span>, j = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (j &lt; s.length()) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!s.substring(i, j).contains(String.valueOf(s.charAt(j)))) &#123;</span><br><span class="line">            maxLength = Math.max(maxLength, j - i + <span class="number">1</span>);</span><br><span class="line">            j++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxLength;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/" title="无重复字符的最长子串 | 力扣（LeetCode）">无重复字符的最长子串 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/solution/wu-zhong-fu-zi-fu-de-zui-chang-zi-chuan-by-leetc-2/" title="无重复字符的最长子串 | 题解（LeetCode）">无重复字符的最长子串 | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>链表</tag>
-        <tag>指针</tag>
-        <tag>双指针</tag>
-        <tag>队列</tag>
-        <tag>滑动窗口</tag>
       </tags>
   </entry>
   <entry>
@@ -1854,24 +1907,32 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
-    <title>两数之和</title>
-    <url>/blog/2019/11/06/two-sum/</url>
+    <title>无重复字符的最长子串</title>
+    <url>/blog/2019/11/26/longest-substring-without-repeating-characters/</url>
     <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。<br>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</p>
-<p><strong>示例:</strong></p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个字符串，请你找出其中不含有重复字符的最长子串的长度。</p>
+<p><strong>示例 1:</strong></p>
 <blockquote>
-<p>给定 nums = [2, 7, 11, 15], target = 9<br>因为 nums[0] + nums[1] = 2 + 7 = 9<br>所以返回 [0, 1]</p>
+<p>输入: “abcabcbb”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “abc”，所以其长度为 3。</p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p>输入: “bbbbb”<br>输出: 1<br>解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。</p>
+</blockquote>
+<p><strong>示例 3:</strong></p>
+<blockquote>
+<p>输入: “pwwkew”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “wke”，所以其长度为 3。<br> 注意，你的答案必须是子串的长度，”pwke” 是一个子序列，不是子串。</p>
 </blockquote>
 <span id="more"></span>
 
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>使用哈希表将会使问题特别简单，首先，我们将使用一次遍历将数组中的元素加入到Map中，key是当前元素的值，value是当前元素的索引。接下来，我们进行第二次遍历，第二次遍历我们将查找当前元素的目标元素（target−nums[i]）是否在Map中，如果在，即找到目标值，返回两个元素的索引。注意一点的是，目标元素不能是当前元素！</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">    <span class="keyword">if</span> (nums == <span class="literal">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">complement</span> <span class="operator">=</span> target - nums[i];</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(complement) &amp;&amp; map.get(complement) != i) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;i, map.get(complement)&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="队列实现"><a href="#队列实现" class="headerlink" title="队列实现"></a>队列实现</h1><p>本题是计算最长的不重复子串，而子串肯定是连续的。我们肯定都能想到，要遍历下输入的字符串，那么遍历的过程中，我们需要做什么呢？既然是计算字串的长度，那么我们遍历的过程中就要将字串保存下来。同时，每次保存新的字符的时候，需要判断原有的子串中是否包含了这个字符，如果包含了，那么我们要从字串的第一个字符开始，一直删除字符，直到不存在即将要加入的字符，然后计算当前子串的长度，与之前计算的长度比较，取较大值。拿 <code>abcdefce</code> 举例，我们遍历到第二个c字符的时候，已有的不含有重复字符的子串是 <code>abcdef</code> ，当要把c加入到已有的子串的时候，需要将前面的  <code>abc</code> 删除，那么新的子串为 <code>defc</code>。由于子串有后进后出的特性，于是我们使用队列来保存子串。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">lengthOfLongestSubstring1</span><span class="params">(String s)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    Queue&lt;Character&gt; queue = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">    <span class="type">int</span> <span class="variable">length</span> <span class="operator">=</span> s.length();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">        <span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> s.charAt(i);</span><br><span class="line">        <span class="keyword">while</span> (queue.contains(c)) &#123;</span><br><span class="line">            queue.poll();</span><br><span class="line">        &#125;</span><br><span class="line">        queue.offer(c);</span><br><span class="line">        count = Math.max(queue.size(), count);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>实际上，我们把上面的两步合成一步，只用一次遍历即可完成，当遍历到第i个值后，我们把此元素的需要的目标值保存到Map中，后续遍历，找到目标的值，即完成遍历。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">    HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;(nums.length);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(nums[i])) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;map.get(nums[i]), i&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        map.put(target - nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;-<span class="number">1</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="双指针实现"><a href="#双指针实现" class="headerlink" title="双指针实现"></a>双指针实现</h1><p>双指针实现的思路和队列的实现一致，只不过使用两个指针i和j来指向子串的两端，判断 <code>s.substring(i, j)</code> 中是否包含当前的字符，若包含，则移动左指针i++，否则移动右指针j++。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">lengthOfLongestSubstring</span><span class="params">(String s)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (s.length() &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> s.length();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">maxLength</span> <span class="operator">=</span> <span class="number">0</span>, i = <span class="number">0</span>, j = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (j &lt; s.length()) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!s.substring(i, j).contains(String.valueOf(s.charAt(j)))) &#123;</span><br><span class="line">            maxLength = Math.max(maxLength, j - i + <span class="number">1</span>);</span><br><span class="line">            j++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxLength;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/two-sum" title="两数之和 | 力扣（LeetCode）">两数之和 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/two-sum/solution/liang-shu-zhi-he-by-leetcode-2/" title="两数之和 | 题解（LeetCode）">两数之和 | 题解（LeetCode）</a></p>
+<p><a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/" title="无重复字符的最长子串 | 力扣（LeetCode）">无重复字符的最长子串 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/solution/wu-zhong-fu-zi-fu-de-zui-chang-zi-chuan-by-leetc-2/" title="无重复字符的最长子串 | 题解（LeetCode）">无重复字符的最长子串 | 题解（LeetCode）</a></p>
 </blockquote>
 <hr>
 ]]></content>
@@ -1882,8 +1943,11 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>学习笔记</tag>
-        <tag>数组</tag>
-        <tag>哈希表</tag>
+        <tag>链表</tag>
+        <tag>指针</tag>
+        <tag>双指针</tag>
+        <tag>队列</tag>
+        <tag>滑动窗口</tag>
       </tags>
   </entry>
   <entry>
@@ -1927,8 +1991,8 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>学习笔记</tag>
-        <tag>指针</tag>
         <tag>字符串</tag>
+        <tag>指针</tag>
       </tags>
   </entry>
   <entry>
@@ -2019,105 +2083,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
-    <title>罗马数字转整数</title>
-    <url>/blog/2019/11/07/roman-to-integer/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">字符          数值</span><br><span class="line">I             1</span><br><span class="line">V             5</span><br><span class="line">X             10</span><br><span class="line">L             50</span><br><span class="line">C             100</span><br><span class="line">D             500</span><br><span class="line">M             1000</span><br></pre></td></tr></table></figure>
-<p>例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：</p>
-<ul>
-<li>I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。</li>
-<li>X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。 </li>
-<li>C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。</li>
-</ul>
-<p>给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。</p>
-<p><strong>示例 1:</strong></p>
-<blockquote>
-<p>输入: “III”<br>输出: 3</p>
-</blockquote>
-<p><strong>示例 2:</strong></p>
-<blockquote>
-<p>输入: “IV”<br>输出: 4</p>
-</blockquote>
-<p><strong>示例 3:</strong></p>
-<blockquote>
-<p>输入: “IX”<br>输出: 9</p>
-</blockquote>
-<p><strong>示例 4:</strong></p>
-<blockquote>
-<p>输入: “LVIII”<br>输出: 58<br>解释: L = 50, V= 5, III = 3.</p>
-</blockquote>
-<p><strong>示例 5:</strong></p>
-<blockquote>
-<p>输入: “MCMXCIV”<br>输出: 1994<br>解释: M = 1000, CM = 900, XC = 90, IV = 4.</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>针对题目的对应关系我们首先构建一个Map，将罗马数字与整数的对应关系建立起来。根据题意，我们只需要将罗马字符一个一个转换成整数相加就行了。对于特例情况，当小数在大数的左边的时候，原本相加的操作，要变成相减操作。代码实现上，我们在处理当前数的时候，同时获取后面的一位数，如果大于当前数，则当前操作为减去当前的数，否则为加上当前的数。</p>
-<img src="/blog/2019/11/07/roman-to-integer/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0.png" class="" title="罗马数字转整数">
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">romanToInt</span><span class="params">(String s)</span> &#123;</span><br><span class="line">    HashMap&lt;Character, Integer&gt; kv = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;(<span class="number">7</span>);</span><br><span class="line">    kv.put(<span class="string">&#x27;I&#x27;</span>, <span class="number">1</span>);</span><br><span class="line">    kv.put(<span class="string">&#x27;V&#x27;</span>, <span class="number">5</span>);</span><br><span class="line">    kv.put(<span class="string">&#x27;X&#x27;</span>, <span class="number">10</span>);</span><br><span class="line">    kv.put(<span class="string">&#x27;L&#x27;</span>, <span class="number">50</span>);</span><br><span class="line">    kv.put(<span class="string">&#x27;C&#x27;</span>, <span class="number">100</span>);</span><br><span class="line">    kv.put(<span class="string">&#x27;D&#x27;</span>, <span class="number">500</span>);</span><br><span class="line">    kv.put(<span class="string">&#x27;M&#x27;</span>, <span class="number">1000</span>);</span><br><span class="line">    <span class="type">char</span>[] roman = s.toCharArray();</span><br><span class="line">    <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; roman.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i + <span class="number">1</span> &lt; roman.length &amp;&amp; kv.get(roman[i]) &lt; kv.get(roman[i + <span class="number">1</span>])) &#123;</span><br><span class="line">            result -= kv.get(roman[i]);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            result += kv.get(roman[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/roman-to-integer/" title="罗马数字转整数 | 力扣（LeetCode）">罗马数字转整数 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/roman-to-integer/solution/yong-shi-9993nei-cun-9873jian-dan-jie-fa-by-donesp/" title="罗马数字转整数 | 题解（LeetCode）">罗马数字转整数 | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>字符串</tag>
-        <tag>哈希表</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>盛最多水的容器</title>
-    <url>/blog/2020/01/16/container-with-most-water/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。</p>
-<p><strong>说明：</strong> 你不能倾斜容器，且 n 的值至少为 2。</p>
-<img src="/blog/2020/01/16/container-with-most-water/%E7%9B%9B%E6%B0%B4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AE%B9%E5%99%A8%E6%8F%8F%E8%BF%B0.jpg" class="" title="盛水最多的容器">
-
-<p>图中垂直线代表输入数组 [1, 8, 6, 2, 5, 4, 8, 3, 7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。</p>
-<p><strong>示例：</strong></p>
-<blockquote>
-<p>输入：[1, 8, 6, 2, 5, 4, 8, 3, 7]<br>输出：49</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>通过题目描述的图中可以容易看出来，我们既然想盛更多的水，那么我们需要让垂直x轴的两条线尽量的高，也让这两条线距离尽量的远。两条线最大的距离就是数组的长度，于是我们使用双指针 <code>i，j 且 i &lt; j</code> 分别指向数组的两端，作为初始的容器大小 <code>Math.min(height[i], height[j]) * (j - i)</code>。接下来，我们就要移动左右指针，移动哪个呢？我们直觉上，要移动指针指的值较小的一个。因为我们既然移动了指针，那么肯定会让 <code>j - i</code> 变小，那么如果我们想要让容器盛水更多，那么肯定要让 <code>Math.min(height[i], height[j])</code> 更大才行。否则如果我们移动指针指的值较大的一个，那么最后计算出来的 <code>Math.min(height[i], height[j])</code> 肯定小于等于原有的值，那么盛水也将小于等于原有的值。我们不需要这样的结果。最后，我们只要取每次指针移动后，计算值中最大的值，即为盛水的最大值。更详细的介绍可以参考<a href="https://leetcode-cn.com/problems/container-with-most-water/solution/sheng-zui-duo-shui-de-rong-qi-by-leetcode-solution/" title="盛最多水的容器 | 题解（LeetCode）">Leetcode官方题解</a>。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxArea</span><span class="params">(<span class="type">int</span>[] height)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (height == <span class="literal">null</span> || height.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> height.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">        result = Math.max(Math.min(height[i], height[j]) * (j - i), result);</span><br><span class="line">        <span class="keyword">if</span> (height[i] &lt; height[j]) &#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>以下只是看到了有大佬写的更简单的代码，拿来学习下。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxArea</span><span class="params">(<span class="type">int</span>[] height)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (height == <span class="literal">null</span> || height.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> height.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">minH</span> <span class="operator">=</span> height[i] &lt; height[j] ? height[i++] : height[j--];</span><br><span class="line">        result = Math.max(minH * (j - i + <span class="number">1</span>), result);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(N)，双指针总计最多遍历整个数组一次。</li>
-<li>空间复杂度：O(1)，只需要额外的常数级别的空间。</li>
-</ul>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/container-with-most-water/" title="盛最多水的容器 | 力扣（LeetCode）">盛最多水的容器 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/container-with-most-water/solution/sheng-zui-duo-shui-de-rong-qi-by-leetcode-solution/" title="盛最多水的容器 | 题解（LeetCode）">盛最多水的容器 | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>数组</tag>
-        <tag>指针</tag>
-        <tag>双指针</tag>
-        <tag>几何</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>拼写单词</title>
     <url>/blog/2020/03/17/find-words-that-can-be-formed-by-characters/</url>
     <content><![CDATA[<hr>
@@ -2168,6 +2133,49 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>学习笔记</tag>
         <tag>数组</tag>
         <tag>字符串</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>盛最多水的容器</title>
+    <url>/blog/2020/01/16/container-with-most-water/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。</p>
+<p><strong>说明：</strong> 你不能倾斜容器，且 n 的值至少为 2。</p>
+<img src="/blog/2020/01/16/container-with-most-water/%E7%9B%9B%E6%B0%B4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AE%B9%E5%99%A8%E6%8F%8F%E8%BF%B0.jpg" class="" title="盛水最多的容器">
+
+<p>图中垂直线代表输入数组 [1, 8, 6, 2, 5, 4, 8, 3, 7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。</p>
+<p><strong>示例：</strong></p>
+<blockquote>
+<p>输入：[1, 8, 6, 2, 5, 4, 8, 3, 7]<br>输出：49</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>通过题目描述的图中可以容易看出来，我们既然想盛更多的水，那么我们需要让垂直x轴的两条线尽量的高，也让这两条线距离尽量的远。两条线最大的距离就是数组的长度，于是我们使用双指针 <code>i，j 且 i &lt; j</code> 分别指向数组的两端，作为初始的容器大小 <code>Math.min(height[i], height[j]) * (j - i)</code>。接下来，我们就要移动左右指针，移动哪个呢？我们直觉上，要移动指针指的值较小的一个。因为我们既然移动了指针，那么肯定会让 <code>j - i</code> 变小，那么如果我们想要让容器盛水更多，那么肯定要让 <code>Math.min(height[i], height[j])</code> 更大才行。否则如果我们移动指针指的值较大的一个，那么最后计算出来的 <code>Math.min(height[i], height[j])</code> 肯定小于等于原有的值，那么盛水也将小于等于原有的值。我们不需要这样的结果。最后，我们只要取每次指针移动后，计算值中最大的值，即为盛水的最大值。更详细的介绍可以参考<a href="https://leetcode-cn.com/problems/container-with-most-water/solution/sheng-zui-duo-shui-de-rong-qi-by-leetcode-solution/" title="盛最多水的容器 | 题解（LeetCode）">Leetcode官方题解</a>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxArea</span><span class="params">(<span class="type">int</span>[] height)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (height == <span class="literal">null</span> || height.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> height.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">        result = Math.max(Math.min(height[i], height[j]) * (j - i), result);</span><br><span class="line">        <span class="keyword">if</span> (height[i] &lt; height[j]) &#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下只是看到了有大佬写的更简单的代码，拿来学习下。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxArea</span><span class="params">(<span class="type">int</span>[] height)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (height == <span class="literal">null</span> || height.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> height.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">minH</span> <span class="operator">=</span> height[i] &lt; height[j] ? height[i++] : height[j--];</span><br><span class="line">        result = Math.max(minH * (j - i + <span class="number">1</span>), result);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：O(N)，双指针总计最多遍历整个数组一次。</li>
+<li>空间复杂度：O(1)，只需要额外的常数级别的空间。</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/container-with-most-water/" title="盛最多水的容器 | 力扣（LeetCode）">盛最多水的容器 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/container-with-most-water/solution/sheng-zui-duo-shui-de-rong-qi-by-leetcode-solution/" title="盛最多水的容器 | 题解（LeetCode）">盛最多水的容器 | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>数组</tag>
+        <tag>指针</tag>
+        <tag>双指针</tag>
+        <tag>几何</tag>
       </tags>
   </entry>
   <entry>
@@ -2541,9 +2549,9 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>LeetCode</tag>
         <tag>学习笔记</tag>
         <tag>数组</tag>
+        <tag>字符串</tag>
         <tag>指针</tag>
         <tag>双指针</tag>
-        <tag>字符串</tag>
         <tag>递归</tag>
         <tag>分治法</tag>
       </tags>
@@ -2638,9 +2646,9 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>学习笔记</tag>
+        <tag>字符串</tag>
         <tag>指针</tag>
         <tag>双指针</tag>
-        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -3341,9 +3349,9 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>学习笔记</tag>
+        <tag>字符串</tag>
         <tag>指针</tag>
         <tag>双指针</tag>
-        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -3814,8 +3822,8 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>学习笔记</tag>
-        <tag>双指针</tag>
         <tag>字符串</tag>
+        <tag>双指针</tag>
       </tags>
   </entry>
   <entry>
@@ -4847,9 +4855,9 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>LeetCode</tag>
         <tag>学习笔记</tag>
         <tag>链表</tag>
+        <tag>哈希表</tag>
         <tag>指针</tag>
         <tag>双指针</tag>
-        <tag>哈希表</tag>
         <tag>HashSet</tag>
       </tags>
   </entry>
@@ -4999,11 +5007,68 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>学习笔记</tag>
+        <tag>字符串</tag>
         <tag>指针</tag>
         <tag>双指针</tag>
-        <tag>字符串</tag>
         <tag>贪心算法</tag>
         <tag>递归</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二叉树的前序遍历</title>
+    <url>/blog/2020/10/27/binary-tree-preorder-traversal/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你二叉树的根节点 root ，返回它节点值的 前序 遍历。</p>
+<p><strong>示例 1：</strong></p>
+<img src="/blog/2020/10/27/binary-tree-preorder-traversal/inorder.jpg" class="" title="前序遍历">
+<blockquote>
+<p>输入：root = [1, null, 2, 3]<br>输出：[1, 2, 3]</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p>输入：root = []<br>输出：[]</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="递归与非递归版本"><a href="#递归与非递归版本" class="headerlink" title="递归与非递归版本"></a>递归与非递归版本</h1><p>前序遍历的输出顺序就是根节点 -&gt; 左子树 -&gt; 右子树。前序遍历是先输出根节点的值，再去递归的输出左子树和右子树。整个遍历过程就是递归的性质，我们可以直接使用递归来完成计算。非递归版本其实是等阶的，只是我们将递归的栈显示的表达出来。下面是递归的版本解法，非递归的解法和二叉树的其他遍历方式可以参考我的另外一篇博客：<a href="/blog/2020/09/02/binary-tree-traverse/" title="二叉树的遍历">二叉树的遍历</a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;Integer&gt; ans = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title function_">preorderTraversal</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    dfsPreOrder(root);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">dfsPreOrder</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ans.add(root.val);</span><br><span class="line">    dfsPreOrder(root.left);</span><br><span class="line">    dfsPreOrder(root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：O(n)，其中 n 是二叉树的节点数。每一个节点恰好被遍历一次。</li>
+<li>空间复杂度：O(n)，为迭代过程中显式栈的开销，平均情况下为 O(logn)，最坏情况下树呈现链状，为 O(n)。</li>
+</ul>
+<h1 id="Morris-遍历"><a href="#Morris-遍历" class="headerlink" title="Morris 遍历"></a>Morris 遍历</h1><p>所谓再简单的题，通过看官方的题解，总能发现惊喜。有一种巧妙的方法可以在线性时间内，只占用常数空间来实现前序遍历。这种方法由 J. H. Morris 在 1979 年的论文「Traversing Binary Trees Simply and Cheaply」中首次提出，因此被称为 Morris 遍历。</p>
+<p>Morris 遍历的核心思想是利用树的大量空闲指针，实现空间开销的极限缩减。其前序遍历规则总结如下：</p>
+<ol>
+<li>新建临时节点，令该节点为 root；</li>
+<li>如果当前节点的左子节点为空，将当前节点加入答案，并遍历当前节点的右子节点；</li>
+<li>如果当前节点的左子节点不为空，在当前节点的左子树中找到当前节点在中序遍历下的前驱节点：</li>
+<li>如果前驱节点的右子节点为空，将前驱节点的右子节点设置为当前节点。然后将当前节点加入答案，并将前驱节点的右子节点更新为当前节点。当前节点更新为当前节点的左子节点。</li>
+<li>如果前驱节点的右子节点为当前节点，将它的右子节点重新设为空。当前节点更新为当前节点的右子节点。</li>
+<li>重复步骤 2 和步骤 3，直到遍历结束。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title function_">preorderTraversal</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    List&lt;Integer&gt; res = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Integer&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">TreeNode</span> <span class="variable">p1</span> <span class="operator">=</span> root, p2 = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">while</span> (p1 != <span class="literal">null</span>) &#123;</span><br><span class="line">        p2 = p1.left;</span><br><span class="line">        <span class="keyword">if</span> (p2 != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">while</span> (p2.right != <span class="literal">null</span> &amp;&amp; p2.right != p1) &#123;</span><br><span class="line">                p2 = p2.right;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (p2.right == <span class="literal">null</span>) &#123;</span><br><span class="line">                res.add(p1.val);</span><br><span class="line">                p2.right = p1;</span><br><span class="line">                p1 = p1.left;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                p2.right = <span class="literal">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            res.add(p1.val);</span><br><span class="line">        &#125;</span><br><span class="line">        p1 = p1.right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：O(n)，其中 n 是二叉树的节点数。没有左子树的节点只被访问一次，有左子树的节点被访问两次。</li>
+<li>空间复杂度：O(1)。只操作已经存在的指针（树的空闲指针），因此只需要常数的额外空间。</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/" title="二叉树的前序遍历 | 力扣（LeetCode）">二叉树的前序遍历 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/solution/er-cha-shu-de-qian-xu-bian-li-by-leetcode-solution/" title="二叉树的前序遍历 | 题解（LeetCode）">二叉树的前序遍历 | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>递归</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
+        <tag>深度优先搜索</tag>
       </tags>
   </entry>
   <entry>
@@ -5124,63 +5189,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       <tags>
         <tag>招聘</tag>
         <tag>实习生</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>二叉树的前序遍历</title>
-    <url>/blog/2020/10/27/binary-tree-preorder-traversal/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你二叉树的根节点 root ，返回它节点值的 前序 遍历。</p>
-<p><strong>示例 1：</strong></p>
-<img src="/blog/2020/10/27/binary-tree-preorder-traversal/inorder.jpg" class="" title="前序遍历">
-<blockquote>
-<p>输入：root = [1, null, 2, 3]<br>输出：[1, 2, 3]</p>
-</blockquote>
-<p><strong>示例 2：</strong></p>
-<blockquote>
-<p>输入：root = []<br>输出：[]</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="递归与非递归版本"><a href="#递归与非递归版本" class="headerlink" title="递归与非递归版本"></a>递归与非递归版本</h1><p>前序遍历的输出顺序就是根节点 -&gt; 左子树 -&gt; 右子树。前序遍历是先输出根节点的值，再去递归的输出左子树和右子树。整个遍历过程就是递归的性质，我们可以直接使用递归来完成计算。非递归版本其实是等阶的，只是我们将递归的栈显示的表达出来。下面是递归的版本解法，非递归的解法和二叉树的其他遍历方式可以参考我的另外一篇博客：<a href="/blog/2020/09/02/binary-tree-traverse/" title="二叉树的遍历">二叉树的遍历</a></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;Integer&gt; ans = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title function_">preorderTraversal</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    dfsPreOrder(root);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">dfsPreOrder</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ans.add(root.val);</span><br><span class="line">    dfsPreOrder(root.left);</span><br><span class="line">    dfsPreOrder(root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(n)，其中 n 是二叉树的节点数。每一个节点恰好被遍历一次。</li>
-<li>空间复杂度：O(n)，为迭代过程中显式栈的开销，平均情况下为 O(logn)，最坏情况下树呈现链状，为 O(n)。</li>
-</ul>
-<h1 id="Morris-遍历"><a href="#Morris-遍历" class="headerlink" title="Morris 遍历"></a>Morris 遍历</h1><p>所谓再简单的题，通过看官方的题解，总能发现惊喜。有一种巧妙的方法可以在线性时间内，只占用常数空间来实现前序遍历。这种方法由 J. H. Morris 在 1979 年的论文「Traversing Binary Trees Simply and Cheaply」中首次提出，因此被称为 Morris 遍历。</p>
-<p>Morris 遍历的核心思想是利用树的大量空闲指针，实现空间开销的极限缩减。其前序遍历规则总结如下：</p>
-<ol>
-<li>新建临时节点，令该节点为 root；</li>
-<li>如果当前节点的左子节点为空，将当前节点加入答案，并遍历当前节点的右子节点；</li>
-<li>如果当前节点的左子节点不为空，在当前节点的左子树中找到当前节点在中序遍历下的前驱节点：</li>
-<li>如果前驱节点的右子节点为空，将前驱节点的右子节点设置为当前节点。然后将当前节点加入答案，并将前驱节点的右子节点更新为当前节点。当前节点更新为当前节点的左子节点。</li>
-<li>如果前驱节点的右子节点为当前节点，将它的右子节点重新设为空。当前节点更新为当前节点的右子节点。</li>
-<li>重复步骤 2 和步骤 3，直到遍历结束。</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title function_">preorderTraversal</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    List&lt;Integer&gt; res = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Integer&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">TreeNode</span> <span class="variable">p1</span> <span class="operator">=</span> root, p2 = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">while</span> (p1 != <span class="literal">null</span>) &#123;</span><br><span class="line">        p2 = p1.left;</span><br><span class="line">        <span class="keyword">if</span> (p2 != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">while</span> (p2.right != <span class="literal">null</span> &amp;&amp; p2.right != p1) &#123;</span><br><span class="line">                p2 = p2.right;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (p2.right == <span class="literal">null</span>) &#123;</span><br><span class="line">                res.add(p1.val);</span><br><span class="line">                p2.right = p1;</span><br><span class="line">                p1 = p1.left;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                p2.right = <span class="literal">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            res.add(p1.val);</span><br><span class="line">        &#125;</span><br><span class="line">        p1 = p1.right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(n)，其中 n 是二叉树的节点数。没有左子树的节点只被访问一次，有左子树的节点被访问两次。</li>
-<li>空间复杂度：O(1)。只操作已经存在的指针（树的空闲指针），因此只需要常数的额外空间。</li>
-</ul>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/" title="二叉树的前序遍历 | 力扣（LeetCode）">二叉树的前序遍历 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/solution/er-cha-shu-de-qian-xu-bian-li-by-leetcode-solution/" title="二叉树的前序遍历 | 题解（LeetCode）">二叉树的前序遍历 | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>递归</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
-        <tag>深度优先搜索</tag>
       </tags>
   </entry>
   <entry>

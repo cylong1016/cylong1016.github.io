@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.cylong.com/blog/2016/04/25/hexo-faq/</loc>
+    <lastmod>2023-10-18</lastmod>
+  </url>
+  <url>
     <loc>https://www.cylong.com/blog/2020/07/24/divisor-game/</loc>
     <lastmod>2023-10-17</lastmod>
   </url>
@@ -10,10 +14,6 @@
   </url>
   <url>
     <loc>https://www.cylong.com/blog/2017/04/09/chrome-SwitchyOmega/</loc>
-    <lastmod>2023-10-11</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cylong.com/blog/2016/04/25/hexo-faq/</loc>
     <lastmod>2023-10-11</lastmod>
   </url>
   <url>
