@@ -455,6 +455,46 @@
       </tags>
   </entry>
   <entry>
+    <title>Windows 使用 cmd(命令提示符)创建文件</title>
+    <url>/blog/2016/05/09/windows-linux-new-file/</url>
+    <content><![CDATA[<hr>
+<p>最近在研究 <a href="/blog/2016/05/19/gitignore/" title=".gitignore 的使用">.gitignore</a> 的使用，于是想创建一个 <code>.gitignore</code> 文件做测试，<code>右键-&gt;新建-&gt;文本文档</code> 再输入文件名后，惊讶的发现，Windows 竟然提示： 请键入文件名！【不得不去吐槽！】。看样子 Windows 是把 gitignore 当成文件名的后缀了。没办法，只好打开 cmd(命令提示符)去创建文件了。</p>
+<span id="more"></span>
+
+<h1 id="打开-cmd"><a href="#打开-cmd" class="headerlink" title="打开 cmd"></a>打开 cmd</h1><p>一般有以下方式打开 cmd【<em>我使用的是 Windows 10 系统，某些方法可能没用</em>】：</p>
+<ul>
+<li>  在某个文件夹下按住 <code>Shift</code> 键，然后点击 <code>鼠标右键</code>，选择 <code>在此处打开命令窗口</code>（建议使用此方式，这样你就不用 cd 到指定的文件夹了）。</li>
+<li>  键盘组合键 <span class="fa fa-windows"></span> + R，然后输入 <code>cmd</code> 并确定。</li>
+<li>  键盘组合键 <span class="fa fa-windows"></span> + X，然后选择 <code>命令提示符</code>。</li>
+<li>  键盘组合键 <span class="fa fa-windows"></span> + S，呼出 Cortana，然后输入 cmd 并确认（Windows 10才支持）。</li>
+</ul>
+<h1 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo hello &gt; .abc</span><br></pre></td></tr></table></figure>
+
+<p>解释：</p>
+<ol>
+<li>“echo hello” ：输出 “hello” 到控制台。</li>
+<li>“&gt; .abc” ：输出重定向到 .abc 文件中【没有此文件就会创建】。</li>
+<li>当然你也可以使用其他的命令，比如 <code>type</code>，来输出重定向。核心思想就是把某些字符串输出重定向到指定文件里就可以了。</li>
+</ol>
+<h1 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir .abc</span><br></pre></td></tr></table></figure>
+
+<h1 id="Linux-使用-shell-创建文件"><a href="#Linux-使用-shell-创建文件" class="headerlink" title="Linux 使用 shell 创建文件"></a>Linux 使用 shell 创建文件</h1><p>顺便说一下使用 shell 创建文件吧。上面的那些命令在 shell 中都可以使用，另外说一个在 shell 中更方便的命令。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> .abc</span><br></pre></td></tr></table></figure>
+
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>写本文的目的是在 Windows 下创建类似 .abc 这样的文件没法使用 <code>右键-&gt;新建</code> 来创建文件。如果你想创建一个 abc.txt 就不要这么麻烦啦【也没人会这么做吧(●’◡’●)】</p>
+<hr>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>cmd</tag>
+        <tag>Linux</tag>
+        <tag>Shell</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>网站首选域</title>
     <url>/blog/2016/05/02/preferred-domain/</url>
     <content><![CDATA[<hr>
@@ -494,46 +534,6 @@
         <tag>SEO</tag>
         <tag>htaccess</tag>
         <tag>301重定向</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows 使用 cmd(命令提示符)创建文件</title>
-    <url>/blog/2016/05/09/windows-linux-new-file/</url>
-    <content><![CDATA[<hr>
-<p>最近在研究 <a href="/blog/2016/05/19/gitignore/" title=".gitignore 的使用">.gitignore</a> 的使用，于是想创建一个 <code>.gitignore</code> 文件做测试，<code>右键-&gt;新建-&gt;文本文档</code> 再输入文件名后，惊讶的发现，Windows 竟然提示： 请键入文件名！【不得不去吐槽！】。看样子 Windows 是把 gitignore 当成文件名的后缀了。没办法，只好打开 cmd(命令提示符)去创建文件了。</p>
-<span id="more"></span>
-
-<h1 id="打开-cmd"><a href="#打开-cmd" class="headerlink" title="打开 cmd"></a>打开 cmd</h1><p>一般有以下方式打开 cmd【<em>我使用的是 Windows 10 系统，某些方法可能没用</em>】：</p>
-<ul>
-<li>  在某个文件夹下按住 <code>Shift</code> 键，然后点击 <code>鼠标右键</code>，选择 <code>在此处打开命令窗口</code>（建议使用此方式，这样你就不用 cd 到指定的文件夹了）。</li>
-<li>  键盘组合键 <span class="fa fa-windows"></span> + R，然后输入 <code>cmd</code> 并确定。</li>
-<li>  键盘组合键 <span class="fa fa-windows"></span> + X，然后选择 <code>命令提示符</code>。</li>
-<li>  键盘组合键 <span class="fa fa-windows"></span> + S，呼出 Cortana，然后输入 cmd 并确认（Windows 10才支持）。</li>
-</ul>
-<h1 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo hello &gt; .abc</span><br></pre></td></tr></table></figure>
-
-<p>解释：</p>
-<ol>
-<li>“echo hello” ：输出 “hello” 到控制台。</li>
-<li>“&gt; .abc” ：输出重定向到 .abc 文件中【没有此文件就会创建】。</li>
-<li>当然你也可以使用其他的命令，比如 <code>type</code>，来输出重定向。核心思想就是把某些字符串输出重定向到指定文件里就可以了。</li>
-</ol>
-<h1 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir .abc</span><br></pre></td></tr></table></figure>
-
-<h1 id="Linux-使用-shell-创建文件"><a href="#Linux-使用-shell-创建文件" class="headerlink" title="Linux 使用 shell 创建文件"></a>Linux 使用 shell 创建文件</h1><p>顺便说一下使用 shell 创建文件吧。上面的那些命令在 shell 中都可以使用，另外说一个在 shell 中更方便的命令。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> .abc</span><br></pre></td></tr></table></figure>
-
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>写本文的目的是在 Windows 下创建类似 .abc 这样的文件没法使用 <code>右键-&gt;新建</code> 来创建文件。如果你想创建一个 abc.txt 就不要这么麻烦啦【也没人会这么做吧(●’◡’●)】</p>
-<hr>
-]]></content>
-      <categories>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>cmd</tag>
-        <tag>Linux</tag>
-        <tag>Shell</tag>
       </tags>
   </entry>
   <entry>
@@ -599,6 +599,163 @@
       </categories>
       <tags>
         <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>.gitignore 的使用</title>
+    <url>/blog/2016/05/19/gitignore/</url>
+    <content><![CDATA[<hr>
+<p>当我们在项目开发的时候，常常使用 Git 做版本控制工具。有时候，我们不希望某些文件或者文件夹被 Git 追踪，比如项目产生的中间文件【.class 、 .o】 ，比如某些编辑器的副本文件【一般文件名带有 ~ 符号】，还有一些 log 文件等等。使用命令行的小伙伴可以不使用 <code>git add</code> 把他们加到索引中，不过随即而来的就是一些麻烦事，在你使用 <code>git add .</code> 的时候还是会追踪这些文件。使用 <code>git status</code> 也会显示 <code>Untracked files……</code>。我一直在使用 Github For Windows ，如果没有 .gitignore 文件，每次提交之前也要取消勾选那些不想上传的文件，非常的麻烦。</p>
+<span id="more"></span>
+
+<h1 id="创建-gitignore"><a href="#创建-gitignore" class="headerlink" title="创建 .gitignore"></a>创建 .gitignore</h1><p>以上说的那些问题都可以通过一个或者更多的 .gitignore 文件搞定，你可以在项目的任意目录下创建 .gitignore 文件，此文件的影响范围是当前目录和其所有子目录，可以在不同目录创建多个 .gitignore 文件【不过一般都是在项目根目录创建一个就行了】。</p>
+<p>需要注意的是 Windows 下直接<code>右键-&gt;新建文本文档</code>，然后键入文件名是没法创建的。。。详情请参考我的另一篇博客【这两篇博客应该是同一天写完的啊！拖延症得治呀( ╯□╰ )】：</p>
+<blockquote>
+<p><a href="http://www.cylong.com/blog/2016/05/09/windows-linux-new-file/" title="Windows 使用 cmd(命令提示符)创建文件">Windows 使用 cmd(命令提示符)创建文件</a></p>
+</blockquote>
+<p>你还可以在 Github 上新建一个仓库的同时指定生成特定的 .gitignore 文件，如下图：</p>
+<img src="/blog/2016/05/19/gitignore/create-gitignore.png" class="" title="Github 自动创建指定的 .gitignore">
+
+<h1 id="编辑-gitignore"><a href="#编辑-gitignore" class="headerlink" title="编辑 .gitignore"></a>编辑 .gitignore</h1><p>创建好后，我们就可以用任何编辑器打开了，在其中填写你想要忽略的文件的文件名，Git 就会忽略这些文件。例子请往下看：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 以&#x27;#&#x27; 开始的行，被视为注释。</span></span><br><span class="line"><span class="comment"># 忽略掉所有文件名是 cylong 的文件和文件夹。</span></span><br><span class="line">cylong</span><br><span class="line"><span class="comment"># 如果只想忽略 cylong 文件夹【不能有上面那段代码】。</span></span><br><span class="line">cylong/</span><br><span class="line"><span class="comment"># 如果只想忽略 doc/ 下面的 cylong 文件【同样不能有上面的 cylong 和 cylong/ 】</span></span><br><span class="line">doc/cylong</span><br><span class="line"><span class="comment"># 忽略所有后缀为 html 文件。</span></span><br><span class="line">*.html</span><br><span class="line"><span class="comment"># about.html 不想被忽略。</span></span><br><span class="line">!about.html</span><br><span class="line"><span class="comment"># 忽略所有后缀为 .o 和 .a文件。</span></span><br><span class="line">*.[oa]</span><br></pre></td></tr></table></figure>
+
+<p>除上面的一些例子以外，[abc]、[0-9]、[a-z]、? 这些正则表达式也是支持的。</p>
+<h1 id="使用-Github-的配置文件"><a href="#使用-Github-的配置文件" class="headerlink" title="使用 Github 的配置文件"></a>使用 Github 的配置文件</h1><p>如果只是我们自己写的话，可能并不会写的很全【重要的是比较麻烦是吧！】。还好 Github 已经为我们准备了各种配置文件，我们想要用哪个，就直接拿来用就好了。详情请戳：</p>
+<blockquote>
+<p><a href="https://github.com/github/gitignore">https://github.com/github/gitignore</a></p>
+</blockquote>
+<h1 id="删除已经跟踪的文件"><a href="#删除已经跟踪的文件" class="headerlink" title="删除已经跟踪的文件"></a>删除已经跟踪的文件</h1><p>如果文件已经被 Git 跟踪了， 那么这些文件即使被写在了 .gitignore 中，Git 也不会忽略他，还是会继续跟踪，解决办法是输入以下命令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> --cached test.txt <span class="comment"># 如果是文件夹，后面再加上 -r</span></span><br><span class="line">git commit -m <span class="string">&#x27;delete test.txt&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="参考资料-amp-感谢"><a href="#参考资料-amp-感谢" class="headerlink" title="参考资料&amp;感谢"></a>参考资料&amp;感谢</h1><blockquote>
+<p><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758404317281e54b6f5375640abbb11e67be4cd49e0000" title="忽略特殊文件 - 廖雪峰的官方网站">忽略特殊文件 - 廖雪峰的官方网站</a><br><a href="https://segmentfault.com/a/1190000000522997" title=".gitignore 文件使用说明 - change2hao">.gitignore 文件使用说明 - change2hao</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>gitignore</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决 GitHub Pages 禁止百度爬虫抓取的问题</title>
+    <url>/blog/2016/05/22/github-baidu-spider-exception/</url>
+    <content><![CDATA[<hr>
+<p>最近在研究网站在 Google 和百度的收录问题，Google 收录很轻松，抓取提交下链接就好了，但是百度却花了我好长时间才搞定，这也是为什么这篇博客写的这么晚 ( ╯□╰ )。有关如何能让你的网站被搜索到请参考：</p>
+<blockquote>
+<p><a href="/blog/2016/05/22/google-baidu-search/" title="如何在 Google 和百度里搜索到自己的网站">如何在 Google 和百度里搜索到自己的网站</a></p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>在 <a href="http://zhanzhang.baidu.com/" title="百度站长平台">百度站长平台</a> 上进行抓取诊断的时候，发现一直抓取失败，如图：</p>
+
+<img src="/blog/2016/05/22/github-baidu-spider-exception/exception.png" class="" title="百度爬虫抓取错误">
+
+<p>后来才发现，原来是 GitHub 禁止百度爬虫抓取，原因是百度的抓取太猛烈，给 GitHub 的用户造成了可用性问题，而且会一直禁用下去。我该吐槽 GitHub 呢？还是百度呢？大家心知肚明就好。（╯－＿－）╯╧╧</p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>我想了想，既然 GitHub 不让百度抓取，那么我干脆把博客部署到其他地方吧。于是找到了国内的 <a href="https://coding.net/" title="CODING">CODING</a> ，之前可能有很多小伙伴使用的是 <a href="https://gitcafe.com/" title="Gitcafe">Gitcafe</a>，不过已经被 CODING 收购了，2016-05-31 号就会停止服务。CODING 中也提供和 GitHub 相同的 Pages 服务。下面是具体步骤：</p>
+<ol>
+<li>注册登录 <a href="https://coding.net/" title="CODING">CODING</a>。</li>
+<li>创建新项目，项目的后缀必须是和你的个性后缀一样。</li>
+<li>创建项目的时候你可以选择从 GitHub 上导入你的博客仓库或者之后自己部署到 CODING 上，如下图：<img src="/blog/2016/05/22/github-baidu-spider-exception/import-from-github.png" class="" title="从 GitHub 上导入仓库"></li>
+<li>进入你的项目，点击左侧的 <code>代码</code>，再选择 <code>Pages 服务</code>，选择 <code>部署分支</code>，默认是 <code>coding-pages</code>，建议换成 <code>master</code> 分支和 GitHub 保持一致。然后点击 <code>立即开启</code>。</li>
+<li>绑定自己的域名，如下图：<img src="/blog/2016/05/22/github-baidu-spider-exception/coding-pages.png" class="" title="Coding Pages"></li>
+<li>到你的 DNS 服务商修改你的域名解析记录，这里不需要删除解析到 GitHub 的记录，像我下面这样配置就可以，这样正常访问还是访问到 GitHub 上，百度抓取的时候是抓取的 CODING 上的项目。<br>万网 DNS 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-parse.png" class="" title="DNS 解析记录 - 万网">
+DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-parse-dnspod.png" class="" title="DNS 解析记录 - DNSPod">
+注意：我的域名在万网购买的，默认使用的是万网的 DNS，设置成百度后开始是好用的，后来就又抓取不到了（╯－＿－）╯╧╧。 于是我就换成了 <a href="https://www.dnspod.cn/" title="DNSPod-免费智能DNS解析服务商">DNSPod</a> 的服务，把线路类型设置成百度、搜索引擎或者国内都可以。如果设置成搜索引擎的话注意 Google 也会去 Coding.net 抓取页面。设置成国内的话，国内的其他用户访问也访问的是 Coding.net 中的页面，相比访问 GitHub Pages 会更快一点。</li>
+</ol>
+<h1 id="Hexo-同时部署到-GitHub-和-Coding"><a href="#Hexo-同时部署到-GitHub-和-Coding" class="headerlink" title="Hexo 同时部署到 GitHub 和 Coding"></a>Hexo 同时部署到 GitHub 和 Coding</h1><p>既然上面的 DNS 分流到了 GitHub 和 Coding 上，那么我们在部署的时候就要同时维护这两个仓库，好消息是 Hexo 框架支持同时部署到 GitHub 和 Coding 上，详细介绍请参考：</p>
+<blockquote>
+<p><a href="/blog/2016/04/25/hexo-faq/#%E9%85%8D%E7%BD%AE-SSH-%E5%85%AC%E9%92%A5%E5%85%8D%E5%8E%BB%E9%83%A8%E7%BD%B2%E7%9A%84%E6%97%B6%E5%80%99%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81" title="配置 SSH 公钥免去部署的时候输入密码">配置 SSH 公钥免去部署的时候输入密码</a></p>
+</blockquote>
+<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><blockquote>
+<p><a href="http://jerryzou.com/posts/feasibility-of-allowing-baiduSpider-for-GitHub-Pages/" title="解决 GitHub Pages 禁止百度爬虫的方法与可行性分析 | 咀嚼之味">解决 GitHub Pages 禁止百度爬虫的方法与可行性分析 | 咀嚼之味</a><br><a href="http://www.ezlippi.com/blog/2016/02/baidu-spider-forbidden.html" title="解决百度爬虫无法抓取github pages | Lippi-浮生志">解决百度爬虫无法抓取github pages | Lippi-浮生志</a><br><a href="https://segmentfault.com/a/1190000004548638" title="Hexo 同时托管到 coding.net 与 GitHub | shomy">Hexo 同时托管到 coding.net 与 GitHub | shomy</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>Search</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Git</tag>
+        <tag>GitHub</tag>
+        <tag>SEO</tag>
+        <tag>爬虫</tag>
+        <tag>Search</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何在 Google 和百度里搜索到自己的网站</title>
+    <url>/blog/2016/05/22/google-baidu-search/</url>
+    <content><![CDATA[<hr>
+<p>搭建完自己的博客或者有一个自己的网站什么的，总想着能在 Google 或者是百度里搜索到吧，这样就可以提高你的网站的知名度，说不定还会结 ♂ 交到志同道合的小伙伴呢 (●’◡’●)。下面就讲解下如何让自己的网站被搜索引擎收录。</p>
+<span id="more"></span>
+
+<h1 id="Google-搜索"><a href="#Google-搜索" class="headerlink" title="Google 搜索"></a>Google 搜索</h1><ol>
+<li>点击 <a href="https://www.google.com/webmasters/" title="Google 网站站长">Google 网站站长</a>，然后点击首页的 <code>SEARCH CONSOLE</code>。</li>
+<li>添加你的网站，进行人机验证（就是证明这个网站是你的）。</li>
+<li>进入到 <code>抓取 -&gt; Google 抓取方式</code>。</li>
+<li>点击 <code>抓取</code> 或者 <code>抓取并呈现</code>。</li>
+<li>若提示完成或者部分完成，则可以将网址 <code>提交至索引</code>，有两种提交方式：仅抓取此网址、抓取此网址及其直接链接。都有次数限制。</li>
+<li>等待一会，打开 Google，在搜索栏输入 <code>site:www.cylong.com</code>（换成你的域名），就可以看到你网站的内容了</li>
+</ol>
+<img src="/blog/2016/05/22/google-baidu-search/google-search.png" class="" title="Google 抓取示例">
+
+<h1 id="百度搜索"><a href="#百度搜索" class="headerlink" title="百度搜索"></a>百度搜索</h1><ol>
+<li>点击 <a href="http://zhanzhang.baidu.com/" title="百度站长平台">百度站长平台</a>，登陆。</li>
+<li>添加你的网站，进行人机验证。</li>
+<li>点击 <code>抓取诊断</code> 判断百度是否能够抓取到你的网站。我的博客部署在 Github 上，结果 Github 禁止百度抓取 ( ╯□╰ )，如何解决请参考：<a href="/blog/2016/05/22/github-baidu-spider-exception/" title="解决 Github Pages 禁止百度爬虫抓取的问题">解决 Github Pages 禁止百度爬虫抓取的问题</a></li>
+<li>点击 <code>链接提交</code> ，这里有很多种提交方式，各有各的优点，也有详细的说明。自己选择吧（实在不会就直接手动提交）</li>
+<li>我使用的是自动提交方式，Hexo 的 NexT 主题已经部署了自动推送的代码，我们只需在主题配置文件中找到 <code>baidu_push</code> 字段 , 设置其为 <code>true</code> 即可。</li>
+<li>等待一会，打开百度，在搜索栏输入 <code>site:www.cylong.com</code>（换成你的域名），就可以看到你网站的内容了</li>
+</ol>
+<h1 id="其他的搜索引擎"><a href="#其他的搜索引擎" class="headerlink" title="其他的搜索引擎"></a>其他的搜索引擎</h1><p>其他的搜索引擎我用的也比较少，不过如果你的网站不知道什么时候也会被其收录的，我试了一下，我的博客的首页就被 Bing 收录了，当然你想像上面的那些方法在各个搜索引擎中管理你的网站也是可以的，然而我并没有闲心管那些（我猜测基本都是差不多的），有兴趣的小伙伴可以自己试一试。</p>
+<h1 id="搜索引擎优化-SEO"><a href="#搜索引擎优化-SEO" class="headerlink" title="搜索引擎优化(SEO)"></a>搜索引擎优化(SEO)</h1><blockquote><p>搜索引擎优化（英语：search engine optimization，缩写为SEO），是一种通过了解搜索引擎的运作规则来调整网站，以及提高目的网站在有关搜索引擎内排名的方式。由于不少研究发现，搜索引擎的用户往往只会留意搜索结果最前面的几个条目，所以不少网站都希望通过各种形式来影响搜索引擎的排序，让自己的网站可以有优秀的搜索排名。当中尤以各种依靠广告维生的网站为甚。</p>
+<footer><strong>维基百科</strong><cite><a href="https://zh.wikipedia.org/wiki/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9C%80%E4%BD%B3%E5%8C%96">搜索引擎优化</a></cite></footer></blockquote>
+
+<p><strong>注意：</strong> <em>此文章是以 Hexo 搭建的博客为基础，某些插件只支持 Hexo 搭建的博客，如果是其他博客，请寻找支持自己博客的插件或者自己实现。</em></p>
+<h2 id="添加-robots-txt"><a href="#添加-robots-txt" class="headerlink" title="添加 robots.txt"></a>添加 robots.txt</h2><p>robots.txt 可以告诉搜索引擎你网站的哪些页面可以被抓取，哪些页面不可以被抓取。将 robots.txt 放置在 source 根目录下。以下是我的 robots.txt：</p>
+<figure class="highlight plaintext"><figcaption><span>robots.txt</span></figcaption><table><tr><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Allow: /</span><br><span class="line">Allow: /archives/</span><br><span class="line"></span><br><span class="line">Disallow: /js/</span><br><span class="line">Disallow: /css/</span><br><span class="line">Disallow: /fonts/</span><br><span class="line">Disallow: /lib/</span><br><span class="line">Disallow: /fancybox/</span><br><span class="line"></span><br><span class="line">Sitemap: https://www.cylong.com/sitemap.xml</span><br><span class="line">Sitemap: https://www.cylong.com/baidusitemap.xml</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="添加网站地图-Sitemap"><a href="#添加网站地图-Sitemap" class="headerlink" title="添加网站地图(Sitemap)"></a>添加网站地图(Sitemap)</h2><p>Sitemap 上面放置了网站上需要搜索引擎抓取的所有页面的链接，有助于搜索引擎抓取你的网站，清晰了解网站的架构，益于 SEO 优化。</p>
+<ol>
+<li><p>安装 Hexo 的 sitemap 插件</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save       <span class="comment"># 适用于提交给 Google</span></span><br><span class="line">npm install hexo-generator-baidu-sitemap --save <span class="comment"># 适用于提交给百度</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在站点的 <code>_config.yml</code> 添加以下代码：</p>
+<figure class="highlight yaml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">sitemap:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">sitemap.xml</span></span><br><span class="line"><span class="attr">baidusitemap:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">baidusitemap.xml</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置成功后，在你执行 <code>hexo -g</code> 的时候，在 public 文件夹（也就是你的站点根目录）就会出现 sitemap.xml 和 baidusitemap.xml。然后在 robots.txt 中添加如下代码：</p>
+<figure class="highlight plaintext"><figcaption><span>robots.txt</span></figcaption><table><tr><td class="code"><pre><span class="line">Sitemap: https://www.cylong.com/sitemap.xml</span><br><span class="line">Sitemap: https://www.cylong.com/baidusitemap.xml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第三步中搜索引擎在抓取到 robots.txt 的时候会自动抓取站点地图。你还可以手动提交给 Google 和百度，都是带有提示的傻瓜式操作，相信大家都能解决吧 (●’◡’●)</p>
+</li>
+</ol>
+<ul>
+<li>Google： <a href="https://www.google.com/webmasters/tools/home?hl=zh-CN" title="Search Console">Search Console</a></li>
+<li>百度： <a href="http://zhanzhang.baidu.com/" title="百度站长平台">百度站长平台</a></li>
+</ul>
+<p><strong>2017-04-13 更新</strong></p>
+<p>在我向百度提交站点地图 baidusitemap.xml 的时候提示 XML 解析失败，猜测可能是格式有问题，通过查看 <a href="http://zhanzhang.baidu.com/college/courseinfo?id=267&page=2#h2_article_title1" title="百度sitemap协议都支持哪些格式">百度sitemap协议都支持哪些格式</a> 发现 Hexo 生成的 baidusitemap.xml 确实有问题，不过百度支持上文中生成的 sitemap.xml 格式的 XML 文档，上传这个就正常了。</p>
+<img src="/blog/2016/05/22/google-baidu-search/baidusitemap-error.png" class="" title="XML 解析失败">
+
+<h1 id="一些小点子"><a href="#一些小点子" class="headerlink" title="一些小点子"></a>一些小点子</h1><p>你在你的各大社交网站的个人信息里贴上你的博客域名（比如知乎、Facebook、Twitter、Github 等等）会提高你网站的访问量哟，还有在各大社交网站上回答有关问题可以附上自己的博客地址，也会增加访问量 o(^▽^)o。当然，更重要的还是你的博客要内容丰富精彩，才会吸引更多的人。如果是自己的某个网站什么的，多注意下 SEO 优化也是不错的选择。</p>
+<h1 id="参考-amp-感谢"><a href="#参考-amp-感谢" class="headerlink" title="参考&amp;感谢"></a>参考&amp;感谢</h1><blockquote>
+<p><a href="https://mikolaje.github.io/2019/hexo_seo.html" title="Hexo 博客 SEO 优化，添加 robots.txt | Dennis&#39; Blog">Hexo 博客 SEO 优化，添加 robots.txt | Dennis&#39; Blog</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>Search</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>SEO</tag>
+        <tag>Search</tag>
       </tags>
   </entry>
   <entry>
@@ -694,77 +851,6 @@
       </tags>
   </entry>
   <entry>
-    <title>如何在 Google 和百度里搜索到自己的网站</title>
-    <url>/blog/2016/05/22/google-baidu-search/</url>
-    <content><![CDATA[<hr>
-<p>搭建完自己的博客或者有一个自己的网站什么的，总想着能在 Google 或者是百度里搜索到吧，这样就可以提高你的网站的知名度，说不定还会结 ♂ 交到志同道合的小伙伴呢 (●’◡’●)。下面就讲解下如何让自己的网站被搜索引擎收录。</p>
-<span id="more"></span>
-
-<h1 id="Google-搜索"><a href="#Google-搜索" class="headerlink" title="Google 搜索"></a>Google 搜索</h1><ol>
-<li>点击 <a href="https://www.google.com/webmasters/" title="Google 网站站长">Google 网站站长</a>，然后点击首页的 <code>SEARCH CONSOLE</code>。</li>
-<li>添加你的网站，进行人机验证（就是证明这个网站是你的）。</li>
-<li>进入到 <code>抓取 -&gt; Google 抓取方式</code>。</li>
-<li>点击 <code>抓取</code> 或者 <code>抓取并呈现</code>。</li>
-<li>若提示完成或者部分完成，则可以将网址 <code>提交至索引</code>，有两种提交方式：仅抓取此网址、抓取此网址及其直接链接。都有次数限制。</li>
-<li>等待一会，打开 Google，在搜索栏输入 <code>site:www.cylong.com</code>（换成你的域名），就可以看到你网站的内容了</li>
-</ol>
-<img src="/blog/2016/05/22/google-baidu-search/google-search.png" class="" title="Google 抓取示例">
-
-<h1 id="百度搜索"><a href="#百度搜索" class="headerlink" title="百度搜索"></a>百度搜索</h1><ol>
-<li>点击 <a href="http://zhanzhang.baidu.com/" title="百度站长平台">百度站长平台</a>，登陆。</li>
-<li>添加你的网站，进行人机验证。</li>
-<li>点击 <code>抓取诊断</code> 判断百度是否能够抓取到你的网站。我的博客部署在 Github 上，结果 Github 禁止百度抓取 ( ╯□╰ )，如何解决请参考：<a href="/blog/2016/05/22/github-baidu-spider-exception/" title="解决 Github Pages 禁止百度爬虫抓取的问题">解决 Github Pages 禁止百度爬虫抓取的问题</a></li>
-<li>点击 <code>链接提交</code> ，这里有很多种提交方式，各有各的优点，也有详细的说明。自己选择吧（实在不会就直接手动提交）</li>
-<li>我使用的是自动提交方式，Hexo 的 NexT 主题已经部署了自动推送的代码，我们只需在主题配置文件中找到 <code>baidu_push</code> 字段 , 设置其为 <code>true</code> 即可。</li>
-<li>等待一会，打开百度，在搜索栏输入 <code>site:www.cylong.com</code>（换成你的域名），就可以看到你网站的内容了</li>
-</ol>
-<h1 id="其他的搜索引擎"><a href="#其他的搜索引擎" class="headerlink" title="其他的搜索引擎"></a>其他的搜索引擎</h1><p>其他的搜索引擎我用的也比较少，不过如果你的网站不知道什么时候也会被其收录的，我试了一下，我的博客的首页就被 Bing 收录了，当然你想像上面的那些方法在各个搜索引擎中管理你的网站也是可以的，然而我并没有闲心管那些（我猜测基本都是差不多的），有兴趣的小伙伴可以自己试一试。</p>
-<h1 id="搜索引擎优化-SEO"><a href="#搜索引擎优化-SEO" class="headerlink" title="搜索引擎优化(SEO)"></a>搜索引擎优化(SEO)</h1><blockquote><p>搜索引擎优化（英语：search engine optimization，缩写为SEO），是一种通过了解搜索引擎的运作规则来调整网站，以及提高目的网站在有关搜索引擎内排名的方式。由于不少研究发现，搜索引擎的用户往往只会留意搜索结果最前面的几个条目，所以不少网站都希望通过各种形式来影响搜索引擎的排序，让自己的网站可以有优秀的搜索排名。当中尤以各种依靠广告维生的网站为甚。</p>
-<footer><strong>维基百科</strong><cite><a href="https://zh.wikipedia.org/wiki/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9C%80%E4%BD%B3%E5%8C%96">搜索引擎优化</a></cite></footer></blockquote>
-
-<p><strong>注意：</strong> <em>此文章是以 Hexo 搭建的博客为基础，某些插件只支持 Hexo 搭建的博客，如果是其他博客，请寻找支持自己博客的插件或者自己实现。</em></p>
-<h2 id="添加-robots-txt"><a href="#添加-robots-txt" class="headerlink" title="添加 robots.txt"></a>添加 robots.txt</h2><p>robots.txt 可以告诉搜索引擎你网站的哪些页面可以被抓取，哪些页面不可以被抓取。将 robots.txt 放置在 source 根目录下。以下是我的 robots.txt：</p>
-<figure class="highlight plaintext"><figcaption><span>robots.txt</span></figcaption><table><tr><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Allow: /</span><br><span class="line">Allow: /archives/</span><br><span class="line"></span><br><span class="line">Disallow: /js/</span><br><span class="line">Disallow: /css/</span><br><span class="line">Disallow: /fonts/</span><br><span class="line">Disallow: /lib/</span><br><span class="line">Disallow: /fancybox/</span><br><span class="line"></span><br><span class="line">Sitemap: https://www.cylong.com/sitemap.xml</span><br><span class="line">Sitemap: https://www.cylong.com/baidusitemap.xml</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="添加网站地图-Sitemap"><a href="#添加网站地图-Sitemap" class="headerlink" title="添加网站地图(Sitemap)"></a>添加网站地图(Sitemap)</h2><p>Sitemap 上面放置了网站上需要搜索引擎抓取的所有页面的链接，有助于搜索引擎抓取你的网站，清晰了解网站的架构，益于 SEO 优化。</p>
-<ol>
-<li><p>安装 Hexo 的 sitemap 插件</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save       <span class="comment"># 适用于提交给 Google</span></span><br><span class="line">npm install hexo-generator-baidu-sitemap --save <span class="comment"># 适用于提交给百度</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在站点的 <code>_config.yml</code> 添加以下代码：</p>
-<figure class="highlight yaml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">sitemap:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">sitemap.xml</span></span><br><span class="line"><span class="attr">baidusitemap:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">baidusitemap.xml</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置成功后，在你执行 <code>hexo -g</code> 的时候，在 public 文件夹（也就是你的站点根目录）就会出现 sitemap.xml 和 baidusitemap.xml。然后在 robots.txt 中添加如下代码：</p>
-<figure class="highlight plaintext"><figcaption><span>robots.txt</span></figcaption><table><tr><td class="code"><pre><span class="line">Sitemap: https://www.cylong.com/sitemap.xml</span><br><span class="line">Sitemap: https://www.cylong.com/baidusitemap.xml</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>第三步中搜索引擎在抓取到 robots.txt 的时候会自动抓取站点地图。你还可以手动提交给 Google 和百度，都是带有提示的傻瓜式操作，相信大家都能解决吧 (●’◡’●)</p>
-</li>
-</ol>
-<ul>
-<li>Google： <a href="https://www.google.com/webmasters/tools/home?hl=zh-CN" title="Search Console">Search Console</a></li>
-<li>百度： <a href="http://zhanzhang.baidu.com/" title="百度站长平台">百度站长平台</a></li>
-</ul>
-<p><strong>2017-04-13 更新</strong></p>
-<p>在我向百度提交站点地图 baidusitemap.xml 的时候提示 XML 解析失败，猜测可能是格式有问题，通过查看 <a href="http://zhanzhang.baidu.com/college/courseinfo?id=267&page=2#h2_article_title1" title="百度sitemap协议都支持哪些格式">百度sitemap协议都支持哪些格式</a> 发现 Hexo 生成的 baidusitemap.xml 确实有问题，不过百度支持上文中生成的 sitemap.xml 格式的 XML 文档，上传这个就正常了。</p>
-<img src="/blog/2016/05/22/google-baidu-search/baidusitemap-error.png" class="" title="XML 解析失败">
-
-<h1 id="一些小点子"><a href="#一些小点子" class="headerlink" title="一些小点子"></a>一些小点子</h1><p>你在你的各大社交网站的个人信息里贴上你的博客域名（比如知乎、Facebook、Twitter、Github 等等）会提高你网站的访问量哟，还有在各大社交网站上回答有关问题可以附上自己的博客地址，也会增加访问量 o(^▽^)o。当然，更重要的还是你的博客要内容丰富精彩，才会吸引更多的人。如果是自己的某个网站什么的，多注意下 SEO 优化也是不错的选择。</p>
-<h1 id="参考-amp-感谢"><a href="#参考-amp-感谢" class="headerlink" title="参考&amp;感谢"></a>参考&amp;感谢</h1><blockquote>
-<p><a href="https://mikolaje.github.io/2019/hexo_seo.html" title="Hexo 博客 SEO 优化，添加 robots.txt | Dennis&#39; Blog">Hexo 博客 SEO 优化，添加 robots.txt | Dennis&#39; Blog</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>Search</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>SEO</tag>
-        <tag>Search</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows 10 Metro 应用使用本地 Shadowsocks 代理</title>
     <url>/blog/2016/06/07/windows-10-metro-shadowsocks/</url>
     <content><![CDATA[<hr>
@@ -813,92 +899,6 @@
         <tag>Windows</tag>
         <tag>Shadowsocks</tag>
         <tag>翻墙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>.gitignore 的使用</title>
-    <url>/blog/2016/05/19/gitignore/</url>
-    <content><![CDATA[<hr>
-<p>当我们在项目开发的时候，常常使用 Git 做版本控制工具。有时候，我们不希望某些文件或者文件夹被 Git 追踪，比如项目产生的中间文件【.class 、 .o】 ，比如某些编辑器的副本文件【一般文件名带有 ~ 符号】，还有一些 log 文件等等。使用命令行的小伙伴可以不使用 <code>git add</code> 把他们加到索引中，不过随即而来的就是一些麻烦事，在你使用 <code>git add .</code> 的时候还是会追踪这些文件。使用 <code>git status</code> 也会显示 <code>Untracked files……</code>。我一直在使用 Github For Windows ，如果没有 .gitignore 文件，每次提交之前也要取消勾选那些不想上传的文件，非常的麻烦。</p>
-<span id="more"></span>
-
-<h1 id="创建-gitignore"><a href="#创建-gitignore" class="headerlink" title="创建 .gitignore"></a>创建 .gitignore</h1><p>以上说的那些问题都可以通过一个或者更多的 .gitignore 文件搞定，你可以在项目的任意目录下创建 .gitignore 文件，此文件的影响范围是当前目录和其所有子目录，可以在不同目录创建多个 .gitignore 文件【不过一般都是在项目根目录创建一个就行了】。</p>
-<p>需要注意的是 Windows 下直接<code>右键-&gt;新建文本文档</code>，然后键入文件名是没法创建的。。。详情请参考我的另一篇博客【这两篇博客应该是同一天写完的啊！拖延症得治呀( ╯□╰ )】：</p>
-<blockquote>
-<p><a href="http://www.cylong.com/blog/2016/05/09/windows-linux-new-file/" title="Windows 使用 cmd(命令提示符)创建文件">Windows 使用 cmd(命令提示符)创建文件</a></p>
-</blockquote>
-<p>你还可以在 Github 上新建一个仓库的同时指定生成特定的 .gitignore 文件，如下图：</p>
-<img src="/blog/2016/05/19/gitignore/create-gitignore.png" class="" title="Github 自动创建指定的 .gitignore">
-
-<h1 id="编辑-gitignore"><a href="#编辑-gitignore" class="headerlink" title="编辑 .gitignore"></a>编辑 .gitignore</h1><p>创建好后，我们就可以用任何编辑器打开了，在其中填写你想要忽略的文件的文件名，Git 就会忽略这些文件。例子请往下看：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 以&#x27;#&#x27; 开始的行，被视为注释。</span></span><br><span class="line"><span class="comment"># 忽略掉所有文件名是 cylong 的文件和文件夹。</span></span><br><span class="line">cylong</span><br><span class="line"><span class="comment"># 如果只想忽略 cylong 文件夹【不能有上面那段代码】。</span></span><br><span class="line">cylong/</span><br><span class="line"><span class="comment"># 如果只想忽略 doc/ 下面的 cylong 文件【同样不能有上面的 cylong 和 cylong/ 】</span></span><br><span class="line">doc/cylong</span><br><span class="line"><span class="comment"># 忽略所有后缀为 html 文件。</span></span><br><span class="line">*.html</span><br><span class="line"><span class="comment"># about.html 不想被忽略。</span></span><br><span class="line">!about.html</span><br><span class="line"><span class="comment"># 忽略所有后缀为 .o 和 .a文件。</span></span><br><span class="line">*.[oa]</span><br></pre></td></tr></table></figure>
-
-<p>除上面的一些例子以外，[abc]、[0-9]、[a-z]、? 这些正则表达式也是支持的。</p>
-<h1 id="使用-Github-的配置文件"><a href="#使用-Github-的配置文件" class="headerlink" title="使用 Github 的配置文件"></a>使用 Github 的配置文件</h1><p>如果只是我们自己写的话，可能并不会写的很全【重要的是比较麻烦是吧！】。还好 Github 已经为我们准备了各种配置文件，我们想要用哪个，就直接拿来用就好了。详情请戳：</p>
-<blockquote>
-<p><a href="https://github.com/github/gitignore">https://github.com/github/gitignore</a></p>
-</blockquote>
-<h1 id="删除已经跟踪的文件"><a href="#删除已经跟踪的文件" class="headerlink" title="删除已经跟踪的文件"></a>删除已经跟踪的文件</h1><p>如果文件已经被 Git 跟踪了， 那么这些文件即使被写在了 .gitignore 中，Git 也不会忽略他，还是会继续跟踪，解决办法是输入以下命令：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> --cached test.txt <span class="comment"># 如果是文件夹，后面再加上 -r</span></span><br><span class="line">git commit -m <span class="string">&#x27;delete test.txt&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="参考资料-amp-感谢"><a href="#参考资料-amp-感谢" class="headerlink" title="参考资料&amp;感谢"></a>参考资料&amp;感谢</h1><blockquote>
-<p><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758404317281e54b6f5375640abbb11e67be4cd49e0000" title="忽略特殊文件 - 廖雪峰的官方网站">忽略特殊文件 - 廖雪峰的官方网站</a><br><a href="https://segmentfault.com/a/1190000000522997" title=".gitignore 文件使用说明 - change2hao">.gitignore 文件使用说明 - change2hao</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-        <tag>gitignore</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决 GitHub Pages 禁止百度爬虫抓取的问题</title>
-    <url>/blog/2016/05/22/github-baidu-spider-exception/</url>
-    <content><![CDATA[<hr>
-<p>最近在研究网站在 Google 和百度的收录问题，Google 收录很轻松，抓取提交下链接就好了，但是百度却花了我好长时间才搞定，这也是为什么这篇博客写的这么晚 ( ╯□╰ )。有关如何能让你的网站被搜索到请参考：</p>
-<blockquote>
-<p><a href="/blog/2016/05/22/google-baidu-search/" title="如何在 Google 和百度里搜索到自己的网站">如何在 Google 和百度里搜索到自己的网站</a></p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>在 <a href="http://zhanzhang.baidu.com/" title="百度站长平台">百度站长平台</a> 上进行抓取诊断的时候，发现一直抓取失败，如图：</p>
-
-<img src="/blog/2016/05/22/github-baidu-spider-exception/exception.png" class="" title="百度爬虫抓取错误">
-
-<p>后来才发现，原来是 GitHub 禁止百度爬虫抓取，原因是百度的抓取太猛烈，给 GitHub 的用户造成了可用性问题，而且会一直禁用下去。我该吐槽 GitHub 呢？还是百度呢？大家心知肚明就好。（╯－＿－）╯╧╧</p>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>我想了想，既然 GitHub 不让百度抓取，那么我干脆把博客部署到其他地方吧。于是找到了国内的 <a href="https://coding.net/" title="CODING">CODING</a> ，之前可能有很多小伙伴使用的是 <a href="https://gitcafe.com/" title="Gitcafe">Gitcafe</a>，不过已经被 CODING 收购了，2016-05-31 号就会停止服务。CODING 中也提供和 GitHub 相同的 Pages 服务。下面是具体步骤：</p>
-<ol>
-<li>注册登录 <a href="https://coding.net/" title="CODING">CODING</a>。</li>
-<li>创建新项目，项目的后缀必须是和你的个性后缀一样。</li>
-<li>创建项目的时候你可以选择从 GitHub 上导入你的博客仓库或者之后自己部署到 CODING 上，如下图：<img src="/blog/2016/05/22/github-baidu-spider-exception/import-from-github.png" class="" title="从 GitHub 上导入仓库"></li>
-<li>进入你的项目，点击左侧的 <code>代码</code>，再选择 <code>Pages 服务</code>，选择 <code>部署分支</code>，默认是 <code>coding-pages</code>，建议换成 <code>master</code> 分支和 GitHub 保持一致。然后点击 <code>立即开启</code>。</li>
-<li>绑定自己的域名，如下图：<img src="/blog/2016/05/22/github-baidu-spider-exception/coding-pages.png" class="" title="Coding Pages"></li>
-<li>到你的 DNS 服务商修改你的域名解析记录，这里不需要删除解析到 GitHub 的记录，像我下面这样配置就可以，这样正常访问还是访问到 GitHub 上，百度抓取的时候是抓取的 CODING 上的项目。<br>万网 DNS 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-parse.png" class="" title="DNS 解析记录 - 万网">
-DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-parse-dnspod.png" class="" title="DNS 解析记录 - DNSPod">
-注意：我的域名在万网购买的，默认使用的是万网的 DNS，设置成百度后开始是好用的，后来就又抓取不到了（╯－＿－）╯╧╧。 于是我就换成了 <a href="https://www.dnspod.cn/" title="DNSPod-免费智能DNS解析服务商">DNSPod</a> 的服务，把线路类型设置成百度、搜索引擎或者国内都可以。如果设置成搜索引擎的话注意 Google 也会去 Coding.net 抓取页面。设置成国内的话，国内的其他用户访问也访问的是 Coding.net 中的页面，相比访问 GitHub Pages 会更快一点。</li>
-</ol>
-<h1 id="Hexo-同时部署到-GitHub-和-Coding"><a href="#Hexo-同时部署到-GitHub-和-Coding" class="headerlink" title="Hexo 同时部署到 GitHub 和 Coding"></a>Hexo 同时部署到 GitHub 和 Coding</h1><p>既然上面的 DNS 分流到了 GitHub 和 Coding 上，那么我们在部署的时候就要同时维护这两个仓库，好消息是 Hexo 框架支持同时部署到 GitHub 和 Coding 上，详细介绍请参考：</p>
-<blockquote>
-<p><a href="/blog/2016/04/25/hexo-faq/#%E9%85%8D%E7%BD%AE-SSH-%E5%85%AC%E9%92%A5%E5%85%8D%E5%8E%BB%E9%83%A8%E7%BD%B2%E7%9A%84%E6%97%B6%E5%80%99%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81" title="配置 SSH 公钥免去部署的时候输入密码">配置 SSH 公钥免去部署的时候输入密码</a></p>
-</blockquote>
-<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><blockquote>
-<p><a href="http://jerryzou.com/posts/feasibility-of-allowing-baiduSpider-for-GitHub-Pages/" title="解决 GitHub Pages 禁止百度爬虫的方法与可行性分析 | 咀嚼之味">解决 GitHub Pages 禁止百度爬虫的方法与可行性分析 | 咀嚼之味</a><br><a href="http://www.ezlippi.com/blog/2016/02/baidu-spider-forbidden.html" title="解决百度爬虫无法抓取github pages | Lippi-浮生志">解决百度爬虫无法抓取github pages | Lippi-浮生志</a><br><a href="https://segmentfault.com/a/1190000004548638" title="Hexo 同时托管到 coding.net 与 GitHub | shomy">Hexo 同时托管到 coding.net 与 GitHub | shomy</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>Search</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Git</tag>
-        <tag>GitHub</tag>
-        <tag>SEO</tag>
-        <tag>Search</tag>
-        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -2557,6 +2557,62 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
+    <title>删除链表的倒数第N个节点</title>
+    <url>/blog/2020/06/16/remove-nth-node-from-end-of-list/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。</p>
+<p><strong>示例：</strong></p>
+<blockquote>
+<p>给定一个链表: 1-&gt;2-&gt;3-&gt;4-&gt;5, 和 n = 2.<br>当删除了倒数第二个节点后，链表变为 1-&gt;2-&gt;3-&gt;5.</p>
+</blockquote>
+<p><strong>说明：</strong></p>
+<blockquote>
+<p>给定的 n 保证是有效的。</p>
+</blockquote>
+<p><strong>进阶：</strong></p>
+<blockquote>
+<p>你能尝试使用一趟扫描实现吗？</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="两次遍历"><a href="#两次遍历" class="headerlink" title="两次遍历"></a>两次遍历</h1><p>最简单的思路，我们发现其实是删除从列表开头数起的第 <code>(L - n + 1)</code> 个结点，其中 L 是列表的长度。只要我们找到列表的长度 L，这个问题就很容易解决。我们先遍历一次链表，求出链表的长度 L，然后再遍历一次链表，删除倒数第 n 个节点即可。需要注意的是如果 <code>L = n</code>，那么要直接返回 <code>head.next</code>。</p>
+<img src="/blog/2020/06/16/remove-nth-node-from-end-of-list/%E4%B8%A4%E6%AC%A1%E9%81%8D%E5%8E%86.png" class="" title="两次遍历">
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> ListNode <span class="title function_">removeNthFromEnd</span><span class="params">(ListNode head, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">node</span> <span class="operator">=</span> head;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        len++;</span><br><span class="line">        node = node.next;</span><br><span class="line">    &#125; <span class="keyword">while</span> (node != <span class="literal">null</span>);</span><br><span class="line">    <span class="keyword">if</span> (len == n) &#123;</span><br><span class="line">        <span class="keyword">return</span> head.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    node = head;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (++index == len - n) &#123;</span><br><span class="line">            node.next = node.next.next;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        node = node.next;</span><br><span class="line">    &#125; <span class="keyword">while</span> (node != <span class="literal">null</span>);</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ListNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    ListNode next;</span><br><span class="line"></span><br><span class="line">    ListNode(<span class="type">int</span> x) &#123;</span><br><span class="line">        val = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：O(L)，该算法对列表进行了两次遍历，首先计算了列表的长度 L 其次找到第 <code>L - n</code> 个结点。 操作执行了 <code>2L - n</code> 步，时间复杂度为 O(L)。</li>
+<li>空间复杂度：O(1)，只需要额外的常数级别的空间。</li>
+</ul>
+<h1 id="一次遍历"><a href="#一次遍历" class="headerlink" title="一次遍历"></a>一次遍历</h1><p>上述算法可以优化为只使用一次遍历。我们可以使用两个指针而不是一个指针。第一个指针从列表的开头向前移动 <code>n + 1</code> 步，而第二个指针将从列表的开头出发。现在，这两个指针被 n 个结点分开。我们通过同时移动两个指针向前来保持这个恒定的间隔，直到第一个指针到达最后一个结点。此时第二个指针将指向从最后一个结点数起的第 n 个结点。我们重新链接第二个指针所引用的结点的 next 指针指向该结点的下下个结点。</p>
+<img src="/blog/2020/06/16/remove-nth-node-from-end-of-list/%E4%B8%80%E6%AC%A1%E9%81%8D%E5%8E%86.png" class="" title="一次遍历">
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> ListNode <span class="title function_">removeNthFromEnd</span><span class="params">(ListNode head, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">dummy</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">0</span>);</span><br><span class="line">    dummy.next = head;</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">first</span> <span class="operator">=</span> dummy;</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">second</span> <span class="operator">=</span> dummy;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= n + <span class="number">1</span>; i++) &#123;</span><br><span class="line">        first = first.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (first != <span class="literal">null</span>) &#123;</span><br><span class="line">        first = first.next;</span><br><span class="line">        second = second.next;</span><br><span class="line">    &#125;</span><br><span class="line">    second.next = second.next.next;</span><br><span class="line">    <span class="keyword">return</span> dummy.next;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ListNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    ListNode next;</span><br><span class="line"></span><br><span class="line">    ListNode(<span class="type">int</span> x) &#123;</span><br><span class="line">        val = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：O(L)，该算法对含有 L 个结点的列表进行了一次遍历。因此时间复杂度为 O(L)。</li>
+<li>空间复杂度：O(1)，只需要额外的常数级别的空间。</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/" title="删除链表的倒数第N个节点 | 力扣（LeetCode）">删除链表的倒数第N个节点 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/solution/shan-chu-lian-biao-de-dao-shu-di-nge-jie-dian-by-l/" title="删除链表的倒数第N个节点 | 题解（LeetCode）">删除链表的倒数第N个节点 | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>链表</tag>
+        <tag>指针</tag>
+        <tag>双指针</tag>
+        <tag>滑动窗口</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>验证回文串</title>
     <url>/blog/2020/06/19/valid-palindrome/</url>
     <content><![CDATA[<hr>
@@ -2630,62 +2686,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>树</tag>
         <tag>二叉树</tag>
         <tag>深度优先搜索</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>删除链表的倒数第N个节点</title>
-    <url>/blog/2020/06/16/remove-nth-node-from-end-of-list/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。</p>
-<p><strong>示例：</strong></p>
-<blockquote>
-<p>给定一个链表: 1-&gt;2-&gt;3-&gt;4-&gt;5, 和 n = 2.<br>当删除了倒数第二个节点后，链表变为 1-&gt;2-&gt;3-&gt;5.</p>
-</blockquote>
-<p><strong>说明：</strong></p>
-<blockquote>
-<p>给定的 n 保证是有效的。</p>
-</blockquote>
-<p><strong>进阶：</strong></p>
-<blockquote>
-<p>你能尝试使用一趟扫描实现吗？</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="两次遍历"><a href="#两次遍历" class="headerlink" title="两次遍历"></a>两次遍历</h1><p>最简单的思路，我们发现其实是删除从列表开头数起的第 <code>(L - n + 1)</code> 个结点，其中 L 是列表的长度。只要我们找到列表的长度 L，这个问题就很容易解决。我们先遍历一次链表，求出链表的长度 L，然后再遍历一次链表，删除倒数第 n 个节点即可。需要注意的是如果 <code>L = n</code>，那么要直接返回 <code>head.next</code>。</p>
-<img src="/blog/2020/06/16/remove-nth-node-from-end-of-list/%E4%B8%A4%E6%AC%A1%E9%81%8D%E5%8E%86.png" class="" title="两次遍历">
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> ListNode <span class="title function_">removeNthFromEnd</span><span class="params">(ListNode head, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">node</span> <span class="operator">=</span> head;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        len++;</span><br><span class="line">        node = node.next;</span><br><span class="line">    &#125; <span class="keyword">while</span> (node != <span class="literal">null</span>);</span><br><span class="line">    <span class="keyword">if</span> (len == n) &#123;</span><br><span class="line">        <span class="keyword">return</span> head.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    node = head;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (++index == len - n) &#123;</span><br><span class="line">            node.next = node.next.next;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        node = node.next;</span><br><span class="line">    &#125; <span class="keyword">while</span> (node != <span class="literal">null</span>);</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ListNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    ListNode next;</span><br><span class="line"></span><br><span class="line">    ListNode(<span class="type">int</span> x) &#123;</span><br><span class="line">        val = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(L)，该算法对列表进行了两次遍历，首先计算了列表的长度 L 其次找到第 <code>L - n</code> 个结点。 操作执行了 <code>2L - n</code> 步，时间复杂度为 O(L)。</li>
-<li>空间复杂度：O(1)，只需要额外的常数级别的空间。</li>
-</ul>
-<h1 id="一次遍历"><a href="#一次遍历" class="headerlink" title="一次遍历"></a>一次遍历</h1><p>上述算法可以优化为只使用一次遍历。我们可以使用两个指针而不是一个指针。第一个指针从列表的开头向前移动 <code>n + 1</code> 步，而第二个指针将从列表的开头出发。现在，这两个指针被 n 个结点分开。我们通过同时移动两个指针向前来保持这个恒定的间隔，直到第一个指针到达最后一个结点。此时第二个指针将指向从最后一个结点数起的第 n 个结点。我们重新链接第二个指针所引用的结点的 next 指针指向该结点的下下个结点。</p>
-<img src="/blog/2020/06/16/remove-nth-node-from-end-of-list/%E4%B8%80%E6%AC%A1%E9%81%8D%E5%8E%86.png" class="" title="一次遍历">
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> ListNode <span class="title function_">removeNthFromEnd</span><span class="params">(ListNode head, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">dummy</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">0</span>);</span><br><span class="line">    dummy.next = head;</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">first</span> <span class="operator">=</span> dummy;</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">second</span> <span class="operator">=</span> dummy;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= n + <span class="number">1</span>; i++) &#123;</span><br><span class="line">        first = first.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (first != <span class="literal">null</span>) &#123;</span><br><span class="line">        first = first.next;</span><br><span class="line">        second = second.next;</span><br><span class="line">    &#125;</span><br><span class="line">    second.next = second.next.next;</span><br><span class="line">    <span class="keyword">return</span> dummy.next;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ListNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    ListNode next;</span><br><span class="line"></span><br><span class="line">    ListNode(<span class="type">int</span> x) &#123;</span><br><span class="line">        val = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(L)，该算法对含有 L 个结点的列表进行了一次遍历。因此时间复杂度为 O(L)。</li>
-<li>空间复杂度：O(1)，只需要额外的常数级别的空间。</li>
-</ul>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/" title="删除链表的倒数第N个节点 | 力扣（LeetCode）">删除链表的倒数第N个节点 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/solution/shan-chu-lian-biao-de-dao-shu-di-nge-jie-dian-by-l/" title="删除链表的倒数第N个节点 | 题解（LeetCode）">删除链表的倒数第N个节点 | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>链表</tag>
-        <tag>指针</tag>
-        <tag>双指针</tag>
-        <tag>滑动窗口</tag>
       </tags>
   </entry>
   <entry>
@@ -3604,6 +3604,62 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
+    <title>魔术索引</title>
+    <url>/blog/2020/08/04/magic-index-lcci/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>魔术索引。 在数组 A[0…n-1] 中，有所谓的魔术索引，满足条件 A[i] = i 。给定一个有序整数数组，编写一种方法找出魔术索引，若有的话，在数组 A 中找出一个魔术索引，如果没有，则返回 -1。若有多个魔术索引，返回索引值最小的一个。</p>
+<p><strong>示例1:</strong></p>
+<blockquote>
+<p>输入: nums = [0, 2, 3, 4, 5]<br>输出: 0<br>说明: 0 下标的元素为 0</p>
+</blockquote>
+<p><strong>示例2:</strong></p>
+<blockquote>
+<p>输入: nums = [1, 1, 1]<br>输出: 1</p>
+</blockquote>
+<p><strong>说明:</strong></p>
+<blockquote>
+<p>nums 长度在 [1, 1000000] 之间</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h1><p>最简单的方法，我们只要从头遍历整个数组，找到最小的 A[i] = i 返回即可。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findMagicIndex</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] == i) &#123;</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：O(n)，其中 n 为数组的长度。</li>
+<li>空间复杂度：O(1)。</li>
+</ul>
+<h1 id="二分查找剪枝"><a href="#二分查找剪枝" class="headerlink" title="二分查找剪枝"></a>二分查找剪枝</h1><p>本方法我们是进行一定程度的优化，在一些情况下会达到较优的时间复杂度，在最差情况下仍会退化成线性的时间复杂度。现在我们假设，题目中的魔术索引仅有一个，我们假设这个答案为 i，那么意味着 [0…i−1] 的值均小于自身的下标，[i+1…n−1] 的值均大于自身的下标【不理解的同学用反证法即可证明】。那么我们只要使用二分法查找数组中的元素，在 O(log n) 的时间内找到答案 A[i] = i 所在的下标。但是题目中魔术索引可能有多个，我们就需要对二分查找做一些处理。针对二分查找做一下剪枝，策略如下：</p>
+<ul>
+<li>每次我们选择数组中间的元素，如果当前中间元素左半部分有满足条件的答案，那么这个位置往后的右半边元素我们都不再考虑，只要寻找左半部分满足条件的答案即可。</li>
+<li>接下来我们继续查看左半部分是否有满足条件的答案，否则如果没有的话我们仍然需要在右半边寻找，使用的策略同上。</li>
+</ul>
+<p>显然，此剪枝策略在 [−1, 0, 1, 2, 4] 这种答案为数组的最后一个元素的情况下会退化成线性的时间复杂度，但是在一些情况下会有不错的表现。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findMagicIndex</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> findMagicIndex(nums, <span class="number">0</span>, nums.length - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findMagicIndex</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> start, <span class="type">int</span> end)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (start == end) &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[start] == start ? start : -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> start + ((end - start) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">    <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> findMagicIndex(nums, start, mid);</span><br><span class="line">    <span class="keyword">if</span> (index != -<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> index;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> findMagicIndex(nums, mid + <span class="number">1</span>, end);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：最坏情况下会达到 O(n) 的时间复杂度，其中 n 为数组的长度。</li>
+<li>空间复杂度：递归函数的空间取决于调用的栈深度，而最坏情况下我们会递归 n 层，即栈深度为 O(n)，因此空间复杂度最坏情况下为 O(n)。</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/magic-index-lcci/" title="魔术索引 | 力扣（LeetCode）">魔术索引 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/magic-index-lcci/solution/mo-zhu-suo-yin-by-leetcode-solution/" title="魔术索引 | 题解（LeetCode）">魔术索引 | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>数组</tag>
+        <tag>递归</tag>
+        <tag>程序员面试金典</tag>
+        <tag>二分查找</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>课程表</title>
     <url>/blog/2020/08/05/course-schedule/</url>
     <content><![CDATA[<hr>
@@ -3685,62 +3741,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>广度优先搜索</tag>
         <tag>图</tag>
         <tag>拓扑排序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>魔术索引</title>
-    <url>/blog/2020/08/04/magic-index-lcci/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>魔术索引。 在数组 A[0…n-1] 中，有所谓的魔术索引，满足条件 A[i] = i 。给定一个有序整数数组，编写一种方法找出魔术索引，若有的话，在数组 A 中找出一个魔术索引，如果没有，则返回 -1。若有多个魔术索引，返回索引值最小的一个。</p>
-<p><strong>示例1:</strong></p>
-<blockquote>
-<p>输入: nums = [0, 2, 3, 4, 5]<br>输出: 0<br>说明: 0 下标的元素为 0</p>
-</blockquote>
-<p><strong>示例2:</strong></p>
-<blockquote>
-<p>输入: nums = [1, 1, 1]<br>输出: 1</p>
-</blockquote>
-<p><strong>说明:</strong></p>
-<blockquote>
-<p>nums 长度在 [1, 1000000] 之间</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h1><p>最简单的方法，我们只要从头遍历整个数组，找到最小的 A[i] = i 返回即可。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findMagicIndex</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] == i) &#123;</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(n)，其中 n 为数组的长度。</li>
-<li>空间复杂度：O(1)。</li>
-</ul>
-<h1 id="二分查找剪枝"><a href="#二分查找剪枝" class="headerlink" title="二分查找剪枝"></a>二分查找剪枝</h1><p>本方法我们是进行一定程度的优化，在一些情况下会达到较优的时间复杂度，在最差情况下仍会退化成线性的时间复杂度。现在我们假设，题目中的魔术索引仅有一个，我们假设这个答案为 i，那么意味着 [0…i−1] 的值均小于自身的下标，[i+1…n−1] 的值均大于自身的下标【不理解的同学用反证法即可证明】。那么我们只要使用二分法查找数组中的元素，在 O(log n) 的时间内找到答案 A[i] = i 所在的下标。但是题目中魔术索引可能有多个，我们就需要对二分查找做一些处理。针对二分查找做一下剪枝，策略如下：</p>
-<ul>
-<li>每次我们选择数组中间的元素，如果当前中间元素左半部分有满足条件的答案，那么这个位置往后的右半边元素我们都不再考虑，只要寻找左半部分满足条件的答案即可。</li>
-<li>接下来我们继续查看左半部分是否有满足条件的答案，否则如果没有的话我们仍然需要在右半边寻找，使用的策略同上。</li>
-</ul>
-<p>显然，此剪枝策略在 [−1, 0, 1, 2, 4] 这种答案为数组的最后一个元素的情况下会退化成线性的时间复杂度，但是在一些情况下会有不错的表现。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findMagicIndex</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> findMagicIndex(nums, <span class="number">0</span>, nums.length - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findMagicIndex</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> start, <span class="type">int</span> end)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (start == end) &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[start] == start ? start : -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> start + ((end - start) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">    <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> findMagicIndex(nums, start, mid);</span><br><span class="line">    <span class="keyword">if</span> (index != -<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> index;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> findMagicIndex(nums, mid + <span class="number">1</span>, end);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：最坏情况下会达到 O(n) 的时间复杂度，其中 n 为数组的长度。</li>
-<li>空间复杂度：递归函数的空间取决于调用的栈深度，而最坏情况下我们会递归 n 层，即栈深度为 O(n)，因此空间复杂度最坏情况下为 O(n)。</li>
-</ul>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/magic-index-lcci/" title="魔术索引 | 力扣（LeetCode）">魔术索引 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/magic-index-lcci/solution/mo-zhu-suo-yin-by-leetcode-solution/" title="魔术索引 | 题解（LeetCode）">魔术索引 | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>数组</tag>
-        <tag>递归</tag>
-        <tag>程序员面试金典</tag>
-        <tag>二分查找</tag>
       </tags>
   </entry>
   <entry>
@@ -4046,49 +4046,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>数组</tag>
         <tag>指针</tag>
         <tag>双指针</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>平衡二叉树</title>
-    <url>/blog/2020/08/17/balanced-binary-tree/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个二叉树，判断它是否是高度平衡的二叉树。本题中，一棵高度平衡二叉树定义为：一个二叉树每个节点的左右两个子树的高度差的绝对值不超过1。</p>
-<p><strong>示例 1:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定二叉树 [3, 9, 20, null, null, 15, 7]</span><br><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line">    /  \</span><br><span class="line">   15   7</span><br><span class="line">返回 true 。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定二叉树 [1, 2, 2, 3, 3, null, null, 4, 4]</span><br><span class="line">       1</span><br><span class="line">      / \</span><br><span class="line">     2   2</span><br><span class="line">    / \</span><br><span class="line">   3   3</span><br><span class="line">  / \</span><br><span class="line"> 4   4</span><br><span class="line">返回 false 。</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>根据题意一个二叉树每个节点的左右两个子树的高度差的绝对值不超过1。那么我们可以递归的判断一棵树的左右子树，判断是否是平衡二叉树。对于当前遍历到的节点，先递归地判断其左右子树是否平衡，再判断以当前节点为根的子树是否平衡。如果一棵子树是平衡的，则返回其高度（高度一定是非负整数），否则返回 -1。如果存在一棵子树不平衡，则整个二叉树一定不平衡。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isBalanced</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> height(root) != -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">height</span><span class="params">(TreeNode node)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">leftHeight</span> <span class="operator">=</span> height(node.left);</span><br><span class="line">    <span class="type">int</span> <span class="variable">rightHeight</span> <span class="operator">=</span> height(node.right);</span><br><span class="line">    <span class="keyword">if</span> (leftHeight == -<span class="number">1</span> || rightHeight == -<span class="number">1</span> || Math.abs(leftHeight - rightHeight) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Math.max(leftHeight, rightHeight) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>对于上述代码，我们还可以简单优化下，如果左子树不是平衡的，那么也就不需要再递归的求右子树是否平衡了。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isBalanced</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> height(root) != -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">height</span><span class="params">(TreeNode node)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> leftHeight;</span><br><span class="line">    <span class="type">int</span> rightHeight;</span><br><span class="line">    <span class="keyword">if</span> ((leftHeight = height(node.left)) == -<span class="number">1</span></span><br><span class="line">            || (rightHeight = height(node.right)) == -<span class="number">1</span></span><br><span class="line">            || Math.abs(leftHeight - rightHeight) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Math.max(leftHeight, rightHeight) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>另外也可以先看一道简单的求树的高度的题：<a href="/blog/2020/07/28/maximum-depth-of-binary-tree/">二叉树的最大深度 | 笑话人生</a></p>
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(n)，其中 n 是二叉树中的节点个数。使用自底向上的递归，每个节点的计算高度和判断是否平衡都只需要处理一次，最坏情况下需要遍历二叉树中的所有节点，因此时间复杂度是 O(n)。</li>
-<li>空间复杂度：O(n)，其中 n 是二叉树中的节点个数。空间复杂度主要取决于递归调用的层数，递归调用的层数不会超过 n。</li>
-</ul>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/balanced-binary-tree/" title="平衡二叉树 | 力扣（LeetCode）">平衡二叉树 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/balanced-binary-tree/solution/ping-heng-er-cha-shu-by-leetcode-solution/" title="平衡二叉树 | 题解（LeetCode）">平衡二叉树 | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>递归</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
-        <tag>深度优先搜索</tag>
-        <tag>平衡二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -4487,6 +4444,175 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
+    <title>钥匙和房间</title>
+    <url>/blog/2020/08/31/keys-and-rooms/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>有 N 个房间，开始时你位于 0 号房间。每个房间有不同的号码：0，1，2，…，N - 1，并且房间里可能有一些钥匙能使你进入下一个房间。在形式上，对于每个房间 i 都有一个钥匙列表 rooms[i]，每个钥匙 rooms[i][j] 由 [0, 1，…，N - 1] 中的一个整数表示，其中 N = rooms.length。 钥匙 rooms[i][j] = v 可以打开编号为 v 的房间。</p>
+<p>最初，除 0 号房间外的其余所有房间都被锁住。你可以自由地在房间之间来回走动。如果能进入每个房间返回 true，否则返回 false。</p>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p>输入: [[1], [2], [3], []]<br>输出: true<br>解释:<br>我们从 0 号房间开始，拿到钥匙 1。<br>之后我们去 1 号房间，拿到钥匙 2。<br>然后我们去 2 号房间，拿到钥匙 3。<br>最后我们去了 3 号房间。<br>由于我们能够进入每个房间，我们返回 true。</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p>输入：[[1, 3], [3, 0, 1], [2], [0]]<br>输出：false<br>解释：我们不能进入 2 号房间。</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li>1 &lt;= rooms.length &lt;= 1000</li>
+<li>0 &lt;= rooms[i].length &lt;= 1000</li>
+<li>所有房间中的钥匙数量总计不超过 3000。</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h1><p>此题我们将房间理解成节点，房间 A 到房间 B 理解成边，这样这道题就变成了，我们从图的 0 点出发，能否到达所有节点的问题。</p>
+<p>具体实现上，我们使用一个变量 count 记录访问过的房间数，每次访问过一个房间后就标记为访问过 <code>visited[room] = true</code>，并将 <code>count++</code> ，如果最后 count 等于房间的数量，那么就说明可以访问所有的房间。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="type">boolean</span>[] visited;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">canVisitAllRooms</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; rooms)</span> &#123;</span><br><span class="line">    visited = <span class="keyword">new</span> <span class="title class_">boolean</span>[rooms.size()];</span><br><span class="line">    visitRooms(rooms, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> count == rooms.size();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">visitRooms</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; rooms, Integer room)</span> &#123;</span><br><span class="line">    visited[room] = <span class="literal">true</span>;</span><br><span class="line">    count++;</span><br><span class="line">    List&lt;Integer&gt; keyList = rooms.get(room);</span><br><span class="line">    <span class="keyword">for</span> (Integer nextRoom : keyList) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited[nextRoom]) &#123;</span><br><span class="line">            visitRooms(rooms, nextRoom);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：O(n + m)，其中 n 是房间的数量，m 是所有房间中的钥匙数量的总数。</li>
+<li>空间复杂度：O(n)，其中 n 是房间的数量。主要为栈空间的开销。</li>
+</ul>
+<h1 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h1><p>同样的，我们可以使用广度优先搜索解决此问题。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">canVisitAllRooms</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; rooms)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> rooms.size();</span><br><span class="line">    <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">boolean</span>[] visited = <span class="keyword">new</span> <span class="title class_">boolean</span>[n];</span><br><span class="line">    Queue&lt;Integer&gt; queue = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;Integer&gt;();</span><br><span class="line">    visited[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">    queue.offer(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">room</span> <span class="operator">=</span> queue.poll();</span><br><span class="line">        count++;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> key : rooms.get(room)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!visited[key]) &#123;</span><br><span class="line">                visited[key] = <span class="literal">true</span>;</span><br><span class="line">                queue.offer(key);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count == n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：O(n + m)，其中 n 是房间的数量，m 是所有房间中的钥匙数量的总数。</li>
+<li>空间复杂度：O(n)，其中 n 是房间的数量。主要为队列的开销。</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/keys-and-rooms/" title="钥匙和房间 | 力扣（LeetCode）">钥匙和房间 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/keys-and-rooms/solution/yao-chi-he-fang-jian-by-leetcode-solution/" title="钥匙和房间 | 题解（LeetCode）">钥匙和房间 | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>队列</tag>
+        <tag>递归</tag>
+        <tag>深度优先搜索</tag>
+        <tag>广度优先搜索</tag>
+        <tag>图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>平衡二叉树</title>
+    <url>/blog/2020/08/17/balanced-binary-tree/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个二叉树，判断它是否是高度平衡的二叉树。本题中，一棵高度平衡二叉树定义为：一个二叉树每个节点的左右两个子树的高度差的绝对值不超过1。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定二叉树 [3, 9, 20, null, null, 15, 7]</span><br><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line">    /  \</span><br><span class="line">   15   7</span><br><span class="line">返回 true 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定二叉树 [1, 2, 2, 3, 3, null, null, 4, 4]</span><br><span class="line">       1</span><br><span class="line">      / \</span><br><span class="line">     2   2</span><br><span class="line">    / \</span><br><span class="line">   3   3</span><br><span class="line">  / \</span><br><span class="line"> 4   4</span><br><span class="line">返回 false 。</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>根据题意一个二叉树每个节点的左右两个子树的高度差的绝对值不超过1。那么我们可以递归的判断一棵树的左右子树，判断是否是平衡二叉树。对于当前遍历到的节点，先递归地判断其左右子树是否平衡，再判断以当前节点为根的子树是否平衡。如果一棵子树是平衡的，则返回其高度（高度一定是非负整数），否则返回 -1。如果存在一棵子树不平衡，则整个二叉树一定不平衡。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isBalanced</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> height(root) != -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">height</span><span class="params">(TreeNode node)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">leftHeight</span> <span class="operator">=</span> height(node.left);</span><br><span class="line">    <span class="type">int</span> <span class="variable">rightHeight</span> <span class="operator">=</span> height(node.right);</span><br><span class="line">    <span class="keyword">if</span> (leftHeight == -<span class="number">1</span> || rightHeight == -<span class="number">1</span> || Math.abs(leftHeight - rightHeight) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Math.max(leftHeight, rightHeight) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对于上述代码，我们还可以简单优化下，如果左子树不是平衡的，那么也就不需要再递归的求右子树是否平衡了。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isBalanced</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> height(root) != -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">height</span><span class="params">(TreeNode node)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> leftHeight;</span><br><span class="line">    <span class="type">int</span> rightHeight;</span><br><span class="line">    <span class="keyword">if</span> ((leftHeight = height(node.left)) == -<span class="number">1</span></span><br><span class="line">            || (rightHeight = height(node.right)) == -<span class="number">1</span></span><br><span class="line">            || Math.abs(leftHeight - rightHeight) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Math.max(leftHeight, rightHeight) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>另外也可以先看一道简单的求树的高度的题：<a href="/blog/2020/07/28/maximum-depth-of-binary-tree/">二叉树的最大深度 | 笑话人生</a></p>
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：O(n)，其中 n 是二叉树中的节点个数。使用自底向上的递归，每个节点的计算高度和判断是否平衡都只需要处理一次，最坏情况下需要遍历二叉树中的所有节点，因此时间复杂度是 O(n)。</li>
+<li>空间复杂度：O(n)，其中 n 是二叉树中的节点个数。空间复杂度主要取决于递归调用的层数，递归调用的层数不会超过 n。</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/balanced-binary-tree/" title="平衡二叉树 | 力扣（LeetCode）">平衡二叉树 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/balanced-binary-tree/solution/ping-heng-er-cha-shu-by-leetcode-solution/" title="平衡二叉树 | 题解（LeetCode）">平衡二叉树 | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>递归</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
+        <tag>深度优先搜索</tag>
+        <tag>平衡二叉树</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>预测赢家</title>
+    <url>/blog/2020/09/01/predict-the-winner/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个表示分数的非负整数数组。 玩家 1 从数组任意一端拿取一个分数，随后玩家 2 继续从剩余数组任意一端拿取分数，然后玩家 1 拿，…… 。每次一个玩家只能拿取一个分数，分数被拿取之后不再可取。直到没有剩余分数可取时游戏结束。最终获得分数总和最多的玩家获胜。给定一个表示分数的数组，预测玩家1是否会成为赢家。你可以假设每个玩家的玩法都会使他的分数最大化。</p>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p>输入：[1, 5, 2]<br>输出：False<br>解释：一开始，玩家1可以从1和2中进行选择。<br>如果他选择 2（或者 1 ），那么玩家 2 可以从 1（或者 2 ）和 5 中进行选择。如果玩家 2 选择了 5 ，那么玩家 1 则只剩下 1（或者 2 ）可选。<br>所以，玩家 1 的最终分数为 1 + 2 = 3，而玩家 2 为 5 。<br>因此，玩家 1 永远不会成为赢家，返回 False 。</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p>输入：[1, 5, 233, 7]<br>输出：True<br>解释：玩家 1 一开始选择 1 。然后玩家 2 必须从 5 和 7 中进行选择。无论玩家 2 选择了哪个，玩家 1 都可以选择 233 。最终，玩家 1（234 分）比玩家 2（12 分）获得更多的分数，所以返回 True，表示玩家 1 可以成为赢家。</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li>1 &lt;= 给定的数组长度 &lt;= 20.</li>
+<li>数组里所有分数都为非负数且不会大于 10000000 。</li>
+<li>如果最终两个玩家的分数相等，那么玩家 1 仍为赢家。</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><p>为了判断哪个玩家可以获胜，需要计算一个得分差值，即先手得分赢过后手的得分。当数组中的所有数字都被拿取时，如果先手与后手得分之差大于或等于 0，则先手获胜，反之则后手获胜。</p>
+<p>由于每次只能从数组的任意一端拿取数字，因此可以保证数组中剩下的部分一定是连续的。假设数组当前剩下的部分为下标 start 到下标 end，其中 0 ≤ start ≤ end &lt; nums.length。如果 start = end，则只剩一个数字，当前玩家只能拿取这个数字。如果 start &lt; end，则当前玩家可以选择 nums[start] 或 nums[end]，然后轮到另一个玩家在数组剩下的部分选取数字。这是一个递归的过程。递归时记录当前做选择的玩家赢过对手的分数。如果大于等于 0，则代表他在这个子问题中赢了。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">PredictTheWinner</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> calculate(nums, <span class="number">0</span>, nums.length - <span class="number">1</span>) &gt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">calculate</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> start, <span class="type">int</span> end)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (start == end) &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[start];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">selectStart</span> <span class="operator">=</span> nums[start] - calculate(nums, start + <span class="number">1</span>, end);</span><br><span class="line">    <span class="type">int</span> <span class="variable">selectEnd</span> <span class="operator">=</span> nums[end] - calculate(nums, start, end - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> Math.max(selectStart, selectEnd);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的递归，其实有很多重复的计算，比如你先选 1，我再选 7，和你先选 7，我再选 1，这两种所带来的子问题是一样的，都是剩下 [5, 233]。我们用数组或哈希表去存储计算过的子问题的解，遇到重复的子问题，就不用再次递归计算。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Integer[][] maxScore;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">PredictTheWinner</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    maxScore = <span class="keyword">new</span> <span class="title class_">Integer</span>[nums.length][nums.length];</span><br><span class="line">    <span class="keyword">return</span> calculate(nums, <span class="number">0</span>, nums.length - <span class="number">1</span>) &gt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">calculate</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> start, <span class="type">int</span> end)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (maxScore[start][end] != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> maxScore[start][end];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (start == end) &#123;</span><br><span class="line">        <span class="keyword">return</span> maxScore[start][end] = nums[start];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">selectStart</span> <span class="operator">=</span> nums[start] - calculate(nums, start + <span class="number">1</span>, end);</span><br><span class="line">    <span class="type">int</span> <span class="variable">selectEnd</span> <span class="operator">=</span> nums[end] - calculate(nums, start, end - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> maxScore[start][end] = Math.max(selectStart, selectEnd);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：O(2^n)，其中 n 是数组的长度。</li>
+<li>空间复杂度：O(n)，其中 n 是数组的长度。空间复杂度取决于递归使用的栈空间。</li>
+</ul>
+<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>定义二维数组 dp，其行数和列数都等于数组的长度，dp[i][j] 表示当数组剩下的部分为下标 i 到下标 j 时，当前玩家与另一个玩家的分数之差的最大值，注意当前玩家不一定是先手。</p>
+<ul>
+<li>只有当 i ≤ j 时，数组剩下的部分才有意义，因此当 i &gt; j 时，dp[i][j] = 0。</li>
+<li>当 i = j 时，只剩一个数字，当前玩家只能拿取这个数字，因此对于所有 0 ≤ i &lt; nums.length，都有 dp[i][i] = nums[i]。</li>
+<li>当 i &lt; j 时，当前玩家可以选择 nums[i] 或 nums[j]，然后轮到另一个玩家在数组剩下的部分选取数字。在两种方案中，当前玩家会选择最优的方案，使得自己的分数最大化。因此可以得到如下状态转移方程：<blockquote>
+<p>dp[i][j] = max(nums[i] − dp[i+1][j], nums[j] − dp[i][j − 1])</p>
+</blockquote>
+</li>
+</ul>
+<p>最后判断 dp[0][nums.length − 1] 的值，如果大于或等于 0，则先手得分大于或等于后手得分，因此先手成为赢家，否则后手成为赢家。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">PredictTheWinner</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    <span class="type">int</span>[][] dp = <span class="keyword">new</span> <span class="title class_">int</span>[nums.length][nums.length];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        dp[i][i] = nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> nums.length - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + <span class="number">1</span>; j &lt; nums.length; j++) &#123;</span><br><span class="line">            dp[i][j] = Math.max(nums[i] - dp[i + <span class="number">1</span>][j], nums[j] - dp[i][j - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">0</span>][nums.length - <span class="number">1</span>] &gt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码中使用了二维数组 dp。分析状态转移方程可以看到，dp[i][j] 的值只和 dp[i + 1][j] 与 dp[i][j − 1] 有关，即在计算 dp 的第 i 行的值时，只需要使用到 dp 的第 i 行和第 i + 1 行的值，因此可以使用一维数组代替二维数组，对空间进行优化。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">PredictTheWinner</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    <span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[nums.length];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        dp[i] = nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> nums.length - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + <span class="number">1</span>; j &lt; nums.length; j++) &#123;</span><br><span class="line">            dp[j] = Math.max(nums[i] - dp[j], nums[j] - dp[j - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[nums.length - <span class="number">1</span>] &gt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：O(n²)，其中 n 是数组的长度。需要计算每个子数组对应的 dp 的值，共有 n * (n + 1) / 2 个子数组。</li>
+<li>空间复杂度：O(n)，其中 n 是数组的长度。空间复杂度取决于额外创建的数组 dp，如果不优化空间，则空间复杂度是 O(n²)，使用一维数组优化之后空间复杂度可以降至 O(n)。</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/predict-the-winner/" title="预测赢家 | 力扣（LeetCode）">预测赢家 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/predict-the-winner/solution/yu-ce-ying-jia-by-leetcode-solution/" title="预测赢家 | 题解（LeetCode）">预测赢家 | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>递归</tag>
+        <tag>记忆化</tag>
+        <tag>动态规划</tag>
+        <tag>滚动数组</tag>
+        <tag>零和博弈</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>二叉树的遍历</title>
     <url>/blog/2020/09/02/binary-tree-traverse/</url>
     <content><![CDATA[<hr>
@@ -4602,6 +4728,40 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
+    <title>组合</title>
+    <url>/blog/2020/09/17/combinations/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定两个整数 n 和 k，返回 1 … n 中所有可能的 k 个数的组合。</p>
+<p><strong>示例:</strong></p>
+<blockquote>
+<p>输入: n = 4, k = 2<br>输出:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  [2,4],</span><br><span class="line">  [3,4],</span><br><span class="line">  [2,3],</span><br><span class="line">  [1,2],</span><br><span class="line">  [1,3],</span><br><span class="line">  [1,4],</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><p>从 n 个当中选 k 个的所有方案对应的枚举是组合型枚举。思路很简单，针对 1 … n 中的每个数，在组合的结果中，我们都有两种结果，选择或者不选择。于是我们从第一个数开始进行递归的判断。详细分析在代码注释中。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;List&lt;Integer&gt;&gt; ans = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">LinkedList&lt;Integer&gt; item = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">combine</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> k)</span> &#123;</span><br><span class="line">    dfsCombine(n, k, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">dfsCombine</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> k, <span class="type">int</span> index)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (item.size() == k) &#123;</span><br><span class="line">        <span class="comment">// 如果长度达到k，保存结果。</span></span><br><span class="line">        ans.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(item));</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (item.size() + n - index + <span class="number">1</span> &lt; k) &#123;</span><br><span class="line">        <span class="comment">// 如果剩下的数字不够组合成k个数，则不满足要求。</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 选择当前元素，然后进行递归。 </span></span><br><span class="line">    item.add(index);</span><br><span class="line">    dfsCombine(n, k, index + <span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 不选择当前元素，然后进行递归，也是一种回溯。</span></span><br><span class="line">    item.removeLast();</span><br><span class="line">    dfsCombine(n, k, index + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/combinations/" title="组合 | 力扣（LeetCode）">组合 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/combinations/solution/zu-he-by-leetcode-solution/" title="组合 | 题解（LeetCode）">组合 | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>递归</tag>
+        <tag>回溯算法</tag>
+        <tag>深度优先搜索</tag>
+        <tag>组合</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>删除排序数组中的重复项</title>
     <url>/blog/2020/09/18/remove-duplicates-from-sorted-array/</url>
     <content><![CDATA[<hr>
@@ -4644,40 +4804,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>数组</tag>
         <tag>指针</tag>
         <tag>双指针</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>组合</title>
-    <url>/blog/2020/09/17/combinations/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定两个整数 n 和 k，返回 1 … n 中所有可能的 k 个数的组合。</p>
-<p><strong>示例:</strong></p>
-<blockquote>
-<p>输入: n = 4, k = 2<br>输出:</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  [2,4],</span><br><span class="line">  [3,4],</span><br><span class="line">  [2,3],</span><br><span class="line">  [1,2],</span><br><span class="line">  [1,3],</span><br><span class="line">  [1,4],</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><p>从 n 个当中选 k 个的所有方案对应的枚举是组合型枚举。思路很简单，针对 1 … n 中的每个数，在组合的结果中，我们都有两种结果，选择或者不选择。于是我们从第一个数开始进行递归的判断。详细分析在代码注释中。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;List&lt;Integer&gt;&gt; ans = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">LinkedList&lt;Integer&gt; item = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">combine</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> k)</span> &#123;</span><br><span class="line">    dfsCombine(n, k, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">dfsCombine</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> k, <span class="type">int</span> index)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (item.size() == k) &#123;</span><br><span class="line">        <span class="comment">// 如果长度达到k，保存结果。</span></span><br><span class="line">        ans.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(item));</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (item.size() + n - index + <span class="number">1</span> &lt; k) &#123;</span><br><span class="line">        <span class="comment">// 如果剩下的数字不够组合成k个数，则不满足要求。</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 选择当前元素，然后进行递归。 </span></span><br><span class="line">    item.add(index);</span><br><span class="line">    dfsCombine(n, k, index + <span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 不选择当前元素，然后进行递归，也是一种回溯。</span></span><br><span class="line">    item.removeLast();</span><br><span class="line">    dfsCombine(n, k, index + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/combinations/" title="组合 | 力扣（LeetCode）">组合 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/combinations/solution/zu-he-by-leetcode-solution/" title="组合 | 题解（LeetCode）">组合 | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>递归</tag>
-        <tag>回溯算法</tag>
-        <tag>深度优先搜索</tag>
-        <tag>组合</tag>
       </tags>
   </entry>
   <entry>
@@ -4733,115 +4859,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>指针</tag>
         <tag>双指针</tag>
         <tag>HashSet</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>预测赢家</title>
-    <url>/blog/2020/09/01/predict-the-winner/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个表示分数的非负整数数组。 玩家 1 从数组任意一端拿取一个分数，随后玩家 2 继续从剩余数组任意一端拿取分数，然后玩家 1 拿，…… 。每次一个玩家只能拿取一个分数，分数被拿取之后不再可取。直到没有剩余分数可取时游戏结束。最终获得分数总和最多的玩家获胜。给定一个表示分数的数组，预测玩家1是否会成为赢家。你可以假设每个玩家的玩法都会使他的分数最大化。</p>
-<p><strong>示例 1：</strong></p>
-<blockquote>
-<p>输入：[1, 5, 2]<br>输出：False<br>解释：一开始，玩家1可以从1和2中进行选择。<br>如果他选择 2（或者 1 ），那么玩家 2 可以从 1（或者 2 ）和 5 中进行选择。如果玩家 2 选择了 5 ，那么玩家 1 则只剩下 1（或者 2 ）可选。<br>所以，玩家 1 的最终分数为 1 + 2 = 3，而玩家 2 为 5 。<br>因此，玩家 1 永远不会成为赢家，返回 False 。</p>
-</blockquote>
-<p><strong>示例 2：</strong></p>
-<blockquote>
-<p>输入：[1, 5, 233, 7]<br>输出：True<br>解释：玩家 1 一开始选择 1 。然后玩家 2 必须从 5 和 7 中进行选择。无论玩家 2 选择了哪个，玩家 1 都可以选择 233 。最终，玩家 1（234 分）比玩家 2（12 分）获得更多的分数，所以返回 True，表示玩家 1 可以成为赢家。</p>
-</blockquote>
-<p><strong>提示：</strong></p>
-<ul>
-<li>1 &lt;= 给定的数组长度 &lt;= 20.</li>
-<li>数组里所有分数都为非负数且不会大于 10000000 。</li>
-<li>如果最终两个玩家的分数相等，那么玩家 1 仍为赢家。</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><p>为了判断哪个玩家可以获胜，需要计算一个得分差值，即先手得分赢过后手的得分。当数组中的所有数字都被拿取时，如果先手与后手得分之差大于或等于 0，则先手获胜，反之则后手获胜。</p>
-<p>由于每次只能从数组的任意一端拿取数字，因此可以保证数组中剩下的部分一定是连续的。假设数组当前剩下的部分为下标 start 到下标 end，其中 0 ≤ start ≤ end &lt; nums.length。如果 start = end，则只剩一个数字，当前玩家只能拿取这个数字。如果 start &lt; end，则当前玩家可以选择 nums[start] 或 nums[end]，然后轮到另一个玩家在数组剩下的部分选取数字。这是一个递归的过程。递归时记录当前做选择的玩家赢过对手的分数。如果大于等于 0，则代表他在这个子问题中赢了。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">PredictTheWinner</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> calculate(nums, <span class="number">0</span>, nums.length - <span class="number">1</span>) &gt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">calculate</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> start, <span class="type">int</span> end)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (start == end) &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[start];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">selectStart</span> <span class="operator">=</span> nums[start] - calculate(nums, start + <span class="number">1</span>, end);</span><br><span class="line">    <span class="type">int</span> <span class="variable">selectEnd</span> <span class="operator">=</span> nums[end] - calculate(nums, start, end - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> Math.max(selectStart, selectEnd);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上面的递归，其实有很多重复的计算，比如你先选 1，我再选 7，和你先选 7，我再选 1，这两种所带来的子问题是一样的，都是剩下 [5, 233]。我们用数组或哈希表去存储计算过的子问题的解，遇到重复的子问题，就不用再次递归计算。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Integer[][] maxScore;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">PredictTheWinner</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    maxScore = <span class="keyword">new</span> <span class="title class_">Integer</span>[nums.length][nums.length];</span><br><span class="line">    <span class="keyword">return</span> calculate(nums, <span class="number">0</span>, nums.length - <span class="number">1</span>) &gt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">calculate</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> start, <span class="type">int</span> end)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (maxScore[start][end] != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> maxScore[start][end];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (start == end) &#123;</span><br><span class="line">        <span class="keyword">return</span> maxScore[start][end] = nums[start];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">selectStart</span> <span class="operator">=</span> nums[start] - calculate(nums, start + <span class="number">1</span>, end);</span><br><span class="line">    <span class="type">int</span> <span class="variable">selectEnd</span> <span class="operator">=</span> nums[end] - calculate(nums, start, end - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> maxScore[start][end] = Math.max(selectStart, selectEnd);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(2^n)，其中 n 是数组的长度。</li>
-<li>空间复杂度：O(n)，其中 n 是数组的长度。空间复杂度取决于递归使用的栈空间。</li>
-</ul>
-<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>定义二维数组 dp，其行数和列数都等于数组的长度，dp[i][j] 表示当数组剩下的部分为下标 i 到下标 j 时，当前玩家与另一个玩家的分数之差的最大值，注意当前玩家不一定是先手。</p>
-<ul>
-<li>只有当 i ≤ j 时，数组剩下的部分才有意义，因此当 i &gt; j 时，dp[i][j] = 0。</li>
-<li>当 i = j 时，只剩一个数字，当前玩家只能拿取这个数字，因此对于所有 0 ≤ i &lt; nums.length，都有 dp[i][i] = nums[i]。</li>
-<li>当 i &lt; j 时，当前玩家可以选择 nums[i] 或 nums[j]，然后轮到另一个玩家在数组剩下的部分选取数字。在两种方案中，当前玩家会选择最优的方案，使得自己的分数最大化。因此可以得到如下状态转移方程：<blockquote>
-<p>dp[i][j] = max(nums[i] − dp[i+1][j], nums[j] − dp[i][j − 1])</p>
-</blockquote>
-</li>
-</ul>
-<p>最后判断 dp[0][nums.length − 1] 的值，如果大于或等于 0，则先手得分大于或等于后手得分，因此先手成为赢家，否则后手成为赢家。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">PredictTheWinner</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    <span class="type">int</span>[][] dp = <span class="keyword">new</span> <span class="title class_">int</span>[nums.length][nums.length];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        dp[i][i] = nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> nums.length - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + <span class="number">1</span>; j &lt; nums.length; j++) &#123;</span><br><span class="line">            dp[i][j] = Math.max(nums[i] - dp[i + <span class="number">1</span>][j], nums[j] - dp[i][j - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">0</span>][nums.length - <span class="number">1</span>] &gt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上述代码中使用了二维数组 dp。分析状态转移方程可以看到，dp[i][j] 的值只和 dp[i + 1][j] 与 dp[i][j − 1] 有关，即在计算 dp 的第 i 行的值时，只需要使用到 dp 的第 i 行和第 i + 1 行的值，因此可以使用一维数组代替二维数组，对空间进行优化。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">PredictTheWinner</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    <span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[nums.length];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        dp[i] = nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> nums.length - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + <span class="number">1</span>; j &lt; nums.length; j++) &#123;</span><br><span class="line">            dp[j] = Math.max(nums[i] - dp[j], nums[j] - dp[j - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[nums.length - <span class="number">1</span>] &gt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(n²)，其中 n 是数组的长度。需要计算每个子数组对应的 dp 的值，共有 n * (n + 1) / 2 个子数组。</li>
-<li>空间复杂度：O(n)，其中 n 是数组的长度。空间复杂度取决于额外创建的数组 dp，如果不优化空间，则空间复杂度是 O(n²)，使用一维数组优化之后空间复杂度可以降至 O(n)。</li>
-</ul>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/predict-the-winner/" title="预测赢家 | 力扣（LeetCode）">预测赢家 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/predict-the-winner/solution/yu-ce-ying-jia-by-leetcode-solution/" title="预测赢家 | 题解（LeetCode）">预测赢家 | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>递归</tag>
-        <tag>记忆化</tag>
-        <tag>动态规划</tag>
-        <tag>滚动数组</tag>
-        <tag>零和博弈</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>有序数组的平方</title>
-    <url>/blog/2020/10/16/squares-of-a-sorted-array/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个按非递减顺序排序的整数数组 A，返回每个数字的平方组成的新数组，要求也按非递减顺序排序。</p>
-<p><strong>示例 1：</strong></p>
-<blockquote>
-<p>输入：[-4, -1, 0, 3, 10]<br>输出：[0, 1, 9, 16, 100]</p>
-</blockquote>
-<p><strong>示例 2：</strong></p>
-<blockquote>
-<p>输入：[-7, -3, 2, 3, 11]<br>输出：[4, 9, 9, 49, 121]</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h1><p>最简单的方法，我们可以将数组中的元素全部求平方，然后进行排序即可，但是这样操作空间复杂度和时间复杂度都较大，在此我们不多做赘述。我们观察数组的特性可以发现，数组是排序好的，这样我们就可以使用一个比较巧妙的方法进行计算，具体的，对于全正数的数组，直接平方后即满足题意，但是有负数的情况下，负数中越小的负数，计算的结果越大。正数中越大的正数计算的结果越大，题目要求平方后的数组依然是非递减顺序排序，于是我们可以定义两个指针分别指向 0 和 len - 1。不断的移动这两个指针，每次我们将平方后的较大的值逆序的放入数组中。最后完成计算，结果也将是非递减顺序。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span>[] sortedSquares(<span class="type">int</span>[] A) &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> A.length;</span><br><span class="line">    <span class="type">int</span>[] ans = <span class="keyword">new</span> <span class="title class_">int</span>[len];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>, j = len - <span class="number">1</span>, pos = len - <span class="number">1</span>; i &lt;= j;) &#123;</span><br><span class="line">        <span class="keyword">if</span> (A[i] * A[i] &gt; A[j] * A[j]) &#123;</span><br><span class="line">            ans[pos] = A[i] * A[i];</span><br><span class="line">            i++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            ans[pos] = A[j] * A[j];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        pos--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(n)，其中 n 是数组 A 的长度。</li>
-<li>空间复杂度：O(1)。</li>
-</ul>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/squares-of-a-sorted-array/" title="有序数组的平方 | 力扣（LeetCode）">有序数组的平方 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/squares-of-a-sorted-array/solution/you-xu-shu-zu-de-ping-fang-by-leetcode-solution/" title="有序数组的平方 | 题解（LeetCode）">有序数组的平方 | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>数组</tag>
-        <tag>指针</tag>
-        <tag>双指针</tag>
       </tags>
   </entry>
   <entry>
@@ -4908,6 +4925,45 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
+    <title>有序数组的平方</title>
+    <url>/blog/2020/10/16/squares-of-a-sorted-array/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个按非递减顺序排序的整数数组 A，返回每个数字的平方组成的新数组，要求也按非递减顺序排序。</p>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p>输入：[-4, -1, 0, 3, 10]<br>输出：[0, 1, 9, 16, 100]</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p>输入：[-7, -3, 2, 3, 11]<br>输出：[4, 9, 9, 49, 121]</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h1><p>最简单的方法，我们可以将数组中的元素全部求平方，然后进行排序即可，但是这样操作空间复杂度和时间复杂度都较大，在此我们不多做赘述。我们观察数组的特性可以发现，数组是排序好的，这样我们就可以使用一个比较巧妙的方法进行计算，具体的，对于全正数的数组，直接平方后即满足题意，但是有负数的情况下，负数中越小的负数，计算的结果越大。正数中越大的正数计算的结果越大，题目要求平方后的数组依然是非递减顺序排序，于是我们可以定义两个指针分别指向 0 和 len - 1。不断的移动这两个指针，每次我们将平方后的较大的值逆序的放入数组中。最后完成计算，结果也将是非递减顺序。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span>[] sortedSquares(<span class="type">int</span>[] A) &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> A.length;</span><br><span class="line">    <span class="type">int</span>[] ans = <span class="keyword">new</span> <span class="title class_">int</span>[len];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>, j = len - <span class="number">1</span>, pos = len - <span class="number">1</span>; i &lt;= j;) &#123;</span><br><span class="line">        <span class="keyword">if</span> (A[i] * A[i] &gt; A[j] * A[j]) &#123;</span><br><span class="line">            ans[pos] = A[i] * A[i];</span><br><span class="line">            i++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            ans[pos] = A[j] * A[j];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        pos--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：O(n)，其中 n 是数组 A 的长度。</li>
+<li>空间复杂度：O(1)。</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/squares-of-a-sorted-array/" title="有序数组的平方 | 力扣（LeetCode）">有序数组的平方 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/squares-of-a-sorted-array/solution/you-xu-shu-zu-de-ping-fang-by-leetcode-solution/" title="有序数组的平方 | 题解（LeetCode）">有序数组的平方 | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>数组</tag>
+        <tag>指针</tag>
+        <tag>双指针</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>划分字母区间</title>
     <url>/blog/2020/10/22/partition-labels/</url>
     <content><![CDATA[<hr>
@@ -4956,62 +5012,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>双指针</tag>
         <tag>贪心算法</tag>
         <tag>递归</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>钥匙和房间</title>
-    <url>/blog/2020/08/31/keys-and-rooms/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>有 N 个房间，开始时你位于 0 号房间。每个房间有不同的号码：0，1，2，…，N - 1，并且房间里可能有一些钥匙能使你进入下一个房间。在形式上，对于每个房间 i 都有一个钥匙列表 rooms[i]，每个钥匙 rooms[i][j] 由 [0, 1，…，N - 1] 中的一个整数表示，其中 N = rooms.length。 钥匙 rooms[i][j] = v 可以打开编号为 v 的房间。</p>
-<p>最初，除 0 号房间外的其余所有房间都被锁住。你可以自由地在房间之间来回走动。如果能进入每个房间返回 true，否则返回 false。</p>
-<p><strong>示例 1：</strong></p>
-<blockquote>
-<p>输入: [[1], [2], [3], []]<br>输出: true<br>解释:<br>我们从 0 号房间开始，拿到钥匙 1。<br>之后我们去 1 号房间，拿到钥匙 2。<br>然后我们去 2 号房间，拿到钥匙 3。<br>最后我们去了 3 号房间。<br>由于我们能够进入每个房间，我们返回 true。</p>
-</blockquote>
-<p><strong>示例 2：</strong></p>
-<blockquote>
-<p>输入：[[1, 3], [3, 0, 1], [2], [0]]<br>输出：false<br>解释：我们不能进入 2 号房间。</p>
-</blockquote>
-<p><strong>提示：</strong></p>
-<ul>
-<li>1 &lt;= rooms.length &lt;= 1000</li>
-<li>0 &lt;= rooms[i].length &lt;= 1000</li>
-<li>所有房间中的钥匙数量总计不超过 3000。</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h1><p>此题我们将房间理解成节点，房间 A 到房间 B 理解成边，这样这道题就变成了，我们从图的 0 点出发，能否到达所有节点的问题。</p>
-<p>具体实现上，我们使用一个变量 count 记录访问过的房间数，每次访问过一个房间后就标记为访问过 <code>visited[room] = true</code>，并将 <code>count++</code> ，如果最后 count 等于房间的数量，那么就说明可以访问所有的房间。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="type">boolean</span>[] visited;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">canVisitAllRooms</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; rooms)</span> &#123;</span><br><span class="line">    visited = <span class="keyword">new</span> <span class="title class_">boolean</span>[rooms.size()];</span><br><span class="line">    visitRooms(rooms, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> count == rooms.size();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">visitRooms</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; rooms, Integer room)</span> &#123;</span><br><span class="line">    visited[room] = <span class="literal">true</span>;</span><br><span class="line">    count++;</span><br><span class="line">    List&lt;Integer&gt; keyList = rooms.get(room);</span><br><span class="line">    <span class="keyword">for</span> (Integer nextRoom : keyList) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited[nextRoom]) &#123;</span><br><span class="line">            visitRooms(rooms, nextRoom);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(n + m)，其中 n 是房间的数量，m 是所有房间中的钥匙数量的总数。</li>
-<li>空间复杂度：O(n)，其中 n 是房间的数量。主要为栈空间的开销。</li>
-</ul>
-<h1 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h1><p>同样的，我们可以使用广度优先搜索解决此问题。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">canVisitAllRooms</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; rooms)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> rooms.size();</span><br><span class="line">    <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">boolean</span>[] visited = <span class="keyword">new</span> <span class="title class_">boolean</span>[n];</span><br><span class="line">    Queue&lt;Integer&gt; queue = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;Integer&gt;();</span><br><span class="line">    visited[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">    queue.offer(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">room</span> <span class="operator">=</span> queue.poll();</span><br><span class="line">        count++;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> key : rooms.get(room)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!visited[key]) &#123;</span><br><span class="line">                visited[key] = <span class="literal">true</span>;</span><br><span class="line">                queue.offer(key);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count == n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(n + m)，其中 n 是房间的数量，m 是所有房间中的钥匙数量的总数。</li>
-<li>空间复杂度：O(n)，其中 n 是房间的数量。主要为队列的开销。</li>
-</ul>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/keys-and-rooms/" title="钥匙和房间 | 力扣（LeetCode）">钥匙和房间 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/keys-and-rooms/solution/yao-chi-he-fang-jian-by-leetcode-solution/" title="钥匙和房间 | 题解（LeetCode）">钥匙和房间 | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>队列</tag>
-        <tag>递归</tag>
-        <tag>深度优先搜索</tag>
-        <tag>广度优先搜索</tag>
-        <tag>图</tag>
       </tags>
   </entry>
   <entry>
