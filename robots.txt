@@ -1,0 +1,9 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+
+Disallow: /vendors/
+Disallow: /fancybox/
+
+Sitemap: https://www.cylong.com/sitemap.xml
+Sitemap: https://www.cylong.com/baidusitemap.xml

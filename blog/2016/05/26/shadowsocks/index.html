@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>站在 Shadowsocks 的肩膀上发现精彩的世界 | 笑话人生</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="国内的网络环境我不说相信大家都懂。虽然墙内的世界很丰富，但是墙外的世界还有着更加精彩的内容。这不得不让我想起了曾经看过的一部漫画——进击的巨人。大部分人都在墙内过着安逸的生活，但是总有那么一帮人，想要去墙外探索未知的世界。我就是这样的人！之前因为想要体验 Google 搜索、体验 Youtube、查阅学习资料，还有玩的部分游戏需要翻墙，找了很多免费的代理和 VPN，效果都不好，断断续续的。后来经">
+<meta property="og:type" content="article">
+<meta property="og:title" content="站在 Shadowsocks 的肩膀上发现精彩的世界">
+<meta property="og:url" content="https://www.cylong.com/blog/2016/05/26/shadowsocks/index.html">
+<meta property="og:site_name" content="笑话人生">
+<meta property="og:description" content="国内的网络环境我不说相信大家都懂。虽然墙内的世界很丰富，但是墙外的世界还有着更加精彩的内容。这不得不让我想起了曾经看过的一部漫画——进击的巨人。大部分人都在墙内过着安逸的生活，但是总有那么一帮人，想要去墙外探索未知的世界。我就是这样的人！之前因为想要体验 Google 搜索、体验 Youtube、查阅学习资料，还有玩的部分游戏需要翻墙，找了很多免费的代理和 VPN，效果都不好，断断续续的。后来经">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.cylong.com/blog/2016/05/26/shadowsocks/Shadowsocks-basic.png">
+<meta property="og:image" content="https://www.cylong.com/blog/2016/05/26/shadowsocks/my-service.png">
+<meta property="og:image" content="https://www.cylong.com/blog/2016/05/26/shadowsocks/Windows-Shadowsocks-gui.png">
+<meta property="og:image" content="https://www.cylong.com/blog/2016/05/26/shadowsocks/Shadowsocks-menu.png">
+<meta property="og:image" content="https://www.cylong.com/blog/2016/05/26/shadowsocks/Shadowsocks-Android.png">
+<meta property="og:image" content="https://www.cylong.com/blog/2016/05/26/shadowsocks/search-shadowsocks.png">
+<meta property="og:image" content="https://www.cylong.com/blog/2016/05/26/shadowsocks/Shadowsocks-Qt5-GUI.png">
+<meta property="og:image" content="https://www.cylong.com/blog/2016/05/26/shadowsocks/config.png">
+<meta property="og:image" content="https://www.cylong.com/blog/2016/05/26/shadowsocks/Shadowsocks-icon.png">
+<meta property="og:image" content="https://www.cylong.com/blog/2016/05/26/shadowsocks/SwitchySharp-config.png">
+<meta property="og:image" content="https://www.cylong.com/blog/2016/05/26/shadowsocks/Shadowsocks-IOS.png">
+<meta property="og:image" content="https://www.cylong.com/blog/2016/05/26/shadowsocks/Shadowrocket.png">
+<meta property="article:published_time" content="2016-05-26T05:51:29.000Z">
+<meta property="article:modified_time" content="2023-10-12T05:51:29.000Z">
+<meta property="article:author" content="cylong">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Shadowsocks">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="IOS">
+<meta property="article:tag" content="翻墙">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.cylong.com/blog/2016/05/26/shadowsocks/Shadowsocks-basic.png">
+  
+    <link rel="alternate" href="/atom.xml" title="笑话人生" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">笑话人生</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://www.cylong.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-shadowsocks" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2016/05/26/shadowsocks/" class="article-date">
+  <time datetime="2016-05-26T05:51:29.000Z" itemprop="datePublished">2016-05-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Shadowsocks/">Shadowsocks</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      站在 Shadowsocks 的肩膀上发现精彩的世界
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>国内的网络环境我不说相信大家都懂。虽然墙内的世界很丰富，但是墙外的世界还有着更加精彩的内容。这不得不让我想起了曾经看过的一部漫画——进击的巨人。大部分人都在墙内过着安逸的生活，但是总有那么一帮人，想要去墙外探索未知的世界。我就是这样的人！之前因为想要体验 Google 搜索、体验 Youtube、查阅学习资料，还有玩的部分游戏需要翻墙，找了很多免费的代理和 VPN，效果都不好，断断续续的。后来经过舍友的推荐，入了 Shadowsocks 的坑。体验了有两个月左右，效果很棒，访问速度也很快，强烈推荐给大家使用！！！(●’◡’●)</p>
+<span id="more"></span>
+
+<h1 id="购买服务"><a href="#购买服务" class="headerlink" title="购买服务"></a>购买服务</h1><ol>
+<li>点击进入 <a target="_blank" rel="noopener" href="https://portal.shadowsocks.au/aff.php?aff=8883" title="Shadowsocks">Shadowsocks</a>（<strong>此链接是我的推广链接，因为种种原因，Shadowsocks 官网常常换，所以我的推广链接也会不断更新的，官网链接也以此为准。</strong>你点击后会直接进入首页，通过这个链接购买服务后我也会获得一些好处啦，嘿嘿 🤭），进入首页后选择 <code>购买服务</code>。</li>
+<li>之后选择你想要购买的服务，点击现在订购。我选择的是 <code>Shadowsocks 普通版</code>。需要注意的是，虽然显示的价格是美元，但是在后面支付的时候会自动转化为人民币。<img src="/blog/2016/05/26/shadowsocks/Shadowsocks-basic.png" class="" title="Shadowsocks普通版"></li>
+<li>界面上选择你的付款年限，然后点击继续。</li>
+<li>在结账页面，你需要填写各种信息，需要认真填写，这也是在创建账号。</li>
+<li>Shadowsocks 支持 Alipay 支付宝国际版。之后付款就可以了，现在大约是 104 块钱一年。我买的时候，订购服务时显示的还是人民币，99块钱一年。虽然贵了一点点，不过还是可以接受的。</li>
+<li>之后进入 <a target="_blank" rel="noopener" href="https://portal.shadowsocks.au/clientarea.php" title="客户中心 | Shadowsocks">客户中心</a>，用第4步创建的账号登陆。</li>
+<li>点击产品服务，可以看到你刚刚购买的服务，状态为有效。<img src="/blog/2016/05/26/shadowsocks/my-service.png" class="" title="XML 我的服务"></li>
+<li>点击刚刚购买的服务，会看到产品详情。下面有配置文件下载，选择 Windows 版下载。下载下来是 <code>gui-config.json</code>。</li>
+</ol>
+<p><strong>2023-09-27 更新</strong></p>
+<ol start="9">
+<li><strong>注：</strong>如果不着急的话，可以等双十一再买，有优惠。</li>
+</ol>
+<h1 id="客户端安装使用"><a href="#客户端安装使用" class="headerlink" title="客户端安装使用"></a>客户端安装使用</h1><p>支持的客户端：OS X， Windows， Linux， iOS， Android， OpenWRT 路由器等。<br>详情请参考：<a target="_blank" rel="noopener" href="https://github.com/shadowsocks" title="客户端 | Shadowsocks">客户端 | Shadowsocks</a>，客户端都在 Github 上。</p>
+<p><strong>2023-10-12 更新</strong><br>Shadowsocks 的客户端一直在不断的更新迭代，以下教程可能更新不及时，如果有落后的请直接去 Shadowsocks 官网，现在已经有很完善的各平台客户端安装教程。</p>
+<h2 id="Windows-客户端"><a href="#Windows-客户端" class="headerlink" title="Windows 客户端"></a>Windows 客户端</h2><ol>
+<li>点击下载 <a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/3.0/Shadowsocks-3.0.zip" title="Shadowsocks-3.0.zip">Shadowsocks-3.0.zip</a>（写这篇博客时候的最新版本），或者去 <a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks-windows/releases" title="Shadowsocks Windows | GitHub">Shadowsocks Windows | GitHub</a> 上寻找其他版本。</li>
+<li>解压后有一个 <code>Shadowsocks.exe</code> 文件。最好把这个文件放到一个目录下，比如新建一个 Shadowsocks 文件夹。</li>
+<li>把刚刚下载的 <code>gui-config.json</code> 文件放到与 <code>Shadowsocks.exe</code> 相同的目录下。</li>
+<li>双击 <code>Shadowsocks.exe</code>，会出现一个 GUI 界面，自动读取了 <code>gui-config.json</code> 文件中的内容。<img src="/blog/2016/05/26/shadowsocks/Windows-Shadowsocks-gui.png" class="" title="Windows Shadowsocks 图形界面"></li>
+<li>在右下角托盘图标上会有一个好像纸飞机的 Shadowsocks 图标，<code>右键-&gt;启动系统代理</code>，就可以越过墙壁，浏览更多丰富多彩的内容啦~<img src="/blog/2016/05/26/shadowsocks/Shadowsocks-menu.png" class="" title="Shadowsocks 菜单"></li>
+<li>另外建议设置成 <code>右键-&gt;开机启动</code>，这样不用每次开机手动启动了。还可以在 <code>右键-&gt;服务器</code> 中选择不同的服务器。</li>
+</ol>
+<h2 id="Android-客户端"><a href="#Android-客户端" class="headerlink" title="Android 客户端"></a>Android 客户端</h2><ol>
+<li>点击下载 <a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks-android/releases/download/v2.10.3/shadowsocks-nightly-2.10.3.apk" title="shadowsocks-nightly-2.10.3.apk">Shadowsocks-nightly-2.10.3.apk</a>（写这篇博客时候的最新版本），或者去 <a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks-android/releases" title="Shadowsocks Android | GitHub">Shadowsocks Android | GitHub</a> 上寻找其他版本。</li>
+<li>把这个 apk 安装到手机上（可以传到手机里，打开这个 apk 就能安装了），中文叫影梭。</li>
+<li>安装完成后仍然需要配置，支持扫描二维码配置，但是需要下载一个客户端。我不喜欢下太多的客户端，所以就手动配置，具体的值可以用记事本打开 <code>gui-config.json</code> 查看。<img src="/blog/2016/05/26/shadowsocks/Shadowsocks-Android.png" class="" title="Shadowsocks Android"></li>
+<li>翻墙后就可以去 Google Play 商店更新 Shadowsocks 了(●’◡’●)</li>
+</ol>
+<p><strong>2016-09-27 更新</strong></p>
+<ol start="5">
+<li>目前最新版的 Shadowsocks 已经支持直接扫码配置了，不需要下载额外的客户端。在 Shadowsocks 官网里 <code>客户中心 -&gt; 有效产品与服务</code> 里就可以找到各个节点的二维码。</li>
+</ol>
+<h2 id="Linux-客户端"><a href="#Linux-客户端" class="headerlink" title="Linux 客户端"></a>Linux 客户端</h2><p>经历了 N 天之后,终于在舍友的指导下配置完成了。不得不说，Linux 真是一个让人折腾的系统。不过后来发现，其实还蛮简单的（╯－＿－）╯╧╧</p>
+<ol>
+<li>首先你需要下载 <a target="_blank" rel="noopener" href="http://www.google.cn/chrome/browser/desktop/index.html" title="Chrome 浏览器">Chrome 浏览器</a>（不需要翻墙），已经有的小伙伴就不用重新下载了。</li>
+<li>使用如下命令安装你下载下来的 Chrome 安装包：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dpkg -i xxx-chrome-xxx.deb</span><br></pre></td></tr></table></figure></li>
+<li>通过 PPA 源安装 Shadowsocks-qt5，仅支持 Ubuntu 14.04 或更高版本。<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> add-apt-repository ppa:hzwhuang/ss-qt5</span><br><span class="line"><span class="built_in">sudo</span> apt-get update</span><br><span class="line"><span class="built_in">sudo</span> apt-get install shadowsocks-qt5</span><br></pre></td></tr></table></figure></li>
+<li>之后就可以在应用列表里搜索到 Shadowsocks-qt5 了<img src="/blog/2016/05/26/shadowsocks/search-shadowsocks.png" class="" title="搜索应用列表"></li>
+<li>打开图形化界面，点击 <code>文件 -&gt; 从 gui-config.json 导入链接</code>，接着就会像下图一样。<img src="/blog/2016/05/26/shadowsocks/Shadowsocks-Qt5-GUI.png" class="" title="Shadowsocks-Qt5 图形界面"></li>
+<li>上图的 jp01 和 us01 都是后来配置好的，导入 gui-config.json 后还是有些需要自己配置。双击某一条连接，像我如下这样配置（默认有的配置就不要改了）：<img src="/blog/2016/05/26/shadowsocks/config.png" class="" title="连接配置"></li>
+<li>配置完成后点击 <code>OK</code>，再点击界面上面的 <code>连接</code>，测试下延迟，看看是否能连接上。可以多配置几个，方便切换~</li>
+<li>接下来就是配置 Chrome，让 Chrome 可以使用代理。下载安装 <a target="_blank" rel="noopener" href="http://switchysharp.com/install.html" title="SwitchySharp">SwitchySharp</a>（目前此应用已经更新为 SwitchyOmega，请参考 <a href="/blog/2017/04/09/chrome-SwitchyOmega/" title="Chrome 配置 SwitchyOmega | 笑话人生">Chrome 配置 SwitchyOmega</a>）。</li>
+<li>打开 Chrome， 点击右上角的 <span class="fa fa-globe" aria-hidden="true"></span> 图标，再点击 <code>选项</code>。<img src="/blog/2016/05/26/shadowsocks/Shadowsocks-icon.png" class="" title="Shadowsocks 图标"></li>
+<li>点击 <code>新建情景模式</code>，做如下配置。<img src="/blog/2016/05/26/shadowsocks/SwitchySharp-config.png" class="" title="SwitchySharp 配置"></li>
+<li>保存后再点击 <span class="fa fa-globe" aria-hidden="true"></span> 图标就会有你刚刚配置的情景模式，选择后就可以使用 Chrome 浏览器浏览墙外的世界啦~（另外 SwitchySharp 可以升级成 SwitchyOmega 了，有兴趣的小伙伴可以试一试！）</li>
+<li>做了上述一系列操作后只有在 Chrome 中可以翻出墙外，至于全局代理我正在研究，过几天会出教程，有会的小伙伴也可以交 ♂ 流下~（此坑算是没时间填了(╯‵□′)╯︵┻━┻）</li>
+</ol>
+<h2 id="IOS-客户端"><a href="#IOS-客户端" class="headerlink" title="IOS 客户端"></a>IOS 客户端</h2><p>由于本渣没有任何的苹果设备。。。所以自己研究吧，相信聪明的你可以完成的！</p>
+<p><strong>2016-09-27 更新</strong></p>
+<p>最近也是人品爆表，抽奖抽到了个 IPad mini 2，自然就研究了下如何在 IOS 中试用 Shadowsocks 了。官方推荐的客户端是 <code>shadowrocket</code>，App Store 里卖6块钱（现在已经下架了，只能通过国外账号下载了）。我找到的是 <code>Lifi客户端-Shadowsocks and ShadowsocksR VPN</code>，也是在 App Store 里下载，不过是免费的。两者的配置方式基本一样，都可以扫码配置。在 Shadowsocks 官网里 <code>客户中心 -&gt; 我的产品与服务</code> 里就可以找到各个节点的二维码。</p>
+<ol>
+<li><p>Lifi 配置，在应用里选择 <code>设置 -&gt; 从二维码导入</code> 就会打开扫码界面，之后配置一下代理名称，打开系统 VPN 就可以了，非常简单（我觉得有张图挺好看的，于是强行加了张图(^_^)）</p>
+<img src="/blog/2016/05/26/shadowsocks/Shadowsocks-IOS.png" class="" title="Shadowsocks IOS">
+</li>
+<li><p>Shadowrocket 配置，打开应用，点击左上角的扫码图标就可以打开扫码页面：</p>
+<img src="/blog/2016/05/26/shadowsocks/Shadowrocket.png" class="" title="Shadowrocket">
+
+</li>
+</ol>
+<p>看评论说 <code>Lifi客户端-Shadowsocks and ShadowsocksR VPN</code> 是拿的 Potatso 源码？我也不知道是否真实，有了解的小伙伴欢迎联系我。不过在我一天的试用中发现这个客户端一直掉线，而且舍友 IOS 10 也没法使用，于是我俩都换成了 <code>shadowrocket</code>，IOS 10 可以用，不过也是一直掉线啊，而且有时候还闪退 (╯‵□′)╯︵┻━┻！如果用 Shadowrocket 的小伙伴发现QQ聊天的时候没法接收和发送图片，可以在应用的 <code>Settings -&gt; Global Routing</code>中选择 Proxy 就好了。大家可以先试一下免费的 Lifi，如果不好用再换成收费的那个 Shadowrocket 吧。有更好的客户端也欢迎在下面讨论。</p>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><ul>
+<li>要是偶尔发现网络不稳定，切换线路试一下。</li>
+<li>不要同时在多台设备上使用，也不要把配置文件分享给其他人，可能会遭到封号行为。不过手机和 PC 同时使用时没事的。</li>
+<li>我遇到一个问题就是启动某些服务器无法下载 Google Play 里的应用，而且有些应用也提示无法在你所在的国家或者地区购买，这个时候就切换下线路，并且清除 Google Play 数据重启就行了。</li>
+</ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks-qt5/wiki" title="Shadowsocks-qt5 | 中文文档">Shadowsocks-qt5 | 中文文档</a><br><a href="/blog/2017/04/09/chrome-SwitchyOmega/" title="Chrome 配置 SwitchyOmega | 笑话人生">Chrome 配置 SwitchyOmega | 笑话人生</a> Shadowsocks 配合 SwitchyOmega 使用有奇效，建议尝试下 (●’◡’●)</p>
+</blockquote>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.cylong.com/blog/2016/05/26/shadowsocks/" data-id="cmb3udzll0011sjcoa6e3gjwm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IOS/" rel="tag">IOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shadowsocks/" rel="tag">Shadowsocks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BF%BB%E5%A2%99/" rel="tag">翻墙</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2016/06/07/windows-10-metro-shadowsocks/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Windows 10 Metro 应用使用本地 Shadowsocks 代理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2016/05/22/google-baidu-search/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">如何在 Google 和百度里搜索到自己的网站</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Apache/">Apache</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Atom/">Atom</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Search/">Search</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Shadowsocks/">Shadowsocks</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8B%9B%E8%81%98/">招聘</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%89%BE%E5%B7%B2%E6%88%90%E8%AF%97/">艾已成诗</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/301%E9%87%8D%E5%AE%9A%E5%90%91/" rel="tag">301重定向</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AGI/" rel="tag">AGI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AIGC/" rel="tag">AIGC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apache/" rel="tag">Apache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apple/" rel="tag">Apple</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Atom/" rel="tag">Atom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Brian-Kernighan-%E7%AE%97%E6%B3%95/" rel="tag">Brian Kernighan 算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/" rel="tag">C/C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChatGPT/" rel="tag">ChatGPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Disqus/" rel="tag">Disqus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eclipse/" rel="tag">Eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HashMap/" rel="tag">HashMap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HashSet/" rel="tag">HashSet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/" rel="tag">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/" rel="tag">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/" rel="tag">JSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JStack/" rel="tag">JStack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jackson/" rel="tag">Jackson</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lambda/" rel="tag">Lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode%E4%B8%AD%E7%AD%89/" rel="tag">LeetCode中等</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenAI/" rel="tag">OpenAI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/" rel="tag">SEO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVN/" rel="tag">SVN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Search/" rel="tag">Search</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shadowsocks/" rel="tag">Shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/" rel="tag">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SwitchyOmega/" rel="tag">SwitchyOmega</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WSDL/" rel="tag">WSDL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-Service-Client/" rel="tag">Web Service Client</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/" rel="tag">XML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/" rel="tag">cmd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitignore/" rel="tag">gitignore</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/htaccess/" rel="tag">htaccess</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" rel="tag">中序遍历</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag">二分查找</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" rel="tag">二叉搜索树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="tag">人工智能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E7%94%9F/" rel="tag">人生</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" rel="tag">优先队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="tag">位运算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A8%E6%98%8E%E6%98%9F/" rel="tag">全明星</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E4%BD%95/" rel="tag">几何</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" rel="tag">分布式版本控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E6%B2%BB%E6%B3%95/" rel="tag">分治法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86/" rel="tag">前序遍历</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%91%E6%8C%87Offer/" rel="tag">剑指Offer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8/" rel="tag">单向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag">双指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/" rel="tag">后序遍历</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" rel="tag">哈希表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/" rel="tag">回溯算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE/" rel="tag">图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%B4%E6%96%87%E4%BB%B6/" rel="tag">头文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E5%85%B8%E6%A0%91/" rel="tag">字典树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E4%B9%A0%E7%94%9F/" rel="tag">实习生</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">平衡二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" rel="tag">广度优先搜索</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" rel="tag">拓扑排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%9B%E8%81%98/" rel="tag">招聘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%87%E9%92%88/" rel="tag">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8F%92%E4%BB%B6/" rel="tag">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%BD%92%E7%BA%B3%E6%B3%95/" rel="tag">数学归纳法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B4%E6%95%B0/" rel="tag">整数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA/" rel="tag">有限状态机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%88/" rel="tag">栈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%91/" rel="tag">树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AC%A7%E6%8B%89%E8%B7%AF%E5%BE%84/" rel="tag">欧拉路径</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%81API/" rel="tag">流API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%81%E5%B9%B4/" rel="tag">流年</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" rel="tag">深度优先搜索</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" rel="tag">滑动窗口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84/" rel="tag">滚动数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A9%E9%98%B5/" rel="tag">矩阵</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8/" rel="tag">程序员面试金典</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AF%AE%E7%90%83/" rel="tag">篮球</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%A2%E9%BB%91%E6%A0%91/" rel="tag">红黑树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/" rel="tag">线程安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%84%E5%90%88/" rel="tag">组合</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E5%A2%99/" rel="tag">翻墙</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%89%BE%E5%B7%B2%E6%88%90%E8%AF%97/" rel="tag">艾已成诗</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%89%BE%E5%BC%97%E6%A3%AE/" rel="tag">艾弗森</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96/" rel="tag">记忆化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/" rel="tag">调试工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" rel="tag">贪心算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%92%E5%BD%92/" rel="tag">递归</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%93%BE%E8%A1%A8/" rel="tag">链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%9F%E5%88%97/" rel="tag">队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9B%86%E4%B8%AD%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" rel="tag">集中式版本控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9B%B6%E5%92%8C%E5%8D%9A%E5%BC%88/" rel="tag">零和博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/" rel="tag">面试总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301%E9%87%8D%E5%AE%9A%E5%90%91/" style="font-size: 10px;">301重定向</a> <a href="/tags/AGI/" style="font-size: 10px;">AGI</a> <a href="/tags/AIGC/" style="font-size: 10px;">AIGC</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Apache/" style="font-size: 10.67px;">Apache</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Atom/" style="font-size: 10px;">Atom</a> <a href="/tags/Brian-Kernighan-%E7%AE%97%E6%B3%95/" style="font-size: 10.67px;">Brian Kernighan 算法</a> <a href="/tags/C-C/" style="font-size: 10.67px;">C/C++</a> <a href="/tags/ChatGPT/" style="font-size: 10.67px;">ChatGPT</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Disqus/" style="font-size: 10px;">Disqus</a> <a href="/tags/Eclipse/" style="font-size: 10px;">Eclipse</a> <a href="/tags/Git/" style="font-size: 12px;">Git</a> <a href="/tags/GitHub/" style="font-size: 10.67px;">GitHub</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/HashSet/" style="font-size: 10px;">HashSet</a> <a href="/tags/Hexo/" style="font-size: 15.33px;">Hexo</a> <a href="/tags/IOS/" style="font-size: 10.67px;">IOS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/JSP/" style="font-size: 10px;">JSP</a> <a href="/tags/JStack/" style="font-size: 10px;">JStack</a> <a href="/tags/Jackson/" style="font-size: 10px;">Jackson</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Lambda/" style="font-size: 10.67px;">Lambda</a> <a href="/tags/LeetCode/" style="font-size: 19.33px;">LeetCode</a> <a href="/tags/LeetCode%E4%B8%AD%E7%AD%89/" style="font-size: 10.67px;">LeetCode中等</a> <a href="/tags/Linux/" style="font-size: 10.67px;">Linux</a> <a href="/tags/Next/" style="font-size: 12.67px;">Next</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OpenAI/" style="font-size: 10px;">OpenAI</a> <a href="/tags/SEO/" style="font-size: 12px;">SEO</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/Search/" style="font-size: 10.67px;">Search</a> <a href="/tags/Shadowsocks/" style="font-size: 11.33px;">Shadowsocks</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/SwitchyOmega/" style="font-size: 10px;">SwitchyOmega</a> <a href="/tags/Ubuntu/" style="font-size: 10.67px;">Ubuntu</a> <a href="/tags/WSDL/" style="font-size: 10px;">WSDL</a> <a href="/tags/Web-Service-Client/" style="font-size: 10px;">Web Service Client</a> <a href="/tags/Windows/" style="font-size: 12.67px;">Windows</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/cmd/" style="font-size: 10px;">cmd</a> <a href="/tags/gitignore/" style="font-size: 10px;">gitignore</a> <a href="/tags/htaccess/" style="font-size: 10.67px;">htaccess</a> <a href="/tags/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" style="font-size: 13.33px;">中序遍历</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" style="font-size: 10px;">二分查找</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" style="font-size: 11.33px;">二叉搜索树</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 16px;">二叉树</a> <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" style="font-size: 10px;">人工智能</a> <a href="/tags/%E4%BA%BA%E7%94%9F/" style="font-size: 10px;">人生</a> <a href="/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" style="font-size: 10px;">优先队列</a> <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" style="font-size: 10.67px;">位运算</a> <a href="/tags/%E5%85%A8%E6%98%8E%E6%98%9F/" style="font-size: 10px;">全明星</a> <a href="/tags/%E5%87%A0%E4%BD%95/" style="font-size: 10px;">几何</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">分布式版本控制</a> <a href="/tags/%E5%88%86%E6%B2%BB%E6%B3%95/" style="font-size: 10px;">分治法</a> <a href="/tags/%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86/" style="font-size: 10px;">前序遍历</a> <a href="/tags/%E5%89%91%E6%8C%87Offer/" style="font-size: 12px;">剑指Offer</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 14px;">动态规划</a> <a href="/tags/%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8/" style="font-size: 10px;">单向链表</a> <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" style="font-size: 16px;">双指针</a> <a href="/tags/%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/" style="font-size: 10px;">后序遍历</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 11.33px;">哈希表</a> <a href="/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/" style="font-size: 14.67px;">回溯算法</a> <a href="/tags/%E5%9B%BE/" style="font-size: 11.33px;">图</a> <a href="/tags/%E5%A4%B4%E6%96%87%E4%BB%B6/" style="font-size: 10px;">头文件</a> <a href="/tags/%E5%AD%97%E5%85%B8%E6%A0%91/" style="font-size: 10px;">字典树</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 16px;">字符串</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 18.67px;">学习笔记</a> <a href="/tags/%E5%AE%9E%E4%B9%A0%E7%94%9F/" style="font-size: 10px;">实习生</a> <a href="/tags/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 10.67px;">平衡二叉树</a> <a href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" style="font-size: 13.33px;">广度优先搜索</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">拓扑排序</a> <a href="/tags/%E6%8B%9B%E8%81%98/" style="font-size: 10px;">招聘</a> <a href="/tags/%E6%8C%87%E9%92%88/" style="font-size: 16px;">指针</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10.67px;">排序</a> <a href="/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 11.33px;">插件</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 12px;">数学</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BD%92%E7%BA%B3%E6%B3%95/" style="font-size: 10px;">数学归纳法</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 10.67px;">数据结构与算法</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 16.67px;">数组</a> <a href="/tags/%E6%95%B4%E6%95%B0/" style="font-size: 11.33px;">整数</a> <a href="/tags/%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA/" style="font-size: 10px;">有限状态机</a> <a href="/tags/%E6%A0%88/" style="font-size: 11.33px;">栈</a> <a href="/tags/%E6%A0%91/" style="font-size: 16px;">树</a> <a href="/tags/%E6%AC%A7%E6%8B%89%E8%B7%AF%E5%BE%84/" style="font-size: 10px;">欧拉路径</a> <a href="/tags/%E6%B5%81API/" style="font-size: 11.33px;">流API</a> <a href="/tags/%E6%B5%81%E5%B9%B4/" style="font-size: 10px;">流年</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" style="font-size: 17.33px;">深度优先搜索</a> <a href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" style="font-size: 11.33px;">滑动窗口</a> <a href="/tags/%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84/" style="font-size: 11.33px;">滚动数组</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 10px;">爬虫</a> <a href="/tags/%E7%9F%A9%E9%98%B5/" style="font-size: 11.33px;">矩阵</a> <a href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8/" style="font-size: 11.33px;">程序员面试金典</a> <a href="/tags/%E7%AF%AE%E7%90%83/" style="font-size: 10px;">篮球</a> <a href="/tags/%E7%BA%A2%E9%BB%91%E6%A0%91/" style="font-size: 10px;">红黑树</a> <a href="/tags/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/" style="font-size: 10px;">线程安全</a> <a href="/tags/%E7%BB%84%E5%90%88/" style="font-size: 10px;">组合</a> <a href="/tags/%E7%BF%BB%E5%A2%99/" style="font-size: 11.33px;">翻墙</a> <a href="/tags/%E8%89%BE%E5%B7%B2%E6%88%90%E8%AF%97/" style="font-size: 10.67px;">艾已成诗</a> <a href="/tags/%E8%89%BE%E5%BC%97%E6%A3%AE/" style="font-size: 10.67px;">艾弗森</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96/" style="font-size: 12.67px;">记忆化</a> <a href="/tags/%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">调试工具</a> <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" style="font-size: 12px;">贪心算法</a> <a href="/tags/%E9%80%92%E5%BD%92/" style="font-size: 18px;">递归</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 15.33px;">链表</a> <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 13.33px;">队列</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 12px;">随笔</a> <a href="/tags/%E9%9B%86%E4%B8%AD%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">集中式版本控制</a> <a href="/tags/%E9%9B%B6%E5%92%8C%E5%8D%9A%E5%BC%88/" style="font-size: 10px;">零和博弈</a> <a href="/tags/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/" style="font-size: 10px;">面试总结</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">五月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02/">二月 2011</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2025/05/25/longest-palindrome-by-concatenating-two-letter-words/">连接两字母单词得到的最长回文串</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2025/05/24/longest-palindromic-substring/">最长回文子串</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2023/10/10/sign-up-apple-id/">国内如何注册国外 Apple ID</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2023/10/08/sign-up-chatgpt/">国内如何注册 ChatGPT 账号</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2021/03/01/job-alipay/">2022届实习生-蚂蚁集团-支付宝事业线</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 cylong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>

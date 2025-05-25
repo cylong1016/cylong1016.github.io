@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo + Git 搭建免费的个人博客 | 笑话人生</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言个人博客日益流行，大家都开始搭建自己的博客，记录成长中学习中的点点滴滴，最近觉得自己也需要有一个平台整理自己的所学所想，于是用了将近3天的时间 (实际上一天就能搞定的！) 使用 Hexo + Git 搭建了自己的个人博客，提高自己的学习动力，没事的时候可以拿出来温习下，提高下本人的渣渣水平。目前仍有很多功能没有添加，留着日后慢慢完善。准备将自己的第一篇博客献给 Hexo，表示对 Hexo 的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo + Git 搭建免费的个人博客">
+<meta property="og:url" content="https://www.cylong.com/blog/2016/04/19/hexo-git/index.html">
+<meta property="og:site_name" content="笑话人生">
+<meta property="og:description" content="前言个人博客日益流行，大家都开始搭建自己的博客，记录成长中学习中的点点滴滴，最近觉得自己也需要有一个平台整理自己的所学所想，于是用了将近3天的时间 (实际上一天就能搞定的！) 使用 Hexo + Git 搭建了自己的个人博客，提高自己的学习动力，没事的时候可以拿出来温习下，提高下本人的渣渣水平。目前仍有很多功能没有添加，留着日后慢慢完善。准备将自己的第一篇博客献给 Hexo，表示对 Hexo 的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.cylong.com/blog/2016/04/19/hexo-git/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.png">
+<meta property="article:published_time" content="2016-04-18T16:32:58.000Z">
+<meta property="article:modified_time" content="2023-09-06T15:22:32.000Z">
+<meta property="article:author" content="cylong">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="Node.js">
+<meta property="article:tag" content="GitHub">
+<meta property="article:tag" content="Next">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.cylong.com/blog/2016/04/19/hexo-git/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.png">
+  
+    <link rel="alternate" href="/atom.xml" title="笑话人生" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">笑话人生</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://www.cylong.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hexo-git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2016/04/19/hexo-git/" class="article-date">
+  <time datetime="2016-04-18T16:32:58.000Z" itemprop="datePublished">2016-04-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo + Git 搭建免费的个人博客
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>个人博客日益流行，大家都开始搭建自己的博客，记录成长中学习中的点点滴滴，最近觉得自己也需要有一个平台整理自己的所学所想，于是用了将近3天的时间 <del>(实际上一天就能搞定的！)</del> 使用 Hexo + Git 搭建了自己的个人博客，提高自己的学习动力，没事的时候可以拿出来温习下，提高下本人的渣渣水平。目前仍有很多功能没有添加，留着日后慢慢完善。准备将自己的第一篇博客献给 Hexo，表示对 Hexo 的感谢。下面详细介绍下搭建流程，有任何不懂的问题欢迎 <a href="/about/#%E8%81%94%E7%B3%BB%E6%88%91" title="联系我">联系我</a> 或者在下面评论。另外个人能力有限，接受任何建议或者吐槽！共同进步 (●’◡’●)。</p>
+<span id="more"></span>
+<h1 id="Hexo-简介"><a href="#Hexo-简介" class="headerlink" title="Hexo 简介"></a>Hexo 简介</h1><p>大家所熟悉的博客框架莫过于 Wordpress，还有 Jekyll 等，博主在查阅了大量资料后选择了 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" title="Hexo">Hexo</a>，Hexo 是一个快速、简洁且高效的博客框架。可以方便快捷的生成博客网页。Hexo 由台湾大学生 <a target="_blank" rel="noopener" href="https://twitter.com/tommy351" title="SkyArrow (@tommy351) | Twitter">tommy351</a> 开发，是一个基于 Node.js 的静态博客程序。支持多种主题，博主选择的是 <a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/" title="Next">NexT</a> 主题。使用 Hexo + Git 搭建博客不需要购买域名和服务器，由 GitHub 提供域名和网站页面空间。</p>
+<h1 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h1><p><b>注意:</b> 本文针对 <em>Windows</em> 平台和 <em>Hexo 3.x</em> 【其实后来我也在 Ubuntu 上试了一下，完全一样的】</p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>在安装 Hexo 之前，请确认你已经安装了以下程序：</p>
+<ul>
+<li>  <a target="_blank" rel="noopener" href="https://nodejs.cn/download/" title="Node.js">Node.js</a></li>
+<li>  <a target="_blank" rel="noopener" href="https://git-scm.com/" title="Git">Git</a></li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在自己认为合适的地方创建一个文件夹作为博客项目的目录，进入文件夹，然后鼠标右键选择 <code>Git Bash Here</code>，依次输入：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">npm install hexo --save</span><br><span class="line">npm install hexo-renderer-swig <span class="comment"># Hexo 5.0 版本之后手动安装swig渲染器，部分主题需要</span></span><br><span class="line">hexo -v <span class="comment"># 查看版本</span></span><br></pre></td></tr></table></figure>
+
+<p>输入 <code>hexo -v</code> 后输出以下内容表示安装成功了(可能版本有差别)：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -v</span><br><span class="line">hexo: 3.2.0</span><br><span class="line">hexo-cli: 1.0.1</span><br><span class="line">os: Windows_NT 10.0.10586 win32 x64</span><br><span class="line">http_parser: 2.5.2</span><br><span class="line">node: 4.4.2</span><br><span class="line">v8: 4.5.103.35</span><br><span class="line">uv: 1.8.0</span><br><span class="line">zlib: 1.2.8</span><br><span class="line">ares: 1.10.1-DEV</span><br><span class="line">icu: 56.1</span><br><span class="line">modules: 46</span><br><span class="line">openssl: 1.0.2g</span><br></pre></td></tr></table></figure>
+
+<h2 id="体验-Hexo"><a href="#体验-Hexo" class="headerlink" title="体验 Hexo"></a>体验 Hexo</h2><p>接下来在当前的博客目录下，依次输入：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init   <span class="comment"># 初始化组件</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>之后 npm 将会自动安装你需要的组件，只需要等待 npm 操作即可。接着输入：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br><span class="line">hexo s --debug <span class="comment"># debug模式</span></span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+
+<p>说明你的博客可以在本地访问啦，打开浏览器输入 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 试试看吧~</p>
+<h1 id="Hexo-使用"><a href="#Hexo-使用" class="headerlink" title="Hexo 使用"></a>Hexo 使用</h1><p>下面让我们创建第一篇文章吧，输入：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n my-first   <span class="comment"># 生成文章，或者 source\_posts 手动编辑</span></span><br></pre></td></tr></table></figure>
+
+<p>之后查看 <code>source\_posts</code> 下面就会出现 <code>my-first.md</code>， 编辑这个文件就是在编辑你的这篇博客，完成保存后输入：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g <span class="comment"># 生成 public 静态文件，这步不是必须的，当你需要生成的 Html 页面的时候输入这行代码</span></span><br><span class="line">hexo s <span class="comment"># 启动服务器，查看本地效果</span></span><br></pre></td></tr></table></figure>
+
+<p>浏览器中输入 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 就会看到你刚刚编辑的博客了，如果发现无法访问的情况，可能是因为端口被占用或者你启用了代理【关掉就好】，运行如下命令修改端口：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server -p 5000 <span class="comment"># 5000为你想要修改的端口号</span></span><br></pre></td></tr></table></figure>
+
+<p>在服务器启动期间，Hexo 会监视文件变动并自动更新，您无须重启服务器。更多博客编辑技巧请参照 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/" title="Hexo 中文文档">Hexo 中文文档</a></p>
+<h1 id="部署到-GitHub"><a href="#部署到-GitHub" class="headerlink" title="部署到 GitHub"></a>部署到 GitHub</h1><h2 id="创建代码仓库"><a href="#创建代码仓库" class="headerlink" title="创建代码仓库"></a>创建代码仓库</h2><p>首先你需要一个 <a target="_blank" rel="noopener" href="https://github.com/" title="GitHub">GitHub</a> 账号，然后创建一个仓库，仓库名是 <code>yourname.github.io</code>， 比如我的是 <code>cylong1016.github.io</code>。</p>
+<h2 id="开启-gh-pages-功能"><a href="#开启-gh-pages-功能" class="headerlink" title="开启 gh-pages 功能"></a>开启 gh-pages 功能</h2><p>创建完成后点击界面右侧的 <code>Settings</code>，向下拖动，直到看见 <code>GitHub Pages</code> ，点击 <code>Automatic page generator</code>，Github 将会自动替你创建出一个 gh-pages 的页面。<br>如果你的配置没有问题，那么大约15分钟之后，<a target="_blank" rel="noopener" href="http://cylong1016.github.io/">http://cylong1016.github.io</a> 这个网址就可以正常访问了~<br>之后打开本地博客目录下的 <code>_config.yml</code> 文件，最下面找到 <code>Deployment</code> ， 做如下修改：</p>
+<figure class="highlight yaml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/cylong1016/cylong1016.github.io.git</span></span><br><span class="line">  <span class="comment"># cylong1016改成你的用户名</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>接着在 Git Bash 中依次输入：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save    <span class="comment"># 安装使用 git 方式进行部署所需要的插件</span></span><br><span class="line">hexo d                <span class="comment"># 部署到 GitHub 上，按照提示输入自己 GitHub 的用户名和密码。</span></span><br></pre></td></tr></table></figure>
+
+<p>部署会强制覆盖掉你之前生成的页面，在博客的目录下会产生 <code>.deploy_git</code>文件夹，不要删除，否则你的部署记录就会不见。之后就可以通过 <a target="_blank" rel="noopener" href="http://cylong1016.github.io/">http://cylong1016.github.io</a> (cylong1016 替换成你的用户名)访问你的网站啦。在之后的部署时，建议输入以下代码:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  <span class="comment"># 清除之前 public 文件夹的内容</span></span><br><span class="line">hexo g      <span class="comment"># 生成静态的 public 文件夹，部署时候也是直接拷贝此文件夹里的文件。</span></span><br><span class="line">hexo d      <span class="comment"># 部署到 GitHub 上，按照提示输入自己 GitHub 的用户名和密码。</span></span><br><span class="line"><span class="comment"># hexo g 和 hexo d 这两条命令可以合并成 hexo d --g 或者 hexo g --d</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><p>你可以在 <a target="_blank" rel="noopener" href="https://hexo.io/themes/" title="Themes | Hexo">Themes - Hexo</a> 找到你喜欢的主题下载下来，放在博客目录下的 <code>themes</code> 目录下，之后修改 <code>_config.yml</code> 文件：</p>
+<figure class="highlight yaml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span> <span class="comment"># 修改成你的主题文件夹名</span></span><br></pre></td></tr></table></figure>
+
+<p>Hexo 默认主题是 landscape，我使用的是 Next 主题，也是强烈推荐的，简洁、扁平化主题风格是我最喜欢的。配置使用 NexT 主题请参考：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/" title="Next 主题中文文档">NexT 主题中文文档</a></p>
+</blockquote>
+<p>本来想单独写一个博客讲述主题方面的配置，不过这些都有官方文档，写的也都很详细，没必要做文章的搬运工(<del>明明是博主很懒！</del>)。如果有问题欢迎在下面提问 (●’◡’●)</p>
+<h1 id="使用自己的域名"><a href="#使用自己的域名" class="headerlink" title="使用自己的域名"></a>使用自己的域名</h1><h2 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h2><p>首先你需要一个域名。可以在 <a target="_blank" rel="noopener" href="https://wanwang.aliyun.com/" title="域名注册_虚拟主机_云服务器_企业邮箱-万网-阿里云旗下品牌">万网</a> 或者 <a target="_blank" rel="noopener" href="https://www.godaddy.com/" title="买域名 | 世界最大域名注册商 — GoDaddy">GoDaddy</a> 购买，我的域名是在万网买的。【好不容易抢到 cylong.com 这个域名，之前被人注册了，不过在16年2月份的时候就过期了，哈哈哈】</p>
+<h2 id="设置-CNAME"><a href="#设置-CNAME" class="headerlink" title="设置 CNAME"></a>设置 CNAME</h2><p>在博客目录下的 <code>source</code> 文件夹下，创建一个名称为 <code>CNAME</code> 的文件，内容为你的域名，比如我的是:</p>
+<figure class="highlight plaintext"><figcaption><span>source/CNAME</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www.cylong.com</span><br></pre></td></tr></table></figure>
+
+<p><b>注意</b>： <code>CNAME</code> 文件是不带后缀的。另外带 www 和不带 www，虽然用户在访问的时候网页内容是一样的，但是搜索引擎却认为是两个网页，最好自己选择一个首选域。更多详情请参考：<a href="/blog/2016/05/02/preferred-domain/" title="网站首选域 | 笑话人生">网站首选域 | 笑话人生</a></p>
+<h2 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h2><p>简单来说就是让你的网站和你购买的域名对应起来。万网提供免费的 DNS 解析服务。也可以使用 <a target="_blank" rel="noopener" href="https://www.dnspod.cn/" title="DNSPod-免费智能DNS解析服务商">DNSPod</a> 的服务，但是要在域名注册商修改 DNS 服务地址为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f1g1ns1.dnspod.net</span><br><span class="line">f1g1ns2.dnspod.net</span><br></pre></td></tr></table></figure>
+
+<p>我在万网购买的域名，所以直接进行解析配置【默认使用万网的 DNS 解析服务，没有使用 DNSPod 的服务】。配置过程如下：</p>
+<ol>
+<li>登陆 <a target="_blank" rel="noopener" href="https://wanwang.aliyun.com/" title="域名注册_虚拟主机_云服务器_企业邮箱-万网-阿里云旗下品牌">万网</a>。</li>
+<li>点击最上面的 <code>管理控制台</code>，再点击左侧的 <code>云解析</code>。或者直接点击首页查询域名框下面的常用链接：<code>域名解析</code>。</li>
+<li>选择你要解析的域名，点击域名后面的 <code>解析</code>。</li>
+<li>解析配置如下：</li>
+</ol>
+<img src="/blog/2016/04/19/hexo-git/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.png" class="" title="域名解析配置">
+
+<p>设置解析后大约几分钟就可以通过你的域名访问你的网站啦，如果你修改了 DNS 服务器，解析一般最长需要48小时生效。耐心等待吧~</p>
+<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://xuanwo.io/2015/03/26/hexo-intor/" title="史上最详细的 Hexo 博客搭建图文教程 | Xuanwo&#39;s Blog">史上最详细的 Hexo 博客搭建图文教程 | Xuanwo’s Blog</a><br><a target="_blank" rel="noopener" href="https://wsgzao.github.io/post/hexo/" title="使用 GitHub 和 Hexo 搭建免费静态Blog | HelloDog">使用 GitHub 和 Hexo 搭建免费静态Blog | HelloDog</a></p>
+</blockquote>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/" title="Hexo 中文文档">Hexo 中文文档</a><br><a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/" title="Next 主题中文文档">NexT 主题中文文档</a><br><a href="/blog/2016/04/25/hexo-faq/" title="Hexo 使用总结 &amp; 常见问题 | 笑话人生">Hexo 使用总结 &amp; 常见问题</a><br><a href="/categories/Hexo/" title="分类：Hexo | 笑话人生">分类：Hexo | 笑话人生</a></p>
+</blockquote>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.cylong.com/blog/2016/04/19/hexo-git/" data-id="cmb3udzl80003sjcogca8bicg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Next/" rel="tag">Next</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2016/04/22/activate-power-mode/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Atom 的炫酷插件 activate-power-mode
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2011/02/24/iverson-2001-2011/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">与青春有关的日子（2001&amp;2011）十年纪之全明星</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Apache/">Apache</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Apple/">Apple</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Atom/">Atom</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Search/">Search</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Shadowsocks/">Shadowsocks</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8B%9B%E8%81%98/">招聘</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">版本控制</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%89%BE%E5%B7%B2%E6%88%90%E8%AF%97/">艾已成诗</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/301%E9%87%8D%E5%AE%9A%E5%90%91/" rel="tag">301重定向</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AGI/" rel="tag">AGI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AIGC/" rel="tag">AIGC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apache/" rel="tag">Apache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apple/" rel="tag">Apple</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Atom/" rel="tag">Atom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Brian-Kernighan-%E7%AE%97%E6%B3%95/" rel="tag">Brian Kernighan 算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/" rel="tag">C/C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChatGPT/" rel="tag">ChatGPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/" rel="tag">DOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Disqus/" rel="tag">Disqus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eclipse/" rel="tag">Eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HashMap/" rel="tag">HashMap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HashSet/" rel="tag">HashSet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/" rel="tag">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/" rel="tag">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/" rel="tag">JSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JStack/" rel="tag">JStack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jackson/" rel="tag">Jackson</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lambda/" rel="tag">Lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode%E4%B8%AD%E7%AD%89/" rel="tag">LeetCode中等</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/" rel="tag">Next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenAI/" rel="tag">OpenAI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/" rel="tag">SEO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVN/" rel="tag">SVN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Search/" rel="tag">Search</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shadowsocks/" rel="tag">Shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/" rel="tag">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SwitchyOmega/" rel="tag">SwitchyOmega</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WSDL/" rel="tag">WSDL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-Service-Client/" rel="tag">Web Service Client</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/" rel="tag">XML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/" rel="tag">cmd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitignore/" rel="tag">gitignore</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/htaccess/" rel="tag">htaccess</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" rel="tag">中序遍历</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag">二分查找</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" rel="tag">二叉搜索树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="tag">人工智能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E7%94%9F/" rel="tag">人生</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" rel="tag">优先队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="tag">位运算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A8%E6%98%8E%E6%98%9F/" rel="tag">全明星</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%A0%E4%BD%95/" rel="tag">几何</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" rel="tag">分布式版本控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E6%B2%BB%E6%B3%95/" rel="tag">分治法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86/" rel="tag">前序遍历</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%91%E6%8C%87Offer/" rel="tag">剑指Offer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8/" rel="tag">单向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag">双指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/" rel="tag">后序遍历</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" rel="tag">哈希表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/" rel="tag">回溯算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE/" rel="tag">图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%B4%E6%96%87%E4%BB%B6/" rel="tag">头文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E5%85%B8%E6%A0%91/" rel="tag">字典树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E4%B9%A0%E7%94%9F/" rel="tag">实习生</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">平衡二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" rel="tag">广度优先搜索</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" rel="tag">拓扑排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%9B%E8%81%98/" rel="tag">招聘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%87%E9%92%88/" rel="tag">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8F%92%E4%BB%B6/" rel="tag">插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%BD%92%E7%BA%B3%E6%B3%95/" rel="tag">数学归纳法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B4%E6%95%B0/" rel="tag">整数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA/" rel="tag">有限状态机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%88/" rel="tag">栈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%91/" rel="tag">树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AC%A7%E6%8B%89%E8%B7%AF%E5%BE%84/" rel="tag">欧拉路径</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%81API/" rel="tag">流API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%81%E5%B9%B4/" rel="tag">流年</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" rel="tag">深度优先搜索</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" rel="tag">滑动窗口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84/" rel="tag">滚动数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A9%E9%98%B5/" rel="tag">矩阵</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8/" rel="tag">程序员面试金典</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AF%AE%E7%90%83/" rel="tag">篮球</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%A2%E9%BB%91%E6%A0%91/" rel="tag">红黑树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/" rel="tag">线程安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%84%E5%90%88/" rel="tag">组合</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E5%A2%99/" rel="tag">翻墙</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%89%BE%E5%B7%B2%E6%88%90%E8%AF%97/" rel="tag">艾已成诗</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%89%BE%E5%BC%97%E6%A3%AE/" rel="tag">艾弗森</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96/" rel="tag">记忆化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/" rel="tag">调试工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" rel="tag">贪心算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%92%E5%BD%92/" rel="tag">递归</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%93%BE%E8%A1%A8/" rel="tag">链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%9F%E5%88%97/" rel="tag">队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9B%86%E4%B8%AD%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" rel="tag">集中式版本控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9B%B6%E5%92%8C%E5%8D%9A%E5%BC%88/" rel="tag">零和博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/" rel="tag">面试总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301%E9%87%8D%E5%AE%9A%E5%90%91/" style="font-size: 10px;">301重定向</a> <a href="/tags/AGI/" style="font-size: 10px;">AGI</a> <a href="/tags/AIGC/" style="font-size: 10px;">AIGC</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Apache/" style="font-size: 10.67px;">Apache</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Atom/" style="font-size: 10px;">Atom</a> <a href="/tags/Brian-Kernighan-%E7%AE%97%E6%B3%95/" style="font-size: 10.67px;">Brian Kernighan 算法</a> <a href="/tags/C-C/" style="font-size: 10.67px;">C/C++</a> <a href="/tags/ChatGPT/" style="font-size: 10.67px;">ChatGPT</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Disqus/" style="font-size: 10px;">Disqus</a> <a href="/tags/Eclipse/" style="font-size: 10px;">Eclipse</a> <a href="/tags/Git/" style="font-size: 12px;">Git</a> <a href="/tags/GitHub/" style="font-size: 10.67px;">GitHub</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/HashSet/" style="font-size: 10px;">HashSet</a> <a href="/tags/Hexo/" style="font-size: 15.33px;">Hexo</a> <a href="/tags/IOS/" style="font-size: 10.67px;">IOS</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/JSP/" style="font-size: 10px;">JSP</a> <a href="/tags/JStack/" style="font-size: 10px;">JStack</a> <a href="/tags/Jackson/" style="font-size: 10px;">Jackson</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Lambda/" style="font-size: 10.67px;">Lambda</a> <a href="/tags/LeetCode/" style="font-size: 19.33px;">LeetCode</a> <a href="/tags/LeetCode%E4%B8%AD%E7%AD%89/" style="font-size: 10.67px;">LeetCode中等</a> <a href="/tags/Linux/" style="font-size: 10.67px;">Linux</a> <a href="/tags/Next/" style="font-size: 12.67px;">Next</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OpenAI/" style="font-size: 10px;">OpenAI</a> <a href="/tags/SEO/" style="font-size: 12px;">SEO</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/SVN/" style="font-size: 10px;">SVN</a> <a href="/tags/Search/" style="font-size: 10.67px;">Search</a> <a href="/tags/Shadowsocks/" style="font-size: 11.33px;">Shadowsocks</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/SwitchyOmega/" style="font-size: 10px;">SwitchyOmega</a> <a href="/tags/Ubuntu/" style="font-size: 10.67px;">Ubuntu</a> <a href="/tags/WSDL/" style="font-size: 10px;">WSDL</a> <a href="/tags/Web-Service-Client/" style="font-size: 10px;">Web Service Client</a> <a href="/tags/Windows/" style="font-size: 12.67px;">Windows</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/cmd/" style="font-size: 10px;">cmd</a> <a href="/tags/gitignore/" style="font-size: 10px;">gitignore</a> <a href="/tags/htaccess/" style="font-size: 10.67px;">htaccess</a> <a href="/tags/%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" style="font-size: 13.33px;">中序遍历</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" style="font-size: 10px;">二分查找</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" style="font-size: 11.33px;">二叉搜索树</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 16px;">二叉树</a> <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" style="font-size: 10px;">人工智能</a> <a href="/tags/%E4%BA%BA%E7%94%9F/" style="font-size: 10px;">人生</a> <a href="/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" style="font-size: 10px;">优先队列</a> <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" style="font-size: 10.67px;">位运算</a> <a href="/tags/%E5%85%A8%E6%98%8E%E6%98%9F/" style="font-size: 10px;">全明星</a> <a href="/tags/%E5%87%A0%E4%BD%95/" style="font-size: 10px;">几何</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">分布式版本控制</a> <a href="/tags/%E5%88%86%E6%B2%BB%E6%B3%95/" style="font-size: 10px;">分治法</a> <a href="/tags/%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86/" style="font-size: 10px;">前序遍历</a> <a href="/tags/%E5%89%91%E6%8C%87Offer/" style="font-size: 12px;">剑指Offer</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 14px;">动态规划</a> <a href="/tags/%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8/" style="font-size: 10px;">单向链表</a> <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" style="font-size: 16px;">双指针</a> <a href="/tags/%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/" style="font-size: 10px;">后序遍历</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 11.33px;">哈希表</a> <a href="/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/" style="font-size: 14.67px;">回溯算法</a> <a href="/tags/%E5%9B%BE/" style="font-size: 11.33px;">图</a> <a href="/tags/%E5%A4%B4%E6%96%87%E4%BB%B6/" style="font-size: 10px;">头文件</a> <a href="/tags/%E5%AD%97%E5%85%B8%E6%A0%91/" style="font-size: 10px;">字典树</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 16px;">字符串</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 18.67px;">学习笔记</a> <a href="/tags/%E5%AE%9E%E4%B9%A0%E7%94%9F/" style="font-size: 10px;">实习生</a> <a href="/tags/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 10.67px;">平衡二叉树</a> <a href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" style="font-size: 13.33px;">广度优先搜索</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">拓扑排序</a> <a href="/tags/%E6%8B%9B%E8%81%98/" style="font-size: 10px;">招聘</a> <a href="/tags/%E6%8C%87%E9%92%88/" style="font-size: 16px;">指针</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10.67px;">排序</a> <a href="/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 11.33px;">插件</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 12px;">数学</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BD%92%E7%BA%B3%E6%B3%95/" style="font-size: 10px;">数学归纳法</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 10.67px;">数据结构与算法</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 16.67px;">数组</a> <a href="/tags/%E6%95%B4%E6%95%B0/" style="font-size: 11.33px;">整数</a> <a href="/tags/%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA/" style="font-size: 10px;">有限状态机</a> <a href="/tags/%E6%A0%88/" style="font-size: 11.33px;">栈</a> <a href="/tags/%E6%A0%91/" style="font-size: 16px;">树</a> <a href="/tags/%E6%AC%A7%E6%8B%89%E8%B7%AF%E5%BE%84/" style="font-size: 10px;">欧拉路径</a> <a href="/tags/%E6%B5%81API/" style="font-size: 11.33px;">流API</a> <a href="/tags/%E6%B5%81%E5%B9%B4/" style="font-size: 10px;">流年</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" style="font-size: 17.33px;">深度优先搜索</a> <a href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" style="font-size: 11.33px;">滑动窗口</a> <a href="/tags/%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84/" style="font-size: 11.33px;">滚动数组</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 10px;">爬虫</a> <a href="/tags/%E7%9F%A9%E9%98%B5/" style="font-size: 11.33px;">矩阵</a> <a href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8/" style="font-size: 11.33px;">程序员面试金典</a> <a href="/tags/%E7%AF%AE%E7%90%83/" style="font-size: 10px;">篮球</a> <a href="/tags/%E7%BA%A2%E9%BB%91%E6%A0%91/" style="font-size: 10px;">红黑树</a> <a href="/tags/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/" style="font-size: 10px;">线程安全</a> <a href="/tags/%E7%BB%84%E5%90%88/" style="font-size: 10px;">组合</a> <a href="/tags/%E7%BF%BB%E5%A2%99/" style="font-size: 11.33px;">翻墙</a> <a href="/tags/%E8%89%BE%E5%B7%B2%E6%88%90%E8%AF%97/" style="font-size: 10.67px;">艾已成诗</a> <a href="/tags/%E8%89%BE%E5%BC%97%E6%A3%AE/" style="font-size: 10.67px;">艾弗森</a> <a href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96/" style="font-size: 12.67px;">记忆化</a> <a href="/tags/%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">调试工具</a> <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" style="font-size: 12px;">贪心算法</a> <a href="/tags/%E9%80%92%E5%BD%92/" style="font-size: 18px;">递归</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 15.33px;">链表</a> <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 13.33px;">队列</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 12px;">随笔</a> <a href="/tags/%E9%9B%86%E4%B8%AD%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">集中式版本控制</a> <a href="/tags/%E9%9B%B6%E5%92%8C%E5%8D%9A%E5%BC%88/" style="font-size: 10px;">零和博弈</a> <a href="/tags/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/" style="font-size: 10px;">面试总结</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">五月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02/">二月 2011</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2025/05/25/longest-palindrome-by-concatenating-two-letter-words/">连接两字母单词得到的最长回文串</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2025/05/24/longest-palindromic-substring/">最长回文子串</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2023/10/10/sign-up-apple-id/">国内如何注册国外 Apple ID</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2023/10/08/sign-up-chatgpt/">国内如何注册 ChatGPT 账号</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2021/03/01/job-alipay/">2022届实习生-蚂蚁集团-支付宝事业线</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 cylong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>
