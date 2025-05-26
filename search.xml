@@ -5407,7 +5407,7 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
 </blockquote>
 <p><strong>示例 3:</strong></p>
 <blockquote>
-<p>输入：root = <a href="https://leetcode.cn/problems/count-complete-tree-nodes/description/" title="222. 完全二叉树的节点个数 | 力扣（LeetCode）">1</a><br>输出：1</p>
+<p>输入：root = [1]<br>输出：1</p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
