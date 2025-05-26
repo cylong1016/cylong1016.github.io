@@ -5284,36 +5284,40 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
 <li>子字符串是字符串中连续的非空字符序列。</li>
 </ul>
 <p><strong>示例 1:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：s = &quot;babad&quot;</span><br><span class="line">输出：&quot;bab&quot;</span><br><span class="line">解释：&quot;aba&quot; 同样是符合题意的答案。</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>输入：s = “babad”<br>输出：”bab”<br>解释：”aba” 同样是符合题意的答案。</p>
+</blockquote>
 <p><strong>示例 2:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：s = &quot;cbbd&quot;</span><br><span class="line">输出：&quot;bb&quot;</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>输入：s = “cbbd”<br>输出：”bb”</p>
+</blockquote>
 <p><strong>提示:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">* 1 &lt;= s.length &lt;= 1000</span><br><span class="line">* s 仅由数字和英文字母组成</span><br></pre></td></tr></table></figure>
-
+<ul>
+<li>1 &lt;= s.length &lt;= 1000</li>
+<li>s 仅由数字和英文字母组成</li>
+</ul>
 <span id="more"></span>
 
 <h1 id="暴力法（不推荐）"><a href="#暴力法（不推荐）" class="headerlink" title="暴力法（不推荐）"></a>暴力法（不推荐）</h1><p>枚举所有子串，检查是否为回文，记录最长的一个。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">longestPalindrome</span><span class="params">(String s)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (s == <span class="literal">null</span> || s.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">maxLen</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i; j &lt; s.length(); j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (longestPalindrome(s, i, j) &amp;&amp; (j - i + <span class="number">1</span> &gt; maxLen)) &#123;</span><br><span class="line">                maxLen = j - i + <span class="number">1</span>;</span><br><span class="line">                start = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s.substring(start, start + maxLen);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">longestPalindrome</span><span class="params">(String s, <span class="type">int</span> start, <span class="type">int</span> end)</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (start &lt; end) &#123;</span><br><span class="line">        <span class="keyword">if</span> (s.charAt(start++) != s.charAt(end--)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(n³)，共有 O(n²) 个子串（两层循环：i 从 0 到 n-1，j 从 i 到 n-1）。每个子串检查是否为回文需要 O(n) 时间（如长度为 k 的子串需比较 k/2 次）。<br>总时间 = O(n²) × O(n) = O(n³)。</li>
-<li>空间复杂度：O(n)，仅需常数空间存储临时变量（如 maxLen, start）。</li>
+<li><strong>时间复杂度：</strong>O(n³)，共有 O(n²) 个子串（两层循环：i 从 0 到 n-1，j 从 i 到 n-1）。每个子串检查是否为回文需要 O(n) 时间（如长度为 k 的子串需比较 k/2 次）。<br>总时间 = O(n²) × O(n) = O(n³)。</li>
+<li><strong>空间复杂度：</strong>O(n)，仅需常数空间存储临时变量（如 maxLen, start）。</li>
 </ul>
 <h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>利用二维数组 dp[i][j] 记录子串 s[i…j] 是否为回文，逐步扩展长度。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">longestPalindrome</span><span class="params">(String s)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (s == <span class="literal">null</span> || s.length() &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> s.length();</span><br><span class="line">    <span class="type">boolean</span>[][] dp = <span class="keyword">new</span> <span class="title class_">boolean</span>[len][len];</span><br><span class="line">    <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">maxLen</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 长度为1的子串全都是回文串</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        dp[i][i] = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断长度为2的子串是否是回文串</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (s.charAt(i) == s.charAt(i + <span class="number">1</span>)) &#123;</span><br><span class="line">            dp[i][i + <span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">            start = i;</span><br><span class="line">            maxLen = <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断长度为3及更长的子串是否是回文串</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">l</span> <span class="operator">=</span> <span class="number">3</span>; l &lt;= len; l++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len - l + <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + l - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (s.charAt(i) == s.charAt(j) &amp;&amp; dp[i + <span class="number">1</span>][j - <span class="number">1</span>]) &#123;</span><br><span class="line">                dp[i][j] = <span class="literal">true</span>;</span><br><span class="line">                start = i;</span><br><span class="line">                maxLen = l;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> s.substring(start, start + maxLen);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(n²)，外层循环遍历子串长度 l（从 3 到 n），内层循环遍历起始点 i，总时间 = O(n²)。</li>
-<li>空间复杂度：O(n²)，需一个二维数组 dp[n][n] 存储所有子串的状态。</li>
+<li><strong>时间复杂度：</strong>O(n²)，外层循环遍历子串长度 l（从 3 到 n），内层循环遍历起始点 i，总时间 = O(n²)。</li>
+<li><strong>空间复杂度：</strong>O(n²)，需一个二维数组 dp[n][n] 存储所有子串的状态。</li>
 </ul>
 <h1 id="中心扩展法"><a href="#中心扩展法" class="headerlink" title="中心扩展法"></a>中心扩展法</h1><p>利用二维数组 dp[i][j] 记录子串 s[i…j] 是否为回文，逐步扩展长度。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">longestPalindrome1</span><span class="params">(String s)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (s == <span class="literal">null</span> || s.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">        <span class="comment">// 奇数长度</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">len1</span> <span class="operator">=</span> expand(s, i, i);</span><br><span class="line">        <span class="comment">// 偶数长度</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">len2</span> <span class="operator">=</span> expand(s, i, i + <span class="number">1</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> Math.max(len1, len2);</span><br><span class="line">        <span class="keyword">if</span> (len &gt; end - start) &#123;</span><br><span class="line">            start = i - (len - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">            end = i + len / <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s.substring(start, end + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="type">int</span> <span class="title function_">expand</span><span class="params">(String s, <span class="type">int</span> left, <span class="type">int</span> right)</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (left &gt;= <span class="number">0</span> &amp;&amp; right &lt; s.length() &amp;&amp; s.charAt(left) == s.charAt(right)) &#123;</span><br><span class="line">        left--;</span><br><span class="line">        right++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> right - left - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="复杂度分析-2"><a href="#复杂度分析-2" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(n²)，共有 2n-1 个中心（每个字符作为奇中心，每两个字符之间作为偶中心），每个中心最多扩展 O(n) 次（如全相同字符时，扩展到边界）。<br>总时间 = O(2n) × O(n) = O(n²)。</li>
-<li>空间复杂度：O(1)，仅需常数空间记录扩展的左右指针和最长回文的起止点。</li>
+<li><strong>时间复杂度：</strong>O(n²)，共有 2n-1 个中心（每个字符作为奇中心，每两个字符之间作为偶中心），每个中心最多扩展 O(n) 次（如全相同字符时，扩展到边界）。<br>总时间 = O(2n) × O(n) = O(n²)。</li>
+<li><strong>空间复杂度：</strong>O(1)，仅需常数空间记录扩展的左右指针和最长回文的起止点。</li>
 </ul>
 <h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
 <p><a href="https://leetcode-cn.com/problems/sum-root-to-leaf-numbers/" title="5. 最长回文子串 | 力扣（LeetCode）">5. 最长回文子串 | 力扣（LeetCode）</a></p>
@@ -5336,22 +5340,25 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
     <url>/blog/2025/05/25/longest-palindrome-by-concatenating-two-letter-words/</url>
     <content><![CDATA[<hr>
 <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个字符串数组 words 。words 中每个元素都是一个包含两个小写英文字母的单词。请你从 words 中选择一些元素并按任意顺序连接它们，并得到一个尽可能长的回文串 。每个元素至多只能使用一次。请你返回你能得到的最长回文串的长度 。如果没办法得到任何一个回文串，请你返回 0 。</p>
-<p><strong>说明:</strong></p>
-<ul>
-<li>回文串指的是从前往后和从后往前读一样的字符串。</li>
-</ul>
+<p><strong>说明:</strong><br>回文串指的是从前往后和从后往前读一样的字符串。</p>
 <p><strong>示例 1:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：words = [&quot;lc&quot;,&quot;cl&quot;,&quot;gg&quot;]</span><br><span class="line">输出：6</span><br><span class="line">解释：一个最长的回文串为 &quot;lc&quot; + &quot;gg&quot; + &quot;cl&quot; = &quot;lcggcl&quot; ，长度为 6 。</span><br><span class="line">&quot;clgglc&quot; 是另一个可以得到的最长回文串。</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>输入：words = [“lc”,”cl”,”gg”]<br>输出：6<br>解释：一个最长的回文串为 “lc” + “gg” + “cl” = “lcggcl” ，长度为 6 。<br>“clgglc” 是另一个可以得到的最长回文串。</p>
+</blockquote>
 <p><strong>示例 2:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：words = [&quot;ab&quot;,&quot;ty&quot;,&quot;yt&quot;,&quot;lc&quot;,&quot;cl&quot;,&quot;ab&quot;]</span><br><span class="line">输出：8</span><br><span class="line">解释：最长回文串是 &quot;ty&quot; + &quot;lc&quot; + &quot;cl&quot; + &quot;yt&quot; = &quot;tylcclyt&quot; ，长度为 8 。</span><br><span class="line">&quot;lcyttycl&quot; 是另一个可以得到的最长回文串。</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>输入：words = [“ab”,”ty”,”yt”,”lc”,”cl”,”ab”]<br>输出：8<br>解释：最长回文串是 “ty” + “lc” + “cl” + “yt” = “tylcclyt” ，长度为 8 。<br>“lcyttycl” 是另一个可以得到的最长回文串。</p>
+</blockquote>
 <p><strong>示例 3:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：words = [&quot;ab&quot;,&quot;ty&quot;,&quot;yt&quot;,&quot;lc&quot;,&quot;cl&quot;,&quot;ab&quot;]</span><br><span class="line">输出：8</span><br><span class="line">解释：最长回文串是 &quot;ty&quot; + &quot;lc&quot; + &quot;cl&quot; + &quot;yt&quot; = &quot;tylcclyt&quot; ，长度为 8 。</span><br><span class="line">&quot;lcyttycl&quot; 是另一个可以得到的最长回文串。</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>输入：words = [“ab”,”ty”,”yt”,”lc”,”cl”,”ab”]<br>输出：8<br>解释：最长回文串是 “ty” + “lc” + “cl” + “yt” = “tylcclyt” ，长度为 8 。<br>“lcyttycl” 是另一个可以得到的最长回文串。</p>
+</blockquote>
 <p><strong>提示:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">* 1 &lt;= words.length &lt;= 105</span><br><span class="line">* words[i].length == 2</span><br><span class="line">* words[i] 仅包含小写英文字母。</span><br></pre></td></tr></table></figure>
-
+<ul>
+<li>1 &lt;= words.length &lt;= 105</li>
+<li>words[i].length == 2</li>
+<li>words[i] 仅包含小写英文字母。</li>
+</ul>
 <span id="more"></span>
 
 <h1 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h1><ol>
@@ -5363,8 +5370,8 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">longestPalindrome</span><span class="params">(String[] words)</span> &#123;</span><br><span class="line">    <span class="comment">// 记录最长回文长度</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">maxLen</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 标记是否已使用中间对称点</span></span><br><span class="line">    <span class="type">boolean</span> <span class="variable">center</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">// 记录已处理的单词</span></span><br><span class="line">    List&lt;String&gt; processed = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    <span class="comment">// 使用 HashMap 统计每个单词的出现次数</span></span><br><span class="line">    Map&lt;String, Integer&gt; wordCount = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="comment">// 记录所有 word 的次数</span></span><br><span class="line">    Arrays.stream(words).forEach(word -&gt; wordCount.put(word, wordCount.getOrDefault(word, <span class="number">0</span>) + <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (String word : wordCount.keySet()) &#123;</span><br><span class="line">        <span class="keyword">if</span> (processed.contains(word)) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> wordCount.get(word);</span><br><span class="line">        <span class="type">String</span> <span class="variable">reversed</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>(word).reverse().toString();</span><br><span class="line">        <span class="comment">// 若单词字符相同（如&quot;aa&quot;），计算可成对使用的次数，剩余次数作为中间对称点。</span></span><br><span class="line">        <span class="keyword">if</span> (word.equals(reversed)) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">pairs</span> <span class="operator">=</span> count / <span class="number">2</span>;</span><br><span class="line">            maxLen += pairs * <span class="number">4</span>;</span><br><span class="line">            <span class="keyword">if</span> (!center &amp;&amp; count % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">                maxLen += <span class="number">2</span>;</span><br><span class="line">                center = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            processed.add(word);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 找到反转单词，取较小次数计算贡献，避免重复处理。</span></span><br><span class="line">            <span class="keyword">if</span> (wordCount.containsKey(reversed)) &#123;</span><br><span class="line">                <span class="type">int</span> <span class="variable">reversedCount</span> <span class="operator">=</span> wordCount.get(reversed);</span><br><span class="line">                <span class="type">int</span> <span class="variable">pairs</span> <span class="operator">=</span> Math.min(count, reversedCount);</span><br><span class="line">                maxLen += pairs * <span class="number">4</span>;</span><br><span class="line">                processed.add(word);</span><br><span class="line">                processed.add(reversed);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxLen;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(n)，遍历 words 数组并构建哈希表 wordCount，时间复杂度为 O(n)，遍历哈希表的键集合，假设不同的单词数量为 m，每个单词的处理包括生成反转字符串、哈希表查询等操作。由于每个单词长度为 2，生成反转字符串和哈希表操作均为 O(1)，总时间复杂度为 O(m)。最坏情况下，所有单词均不同（即 m = n），时间复杂度为 O(n)。其中 n 是数组长度。</li>
-<li>空间复杂度：O(n)，wordCount 存储所有单词及其频率，占用 O(m) 空间。processed 集合存储已处理的单词，需要 O(m) 空间。总体空间复杂度：O(m)，即 O(n)（m 最大为 n）。</li>
+<li><strong>时间复杂度：</strong>O(n)，遍历 words 数组并构建哈希表 wordCount，时间复杂度为 O(n)，遍历哈希表的键集合，假设不同的单词数量为 m，每个单词的处理包括生成反转字符串、哈希表查询等操作。由于每个单词长度为 2，生成反转字符串和哈希表操作均为 O(1)，总时间复杂度为 O(m)。最坏情况下，所有单词均不同（即 m = n），时间复杂度为 O(n)。其中 n 是数组长度。</li>
+<li><strong>空间复杂度：</strong>O(n)，wordCount 存储所有单词及其频率，占用 O(m) 空间。processed 集合存储已处理的单词，需要 O(m) 空间。总体空间复杂度：O(m)，即 O(n)（m 最大为 n）。</li>
 </ul>
 <h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
 <p><a href="https://leetcode.cn/problems/longest-palindrome-by-concatenating-two-letter-words/description/" title="2131. 连接两字母单词得到的最长回文串 | 力扣（LeetCode）">2131. 连接两字母单词得到的最长回文串 | 力扣（LeetCode）</a></p>
@@ -5380,6 +5387,71 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>学习笔记</tag>
         <tag>贪心算法</tag>
         <tag>LeetCode中等</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>完全二叉树的节点个数</title>
+    <url>/blog/2025/02/06/count-complete-tree-nodes/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一棵完全二叉树的根节点 root ，求出该树的节点个数。</p>
+<p><strong>说明:</strong><br>完全二叉树：除了最底层节点可能没填满外，其余每层节点数都达到最大值，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 h 层（从第 0 层开始），则该层包含 1 ~ 2h 个节点。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">     1</span><br><span class="line">   /   \</span><br><span class="line">  2     3</span><br><span class="line"> / \   /</span><br><span class="line">4   5 6</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p>输入：root = [1,2,3,4,5,6]<br>输出：6</p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p>输入：root = []<br>输出：0</p>
+</blockquote>
+<p><strong>示例 3:</strong></p>
+<blockquote>
+<p>输入：root = <a href="https://leetcode.cn/problems/count-complete-tree-nodes/description/" title="222. 完全二叉树的节点个数 | 力扣（LeetCode）">1</a><br>输出：1</p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li>树中节点的数目范围是[0, 5 * 10^4]</li>
+<li>0 &lt;= Node.val &lt;= 5 * 10^4</li>
+<li>题目数据保证输入的树是 完全二叉树</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h1><p>如果是普通二叉树的话，最直接的方法就是递归或者迭代遍历每个节点，然后统计个数，这样时间复杂度是O(n)，其中 n 是树的节点总数。空间复杂度是O(h)，其中 h 是树的高度。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">countNodes</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> + countNodes(root.left) + countNodes(root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但这是一个普适的解法，对于此题给的完全二叉树的特点没有利用起来，我们先了解一下满二叉树的概念：一个二叉树，如果每一个层的结点数都达到最大值，则这个二叉树就是满二叉树，满二叉树的节点总数是 (2^h) - 1 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">     1</span><br><span class="line">   /   \</span><br><span class="line">  2     3</span><br><span class="line"> / \   / \</span><br><span class="line">4   5 6   7</span><br></pre></td></tr></table></figure>
+
+<p>而完全二叉树的特点是除了最后一层外，其余层都是满的，并且最后一层的节点尽可能靠左。因此，可以利用这个特性来高效计算节点数，而不是普通的遍历方法。首先计算左子树高度 left 和右子树高度 right，接下来比较 left 和 right。</p>
+<ul>
+<li>如果两者相等，说明左子树是满的，此时左子树的节点数为2^left - 1，加上根节点，总共是2^left。然后递归计算右子树的节点数。</li>
+<li>如果 left 不等于 right，则说明右子树是满的，但层数比左子树少一层，所以右子树的节点数是2^right - 1，加上根节点，再递归计算左子树的节点数。</li>
+</ul>
+<p>这里的关键在于，当左右子树高度相等时，左子树一定是满的，可以快速计算其节点数，而无需递归下去；反之，右子树是满的，可以同样处理。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">countNodes</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 计算左子树高度</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> countLevel(root.left);</span><br><span class="line">    <span class="comment">// 计算右子树高度</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">right</span> <span class="operator">=</span> countLevel(root.right);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (left == right) &#123;</span><br><span class="line">        <span class="comment">// 左子树是满的，直接计算左子树节点数 (2^left)，递归计算右子树</span></span><br><span class="line">        <span class="keyword">return</span> countNodes(root.right) + (<span class="number">1</span> &lt;&lt; left);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 右子树是满的，直接计算右子树节点数 (2^right)，递归计算左子树</span></span><br><span class="line">        <span class="keyword">return</span> countNodes(root.left) + (<span class="number">1</span> &lt;&lt; right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="type">int</span> <span class="title function_">countLevel</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">level</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (root != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="comment">// 完全二叉树的高度由最左路径决定</span></span><br><span class="line">        level++;</span><br><span class="line">        root = root.left;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> level;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：O((logN)^2)，每次递归调用 countLevel 的时间为 O(h)（h 是当前子树高度），递归深度为树的高度 O(logN)（完全二叉树高度为 logN）。</li>
+<li>空间复杂度：递归深度为树的高度 O(logN)。</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode.cn/problems/count-complete-tree-nodes/description/" title="222. 完全二叉树的节点个数 | 力扣（LeetCode）">222. 完全二叉树的节点个数 | 力扣（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>递归</tag>
+        <tag>二叉树</tag>
+        <tag>LeetCode简单</tag>
+        <tag>完全二叉树</tag>
+        <tag>满二叉树</tag>
       </tags>
   </entry>
 </search>
