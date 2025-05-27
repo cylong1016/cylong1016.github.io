@@ -291,25 +291,25 @@
 
       
           <hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个字符串数组 words 。words 中每个元素都是一个包含两个小写英文字母的单词。请你从 words 中选择一些元素并按任意顺序连接它们，并得到一个尽可能长的回文串 。每个元素至多只能使用一次。请你返回你能得到的最长回文串的长度 。如果没办法得到任何一个回文串，请你返回 0 。</p>
-<p><strong>说明:</strong><br>回文串指的是从前往后和从后往前读一样的字符串。</p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个字符串数组 <code>words</code> 。<code>words</code> 中每个元素都是一个包含两个小写英文字母的单词。请你从 <code>words</code> 中选择一些元素并按任意顺序连接它们，并得到一个尽可能长的回文串 。每个元素至多只能使用一次。请你返回你能得到的最长回文串的长度 。如果没办法得到任何一个回文串，请你返回 <code>0</code> 。</p>
+<p><strong>说明:</strong><br><code>回文串</code> 指的是从前往后和从后往前读一样的字符串。</p>
 <p><strong>示例 1:</strong></p>
 <blockquote>
-<p>输入：words = [“lc”,”cl”,”gg”]<br>输出：6<br>解释：一个最长的回文串为 “lc” + “gg” + “cl” = “lcggcl” ，长度为 6 。<br>“clgglc” 是另一个可以得到的最长回文串。</p>
+<p><strong>输入：</strong>words = [“lc”,”cl”,”gg”]<br><strong>输出：</strong>6<br><strong>解释：</strong>一个最长的回文串为 “lc” + “gg” + “cl” = “lcggcl” ，长度为 6 。”clgglc” 是另一个可以得到的最长回文串。</p>
 </blockquote>
 <p><strong>示例 2:</strong></p>
 <blockquote>
-<p>输入：words = [“ab”,”ty”,”yt”,”lc”,”cl”,”ab”]<br>输出：8<br>解释：最长回文串是 “ty” + “lc” + “cl” + “yt” = “tylcclyt” ，长度为 8 。<br>“lcyttycl” 是另一个可以得到的最长回文串。</p>
+<p><strong>输入：</strong>words = [“ab”,”ty”,”yt”,”lc”,”cl”,”ab”]<br><strong>输出：</strong>8<br><strong>解释：</strong>最长回文串是 “ty” + “lc” + “cl” + “yt” = “tylcclyt” ，长度为 8 。”lcyttycl” 是另一个可以得到的最长回文串。</p>
 </blockquote>
 <p><strong>示例 3:</strong></p>
 <blockquote>
-<p>输入：words = [“ab”,”ty”,”yt”,”lc”,”cl”,”ab”]<br>输出：8<br>解释：最长回文串是 “ty” + “lc” + “cl” + “yt” = “tylcclyt” ，长度为 8 。<br>“lcyttycl” 是另一个可以得到的最长回文串。</p>
+<p><strong>输入：</strong>words = [“ab”,”ty”,”yt”,”lc”,”cl”,”ab”]<br><strong>输出：</strong>8<br><strong>解释：</strong>最长回文串是 “ty” + “lc” + “cl” + “yt” = “tylcclyt” ，长度为 8 。”lcyttycl” 是另一个可以得到的最长回文串。</p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
-<li>1 &lt;= words.length &lt;= 105</li>
-<li>words[i].length == 2</li>
-<li>words[i] 仅包含小写英文字母。</li>
+<li><code>1 &lt;= words.length &lt;= 105</code></li>
+<li><code>words[i].length == 2</code></li>
+<li><code>words[i]</code> 仅包含小写英文字母。</li>
 </ul>
           <!--noindex-->
             <div class="post-button">
@@ -413,7 +413,7 @@
 
       
           <hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个字符串 s，找到 s 中最长的回文子串。</p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个字符串 <code>s</code>，找到 <code>s</code> 中最长的 <code>回文子串</code>。</p>
 <p><strong>说明:</strong></p>
 <ul>
 <li>如果字符串向前和向后读都相同，则它满足回文性。</li>
@@ -421,20 +421,136 @@
 </ul>
 <p><strong>示例 1:</strong></p>
 <blockquote>
-<p>输入：s = “babad”<br>输出：”bab”<br>解释：”aba” 同样是符合题意的答案。</p>
+<p><strong>输入：</strong>s = “babad”<br><strong>输出：</strong>“bab”<br><strong>解释：</strong>“aba” 同样是符合题意的答案。</p>
 </blockquote>
 <p><strong>示例 2:</strong></p>
 <blockquote>
-<p>输入：s = “cbbd”<br>输出：”bb”</p>
+<p><strong>输入：</strong>s = “cbbd”<br><strong>输出：</strong>“bb”</p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
-<li>1 &lt;= s.length &lt;= 1000</li>
-<li>s 仅由数字和英文字母组成</li>
+<li><code>1 &lt;= s.length &lt;= 1000</code></li>
+<li><code>s</code> 仅由数字和英文字母组成</li>
 </ul>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/2025/05/24/longest-palindromic-substring/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/02/17/unique-binary-search-trees/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="cylong">
+      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑话人生">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2025/02/17/unique-binary-search-trees/" class="post-title-link" itemprop="url">不同的二叉搜索树</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-02-17 22:22:45" itemprop="dateCreated datePublished" datetime="2025-02-17T22:22:45+08:00">2025-02-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/blog/2025/02/17/unique-binary-search-trees/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/02/17/unique-binary-search-trees/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个整数 <code>n</code> ，求恰由 <code>n</code> 个节点组成且节点值从 <code>1</code> 到 <code>n</code> 互不相同的 <code>二叉搜索树</code> 有多少种？返回满足题意的二叉搜索树的种数。</p>
+<p><strong>示例 1:</strong></p>
+<img src="/blog/2025/02/17/unique-binary-search-trees/uniquebstn3.jpg" class="" title="二叉搜索树">
+<blockquote>
+<p><strong>输入：</strong>n = 3<br><strong>输出：</strong>5</p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p><strong>输入：</strong>n = 1<br><strong>输出：</strong>1</p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 19</code></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2025/02/17/unique-binary-search-trees/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -534,27 +650,27 @@
 
       
           <hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一棵完全二叉树的根节点 root ，求出该树的节点个数。</p>
-<p><strong>说明:</strong><br>完全二叉树：除了最底层节点可能没填满外，其余每层节点数都达到最大值，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 h 层（从第 0 层开始），则该层包含 1 ~ 2h 个节点。</p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一棵 <code>完全二叉树</code> 的根节点 <code>root</code> ，求出该树的节点个数。</p>
+<p><strong>说明:</strong><br>完全二叉树：除了最底层节点可能没填满外，其余每层节点数都达到最大值，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 <code>h</code> 层（从第 <code>0</code> 层开始），则该层包含 <code>1 ~ 2h</code> 个节点。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     1</span><br><span class="line">   /   \</span><br><span class="line">  2     3</span><br><span class="line"> / \   /</span><br><span class="line">4   5 6</span><br></pre></td></tr></table></figure>
 
 <p><strong>示例 1:</strong></p>
 <blockquote>
-<p>输入：root = [1,2,3,4,5,6]<br>输出：6</p>
+<p><strong>输入：</strong>root = [1,2,3,4,5,6]<br><strong>输出：</strong>6</p>
 </blockquote>
 <p><strong>示例 2:</strong></p>
 <blockquote>
-<p>输入：root = []<br>输出：0</p>
+<p><strong>输入：</strong>root = []<br><strong>输出：</strong>0</p>
 </blockquote>
 <p><strong>示例 3:</strong></p>
 <blockquote>
-<p>输入：root = [1]<br>输出：1</p>
+<p><strong>输入：</strong>root = [1]<br><strong>输出：</strong>1</p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
-<li>树中节点的数目范围是[0, 5 * 10^4]</li>
-<li>0 &lt;= Node.val &lt;= 5 * 10^4</li>
-<li>题目数据保证输入的树是 完全二叉树</li>
+<li>树中节点的数目范围是 <code>[0, 5 * 10^4]</code></li>
+<li><code>0 &lt;= Node.val &lt;= 5 * 10^4</code></li>
+<li>题目数据保证输入的树是 <code>完全二叉树</code></li>
 </ul>
           <!--noindex-->
             <div class="post-button">
@@ -1009,118 +1125,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2020/10/27/binary-tree-preorder-traversal/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="cylong">
-      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑话人生">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2020/10/27/binary-tree-preorder-traversal/" class="post-title-link" itemprop="url">二叉树的前序遍历</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-10-27 23:15:09" itemprop="dateCreated datePublished" datetime="2020-10-27T23:15:09+08:00">2020-10-27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/blog/2020/10/27/binary-tree-preorder-traversal/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2020/10/27/binary-tree-preorder-traversal/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你二叉树的根节点 root ，返回它节点值的 前序 遍历。</p>
-<p><strong>示例 1：</strong></p>
-<img src="/blog/2020/10/27/binary-tree-preorder-traversal/inorder.jpg" class="" title="前序遍历">
-<blockquote>
-<p>输入：root = [1, null, 2, 3]<br>输出：[1, 2, 3]</p>
-</blockquote>
-<p><strong>示例 2：</strong></p>
-<blockquote>
-<p>输入：root = []<br>输出：[]</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/2020/10/27/binary-tree-preorder-traversal/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1192,7 +1196,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">100</span>
+          <span class="site-state-item-count">101</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1280,15 +1284,15 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">203k</span>
+    <span title="站点总字数">204k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:05</span>
+    <span title="站点阅读时长">3:06</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-    <span class="post-count">| 博客共94.2k字</span>
+    <span class="post-count">| 博客共94.9k字</span>
   </div>
 
         
