@@ -162,6 +162,75 @@
   </entry>
   
   <entry>
+    <title>连接两棵树后最大目标节点数目 Ⅰ</title>
+    <link href="https://www.cylong.com/blog/2025/02/28/maximize-the-number-of-target-nodes-after-connecting-trees-i/"/>
+    <id>https://www.cylong.com/blog/2025/02/28/maximize-the-number-of-target-nodes-after-connecting-trees-i/</id>
+    <published>2025-02-28T14:52:11.000Z</published>
+    <updated>2025-02-28T14:52:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>有两棵 <code>无向树</code>，分别有 <code>n</code> 和 <code>m</code> 个树节点。两棵树中的节点编号分别为 <code>[0, n - 1]</code> 和 <code>[0, m - 1]</code> 中的整数。</p><p>给你两个二维整数 <code>edges1</code> 和 <code>edges2</code> ，长度分别为 <code>n - 1</code> 和 <code>m - 1</code> ，其中 <code>edges1[i] = [ai, bi]</code> 表示第一棵树中节点 <code>ai</code> 和 <code>bi</code> 之间有一条边，<code>edges2[i] = [ui, vi]</code> 表示第二棵树中节点 <code>ui</code> 和 <code>vi</code> 之间有一条边。同时给你一个整数 <code>k</code> 。如果节点 <code>u</code> 和节点 <code>v</code> 之间路径的边数小于等于 <code>k</code> ，那么我们称节点 <code>u</code> 是节点 <code>v</code> 的 <code>目标节点</code> 。一个节点一定是它自己的 <code>目标节点</code> 。</p><p>请你返回一个长度为 <code>n</code> 的整数数组 <code>answer</code> ，<code>answer[i]</code> 表示将第一棵树中的一个节点与第二棵树中的一个节点连接一条边后，第一棵树中节点 <code>i</code> 的目标节点数目的最大值 。</p><p><strong>注意：</strong>每个查询相互独立。意味着进行下一次查询之前，你需要先把刚添加的边给删掉。</p><p><strong>示例 1:</strong></p><blockquote><p><strong>输入：</strong>edges1 = [[0, 1], [0, 2], [2, 3], [2, 4]], edges2 = [[0, 1], [0, 2], [0, 3], [2, 7], [1, 4], [4, 5], [4, 6]], k = 2<br><strong>输出：</strong>[9, 7, 9, 8, 8]<br><strong>解释：</strong></p><ul><li>对于 <code>i = 0</code> ，连接第一棵树中的节点 0 和第二棵树中的节点 0 。</li><li>对于 <code>i = 1</code> ，连接第一棵树中的节点 1 和第二棵树中的节点 0 。</li><li>对于 <code>i = 2</code> ，连接第一棵树中的节点 2 和第二棵树中的节点 4 。</li><li>对于 <code>i = 3</code> ，连接第一棵树中的节点 3 和第二棵树中的节点 4 。</li><li>对于 <code>i = 4</code> ，连接第一棵树中的节点 4 和第二棵树中的节点 4 。</li></ul></blockquote><img src="/blog/2025/02/28/maximize-the-number-of-target-nodes-after-connecting-trees-i/3372-1.png" class=""><p><strong>示例 2:</strong></p><blockquote><p><strong>输入：</strong>edges1 = [[0, 1], [0, 2], [0, 3], [0, 4]], edges2 = [[0, 1], [1, 2], [2, 3]], k = 1<br><strong>输出：</strong>[6, 3, 3, 3, 3]<br><strong>解释：</strong>对于每个 <code>i</code> ，连接第一棵树中的节点 <code>i</code> 和第二棵树中的任意一个节点。</p></blockquote><img src="/blog/2025/02/28/maximize-the-number-of-target-nodes-after-connecting-trees-i/3372-2.png" class=""><p><strong>提示:</strong></p><ul><li><code>2 &lt;= n, m &lt;= 1000</code></li><li><code>edges1.length == n - 1</code></li><li><code>edges2.length == m - 1</code></li><li><code>edges1[i].length == edges2[i].length == 2</code></li><li><code>edges1[i] = [ai, bi]</code></li><li><code>0 &lt;= ai, bi &lt; n</code></li><li><code>edges2[i] = [ui, vi]</code></li><li><code>0 &lt;= ui, vi &lt; m</code></li><li>输入保证 <code>edges1</code> 和 <code>edges2</code> 都表示合法的树。</li><li><code>0 &lt;= k &lt;= 1000</code></li></ul><span id="more"></span><h1 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h1><ol><li><strong>第一棵树内部目标节点计算：</strong>对于第一棵树中的每个节点 <code>i</code>，计算在不添加新边的情况下，距离 <code>i</code> 不超过 <code>k</code> 的节点数（包括自身）。这部分节点不受添加边的影响，因为新边连接的是另一棵树。</li><li><strong>第二棵树内部目标节点计算：</strong>对于第二棵树中的每个节点 <code>j</code>，计算距离 <code>j</code> 不超过 <code>k-1</code> 的节点数（包括自身）。这是因为添加边后，从第一棵树节点 <code>i</code> 到第二棵树节点 <code>v</code> 的路径为 <code>i → a → b → v</code>，其中 <code>a</code> 和 <code>b</code> 是添加边的两个端点，路径长度为 <code>d1(i, a) + 1 + d2(b, v)</code>。为最大化第二棵树部分的贡献，选择 <code>a = i</code>（即连接点选在 <code>i</code>），这样路径长度简化为 <code>1 + d2(b, v)</code>。因此，第二棵树部分最多贡献距离 <code>b</code> 不超过 <code>k-1</code> 的节点数。</li><li><strong>最大化第二棵树贡献：</strong>取第二棵树中所有节点在距离 <code>k-1</code> 内节点数的最大值 <code>maxCount2</code>。</li><li><strong>合并结果：</strong>对于第一棵树中的每个节点 <code>i</code>，其目标节点最大值为 <code>count1[i] + maxCount2</code>，其中 <code>count1[i]</code> 是第一棵树内部距离 <code>i</code> 不超过 <code>k</code> 的节点数。</li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span>[] maxTargetNodes(<span class="type">int</span>[][] edges1, <span class="type">int</span>[][] edges2, <span class="type">int</span> k) &#123;</span><br><span class="line">    <span class="comment">// 计算第一课无向树中每个节点的目标节点数</span></span><br><span class="line">    <span class="type">int</span>[] count1 = count(edges1, k);</span><br><span class="line">    <span class="comment">// 计算第一课无向树中每个节点的目标节点数</span></span><br><span class="line">    <span class="type">int</span>[] count2 = count(edges2, k - <span class="number">1</span>);</span><br><span class="line">    <span class="comment">// 计算第二课无向树中每个节点的目标节点数的最大值</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">maxCount2</span> <span class="operator">=</span> Arrays.stream(count2).max().orElse(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> edges1.length + <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span>[] result = <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        result[i] = count1[i] + maxCount2;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span>[] count(<span class="type">int</span>[][] edges, <span class="type">int</span> k) &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> edges.length + <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 构建无向树</span></span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; graph = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        graph.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span>[] edge : edges) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">u</span> <span class="operator">=</span> edge[<span class="number">0</span>], v = edge[<span class="number">1</span>];</span><br><span class="line">        graph.get(u).add(v);</span><br><span class="line">        graph.get(v).add(u);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span>[] result = <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        result[i] = dfs(i, -<span class="number">1</span>, graph, k);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">dfs</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> parent, List&lt;List&lt;Integer&gt;&gt; graph, <span class="type">int</span> k)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (k &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> v : graph.get(u)) &#123;</span><br><span class="line">        <span class="comment">// 防止回溯到父节点，避免无限递归和重复计数</span></span><br><span class="line">        <span class="keyword">if</span> (v == parent) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        count += dfs(v, u, graph, k - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul><li><strong>时间复杂度：</strong><code>O(n² + m²)</code>，其中 <code>n</code> 和 <code>m</code> 分别是两棵树的节点数。计算 <code>count1</code> 和 <code>count2</code> 时，对每个节点进行 BFS，每次 BFS 最坏 <code>O(n)</code> 或 <code>O(m)</code>，总时间复杂度为 <code>O(n²)</code> 和 <code>O(m²)</code>。</li><li><strong>空间复杂度：</strong><code>O(n + m)</code>，用于存储树的邻接表 <code>O(n + m)</code> 和 BFS 的队列及访问标记 <code>O(n)</code> 或 <code>O(m)</code>。</li></ul><h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote><p><a href="https://leetcode.cn/problems/maximize-the-number-of-target-nodes-after-connecting-trees-i/description/" title="3372. 连接两棵树后最大目标节点数目 Ⅰ | 力扣（LeetCode）">3372. 连接两棵树后最大目标节点数目 Ⅰ | 力扣（LeetCode）</a></p></blockquote><hr>]]></content>
+    
+    
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h1&gt;&lt;p&gt;有两棵 &lt;code&gt;无向树&lt;/code&gt;，分别有 &lt;code&gt;n&lt;/code&gt; 和 &lt;code&gt;m&lt;/code&gt; 个树节点。两棵树中的节点编号分别为 &lt;code&gt;[0, n - 1]&lt;/code&gt; 和 &lt;code&gt;[0, m - 1]&lt;/code&gt; 中的整数。&lt;/p&gt;
+&lt;p&gt;给你两个二维整数 &lt;code&gt;edges1&lt;/code&gt; 和 &lt;code&gt;edges2&lt;/code&gt; ，长度分别为 &lt;code&gt;n - 1&lt;/code&gt; 和 &lt;code&gt;m - 1&lt;/code&gt; ，其中 &lt;code&gt;edges1[i] = [ai, bi]&lt;/code&gt; 表示第一棵树中节点 &lt;code&gt;ai&lt;/code&gt; 和 &lt;code&gt;bi&lt;/code&gt; 之间有一条边，&lt;code&gt;edges2[i] = [ui, vi]&lt;/code&gt; 表示第二棵树中节点 &lt;code&gt;ui&lt;/code&gt; 和 &lt;code&gt;vi&lt;/code&gt; 之间有一条边。同时给你一个整数 &lt;code&gt;k&lt;/code&gt; 。如果节点 &lt;code&gt;u&lt;/code&gt; 和节点 &lt;code&gt;v&lt;/code&gt; 之间路径的边数小于等于 &lt;code&gt;k&lt;/code&gt; ，那么我们称节点 &lt;code&gt;u&lt;/code&gt; 是节点 &lt;code&gt;v&lt;/code&gt; 的 &lt;code&gt;目标节点&lt;/code&gt; 。一个节点一定是它自己的 &lt;code&gt;目标节点&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;请你返回一个长度为 &lt;code&gt;n&lt;/code&gt; 的整数数组 &lt;code&gt;answer&lt;/code&gt; ，&lt;code&gt;answer[i]&lt;/code&gt; 表示将第一棵树中的一个节点与第二棵树中的一个节点连接一条边后，第一棵树中节点 &lt;code&gt;i&lt;/code&gt; 的目标节点数目的最大值 。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;每个查询相互独立。意味着进行下一次查询之前，你需要先把刚添加的边给删掉。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;edges1 = [[0, 1], [0, 2], [2, 3], [2, 4]], edges2 = [[0, 1], [0, 2], [0, 3], [2, 7], [1, 4], [4, 5], [4, 6]], k = 2&lt;br&gt;&lt;strong&gt;输出：&lt;/strong&gt;[9, 7, 9, 8, 8]&lt;br&gt;&lt;strong&gt;解释：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于 &lt;code&gt;i = 0&lt;/code&gt; ，连接第一棵树中的节点 0 和第二棵树中的节点 0 。&lt;/li&gt;
+&lt;li&gt;对于 &lt;code&gt;i = 1&lt;/code&gt; ，连接第一棵树中的节点 1 和第二棵树中的节点 0 。&lt;/li&gt;
+&lt;li&gt;对于 &lt;code&gt;i = 2&lt;/code&gt; ，连接第一棵树中的节点 2 和第二棵树中的节点 4 。&lt;/li&gt;
+&lt;li&gt;对于 &lt;code&gt;i = 3&lt;/code&gt; ，连接第一棵树中的节点 3 和第二棵树中的节点 4 。&lt;/li&gt;
+&lt;li&gt;对于 &lt;code&gt;i = 4&lt;/code&gt; ，连接第一棵树中的节点 4 和第二棵树中的节点 4 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;img src=&quot;/blog/2025/02/28/maximize-the-number-of-target-nodes-after-connecting-trees-i/3372-1.png&quot; class=&quot;&quot;&gt;
+
+&lt;p&gt;&lt;strong&gt;示例 2:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;edges1 = [[0, 1], [0, 2], [0, 3], [0, 4]], edges2 = [[0, 1], [1, 2], [2, 3]], k = 1&lt;br&gt;&lt;strong&gt;输出：&lt;/strong&gt;[6, 3, 3, 3, 3]&lt;br&gt;&lt;strong&gt;解释：&lt;/strong&gt;对于每个 &lt;code&gt;i&lt;/code&gt; ，连接第一棵树中的节点 &lt;code&gt;i&lt;/code&gt; 和第二棵树中的任意一个节点。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;img src=&quot;/blog/2025/02/28/maximize-the-number-of-target-nodes-after-connecting-trees-i/3372-2.png&quot; class=&quot;&quot;&gt;
+
+&lt;p&gt;&lt;strong&gt;提示:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;2 &amp;lt;= n, m &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;edges1.length == n - 1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;edges2.length == m - 1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;edges1[i].length == edges2[i].length == 2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;edges1[i] = [ai, bi]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= ai, bi &amp;lt; n&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;edges2[i] = [ui, vi]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= ui, vi &amp;lt; m&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;输入保证 &lt;code&gt;edges1&lt;/code&gt; 和 &lt;code&gt;edges2&lt;/code&gt; 都表示合法的树。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= k &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="LeetCode" scheme="https://www.cylong.com/categories/LeetCode/"/>
+    
+    
+    <category term="Java" scheme="https://www.cylong.com/tags/Java/"/>
+    
+    <category term="LeetCode" scheme="https://www.cylong.com/tags/LeetCode/"/>
+    
+    <category term="学习笔记" scheme="https://www.cylong.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="树" scheme="https://www.cylong.com/tags/%E6%A0%91/"/>
+    
+    <category term="深度优先搜索" scheme="https://www.cylong.com/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
+    
+    <category term="LeetCode中等" scheme="https://www.cylong.com/tags/LeetCode%E4%B8%AD%E7%AD%89/"/>
+    
+    <category term="无向树" scheme="https://www.cylong.com/tags/%E6%97%A0%E5%90%91%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>不同的二叉搜索树</title>
     <link href="https://www.cylong.com/blog/2025/02/17/unique-binary-search-trees/"/>
     <id>https://www.cylong.com/blog/2025/02/17/unique-binary-search-trees/</id>
@@ -199,6 +268,8 @@
     <category term="学习笔记" scheme="https://www.cylong.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     <category term="动态规划" scheme="https://www.cylong.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="树" scheme="https://www.cylong.com/tags/%E6%A0%91/"/>
     
     <category term="二叉树" scheme="https://www.cylong.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
@@ -256,6 +327,8 @@
     <category term="学习笔记" scheme="https://www.cylong.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     <category term="递归" scheme="https://www.cylong.com/tags/%E9%80%92%E5%BD%92/"/>
+    
+    <category term="树" scheme="https://www.cylong.com/tags/%E6%A0%91/"/>
     
     <category term="二叉树" scheme="https://www.cylong.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
@@ -850,57 +923,6 @@
     <category term="滚动数组" scheme="https://www.cylong.com/tags/%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84/"/>
     
     <category term="零和博弈" scheme="https://www.cylong.com/tags/%E9%9B%B6%E5%92%8C%E5%8D%9A%E5%BC%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>钥匙和房间</title>
-    <link href="https://www.cylong.com/blog/2020/08/31/keys-and-rooms/"/>
-    <id>https://www.cylong.com/blog/2020/08/31/keys-and-rooms/</id>
-    <published>2020-08-31T15:50:07.000Z</published>
-    <updated>2020-08-31T15:50:07.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>有 N 个房间，开始时你位于 0 号房间。每个房间有不同的号码：0，1，2，…，N - 1，并且房间里可能有一些钥匙能使你进入下一个房间。在形式上，对于每个房间 i 都有一个钥匙列表 rooms[i]，每个钥匙 rooms[i][j] 由 [0, 1，…，N - 1] 中的一个整数表示，其中 N = rooms.length。 钥匙 rooms[i][j] = v 可以打开编号为 v 的房间。</p><p>最初，除 0 号房间外的其余所有房间都被锁住。你可以自由地在房间之间来回走动。如果能进入每个房间返回 true，否则返回 false。</p><p><strong>示例 1：</strong></p><blockquote><p>输入: [[1], [2], [3], []]<br>输出: true<br>解释:<br>我们从 0 号房间开始，拿到钥匙 1。<br>之后我们去 1 号房间，拿到钥匙 2。<br>然后我们去 2 号房间，拿到钥匙 3。<br>最后我们去了 3 号房间。<br>由于我们能够进入每个房间，我们返回 true。</p></blockquote><p><strong>示例 2：</strong></p><blockquote><p>输入：[[1, 3], [3, 0, 1], [2], [0]]<br>输出：false<br>解释：我们不能进入 2 号房间。</p></blockquote><p><strong>提示：</strong></p><ul><li>1 &lt;= rooms.length &lt;= 1000</li><li>0 &lt;= rooms[i].length &lt;= 1000</li><li>所有房间中的钥匙数量总计不超过 3000。</li></ul><span id="more"></span><h1 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h1><p>此题我们将房间理解成节点，房间 A 到房间 B 理解成边，这样这道题就变成了，我们从图的 0 点出发，能否到达所有节点的问题。</p><p>具体实现上，我们使用一个变量 count 记录访问过的房间数，每次访问过一个房间后就标记为访问过 <code>visited[room] = true</code>，并将 <code>count++</code> ，如果最后 count 等于房间的数量，那么就说明可以访问所有的房间。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="type">boolean</span>[] visited;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">canVisitAllRooms</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; rooms)</span> &#123;</span><br><span class="line">    visited = <span class="keyword">new</span> <span class="title class_">boolean</span>[rooms.size()];</span><br><span class="line">    visitRooms(rooms, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> count == rooms.size();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">visitRooms</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; rooms, Integer room)</span> &#123;</span><br><span class="line">    visited[room] = <span class="literal">true</span>;</span><br><span class="line">    count++;</span><br><span class="line">    List&lt;Integer&gt; keyList = rooms.get(room);</span><br><span class="line">    <span class="keyword">for</span> (Integer nextRoom : keyList) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited[nextRoom]) &#123;</span><br><span class="line">            visitRooms(rooms, nextRoom);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul><li>时间复杂度：O(n + m)，其中 n 是房间的数量，m 是所有房间中的钥匙数量的总数。</li><li>空间复杂度：O(n)，其中 n 是房间的数量。主要为栈空间的开销。</li></ul><h1 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h1><p>同样的，我们可以使用广度优先搜索解决此问题。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">canVisitAllRooms</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; rooms)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> rooms.size();</span><br><span class="line">    <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">boolean</span>[] visited = <span class="keyword">new</span> <span class="title class_">boolean</span>[n];</span><br><span class="line">    Queue&lt;Integer&gt; queue = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;Integer&gt;();</span><br><span class="line">    visited[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">    queue.offer(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">room</span> <span class="operator">=</span> queue.poll();</span><br><span class="line">        count++;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> key : rooms.get(room)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!visited[key]) &#123;</span><br><span class="line">                visited[key] = <span class="literal">true</span>;</span><br><span class="line">                queue.offer(key);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count == n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul><li>时间复杂度：O(n + m)，其中 n 是房间的数量，m 是所有房间中的钥匙数量的总数。</li><li>空间复杂度：O(n)，其中 n 是房间的数量。主要为队列的开销。</li></ul><h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote><p><a href="https://leetcode-cn.com/problems/keys-and-rooms/" title="钥匙和房间 | 力扣（LeetCode）">钥匙和房间 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/keys-and-rooms/solution/yao-chi-he-fang-jian-by-leetcode-solution/" title="钥匙和房间 | 题解（LeetCode）">钥匙和房间 | 题解（LeetCode）</a></p></blockquote><hr>]]></content>
-    
-    
-    <summary type="html">&lt;hr&gt;
-&lt;h1 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h1&gt;&lt;p&gt;有 N 个房间，开始时你位于 0 号房间。每个房间有不同的号码：0，1，2，…，N - 1，并且房间里可能有一些钥匙能使你进入下一个房间。在形式上，对于每个房间 i 都有一个钥匙列表 rooms[i]，每个钥匙 rooms[i][j] 由 [0, 1，…，N - 1] 中的一个整数表示，其中 N = rooms.length。 钥匙 rooms[i][j] = v 可以打开编号为 v 的房间。&lt;/p&gt;
-&lt;p&gt;最初，除 0 号房间外的其余所有房间都被锁住。你可以自由地在房间之间来回走动。如果能进入每个房间返回 true，否则返回 false。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;示例 1：&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;输入: [[1], [2], [3], []]&lt;br&gt;输出: true&lt;br&gt;解释:&lt;br&gt;我们从 0 号房间开始，拿到钥匙 1。&lt;br&gt;之后我们去 1 号房间，拿到钥匙 2。&lt;br&gt;然后我们去 2 号房间，拿到钥匙 3。&lt;br&gt;最后我们去了 3 号房间。&lt;br&gt;由于我们能够进入每个房间，我们返回 true。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;示例 2：&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;输入：[[1, 3], [3, 0, 1], [2], [0]]&lt;br&gt;输出：false&lt;br&gt;解释：我们不能进入 2 号房间。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;1 &amp;lt;= rooms.length &amp;lt;= 1000&lt;/li&gt;
-&lt;li&gt;0 &amp;lt;= rooms[i].length &amp;lt;= 1000&lt;/li&gt;
-&lt;li&gt;所有房间中的钥匙数量总计不超过 3000。&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="https://www.cylong.com/categories/LeetCode/"/>
-    
-    
-    <category term="Java" scheme="https://www.cylong.com/tags/Java/"/>
-    
-    <category term="LeetCode" scheme="https://www.cylong.com/tags/LeetCode/"/>
-    
-    <category term="学习笔记" scheme="https://www.cylong.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="队列" scheme="https://www.cylong.com/tags/%E9%98%9F%E5%88%97/"/>
-    
-    <category term="递归" scheme="https://www.cylong.com/tags/%E9%80%92%E5%BD%92/"/>
-    
-    <category term="深度优先搜索" scheme="https://www.cylong.com/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
-    
-    <category term="广度优先搜索" scheme="https://www.cylong.com/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
-    
-    <category term="图" scheme="https://www.cylong.com/tags/%E5%9B%BE/"/>
     
   </entry>
   

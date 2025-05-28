@@ -5448,6 +5448,7 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>LeetCode</tag>
         <tag>学习笔记</tag>
         <tag>递归</tag>
+        <tag>树</tag>
         <tag>二叉树</tag>
         <tag>LeetCode简单</tag>
         <tag>完全二叉树</tag>
@@ -5505,6 +5506,7 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>LeetCode</tag>
         <tag>学习笔记</tag>
         <tag>动态规划</tag>
+        <tag>树</tag>
         <tag>二叉树</tag>
         <tag>二叉搜索树</tag>
         <tag>LeetCode中等</tag>
@@ -5569,6 +5571,78 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>学习笔记</tag>
         <tag>LeetCode简单</tag>
         <tag>数学公式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>连接两棵树后最大目标节点数目 Ⅰ</title>
+    <url>/blog/2025/02/28/maximize-the-number-of-target-nodes-after-connecting-trees-i/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>有两棵 <code>无向树</code>，分别有 <code>n</code> 和 <code>m</code> 个树节点。两棵树中的节点编号分别为 <code>[0, n - 1]</code> 和 <code>[0, m - 1]</code> 中的整数。</p>
+<p>给你两个二维整数 <code>edges1</code> 和 <code>edges2</code> ，长度分别为 <code>n - 1</code> 和 <code>m - 1</code> ，其中 <code>edges1[i] = [ai, bi]</code> 表示第一棵树中节点 <code>ai</code> 和 <code>bi</code> 之间有一条边，<code>edges2[i] = [ui, vi]</code> 表示第二棵树中节点 <code>ui</code> 和 <code>vi</code> 之间有一条边。同时给你一个整数 <code>k</code> 。如果节点 <code>u</code> 和节点 <code>v</code> 之间路径的边数小于等于 <code>k</code> ，那么我们称节点 <code>u</code> 是节点 <code>v</code> 的 <code>目标节点</code> 。一个节点一定是它自己的 <code>目标节点</code> 。</p>
+<p>请你返回一个长度为 <code>n</code> 的整数数组 <code>answer</code> ，<code>answer[i]</code> 表示将第一棵树中的一个节点与第二棵树中的一个节点连接一条边后，第一棵树中节点 <code>i</code> 的目标节点数目的最大值 。</p>
+<p><strong>注意：</strong>每个查询相互独立。意味着进行下一次查询之前，你需要先把刚添加的边给删掉。</p>
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p><strong>输入：</strong>edges1 = [[0, 1], [0, 2], [2, 3], [2, 4]], edges2 = [[0, 1], [0, 2], [0, 3], [2, 7], [1, 4], [4, 5], [4, 6]], k = 2<br><strong>输出：</strong>[9, 7, 9, 8, 8]<br><strong>解释：</strong></p>
+<ul>
+<li>对于 <code>i = 0</code> ，连接第一棵树中的节点 0 和第二棵树中的节点 0 。</li>
+<li>对于 <code>i = 1</code> ，连接第一棵树中的节点 1 和第二棵树中的节点 0 。</li>
+<li>对于 <code>i = 2</code> ，连接第一棵树中的节点 2 和第二棵树中的节点 4 。</li>
+<li>对于 <code>i = 3</code> ，连接第一棵树中的节点 3 和第二棵树中的节点 4 。</li>
+<li>对于 <code>i = 4</code> ，连接第一棵树中的节点 4 和第二棵树中的节点 4 。</li>
+</ul>
+</blockquote>
+<img src="/blog/2025/02/28/maximize-the-number-of-target-nodes-after-connecting-trees-i/3372-1.png" class="">
+
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p><strong>输入：</strong>edges1 = [[0, 1], [0, 2], [0, 3], [0, 4]], edges2 = [[0, 1], [1, 2], [2, 3]], k = 1<br><strong>输出：</strong>[6, 3, 3, 3, 3]<br><strong>解释：</strong>对于每个 <code>i</code> ，连接第一棵树中的节点 <code>i</code> 和第二棵树中的任意一个节点。</p>
+</blockquote>
+<img src="/blog/2025/02/28/maximize-the-number-of-target-nodes-after-connecting-trees-i/3372-2.png" class="">
+
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>2 &lt;= n, m &lt;= 1000</code></li>
+<li><code>edges1.length == n - 1</code></li>
+<li><code>edges2.length == m - 1</code></li>
+<li><code>edges1[i].length == edges2[i].length == 2</code></li>
+<li><code>edges1[i] = [ai, bi]</code></li>
+<li><code>0 &lt;= ai, bi &lt; n</code></li>
+<li><code>edges2[i] = [ui, vi]</code></li>
+<li><code>0 &lt;= ui, vi &lt; m</code></li>
+<li>输入保证 <code>edges1</code> 和 <code>edges2</code> 都表示合法的树。</li>
+<li><code>0 &lt;= k &lt;= 1000</code></li>
+</ul>
+<span id="more"></span>
+
+<h1 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h1><ol>
+<li><strong>第一棵树内部目标节点计算：</strong>对于第一棵树中的每个节点 <code>i</code>，计算在不添加新边的情况下，距离 <code>i</code> 不超过 <code>k</code> 的节点数（包括自身）。这部分节点不受添加边的影响，因为新边连接的是另一棵树。</li>
+<li><strong>第二棵树内部目标节点计算：</strong>对于第二棵树中的每个节点 <code>j</code>，计算距离 <code>j</code> 不超过 <code>k-1</code> 的节点数（包括自身）。这是因为添加边后，从第一棵树节点 <code>i</code> 到第二棵树节点 <code>v</code> 的路径为 <code>i → a → b → v</code>，其中 <code>a</code> 和 <code>b</code> 是添加边的两个端点，路径长度为 <code>d1(i, a) + 1 + d2(b, v)</code>。为最大化第二棵树部分的贡献，选择 <code>a = i</code>（即连接点选在 <code>i</code>），这样路径长度简化为 <code>1 + d2(b, v)</code>。因此，第二棵树部分最多贡献距离 <code>b</code> 不超过 <code>k-1</code> 的节点数。</li>
+<li><strong>最大化第二棵树贡献：</strong>取第二棵树中所有节点在距离 <code>k-1</code> 内节点数的最大值 <code>maxCount2</code>。</li>
+<li><strong>合并结果：</strong>对于第一棵树中的每个节点 <code>i</code>，其目标节点最大值为 <code>count1[i] + maxCount2</code>，其中 <code>count1[i]</code> 是第一棵树内部距离 <code>i</code> 不超过 <code>k</code> 的节点数。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span>[] maxTargetNodes(<span class="type">int</span>[][] edges1, <span class="type">int</span>[][] edges2, <span class="type">int</span> k) &#123;</span><br><span class="line">    <span class="comment">// 计算第一课无向树中每个节点的目标节点数</span></span><br><span class="line">    <span class="type">int</span>[] count1 = count(edges1, k);</span><br><span class="line">    <span class="comment">// 计算第一课无向树中每个节点的目标节点数</span></span><br><span class="line">    <span class="type">int</span>[] count2 = count(edges2, k - <span class="number">1</span>);</span><br><span class="line">    <span class="comment">// 计算第二课无向树中每个节点的目标节点数的最大值</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">maxCount2</span> <span class="operator">=</span> Arrays.stream(count2).max().orElse(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> edges1.length + <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span>[] result = <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        result[i] = count1[i] + maxCount2;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span>[] count(<span class="type">int</span>[][] edges, <span class="type">int</span> k) &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> edges.length + <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 构建无向树</span></span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; graph = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        graph.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span>[] edge : edges) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">u</span> <span class="operator">=</span> edge[<span class="number">0</span>], v = edge[<span class="number">1</span>];</span><br><span class="line">        graph.get(u).add(v);</span><br><span class="line">        graph.get(v).add(u);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span>[] result = <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        result[i] = dfs(i, -<span class="number">1</span>, graph, k);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">dfs</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> parent, List&lt;List&lt;Integer&gt;&gt; graph, <span class="type">int</span> k)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (k &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> v : graph.get(u)) &#123;</span><br><span class="line">        <span class="comment">// 防止回溯到父节点，避免无限递归和重复计数</span></span><br><span class="line">        <span class="keyword">if</span> (v == parent) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        count += dfs(v, u, graph, k - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li><strong>时间复杂度：</strong><code>O(n² + m²)</code>，其中 <code>n</code> 和 <code>m</code> 分别是两棵树的节点数。计算 <code>count1</code> 和 <code>count2</code> 时，对每个节点进行 BFS，每次 BFS 最坏 <code>O(n)</code> 或 <code>O(m)</code>，总时间复杂度为 <code>O(n²)</code> 和 <code>O(m²)</code>。</li>
+<li><strong>空间复杂度：</strong><code>O(n + m)</code>，用于存储树的邻接表 <code>O(n + m)</code> 和 BFS 的队列及访问标记 <code>O(n)</code> 或 <code>O(m)</code>。</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode.cn/problems/maximize-the-number-of-target-nodes-after-connecting-trees-i/description/" title="3372. 连接两棵树后最大目标节点数目 Ⅰ | 力扣（LeetCode）">3372. 连接两棵树后最大目标节点数目 Ⅰ | 力扣（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>树</tag>
+        <tag>深度优先搜索</tag>
+        <tag>LeetCode中等</tag>
+        <tag>无向树</tag>
       </tags>
   </entry>
 </search>
