@@ -5285,11 +5285,11 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
 </ul>
 <p><strong>示例 1:</strong></p>
 <blockquote>
-<p><strong>输入：</strong>s = “babad”<br><strong>输出：</strong>“bab”<br><strong>解释：</strong>“aba” 同样是符合题意的答案。</p>
+<p><strong>输入：</strong><code>s = &quot;babad&quot;</code><br><strong>输出：</strong><code>&quot;bab&quot;</code><br><strong>解释：</strong><code>&quot;aba&quot;</code> 同样是符合题意的答案。</p>
 </blockquote>
 <p><strong>示例 2:</strong></p>
 <blockquote>
-<p><strong>输入：</strong>s = “cbbd”<br><strong>输出：</strong>“bb”</p>
+<p><strong>输入：</strong><code>s = &quot;cbbd&quot;</code><br><strong>输出：</strong><code>&quot;bb&quot;</code></p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
@@ -5331,6 +5331,7 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>学习笔记</tag>
+        <tag>字符串</tag>
         <tag>动态规划</tag>
         <tag>LeetCode中等</tag>
       </tags>
@@ -5343,15 +5344,15 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
 <p><strong>说明:</strong><br><code>回文串</code> 指的是从前往后和从后往前读一样的字符串。</p>
 <p><strong>示例 1:</strong></p>
 <blockquote>
-<p><strong>输入：</strong>words = [“lc”, “cl”, “gg”]<br><strong>输出：</strong>6<br><strong>解释：</strong>一个最长的回文串为 “lc” + “gg” + “cl” = “lcggcl” ，长度为 6 。”clgglc” 是另一个可以得到的最长回文串。</p>
+<p><strong>输入：</strong><code>words = [&quot;lc&quot;, &quot;cl&quot;, &quot;gg&quot;]</code><br><strong>输出：</strong>6<br><strong>解释：</strong>一个最长的回文串为 <code>&quot;lc&quot; + &quot;gg&quot; + &quot;cl&quot; = &quot;lcggcl&quot;</code> ，长度为 6 。<code>&quot;clgglc&quot;</code> 是另一个可以得到的最长回文串。</p>
 </blockquote>
 <p><strong>示例 2:</strong></p>
 <blockquote>
-<p><strong>输入：</strong>words = [“ab”, “ty”, “yt”, “lc”, “cl”, “ab”]<br><strong>输出：</strong>8<br><strong>解释：</strong>最长回文串是 “ty” + “lc” + “cl” + “yt” = “tylcclyt” ，长度为 8 。”lcyttycl” 是另一个可以得到的最长回文串。</p>
+<p><strong>输入：</strong><code>words = [&quot;ab&quot;, &quot;ty&quot;, &quot;yt&quot;, &quot;lc&quot;, &quot;cl&quot;, &quot;ab&quot;]</code><br><strong>输出：</strong>8<br><strong>解释：</strong>最长回文串是 <code>&quot;ty&quot; + &quot;lc&quot; + &quot;cl&quot; + &quot;yt&quot; = &quot;tylcclyt&quot;</code> ，长度为 8 。<code>&quot;lcyttycl&quot;</code> 是另一个可以得到的最长回文串。</p>
 </blockquote>
 <p><strong>示例 3:</strong></p>
 <blockquote>
-<p><strong>输入：</strong>words = [“cc”, “ll”, “xx”]<br><strong>输出：</strong>2<br><strong>解释：</strong>最长回文串是 “cc” ，长度为 2 。”ll” 是另一个可以得到的最长回文串。”xx” 也是。</p>
+<p><strong>输入：</strong><code>words = [&quot;cc&quot;, &quot;ll&quot;, &quot;xx&quot;]</code><br><strong>输出：</strong>2<br><strong>解释：</strong>最长回文串是 <code>&quot;cc&quot;</code> ，长度为 2 。<code>&quot;ll&quot;</code> 是另一个可以得到的最长回文串。<code>&quot;xx&quot;</code> 也是。</p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
@@ -5399,15 +5400,15 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
 
 <p><strong>示例 1:</strong></p>
 <blockquote>
-<p><strong>输入：</strong>root = [1,2,3,4,5,6]<br><strong>输出：</strong>6</p>
+<p><strong>输入：</strong><code>root = [1,2,3,4,5,6]</code><br><strong>输出：</strong>6</p>
 </blockquote>
 <p><strong>示例 2:</strong></p>
 <blockquote>
-<p><strong>输入：</strong>root = []<br><strong>输出：</strong>0</p>
+<p><strong>输入：</strong><code>root = []</code><br><strong>输出：</strong>0</p>
 </blockquote>
 <p><strong>示例 3:</strong></p>
 <blockquote>
-<p><strong>输入：</strong>root = [1]<br><strong>输出：</strong>1</p>
+<p><strong>输入：</strong><code>root = [1]</code><br><strong>输出：</strong>1</p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
@@ -5522,15 +5523,15 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
 <p>返回整数 <code>num1 - num2</code> 。</p>
 <p><strong>示例 1:</strong></p>
 <blockquote>
-<p><strong>输入：</strong>n = 10, m = 3<br><strong>输出：</strong>19<br><strong>解释：</strong>在这个示例中：<br>范围 [1, 10] 内无法被 3 整除的整数为 [1,2,4,5,7,8,10] ，num1 = 这些整数之和 = 37 。<br>范围 [1, 10] 内能够被 3 整除的整数为 [3,6,9] ，num2 = 这些整数之和 = 18 。<br>返回 37 - 18 = 19 作为答案。</p>
+<p><strong>输入：</strong>n = 10, m = 3<br><strong>输出：</strong>19<br><strong>解释：</strong>在这个示例中：<br>范围 <code>[1, 10]</code> 内无法被 3 整除的整数为 <code>[1, 2, 4, 5, 7, 8, 10]</code> ，num1 = 这些整数之和 = 37 。<br>范围 <code>[1, 10]</code> 内能够被 3 整除的整数为 <code>[3, 6, 9]</code> ，num2 = 这些整数之和 = 18 。<br>返回 37 - 18 = 19 作为答案。</p>
 </blockquote>
 <p><strong>示例 2:</strong></p>
 <blockquote>
-<p><strong>输入：</strong>n = 5, m = 6<br><strong>输出：</strong>15<br><strong>解释：</strong>在这个示例中：<br>范围 [1, 5] 内无法被 6 整除的整数为 [1,2,3,4,5] ，num1 = 这些整数之和 =  15 。<br>范围 [1, 5] 内能够被 6 整除的整数为 [] ，num2 = 这些整数之和 = 0 。<br>返回 15 - 0 = 15 作为答案。</p>
+<p><strong>输入：</strong>n = 5, m = 6<br><strong>输出：</strong>15<br><strong>解释：</strong>在这个示例中：<br>范围 <code>[1, 5]</code> 内无法被 6 整除的整数为 <code>[1, 2, 3, 4, 5]</code> ，num1 = 这些整数之和 =  15 。<br>范围 <code>[1, 5]</code> 内能够被 6 整除的整数为 <code>[]</code> ，num2 = 这些整数之和 = 0 。<br>返回 15 - 0 = 15 作为答案。</p>
 </blockquote>
 <p><strong>示例 3:</strong></p>
 <blockquote>
-<p><strong>输入：</strong>n = 5, m = 1<br><strong>输出：</strong>-15<br><strong>解释：</strong>在这个示例中：<br>范围 [1, 5] 内无法被 1 整除的整数为 [] ，num1 = 这些整数之和 = 0 。<br>范围 [1, 5] 内能够被 1 整除的整数为 [1,2,3,4,5] ，num2 = 这些整数之和 = 15 。<br>返回 0 - 15 = -15 作为答案。</p>
+<p><strong>输入：</strong>n = 5, m = 1<br><strong>输出：</strong>-15<br><strong>解释：</strong>在这个示例中：<br>范围 <code>[1, 5]</code> 内无法被 1 整除的整数为 <code>[]</code> ，num1 = 这些整数之和 = 0 。<br>范围 <code>[1, 5]</code> 内能够被 1 整除的整数为 <code>[1, 2, 3, 4, 5]</code> ，num2 = 这些整数之和 = 15 。<br>返回 0 - 15 = -15 作为答案。</p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
@@ -5583,7 +5584,7 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
 <p><strong>注意：</strong>每个查询相互独立。意味着进行下一次查询之前，你需要先把刚添加的边给删掉。</p>
 <p><strong>示例 1:</strong></p>
 <blockquote>
-<p><strong>输入：</strong>edges1 = [[0, 1], [0, 2], [2, 3], [2, 4]], edges2 = [[0, 1], [0, 2], [0, 3], [2, 7], [1, 4], [4, 5], [4, 6]], k = 2<br><strong>输出：</strong>[9, 7, 9, 8, 8]<br><strong>解释：</strong></p>
+<p><strong>输入：</strong><code>edges1 = [[0, 1], [0, 2], [2, 3], [2, 4]], edges2 = [[0, 1], [0, 2], [0, 3], [2, 7], [1, 4], [4, 5], [4, 6]]</code>, <code>k = 2</code><br><strong>输出：</strong><code>[9, 7, 9, 8, 8]</code><br><strong>解释：</strong></p>
 <ul>
 <li>对于 <code>i = 0</code> ，连接第一棵树中的节点 0 和第二棵树中的节点 0 。</li>
 <li>对于 <code>i = 1</code> ，连接第一棵树中的节点 1 和第二棵树中的节点 0 。</li>
@@ -5596,7 +5597,7 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
 
 <p><strong>示例 2:</strong></p>
 <blockquote>
-<p><strong>输入：</strong>edges1 = [[0, 1], [0, 2], [0, 3], [0, 4]], edges2 = [[0, 1], [1, 2], [2, 3]], k = 1<br><strong>输出：</strong>[6, 3, 3, 3, 3]<br><strong>解释：</strong>对于每个 <code>i</code> ，连接第一棵树中的节点 <code>i</code> 和第二棵树中的任意一个节点。</p>
+<p><strong>输入：</strong><code>edges1 = [[0, 1], [0, 2], [0, 3], [0, 4]], edges2 = [[0, 1], [1, 2], [2, 3]]</code>, <code>k = 1</code><br><strong>输出：</strong><code>[6, 3, 3, 3, 3]</code><br><strong>解释：</strong>对于每个 <code>i</code> ，连接第一棵树中的节点 <code>i</code> 和第二棵树中的任意一个节点。</p>
 </blockquote>
 <img src="/blog/2025/02/28/maximize-the-number-of-target-nodes-after-connecting-trees-i/3372-2.png" class="">
 
@@ -5643,6 +5644,71 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>深度优先搜索</tag>
         <tag>LeetCode中等</tag>
         <tag>无向树</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>字母异位词分组</title>
+    <url>/blog/2025/05/30/group-anagrams/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个字符串数组，请你将 <code>字母异位词</code> 组合在一起。可以按任意顺序返回结果列表。</p>
+<p><code>字母异位词</code> 是由重新排列源单词的所有字母得到的一个新单词。</p>
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>strs = [&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;]</code><br><strong>输出：</strong><code>[[&quot;bat&quot;], [&quot;nat&quot;, &quot;tan&quot;], [&quot;ate&quot;, &quot;eat&quot;, &quot;tea&quot;]]</code></p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>strs = [&quot;&quot;]</code><br><strong>输出：</strong><code>[[&quot;&quot;]]</code></p>
+</blockquote>
+<p><strong>示例 3:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>strs = [&quot;a&quot;]</code><br><strong>输出：</strong><code>[[&quot;a&quot;]]</code></p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= strs.length &lt;= 104</code></li>
+<li><code>0 &lt;= strs[i].length &lt;= 100</code></li>
+<li><code>strs[i]</code> 仅包含小写字母</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="排序-哈希表"><a href="#排序-哈希表" class="headerlink" title="排序 + 哈希表"></a>排序 + 哈希表</h1><p>字母异位词指字母相同，但排列不同的字符串。所以对每个字符串排序，将排序后的字符串作为 <code>key</code>，原字符串添加到该 <code>key</code> 对应的列表中。（如 <code>&quot;eat&quot;</code> 和 <code>&quot;tea&quot;</code> 的 <code>key</code> 都为 <code>&quot;aet&quot;</code>）。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;String&gt;&gt; <span class="title function_">groupAnagrams</span><span class="params">(String[] strs)</span> &#123;</span><br><span class="line">    Map&lt;String, List&lt;String&gt;&gt; resultMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (String str : strs) &#123;</span><br><span class="line">        <span class="type">char</span>[] chars = str.toCharArray();</span><br><span class="line">        Arrays.sort(chars);</span><br><span class="line">        <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(chars);</span><br><span class="line">        <span class="keyword">if</span> (!resultMap.containsKey(key)) &#123;</span><br><span class="line">            resultMap.put(key, <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;());</span><br><span class="line">        &#125;</span><br><span class="line">        resultMap.get(key).add(str);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(resultMap.values());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li><strong>时间复杂度：</strong><code>O(nk logk)</code>，假设有 <code>n</code> 个字符串，每个字符串最大长度为 <code>k</code>。排序每个字符串的时间复杂度为<code>O(k logk)</code>，所以总时间复杂度为<code>O(nk logk)</code>。</li>
+<li><strong>空间复杂度：</strong><code>O(nk)</code>，哈希表存储所有字符串（最坏情况无重复 <code>key</code>）。</li>
+</ul>
+<h1 id="字符计数-哈希表"><a href="#字符计数-哈希表" class="headerlink" title="字符计数 + 哈希表"></a>字符计数 + 哈希表</h1><p>字母异位词指字母相同，但排列不同的字符串，所以，每个字符串里字母的数量是相等的，故可以统计每个字符串中每个字符出现的次数，然后生成一个表示字符频次的字符串作为 <code>key</code>（例如：<code>&quot;a1b2&quot;</code>），然后将原字符串添加到该 <code>key</code> 对应的列表中。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;String&gt;&gt; <span class="title function_">groupAnagrams</span><span class="params">(String[] strs)</span> &#123;</span><br><span class="line">    <span class="type">int</span>[] count = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">    Map&lt;String, List&lt;String&gt;&gt; resultMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (String str : strs) &#123;</span><br><span class="line">        Arrays.fill(count, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : str.toCharArray()) &#123;</span><br><span class="line">            <span class="comment">// 统计每个字符出现的次数</span></span><br><span class="line">            count[c - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">26</span>; i++) &#123;</span><br><span class="line">            <span class="comment">// 拼接每个字符出现的次数，作为 Map 的 key</span></span><br><span class="line">            <span class="keyword">if</span> (count[i] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                sb.append((<span class="type">char</span>) (<span class="string">&#x27;a&#x27;</span> + i));</span><br><span class="line">                sb.append(count[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> sb.toString();</span><br><span class="line">        <span class="keyword">if</span> (!resultMap.containsKey(key)) &#123;</span><br><span class="line">            resultMap.put(key, <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;());</span><br><span class="line">        &#125;</span><br><span class="line">        resultMap.get(key).add(str);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 入参：[&quot;eatt&quot;, &quot;teat&quot;, &quot;tan&quot;, &quot;atet&quot;, &quot;nat&quot;, &quot;bat&quot;]</span></span><br><span class="line">    <span class="comment">// resultMap 结果为：&#123;a1b1t1=[bat], a1n1t1=[tan, nat], a1e1t2=[eatt, teat, atet]&#125;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(resultMap.values());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li><strong>时间复杂度：</strong><code>O(nk)</code>，哈希表存储所有字符串（最坏情况无重复 key）。</li>
+<li><strong>空间复杂度：</strong><code>O(1)</code>。</li>
+</ul>
+<h1 id="关键结论"><a href="#关键结论" class="headerlink" title="关键结论"></a>关键结论</h1><ul>
+<li><strong>排序 + 哈希表：</strong>代码简洁，但排序开销随字符串变长而增大。</li>
+<li><strong>计数 + 哈希表：</strong>避免排序，通过字符频次编码更高效处理长字符串。</li>
+<li><strong>实际选择：</strong>若字符串平均长度小，选方法一；若长度大，选方法二。</li>
+</ul>
+<p>通过哈希表将字母异位词映射到相同 <code>key</code>，两种方法均能高效解决分组问题！</p>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode.cn/problems/group-anagrams/description/" title="49. 字母异位词分组 | 力扣（LeetCode）">49. 字母异位词分组 | 力扣（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>数组</tag>
+        <tag>哈希表</tag>
+        <tag>字符串</tag>
+        <tag>排序</tag>
+        <tag>LeetCode中等</tag>
       </tags>
   </entry>
 </search>
