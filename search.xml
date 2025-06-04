@@ -455,46 +455,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows 使用 cmd(命令提示符)创建文件</title>
-    <url>/blog/2016/05/09/windows-linux-new-file/</url>
-    <content><![CDATA[<hr>
-<p>最近在研究 <a href="/blog/2016/05/19/gitignore/" title=".gitignore 的使用">.gitignore</a> 的使用，于是想创建一个 <code>.gitignore</code> 文件做测试，<code>右键-&gt;新建-&gt;文本文档</code> 再输入文件名后，惊讶的发现，Windows 竟然提示： 请键入文件名！【不得不去吐槽！】。看样子 Windows 是把 gitignore 当成文件名的后缀了。没办法，只好打开 cmd(命令提示符)去创建文件了。</p>
-<span id="more"></span>
-
-<h1 id="打开-cmd"><a href="#打开-cmd" class="headerlink" title="打开 cmd"></a>打开 cmd</h1><p>一般有以下方式打开 cmd【<em>我使用的是 Windows 10 系统，某些方法可能没用</em>】：</p>
-<ul>
-<li>  在某个文件夹下按住 <code>Shift</code> 键，然后点击 <code>鼠标右键</code>，选择 <code>在此处打开命令窗口</code>（建议使用此方式，这样你就不用 cd 到指定的文件夹了）。</li>
-<li>  键盘组合键 <span class="fa fa-windows"></span> + R，然后输入 <code>cmd</code> 并确定。</li>
-<li>  键盘组合键 <span class="fa fa-windows"></span> + X，然后选择 <code>命令提示符</code>。</li>
-<li>  键盘组合键 <span class="fa fa-windows"></span> + S，呼出 Cortana，然后输入 cmd 并确认（Windows 10才支持）。</li>
-</ul>
-<h1 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo hello &gt; .abc</span><br></pre></td></tr></table></figure>
-
-<p>解释：</p>
-<ol>
-<li>“echo hello” ：输出 “hello” 到控制台。</li>
-<li>“&gt; .abc” ：输出重定向到 .abc 文件中【没有此文件就会创建】。</li>
-<li>当然你也可以使用其他的命令，比如 <code>type</code>，来输出重定向。核心思想就是把某些字符串输出重定向到指定文件里就可以了。</li>
-</ol>
-<h1 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir .abc</span><br></pre></td></tr></table></figure>
-
-<h1 id="Linux-使用-shell-创建文件"><a href="#Linux-使用-shell-创建文件" class="headerlink" title="Linux 使用 shell 创建文件"></a>Linux 使用 shell 创建文件</h1><p>顺便说一下使用 shell 创建文件吧。上面的那些命令在 shell 中都可以使用，另外说一个在 shell 中更方便的命令。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> .abc</span><br></pre></td></tr></table></figure>
-
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>写本文的目的是在 Windows 下创建类似 .abc 这样的文件没法使用 <code>右键-&gt;新建</code> 来创建文件。如果你想创建一个 abc.txt 就不要这么麻烦啦【也没人会这么做吧(●’◡’●)】</p>
-<hr>
-]]></content>
-      <categories>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>cmd</tag>
-        <tag>Linux</tag>
-        <tag>Shell</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>网站首选域</title>
     <url>/blog/2016/05/02/preferred-domain/</url>
     <content><![CDATA[<hr>
@@ -534,6 +494,46 @@
         <tag>SEO</tag>
         <tag>htaccess</tag>
         <tag>301重定向</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 使用 cmd(命令提示符)创建文件</title>
+    <url>/blog/2016/05/09/windows-linux-new-file/</url>
+    <content><![CDATA[<hr>
+<p>最近在研究 <a href="/blog/2016/05/19/gitignore/" title=".gitignore 的使用">.gitignore</a> 的使用，于是想创建一个 <code>.gitignore</code> 文件做测试，<code>右键-&gt;新建-&gt;文本文档</code> 再输入文件名后，惊讶的发现，Windows 竟然提示： 请键入文件名！【不得不去吐槽！】。看样子 Windows 是把 gitignore 当成文件名的后缀了。没办法，只好打开 cmd(命令提示符)去创建文件了。</p>
+<span id="more"></span>
+
+<h1 id="打开-cmd"><a href="#打开-cmd" class="headerlink" title="打开 cmd"></a>打开 cmd</h1><p>一般有以下方式打开 cmd【<em>我使用的是 Windows 10 系统，某些方法可能没用</em>】：</p>
+<ul>
+<li>  在某个文件夹下按住 <code>Shift</code> 键，然后点击 <code>鼠标右键</code>，选择 <code>在此处打开命令窗口</code>（建议使用此方式，这样你就不用 cd 到指定的文件夹了）。</li>
+<li>  键盘组合键 <span class="fa fa-windows"></span> + R，然后输入 <code>cmd</code> 并确定。</li>
+<li>  键盘组合键 <span class="fa fa-windows"></span> + X，然后选择 <code>命令提示符</code>。</li>
+<li>  键盘组合键 <span class="fa fa-windows"></span> + S，呼出 Cortana，然后输入 cmd 并确认（Windows 10才支持）。</li>
+</ul>
+<h1 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo hello &gt; .abc</span><br></pre></td></tr></table></figure>
+
+<p>解释：</p>
+<ol>
+<li>“echo hello” ：输出 “hello” 到控制台。</li>
+<li>“&gt; .abc” ：输出重定向到 .abc 文件中【没有此文件就会创建】。</li>
+<li>当然你也可以使用其他的命令，比如 <code>type</code>，来输出重定向。核心思想就是把某些字符串输出重定向到指定文件里就可以了。</li>
+</ol>
+<h1 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir .abc</span><br></pre></td></tr></table></figure>
+
+<h1 id="Linux-使用-shell-创建文件"><a href="#Linux-使用-shell-创建文件" class="headerlink" title="Linux 使用 shell 创建文件"></a>Linux 使用 shell 创建文件</h1><p>顺便说一下使用 shell 创建文件吧。上面的那些命令在 shell 中都可以使用，另外说一个在 shell 中更方便的命令。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> .abc</span><br></pre></td></tr></table></figure>
+
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>写本文的目的是在 Windows 下创建类似 .abc 这样的文件没法使用 <code>右键-&gt;新建</code> 来创建文件。如果你想创建一个 abc.txt 就不要这么麻烦啦【也没人会这么做吧(●’◡’●)】</p>
+<hr>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>cmd</tag>
+        <tag>Linux</tag>
+        <tag>Shell</tag>
       </tags>
   </entry>
   <entry>
@@ -902,6 +902,33 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
+    <title>稳耐风波愿始从</title>
+    <url>/blog/2016/06/09/iverson/</url>
+    <content><![CDATA[<hr>
+<p>夕阳西下。<br>我看着AI坐在斯台普斯客队替补席上，呆呆望着场内发生的一切。他看着科比在他面前超越了他领先十三年的得分，听着为24号的喝彩，再看着记分牌上一点点被拉大的分数，他只是呆坐，眼神迷茫，无动于衷，仿佛自己来自另一个世界。惨败，又是惨败，第三次惨败。哨声响起，他低着头，快步走出球员通道。我看得到他的背影看不到他的落寞。<br>怎么能低头离开斯台普斯？就在一年前他还是昂首走出去。八年前他只手遮天，梦想就断裂在这金黄的球馆，唯一一次六月的征战，旧队友，老照片，八年的风霜，未改的容颜，怎敢遗忘那些瞬间？最震耳欲聋的欢呼，让洛杉矶的轻歌曼舞画上一道休止符，晃倒泰龙卢，最骄傲的迈步，是谁再说，他踏上的是一条荆棘密布，无人可能成功的路？<br>只是，八年了，我们早已认不出那块泰龙卢摔倒的地板。<br>物是人非。<br>隔了个半个地球，有人在心痛。</p>
+<span id="more"></span>
+
+<p>隔了半个美国，也会有人难过吗？<br>流年，剪影，十年。<br>费城，1996，状元，三号，金链子，狐朋狗友，唱片，嘘声，对神的挑战，拉里布朗，训练，爱恨交错，忠诚，2001，洛杉矶，MVP，得分王……<br>时间，路途，前进的光，没有回望。<br>以为会与费城到地老天荒，只是寥寥的胜场，深深的惆怅，时光在云顶嘹亮地唱，分别的波澜轻轻地荡，刻不下的时光，注定一人去流浪。<br>再见了，我爱的费城；<br>再见了，我们爱的AI。<br>断肠人去天涯。<br>天涯远吗？不远，他在天涯，天涯怎么会远！</p>
+<p>谁道飘零不可怜，断肠人去自经年。<br>那个精灵飞翔的故事还在上演，只是不再属于瓦乔维亚球馆。只是那个夜晚，是个例外——<br>那个夜晚很美，他们的欢呼他们的笑，他们的拥抱他们记得他的好。他的亲吻他的奔跑，他微微润湿的双眼，告诉我们他同样忘不掉。<br>WELCOME BACK, AI，THANKS FOR TEN GREAT YEARS OF HEART&amp;SOUL.<br>轻轻把手放在耳边，绕场慢慢的跑，聆听。<br>还记得吗？费城的欢呼是世界上最美妙的音乐。<br>俯身，深深的亲吻。<br>WE MISS YOU,AI.<br>费城的天空，我们想你时，它落泪了。<br>风雨中，陪你走，不要相忘于江湖。<br>可，踏上回丹佛的飞机，便是陌路。<br>天咫尺，人南北。</p>
+<p>叹人生，几番离合，便成迟暮。<br>三年了，沧海桑田，人事变迁，谁会相信什么永远。<br>当他终于回到家，发现一切都变了样，是熟悉的让人陌生？还是恍如隔世陌生的让人难过？<br>曾经的一代枭雄，走到穷途末路，不甘就此推出，于是来场豪赌，一次搭上全部，输了就退出江湖。<br>感谢我爱的费城——他的退役宣言里这样说。<br>终于等到了费城的橄榄枝。<br>我们爱的AI，请回家。<br>有一种答案叫落叶归根。<br>俯身，深深的亲吻，第二次。<br>弧线不同了是吗，可那份情意此生不变。<br>谁谓我生，我思议如风，历历人生。</p>
+<p>莫回首斜阳下，诉不尽离人话。<br>当费城故事确定未完待续时，我高兴的快要疯掉，你没有去湖人，谁在乎什么总冠军？我只要你幸福。<br>有些泪水是坚硬的，它从英雄的脸上滑过，但与懦弱无关。<br>AI说，那是看到家门后的鼻酸反应。<br>多好！爱费城的AI又回到了爱AI的费城。<br>从此无关胜负，誓死守护。<br>陪君醉笑三万场，不用诉离殇。</p>
+<p>落魄江湖还载酒，一种悲凉滋味。<br>当两个费城之子相遇在费城——他出生成长的地方，他扬名立万的地方。他们早已不如十三年前那般锋芒毕露。久经沙场，看惯人世冷暖，他们，已不再年轻。<br>只是他正如日中天，他似乎已日薄西山。<br>有悬念吗？有奇迹吗？有人相信吗？<br>似乎费城倒戈喊几声MVP也是正常的。<br>只是他摇头，说不。<br>那美妙的第三节，十五分，已无需我赘述。<br>兄弟友爱之城的尊严，从来都要他来维护。<br>没有悬念，没有奇迹，剧本已写好，不会改变，我们输了，只是，我们开始相信：<br>弯弓射日，看我卷土重来。</p>
+<p>谁谓我悲，意如花信，瞳清若水。<br>我从未想过有一天还会看到阿伦艾弗森穿上那件印有SIXER的球衣——那件神圣的为曾有旁人触动过的球衣，自始至终只属于一个人的球衣。<br>我看着你在费城，看着你与费城荣辱与共，休戚相关，还你那份倔强，许你那份坚强。享受你的每一场胜利与失败——我也不清楚这样的日子还会有多久，如果费城真的是你的最后一站，我们陪你走完，直到你离开你最爱的篮球场，直到那件三号球衣在瓦乔维亚上空飘扬。</p>
+<p>任往事随风，他们自随波逐流，自始至终，稳耐风波愿始从。</p>
+<hr>
+<p>这篇文章是我女票大概在2009年【那个时候她真是青涩又可爱(/▽＼=)】写在百度空间里的，但是百度空间在15年就关闭了。然后我就要来发到自己的博客里，作为一种回忆 o(^▽^)o【<del>还是自己的网站靠谱~</del>】</p>
+<hr>
+]]></content>
+      <categories>
+        <category>艾已成诗</category>
+      </categories>
+      <tags>
+        <tag>艾弗森</tag>
+        <tag>艾已成诗</tag>
+        <tag>篮球</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用 Eclipse 根据 WSDL 生成 Java 代码</title>
     <url>/blog/2016/07/01/wsdl-to-java/</url>
     <content><![CDATA[<hr>
@@ -932,33 +959,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>WSDL</tag>
         <tag>Web Service Client</tag>
         <tag>Eclipse</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>稳耐风波愿始从</title>
-    <url>/blog/2016/06/09/iverson/</url>
-    <content><![CDATA[<hr>
-<p>夕阳西下。<br>我看着AI坐在斯台普斯客队替补席上，呆呆望着场内发生的一切。他看着科比在他面前超越了他领先十三年的得分，听着为24号的喝彩，再看着记分牌上一点点被拉大的分数，他只是呆坐，眼神迷茫，无动于衷，仿佛自己来自另一个世界。惨败，又是惨败，第三次惨败。哨声响起，他低着头，快步走出球员通道。我看得到他的背影看不到他的落寞。<br>怎么能低头离开斯台普斯？就在一年前他还是昂首走出去。八年前他只手遮天，梦想就断裂在这金黄的球馆，唯一一次六月的征战，旧队友，老照片，八年的风霜，未改的容颜，怎敢遗忘那些瞬间？最震耳欲聋的欢呼，让洛杉矶的轻歌曼舞画上一道休止符，晃倒泰龙卢，最骄傲的迈步，是谁再说，他踏上的是一条荆棘密布，无人可能成功的路？<br>只是，八年了，我们早已认不出那块泰龙卢摔倒的地板。<br>物是人非。<br>隔了个半个地球，有人在心痛。</p>
-<span id="more"></span>
-
-<p>隔了半个美国，也会有人难过吗？<br>流年，剪影，十年。<br>费城，1996，状元，三号，金链子，狐朋狗友，唱片，嘘声，对神的挑战，拉里布朗，训练，爱恨交错，忠诚，2001，洛杉矶，MVP，得分王……<br>时间，路途，前进的光，没有回望。<br>以为会与费城到地老天荒，只是寥寥的胜场，深深的惆怅，时光在云顶嘹亮地唱，分别的波澜轻轻地荡，刻不下的时光，注定一人去流浪。<br>再见了，我爱的费城；<br>再见了，我们爱的AI。<br>断肠人去天涯。<br>天涯远吗？不远，他在天涯，天涯怎么会远！</p>
-<p>谁道飘零不可怜，断肠人去自经年。<br>那个精灵飞翔的故事还在上演，只是不再属于瓦乔维亚球馆。只是那个夜晚，是个例外——<br>那个夜晚很美，他们的欢呼他们的笑，他们的拥抱他们记得他的好。他的亲吻他的奔跑，他微微润湿的双眼，告诉我们他同样忘不掉。<br>WELCOME BACK, AI，THANKS FOR TEN GREAT YEARS OF HEART&amp;SOUL.<br>轻轻把手放在耳边，绕场慢慢的跑，聆听。<br>还记得吗？费城的欢呼是世界上最美妙的音乐。<br>俯身，深深的亲吻。<br>WE MISS YOU,AI.<br>费城的天空，我们想你时，它落泪了。<br>风雨中，陪你走，不要相忘于江湖。<br>可，踏上回丹佛的飞机，便是陌路。<br>天咫尺，人南北。</p>
-<p>叹人生，几番离合，便成迟暮。<br>三年了，沧海桑田，人事变迁，谁会相信什么永远。<br>当他终于回到家，发现一切都变了样，是熟悉的让人陌生？还是恍如隔世陌生的让人难过？<br>曾经的一代枭雄，走到穷途末路，不甘就此推出，于是来场豪赌，一次搭上全部，输了就退出江湖。<br>感谢我爱的费城——他的退役宣言里这样说。<br>终于等到了费城的橄榄枝。<br>我们爱的AI，请回家。<br>有一种答案叫落叶归根。<br>俯身，深深的亲吻，第二次。<br>弧线不同了是吗，可那份情意此生不变。<br>谁谓我生，我思议如风，历历人生。</p>
-<p>莫回首斜阳下，诉不尽离人话。<br>当费城故事确定未完待续时，我高兴的快要疯掉，你没有去湖人，谁在乎什么总冠军？我只要你幸福。<br>有些泪水是坚硬的，它从英雄的脸上滑过，但与懦弱无关。<br>AI说，那是看到家门后的鼻酸反应。<br>多好！爱费城的AI又回到了爱AI的费城。<br>从此无关胜负，誓死守护。<br>陪君醉笑三万场，不用诉离殇。</p>
-<p>落魄江湖还载酒，一种悲凉滋味。<br>当两个费城之子相遇在费城——他出生成长的地方，他扬名立万的地方。他们早已不如十三年前那般锋芒毕露。久经沙场，看惯人世冷暖，他们，已不再年轻。<br>只是他正如日中天，他似乎已日薄西山。<br>有悬念吗？有奇迹吗？有人相信吗？<br>似乎费城倒戈喊几声MVP也是正常的。<br>只是他摇头，说不。<br>那美妙的第三节，十五分，已无需我赘述。<br>兄弟友爱之城的尊严，从来都要他来维护。<br>没有悬念，没有奇迹，剧本已写好，不会改变，我们输了，只是，我们开始相信：<br>弯弓射日，看我卷土重来。</p>
-<p>谁谓我悲，意如花信，瞳清若水。<br>我从未想过有一天还会看到阿伦艾弗森穿上那件印有SIXER的球衣——那件神圣的为曾有旁人触动过的球衣，自始至终只属于一个人的球衣。<br>我看着你在费城，看着你与费城荣辱与共，休戚相关，还你那份倔强，许你那份坚强。享受你的每一场胜利与失败——我也不清楚这样的日子还会有多久，如果费城真的是你的最后一站，我们陪你走完，直到你离开你最爱的篮球场，直到那件三号球衣在瓦乔维亚上空飘扬。</p>
-<p>任往事随风，他们自随波逐流，自始至终，稳耐风波愿始从。</p>
-<hr>
-<p>这篇文章是我女票大概在2009年【那个时候她真是青涩又可爱(/▽＼=)】写在百度空间里的，但是百度空间在15年就关闭了。然后我就要来发到自己的博客里，作为一种回忆 o(^▽^)o【<del>还是自己的网站靠谱~</del>】</p>
-<hr>
-]]></content>
-      <categories>
-        <category>艾已成诗</category>
-      </categories>
-      <tags>
-        <tag>艾弗森</tag>
-        <tag>艾已成诗</tag>
-        <tag>篮球</tag>
       </tags>
   </entry>
   <entry>
@@ -994,26 +994,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
-    <title>笑话人生，才刚刚开始</title>
-    <url>/blog/2016/10/20/my-life-is-just-beginning/</url>
-    <content><![CDATA[<hr>
-<p>很多人的人生都有三个重大的转折点，第一是中考，第二是高考，第三是大学毕业。我很庆幸在这三个转折点，我都选择了或者有幸得到了自己心仪的结果，虽然有自己努力的结果，但不乏有很多幸运的元素。中考高考分别都是自己在初中和高中所有考试中发挥最好的一次，也许总有那种一到关键时候就超长发挥的光环。但我坚信，努力就会有好的结果。</p>
-<span id="more"></span>
-
-<p>即将面临毕业的我也是很纠结的，在考研和工作中二选一，最后决定脚踏两条船，还好没有翻船。从9月份开始不断的投递各个公司，陆陆续续投了接近20家。不断的参加宣讲笔试面试、参加宣讲笔试面试……有成功也有失败，两个月的时光转瞬即逝，不得不说，找工作真是一件头疼的事情【其实考研更让我头疼啊！(╯‵□′)╯︵┻━┻】。</p>
-<p>…………【此处省略10000字，最后确定下来再填坑】</p>
-<p>这两个月完全是在煎熬，找工作的焦急导致心情跌落到了低谷，有一段时间甚至什么都不想干，就坐在那发呆。最后终于在收到某 Offer 后，跌落到低谷的心情瞬间上升到了天堂，一切都放松了下来，可以安心的做一些其他事情了呢~~我相信我的人生才刚刚开始，后面会有更大的挑战在等着我，加油！Fighting！【怎么中二起来了啊！而且文笔也不好啊！(╯‵□′)╯︵┻━┻另外我只想记录下这一天啊！但是又不知道说什么好啊！】</p>
-<hr>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>人生</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>找出有序数组中 3 个和为 0 的数</title>
     <url>/blog/2016/11/08/three-number/</url>
     <content><![CDATA[<p>前几天偶尔看到一道题，感觉蛮有意思的，在自己思考，外加上网查询之后，找到了一个比较完美的算法解决。问题描述如下：</p>
@@ -1041,6 +1021,26 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>LeetCode</tag>
         <tag>学习笔记</tag>
         <tag>C/C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>笑话人生，才刚刚开始</title>
+    <url>/blog/2016/10/20/my-life-is-just-beginning/</url>
+    <content><![CDATA[<hr>
+<p>很多人的人生都有三个重大的转折点，第一是中考，第二是高考，第三是大学毕业。我很庆幸在这三个转折点，我都选择了或者有幸得到了自己心仪的结果，虽然有自己努力的结果，但不乏有很多幸运的元素。中考高考分别都是自己在初中和高中所有考试中发挥最好的一次，也许总有那种一到关键时候就超长发挥的光环。但我坚信，努力就会有好的结果。</p>
+<span id="more"></span>
+
+<p>即将面临毕业的我也是很纠结的，在考研和工作中二选一，最后决定脚踏两条船，还好没有翻船。从9月份开始不断的投递各个公司，陆陆续续投了接近20家。不断的参加宣讲笔试面试、参加宣讲笔试面试……有成功也有失败，两个月的时光转瞬即逝，不得不说，找工作真是一件头疼的事情【其实考研更让我头疼啊！(╯‵□′)╯︵┻━┻】。</p>
+<p>…………【此处省略10000字，最后确定下来再填坑】</p>
+<p>这两个月完全是在煎熬，找工作的焦急导致心情跌落到了低谷，有一段时间甚至什么都不想干，就坐在那发呆。最后终于在收到某 Offer 后，跌落到低谷的心情瞬间上升到了天堂，一切都放松了下来，可以安心的做一些其他事情了呢~~我相信我的人生才刚刚开始，后面会有更大的挑战在等着我，加油！Fighting！【怎么中二起来了啊！而且文笔也不好啊！(╯‵□′)╯︵┻━┻另外我只想记录下这一天啊！但是又不知道说什么好啊！】</p>
+<hr>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>人生</tag>
       </tags>
   </entry>
   <entry>
@@ -1347,32 +1347,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
-    <title>愚人节快乐</title>
-    <url>/blog/2019/04/01/april-fools-day/</url>
-    <content><![CDATA[<hr>
-<p>事情起因是看到一个面试题，原题大概是，生成 N 个 1 到 1000 之间的随机数(N &lt;= 1000)，对于重复的数字，只取其中一个，并对结果进行从小到大排序。正好前几天了解了下 Java 的 Lambda 表达式和 Stream API，突然想起来，这可以一行代码搞定啊。于是就尝试的写了一下。【原题还是比较复杂的，我就提取了精华部分】</p>
-<span id="more"></span>
-
-<p>一行代码能搞定的事情从不会多写【为了美观我还是换行了】。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">IntStream.range(<span class="number">0</span>, <span class="number">100</span>)</span><br><span class="line">    .map(x -&gt; (<span class="type">int</span>)(Math.random() * <span class="number">1000</span> + <span class="number">1</span>))</span><br><span class="line">    .distinct()</span><br><span class="line">    .sorted()</span><br><span class="line">    .forEach(System.out::println);</span><br></pre></td></tr></table></figure>
-
-<p>自从 Java 8 增加了 Lambda 表达式和 Stream API 后，很多操作都非常的方便，可以参考我上一篇博客：</p>
-<blockquote>
-<p><a href="http://www.cylong.com/blog/2019/03/18/lambda/" title="Java 8 的 Lambda 表达式和 Stream API | 笑话人生">Java 8 的 Lambda 表达式和 Stream API | 笑话人生</a></p>
-</blockquote>
-<p><span style="background-color:#000000">其实这就是一篇愚人节凑数用的博客，顺便祝愿下女票可以找到心仪的实习，相信自己，努力终将不会白费 (^_^)</span></p>
-<hr>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>随笔</tag>
-        <tag>Lambda</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java 8 的 Lambda 表达式和 Stream API</title>
     <url>/blog/2019/03/18/lambda/</url>
     <content><![CDATA[<hr>
@@ -1467,6 +1441,32 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
+    <title>愚人节快乐</title>
+    <url>/blog/2019/04/01/april-fools-day/</url>
+    <content><![CDATA[<hr>
+<p>事情起因是看到一个面试题，原题大概是，生成 N 个 1 到 1000 之间的随机数(N &lt;= 1000)，对于重复的数字，只取其中一个，并对结果进行从小到大排序。正好前几天了解了下 Java 的 Lambda 表达式和 Stream API，突然想起来，这可以一行代码搞定啊。于是就尝试的写了一下。【原题还是比较复杂的，我就提取了精华部分】</p>
+<span id="more"></span>
+
+<p>一行代码能搞定的事情从不会多写【为了美观我还是换行了】。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">IntStream.range(<span class="number">0</span>, <span class="number">100</span>)</span><br><span class="line">    .map(x -&gt; (<span class="type">int</span>)(Math.random() * <span class="number">1000</span> + <span class="number">1</span>))</span><br><span class="line">    .distinct()</span><br><span class="line">    .sorted()</span><br><span class="line">    .forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+
+<p>自从 Java 8 增加了 Lambda 表达式和 Stream API 后，很多操作都非常的方便，可以参考我上一篇博客：</p>
+<blockquote>
+<p><a href="http://www.cylong.com/blog/2019/03/18/lambda/" title="Java 8 的 Lambda 表达式和 Stream API | 笑话人生">Java 8 的 Lambda 表达式和 Stream API | 笑话人生</a></p>
+</blockquote>
+<p><span style="background-color:#000000">其实这就是一篇愚人节凑数用的博客，顺便祝愿下女票可以找到心仪的实习，相信自己，努力终将不会白费 (^_^)</span></p>
+<hr>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>随笔</tag>
+        <tag>Lambda</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>浅谈 HashMap</title>
     <url>/blog/2019/09/10/hashmap/</url>
     <content><![CDATA[<hr>
@@ -1542,6 +1542,39 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>链表</tag>
         <tag>线程安全</tag>
         <tag>面试总结</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>两数之和</title>
+    <url>/blog/2019/11/06/two-sum/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。<br>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</p>
+<p><strong>示例:</strong></p>
+<blockquote>
+<p>给定 nums = [2, 7, 11, 15], target = 9<br>因为 nums[0] + nums[1] = 2 + 7 = 9<br>所以返回 [0, 1]</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>使用哈希表将会使问题特别简单，首先，我们将使用一次遍历将数组中的元素加入到Map中，key是当前元素的值，value是当前元素的索引。接下来，我们进行第二次遍历，第二次遍历我们将查找当前元素的目标元素（target−nums[i]）是否在Map中，如果在，即找到目标值，返回两个元素的索引。注意一点的是，目标元素不能是当前元素！</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">    <span class="keyword">if</span> (nums == <span class="literal">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">complement</span> <span class="operator">=</span> target - nums[i];</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(complement) &amp;&amp; map.get(complement) != i) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;i, map.get(complement)&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实际上，我们把上面的两步合成一步，只用一次遍历即可完成，当遍历到第i个值后，我们把此元素的需要的目标值保存到Map中，后续遍历，找到目标的值，即完成遍历。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">    HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;(nums.length);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(nums[i])) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;map.get(nums[i]), i&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        map.put(target - nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;-<span class="number">1</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/two-sum" title="两数之和 | 力扣（LeetCode）">两数之和 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/two-sum/solution/liang-shu-zhi-he-by-leetcode-2/" title="两数之和 | 题解（LeetCode）">两数之和 | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>数组</tag>
+        <tag>哈希表</tag>
       </tags>
   </entry>
   <entry>
@@ -1661,39 +1694,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>Java</tag>
         <tag>JStack</tag>
         <tag>调试工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>两数之和</title>
-    <url>/blog/2019/11/06/two-sum/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。<br>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</p>
-<p><strong>示例:</strong></p>
-<blockquote>
-<p>给定 nums = [2, 7, 11, 15], target = 9<br>因为 nums[0] + nums[1] = 2 + 7 = 9<br>所以返回 [0, 1]</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>使用哈希表将会使问题特别简单，首先，我们将使用一次遍历将数组中的元素加入到Map中，key是当前元素的值，value是当前元素的索引。接下来，我们进行第二次遍历，第二次遍历我们将查找当前元素的目标元素（target−nums[i]）是否在Map中，如果在，即找到目标值，返回两个元素的索引。注意一点的是，目标元素不能是当前元素！</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">    <span class="keyword">if</span> (nums == <span class="literal">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">complement</span> <span class="operator">=</span> target - nums[i];</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(complement) &amp;&amp; map.get(complement) != i) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;i, map.get(complement)&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>实际上，我们把上面的两步合成一步，只用一次遍历即可完成，当遍历到第i个值后，我们把此元素的需要的目标值保存到Map中，后续遍历，找到目标的值，即完成遍历。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">    HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;(nums.length);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(nums[i])) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;map.get(nums[i]), i&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        map.put(target - nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;-<span class="number">1</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/two-sum" title="两数之和 | 力扣（LeetCode）">两数之和 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/two-sum/solution/liang-shu-zhi-he-by-leetcode-2/" title="两数之和 | 题解（LeetCode）">两数之和 | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>数组</tag>
-        <tag>哈希表</tag>
       </tags>
   </entry>
   <entry>
@@ -2227,6 +2227,53 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
+    <title>三数之和</title>
+    <url>/blog/2020/05/30/three-sum/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c，使得 a + b + c = 0？请你找出所有满足条件且不重复的三元组。</p>
+<p>注意：答案中不可以包含重复的三元组。</p>
+<p><strong>示例:</strong></p>
+<blockquote>
+<p>给定数组 nums = [-1, 0, 1, 2, -1, -4]，<br>满足要求的三元组集合为：<br>[[-1, 0, 1], [-1, -1, 2]]</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p> 之前做过<a href="https://leetcode-cn.com/problems/two-sum" title="两数之和 | 力扣（LeetCode）">两数之和</a>这道题，所以第一想法就是转化成两次两数之和解决，思路就是先求 b + c 两数之和 z，再求 a + z 两数之和等于0，也就是相反数。</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">threeSum</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; result = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="comment">// 求出两数之和的组合，和为-nums[i]</span></span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; twoSumList = twoSum(nums, i + <span class="number">1</span>, -nums[i]);</span><br><span class="line">        <span class="keyword">for</span> (List&lt;Integer&gt; list : twoSumList) &#123;</span><br><span class="line">            list.add(nums[i]);</span><br><span class="line">            Collections.sort(list);</span><br><span class="line">            result.add(list);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result.stream().distinct().collect(Collectors.toList());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">twoSum</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> index, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; result = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> index; i &lt; nums.length; i++) &#123;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> index; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">complement</span> <span class="operator">=</span> target - nums[i];</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(complement) &amp;&amp; map.get(complement) != i) &#123;</span><br><span class="line">            List&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">            list.add(nums[i]);</span><br><span class="line">            list.add(nums[map.get(complement)]);</span><br><span class="line">            result.add(list);</span><br><span class="line">            <span class="comment">// 去重，防止重复执行超时</span></span><br><span class="line">            map.remove(nums[i]);</span><br><span class="line">            map.remove(complement);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 其实这道题有更好的解法，受之前两数之和的影响，两数之和的那道题，是没法给数组排序的，因为输出是数组下标，而这道题，输出是三元组，可以进行数组排序的，以下是来自LeetCode的题解：</p>
+<ul>
+<li><p>首先对数组进行排序，排序后固定一个数 nums[i]，再使用左右指针指向 nums[i] 后面的两端，数字分别为 nums[L] 和 nums[R]，计算三个数的和 sum 判断是否满足为 0，满足则添加进结果集。</p>
+</li>
+<li><p>如果 nums[i]大于 0，则三数之和必然无法等于 0，结束循环。</p>
+</li>
+<li><p>如果 nums[i] == nums[i−1]，则说明该数字重复，会导致结果重复，所以应该跳过。</p>
+</li>
+<li><p>当 sum == 0 时，nums[L] == nums[L+1] 则会导致结果重复，应该跳过，L++。</p>
+</li>
+<li><p>当 sum == 0 时，nums[R] == nums[R−1] 则会导致结果重复，应该跳过，R−−。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">threeSum</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">   List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">   <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> nums.length;</span><br><span class="line">   <span class="keyword">if</span> (nums == <span class="literal">null</span> || len &lt; <span class="number">3</span>)</span><br><span class="line">       <span class="keyword">return</span> res;</span><br><span class="line">   Arrays.sort(nums);</span><br><span class="line">   <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">       <span class="keyword">if</span> (nums[i] &gt; <span class="number">0</span>)</span><br><span class="line">           <span class="keyword">break</span>; <span class="comment">// 如果当前数字大于0，则三数之和一定大于0，所以结束循环</span></span><br><span class="line">       <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i - <span class="number">1</span>])</span><br><span class="line">           <span class="keyword">continue</span>; <span class="comment">// 去重</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">L</span> <span class="operator">=</span> i + <span class="number">1</span>;</span><br><span class="line">       <span class="type">int</span> <span class="variable">R</span> <span class="operator">=</span> len - <span class="number">1</span>;</span><br><span class="line">       <span class="keyword">while</span> (L &lt; R) &#123;</span><br><span class="line">           <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> nums[i] + nums[L] + nums[R];</span><br><span class="line">           <span class="keyword">if</span> (sum == <span class="number">0</span>) &#123;</span><br><span class="line">               res.add(Arrays.asList(nums[i], nums[L], nums[R]));</span><br><span class="line">               <span class="keyword">while</span> (L &lt; R &amp;&amp; nums[L] == nums[L + <span class="number">1</span>])</span><br><span class="line">                   L++; <span class="comment">// 去重</span></span><br><span class="line">               <span class="keyword">while</span> (L &lt; R &amp;&amp; nums[R] == nums[R - <span class="number">1</span>])</span><br><span class="line">                   R--; <span class="comment">// 去重</span></span><br><span class="line">               L++;</span><br><span class="line">               R--;</span><br><span class="line">           &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sum &lt; <span class="number">0</span>)</span><br><span class="line">               L++;</span><br><span class="line">           <span class="keyword">else</span> <span class="keyword">if</span> (sum &gt; <span class="number">0</span>)</span><br><span class="line">               R--;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/3sum" title="三数之和 | 力扣（LeetCode）">三数之和 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/3sum/solution/hua-jie-suan-fa-15-san-shu-zhi-he-by-guanpengchn/" title="三数之和 | 题解（LeetCode）">三数之和 | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>数组</tag>
+        <tag>双指针</tag>
+        <tag>排序</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>打家劫舍</title>
     <url>/blog/2020/05/29/house-robber/</url>
     <content><![CDATA[<hr>
@@ -2287,53 +2334,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>记忆化</tag>
         <tag>动态规划</tag>
         <tag>滚动数组</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>三数之和</title>
-    <url>/blog/2020/05/30/three-sum/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c，使得 a + b + c = 0？请你找出所有满足条件且不重复的三元组。</p>
-<p>注意：答案中不可以包含重复的三元组。</p>
-<p><strong>示例:</strong></p>
-<blockquote>
-<p>给定数组 nums = [-1, 0, 1, 2, -1, -4]，<br>满足要求的三元组集合为：<br>[[-1, 0, 1], [-1, -1, 2]]</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p> 之前做过<a href="https://leetcode-cn.com/problems/two-sum" title="两数之和 | 力扣（LeetCode）">两数之和</a>这道题，所以第一想法就是转化成两次两数之和解决，思路就是先求 b + c 两数之和 z，再求 a + z 两数之和等于0，也就是相反数。</p>
- <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">threeSum</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; result = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="comment">// 求出两数之和的组合，和为-nums[i]</span></span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; twoSumList = twoSum(nums, i + <span class="number">1</span>, -nums[i]);</span><br><span class="line">        <span class="keyword">for</span> (List&lt;Integer&gt; list : twoSumList) &#123;</span><br><span class="line">            list.add(nums[i]);</span><br><span class="line">            Collections.sort(list);</span><br><span class="line">            result.add(list);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result.stream().distinct().collect(Collectors.toList());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">twoSum</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> index, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; result = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> index; i &lt; nums.length; i++) &#123;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> index; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">complement</span> <span class="operator">=</span> target - nums[i];</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(complement) &amp;&amp; map.get(complement) != i) &#123;</span><br><span class="line">            List&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">            list.add(nums[i]);</span><br><span class="line">            list.add(nums[map.get(complement)]);</span><br><span class="line">            result.add(list);</span><br><span class="line">            <span class="comment">// 去重，防止重复执行超时</span></span><br><span class="line">            map.remove(nums[i]);</span><br><span class="line">            map.remove(complement);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p> 其实这道题有更好的解法，受之前两数之和的影响，两数之和的那道题，是没法给数组排序的，因为输出是数组下标，而这道题，输出是三元组，可以进行数组排序的，以下是来自LeetCode的题解：</p>
-<ul>
-<li><p>首先对数组进行排序，排序后固定一个数 nums[i]，再使用左右指针指向 nums[i] 后面的两端，数字分别为 nums[L] 和 nums[R]，计算三个数的和 sum 判断是否满足为 0，满足则添加进结果集。</p>
-</li>
-<li><p>如果 nums[i]大于 0，则三数之和必然无法等于 0，结束循环。</p>
-</li>
-<li><p>如果 nums[i] == nums[i−1]，则说明该数字重复，会导致结果重复，所以应该跳过。</p>
-</li>
-<li><p>当 sum == 0 时，nums[L] == nums[L+1] 则会导致结果重复，应该跳过，L++。</p>
-</li>
-<li><p>当 sum == 0 时，nums[R] == nums[R−1] 则会导致结果重复，应该跳过，R−−。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">threeSum</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">   List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">   <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> nums.length;</span><br><span class="line">   <span class="keyword">if</span> (nums == <span class="literal">null</span> || len &lt; <span class="number">3</span>)</span><br><span class="line">       <span class="keyword">return</span> res;</span><br><span class="line">   Arrays.sort(nums);</span><br><span class="line">   <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">       <span class="keyword">if</span> (nums[i] &gt; <span class="number">0</span>)</span><br><span class="line">           <span class="keyword">break</span>; <span class="comment">// 如果当前数字大于0，则三数之和一定大于0，所以结束循环</span></span><br><span class="line">       <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i - <span class="number">1</span>])</span><br><span class="line">           <span class="keyword">continue</span>; <span class="comment">// 去重</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">L</span> <span class="operator">=</span> i + <span class="number">1</span>;</span><br><span class="line">       <span class="type">int</span> <span class="variable">R</span> <span class="operator">=</span> len - <span class="number">1</span>;</span><br><span class="line">       <span class="keyword">while</span> (L &lt; R) &#123;</span><br><span class="line">           <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> nums[i] + nums[L] + nums[R];</span><br><span class="line">           <span class="keyword">if</span> (sum == <span class="number">0</span>) &#123;</span><br><span class="line">               res.add(Arrays.asList(nums[i], nums[L], nums[R]));</span><br><span class="line">               <span class="keyword">while</span> (L &lt; R &amp;&amp; nums[L] == nums[L + <span class="number">1</span>])</span><br><span class="line">                   L++; <span class="comment">// 去重</span></span><br><span class="line">               <span class="keyword">while</span> (L &lt; R &amp;&amp; nums[R] == nums[R - <span class="number">1</span>])</span><br><span class="line">                   R--; <span class="comment">// 去重</span></span><br><span class="line">               L++;</span><br><span class="line">               R--;</span><br><span class="line">           &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sum &lt; <span class="number">0</span>)</span><br><span class="line">               L++;</span><br><span class="line">           <span class="keyword">else</span> <span class="keyword">if</span> (sum &gt; <span class="number">0</span>)</span><br><span class="line">               R--;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/3sum" title="三数之和 | 力扣（LeetCode）">三数之和 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/3sum/solution/hua-jie-suan-fa-15-san-shu-zhi-he-by-guanpengchn/" title="三数之和 | 题解（LeetCode）">三数之和 | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>数组</tag>
-        <tag>双指针</tag>
-        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -2801,6 +2801,39 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
+    <title>路径总和 II</title>
+    <url>/blog/2020/07/07/path-sum-ii/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个二叉树和一个目标和，找到所有从根节点到叶子节点路径总和等于给定目标和的路径。<br><strong>说明: 叶子节点是指没有子节点的节点。</strong></p>
+<p><strong>示例:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定如下二叉树，以及目标和 sum = 22，</span><br><span class="line">      5</span><br><span class="line">     / \</span><br><span class="line">    4   8</span><br><span class="line">   /   / \</span><br><span class="line">  11  13  4</span><br><span class="line"> /  \    / \</span><br><span class="line">7    2  5   1</span><br><span class="line">返回:</span><br><span class="line">[</span><br><span class="line">   [5,4,11,2],</span><br><span class="line">   [5,8,4,5]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>做此题之前，可以先做一道简单版的<a href="https://leetcode-cn.com/problems/path-sum/" title="路径总和 | 力扣（LeetCode）">路径总和</a>，简单版的只要遍历全部节点，遇到满足条件的路径返回 true 即可，而此题不仅要遍历全部节点，还要记录满足条件的路径。此题是典型的回溯算法，思路就是，先声明一个<code>LinkedList&lt;Integer&gt; path</code>保存路径，<code>List&lt;List&lt;Integer&gt;&gt; ans</code>保存所有路径，我们每遍历到一个节点，就将这个节点的值保存在 path 中，当判断到子节点，如果此节点的值满足 sum 等于 val，则将 path 加入到 ans 中，否则继续进行递归遍历左右子树。注意入参 root 可能为空，另外递归的结束条件也包含节点为空。当递归回溯的时候，我们就删除最后加入到 path 中的节点。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;List&lt;Integer&gt;&gt; ans = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">LinkedList&lt;Integer&gt; path = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">pathSum</span><span class="params">(TreeNode root, <span class="type">int</span> sum)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    path.add(root.val);</span><br><span class="line">    <span class="keyword">if</span> (root.left == <span class="literal">null</span> &amp;&amp; root.right == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (sum == root.val) &#123;</span><br><span class="line">            <span class="comment">// 此处new LinkedList&lt;&gt;(path)新建一个链表</span></span><br><span class="line">            <span class="comment">// 因为如果直接add(path)，ans中的路径和path是相同的引用，后面操作path后，ans中的路径也将一起被修改。</span></span><br><span class="line">            ans.add(<span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;(path));</span><br><span class="line">            <span class="comment">// 此处无需return，因为后续pathSum递归的时候root.left和root.right都为空，满足递归结束条件。</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    pathSum(root.left, sum - root.val);</span><br><span class="line">    pathSum(root.right, sum - root.val);</span><br><span class="line">    <span class="comment">// 递归回溯的时候删除最后一个节点，此处使用LinkedList提升效率</span></span><br><span class="line">    path.removeLast();</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TreeNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    TreeNode left;</span><br><span class="line">    TreeNode right;</span><br><span class="line"></span><br><span class="line">    TreeNode(<span class="type">int</span> x) &#123;</span><br><span class="line">        val = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/path-sum-ii/" title="路径总和 II | 力扣（LeetCode）">路径总和 II | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/path-sum-ii/solution/" title="路径总和 II | 题解（LeetCode）">路径总和 II | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>递归</tag>
+        <tag>回溯算法</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
+        <tag>深度优先搜索</tag>
+        <tag>中序遍历</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>路经总和</title>
     <url>/blog/2020/07/06/path-sum/</url>
     <content><![CDATA[<hr>
@@ -2830,39 +2863,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>LeetCode</tag>
         <tag>学习笔记</tag>
         <tag>递归</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
-        <tag>深度优先搜索</tag>
-        <tag>中序遍历</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>路径总和 II</title>
-    <url>/blog/2020/07/07/path-sum-ii/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个二叉树和一个目标和，找到所有从根节点到叶子节点路径总和等于给定目标和的路径。<br><strong>说明: 叶子节点是指没有子节点的节点。</strong></p>
-<p><strong>示例:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定如下二叉树，以及目标和 sum = 22，</span><br><span class="line">      5</span><br><span class="line">     / \</span><br><span class="line">    4   8</span><br><span class="line">   /   / \</span><br><span class="line">  11  13  4</span><br><span class="line"> /  \    / \</span><br><span class="line">7    2  5   1</span><br><span class="line">返回:</span><br><span class="line">[</span><br><span class="line">   [5,4,11,2],</span><br><span class="line">   [5,8,4,5]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>做此题之前，可以先做一道简单版的<a href="https://leetcode-cn.com/problems/path-sum/" title="路径总和 | 力扣（LeetCode）">路径总和</a>，简单版的只要遍历全部节点，遇到满足条件的路径返回 true 即可，而此题不仅要遍历全部节点，还要记录满足条件的路径。此题是典型的回溯算法，思路就是，先声明一个<code>LinkedList&lt;Integer&gt; path</code>保存路径，<code>List&lt;List&lt;Integer&gt;&gt; ans</code>保存所有路径，我们每遍历到一个节点，就将这个节点的值保存在 path 中，当判断到子节点，如果此节点的值满足 sum 等于 val，则将 path 加入到 ans 中，否则继续进行递归遍历左右子树。注意入参 root 可能为空，另外递归的结束条件也包含节点为空。当递归回溯的时候，我们就删除最后加入到 path 中的节点。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;List&lt;Integer&gt;&gt; ans = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">LinkedList&lt;Integer&gt; path = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">pathSum</span><span class="params">(TreeNode root, <span class="type">int</span> sum)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    path.add(root.val);</span><br><span class="line">    <span class="keyword">if</span> (root.left == <span class="literal">null</span> &amp;&amp; root.right == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (sum == root.val) &#123;</span><br><span class="line">            <span class="comment">// 此处new LinkedList&lt;&gt;(path)新建一个链表</span></span><br><span class="line">            <span class="comment">// 因为如果直接add(path)，ans中的路径和path是相同的引用，后面操作path后，ans中的路径也将一起被修改。</span></span><br><span class="line">            ans.add(<span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;(path));</span><br><span class="line">            <span class="comment">// 此处无需return，因为后续pathSum递归的时候root.left和root.right都为空，满足递归结束条件。</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    pathSum(root.left, sum - root.val);</span><br><span class="line">    pathSum(root.right, sum - root.val);</span><br><span class="line">    <span class="comment">// 递归回溯的时候删除最后一个节点，此处使用LinkedList提升效率</span></span><br><span class="line">    path.removeLast();</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TreeNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    TreeNode left;</span><br><span class="line">    TreeNode right;</span><br><span class="line"></span><br><span class="line">    TreeNode(<span class="type">int</span> x) &#123;</span><br><span class="line">        val = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/path-sum-ii/" title="路径总和 II | 力扣（LeetCode）">路径总和 II | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/path-sum-ii/solution/" title="路径总和 II | 题解（LeetCode）">路径总和 II | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>递归</tag>
-        <tag>回溯算法</tag>
         <tag>树</tag>
         <tag>二叉树</tag>
         <tag>深度优先搜索</tag>
@@ -3242,79 +3242,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
-    <title>除数博弈</title>
-    <url>/blog/2020/07/24/divisor-game/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>爱丽丝和鲍勃一起玩游戏，他们轮流行动。爱丽丝先手开局。最初，黑板上有一个数字 N 。在每个玩家的回合，玩家需要执行以下操作：</p>
-<ul>
-<li>选出任一 x，满足 0 &lt; x &lt; N 且 N % x == 0 。</li>
-<li>用 N - x 替换黑板上的数字 N 。</li>
-</ul>
-<p>如果玩家无法执行这些操作，就会输掉游戏。只有在爱丽丝在游戏中取得胜利时才返回 True，否则返回 False。假设两个玩家都以最佳状态参与游戏。</p>
-<p><strong>示例 1：</strong></p>
-<blockquote>
-<p>输入：2<br>输出：true<br>解释：爱丽丝选择 1，鲍勃无法进行操作。</p>
-</blockquote>
-<p><strong>示例 2：</strong></p>
-<blockquote>
-<p>输入：3<br>输出：false<br>解释：爱丽丝选择 1，鲍勃也选择 1，然后爱丽丝无法进行操作。</p>
-</blockquote>
-<p><strong>提示：</strong></p>
-<ul>
-<li>1 &lt;= N &lt;= 1000</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="归纳法"><a href="#归纳法" class="headerlink" title="归纳法"></a>归纳法</h1><p>博弈类的问题常常让我们摸不着头脑。当我们没有解题思路的时候，不妨试着写几项试试：</p>
-<ul>
-<li>N = 1 的时候，区间 (0, 1) 中没有整数是 n 的因数，所以此时 Alice 败。</li>
-<li>N = 2 的时候，Alice 只能拿 1，N 变成 1，Bob 无法继续操作，故 Alice 胜。</li>
-<li>N = 3 的时候，Alice 只能拿 1，N 变成 2，根据 N = 2 的结论，我们知道此时 Bob 会获胜，Alice 败。</li>
-<li>N = 4 的时候，Alice 能拿 1 或 2，如果 Alice 拿 1，根据 N = 3 的结论，Bob 会失败，Alice 会获胜。</li>
-<li>N = 5 的时候，Alice 只能拿 1，根据 N = 4 的结论，Alice 会失败。</li>
-<li>……</li>
-</ul>
-<p>写到这里，也许你有了一些猜想。没关系，请大胆地猜想，在这种情况下大胆地猜想是 AC 的第一步。也许你会发现这样一个现象：N 为奇数的时候 Alice（先手）必败，N 为偶数的时候 Alice 必胜。 这个猜想是否正确呢？下面我们来想办法证明它。</p>
-<p><strong>证明</strong></p>
-<ol>
-<li>N = 1 和 N = 2 时结论成立。</li>
-<li>N &gt; 2 时，假设 N ≤ k 时该结论成立，则 N = k + 1 时：</li>
-</ol>
-<ul>
-<li>如果 k 为偶数，则 k + 1 为奇数，x 是 k + 1 的因数，只可能是奇数，而奇数减去奇数等于偶数，且 k + 1 - x ≤ k，故轮到 Bob 的时候都是偶数。而根据我们的猜想假设 N ≤ k 的时候偶数的时候先手必胜，故此时无论 Alice 拿走什么，Bob 都会处于必胜态，所以 Alice 处于必败态。</li>
-<li>如果 k 为奇数，则 k + 1 为偶数，x 可以是奇数也可以是偶数，若 Alice 减去一个奇数，那么 k + 1 - x 是一个小于等于 k 的奇数，此时 Bob 占有它，处于必败态，则 Alice 处于必胜态。</li>
-</ul>
-<p>综上所述，这个猜想是正确的。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">bool <span class="title function_">divisorGame</span><span class="params">(<span class="type">int</span> N)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> N % <span class="number">2</span> == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：Ο(1)。</li>
-<li>空间复杂度：O(1)。</li>
-</ul>
-<h1 id="递推"><a href="#递推" class="headerlink" title="递推"></a>递推</h1><p>上述方法中，我们写出了前面几项的答案，在这个过程中我们发现，Alice 处在 N = k 的状态时，他（她）做一步操作，必然使得 Bob 处于 N = m (m &lt; k) 的状态。因此我们只要看是否存在一个 m 是必败的状态，那么 Alice 直接执行对应的操作让当前的数字变成 m，Alice 就必胜了，如果没有任何一个是必败的状态的话，说明 Alice 无论怎么进行操作，最后都会让 Bob 处于必胜的状态，此时 Alice 是必败的。</p>
-<p>结合以上我们定义 f[i] 表示当前数字 i 的时候先手是处于必胜态还是必败态，true 表示先手必胜，false 表示先手必败，从前往后递推，根据我们上文的分析，枚举 i 在 (0, i) 中 i 的因数 j，看是否存在 f[i-j] 为必败态即可。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">divisorGame</span><span class="params">(<span class="type">int</span> N)</span> &#123;</span><br><span class="line">    <span class="type">boolean</span>[] dp = <span class="keyword">new</span> <span class="title class_">boolean</span>[N + <span class="number">2</span>];</span><br><span class="line">    dp[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">    dp[<span class="number">2</span>] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">3</span>; i &lt;= N; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>; j &lt; i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((i % j == <span class="number">0</span>) &amp;&amp; !dp[i - j]) &#123;</span><br><span class="line">                dp[i] = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[N];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：Ο(n²)，递推的时候一共有 n 个状态要计算，每个状态需要 O(n) 的时间枚举因数。</li>
-<li>空间复杂度：O(n)，我们需要 O(n) 的空间存储递推数组 f 的值。</li>
-</ul>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/divisor-game/" title="除数博弈 | 力扣（LeetCode）">除数博弈 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/divisor-game/solution/chu-shu-bo-yi-by-leetcode-solution/" title="除数博弈 | 题解（LeetCode）">除数博弈 | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>数学归纳法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>判断子序列</title>
     <url>/blog/2020/07/27/is-subsequence/</url>
     <content><![CDATA[<hr>
@@ -3452,6 +3379,79 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>二叉树</tag>
         <tag>深度优先搜索</tag>
         <tag>广度优先搜索</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>除数博弈</title>
+    <url>/blog/2020/07/24/divisor-game/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>爱丽丝和鲍勃一起玩游戏，他们轮流行动。爱丽丝先手开局。最初，黑板上有一个数字 N 。在每个玩家的回合，玩家需要执行以下操作：</p>
+<ul>
+<li>选出任一 x，满足 0 &lt; x &lt; N 且 N % x == 0 。</li>
+<li>用 N - x 替换黑板上的数字 N 。</li>
+</ul>
+<p>如果玩家无法执行这些操作，就会输掉游戏。只有在爱丽丝在游戏中取得胜利时才返回 True，否则返回 False。假设两个玩家都以最佳状态参与游戏。</p>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p>输入：2<br>输出：true<br>解释：爱丽丝选择 1，鲍勃无法进行操作。</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p>输入：3<br>输出：false<br>解释：爱丽丝选择 1，鲍勃也选择 1，然后爱丽丝无法进行操作。</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li>1 &lt;= N &lt;= 1000</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="归纳法"><a href="#归纳法" class="headerlink" title="归纳法"></a>归纳法</h1><p>博弈类的问题常常让我们摸不着头脑。当我们没有解题思路的时候，不妨试着写几项试试：</p>
+<ul>
+<li>N = 1 的时候，区间 (0, 1) 中没有整数是 n 的因数，所以此时 Alice 败。</li>
+<li>N = 2 的时候，Alice 只能拿 1，N 变成 1，Bob 无法继续操作，故 Alice 胜。</li>
+<li>N = 3 的时候，Alice 只能拿 1，N 变成 2，根据 N = 2 的结论，我们知道此时 Bob 会获胜，Alice 败。</li>
+<li>N = 4 的时候，Alice 能拿 1 或 2，如果 Alice 拿 1，根据 N = 3 的结论，Bob 会失败，Alice 会获胜。</li>
+<li>N = 5 的时候，Alice 只能拿 1，根据 N = 4 的结论，Alice 会失败。</li>
+<li>……</li>
+</ul>
+<p>写到这里，也许你有了一些猜想。没关系，请大胆地猜想，在这种情况下大胆地猜想是 AC 的第一步。也许你会发现这样一个现象：N 为奇数的时候 Alice（先手）必败，N 为偶数的时候 Alice 必胜。 这个猜想是否正确呢？下面我们来想办法证明它。</p>
+<p><strong>证明</strong></p>
+<ol>
+<li>N = 1 和 N = 2 时结论成立。</li>
+<li>N &gt; 2 时，假设 N ≤ k 时该结论成立，则 N = k + 1 时：</li>
+</ol>
+<ul>
+<li>如果 k 为偶数，则 k + 1 为奇数，x 是 k + 1 的因数，只可能是奇数，而奇数减去奇数等于偶数，且 k + 1 - x ≤ k，故轮到 Bob 的时候都是偶数。而根据我们的猜想假设 N ≤ k 的时候偶数的时候先手必胜，故此时无论 Alice 拿走什么，Bob 都会处于必胜态，所以 Alice 处于必败态。</li>
+<li>如果 k 为奇数，则 k + 1 为偶数，x 可以是奇数也可以是偶数，若 Alice 减去一个奇数，那么 k + 1 - x 是一个小于等于 k 的奇数，此时 Bob 占有它，处于必败态，则 Alice 处于必胜态。</li>
+</ul>
+<p>综上所述，这个猜想是正确的。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">bool <span class="title function_">divisorGame</span><span class="params">(<span class="type">int</span> N)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> N % <span class="number">2</span> == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：Ο(1)。</li>
+<li>空间复杂度：O(1)。</li>
+</ul>
+<h1 id="递推"><a href="#递推" class="headerlink" title="递推"></a>递推</h1><p>上述方法中，我们写出了前面几项的答案，在这个过程中我们发现，Alice 处在 N = k 的状态时，他（她）做一步操作，必然使得 Bob 处于 N = m (m &lt; k) 的状态。因此我们只要看是否存在一个 m 是必败的状态，那么 Alice 直接执行对应的操作让当前的数字变成 m，Alice 就必胜了，如果没有任何一个是必败的状态的话，说明 Alice 无论怎么进行操作，最后都会让 Bob 处于必胜的状态，此时 Alice 是必败的。</p>
+<p>结合以上我们定义 f[i] 表示当前数字 i 的时候先手是处于必胜态还是必败态，true 表示先手必胜，false 表示先手必败，从前往后递推，根据我们上文的分析，枚举 i 在 (0, i) 中 i 的因数 j，看是否存在 f[i-j] 为必败态即可。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">divisorGame</span><span class="params">(<span class="type">int</span> N)</span> &#123;</span><br><span class="line">    <span class="type">boolean</span>[] dp = <span class="keyword">new</span> <span class="title class_">boolean</span>[N + <span class="number">2</span>];</span><br><span class="line">    dp[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">    dp[<span class="number">2</span>] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">3</span>; i &lt;= N; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>; j &lt; i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((i % j == <span class="number">0</span>) &amp;&amp; !dp[i - j]) &#123;</span><br><span class="line">                dp[i] = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[N];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：Ο(n²)，递推的时候一共有 n 个状态要计算，每个状态需要 O(n) 的时间枚举因数。</li>
+<li>空间复杂度：O(n)，我们需要 O(n) 的空间存储递推数组 f 的值。</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/divisor-game/" title="除数博弈 | 力扣（LeetCode）">除数博弈 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/divisor-game/solution/chu-shu-bo-yi-by-leetcode-solution/" title="除数博弈 | 题解（LeetCode）">除数博弈 | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>数学归纳法</tag>
       </tags>
   </entry>
   <entry>
@@ -3827,6 +3827,46 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
+    <title>被围绕的区域</title>
+    <url>/blog/2020/08/11/surrounded-regions/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个二维的矩阵，包含 ‘X’ 和 ‘O’（字母 O）。找到所有被 ‘X’ 围绕的区域，并将这些区域里所有的 ‘O’ 用 ‘X’ 填充。</p>
+<p><strong>示例:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line"></span><br><span class="line">X X X X</span><br><span class="line">X O O X</span><br><span class="line">X X O X</span><br><span class="line">X O X X</span><br><span class="line"></span><br><span class="line">运行你的函数后，矩阵变为：</span><br><span class="line"></span><br><span class="line">X X X X</span><br><span class="line">X X X X</span><br><span class="line">X X X X</span><br><span class="line">X O X X</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>解释:</strong> 被围绕的区间不会存在于边界上，换句话说，任何边界上的 ‘O’ 都不会被填充为 ‘X’。 任何不在边界上，或不与边界上的 ‘O’ 相连的 ‘O’ 最终都会被填充为 ‘X’。如果两个元素在水平或垂直方向相邻，则称它们是“相连”的。</p>
+<span id="more"></span>
+
+<h1 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h1><p>遇到矩阵的问题，无非就是广度优先搜索或者深度优先搜索，我个人比较喜欢使用递归方式的深度优先搜索，也是比较容易理解的一种方式。本题要求将所有被字母 ‘X’ 包围的字母 ‘O’ 都变为字母 ‘X’ ，但很难判断哪些 ‘O’ 是被包围的，哪些 ‘O’ 不是被包围的。但是我们注意题目中的一句话：任何边界上的 ‘O’ 都不会被填充为 ‘X’。与边界上的 ‘O’ 相连的 ‘O’ 也都不会被填充为 ‘X’。根据这个思路，我们只要遍历矩阵的边界上的 ‘O’，以边界上的所有 ‘O’ 此为起点，找到所有与边界相连的字母 ‘O’，最后我们遍历整个矩阵，针对每个字母，如果这个字母被标记了，那么就保持原来的 ‘O’，如果没有被标记，那么就置为 ‘X’ 即可。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">solve</span><span class="params">(<span class="type">char</span>[][] board)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (board == <span class="literal">null</span> || board.length == <span class="number">0</span> || board[<span class="number">0</span>].length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">rowLen</span> <span class="operator">=</span> board.length;</span><br><span class="line">    <span class="type">int</span> <span class="variable">colLen</span> <span class="operator">=</span> board[<span class="number">0</span>].length;</span><br><span class="line">    <span class="type">int</span>[][] direct = <span class="keyword">new</span> <span class="title class_">int</span>[][]&#123;&#123;<span class="number">0</span>, <span class="number">1</span>&#125;, &#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">0</span>, -<span class="number">1</span>&#125;, &#123;-<span class="number">1</span>, <span class="number">0</span>&#125;&#125;;</span><br><span class="line">    <span class="type">int</span> <span class="variable">directIndex</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">row</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">col</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">boolean</span>[][] visited = <span class="keyword">new</span> <span class="title class_">boolean</span>[rowLen][colLen];</span><br><span class="line">    <span class="comment">// 顺时针遍历矩阵的边界</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt;= ((rowLen + colLen) &lt;&lt; <span class="number">1</span>) - <span class="number">4</span>; i++) &#123;</span><br><span class="line">        updateBoard(board, row, col, visited);</span><br><span class="line">        <span class="type">int</span> <span class="variable">nextRow</span> <span class="operator">=</span> row + direct[directIndex][<span class="number">0</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">nextCol</span> <span class="operator">=</span> col + direct[directIndex][<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (nextRow &lt; <span class="number">0</span> || nextRow &gt;= rowLen || nextCol &lt; <span class="number">0</span> || nextCol &gt;= colLen) &#123;</span><br><span class="line">            directIndex = (directIndex + <span class="number">1</span>) % <span class="number">4</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        row += direct[directIndex][<span class="number">0</span>];</span><br><span class="line">        col += direct[directIndex][<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 针对每个字母，如果这个字母被标记了，那么就保持原来的 &#x27;O&#x27;，如果没有被标记，那么就置为 &#x27;X&#x27;。</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; rowLen; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; colLen; j++) &#123;</span><br><span class="line">            board[i][j] = visited[i][j] ? <span class="string">&#x27;O&#x27;</span> : <span class="string">&#x27;X&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">updateBoard</span><span class="params">(<span class="type">char</span>[][] board, <span class="type">int</span> x, <span class="type">int</span> y, <span class="type">boolean</span>[][] visited)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (x &lt; <span class="number">0</span> || y &lt; <span class="number">0</span> || x &gt;= board.length || y &gt;= board[<span class="number">0</span>].length || visited[x][y] || board[x][y] == <span class="string">&#x27;X&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    visited[x][y] = <span class="literal">true</span>;</span><br><span class="line">    updateBoard(board, x + <span class="number">1</span>, y, visited);</span><br><span class="line">    updateBoard(board, x, y + <span class="number">1</span>, visited);</span><br><span class="line">    updateBoard(board, x - <span class="number">1</span>, y, visited);</span><br><span class="line">    updateBoard(board, x, y - <span class="number">1</span>, visited);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里使用了 <code>visited[x][y]</code> 表示是否被标记，其实可以遍历到 ‘O’ 的时候，将此位置的字符改成任何其他字符，比如 ‘#’，之后遍历整个矩阵的时候，我们将其还原为 ‘O’ 即可，这样就不用使用额外的空间来标记了。另外遍历矩阵的边界，我使用的是从 <code>board[0][0]</code> 开始顺时针遍历矩阵的边界，其实不用这么麻烦，只要分别遍历矩阵的第一行，最后一行，第一列，最后一列即可，我这样做主要是为了复习下之前的一道题：</p>
+<blockquote>
+<p><a href="/blog/2020/06/05/shun-shi-zhen-da-yin-ju-zhen-lcof/" title="顺时针打印矩阵 | 笑话人生">顺时针打印矩阵 | 笑话人生</a></p>
+</blockquote>
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：O(n × m)，其中 n 和 m 分别为矩阵的行数和列数。深度优先搜索过程中，每一个点至多只会被标记一次。</li>
+<li>空间复杂度：O(n × m)，其中 n 和 m 分别为矩阵的行数和列数。主要为深度优先搜索的栈的开销。</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/surrounded-regions/" title="被围绕的区域 | 力扣（LeetCode）">被围绕的区域 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/surrounded-regions/solution/bei-wei-rao-de-qu-yu-by-leetcode-solution/" title="被围绕的区域 | 题解（LeetCode）">被围绕的区域 | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>递归</tag>
+        <tag>回溯算法</tag>
+        <tag>矩阵</tag>
+        <tag>深度优先搜索</tag>
+        <tag>广度优先搜索</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo 博客和 NexT 主题版本升级</title>
     <url>/blog/2020/08/10/update-hexo-next/</url>
     <content><![CDATA[<hr>
@@ -3895,46 +3935,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       <tags>
         <tag>Hexo</tag>
         <tag>Next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>被围绕的区域</title>
-    <url>/blog/2020/08/11/surrounded-regions/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个二维的矩阵，包含 ‘X’ 和 ‘O’（字母 O）。找到所有被 ‘X’ 围绕的区域，并将这些区域里所有的 ‘O’ 用 ‘X’ 填充。</p>
-<p><strong>示例:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line"></span><br><span class="line">X X X X</span><br><span class="line">X O O X</span><br><span class="line">X X O X</span><br><span class="line">X O X X</span><br><span class="line"></span><br><span class="line">运行你的函数后，矩阵变为：</span><br><span class="line"></span><br><span class="line">X X X X</span><br><span class="line">X X X X</span><br><span class="line">X X X X</span><br><span class="line">X O X X</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>解释:</strong> 被围绕的区间不会存在于边界上，换句话说，任何边界上的 ‘O’ 都不会被填充为 ‘X’。 任何不在边界上，或不与边界上的 ‘O’ 相连的 ‘O’ 最终都会被填充为 ‘X’。如果两个元素在水平或垂直方向相邻，则称它们是“相连”的。</p>
-<span id="more"></span>
-
-<h1 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h1><p>遇到矩阵的问题，无非就是广度优先搜索或者深度优先搜索，我个人比较喜欢使用递归方式的深度优先搜索，也是比较容易理解的一种方式。本题要求将所有被字母 ‘X’ 包围的字母 ‘O’ 都变为字母 ‘X’ ，但很难判断哪些 ‘O’ 是被包围的，哪些 ‘O’ 不是被包围的。但是我们注意题目中的一句话：任何边界上的 ‘O’ 都不会被填充为 ‘X’。与边界上的 ‘O’ 相连的 ‘O’ 也都不会被填充为 ‘X’。根据这个思路，我们只要遍历矩阵的边界上的 ‘O’，以边界上的所有 ‘O’ 此为起点，找到所有与边界相连的字母 ‘O’，最后我们遍历整个矩阵，针对每个字母，如果这个字母被标记了，那么就保持原来的 ‘O’，如果没有被标记，那么就置为 ‘X’ 即可。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">solve</span><span class="params">(<span class="type">char</span>[][] board)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (board == <span class="literal">null</span> || board.length == <span class="number">0</span> || board[<span class="number">0</span>].length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">rowLen</span> <span class="operator">=</span> board.length;</span><br><span class="line">    <span class="type">int</span> <span class="variable">colLen</span> <span class="operator">=</span> board[<span class="number">0</span>].length;</span><br><span class="line">    <span class="type">int</span>[][] direct = <span class="keyword">new</span> <span class="title class_">int</span>[][]&#123;&#123;<span class="number">0</span>, <span class="number">1</span>&#125;, &#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">0</span>, -<span class="number">1</span>&#125;, &#123;-<span class="number">1</span>, <span class="number">0</span>&#125;&#125;;</span><br><span class="line">    <span class="type">int</span> <span class="variable">directIndex</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">row</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">col</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">boolean</span>[][] visited = <span class="keyword">new</span> <span class="title class_">boolean</span>[rowLen][colLen];</span><br><span class="line">    <span class="comment">// 顺时针遍历矩阵的边界</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt;= ((rowLen + colLen) &lt;&lt; <span class="number">1</span>) - <span class="number">4</span>; i++) &#123;</span><br><span class="line">        updateBoard(board, row, col, visited);</span><br><span class="line">        <span class="type">int</span> <span class="variable">nextRow</span> <span class="operator">=</span> row + direct[directIndex][<span class="number">0</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">nextCol</span> <span class="operator">=</span> col + direct[directIndex][<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (nextRow &lt; <span class="number">0</span> || nextRow &gt;= rowLen || nextCol &lt; <span class="number">0</span> || nextCol &gt;= colLen) &#123;</span><br><span class="line">            directIndex = (directIndex + <span class="number">1</span>) % <span class="number">4</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        row += direct[directIndex][<span class="number">0</span>];</span><br><span class="line">        col += direct[directIndex][<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 针对每个字母，如果这个字母被标记了，那么就保持原来的 &#x27;O&#x27;，如果没有被标记，那么就置为 &#x27;X&#x27;。</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; rowLen; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; colLen; j++) &#123;</span><br><span class="line">            board[i][j] = visited[i][j] ? <span class="string">&#x27;O&#x27;</span> : <span class="string">&#x27;X&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">updateBoard</span><span class="params">(<span class="type">char</span>[][] board, <span class="type">int</span> x, <span class="type">int</span> y, <span class="type">boolean</span>[][] visited)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (x &lt; <span class="number">0</span> || y &lt; <span class="number">0</span> || x &gt;= board.length || y &gt;= board[<span class="number">0</span>].length || visited[x][y] || board[x][y] == <span class="string">&#x27;X&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    visited[x][y] = <span class="literal">true</span>;</span><br><span class="line">    updateBoard(board, x + <span class="number">1</span>, y, visited);</span><br><span class="line">    updateBoard(board, x, y + <span class="number">1</span>, visited);</span><br><span class="line">    updateBoard(board, x - <span class="number">1</span>, y, visited);</span><br><span class="line">    updateBoard(board, x, y - <span class="number">1</span>, visited);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这里使用了 <code>visited[x][y]</code> 表示是否被标记，其实可以遍历到 ‘O’ 的时候，将此位置的字符改成任何其他字符，比如 ‘#’，之后遍历整个矩阵的时候，我们将其还原为 ‘O’ 即可，这样就不用使用额外的空间来标记了。另外遍历矩阵的边界，我使用的是从 <code>board[0][0]</code> 开始顺时针遍历矩阵的边界，其实不用这么麻烦，只要分别遍历矩阵的第一行，最后一行，第一列，最后一列即可，我这样做主要是为了复习下之前的一道题：</p>
-<blockquote>
-<p><a href="/blog/2020/06/05/shun-shi-zhen-da-yin-ju-zhen-lcof/" title="顺时针打印矩阵 | 笑话人生">顺时针打印矩阵 | 笑话人生</a></p>
-</blockquote>
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(n × m)，其中 n 和 m 分别为矩阵的行数和列数。深度优先搜索过程中，每一个点至多只会被标记一次。</li>
-<li>空间复杂度：O(n × m)，其中 n 和 m 分别为矩阵的行数和列数。主要为深度优先搜索的栈的开销。</li>
-</ul>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/surrounded-regions/" title="被围绕的区域 | 力扣（LeetCode）">被围绕的区域 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/surrounded-regions/solution/bei-wei-rao-de-qu-yu-by-leetcode-solution/" title="被围绕的区域 | 题解（LeetCode）">被围绕的区域 | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>递归</tag>
-        <tag>回溯算法</tag>
-        <tag>矩阵</tag>
-        <tag>深度优先搜索</tag>
-        <tag>广度优先搜索</tag>
       </tags>
   </entry>
   <entry>
@@ -4046,6 +4046,49 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>数组</tag>
         <tag>指针</tag>
         <tag>双指针</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>平衡二叉树</title>
+    <url>/blog/2020/08/17/balanced-binary-tree/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个二叉树，判断它是否是高度平衡的二叉树。本题中，一棵高度平衡二叉树定义为：一个二叉树每个节点的左右两个子树的高度差的绝对值不超过1。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定二叉树 [3, 9, 20, null, null, 15, 7]</span><br><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line">    /  \</span><br><span class="line">   15   7</span><br><span class="line">返回 true 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定二叉树 [1, 2, 2, 3, 3, null, null, 4, 4]</span><br><span class="line">       1</span><br><span class="line">      / \</span><br><span class="line">     2   2</span><br><span class="line">    / \</span><br><span class="line">   3   3</span><br><span class="line">  / \</span><br><span class="line"> 4   4</span><br><span class="line">返回 false 。</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>根据题意一个二叉树每个节点的左右两个子树的高度差的绝对值不超过1。那么我们可以递归的判断一棵树的左右子树，判断是否是平衡二叉树。对于当前遍历到的节点，先递归地判断其左右子树是否平衡，再判断以当前节点为根的子树是否平衡。如果一棵子树是平衡的，则返回其高度（高度一定是非负整数），否则返回 -1。如果存在一棵子树不平衡，则整个二叉树一定不平衡。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isBalanced</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> height(root) != -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">height</span><span class="params">(TreeNode node)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">leftHeight</span> <span class="operator">=</span> height(node.left);</span><br><span class="line">    <span class="type">int</span> <span class="variable">rightHeight</span> <span class="operator">=</span> height(node.right);</span><br><span class="line">    <span class="keyword">if</span> (leftHeight == -<span class="number">1</span> || rightHeight == -<span class="number">1</span> || Math.abs(leftHeight - rightHeight) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Math.max(leftHeight, rightHeight) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对于上述代码，我们还可以简单优化下，如果左子树不是平衡的，那么也就不需要再递归的求右子树是否平衡了。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isBalanced</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> height(root) != -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">height</span><span class="params">(TreeNode node)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> leftHeight;</span><br><span class="line">    <span class="type">int</span> rightHeight;</span><br><span class="line">    <span class="keyword">if</span> ((leftHeight = height(node.left)) == -<span class="number">1</span></span><br><span class="line">            || (rightHeight = height(node.right)) == -<span class="number">1</span></span><br><span class="line">            || Math.abs(leftHeight - rightHeight) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Math.max(leftHeight, rightHeight) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>另外也可以先看一道简单的求树的高度的题：<a href="/blog/2020/07/28/maximum-depth-of-binary-tree/">二叉树的最大深度 | 笑话人生</a></p>
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li>时间复杂度：O(n)，其中 n 是二叉树中的节点个数。使用自底向上的递归，每个节点的计算高度和判断是否平衡都只需要处理一次，最坏情况下需要遍历二叉树中的所有节点，因此时间复杂度是 O(n)。</li>
+<li>空间复杂度：O(n)，其中 n 是二叉树中的节点个数。空间复杂度主要取决于递归调用的层数，递归调用的层数不会超过 n。</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode-cn.com/problems/balanced-binary-tree/" title="平衡二叉树 | 力扣（LeetCode）">平衡二叉树 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/balanced-binary-tree/solution/ping-heng-er-cha-shu-by-leetcode-solution/" title="平衡二叉树 | 题解（LeetCode）">平衡二叉树 | 题解（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>递归</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
+        <tag>深度优先搜索</tag>
+        <tag>平衡二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -4497,49 +4540,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>深度优先搜索</tag>
         <tag>广度优先搜索</tag>
         <tag>图</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>平衡二叉树</title>
-    <url>/blog/2020/08/17/balanced-binary-tree/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个二叉树，判断它是否是高度平衡的二叉树。本题中，一棵高度平衡二叉树定义为：一个二叉树每个节点的左右两个子树的高度差的绝对值不超过1。</p>
-<p><strong>示例 1:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定二叉树 [3, 9, 20, null, null, 15, 7]</span><br><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line">    /  \</span><br><span class="line">   15   7</span><br><span class="line">返回 true 。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定二叉树 [1, 2, 2, 3, 3, null, null, 4, 4]</span><br><span class="line">       1</span><br><span class="line">      / \</span><br><span class="line">     2   2</span><br><span class="line">    / \</span><br><span class="line">   3   3</span><br><span class="line">  / \</span><br><span class="line"> 4   4</span><br><span class="line">返回 false 。</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>根据题意一个二叉树每个节点的左右两个子树的高度差的绝对值不超过1。那么我们可以递归的判断一棵树的左右子树，判断是否是平衡二叉树。对于当前遍历到的节点，先递归地判断其左右子树是否平衡，再判断以当前节点为根的子树是否平衡。如果一棵子树是平衡的，则返回其高度（高度一定是非负整数），否则返回 -1。如果存在一棵子树不平衡，则整个二叉树一定不平衡。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isBalanced</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> height(root) != -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">height</span><span class="params">(TreeNode node)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">leftHeight</span> <span class="operator">=</span> height(node.left);</span><br><span class="line">    <span class="type">int</span> <span class="variable">rightHeight</span> <span class="operator">=</span> height(node.right);</span><br><span class="line">    <span class="keyword">if</span> (leftHeight == -<span class="number">1</span> || rightHeight == -<span class="number">1</span> || Math.abs(leftHeight - rightHeight) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Math.max(leftHeight, rightHeight) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>对于上述代码，我们还可以简单优化下，如果左子树不是平衡的，那么也就不需要再递归的求右子树是否平衡了。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isBalanced</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> height(root) != -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">height</span><span class="params">(TreeNode node)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> leftHeight;</span><br><span class="line">    <span class="type">int</span> rightHeight;</span><br><span class="line">    <span class="keyword">if</span> ((leftHeight = height(node.left)) == -<span class="number">1</span></span><br><span class="line">            || (rightHeight = height(node.right)) == -<span class="number">1</span></span><br><span class="line">            || Math.abs(leftHeight - rightHeight) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Math.max(leftHeight, rightHeight) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>另外也可以先看一道简单的求树的高度的题：<a href="/blog/2020/07/28/maximum-depth-of-binary-tree/">二叉树的最大深度 | 笑话人生</a></p>
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li>时间复杂度：O(n)，其中 n 是二叉树中的节点个数。使用自底向上的递归，每个节点的计算高度和判断是否平衡都只需要处理一次，最坏情况下需要遍历二叉树中的所有节点，因此时间复杂度是 O(n)。</li>
-<li>空间复杂度：O(n)，其中 n 是二叉树中的节点个数。空间复杂度主要取决于递归调用的层数，递归调用的层数不会超过 n。</li>
-</ul>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode-cn.com/problems/balanced-binary-tree/" title="平衡二叉树 | 力扣（LeetCode）">平衡二叉树 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/balanced-binary-tree/solution/ping-heng-er-cha-shu-by-leetcode-solution/" title="平衡二叉树 | 题解（LeetCode）">平衡二叉树 | 题解（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>递归</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
-        <tag>深度优先搜索</tag>
-        <tag>平衡二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -5274,123 +5274,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
-    <title>最长回文子串</title>
-    <url>/blog/2025/05/24/longest-palindromic-substring/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个字符串 <code>s</code>，找到 <code>s</code> 中最长的 <code>回文子串</code>。</p>
-<p><strong>说明:</strong></p>
-<ul>
-<li>如果字符串向前和向后读都相同，则它满足回文性。</li>
-<li>子字符串是字符串中连续的非空字符序列。</li>
-</ul>
-<p><strong>示例 1:</strong></p>
-<blockquote>
-<p><strong>输入：</strong><code>s = &quot;babad&quot;</code><br><strong>输出：</strong><code>&quot;bab&quot;</code><br><strong>解释：</strong><code>&quot;aba&quot;</code> 同样是符合题意的答案。</p>
-</blockquote>
-<p><strong>示例 2:</strong></p>
-<blockquote>
-<p><strong>输入：</strong><code>s = &quot;cbbd&quot;</code><br><strong>输出：</strong><code>&quot;bb&quot;</code></p>
-</blockquote>
-<p><strong>提示:</strong></p>
-<ul>
-<li><code>1 &lt;= s.length &lt;= 1000</code></li>
-<li><code>s</code> 仅由数字和英文字母组成</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="暴力法（不推荐）"><a href="#暴力法（不推荐）" class="headerlink" title="暴力法（不推荐）"></a>暴力法（不推荐）</h1><p>枚举所有子串，检查是否为回文，记录最长的一个。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">longestPalindrome</span><span class="params">(String s)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (s == <span class="literal">null</span> || s.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">maxLen</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i; j &lt; s.length(); j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (longestPalindrome(s, i, j) &amp;&amp; (j - i + <span class="number">1</span> &gt; maxLen)) &#123;</span><br><span class="line">                maxLen = j - i + <span class="number">1</span>;</span><br><span class="line">                start = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s.substring(start, start + maxLen);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">longestPalindrome</span><span class="params">(String s, <span class="type">int</span> start, <span class="type">int</span> end)</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (start &lt; end) &#123;</span><br><span class="line">        <span class="keyword">if</span> (s.charAt(start++) != s.charAt(end--)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li><strong>时间复杂度：</strong><code>O(n³)</code>，共有 <code>O(n²)</code> 个子串（两层循环：<code>i</code> 从 <code>0</code> 到 <code>n-1</code>，<code>j</code> 从 <code>i</code> 到 <code>n-1</code>）。每个子串检查是否为回文需要 <code>O(n)</code> 时间（如长度为 <code>k</code> 的子串需比较 <code>k/2</code> 次）。<br>总时间 = <code>O(n²) × O(n) = O(n³)</code>。</li>
-<li><strong>空间复杂度：</strong><code>O(n)</code>，仅需常数空间存储临时变量（如 <code>maxLen</code>, <code>start</code>）。</li>
-</ul>
-<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>利用二维数组 <code>dp[i][j]</code> 记录子串 <code>s[i...j]</code> 是否为回文，逐步扩展长度。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">longestPalindrome</span><span class="params">(String s)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (s == <span class="literal">null</span> || s.length() &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> s.length();</span><br><span class="line">    <span class="type">boolean</span>[][] dp = <span class="keyword">new</span> <span class="title class_">boolean</span>[len][len];</span><br><span class="line">    <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">maxLen</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 长度为1的子串全都是回文串</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        dp[i][i] = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断长度为2的子串是否是回文串</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (s.charAt(i) == s.charAt(i + <span class="number">1</span>)) &#123;</span><br><span class="line">            dp[i][i + <span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">            start = i;</span><br><span class="line">            maxLen = <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断长度为3及更长的子串是否是回文串</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">l</span> <span class="operator">=</span> <span class="number">3</span>; l &lt;= len; l++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len - l + <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + l - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (s.charAt(i) == s.charAt(j) &amp;&amp; dp[i + <span class="number">1</span>][j - <span class="number">1</span>]) &#123;</span><br><span class="line">                dp[i][j] = <span class="literal">true</span>;</span><br><span class="line">                start = i;</span><br><span class="line">                maxLen = l;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> s.substring(start, start + maxLen);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li><strong>时间复杂度：</strong><code>O(n²)</code>，外层循环遍历子串长度 <code>l</code>（从 <code>3</code> 到 <code>n</code>），内层循环遍历起始点 <code>i</code>，总时间 = <code>O(n²)</code>。</li>
-<li><strong>空间复杂度：</strong><code>O(n²)</code>，需一个二维数组 <code>dp[n][n]</code> 存储所有子串的状态。</li>
-</ul>
-<h1 id="中心扩展法"><a href="#中心扩展法" class="headerlink" title="中心扩展法"></a>中心扩展法</h1><p>以每个字符或每两个字符为中心，向两侧扩展寻找最长回文。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">longestPalindrome1</span><span class="params">(String s)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (s == <span class="literal">null</span> || s.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">        <span class="comment">// 奇数长度</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">len1</span> <span class="operator">=</span> expand(s, i, i);</span><br><span class="line">        <span class="comment">// 偶数长度</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">len2</span> <span class="operator">=</span> expand(s, i, i + <span class="number">1</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> Math.max(len1, len2);</span><br><span class="line">        <span class="keyword">if</span> (len &gt; end - start) &#123;</span><br><span class="line">            start = i - (len - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">            end = i + len / <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s.substring(start, end + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="type">int</span> <span class="title function_">expand</span><span class="params">(String s, <span class="type">int</span> left, <span class="type">int</span> right)</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (left &gt;= <span class="number">0</span> &amp;&amp; right &lt; s.length() &amp;&amp; s.charAt(left) == s.charAt(right)) &#123;</span><br><span class="line">        left--;</span><br><span class="line">        right++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> right - left - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析-2"><a href="#复杂度分析-2" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li><strong>时间复杂度：</strong><code>O(n²)</code>，共有 <code>2n-1</code> 个中心（每个字符作为奇中心，每两个字符之间作为偶中心），每个中心最多扩展 <code>O(n)</code> 次（如全相同字符时，扩展到边界）。<br>总时间 = <code>O(2n) × O(n) = O(n²)</code>。</li>
-<li><strong>空间复杂度：</strong><code>O(1)</code>，仅需常数空间记录扩展的左右指针和最长回文的起止点。</li>
-</ul>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode.cn/problems/longest-palindromic-substring/" title="5. 最长回文子串 | 力扣（LeetCode）">5. 最长回文子串 | 力扣（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>字符串</tag>
-        <tag>动态规划</tag>
-        <tag>LeetCode中等</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>连接两字母单词得到的最长回文串</title>
-    <url>/blog/2025/05/25/longest-palindrome-by-concatenating-two-letter-words/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个字符串数组 <code>words</code> 。<code>words</code> 中每个元素都是一个包含两个小写英文字母的单词。请你从 <code>words</code> 中选择一些元素并按任意顺序连接它们，并得到一个尽可能长的回文串 。每个元素至多只能使用一次。请你返回你能得到的最长回文串的长度 。如果没办法得到任何一个回文串，请你返回 <code>0</code> 。</p>
-<p><strong>说明:</strong><br><code>回文串</code> 指的是从前往后和从后往前读一样的字符串。</p>
-<p><strong>示例 1:</strong></p>
-<blockquote>
-<p><strong>输入：</strong><code>words = [&quot;lc&quot;, &quot;cl&quot;, &quot;gg&quot;]</code><br><strong>输出：</strong>6<br><strong>解释：</strong>一个最长的回文串为 <code>&quot;lc&quot; + &quot;gg&quot; + &quot;cl&quot; = &quot;lcggcl&quot;</code> ，长度为 6 。<code>&quot;clgglc&quot;</code> 是另一个可以得到的最长回文串。</p>
-</blockquote>
-<p><strong>示例 2:</strong></p>
-<blockquote>
-<p><strong>输入：</strong><code>words = [&quot;ab&quot;, &quot;ty&quot;, &quot;yt&quot;, &quot;lc&quot;, &quot;cl&quot;, &quot;ab&quot;]</code><br><strong>输出：</strong>8<br><strong>解释：</strong>最长回文串是 <code>&quot;ty&quot; + &quot;lc&quot; + &quot;cl&quot; + &quot;yt&quot; = &quot;tylcclyt&quot;</code> ，长度为 8 。<code>&quot;lcyttycl&quot;</code> 是另一个可以得到的最长回文串。</p>
-</blockquote>
-<p><strong>示例 3:</strong></p>
-<blockquote>
-<p><strong>输入：</strong><code>words = [&quot;cc&quot;, &quot;ll&quot;, &quot;xx&quot;]</code><br><strong>输出：</strong>2<br><strong>解释：</strong>最长回文串是 <code>&quot;cc&quot;</code> ，长度为 2 。<code>&quot;ll&quot;</code> 是另一个可以得到的最长回文串。<code>&quot;xx&quot;</code> 也是。</p>
-</blockquote>
-<p><strong>提示:</strong></p>
-<ul>
-<li><code>1 &lt;= words.length &lt;= 10^5</code></li>
-<li><code>words[i].length == 2</code></li>
-<li><code>words[i]</code> 仅包含小写英文字母。</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h1><ol>
-<li>统计单词出现次数：使用哈希表记录每个单词的出现次数。</li>
-<li>处理互为反转的单词对：对于每个单词，检查其反转是否存在。若存在，取两者出现次数的较小值，每对贡献 <code>4</code> 个字符（每个单词长度为 <code>2</code> ）。</li>
-<li>处理对称单词：对于两个字符相同的单词（如 <code>&quot;aa&quot;</code>），可以成对使用（贡献 <code>4</code> 个字符），若有剩余且未使用中间点，可单独作为中间对称点（贡献 <code>2</code> 个字符）。</li>
-<li>避免重复处理：使用集合记录已处理的单词，确保每对单词只处理一次。</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">longestPalindrome</span><span class="params">(String[] words)</span> &#123;</span><br><span class="line">    <span class="comment">// 记录最长回文长度</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">maxLen</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 标记是否已使用中间对称点</span></span><br><span class="line">    <span class="type">boolean</span> <span class="variable">center</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">// 记录已处理的单词</span></span><br><span class="line">    List&lt;String&gt; processed = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    <span class="comment">// 使用 HashMap 统计每个单词的出现次数</span></span><br><span class="line">    Map&lt;String, Integer&gt; wordCount = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="comment">// 记录所有 word 的次数</span></span><br><span class="line">    Arrays.stream(words).forEach(word -&gt; wordCount.put(word, wordCount.getOrDefault(word, <span class="number">0</span>) + <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (String word : wordCount.keySet()) &#123;</span><br><span class="line">        <span class="keyword">if</span> (processed.contains(word)) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> wordCount.get(word);</span><br><span class="line">        <span class="type">String</span> <span class="variable">reversed</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>(word).reverse().toString();</span><br><span class="line">        <span class="comment">// 若单词字符相同（如&quot;aa&quot;），计算可成对使用的次数，剩余次数作为中间对称点。</span></span><br><span class="line">        <span class="keyword">if</span> (word.equals(reversed)) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">pairs</span> <span class="operator">=</span> count / <span class="number">2</span>;</span><br><span class="line">            maxLen += pairs * <span class="number">4</span>;</span><br><span class="line">            <span class="keyword">if</span> (!center &amp;&amp; count % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">                maxLen += <span class="number">2</span>;</span><br><span class="line">                center = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            processed.add(word);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 找到反转单词，取较小次数计算贡献，避免重复处理。</span></span><br><span class="line">            <span class="keyword">if</span> (wordCount.containsKey(reversed)) &#123;</span><br><span class="line">                <span class="type">int</span> <span class="variable">reversedCount</span> <span class="operator">=</span> wordCount.get(reversed);</span><br><span class="line">                <span class="type">int</span> <span class="variable">pairs</span> <span class="operator">=</span> Math.min(count, reversedCount);</span><br><span class="line">                maxLen += pairs * <span class="number">4</span>;</span><br><span class="line">                processed.add(word);</span><br><span class="line">                processed.add(reversed);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxLen;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li><strong>时间复杂度：</strong><code>O(n)</code>，遍历 <code>words</code> 数组并构建哈希表 <code>wordCount</code>，时间复杂度为 <code>O(n)</code>，遍历哈希表的键集合，假设不同的单词数量为 <code>m</code>，每个单词的处理包括生成反转字符串、哈希表查询等操作。由于每个单词长度为 <code>2</code>，生成反转字符串和哈希表操作均为 <code>O(1)</code>，总时间复杂度为 <code>O(m)</code>。最坏情况下，所有单词均不同（即 <code>m = n</code>），时间复杂度为 <code>O(n)</code>。其中 <code>n</code> 是数组长度。</li>
-<li><strong>空间复杂度：</strong><code>O(n)</code>，<code>wordCount</code> 存储所有单词及其频率，占用 <code>O(m)</code> 空间。<code>processed</code> 集合存储已处理的单词，需要 <code>O(m)</code> 空间。总体空间复杂度：<code>O(m)</code>，即 <code>O(n)</code>（<code>m</code> 最大为 <code>n</code>）。</li>
-</ul>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode.cn/problems/longest-palindrome-by-concatenating-two-letter-words/description/" title="2131. 连接两字母单词得到的最长回文串 | 力扣（LeetCode）">2131. 连接两字母单词得到的最长回文串 | 力扣（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>贪心算法</tag>
-        <tag>LeetCode中等</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>完全二叉树的节点个数</title>
     <url>/blog/2025/02/06/count-complete-tree-nodes/</url>
     <content><![CDATA[<hr>
@@ -5515,66 +5398,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
       </tags>
   </entry>
   <entry>
-    <title>分类求和并作差</title>
-    <url>/blog/2025/05/28/divisible-and-non-divisible-sums-difference/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你两个正整数 <code>n</code> 和 <code>m</code> 。现定义两个整数 <code>num1</code> 和 <code>num2</code> ，如下所示：</p>
-<p><code>num1</code>：范围 <code>[1, n]</code> 内所有 无法被 <code>m</code> 整除 的整数之和。<br><code>num2</code>：范围 <code>[1, n]</code> 内所有 能够被 <code>m</code> 整除 的整数之和。</p>
-<p>返回整数 <code>num1 - num2</code> 。</p>
-<p><strong>示例 1:</strong></p>
-<blockquote>
-<p><strong>输入：</strong>n = 10, m = 3<br><strong>输出：</strong>19<br><strong>解释：</strong>在这个示例中：<br>范围 <code>[1, 10]</code> 内无法被 3 整除的整数为 <code>[1, 2, 4, 5, 7, 8, 10]</code> ，num1 = 这些整数之和 = 37 。<br>范围 <code>[1, 10]</code> 内能够被 3 整除的整数为 <code>[3, 6, 9]</code> ，num2 = 这些整数之和 = 18 。<br>返回 37 - 18 = 19 作为答案。</p>
-</blockquote>
-<p><strong>示例 2:</strong></p>
-<blockquote>
-<p><strong>输入：</strong>n = 5, m = 6<br><strong>输出：</strong>15<br><strong>解释：</strong>在这个示例中：<br>范围 <code>[1, 5]</code> 内无法被 6 整除的整数为 <code>[1, 2, 3, 4, 5]</code> ，num1 = 这些整数之和 =  15 。<br>范围 <code>[1, 5]</code> 内能够被 6 整除的整数为 <code>[]</code> ，num2 = 这些整数之和 = 0 。<br>返回 15 - 0 = 15 作为答案。</p>
-</blockquote>
-<p><strong>示例 3:</strong></p>
-<blockquote>
-<p><strong>输入：</strong>n = 5, m = 1<br><strong>输出：</strong>-15<br><strong>解释：</strong>在这个示例中：<br>范围 <code>[1, 5]</code> 内无法被 1 整除的整数为 <code>[]</code> ，num1 = 这些整数之和 = 0 。<br>范围 <code>[1, 5]</code> 内能够被 1 整除的整数为 <code>[1, 2, 3, 4, 5]</code> ，num2 = 这些整数之和 = 15 。<br>返回 0 - 15 = -15 作为答案。</p>
-</blockquote>
-<p><strong>提示:</strong></p>
-<ul>
-<li><code>1 &lt;= n, m &lt;= 1000</code></li>
-</ul>
-<span id="more"></span>
-
-<h1 id="普通遍历"><a href="#普通遍历" class="headerlink" title="普通遍历"></a>普通遍历</h1><p>最直观方法遍历 <code>1</code> 到 <code>n</code> 的每个数，分别累加能被 <code>m</code> 整除的数的和 <code>sum_div</code> 和不能整除的数的和 <code>sum_non_div</code> ，最后返回 <code>sum_non_div - sum_div</code>。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">differenceOfSums</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> m)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">sum_div</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">sum_non_div</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i % m == <span class="number">0</span>) &#123;</span><br><span class="line">            sum_div += i;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            sum_non_div += i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sum_non_div - sum_div;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li><strong>时间复杂度：</strong><code>O(n)</code>，需遍历 <code>1</code> 到 <code>n</code> 的所有数。</li>
-<li><strong>空间复杂度：</strong><code>O(1)</code>，仅使用常数空间。</li>
-</ul>
-<h1 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h1><p>利用数学公式直接计算，避免遍历：</p>
-<ol>
-<li>总和：<code>1</code> 到 <code>n</code> 的和为 <code>total = n * (n + 1) / 2</code>。</li>
-<li>整除和：能被 <code>m</code> 整除的数形如 <code>m, 2m, 3m, ..., km</code>（其中 <code>k = n / m</code>），和为 <code>m * (k * (k + 1) / 2)</code>。</li>
-<li>差值：非整除和 - 整除和 = <code>(total - sum_div) - sum_div = total - 2 * sum_div</code>。</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">differenceOfSums</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> m)</span> &#123;</span><br><span class="line">    <span class="comment">// 计算 1 到 n 的总和</span></span><br><span class="line">    <span class="type">long</span> <span class="variable">total</span> <span class="operator">=</span> (<span class="type">long</span>) n * (n + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">    <span class="comment">// 计算可整除数的个数k</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> n / m;</span><br><span class="line">    <span class="comment">// 可整除数的和</span></span><br><span class="line">    <span class="type">long</span> <span class="variable">divisibleSum</span> <span class="operator">=</span> (<span class="type">long</span>) m * k * (k + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">    <span class="comment">// 返回差值</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="type">int</span>) (total - <span class="number">2</span> * divisibleSum);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li><strong>时间复杂度：</strong><code>O(1)</code>。</li>
-<li><strong>空间复杂度：</strong><code>O(1)</code>。</li>
-</ul>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode.cn/problems/divisible-and-non-divisible-sums-difference/description/" title="2894. 分类求和并作差 | 力扣（LeetCode）">2894. 分类求和并作差 | 力扣（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>LeetCode简单</tag>
-        <tag>数学公式</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>连接两棵树后最大目标节点数目 Ⅰ</title>
     <url>/blog/2025/02/28/maximize-the-number-of-target-nodes-after-connecting-trees-i/</url>
     <content><![CDATA[<hr>
@@ -5644,71 +5467,6 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>深度优先搜索</tag>
         <tag>LeetCode中等</tag>
         <tag>无向树</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>字母异位词分组</title>
-    <url>/blog/2025/05/30/group-anagrams/</url>
-    <content><![CDATA[<hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个字符串数组，请你将 <code>字母异位词</code> 组合在一起。可以按任意顺序返回结果列表。</p>
-<p><code>字母异位词</code> 是由重新排列源单词的所有字母得到的一个新单词。</p>
-<p><strong>示例 1:</strong></p>
-<blockquote>
-<p><strong>输入：</strong><code>strs = [&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;]</code><br><strong>输出：</strong><code>[[&quot;bat&quot;], [&quot;nat&quot;, &quot;tan&quot;], [&quot;ate&quot;, &quot;eat&quot;, &quot;tea&quot;]]</code></p>
-</blockquote>
-<p><strong>示例 2:</strong></p>
-<blockquote>
-<p><strong>输入：</strong><code>strs = [&quot;&quot;]</code><br><strong>输出：</strong><code>[[&quot;&quot;]]</code></p>
-</blockquote>
-<p><strong>示例 3:</strong></p>
-<blockquote>
-<p><strong>输入：</strong><code>strs = [&quot;a&quot;]</code><br><strong>输出：</strong><code>[[&quot;a&quot;]]</code></p>
-</blockquote>
-<p><strong>提示:</strong></p>
-<ul>
-<li><code>1 &lt;= strs.length &lt;= 104</code></li>
-<li><code>0 &lt;= strs[i].length &lt;= 100</code></li>
-<li><code>strs[i]</code> 仅包含小写字母</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="排序-哈希表"><a href="#排序-哈希表" class="headerlink" title="排序 + 哈希表"></a>排序 + 哈希表</h1><p>字母异位词指字母相同，但排列不同的字符串。所以对每个字符串排序，将排序后的字符串作为 <code>key</code>，原字符串添加到该 <code>key</code> 对应的列表中。（如 <code>&quot;eat&quot;</code> 和 <code>&quot;tea&quot;</code> 的 <code>key</code> 都为 <code>&quot;aet&quot;</code>）。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;String&gt;&gt; <span class="title function_">groupAnagrams</span><span class="params">(String[] strs)</span> &#123;</span><br><span class="line">    Map&lt;String, List&lt;String&gt;&gt; resultMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (String str : strs) &#123;</span><br><span class="line">        <span class="type">char</span>[] chars = str.toCharArray();</span><br><span class="line">        Arrays.sort(chars);</span><br><span class="line">        <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(chars);</span><br><span class="line">        <span class="keyword">if</span> (!resultMap.containsKey(key)) &#123;</span><br><span class="line">            resultMap.put(key, <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;());</span><br><span class="line">        &#125;</span><br><span class="line">        resultMap.get(key).add(str);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(resultMap.values());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li><strong>时间复杂度：</strong><code>O(nk logk)</code>，假设有 <code>n</code> 个字符串，每个字符串最大长度为 <code>k</code>。排序每个字符串的时间复杂度为<code>O(k logk)</code>，所以总时间复杂度为<code>O(nk logk)</code>。</li>
-<li><strong>空间复杂度：</strong><code>O(nk)</code>，哈希表存储所有字符串（最坏情况无重复 <code>key</code>）。</li>
-</ul>
-<h1 id="字符计数-哈希表"><a href="#字符计数-哈希表" class="headerlink" title="字符计数 + 哈希表"></a>字符计数 + 哈希表</h1><p>字母异位词指字母相同，但排列不同的字符串，所以，每个字符串里字母的数量是相等的，故可以统计每个字符串中每个字符出现的次数，然后生成一个表示字符频次的字符串作为 <code>key</code>（例如：<code>&quot;a1b2&quot;</code>），然后将原字符串添加到该 <code>key</code> 对应的列表中。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;String&gt;&gt; <span class="title function_">groupAnagrams</span><span class="params">(String[] strs)</span> &#123;</span><br><span class="line">    <span class="type">int</span>[] count = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">    Map&lt;String, List&lt;String&gt;&gt; resultMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (String str : strs) &#123;</span><br><span class="line">        Arrays.fill(count, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : str.toCharArray()) &#123;</span><br><span class="line">            <span class="comment">// 统计每个字符出现的次数</span></span><br><span class="line">            count[c - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">26</span>; i++) &#123;</span><br><span class="line">            <span class="comment">// 拼接每个字符出现的次数，作为 Map 的 key</span></span><br><span class="line">            <span class="keyword">if</span> (count[i] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                sb.append((<span class="type">char</span>) (<span class="string">&#x27;a&#x27;</span> + i));</span><br><span class="line">                sb.append(count[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> sb.toString();</span><br><span class="line">        <span class="keyword">if</span> (!resultMap.containsKey(key)) &#123;</span><br><span class="line">            resultMap.put(key, <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;());</span><br><span class="line">        &#125;</span><br><span class="line">        resultMap.get(key).add(str);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 入参：[&quot;eatt&quot;, &quot;teat&quot;, &quot;tan&quot;, &quot;atet&quot;, &quot;nat&quot;, &quot;bat&quot;]</span></span><br><span class="line">    <span class="comment">// resultMap 结果为：&#123;a1b1t1=[bat], a1n1t1=[tan, nat], a1e1t2=[eatt, teat, atet]&#125;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(resultMap.values());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li><strong>时间复杂度：</strong><code>O(nk)</code>，哈希表存储所有字符串（最坏情况无重复 key）。</li>
-<li><strong>空间复杂度：</strong><code>O(1)</code>。</li>
-</ul>
-<h1 id="关键结论"><a href="#关键结论" class="headerlink" title="关键结论"></a>关键结论</h1><ul>
-<li><strong>排序 + 哈希表：</strong>代码简洁，但排序开销随字符串变长而增大。</li>
-<li><strong>计数 + 哈希表：</strong>避免排序，通过字符频次编码更高效处理长字符串。</li>
-<li><strong>实际选择：</strong>若字符串平均长度小，选方法一；若长度大，选方法二。</li>
-</ul>
-<p>通过哈希表将字母异位词映射到相同 <code>key</code>，两种方法均能高效解决分组问题！</p>
-<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a href="https://leetcode.cn/problems/group-anagrams/description/" title="49. 字母异位词分组 | 力扣（LeetCode）">49. 字母异位词分组 | 力扣（LeetCode）</a></p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
-        <tag>学习笔记</tag>
-        <tag>数组</tag>
-        <tag>哈希表</tag>
-        <tag>字符串</tag>
-        <tag>排序</tag>
-        <tag>LeetCode中等</tag>
       </tags>
   </entry>
   <entry>
@@ -5873,6 +5631,248 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>哈希表</tag>
         <tag>字符串</tag>
         <tag>滑动窗口</tag>
+        <tag>LeetCode中等</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>最长回文子串</title>
+    <url>/blog/2025/05/24/longest-palindromic-substring/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个字符串 <code>s</code>，找到 <code>s</code> 中最长的 <code>回文子串</code>。</p>
+<p><strong>说明:</strong></p>
+<ul>
+<li>如果字符串向前和向后读都相同，则它满足回文性。</li>
+<li>子字符串是字符串中连续的非空字符序列。</li>
+</ul>
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>s = &quot;babad&quot;</code><br><strong>输出：</strong><code>&quot;bab&quot;</code><br><strong>解释：</strong><code>&quot;aba&quot;</code> 同样是符合题意的答案。</p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>s = &quot;cbbd&quot;</code><br><strong>输出：</strong><code>&quot;bb&quot;</code></p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 1000</code></li>
+<li><code>s</code> 仅由数字和英文字母组成</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="暴力法（不推荐）"><a href="#暴力法（不推荐）" class="headerlink" title="暴力法（不推荐）"></a>暴力法（不推荐）</h1><p>枚举所有子串，检查是否为回文，记录最长的一个。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">longestPalindrome</span><span class="params">(String s)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (s == <span class="literal">null</span> || s.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">maxLen</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i; j &lt; s.length(); j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (longestPalindrome(s, i, j) &amp;&amp; (j - i + <span class="number">1</span> &gt; maxLen)) &#123;</span><br><span class="line">                maxLen = j - i + <span class="number">1</span>;</span><br><span class="line">                start = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s.substring(start, start + maxLen);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">longestPalindrome</span><span class="params">(String s, <span class="type">int</span> start, <span class="type">int</span> end)</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (start &lt; end) &#123;</span><br><span class="line">        <span class="keyword">if</span> (s.charAt(start++) != s.charAt(end--)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li><strong>时间复杂度：</strong><code>O(n³)</code>，共有 <code>O(n²)</code> 个子串（两层循环：<code>i</code> 从 <code>0</code> 到 <code>n-1</code>，<code>j</code> 从 <code>i</code> 到 <code>n-1</code>）。每个子串检查是否为回文需要 <code>O(n)</code> 时间（如长度为 <code>k</code> 的子串需比较 <code>k/2</code> 次）。<br>总时间 = <code>O(n²) × O(n) = O(n³)</code>。</li>
+<li><strong>空间复杂度：</strong><code>O(n)</code>，仅需常数空间存储临时变量（如 <code>maxLen</code>, <code>start</code>）。</li>
+</ul>
+<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>利用二维数组 <code>dp[i][j]</code> 记录子串 <code>s[i...j]</code> 是否为回文，逐步扩展长度。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">longestPalindrome</span><span class="params">(String s)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (s == <span class="literal">null</span> || s.length() &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> s.length();</span><br><span class="line">    <span class="type">boolean</span>[][] dp = <span class="keyword">new</span> <span class="title class_">boolean</span>[len][len];</span><br><span class="line">    <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">maxLen</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 长度为1的子串全都是回文串</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        dp[i][i] = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断长度为2的子串是否是回文串</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (s.charAt(i) == s.charAt(i + <span class="number">1</span>)) &#123;</span><br><span class="line">            dp[i][i + <span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">            start = i;</span><br><span class="line">            maxLen = <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断长度为3及更长的子串是否是回文串</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">l</span> <span class="operator">=</span> <span class="number">3</span>; l &lt;= len; l++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len - l + <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + l - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (s.charAt(i) == s.charAt(j) &amp;&amp; dp[i + <span class="number">1</span>][j - <span class="number">1</span>]) &#123;</span><br><span class="line">                dp[i][j] = <span class="literal">true</span>;</span><br><span class="line">                start = i;</span><br><span class="line">                maxLen = l;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> s.substring(start, start + maxLen);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li><strong>时间复杂度：</strong><code>O(n²)</code>，外层循环遍历子串长度 <code>l</code>（从 <code>3</code> 到 <code>n</code>），内层循环遍历起始点 <code>i</code>，总时间 = <code>O(n²)</code>。</li>
+<li><strong>空间复杂度：</strong><code>O(n²)</code>，需一个二维数组 <code>dp[n][n]</code> 存储所有子串的状态。</li>
+</ul>
+<h1 id="中心扩展法"><a href="#中心扩展法" class="headerlink" title="中心扩展法"></a>中心扩展法</h1><p>以每个字符或每两个字符为中心，向两侧扩展寻找最长回文。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">longestPalindrome1</span><span class="params">(String s)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (s == <span class="literal">null</span> || s.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">        <span class="comment">// 奇数长度</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">len1</span> <span class="operator">=</span> expand(s, i, i);</span><br><span class="line">        <span class="comment">// 偶数长度</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">len2</span> <span class="operator">=</span> expand(s, i, i + <span class="number">1</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> Math.max(len1, len2);</span><br><span class="line">        <span class="keyword">if</span> (len &gt; end - start) &#123;</span><br><span class="line">            start = i - (len - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">            end = i + len / <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s.substring(start, end + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="type">int</span> <span class="title function_">expand</span><span class="params">(String s, <span class="type">int</span> left, <span class="type">int</span> right)</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (left &gt;= <span class="number">0</span> &amp;&amp; right &lt; s.length() &amp;&amp; s.charAt(left) == s.charAt(right)) &#123;</span><br><span class="line">        left--;</span><br><span class="line">        right++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> right - left - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析-2"><a href="#复杂度分析-2" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li><strong>时间复杂度：</strong><code>O(n²)</code>，共有 <code>2n-1</code> 个中心（每个字符作为奇中心，每两个字符之间作为偶中心），每个中心最多扩展 <code>O(n)</code> 次（如全相同字符时，扩展到边界）。<br>总时间 = <code>O(2n) × O(n) = O(n²)</code>。</li>
+<li><strong>空间复杂度：</strong><code>O(1)</code>，仅需常数空间记录扩展的左右指针和最长回文的起止点。</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode.cn/problems/longest-palindromic-substring/" title="5. 最长回文子串 | 力扣（LeetCode）">5. 最长回文子串 | 力扣（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>字符串</tag>
+        <tag>动态规划</tag>
+        <tag>LeetCode中等</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>连接两字母单词得到的最长回文串</title>
+    <url>/blog/2025/05/25/longest-palindrome-by-concatenating-two-letter-words/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个字符串数组 <code>words</code> 。<code>words</code> 中每个元素都是一个包含两个小写英文字母的单词。请你从 <code>words</code> 中选择一些元素并按任意顺序连接它们，并得到一个尽可能长的回文串 。每个元素至多只能使用一次。请你返回你能得到的最长回文串的长度 。如果没办法得到任何一个回文串，请你返回 <code>0</code> 。</p>
+<p><strong>说明:</strong><br><code>回文串</code> 指的是从前往后和从后往前读一样的字符串。</p>
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>words = [&quot;lc&quot;, &quot;cl&quot;, &quot;gg&quot;]</code><br><strong>输出：</strong>6<br><strong>解释：</strong>一个最长的回文串为 <code>&quot;lc&quot; + &quot;gg&quot; + &quot;cl&quot; = &quot;lcggcl&quot;</code> ，长度为 6 。<code>&quot;clgglc&quot;</code> 是另一个可以得到的最长回文串。</p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>words = [&quot;ab&quot;, &quot;ty&quot;, &quot;yt&quot;, &quot;lc&quot;, &quot;cl&quot;, &quot;ab&quot;]</code><br><strong>输出：</strong>8<br><strong>解释：</strong>最长回文串是 <code>&quot;ty&quot; + &quot;lc&quot; + &quot;cl&quot; + &quot;yt&quot; = &quot;tylcclyt&quot;</code> ，长度为 8 。<code>&quot;lcyttycl&quot;</code> 是另一个可以得到的最长回文串。</p>
+</blockquote>
+<p><strong>示例 3:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>words = [&quot;cc&quot;, &quot;ll&quot;, &quot;xx&quot;]</code><br><strong>输出：</strong>2<br><strong>解释：</strong>最长回文串是 <code>&quot;cc&quot;</code> ，长度为 2 。<code>&quot;ll&quot;</code> 是另一个可以得到的最长回文串。<code>&quot;xx&quot;</code> 也是。</p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= words.length &lt;= 10^5</code></li>
+<li><code>words[i].length == 2</code></li>
+<li><code>words[i]</code> 仅包含小写英文字母。</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h1><ol>
+<li>统计单词出现次数：使用哈希表记录每个单词的出现次数。</li>
+<li>处理互为反转的单词对：对于每个单词，检查其反转是否存在。若存在，取两者出现次数的较小值，每对贡献 <code>4</code> 个字符（每个单词长度为 <code>2</code> ）。</li>
+<li>处理对称单词：对于两个字符相同的单词（如 <code>&quot;aa&quot;</code>），可以成对使用（贡献 <code>4</code> 个字符），若有剩余且未使用中间点，可单独作为中间对称点（贡献 <code>2</code> 个字符）。</li>
+<li>避免重复处理：使用集合记录已处理的单词，确保每对单词只处理一次。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">longestPalindrome</span><span class="params">(String[] words)</span> &#123;</span><br><span class="line">    <span class="comment">// 记录最长回文长度</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">maxLen</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 标记是否已使用中间对称点</span></span><br><span class="line">    <span class="type">boolean</span> <span class="variable">center</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">// 记录已处理的单词</span></span><br><span class="line">    List&lt;String&gt; processed = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    <span class="comment">// 使用 HashMap 统计每个单词的出现次数</span></span><br><span class="line">    Map&lt;String, Integer&gt; wordCount = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="comment">// 记录所有 word 的次数</span></span><br><span class="line">    Arrays.stream(words).forEach(word -&gt; wordCount.put(word, wordCount.getOrDefault(word, <span class="number">0</span>) + <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (String word : wordCount.keySet()) &#123;</span><br><span class="line">        <span class="keyword">if</span> (processed.contains(word)) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> wordCount.get(word);</span><br><span class="line">        <span class="type">String</span> <span class="variable">reversed</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>(word).reverse().toString();</span><br><span class="line">        <span class="comment">// 若单词字符相同（如&quot;aa&quot;），计算可成对使用的次数，剩余次数作为中间对称点。</span></span><br><span class="line">        <span class="keyword">if</span> (word.equals(reversed)) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">pairs</span> <span class="operator">=</span> count / <span class="number">2</span>;</span><br><span class="line">            maxLen += pairs * <span class="number">4</span>;</span><br><span class="line">            <span class="keyword">if</span> (!center &amp;&amp; count % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">                maxLen += <span class="number">2</span>;</span><br><span class="line">                center = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            processed.add(word);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 找到反转单词，取较小次数计算贡献，避免重复处理。</span></span><br><span class="line">            <span class="keyword">if</span> (wordCount.containsKey(reversed)) &#123;</span><br><span class="line">                <span class="type">int</span> <span class="variable">reversedCount</span> <span class="operator">=</span> wordCount.get(reversed);</span><br><span class="line">                <span class="type">int</span> <span class="variable">pairs</span> <span class="operator">=</span> Math.min(count, reversedCount);</span><br><span class="line">                maxLen += pairs * <span class="number">4</span>;</span><br><span class="line">                processed.add(word);</span><br><span class="line">                processed.add(reversed);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxLen;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li><strong>时间复杂度：</strong><code>O(n)</code>，遍历 <code>words</code> 数组并构建哈希表 <code>wordCount</code>，时间复杂度为 <code>O(n)</code>，遍历哈希表的键集合，假设不同的单词数量为 <code>m</code>，每个单词的处理包括生成反转字符串、哈希表查询等操作。由于每个单词长度为 <code>2</code>，生成反转字符串和哈希表操作均为 <code>O(1)</code>，总时间复杂度为 <code>O(m)</code>。最坏情况下，所有单词均不同（即 <code>m = n</code>），时间复杂度为 <code>O(n)</code>。其中 <code>n</code> 是数组长度。</li>
+<li><strong>空间复杂度：</strong><code>O(n)</code>，<code>wordCount</code> 存储所有单词及其频率，占用 <code>O(m)</code> 空间。<code>processed</code> 集合存储已处理的单词，需要 <code>O(m)</code> 空间。总体空间复杂度：<code>O(m)</code>，即 <code>O(n)</code>（<code>m</code> 最大为 <code>n</code>）。</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode.cn/problems/longest-palindrome-by-concatenating-two-letter-words/description/" title="2131. 连接两字母单词得到的最长回文串 | 力扣（LeetCode）">2131. 连接两字母单词得到的最长回文串 | 力扣（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>贪心算法</tag>
+        <tag>LeetCode中等</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>分类求和并作差</title>
+    <url>/blog/2025/05/28/divisible-and-non-divisible-sums-difference/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你两个正整数 <code>n</code> 和 <code>m</code> 。现定义两个整数 <code>num1</code> 和 <code>num2</code> ，如下所示：</p>
+<p><code>num1</code>：范围 <code>[1, n]</code> 内所有 无法被 <code>m</code> 整除 的整数之和。<br><code>num2</code>：范围 <code>[1, n]</code> 内所有 能够被 <code>m</code> 整除 的整数之和。</p>
+<p>返回整数 <code>num1 - num2</code> 。</p>
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p><strong>输入：</strong>n = 10, m = 3<br><strong>输出：</strong>19<br><strong>解释：</strong>在这个示例中：<br>范围 <code>[1, 10]</code> 内无法被 3 整除的整数为 <code>[1, 2, 4, 5, 7, 8, 10]</code> ，num1 = 这些整数之和 = 37 。<br>范围 <code>[1, 10]</code> 内能够被 3 整除的整数为 <code>[3, 6, 9]</code> ，num2 = 这些整数之和 = 18 。<br>返回 37 - 18 = 19 作为答案。</p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p><strong>输入：</strong>n = 5, m = 6<br><strong>输出：</strong>15<br><strong>解释：</strong>在这个示例中：<br>范围 <code>[1, 5]</code> 内无法被 6 整除的整数为 <code>[1, 2, 3, 4, 5]</code> ，num1 = 这些整数之和 =  15 。<br>范围 <code>[1, 5]</code> 内能够被 6 整除的整数为 <code>[]</code> ，num2 = 这些整数之和 = 0 。<br>返回 15 - 0 = 15 作为答案。</p>
+</blockquote>
+<p><strong>示例 3:</strong></p>
+<blockquote>
+<p><strong>输入：</strong>n = 5, m = 1<br><strong>输出：</strong>-15<br><strong>解释：</strong>在这个示例中：<br>范围 <code>[1, 5]</code> 内无法被 1 整除的整数为 <code>[]</code> ，num1 = 这些整数之和 = 0 。<br>范围 <code>[1, 5]</code> 内能够被 1 整除的整数为 <code>[1, 2, 3, 4, 5]</code> ，num2 = 这些整数之和 = 15 。<br>返回 0 - 15 = -15 作为答案。</p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= n, m &lt;= 1000</code></li>
+</ul>
+<span id="more"></span>
+
+<h1 id="普通遍历"><a href="#普通遍历" class="headerlink" title="普通遍历"></a>普通遍历</h1><p>最直观方法遍历 <code>1</code> 到 <code>n</code> 的每个数，分别累加能被 <code>m</code> 整除的数的和 <code>sum_div</code> 和不能整除的数的和 <code>sum_non_div</code> ，最后返回 <code>sum_non_div - sum_div</code>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">differenceOfSums</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> m)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">sum_div</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">sum_non_div</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i % m == <span class="number">0</span>) &#123;</span><br><span class="line">            sum_div += i;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            sum_non_div += i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sum_non_div - sum_div;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li><strong>时间复杂度：</strong><code>O(n)</code>，需遍历 <code>1</code> 到 <code>n</code> 的所有数。</li>
+<li><strong>空间复杂度：</strong><code>O(1)</code>，仅使用常数空间。</li>
+</ul>
+<h1 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h1><p>利用数学公式直接计算，避免遍历：</p>
+<ol>
+<li>总和：<code>1</code> 到 <code>n</code> 的和为 <code>total = n * (n + 1) / 2</code>。</li>
+<li>整除和：能被 <code>m</code> 整除的数形如 <code>m, 2m, 3m, ..., km</code>（其中 <code>k = n / m</code>），和为 <code>m * (k * (k + 1) / 2)</code>。</li>
+<li>差值：非整除和 - 整除和 = <code>(total - sum_div) - sum_div = total - 2 * sum_div</code>。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">differenceOfSums</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> m)</span> &#123;</span><br><span class="line">    <span class="comment">// 计算 1 到 n 的总和</span></span><br><span class="line">    <span class="type">long</span> <span class="variable">total</span> <span class="operator">=</span> (<span class="type">long</span>) n * (n + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">    <span class="comment">// 计算可整除数的个数k</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> n / m;</span><br><span class="line">    <span class="comment">// 可整除数的和</span></span><br><span class="line">    <span class="type">long</span> <span class="variable">divisibleSum</span> <span class="operator">=</span> (<span class="type">long</span>) m * k * (k + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">    <span class="comment">// 返回差值</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="type">int</span>) (total - <span class="number">2</span> * divisibleSum);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li><strong>时间复杂度：</strong><code>O(1)</code>。</li>
+<li><strong>空间复杂度：</strong><code>O(1)</code>。</li>
+</ul>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode.cn/problems/divisible-and-non-divisible-sums-difference/description/" title="2894. 分类求和并作差 | 力扣（LeetCode）">2894. 分类求和并作差 | 力扣（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>LeetCode简单</tag>
+        <tag>数学公式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>字母异位词分组</title>
+    <url>/blog/2025/05/30/group-anagrams/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个字符串数组，请你将 <code>字母异位词</code> 组合在一起。可以按任意顺序返回结果列表。</p>
+<p><code>字母异位词</code> 是由重新排列源单词的所有字母得到的一个新单词。</p>
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>strs = [&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;]</code><br><strong>输出：</strong><code>[[&quot;bat&quot;], [&quot;nat&quot;, &quot;tan&quot;], [&quot;ate&quot;, &quot;eat&quot;, &quot;tea&quot;]]</code></p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>strs = [&quot;&quot;]</code><br><strong>输出：</strong><code>[[&quot;&quot;]]</code></p>
+</blockquote>
+<p><strong>示例 3:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>strs = [&quot;a&quot;]</code><br><strong>输出：</strong><code>[[&quot;a&quot;]]</code></p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= strs.length &lt;= 104</code></li>
+<li><code>0 &lt;= strs[i].length &lt;= 100</code></li>
+<li><code>strs[i]</code> 仅包含小写字母</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="排序-哈希表"><a href="#排序-哈希表" class="headerlink" title="排序 + 哈希表"></a>排序 + 哈希表</h1><p>字母异位词指字母相同，但排列不同的字符串。所以对每个字符串排序，将排序后的字符串作为 <code>key</code>，原字符串添加到该 <code>key</code> 对应的列表中。（如 <code>&quot;eat&quot;</code> 和 <code>&quot;tea&quot;</code> 的 <code>key</code> 都为 <code>&quot;aet&quot;</code>）。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;String&gt;&gt; <span class="title function_">groupAnagrams</span><span class="params">(String[] strs)</span> &#123;</span><br><span class="line">    Map&lt;String, List&lt;String&gt;&gt; resultMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (String str : strs) &#123;</span><br><span class="line">        <span class="type">char</span>[] chars = str.toCharArray();</span><br><span class="line">        Arrays.sort(chars);</span><br><span class="line">        <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(chars);</span><br><span class="line">        <span class="keyword">if</span> (!resultMap.containsKey(key)) &#123;</span><br><span class="line">            resultMap.put(key, <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;());</span><br><span class="line">        &#125;</span><br><span class="line">        resultMap.get(key).add(str);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(resultMap.values());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li><strong>时间复杂度：</strong><code>O(nk logk)</code>，假设有 <code>n</code> 个字符串，每个字符串最大长度为 <code>k</code>。排序每个字符串的时间复杂度为<code>O(k logk)</code>，所以总时间复杂度为<code>O(nk logk)</code>。</li>
+<li><strong>空间复杂度：</strong><code>O(nk)</code>，哈希表存储所有字符串（最坏情况无重复 <code>key</code>）。</li>
+</ul>
+<h1 id="字符计数-哈希表"><a href="#字符计数-哈希表" class="headerlink" title="字符计数 + 哈希表"></a>字符计数 + 哈希表</h1><p>字母异位词指字母相同，但排列不同的字符串，所以，每个字符串里字母的数量是相等的，故可以统计每个字符串中每个字符出现的次数，然后生成一个表示字符频次的字符串作为 <code>key</code>（例如：<code>&quot;a1b2&quot;</code>），然后将原字符串添加到该 <code>key</code> 对应的列表中。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;String&gt;&gt; <span class="title function_">groupAnagrams</span><span class="params">(String[] strs)</span> &#123;</span><br><span class="line">    <span class="type">int</span>[] count = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">    Map&lt;String, List&lt;String&gt;&gt; resultMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (String str : strs) &#123;</span><br><span class="line">        Arrays.fill(count, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : str.toCharArray()) &#123;</span><br><span class="line">            <span class="comment">// 统计每个字符出现的次数</span></span><br><span class="line">            count[c - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">26</span>; i++) &#123;</span><br><span class="line">            <span class="comment">// 拼接每个字符出现的次数，作为 Map 的 key</span></span><br><span class="line">            <span class="keyword">if</span> (count[i] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                sb.append((<span class="type">char</span>) (<span class="string">&#x27;a&#x27;</span> + i));</span><br><span class="line">                sb.append(count[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> sb.toString();</span><br><span class="line">        <span class="keyword">if</span> (!resultMap.containsKey(key)) &#123;</span><br><span class="line">            resultMap.put(key, <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;());</span><br><span class="line">        &#125;</span><br><span class="line">        resultMap.get(key).add(str);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 入参：[&quot;eatt&quot;, &quot;teat&quot;, &quot;tan&quot;, &quot;atet&quot;, &quot;nat&quot;, &quot;bat&quot;]</span></span><br><span class="line">    <span class="comment">// resultMap 结果为：&#123;a1b1t1=[bat], a1n1t1=[tan, nat], a1e1t2=[eatt, teat, atet]&#125;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(resultMap.values());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li><strong>时间复杂度：</strong><code>O(nk)</code>，哈希表存储所有字符串（最坏情况无重复 key）。</li>
+<li><strong>空间复杂度：</strong><code>O(1)</code>。</li>
+</ul>
+<h1 id="关键结论"><a href="#关键结论" class="headerlink" title="关键结论"></a>关键结论</h1><ul>
+<li><strong>排序 + 哈希表：</strong>代码简洁，但排序开销随字符串变长而增大。</li>
+<li><strong>计数 + 哈希表：</strong>避免排序，通过字符频次编码更高效处理长字符串。</li>
+<li><strong>实际选择：</strong>若字符串平均长度小，选方法一；若长度大，选方法二。</li>
+</ul>
+<p>通过哈希表将字母异位词映射到相同 <code>key</code>，两种方法均能高效解决分组问题！</p>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode.cn/problems/group-anagrams/description/" title="49. 字母异位词分组 | 力扣（LeetCode）">49. 字母异位词分组 | 力扣（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>数组</tag>
+        <tag>哈希表</tag>
+        <tag>字符串</tag>
+        <tag>排序</tag>
         <tag>LeetCode中等</tag>
       </tags>
   </entry>
