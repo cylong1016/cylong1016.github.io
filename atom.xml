@@ -6,7 +6,7 @@
   <link href="https://www.cylong.com/atom.xml" rel="self"/>
   
   <link href="https://www.cylong.com/"/>
-  <updated>2025-05-29T16:28:11.000Z</updated>
+  <updated>2025-06-03T15:20:55.000Z</updated>
   <id>https://www.cylong.com/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>区域和检索 - 数组不可变</title>
+    <link href="https://www.cylong.com/blog/2025/06/03/range-sum-query-immutable/"/>
+    <id>https://www.cylong.com/blog/2025/06/03/range-sum-query-immutable/</id>
+    <published>2025-06-03T15:20:55.000Z</published>
+    <updated>2025-06-03T15:20:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个整数数组  <code>nums</code>，处理以下类型的多个查询:</p><p>计算索引 <code>left</code> 和 <code>right</code> （包含 <code>left</code> 和 <code>right</code>）之间的 <code>nums</code> 元素的和 ，其中 <code>left &lt;= right</code>。</p><p>实现 <code>NumArray</code> 类：</p><ul><li><code>NumArray(int[] nums)</code> 使用数组 <code>nums</code> 初始化对象</li><li><code>int sumRange(int i, int j)</code> 返回数组 <code>nums</code> 中索引 <code>left</code> 和 <code>right</code> 之间的元素的总和 ，包含 <code>left</code> 和 <code>right</code> 两点（也就是 <code>nums[left] + nums[left + 1] + ... + nums[right]</code> )</li></ul><p><strong>示例 1:</strong></p><blockquote><p><strong>输入：</strong><br><code>[&quot;NumArray&quot;, &quot;sumRange&quot;, &quot;sumRange&quot;, &quot;sumRange&quot;]</code><br><code>[[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]]</code><br><strong>输出：</strong><br><code>[null, 1, -1, -3]</code><br><strong>解释：</strong><br><code>NumArray numArray = new NumArray([-2, 0, 3, -5, 2, -1]);</code><br><code>numArray.sumRange(0, 2); // return 1 ((-2) + 0 + 3)</code><br><code>numArray.sumRange(2, 5); // return -1 (3 + (-5) + 2 + (-1)) </code><br><code>numArray.sumRange(0, 5); // return -3 ((-2) + 0 + 3 + (-5) + 2 + (-1))</code></p></blockquote><p><strong>提示:</strong></p><ul><li><code>1 &lt;= nums.length &lt;= 10^4</code></li><li><code>-10^5 &lt;= nums[i] &lt;= 10^5</code></li><li><code>0 &lt;= i &lt;= j &lt; nums.length</code></li><li>最多调用 <code>10*4</code> 次 <code>sumRange</code> 方法</li></ul><span id="more"></span><h1 id="直接计算"><a href="#直接计算" class="headerlink" title="直接计算"></a>直接计算</h1><p>最简单的思路，每次调用 <code>sumRange()</code> 时，直接遍历 <code>left</code> 到 <code>right</code> 的元素并求和。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">NumArray</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span>[] nums;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">NumArray</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.nums = nums;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">sumRange</span><span class="params">(<span class="type">int</span> left, <span class="type">int</span> right)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> left; i &lt;= right; i++) &#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul><li><strong>时间复杂度：</strong><code>O(mn)</code>，其中 <code>m</code> 为查询次数，<code>n</code> 为数组长度。</li><li><strong>空间复杂度：</strong><code>O(1)</code>，不考虑存储输入的数组。</li></ul><h1 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h1><p>前缀和是一种高效处理区间求和问题的预处理技术，其核心思想是通过数学变换将区间求和转化为两个端点的差值计算。下面我们通过数学推导详细解释前缀和的工作原理。</p><h2 id="步骤1：定义前缀和数组"><a href="#步骤1：定义前缀和数组" class="headerlink" title="步骤1：定义前缀和数组"></a>步骤1：定义前缀和数组</h2><p>给定数组 <code>nums[0...n-1]</code>，我们定义前缀和数组 <code>prefix</code>：</p><blockquote><p><code>prefix[0] = 0</code><br><code>prefix[1] = nums[0]</code><br><code>prefix[2] = nums[0] + nums[1]</code><br>…<br><code>prefix[i] = nums[0] + nums[1] + ... + nums[i-1]</code><br>…<br><code>prefix[n] = nums[0] + ... + nums[n-1]</code></p></blockquote><h2 id="步骤2：区间和与前缀和的数学关系"><a href="#步骤2：区间和与前缀和的数学关系" class="headerlink" title="步骤2：区间和与前缀和的数学关系"></a>步骤2：区间和与前缀和的数学关系</h2><p>考虑区间 <code>[left, right]</code> 的和：</p><blockquote><p><code>sum(left, right)</code><br><code>= nums[left] + nums[left+1] + ... + nums[right]</code><br><code>= (nums[0] + ... + nums[left-1] + nums[left] + ... + nums[right]) - (nums[0] + ... + nums[left-1])</code><br><code>= prefix[right+1] - prefix[left]</code></p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">NumArray</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span>[] prefix;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">NumArray</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="comment">// 多一位存储0位置</span></span><br><span class="line">        prefix = <span class="keyword">new</span> <span class="title class_">int</span>[nums.length + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="comment">// 递推关系：当前前缀和 = 前一个前缀和 + 当前元素</span></span><br><span class="line">            prefix[i + <span class="number">1</span>] = prefix[i] + nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">sumRange</span><span class="params">(<span class="type">int</span> left, <span class="type">int</span> right)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> prefix[right + <span class="number">1</span>] - prefix[left];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="前缀和的核心优势"><a href="#前缀和的核心优势" class="headerlink" title="前缀和的核心优势"></a>前缀和的核心优势</h2><ol><li><strong>查询高效化：</strong>将 <code>O(n)</code> 的求和操作转化为 <code>O(1)</code> 的差值计算。</li><li><strong>预处理思想：</strong>一次构建多次使用，特别适合查询密集型场景。</li><li><strong>数学简洁性：</strong>通过简单的数组差值实现复杂区间计算。</li></ol><h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul><li><strong>时间复杂度：</strong><code>O(n)</code>，初始化前缀和数组，其中 <code>n</code> 是数组长度。<code>sumRange</code> 是 <code>O(1)</code>。</li><li><strong>空间复杂度：</strong><code>O(n)</code>，存储前缀和数组。</li></ul><h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote><p><a href="https://leetcode.cn/problems/range-sum-query-immutable/description/" title="303. 区域和检索 - 数组不可变 | 力扣（LeetCode）">303. 区域和检索 - 数组不可变 | 力扣（LeetCode）</a></p></blockquote><hr>]]></content>
+    
+    
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h1&gt;&lt;p&gt;给定一个整数数组  &lt;code&gt;nums&lt;/code&gt;，处理以下类型的多个查询:&lt;/p&gt;
+&lt;p&gt;计算索引 &lt;code&gt;left&lt;/code&gt; 和 &lt;code&gt;right&lt;/code&gt; （包含 &lt;code&gt;left&lt;/code&gt; 和 &lt;code&gt;right&lt;/code&gt;）之间的 &lt;code&gt;nums&lt;/code&gt; 元素的和 ，其中 &lt;code&gt;left &amp;lt;= right&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;实现 &lt;code&gt;NumArray&lt;/code&gt; 类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;NumArray(int[] nums)&lt;/code&gt; 使用数组 &lt;code&gt;nums&lt;/code&gt; 初始化对象&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;int sumRange(int i, int j)&lt;/code&gt; 返回数组 &lt;code&gt;nums&lt;/code&gt; 中索引 &lt;code&gt;left&lt;/code&gt; 和 &lt;code&gt;right&lt;/code&gt; 之间的元素的总和 ，包含 &lt;code&gt;left&lt;/code&gt; 和 &lt;code&gt;right&lt;/code&gt; 两点（也就是 &lt;code&gt;nums[left] + nums[left + 1] + ... + nums[right]&lt;/code&gt; )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;示例 1:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;br&gt;&lt;code&gt;[&amp;quot;NumArray&amp;quot;, &amp;quot;sumRange&amp;quot;, &amp;quot;sumRange&amp;quot;, &amp;quot;sumRange&amp;quot;]&lt;/code&gt;&lt;br&gt;&lt;code&gt;[[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]]&lt;/code&gt;&lt;br&gt;&lt;strong&gt;输出：&lt;/strong&gt;&lt;br&gt;&lt;code&gt;[null, 1, -1, -3]&lt;/code&gt;&lt;br&gt;&lt;strong&gt;解释：&lt;/strong&gt;&lt;br&gt;&lt;code&gt;NumArray numArray = new NumArray([-2, 0, 3, -5, 2, -1]);&lt;/code&gt;&lt;br&gt;&lt;code&gt;numArray.sumRange(0, 2); // return 1 ((-2) + 0 + 3)&lt;/code&gt;&lt;br&gt;&lt;code&gt;numArray.sumRange(2, 5); // return -1 (3 + (-5) + 2 + (-1)) &lt;/code&gt;&lt;br&gt;&lt;code&gt;numArray.sumRange(0, 5); // return -3 ((-2) + 0 + 3 + (-5) + 2 + (-1))&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;提示:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums.length &amp;lt;= 10^4&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-10^5 &amp;lt;= nums[i] &amp;lt;= 10^5&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= i &amp;lt;= j &amp;lt; nums.length&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;最多调用 &lt;code&gt;10*4&lt;/code&gt; 次 &lt;code&gt;sumRange&lt;/code&gt; 方法&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="LeetCode" scheme="https://www.cylong.com/categories/LeetCode/"/>
+    
+    
+    <category term="Java" scheme="https://www.cylong.com/tags/Java/"/>
+    
+    <category term="LeetCode" scheme="https://www.cylong.com/tags/LeetCode/"/>
+    
+    <category term="学习笔记" scheme="https://www.cylong.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="数组" scheme="https://www.cylong.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+    <category term="LeetCode简单" scheme="https://www.cylong.com/tags/LeetCode%E7%AE%80%E5%8D%95/"/>
+    
+    <category term="前缀和" scheme="https://www.cylong.com/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>字母异位词分组</title>
@@ -891,45 +940,6 @@
     <category term="指针" scheme="https://www.cylong.com/tags/%E6%8C%87%E9%92%88/"/>
     
     <category term="双指针" scheme="https://www.cylong.com/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>组合</title>
-    <link href="https://www.cylong.com/blog/2020/09/17/combinations/"/>
-    <id>https://www.cylong.com/blog/2020/09/17/combinations/</id>
-    <published>2020-09-16T16:51:25.000Z</published>
-    <updated>2020-09-16T16:51:25.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定两个整数 n 和 k，返回 1 … n 中所有可能的 k 个数的组合。</p><p><strong>示例:</strong></p><blockquote><p>输入: n = 4, k = 2<br>输出:</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  [2,4],</span><br><span class="line">  [3,4],</span><br><span class="line">  [2,3],</span><br><span class="line">  [1,2],</span><br><span class="line">  [1,3],</span><br><span class="line">  [1,4],</span><br><span class="line">]</span><br></pre></td></tr></table></figure><span id="more"></span><h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><p>从 n 个当中选 k 个的所有方案对应的枚举是组合型枚举。思路很简单，针对 1 … n 中的每个数，在组合的结果中，我们都有两种结果，选择或者不选择。于是我们从第一个数开始进行递归的判断。详细分析在代码注释中。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">List&lt;List&lt;Integer&gt;&gt; ans = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">LinkedList&lt;Integer&gt; item = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">combine</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> k)</span> &#123;</span><br><span class="line">    dfsCombine(n, k, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">dfsCombine</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> k, <span class="type">int</span> index)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (item.size() == k) &#123;</span><br><span class="line">        <span class="comment">// 如果长度达到k，保存结果。</span></span><br><span class="line">        ans.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(item));</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (item.size() + n - index + <span class="number">1</span> &lt; k) &#123;</span><br><span class="line">        <span class="comment">// 如果剩下的数字不够组合成k个数，则不满足要求。</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 选择当前元素，然后进行递归。 </span></span><br><span class="line">    item.add(index);</span><br><span class="line">    dfsCombine(n, k, index + <span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 不选择当前元素，然后进行递归，也是一种回溯。</span></span><br><span class="line">    item.removeLast();</span><br><span class="line">    dfsCombine(n, k, index + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote><p><a href="https://leetcode-cn.com/problems/combinations/" title="组合 | 力扣（LeetCode）">组合 | 力扣（LeetCode）</a><br><a href="https://leetcode-cn.com/problems/combinations/solution/zu-he-by-leetcode-solution/" title="组合 | 题解（LeetCode）">组合 | 题解（LeetCode）</a></p></blockquote><hr>]]></content>
-    
-    
-    <summary type="html">&lt;hr&gt;
-&lt;h1 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h1&gt;&lt;p&gt;给定两个整数 n 和 k，返回 1 … n 中所有可能的 k 个数的组合。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;示例:&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;输入: n = 4, k = 2&lt;br&gt;输出:&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [2,4],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [3,4],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [2,3],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [1,2],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [1,3],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [1,4],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="https://www.cylong.com/categories/LeetCode/"/>
-    
-    
-    <category term="Java" scheme="https://www.cylong.com/tags/Java/"/>
-    
-    <category term="LeetCode" scheme="https://www.cylong.com/tags/LeetCode/"/>
-    
-    <category term="学习笔记" scheme="https://www.cylong.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="递归" scheme="https://www.cylong.com/tags/%E9%80%92%E5%BD%92/"/>
-    
-    <category term="回溯算法" scheme="https://www.cylong.com/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/"/>
-    
-    <category term="深度优先搜索" scheme="https://www.cylong.com/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
-    
-    <category term="组合" scheme="https://www.cylong.com/tags/%E7%BB%84%E5%90%88/"/>
     
   </entry>
   
