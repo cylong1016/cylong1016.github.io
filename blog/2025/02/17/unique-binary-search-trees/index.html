@@ -311,7 +311,7 @@
 
       
         <hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个整数 <code>n</code> ，求恰由 <code>n</code> 个节点组成且节点值从 <code>1</code> 到 <code>n</code> 互不相同的 <code>二叉搜索树</code> 有多少种？返回满足题意的二叉搜索树的种数。</p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个整数 <code>n</code> ，求恰由 <code>n</code> 个节点组成且节点值从 <code>1</code> 到 <code>n</code> 互不相同的 <strong>二叉搜索树</strong> 有多少种？返回满足题意的二叉搜索树的种数。</p>
 <p><strong>示例 1:</strong></p>
 <img src="/blog/2025/02/17/unique-binary-search-trees/uniquebstn3.jpg" class="" title="二叉搜索树">
 <blockquote>
@@ -336,7 +336,7 @@
 <li><strong>时间复杂度：</strong><code>O(n²)</code>。需要双层循环，外层循环 <code>n</code> 次，内层循环 <code>i</code> 次，总操作次数为 <code>n(n+1)/2</code>，因此总时间复杂度为 <code>O(n²)</code>。</li>
 <li><strong>空间复杂度：</strong><code>O(n)</code>。使用长度为 <code>n+1</code> 的数组存储中间结果。</li>
 </ul>
-<h1 id="卡特兰数"><a href="#卡特兰数" class="headerlink" title="卡特兰数"></a>卡特兰数</h1><p>二叉搜索树的数目实际上是一个 <code>卡特兰数</code> 问题，卡特兰数是一个数列，满足递推关系 <code>C(n) = C(0)C(n-1) + C(1)C(n-2) + ... + C(n-1)C(0)</code>，并且初始条件 <code>C(0)=1</code>。这和本题的二叉搜索树的数量问题是一样的，所以此问题其实已经接触过卡特兰数的一个应用案例。卡塔兰数更便于计算的定义如下:</p>
+<h1 id="卡特兰数"><a href="#卡特兰数" class="headerlink" title="卡特兰数"></a>卡特兰数</h1><p>二叉搜索树的数目实际上是一个 <strong>卡特兰数</strong> 问题，卡特兰数是一个数列，满足递推关系 <code>C(n) = C(0)C(n-1) + C(1)C(n-2) + ... + C(n-1)C(0)</code>，并且初始条件 <code>C(0)=1</code>。这和本题的二叉搜索树的数量问题是一样的，所以此问题其实已经接触过卡特兰数的一个应用案例。卡塔兰数更便于计算的定义如下:</p>
 <img src="/blog/2025/02/17/unique-binary-search-trees/catalan.png" class="" title="卡特兰数">
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">numTrees</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="comment">// 我们在这里需要用 long 类型防止计算过程中的溢出</span></span><br><span class="line">    <span class="type">long</span> <span class="variable">C</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        C = C * <span class="number">2</span> * (<span class="number">2</span> * i + <span class="number">1</span>) / (i + <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (<span class="type">int</span>) C;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -575,7 +575,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">107</span>
+          <span class="site-state-item-count">108</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -663,15 +663,15 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">218k</span>
+    <span title="站点总字数">220k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:18</span>
+    <span title="站点阅读时长">3:20</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-    <span class="post-count">| 博客共100.9k字</span>
+    <span class="post-count">| 博客共102k字</span>
   </div>
 
         
