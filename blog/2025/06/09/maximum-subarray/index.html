@@ -287,7 +287,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
+              <span>1.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -343,7 +343,7 @@
 <li><strong>时间复杂度：</strong><code>O(n)</code>，只需一次遍历数组。</li>
 <li><strong>空间复杂度：</strong><code>O(1)</code>，仅使用常数级别的额外空间。</li>
 </ul>
-<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>定义 <code>dp[i]</code> 表示以 <code>nums[i]</code> 结尾的最大子数组和。状态转移方程为：<code>dp[i] = Math.max(dp[i - 1], 0) + nums[i]</code>。最终结果为 <code>dp</code> 数组中的最大值。</p>
+<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>定义 <code>dp[i]</code> 表示以 <code>nums[i]</code> 结尾的最大子数组和。状态转移方程为：<code>dp[i] = Math.max(dp[i - 1], 0) + nums[i]</code>。最终结果为 <code>dp</code> 数组中的最大值。可以简单的理解为，如果 <code>nums[i]</code> 左边的子数组和 <code>dp[i - 1] &lt; 0</code>，那么加上 <code>nums[i]</code> 的值会导致子数组和更小，所以这个时候取 <code>nums[i]</code> 的值即可，否则就将 <code>nums[i]</code> 的值加入 <code>dp[i - 1]</code> 的子数组和。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxSubArray</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    <span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[nums.length];</span><br><span class="line">    dp[<span class="number">0</span>] = nums[<span class="number">0</span>];</span><br><span class="line">    <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> dp[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        dp[i] = Math.max(dp[i - <span class="number">1</span>], <span class="number">0</span>) + nums[i];</span><br><span class="line">        max = Math.max(max, dp[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="复杂度分析-2"><a href="#复杂度分析-2" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
@@ -713,7 +713,7 @@
     <span title="站点阅读时长">3:21</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-    <span class="post-count">| 博客共102.8k字</span>
+    <span class="post-count">| 博客共102.9k字</span>
   </div>
 
         
