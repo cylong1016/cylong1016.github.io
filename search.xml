@@ -6154,4 +6154,86 @@ DNSPod 设置：<img src="/blog/2016/05/22/github-baidu-spider-exception/dns-par
         <tag>子数组</tag>
       </tags>
   </entry>
+  <entry>
+    <title>矩阵置零</title>
+    <url>/blog/2025/06/13/set-matrix-zeroes/</url>
+    <content><![CDATA[<hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个 <code>m x n</code> 的矩阵，如果一个元素为 <code>0</code> ，则将其所在行和列的所有元素都设为 <code>0</code> 。请使用 <strong>原地算法</strong>。</p>
+<p><strong>原地算法：</strong>在计算机科学中，一个原地算法（in-place algorithm）是一种使用小的，固定数量的额外之空间来转换资料的算法。当算法执行时，输入的资料通常会被要输出的部分覆盖掉。不是原地算法有时候称为非原地（not-in-place）或不得其所（out-of-place）。</p>
+<p><strong>示例 1:</strong></p>
+<img src="/blog/2025/06/13/set-matrix-zeroes/mat1.jpg" class="">
+<blockquote>
+<p><strong>输入：</strong><code>matrix = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]</code><br><strong>输出：</strong><code>[[1, 0, 1], [0, 0, 0], [1, 0, 1]]</code></p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<img src="/blog/2025/06/13/set-matrix-zeroes/mat2.jpg" class="">
+<blockquote>
+<p><strong>输入：</strong><code>matrix = [[0, 1, 2, 0], [3, 4, 5, 2], [1, 3, 1, 5]]</code><br><strong>输出：</strong><code>[[0, 0, 0, 0], [0, 4, 5, 0], [0, 3, 1, 0]]</code></p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>m == matrix.length</code></li>
+<li><code>n == matrix[0].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 200</code></li>
+<li><code>-2^31 &lt;= matrix[i][j] &lt;= 2^31 - 1</code></li>
+</ul>
+<span id="more"></span>
+
+<h1 id="辅助数组法"><a href="#辅助数组法" class="headerlink" title="辅助数组法"></a>辅助数组法</h1><p>使用两个辅助数组分别记录需要置零的行和列。首先遍历矩阵，当遇到元素为 <code>0</code> 时，将对应的行标记和列标记设置为 <code>true</code>。然后再次遍历矩阵，根据行标记和列标记将相应元素置为 <code>0</code>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setZeroes</span><span class="params">(<span class="type">int</span>[][] matrix)</span> &#123;</span><br><span class="line">    <span class="comment">// 获取矩阵的行数和列数</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">rowLen</span> <span class="operator">=</span> matrix.length;</span><br><span class="line">    <span class="type">int</span> <span class="variable">colLen</span> <span class="operator">=</span> matrix[<span class="number">0</span>].length;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 创建两个布尔数组，分别用于标记需要置零的行和列</span></span><br><span class="line">    <span class="type">boolean</span>[] row = <span class="keyword">new</span> <span class="title class_">boolean</span>[rowLen];</span><br><span class="line">    <span class="type">boolean</span>[] col = <span class="keyword">new</span> <span class="title class_">boolean</span>[colLen];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 第一次遍历：标记包含 0 的行和列</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; rowLen; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; colLen; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[i][j] == <span class="number">0</span>) &#123;</span><br><span class="line">                row[i] = <span class="literal">true</span>; <span class="comment">// 标记第 i 行需要置零</span></span><br><span class="line">                col[j] = <span class="literal">true</span>; <span class="comment">// 标记第 j 列需要置零</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 第二次遍历：根据标记数组将相应行和列的元素置零</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; rowLen; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; colLen; j++) &#123;</span><br><span class="line">            <span class="comment">// 如果当前行或列被标记，则将元素置为 0</span></span><br><span class="line">            <span class="keyword">if</span> (row[i] || col[j]) &#123;</span><br><span class="line">                matrix[i][j] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li><strong>时间复杂度：</strong><code>O(m × n)</code>，其中 <code>m</code> 和 <code>n</code> 分别是矩阵的行数和列数。我们遍历了两次矩阵。</li>
+<li><strong>空间复杂度：</strong><code>O(m + n)</code>，使用了两个辅助数组分别存储行和列的标记。</li>
+</ul>
+<h1 id="原地标记法（优化空间）"><a href="#原地标记法（优化空间）" class="headerlink" title="原地标记法（优化空间）"></a>原地标记法（优化空间）</h1><p>使用矩阵的第一行和第一列作为标记数组，代替上面解法中的额外数组。首先检查第一行和第一列是否需要置零，然后用第一行记录各列是否需要置零，第一列记录各行是否需要置零。最后根据标记处理除第一行第一列外的元素，再单独处理第一行和第一列。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setZeroes</span><span class="params">(<span class="type">int</span>[][] matrix)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">rowLen</span> <span class="operator">=</span> matrix.length;</span><br><span class="line">    <span class="type">int</span> <span class="variable">colLen</span> <span class="operator">=</span> matrix[<span class="number">0</span>].length;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 检查第一列是否有 0</span></span><br><span class="line">    <span class="type">boolean</span> <span class="variable">colHasZero</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; rowLen; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix[i][<span class="number">0</span>] == <span class="number">0</span>) &#123;</span><br><span class="line">            colHasZero = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 检查第一行是否有 0</span></span><br><span class="line">    <span class="type">boolean</span> <span class="variable">rowHasZero</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; colLen; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix[<span class="number">0</span>][j] == <span class="number">0</span>) &#123;</span><br><span class="line">            rowHasZero = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 使用第一行和第一列标记其他行列的 0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; rowLen; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>; j &lt; colLen; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[i][j] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">// 这里其实也是先把有零的第一行和第一列位置置零了</span></span><br><span class="line">                matrix[i][<span class="number">0</span>] = <span class="number">0</span>; <span class="comment">// 标记第 i 行需要置零</span></span><br><span class="line">                matrix[<span class="number">0</span>][j] = <span class="number">0</span>; <span class="comment">// 标记第 j 列需要置零</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 根据标记设置除第一行和第一列外的元素</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; rowLen; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>; j &lt; colLen; j++) &#123;</span><br><span class="line">            <span class="comment">// 如果当前行或列被标记，则将元素置为 0</span></span><br><span class="line">            <span class="keyword">if</span> (matrix[i][<span class="number">0</span>] == <span class="number">0</span> || matrix[<span class="number">0</span>][j] == <span class="number">0</span>) &#123;</span><br><span class="line">                matrix[i][j] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 处理第一列置零</span></span><br><span class="line">    <span class="keyword">if</span> (colHasZero) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; rowLen; i++) &#123;</span><br><span class="line">            matrix[i][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 处理第一行置零</span></span><br><span class="line">    <span class="keyword">if</span> (rowHasZero) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; colLen; j++) &#123;</span><br><span class="line">            matrix[<span class="number">0</span>][j] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
+<li><strong>时间复杂度：</strong><code>O(m × n)</code>，其中 <code>m</code> 和 <code>n</code> 分别是矩阵的行数和列数。我们遍历了多次矩阵，但时间复杂度仍是线性级别。</li>
+<li><strong>空间复杂度：</strong><code>O(1)</code>，仅使用常数级别的额外空间。</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><table>
+<thead>
+<tr>
+<th>解法</th>
+<th>时间复杂度</th>
+<th>空间复杂度</th>
+<th>优势</th>
+<th>劣势</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>辅助数组法</td>
+<td>O(m × n)</td>
+<td>O(m + n)</td>
+<td>思路清晰，实现简单，两次遍历矩阵即可完成</td>
+<td>使用了额外的 O(m + n) 空间，不是原地算法</td>
+</tr>
+<tr>
+<td>原地标记法</td>
+<td>O(m × n)</td>
+<td>O(1)</td>
+<td>空间复杂度最优，仅使用常数空间，符合原地算法</td>
+<td>实现逻辑相对复杂，需要多次遍历矩阵</td>
+</tr>
+</tbody></table>
+<p>两种方法各有优劣，在实际应用中可根据具体场景选择最合适的解法。对于面试场景，掌握两种方法并能解释其优劣会更有优势。</p>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
+<p><a href="https://leetcode.cn/problems/set-matrix-zeroes/description/" title="73. 矩阵置零 | 力扣（LeetCode）">73. 矩阵置零 | 力扣（LeetCode）</a></p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode</tag>
+        <tag>学习笔记</tag>
+        <tag>数组</tag>
+        <tag>矩阵</tag>
+        <tag>LeetCode中等</tag>
+      </tags>
+  </entry>
 </search>
