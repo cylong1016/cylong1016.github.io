@@ -215,6 +215,844 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/06/13/set-matrix-zeroes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="cylong">
+      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑话人生">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2025/06/13/set-matrix-zeroes/" class="post-title-link" itemprop="url">矩阵置零</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-06-13 00:18:52" itemprop="dateCreated datePublished" datetime="2025-06-13T00:18:52+08:00">2025-06-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/blog/2025/06/13/set-matrix-zeroes/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/06/13/set-matrix-zeroes/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个 <code>m x n</code> 的矩阵，如果一个元素为 <code>0</code> ，则将其所在行和列的所有元素都设为 <code>0</code> 。请使用 <strong>原地算法</strong>。</p>
+<p><strong>原地算法：</strong>在计算机科学中，一个原地算法（in-place algorithm）是一种使用小的，固定数量的额外之空间来转换资料的算法。当算法执行时，输入的资料通常会被要输出的部分覆盖掉。不是原地算法有时候称为非原地（not-in-place）或不得其所（out-of-place）。</p>
+<p><strong>示例 1:</strong></p>
+<img src="/blog/2025/06/13/set-matrix-zeroes/mat1.jpg" class="">
+<blockquote>
+<p><strong>输入：</strong><code>matrix = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]</code><br><strong>输出：</strong><code>[[1, 0, 1], [0, 0, 0], [1, 0, 1]]</code></p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<img src="/blog/2025/06/13/set-matrix-zeroes/mat2.jpg" class="">
+<blockquote>
+<p><strong>输入：</strong><code>matrix = [[0, 1, 2, 0], [3, 4, 5, 2], [1, 3, 1, 5]]</code><br><strong>输出：</strong><code>[[0, 0, 0, 0], [0, 4, 5, 0], [0, 3, 1, 0]]</code></p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>m == matrix.length</code></li>
+<li><code>n == matrix[0].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 200</code></li>
+<li><code>-2^31 &lt;= matrix[i][j] &lt;= 2^31 - 1</code></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2025/06/13/set-matrix-zeroes/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/06/12/spring-boot-demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="cylong">
+      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑话人生">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2025/06/12/spring-boot-demo/" class="post-title-link" itemprop="url">Spring Boot 入门指南：从零开始创建 Web 应用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-06-12 15:10:26" itemprop="dateCreated datePublished" datetime="2025-06-12T15:10:26+08:00">2025-06-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/blog/2025/06/12/spring-boot-demo/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/06/12/spring-boot-demo/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>8.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>8 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<blockquote>
+<p>本文面向 Java 初学者，详细介绍 Spring Boot 框架原理、应用场景及从零搭建 Web 应用的完整流程。</p>
+</blockquote>
+<h1 id="Spring-Boot-框架简介"><a href="#Spring-Boot-框架简介" class="headerlink" title="Spring Boot 框架简介"></a>Spring Boot 框架简介</h1><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>Spring Boot 是 Spring 框架的扩展，通过 <strong>约定优于配置</strong> 的理念解决传统 Spring 应用配置复杂的问题，简化 Spring 应用的初始搭建和开发过程。通过自动配置和起步依赖（Starter Dependencies）来减少开发者的配置工作，Spring Boot 内嵌了 Tomcat、Jetty 或 Undertow 等服务器，因此无需部署 WAR 文件即可运行。核心思想是 <strong>让开发更简单</strong> 。</p>
+<h2 id="核心特性"><a href="#核心特性" class="headerlink" title="核心特性"></a>核心特性</h2><ol>
+<li><strong>自动配置</strong>：通过 <code>@EnableAutoConfiguration</code> 自动配置 Bean（基于项目中的 jar 依赖自动配置 Spring 应用）</li>
+<li><strong>起步依赖</strong>：通过提供预定义的依赖描述符（如 <code>spring-boot-starter-web</code> 包含了开发 Web 应用所需的依赖）简化构建配置，解决版本冲突。</li>
+<li><strong>内嵌服务</strong>：内置 Tomcat/Jetty/Undertow 等服务器，无需部署 WAR，直接运行一个独立的应用即可。</li>
+<li><strong>Actuator</strong>：提供生产级监控和管理功能，如监控应用的健康状况、信息查看等。</li>
+</ol>
+<h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[启动类] → [@SpringBootApplication] </span><br><span class="line">    → 扫描 @Component → 加载 @Configuration </span><br><span class="line">    → 读取 spring.factories → 应用自动配置</span><br><span class="line">    → 启动内嵌容器</span><br></pre></td></tr></table></figure>
+
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>Spring Boot 适用于构建微服务架构、RESTful API、企业级应用等。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2025/06/12/spring-boot-demo/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/06/09/maximum-subarray/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="cylong">
+      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑话人生">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2025/06/09/maximum-subarray/" class="post-title-link" itemprop="url">最大子数组和</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-06-09 22:40:57" itemprop="dateCreated datePublished" datetime="2025-06-09T22:40:57+08:00">2025-06-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/blog/2025/06/09/maximum-subarray/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/06/09/maximum-subarray/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个整数数组 <code>nums</code> ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<p><strong>子数组</strong> 是数组中的一个连续部分。</p>
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]</code><br><strong>输出：</strong>6<br><strong>解释：</strong>连续子数组 <code>[4, -1, 2, 1]</code> 的和最大，为 <code>6</code> 。</p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>nums = [1]</code><br><strong>输出：</strong>1</p>
+</blockquote>
+<p><strong>示例 3:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>nums = [5, 4, -1, 7, 8]</code><br><strong>输出：</strong>23</p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10^5</code></li>
+<li><code>-10^4 &lt;= nums[i] &lt;= 10^4</code></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2025/06/09/maximum-subarray/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/06/05/subarray-sum-equals-k/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="cylong">
+      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑话人生">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2025/06/05/subarray-sum-equals-k/" class="post-title-link" itemprop="url">和为 K 的子数组</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-06-05 23:43:23" itemprop="dateCreated datePublished" datetime="2025-06-05T23:43:23+08:00">2025-06-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/blog/2025/06/05/subarray-sum-equals-k/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/06/05/subarray-sum-equals-k/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code> ，请你统计并返回 该数组中和为 <code>k</code> 的子数组的个数 。</p>
+<p><strong>子数组</strong> 是数组中元素的连续非空序列。</p>
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>nums = [1, 1, 1]</code>, <code>k = 2</code><br><strong>输出：</strong><code>2</code></p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>nums = [1, 2, 3]</code>, <code>k = 3</code><br><strong>输出：</strong><code>2</code></p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 2 * 10^4</code></li>
+<li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li>
+<li><code>-10^7 &lt;= k &lt;= 10^7</code></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2025/06/05/subarray-sum-equals-k/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/06/03/range-sum-query-immutable/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="cylong">
+      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑话人生">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2025/06/03/range-sum-query-immutable/" class="post-title-link" itemprop="url">区域和检索 - 数组不可变</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-06-03 23:20:55" itemprop="dateCreated datePublished" datetime="2025-06-03T23:20:55+08:00">2025-06-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/blog/2025/06/03/range-sum-query-immutable/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/06/03/range-sum-query-immutable/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个整数数组  <code>nums</code>，处理以下类型的多个查询:</p>
+<p>计算索引 <code>left</code> 和 <code>right</code> （包含 <code>left</code> 和 <code>right</code>）之间的 <code>nums</code> 元素的和 ，其中 <code>left &lt;= right</code>。</p>
+<p>实现 <code>NumArray</code> 类：</p>
+<ul>
+<li><code>NumArray(int[] nums)</code> 使用数组 <code>nums</code> 初始化对象</li>
+<li><code>int sumRange(int i, int j)</code> 返回数组 <code>nums</code> 中索引 <code>left</code> 和 <code>right</code> 之间的元素的总和 ，包含 <code>left</code> 和 <code>right</code> 两点（也就是 <code>nums[left] + nums[left + 1] + ... + nums[right]</code> )</li>
+</ul>
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><br><code>[&quot;NumArray&quot;, &quot;sumRange&quot;, &quot;sumRange&quot;, &quot;sumRange&quot;]</code><br><code>[[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]]</code><br><strong>输出：</strong><br><code>[null, 1, -1, -3]</code><br><strong>解释：</strong><br><code>NumArray numArray = new NumArray([-2, 0, 3, -5, 2, -1]);</code><br><code>numArray.sumRange(0, 2); // return 1 ((-2) + 0 + 3)</code><br><code>numArray.sumRange(2, 5); // return -1 (3 + (-5) + 2 + (-1)) </code><br><code>numArray.sumRange(0, 5); // return -3 ((-2) + 0 + 3 + (-5) + 2 + (-1))</code></p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10^4</code></li>
+<li><code>-10^5 &lt;= nums[i] &lt;= 10^5</code></li>
+<li><code>0 &lt;= i &lt;= j &lt; nums.length</code></li>
+<li>最多调用 <code>10*4</code> 次 <code>sumRange</code> 方法</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2025/06/03/range-sum-query-immutable/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/05/30/group-anagrams/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="cylong">
+      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑话人生">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2025/05/30/group-anagrams/" class="post-title-link" itemprop="url">字母异位词分组</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-05-30 00:28:11" itemprop="dateCreated datePublished" datetime="2025-05-30T00:28:11+08:00">2025-05-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/blog/2025/05/30/group-anagrams/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/05/30/group-anagrams/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个字符串数组，请你将 <strong>字母异位词</strong> 组合在一起。可以按任意顺序返回结果列表。</p>
+<p><strong>字母异位词</strong> 是由重新排列源单词的所有字母得到的一个新单词。</p>
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>strs = [&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;]</code><br><strong>输出：</strong><code>[[&quot;bat&quot;], [&quot;nat&quot;, &quot;tan&quot;], [&quot;ate&quot;, &quot;eat&quot;, &quot;tea&quot;]]</code></p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>strs = [&quot;&quot;]</code><br><strong>输出：</strong><code>[[&quot;&quot;]]</code></p>
+</blockquote>
+<p><strong>示例 3:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>strs = [&quot;a&quot;]</code><br><strong>输出：</strong><code>[[&quot;a&quot;]]</code></p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= strs.length &lt;= 104</code></li>
+<li><code>0 &lt;= strs[i].length &lt;= 100</code></li>
+<li><code>strs[i]</code> 仅包含小写字母</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2025/05/30/group-anagrams/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/05/28/divisible-and-non-divisible-sums-difference/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="cylong">
+      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑话人生">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2025/05/28/divisible-and-non-divisible-sums-difference/" class="post-title-link" itemprop="url">分类求和并作差</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-05-28 00:19:46" itemprop="dateCreated datePublished" datetime="2025-05-28T00:19:46+08:00">2025-05-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/blog/2025/05/28/divisible-and-non-divisible-sums-difference/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/05/28/divisible-and-non-divisible-sums-difference/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你两个正整数 <code>n</code> 和 <code>m</code> 。现定义两个整数 <code>num1</code> 和 <code>num2</code> ，如下所示：</p>
+<p><code>num1</code>：范围 <code>[1, n]</code> 内所有 无法被 <code>m</code> 整除 的整数之和。<br><code>num2</code>：范围 <code>[1, n]</code> 内所有 能够被 <code>m</code> 整除 的整数之和。</p>
+<p>返回整数 <code>num1 - num2</code> 。</p>
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p><strong>输入：</strong>n = 10, m = 3<br><strong>输出：</strong>19<br><strong>解释：</strong>在这个示例中：<br>范围 <code>[1, 10]</code> 内无法被 3 整除的整数为 <code>[1, 2, 4, 5, 7, 8, 10]</code> ，num1 = 这些整数之和 = 37 。<br>范围 <code>[1, 10]</code> 内能够被 3 整除的整数为 <code>[3, 6, 9]</code> ，num2 = 这些整数之和 = 18 。<br>返回 37 - 18 = 19 作为答案。</p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p><strong>输入：</strong>n = 5, m = 6<br><strong>输出：</strong>15<br><strong>解释：</strong>在这个示例中：<br>范围 <code>[1, 5]</code> 内无法被 6 整除的整数为 <code>[1, 2, 3, 4, 5]</code> ，num1 = 这些整数之和 =  15 。<br>范围 <code>[1, 5]</code> 内能够被 6 整除的整数为 <code>[]</code> ，num2 = 这些整数之和 = 0 。<br>返回 15 - 0 = 15 作为答案。</p>
+</blockquote>
+<p><strong>示例 3:</strong></p>
+<blockquote>
+<p><strong>输入：</strong>n = 5, m = 1<br><strong>输出：</strong>-15<br><strong>解释：</strong>在这个示例中：<br>范围 <code>[1, 5]</code> 内无法被 1 整除的整数为 <code>[]</code> ，num1 = 这些整数之和 = 0 。<br>范围 <code>[1, 5]</code> 内能够被 1 整除的整数为 <code>[1, 2, 3, 4, 5]</code> ，num2 = 这些整数之和 = 15 。<br>返回 0 - 15 = -15 作为答案。</p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= n, m &lt;= 1000</code></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2025/05/28/divisible-and-non-divisible-sums-difference/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/05/25/longest-palindrome-by-concatenating-two-letter-words/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -271,7 +1109,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
+              <span>2.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -291,22 +1129,26 @@
 
       
           <hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个字符串数组 words 。words 中每个元素都是一个包含两个小写英文字母的单词。请你从 words 中选择一些元素并按任意顺序连接它们，并得到一个尽可能长的回文串 。每个元素至多只能使用一次。请你返回你能得到的最长回文串的长度 。如果没办法得到任何一个回文串，请你返回 0 。</p>
-<p><strong>说明:</strong></p>
-<ul>
-<li>回文串指的是从前往后和从后往前读一样的字符串。</li>
-</ul>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个字符串数组 <code>words</code> 。<code>words</code> 中每个元素都是一个包含两个小写英文字母的单词。请你从 <code>words</code> 中选择一些元素并按任意顺序连接它们，并得到一个尽可能长的回文串 。每个元素至多只能使用一次。请你返回你能得到的最长回文串的长度 。如果没办法得到任何一个回文串，请你返回 <code>0</code> 。</p>
+<p><strong>说明:</strong> 回文串指的是从前往后和从后往前读一样的字符串。</p>
 <p><strong>示例 1:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：words = [&quot;lc&quot;,&quot;cl&quot;,&quot;gg&quot;]</span><br><span class="line">输出：6</span><br><span class="line">解释：一个最长的回文串为 &quot;lc&quot; + &quot;gg&quot; + &quot;cl&quot; = &quot;lcggcl&quot; ，长度为 6 。</span><br><span class="line">&quot;clgglc&quot; 是另一个可以得到的最长回文串。</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p><strong>输入：</strong><code>words = [&quot;lc&quot;, &quot;cl&quot;, &quot;gg&quot;]</code><br><strong>输出：</strong>6<br><strong>解释：</strong>一个最长的回文串为 <code>&quot;lc&quot; + &quot;gg&quot; + &quot;cl&quot; = &quot;lcggcl&quot;</code> ，长度为 6 。<code>&quot;clgglc&quot;</code> 是另一个可以得到的最长回文串。</p>
+</blockquote>
 <p><strong>示例 2:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：words = [&quot;ab&quot;,&quot;ty&quot;,&quot;yt&quot;,&quot;lc&quot;,&quot;cl&quot;,&quot;ab&quot;]</span><br><span class="line">输出：8</span><br><span class="line">解释：最长回文串是 &quot;ty&quot; + &quot;lc&quot; + &quot;cl&quot; + &quot;yt&quot; = &quot;tylcclyt&quot; ，长度为 8 。</span><br><span class="line">&quot;lcyttycl&quot; 是另一个可以得到的最长回文串。</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p><strong>输入：</strong><code>words = [&quot;ab&quot;, &quot;ty&quot;, &quot;yt&quot;, &quot;lc&quot;, &quot;cl&quot;, &quot;ab&quot;]</code><br><strong>输出：</strong>8<br><strong>解释：</strong>最长回文串是 <code>&quot;ty&quot; + &quot;lc&quot; + &quot;cl&quot; + &quot;yt&quot; = &quot;tylcclyt&quot;</code> ，长度为 8 。<code>&quot;lcyttycl&quot;</code> 是另一个可以得到的最长回文串。</p>
+</blockquote>
 <p><strong>示例 3:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：words = [&quot;ab&quot;,&quot;ty&quot;,&quot;yt&quot;,&quot;lc&quot;,&quot;cl&quot;,&quot;ab&quot;]</span><br><span class="line">输出：8</span><br><span class="line">解释：最长回文串是 &quot;ty&quot; + &quot;lc&quot; + &quot;cl&quot; + &quot;yt&quot; = &quot;tylcclyt&quot; ，长度为 8 。</span><br><span class="line">&quot;lcyttycl&quot; 是另一个可以得到的最长回文串。</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p><strong>输入：</strong><code>words = [&quot;cc&quot;, &quot;ll&quot;, &quot;xx&quot;]</code><br><strong>输出：</strong>2<br><strong>解释：</strong>最长回文串是 <code>&quot;cc&quot;</code> ，长度为 2 。<code>&quot;ll&quot;</code> 是另一个可以得到的最长回文串。<code>&quot;xx&quot;</code> 也是。</p>
+</blockquote>
 <p><strong>提示:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* 1 &lt;= words.length &lt;= 105</span><br><span class="line">* words[i].length == 2</span><br><span class="line">* words[i] 仅包含小写英文字母。</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>1 &lt;= words.length &lt;= 10^5</code></li>
+<li><code>words[i].length == 2</code></li>
+<li><code>words[i]</code> 仅包含小写英文字母。</li>
+</ul>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/2025/05/25/longest-palindrome-by-concatenating-two-letter-words/#more" rel="contents">
@@ -329,781 +1171,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/05/24/longest-palindromic-substring/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="cylong">
-      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑话人生">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2025/05/24/longest-palindromic-substring/" class="post-title-link" itemprop="url">最长回文子串</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-05-24 12:02:04" itemprop="dateCreated datePublished" datetime="2025-05-24T12:02:04+08:00">2025-05-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/blog/2025/05/24/longest-palindromic-substring/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/05/24/longest-palindromic-substring/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个字符串 s，找到 s 中最长的回文子串。</p>
-<p><strong>说明:</strong></p>
-<ul>
-<li>如果字符串向前和向后读都相同，则它满足回文性。</li>
-<li>子字符串是字符串中连续的非空字符序列。</li>
-</ul>
-<p><strong>示例 1:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;babad&quot;</span><br><span class="line">输出：&quot;bab&quot;</span><br><span class="line">解释：&quot;aba&quot; 同样是符合题意的答案。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;cbbd&quot;</span><br><span class="line">输出：&quot;bb&quot;</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* 1 &lt;= s.length &lt;= 1000</span><br><span class="line">* s 仅由数字和英文字母组成</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/2025/05/24/longest-palindromic-substring/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2023/10/10/sign-up-apple-id/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="cylong">
-      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑话人生">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2023/10/10/sign-up-apple-id/" class="post-title-link" itemprop="url">国内如何注册国外 Apple ID</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-10-10 22:54:22" itemprop="dateCreated datePublished" datetime="2023-10-10T22:54:22+08:00">2023-10-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Apple/" itemprop="url" rel="index"><span itemprop="name">Apple</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/blog/2023/10/10/sign-up-apple-id/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2023/10/10/sign-up-apple-id/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>531</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近喜欢玩 ChatGPT，奈何手机 IOS 版的 ChatGPT 没有上架中国大陆区 App Store，所以折腾下想要注册美国的 Apple ID，同时也方便下载一些其他有用的软件，比如 PayPal 和 Shadowrocket，话不多说，操作起来也是很简单的 👻</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/2023/10/10/sign-up-apple-id/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2023/10/08/sign-up-chatgpt/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="cylong">
-      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑话人生">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2023/10/08/sign-up-chatgpt/" class="post-title-link" itemprop="url">国内如何注册 ChatGPT 账号</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-10-08 16:30:47" itemprop="dateCreated datePublished" datetime="2023-10-08T16:30:47+08:00">2023-10-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" itemprop="url" rel="index"><span itemprop="name">人工智能</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/blog/2023/10/08/sign-up-chatgpt/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2023/10/08/sign-up-chatgpt/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>OpenAI 公司是一家位于美国的人工智能研究与开发公司，成立于2015年，致力于推动人工智能技术的发展。该公司的使命是确保人工智能技术对整个人类社会的利益产生积极影响。OpenAI 在自然语言处理领域取得了重要突破，其中的一个产品就是 ChatGPT。<br>ChatGPT 是 OpenAI 开发的一款强大的自然语言处理模型。它可以理解和生成人类语言，能够回答问题、执行任务、进行对话等多种应用。ChatGPT 可以用于在线客服、智能助手、内容生成、教育支持等众多领域，为用户提供自然而流畅的文本交互体验。<br>OpenAI 不断改进和扩展 ChatGPT，以提供更准确、有用和安全的服务。这一技术的发展代表了人工智能在改善人们的生活、工作和沟通方面的潜力，并在多个领域产生了广泛的应用。</p>
-<p>在国内并不支持 OpenAI 账号注册，多数会提示：<code>OpenAI&#39;s services are not available in your country</code>，查阅了一些资料后发现以下方式可以注册成功。</p>
-<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><ol>
-<li>国外梯子，没有的话可以参考 <a href="/blog/2016/05/26/shadowsocks/" title="站在 Shadowsocks 的肩膀上发现精彩的世界 | 笑话人生">站在 Shadowsocks 的肩膀上发现精彩的世界</a></li>
-<li>国外手机号，没有的话可以通过 <a target="_blank" rel="noopener" href="https://sms-activate.org/" title="SMS-Activate是在线接收短信的虚拟号码服务">SMS-Activate</a> 购买一个</li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/2023/10/08/sign-up-chatgpt/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2021/03/01/job-alipay/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="cylong">
-      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑话人生">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2021/03/01/job-alipay/" class="post-title-link" itemprop="url">2022届实习生-蚂蚁集团-支付宝事业线</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-01 11:35:35" itemprop="dateCreated datePublished" datetime="2021-03-01T11:35:35+08:00">2021-03-01</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8B%9B%E8%81%98/" itemprop="url" rel="index"><span itemprop="name">招聘</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/blog/2021/03/01/job-alipay/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2021/03/01/job-alipay/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>看到学弟学妹都很热情的联系我，所以我整理了这个博客，方便给大家答疑，并同步招聘动态给大家。先自我介绍一下，我是南大软院17届毕业的，目前在支付宝就职，我叫陈云龙【花名奇策】，作为学长，可以根据自己亲身经历，给学弟学妹量身定做春招实习建议。大家有任何的疑问或者职业咨询，随时都可以联系我。</p>
-<p>周围有其他感兴趣的小伙伴，都可以让他们联系我，哪怕不想投递这个部门，也可以听听学长的唠叨【实习经验、注意事项、简历建议、面试建议等】随时联系学长咨询各种实习内推问题呀～</p>
-<p><strong>微信：cylong1016</strong>【加微信请备注姓名 + 学校 + 学历 + 学弟or学妹】</p>
-<img src="/blog/2021/03/01/job-alipay/%E5%BE%AE%E4%BF%A1.jpg" class="" title="微信">
-
-<p><strong>PS：加学长微信，可以给你24小时的热心答疑服务！(oﾟvﾟ)ノ</strong></p>
-<h1 id="招聘招聘"><a href="#招聘招聘" class="headerlink" title="招聘招聘"></a>招聘招聘</h1><p>2022届蚂蚁集团-支付宝事业线-区域中台技术部招聘实习生啦（内推），如果有意愿来支付宝的，给自己一次机会简历速度砸过来吧，我帮助大家内推。<strong>后续可转正！</strong></p>
-<p><strong>招聘对象：</strong> 2021.11 - 2022.10毕业的应届毕业生。<br><strong>招聘流程：</strong> 简历投递-&gt;在线笔试及测评-&gt;面试-&gt;发放实习offer-&gt;实习入职<br><strong>岗位类型：</strong> Java研发、数据研发、产品经理，欢迎加入钉钉群交流：31091227<br><strong>工作地点：</strong> 杭州、上海、成都<br><strong>简历请发送到邮箱：</strong> chenyunlong.cyl@antgroup.com<br><strong>注意简历命名格式：</strong> 姓名 + 学校 + 手机号 + 邮箱</p>
-<p><strong>附：</strong> 投递简历后学长将把关简历，提供修改建议，并提供实习问题咨询及职业指导，简历快快砸过来～</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/2021/03/01/job-alipay/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2020/10/29/sum-root-to-leaf-numbers/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="cylong">
-      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑话人生">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2020/10/29/sum-root-to-leaf-numbers/" class="post-title-link" itemprop="url">求根到叶子节点数字之和</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-10-29 22:52:29" itemprop="dateCreated datePublished" datetime="2020-10-29T22:52:29+08:00">2020-10-29</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/blog/2020/10/29/sum-root-to-leaf-numbers/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2020/10/29/sum-root-to-leaf-numbers/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个二叉树，它的每个结点都存放一个 0-9 的数字，每条从根到叶子节点的路径都代表一个数字。<br>例如，从根到叶子节点路径 1-&gt;2-&gt;3 代表数字 123。计算从根到叶子节点生成的所有数字之和。</p>
-<p><strong>说明:</strong> 叶子节点是指没有子节点的节点。</p>
-<p><strong>示例 1:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">输入: [1, 2, 3]</span><br><span class="line">    1</span><br><span class="line">   / \</span><br><span class="line">  2   3</span><br><span class="line">输出: 25</span><br><span class="line">解释:</span><br><span class="line">从根到叶子节点路径 1-&gt;2 代表数字 12.</span><br><span class="line">从根到叶子节点路径 1-&gt;3 代表数字 13.</span><br><span class="line">因此，数字总和 = 12 + 13 = 25.</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">输入: [4, 9, 0, 5, 1]</span><br><span class="line">    4</span><br><span class="line">   / \</span><br><span class="line">  9   0</span><br><span class="line"> / \</span><br><span class="line">5   1</span><br><span class="line">输出: 1026</span><br><span class="line">解释:</span><br><span class="line">从根到叶子节点路径 4-&gt;9-&gt;5 代表数字 495.</span><br><span class="line">从根到叶子节点路径 4-&gt;9-&gt;1 代表数字 491.</span><br><span class="line">从根到叶子节点路径 4-&gt;0 代表数字 40.</span><br><span class="line">因此，数字总和 = 495 + 491 + 40 = 1026.</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/2020/10/29/sum-root-to-leaf-numbers/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2020/10/27/binary-tree-preorder-traversal/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="cylong">
-      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑话人生">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2020/10/27/binary-tree-preorder-traversal/" class="post-title-link" itemprop="url">二叉树的前序遍历</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-10-27 23:15:09" itemprop="dateCreated datePublished" datetime="2020-10-27T23:15:09+08:00">2020-10-27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/blog/2020/10/27/binary-tree-preorder-traversal/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2020/10/27/binary-tree-preorder-traversal/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你二叉树的根节点 root ，返回它节点值的 前序 遍历。</p>
-<p><strong>示例 1：</strong></p>
-<img src="/blog/2020/10/27/binary-tree-preorder-traversal/inorder.jpg" class="" title="前序遍历">
-<blockquote>
-<p>输入：root = [1, null, 2, 3]<br>输出：[1, 2, 3]</p>
-</blockquote>
-<p><strong>示例 2：</strong></p>
-<blockquote>
-<p>输入：root = []<br>输出：[]</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/2020/10/27/binary-tree-preorder-traversal/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2020/10/22/partition-labels/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="cylong">
-      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑话人生">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2020/10/22/partition-labels/" class="post-title-link" itemprop="url">划分字母区间</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-10-22 23:08:50" itemprop="dateCreated datePublished" datetime="2020-10-22T23:08:50+08:00">2020-10-22</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/blog/2020/10/22/partition-labels/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2020/10/22/partition-labels/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>字符串 S 由小写字母组成。我们要把这个字符串划分为尽可能多的片段，同一字母最多出现在一个片段中。返回一个表示每个字符串片段的长度的列表。</p>
-<p><strong>示例：</strong></p>
-<blockquote>
-<p>输入：S = “ababcbacadefegdehijhklij”<br>输出：[9, 7, 8]<br>解释：<br>划分结果为 “ababcbaca”, “defegde”, “hijhklij”。<br>每个字母最多出现在一个片段中。像 “ababcbacadefegde”, “hijhklij” 的划分是错误的，因为划分的片段数较少。</p>
-</blockquote>
-<p><strong>提示：</strong></p>
-<ul>
-<li>S的长度在 [1, 500] 之间。</li>
-<li>S只包含小写字母 ‘a’ 到 ‘z’。</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/2020/10/22/partition-labels/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1171,7 +1242,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-count">111</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1184,7 +1255,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">113</span>
+        <span class="site-state-item-count">125</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1195,12 +1266,6 @@
       </span>
       <span class="links-of-author-item">
         <a href="https://github.com/cylong1016" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cylong1016" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/cylong1016" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;cylong1016" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.facebook.com/cylong1016" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;cylong1016" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
       </span>
       <span class="links-of-author-item">
         <a href="https://www.xiaohongshu.com/user/profile/5fba43f2000000000101df9d" title="小红书 → https:&#x2F;&#x2F;www.xiaohongshu.com&#x2F;user&#x2F;profile&#x2F;5fba43f2000000000101df9d" rel="noopener" target="_blank"><i class="fas fa-heart fa-fw"></i>小红书</a>
@@ -1259,15 +1324,15 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">202k</span>
+    <span title="站点总字数">233k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:03</span>
+    <span title="站点阅读时长">3:32</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-    <span class="post-count">| 博客共93.4k字</span>
+    <span class="post-count">| 博客共106.3k字</span>
   </div>
 
         
