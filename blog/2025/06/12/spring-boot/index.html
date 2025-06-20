@@ -25,15 +25,15 @@
   <meta name="description" content="本文面向 Java 初学者，详细介绍 Spring Boot 框架原理、应用场景及从零搭建 Web 应用的完整流程。  Spring Boot 框架简介基本原理Spring Boot 是 Spring 框架的扩展，通过 约定优于配置 的理念解决传统 Spring 应用配置复杂的问题，简化 Spring 应用的初始搭建和开发过程。通过自动配置和起步依赖（Starter Dependencies）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Boot 入门指南：从零开始创建 Web 应用">
-<meta property="og:url" content="https://www.cylong.com/blog/2025/06/12/spring-boot-demo/index.html">
+<meta property="og:url" content="https://www.cylong.com/blog/2025/06/12/spring-boot/index.html">
 <meta property="og:site_name" content="笑话人生">
 <meta property="og:description" content="本文面向 Java 初学者，详细介绍 Spring Boot 框架原理、应用场景及从零搭建 Web 应用的完整流程。  Spring Boot 框架简介基本原理Spring Boot 是 Spring 框架的扩展，通过 约定优于配置 的理念解决传统 Spring 应用配置复杂的问题，简化 Spring 应用的初始搭建和开发过程。通过自动配置和起步依赖（Starter Dependencies）">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.cylong.com/blog/2025/06/12/spring-boot-demo/m2-settings-path.png">
-<meta property="og:image" content="https://www.cylong.com/blog/2025/06/12/spring-boot-demo/spring-initializr-web.png">
-<meta property="og:image" content="https://www.cylong.com/blog/2025/06/12/spring-boot-demo/new-project.png">
-<meta property="og:image" content="https://www.cylong.com/blog/2025/06/12/spring-boot-demo/dependencies.png">
-<meta property="og:image" content="https://www.cylong.com/blog/2025/06/12/spring-boot-demo/maven-package.png">
+<meta property="og:image" content="https://www.cylong.com/blog/2025/06/12/spring-boot/m2-settings-path.png">
+<meta property="og:image" content="https://www.cylong.com/blog/2025/06/12/spring-boot/spring-initializr-web.png">
+<meta property="og:image" content="https://www.cylong.com/blog/2025/06/12/spring-boot/new-project.png">
+<meta property="og:image" content="https://www.cylong.com/blog/2025/06/12/spring-boot/dependencies.png">
+<meta property="og:image" content="https://www.cylong.com/blog/2025/06/12/spring-boot/maven-package.png">
 <meta property="article:published_time" content="2025-06-12T07:10:26.000Z">
 <meta property="article:modified_time" content="2025-06-12T07:10:26.000Z">
 <meta property="article:author" content="cylong">
@@ -44,9 +44,9 @@
 <meta property="article:tag" content="后端框架">
 <meta property="article:tag" content="RESTfulAPI">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.cylong.com/blog/2025/06/12/spring-boot-demo/m2-settings-path.png">
+<meta name="twitter:image" content="https://www.cylong.com/blog/2025/06/12/spring-boot/m2-settings-path.png">
 
-<link rel="canonical" href="https://www.cylong.com/blog/2025/06/12/spring-boot-demo/">
+<link rel="canonical" href="https://www.cylong.com/blog/2025/06/12/spring-boot/">
 
 
 <script id="page-configurations">
@@ -229,7 +229,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/06/12/spring-boot-demo/">
+    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/06/12/spring-boot/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -280,8 +280,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/blog/2025/06/12/spring-boot-demo/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/06/12/spring-boot-demo/" itemprop="commentCount"></span>
+    <a title="disqus" href="/blog/2025/06/12/spring-boot/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/06/12/spring-boot/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -332,7 +332,7 @@
 <li><strong>构建工具</strong>：Maven 3.6+（IDEA 一般自带，但需确保配置正确）</li>
 </ol>
 <h2 id="配置-Maven-的-settings-xml"><a href="#配置-Maven-的-settings-xml" class="headerlink" title="配置 Maven 的 settings.xml"></a>配置 Maven 的 settings.xml</h2><p>Maven的 <code>settings.xml</code>文件用于配置全局的 Maven 设置，如仓库镜像、代理等。通常位于Maven 安装目录的 <code>conf</code> 文件夹下，或者用户目录下的 <code>.m2</code> 文件夹（如 <code>~/.m2/settings.xml</code>），在 <code>IDEA → Settings</code> 中可以直接查看文件路径：</p>
-<img src="/blog/2025/06/12/spring-boot-demo/m2-settings-path.png" class="">
+<img src="/blog/2025/06/12/spring-boot/m2-settings-path.png" class="">
 
 <p>配置样例如下：</p>
 <figure class="highlight xml"><figcaption><span>settings.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://maven.apache.org/SETTINGS/1.0.0&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://maven.apache.org/SETTINGS/1.0.0 </span></span></span><br><span class="line"><span class="string"><span class="tag">          http://maven.apache.org/xsd/settings-1.0.0.xsd&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!-- 添加阿里云镜像加速 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>aliyun<span class="tag">&lt;/<span class="name">id</span>&gt;</span> <span class="comment">&lt;!-- 镜像的唯一标识 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">name</span>&gt;</span>Aliyun Public Repository<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://maven.aliyun.com/repository/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>*<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span> <span class="comment">&lt;!-- 匹配哪些仓库，`*` 表示所有仓库都使用该镜像 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -343,11 +343,11 @@
 </ol>
 <h1 id="创建-Spring-Boot-项目"><a href="#创建-Spring-Boot-项目" class="headerlink" title="创建 Spring Boot 项目"></a>创建 Spring Boot 项目</h1><h2 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h2><p>在 IDEA 中创建 Spring Boot 项目有两种常用方式：</p>
 <ol>
-<li>通过 Spring Initializr 网站（<a target="_blank" rel="noopener" href="https://start.spring.io/">https://start.spring.io/</a>）生成项目，然后导入 IDEA。<img src="/blog/2025/06/12/spring-boot-demo/spring-initializr-web.png" class=""></li>
-<li>打开 <code>IDEA → New → Project → Spring Boot</code>，配置项目信息<img src="/blog/2025/06/12/spring-boot-demo/new-project.png" class=""></li>
+<li>通过 Spring Initializr 网站（<a target="_blank" rel="noopener" href="https://start.spring.io/">https://start.spring.io/</a>）生成项目，然后导入 IDEA。<img src="/blog/2025/06/12/spring-boot/spring-initializr-web.png" class=""></li>
+<li>打开 <code>IDEA → New → Project → Spring Boot</code>，配置项目信息<img src="/blog/2025/06/12/spring-boot/new-project.png" class=""></li>
 <li>添加依赖<ul>
 <li><strong>Spring Web</strong>：用于构建Web应用</li>
-<li><strong>Lombok</strong>：非必须，主要用于简化代码<img src="/blog/2025/06/12/spring-boot-demo/dependencies.png" class="">
+<li><strong>Lombok</strong>：非必须，主要用于简化代码<img src="/blog/2025/06/12/spring-boot/dependencies.png" class="">
 
 </li>
 </ul>
@@ -390,7 +390,7 @@
 <li><p>或者直接图形化界面打包：</p>
 </li>
 </ol>
-<img src="/blog/2025/06/12/spring-boot-demo/maven-package.png" class="">
+<img src="/blog/2025/06/12/spring-boot/maven-package.png" class="">
 
 <h1 id="常见问题排查"><a href="#常见问题排查" class="headerlink" title="常见问题排查"></a>常见问题排查</h1><ol>
 <li>端口冲突：修改 <code>server.port=9090</code>，默认是 <code>8080</code></li>
@@ -438,7 +438,7 @@
 <ul class="post-copyright">
   <li class="post-copyright-title">
     <strong>本文标题：</strong>
-    <a href="https://www.cylong.com/blog/2025/06/12/spring-boot-demo/" title="Spring Boot 入门指南：从零开始创建 Web 应用">Spring Boot 入门指南：从零开始创建 Web 应用</a>
+    <a href="https://www.cylong.com/blog/2025/06/12/spring-boot/" title="Spring Boot 入门指南：从零开始创建 Web 应用">Spring Boot 入门指南：从零开始创建 Web 应用</a>
   </li>
   <li class="post-copyright-author">
     <strong>本文作者： </strong>
@@ -446,7 +446,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.cylong.com/blog/2025/06/12/spring-boot-demo/" title="Spring Boot 入门指南：从零开始创建 Web 应用">https://www.cylong.com/blog/2025/06/12/spring-boot-demo/</a>
+    <a href="https://www.cylong.com/blog/2025/06/12/spring-boot/" title="Spring Boot 入门指南：从零开始创建 Web 应用">https://www.cylong.com/blog/2025/06/12/spring-boot/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处 <span class="far fa-laugh-beam"></span>
@@ -834,8 +834,8 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://www.cylong.com/blog/2025/06/12/spring-boot-demo/";
-    this.page.identifier = "blog/2025/06/12/spring-boot-demo/";
+    this.page.url = "https://www.cylong.com/blog/2025/06/12/spring-boot/";
+    this.page.identifier = "blog/2025/06/12/spring-boot/";
     this.page.title = "Spring Boot 入门指南：从零开始创建 Web 应用";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
