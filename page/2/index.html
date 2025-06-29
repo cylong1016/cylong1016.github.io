@@ -215,6 +215,127 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/05/28/divisible-and-non-divisible-sums-difference/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="cylong">
+      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑话人生">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2025/05/28/divisible-and-non-divisible-sums-difference/" class="post-title-link" itemprop="url">分类求和并作差</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-05-28 00:19:46" itemprop="dateCreated datePublished" datetime="2025-05-28T00:19:46+08:00">2025-05-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/blog/2025/05/28/divisible-and-non-divisible-sums-difference/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/05/28/divisible-and-non-divisible-sums-difference/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你两个正整数 <code>n</code> 和 <code>m</code> 。现定义两个整数 <code>num1</code> 和 <code>num2</code> ，如下所示：</p>
+<p><code>num1</code>：范围 <code>[1, n]</code> 内所有 无法被 <code>m</code> 整除 的整数之和。<br><code>num2</code>：范围 <code>[1, n]</code> 内所有 能够被 <code>m</code> 整除 的整数之和。</p>
+<p>返回整数 <code>num1 - num2</code> 。</p>
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p><strong>输入：</strong>n = 10, m = 3<br><strong>输出：</strong>19<br><strong>解释：</strong>在这个示例中：<br>范围 <code>[1, 10]</code> 内无法被 3 整除的整数为 <code>[1, 2, 4, 5, 7, 8, 10]</code> ，num1 = 这些整数之和 = 37 。<br>范围 <code>[1, 10]</code> 内能够被 3 整除的整数为 <code>[3, 6, 9]</code> ，num2 = 这些整数之和 = 18 。<br>返回 37 - 18 = 19 作为答案。</p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p><strong>输入：</strong>n = 5, m = 6<br><strong>输出：</strong>15<br><strong>解释：</strong>在这个示例中：<br>范围 <code>[1, 5]</code> 内无法被 6 整除的整数为 <code>[1, 2, 3, 4, 5]</code> ，num1 = 这些整数之和 =  15 。<br>范围 <code>[1, 5]</code> 内能够被 6 整除的整数为 <code>[]</code> ，num2 = 这些整数之和 = 0 。<br>返回 15 - 0 = 15 作为答案。</p>
+</blockquote>
+<p><strong>示例 3:</strong></p>
+<blockquote>
+<p><strong>输入：</strong>n = 5, m = 1<br><strong>输出：</strong>-15<br><strong>解释：</strong>在这个示例中：<br>范围 <code>[1, 5]</code> 内无法被 1 整除的整数为 <code>[]</code> ，num1 = 这些整数之和 = 0 。<br>范围 <code>[1, 5]</code> 内能够被 1 整除的整数为 <code>[1, 2, 3, 4, 5]</code> ，num2 = 这些整数之和 = 15 。<br>返回 0 - 15 = -15 作为答案。</p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= n, m &lt;= 1000</code></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2025/05/28/divisible-and-non-divisible-sums-difference/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/05/25/longest-palindrome-by-concatenating-two-letter-words/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1066,113 +1187,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2023/10/10/sign-up-apple-id/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="cylong">
-      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑话人生">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2023/10/10/sign-up-apple-id/" class="post-title-link" itemprop="url">国内如何注册国外 Apple ID</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-10-10 22:54:22" itemprop="dateCreated datePublished" datetime="2023-10-10T22:54:22+08:00">2023-10-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Apple/" itemprop="url" rel="index"><span itemprop="name">Apple</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/blog/2023/10/10/sign-up-apple-id/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2023/10/10/sign-up-apple-id/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>531</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近喜欢玩 ChatGPT，奈何手机 IOS 版的 ChatGPT 没有上架中国大陆区 App Store，所以折腾下想要注册美国的 Apple ID，同时也方便下载一些其他有用的软件，比如 PayPal 和 Shadowrocket，话不多说，操作起来也是很简单的 👻</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/2023/10/10/sign-up-apple-id/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1240,7 +1258,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">112</span>
+          <span class="site-state-item-count">113</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1322,15 +1340,15 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">245k</span>
+    <span title="站点总字数">248k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:43</span>
+    <span title="站点阅读时长">3:46</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-    <span class="post-count">| 博客共109.5k字</span>
+    <span class="post-count">| 博客共110.8k字</span>
   </div>
 
         
