@@ -24,7 +24,7 @@
 
   <meta name="description" content="题目描述给你一个字符串数组 words 。words 中每个元素都是一个包含两个小写英文字母的单词。请你从 words 中选择一些元素并按任意顺序连接它们，并得到一个尽可能长的回文串 。每个元素至多只能使用一次。请你返回你能得到的最长回文串的长度 。如果没办法得到任何一个回文串，请你返回 0 。 说明: 回文串指的是从前往后和从后往前读一样的字符串。 示例 1:  输入：words &#x3D; [&amp;qu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="连接两字母单词得到的最长回文串">
+<meta property="og:title" content="两字母单词构造回文串：哈希表计数与配对实现（LeetCode 2131）">
 <meta property="og:url" content="https://www.cylong.com/blog/2025/05/25/longest-palindrome-by-concatenating-two-letter-words/index.html">
 <meta property="og:site_name" content="笑话人生">
 <meta property="og:description" content="题目描述给你一个字符串数组 words 。words 中每个元素都是一个包含两个小写英文字母的单词。请你从 words 中选择一些元素并按任意顺序连接它们，并得到一个尽可能长的回文串 。每个元素至多只能使用一次。请你返回你能得到的最长回文串的长度 。如果没办法得到任何一个回文串，请你返回 0 。 说明: 回文串指的是从前往后和从后往前读一样的字符串。 示例 1:  输入：words &#x3D; [&amp;qu">
@@ -52,7 +52,7 @@
   };
 </script>
 
-  <title>连接两字母单词得到的最长回文串 | 笑话人生</title>
+  <title>两字母单词构造回文串：哈希表计数与配对实现（LeetCode 2131） | 笑话人生</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77162231-1"></script>
     <script>
@@ -235,7 +235,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          连接两字母单词得到的最长回文串
+          两字母单词构造回文串：哈希表计数与配对实现（LeetCode 2131）
         </h1>
 
         <div class="post-meta">
@@ -374,7 +374,7 @@
 <ul class="post-copyright">
   <li class="post-copyright-title">
     <strong>本文标题：</strong>
-    <a href="https://www.cylong.com/blog/2025/05/25/longest-palindrome-by-concatenating-two-letter-words/" title="连接两字母单词得到的最长回文串">连接两字母单词得到的最长回文串</a>
+    <a href="https://www.cylong.com/blog/2025/05/25/longest-palindrome-by-concatenating-two-letter-words/" title="两字母单词构造回文串：哈希表计数与配对实现（LeetCode 2131）">两字母单词构造回文串：哈希表计数与配对实现（LeetCode 2131）</a>
   </li>
   <li class="post-copyright-author">
     <strong>本文作者： </strong>
@@ -382,7 +382,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.cylong.com/blog/2025/05/25/longest-palindrome-by-concatenating-two-letter-words/" title="连接两字母单词得到的最长回文串">https://www.cylong.com/blog/2025/05/25/longest-palindrome-by-concatenating-two-letter-words/</a>
+    <a href="https://www.cylong.com/blog/2025/05/25/longest-palindrome-by-concatenating-two-letter-words/" title="两字母单词构造回文串：哈希表计数与配对实现（LeetCode 2131）">https://www.cylong.com/blog/2025/05/25/longest-palindrome-by-concatenating-two-letter-words/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处 <span class="far fa-laugh-beam"></span>
@@ -436,12 +436,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog/2025/05/24/longest-palindromic-substring/" rel="prev" title="最长回文子串">
-      <i class="fa fa-chevron-left"></i> 最长回文子串
+    <a href="/blog/2025/05/24/longest-palindromic-substring/" rel="prev" title="动态规划和中心扩散法求解最长回文子串（LeetCode 5）">
+      <i class="fa fa-chevron-left"></i> 动态规划和中心扩散法求解最长回文子串（LeetCode 5）
     </a></div>
       <div class="post-nav-item">
-    <a href="/blog/2025/05/28/divisible-and-non-divisible-sums-difference/" rel="next" title="分类求和并作差">
-      分类求和并作差 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2025/05/28/divisible-and-non-divisible-sums-difference/" rel="next" title="整除性质解数字和差值：数学优化实现（LeetCode 2894）">
+      整除性质解数字和差值：数学优化实现（LeetCode 2894） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -771,7 +771,7 @@
   var disqus_config = function() {
     this.page.url = "https://www.cylong.com/blog/2025/05/25/longest-palindrome-by-concatenating-two-letter-words/";
     this.page.identifier = "blog/2025/05/25/longest-palindrome-by-concatenating-two-letter-words/";
-    this.page.title = "连接两字母单词得到的最长回文串";
+    this.page.title = "两字母单词构造回文串：哈希表计数与配对实现（LeetCode 2131）";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {

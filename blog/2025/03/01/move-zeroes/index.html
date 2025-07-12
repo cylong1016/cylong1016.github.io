@@ -24,7 +24,7 @@
 
   <meta name="description" content="题目描述给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。 请注意，必须在不复制数组的情况下原地对数组进行操作。 示例 1:  输入：nums &#x3D; [0, 1, 0, 3, 12]输出：[1, 3, 12, 0, 0]  示例 2:  输入：nums &#x3D; [0]输出：[0]  提示:  1 &lt;&#x3D; nums.length &lt;&#x3D; 10^4 -2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="移动零">
+<meta property="og:title" content="双指针法原地移动零元素（LeetCode 283）">
 <meta property="og:url" content="https://www.cylong.com/blog/2025/03/01/move-zeroes/index.html">
 <meta property="og:site_name" content="笑话人生">
 <meta property="og:description" content="题目描述给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。 请注意，必须在不复制数组的情况下原地对数组进行操作。 示例 1:  输入：nums &#x3D; [0, 1, 0, 3, 12]输出：[1, 3, 12, 0, 0]  示例 2:  输入：nums &#x3D; [0]输出：[0]  提示:  1 &lt;&#x3D; nums.length &lt;&#x3D; 10^4 -2">
@@ -53,7 +53,7 @@
   };
 </script>
 
-  <title>移动零 | 笑话人生</title>
+  <title>双指针法原地移动零元素（LeetCode 283） | 笑话人生</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77162231-1"></script>
     <script>
@@ -236,7 +236,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          移动零
+          双指针法原地移动零元素（LeetCode 283）
         </h1>
 
         <div class="post-meta">
@@ -332,7 +332,7 @@
 <li><strong>空间复杂度：</strong><code>O(1)</code>，原地操作，仅使用常数空间。</li>
 </ul>
 <h1 id="双指针（覆盖法）"><a href="#双指针（覆盖法）" class="headerlink" title="双指针（覆盖法）"></a>双指针（覆盖法）</h1><p>使用一个指针 <code>cur</code>，表示当前非零元素应该存放的位置。遍历数组，当遇到非零元素时，将其复制到 <code>cur</code> 位置，然后 <code>cur</code> 指针右移。遍历完成后，所有非零元素都被按顺序移动到了数组的前部，然后将 <code>cur</code> 之后的元素全部置为 <code>0</code>。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">moveZeroes</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">cur</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 第一阶段：移动非零元素</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] != <span class="number">0</span>) &#123;</span><br><span class="line">            nums[cur++] = nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 第二阶段：填充零</span></span><br><span class="line">    <span class="keyword">while</span> (cur &lt; nums.length) &#123;</span><br><span class="line">        nums[cur++] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 数组变化过程</span></span><br><span class="line">    <span class="comment">// 输入：[0, 1, 0, 3, 12]</span></span><br><span class="line">    <span class="comment">// [0, 1, 0, 3, 12]</span></span><br><span class="line">    <span class="comment">// [1, 0, 0, 3, 12]</span></span><br><span class="line">    <span class="comment">// [1, 0, 0, 3, 12]</span></span><br><span class="line">    <span class="comment">// [1, 3, 0, 0, 12]</span></span><br><span class="line">    <span class="comment">// [1, 3, 12, 0, 0]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">moveZeroes</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">cur</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 第一阶段：移动非零元素</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] != <span class="number">0</span>) &#123;</span><br><span class="line">            nums[cur++] = nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 第二阶段：填充零</span></span><br><span class="line">    <span class="keyword">while</span> (cur &lt; nums.length) &#123;</span><br><span class="line">        nums[cur++] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 数组变化过程</span></span><br><span class="line">    <span class="comment">// 输入：[0, 1, 0, 3, 12]</span></span><br><span class="line">    <span class="comment">// 输入：[0, 1, 0, 3, 12]</span></span><br><span class="line">    <span class="comment">// [0, 1, 0, 3, 12]</span></span><br><span class="line">    <span class="comment">// [1, 1, 0, 3, 12]</span></span><br><span class="line">    <span class="comment">// [1, 1, 0, 3, 12]</span></span><br><span class="line">    <span class="comment">// [1, 3, 0, 3, 12]</span></span><br><span class="line">    <span class="comment">// [1, 3, 12, 3, 12]</span></span><br><span class="line">    <span class="comment">// [1, 3, 12, 0, 0]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>执行过程（以 <code>[0, 1, 0, 3, 12]</code> 为例）</p>
 <p><strong>第一阶段：</strong></p>
@@ -394,7 +394,7 @@
 <ul class="post-copyright">
   <li class="post-copyright-title">
     <strong>本文标题：</strong>
-    <a href="https://www.cylong.com/blog/2025/03/01/move-zeroes/" title="移动零">移动零</a>
+    <a href="https://www.cylong.com/blog/2025/03/01/move-zeroes/" title="双指针法原地移动零元素（LeetCode 283）">双指针法原地移动零元素（LeetCode 283）</a>
   </li>
   <li class="post-copyright-author">
     <strong>本文作者： </strong>
@@ -402,7 +402,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.cylong.com/blog/2025/03/01/move-zeroes/" title="移动零">https://www.cylong.com/blog/2025/03/01/move-zeroes/</a>
+    <a href="https://www.cylong.com/blog/2025/03/01/move-zeroes/" title="双指针法原地移动零元素（LeetCode 283）">https://www.cylong.com/blog/2025/03/01/move-zeroes/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处 <span class="far fa-laugh-beam"></span>
@@ -457,12 +457,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog/2025/02/28/maximize-the-number-of-target-nodes-after-connecting-trees-i/" rel="prev" title="连接两棵树后最大目标节点数目 Ⅰ">
-      <i class="fa fa-chevron-left"></i> 连接两棵树后最大目标节点数目 Ⅰ
+    <a href="/blog/2025/02/28/maximize-the-number-of-target-nodes-after-connecting-trees-i/" rel="prev" title="树连接操作后的目标节点计算（LeetCode 2920）">
+      <i class="fa fa-chevron-left"></i> 树连接操作后的目标节点计算（LeetCode 2920）
     </a></div>
       <div class="post-nav-item">
-    <a href="/blog/2025/03/02/find-all-anagrams-in-a-string/" rel="next" title="找到字符串中所有字母异位词">
-      找到字符串中所有字母异位词 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2025/03/02/find-all-anagrams-in-a-string/" rel="next" title="滑动窗口求解异位词：双指针与字符频次统计（LeetCode 438）">
+      滑动窗口求解异位词：双指针与字符频次统计（LeetCode 438） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -792,7 +792,7 @@
   var disqus_config = function() {
     this.page.url = "https://www.cylong.com/blog/2025/03/01/move-zeroes/";
     this.page.identifier = "blog/2025/03/01/move-zeroes/";
-    this.page.title = "移动零";
+    this.page.title = "双指针法原地移动零元素（LeetCode 283）";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {

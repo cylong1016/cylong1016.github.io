@@ -24,7 +24,7 @@
 
   <meta name="description" content="题目描述给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null 。题目数据保证整个链式结构中不存在环。 图示两个链表在节点 c1 开始相交：   注意：函数返回结果后，链表必须保持其原始结构 。 自定义评测：评测系统的输入如下（你设计的程序不适用此输入）：  intersectVal - 相交的起始节点的值。如果不">
 <meta property="og:type" content="article">
-<meta property="og:title" content="相交链表">
+<meta property="og:title" content="双指针法求解链表交点（LeetCode 160）">
 <meta property="og:url" content="https://www.cylong.com/blog/2025/07/01/intersection-of-two-linked-lists/index.html">
 <meta property="og:site_name" content="笑话人生">
 <meta property="og:description" content="题目描述给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null 。题目数据保证整个链式结构中不存在环。 图示两个链表在节点 c1 开始相交：   注意：函数返回结果后，链表必须保持其原始结构 。 自定义评测：评测系统的输入如下（你设计的程序不适用此输入）：  intersectVal - 相交的起始节点的值。如果不">
@@ -60,7 +60,7 @@
   };
 </script>
 
-  <title>相交链表 | 笑话人生</title>
+  <title>双指针法求解链表交点（LeetCode 160） | 笑话人生</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77162231-1"></script>
     <script>
@@ -243,7 +243,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          相交链表
+          双指针法求解链表交点（LeetCode 160）
         </h1>
 
         <div class="post-meta">
@@ -484,7 +484,7 @@
 <ul class="post-copyright">
   <li class="post-copyright-title">
     <strong>本文标题：</strong>
-    <a href="https://www.cylong.com/blog/2025/07/01/intersection-of-two-linked-lists/" title="相交链表">相交链表</a>
+    <a href="https://www.cylong.com/blog/2025/07/01/intersection-of-two-linked-lists/" title="双指针法求解链表交点（LeetCode 160）">双指针法求解链表交点（LeetCode 160）</a>
   </li>
   <li class="post-copyright-author">
     <strong>本文作者： </strong>
@@ -492,7 +492,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.cylong.com/blog/2025/07/01/intersection-of-two-linked-lists/" title="相交链表">https://www.cylong.com/blog/2025/07/01/intersection-of-two-linked-lists/</a>
+    <a href="https://www.cylong.com/blog/2025/07/01/intersection-of-two-linked-lists/" title="双指针法求解链表交点（LeetCode 160）">https://www.cylong.com/blog/2025/07/01/intersection-of-two-linked-lists/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处 <span class="far fa-laugh-beam"></span>
@@ -548,12 +548,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog/2025/06/27/rotate-image/" rel="prev" title="旋转图像">
-      <i class="fa fa-chevron-left"></i> 旋转图像
+    <a href="/blog/2025/06/27/rotate-image/" rel="prev" title="矩阵原地旋转：分层遍历与坐标映射实现（LeetCode 48）">
+      <i class="fa fa-chevron-left"></i> 矩阵原地旋转：分层遍历与坐标映射实现（LeetCode 48）
     </a></div>
       <div class="post-nav-item">
-    <a href="/blog/2025/07/07/lru-cache/" rel="next" title="LRU 缓存">
-      LRU 缓存 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2025/07/07/lru-cache/" rel="next" title="哈希表与双向链表实现LRU缓存（LeetCode 146）">
+      哈希表与双向链表实现LRU缓存（LeetCode 146） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -883,7 +883,7 @@
   var disqus_config = function() {
     this.page.url = "https://www.cylong.com/blog/2025/07/01/intersection-of-two-linked-lists/";
     this.page.identifier = "blog/2025/07/01/intersection-of-two-linked-lists/";
-    this.page.title = "相交链表";
+    this.page.title = "双指针法求解链表交点（LeetCode 160）";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {

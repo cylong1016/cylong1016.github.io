@@ -24,7 +24,7 @@
 
   <meta name="description" content="题目描述给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的子数组的个数 。 子数组 是数组中元素的连续非空序列。 示例 1:  输入：nums &#x3D; [1, 1, 1], k &#x3D; 2输出：2  示例 2:  输入：nums &#x3D; [1, 2, 3], k &#x3D; 3输出：2  提示:  1 &lt;&#x3D; nums.length &lt;&#x3D; 2 * 10^4 -1000 &amp;l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="和为 K 的子数组">
+<meta property="og:title" content="前缀和 + 哈希表解和为 K 的子数组问题（LeetCode 560）">
 <meta property="og:url" content="https://www.cylong.com/blog/2025/06/05/subarray-sum-equals-k/index.html">
 <meta property="og:site_name" content="笑话人生">
 <meta property="og:description" content="题目描述给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的子数组的个数 。 子数组 是数组中元素的连续非空序列。 示例 1:  输入：nums &#x3D; [1, 1, 1], k &#x3D; 2输出：2  示例 2:  输入：nums &#x3D; [1, 2, 3], k &#x3D; 3输出：2  提示:  1 &lt;&#x3D; nums.length &lt;&#x3D; 2 * 10^4 -1000 &amp;l">
@@ -54,7 +54,7 @@
   };
 </script>
 
-  <title>和为 K 的子数组 | 笑话人生</title>
+  <title>前缀和 + 哈希表解和为 K 的子数组问题（LeetCode 560） | 笑话人生</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77162231-1"></script>
     <script>
@@ -237,7 +237,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          和为 K 的子数组
+          前缀和 + 哈希表解和为 K 的子数组问题（LeetCode 560）
         </h1>
 
         <div class="post-meta">
@@ -333,8 +333,8 @@
 </ul>
 <h1 id="前缀和-哈希表"><a href="#前缀和-哈希表" class="headerlink" title="前缀和 + 哈希表"></a>前缀和 + 哈希表</h1><p>在做这道题之前，我们先看之前做过的两道题：</p>
 <ol>
-<li><a href="/blog/2025/06/03/range-sum-query-immutable/" title="303. 区域和检索 - 数组不可变 | 笑话人生">303. 区域和检索 - 数组不可变 | 笑话人生</a></li>
-<li><a href="/blog/2019/11/06/two-sum/" title="1. 两数之和 | 笑话人生">1. 两数之和 | 笑话人生</a></li>
+<li><a href="/blog/2025/06/03/range-sum-query-immutable/" title="前缀和解法实现区间和查询（LeetCode 303） | 笑话人生">前缀和解法实现区间和查询（LeetCode 303） | 笑话人生</a></li>
+<li><a href="/blog/2019/11/06/two-sum/" title="两数之和 | 笑话人生">两数之和 | 笑话人生</a></li>
 </ol>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>利用 <strong>前缀和</strong> 技术优化计算过程：</p>
 <ol>
@@ -423,7 +423,7 @@
 <ul class="post-copyright">
   <li class="post-copyright-title">
     <strong>本文标题：</strong>
-    <a href="https://www.cylong.com/blog/2025/06/05/subarray-sum-equals-k/" title="和为 K 的子数组">和为 K 的子数组</a>
+    <a href="https://www.cylong.com/blog/2025/06/05/subarray-sum-equals-k/" title="前缀和 + 哈希表解和为 K 的子数组问题（LeetCode 560）">前缀和 + 哈希表解和为 K 的子数组问题（LeetCode 560）</a>
   </li>
   <li class="post-copyright-author">
     <strong>本文作者： </strong>
@@ -431,7 +431,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.cylong.com/blog/2025/06/05/subarray-sum-equals-k/" title="和为 K 的子数组">https://www.cylong.com/blog/2025/06/05/subarray-sum-equals-k/</a>
+    <a href="https://www.cylong.com/blog/2025/06/05/subarray-sum-equals-k/" title="前缀和 + 哈希表解和为 K 的子数组问题（LeetCode 560）">https://www.cylong.com/blog/2025/06/05/subarray-sum-equals-k/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处 <span class="far fa-laugh-beam"></span>
@@ -487,12 +487,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog/2025/06/03/range-sum-query-immutable/" rel="prev" title="区域和检索 - 数组不可变">
-      <i class="fa fa-chevron-left"></i> 区域和检索 - 数组不可变
+    <a href="/blog/2025/06/03/range-sum-query-immutable/" rel="prev" title="前缀和解法实现区间和查询（LeetCode 303）">
+      <i class="fa fa-chevron-left"></i> 前缀和解法实现区间和查询（LeetCode 303）
     </a></div>
       <div class="post-nav-item">
-    <a href="/blog/2025/06/09/maximum-subarray/" rel="next" title="最大子数组和">
-      最大子数组和 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2025/06/09/maximum-subarray/" rel="next" title="动态规划求解最大子数组和（LeetCode 53）">
+      动态规划求解最大子数组和（LeetCode 53） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -822,7 +822,7 @@
   var disqus_config = function() {
     this.page.url = "https://www.cylong.com/blog/2025/06/05/subarray-sum-equals-k/";
     this.page.identifier = "blog/2025/06/05/subarray-sum-equals-k/";
-    this.page.title = "和为 K 的子数组";
+    this.page.title = "前缀和 + 哈希表解和为 K 的子数组问题（LeetCode 560）";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {

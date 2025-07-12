@@ -24,7 +24,7 @@
 
   <meta name="description" content="题目描述请你设计并实现一个满足 LRU (最近最少使用) 缓存 约束的数据结构。实现 LRUCache 类：  LRUCache(int capacity) 以正整数作为容量 capacity 初始化 LRU 缓存。 int get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。 void put(int key, int value) 如果关键字 ke">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LRU 缓存">
+<meta property="og:title" content="哈希表与双向链表实现LRU缓存（LeetCode 146）">
 <meta property="og:url" content="https://www.cylong.com/blog/2025/07/07/lru-cache/index.html">
 <meta property="og:site_name" content="笑话人生">
 <meta property="og:description" content="题目描述请你设计并实现一个满足 LRU (最近最少使用) 缓存 约束的数据结构。实现 LRUCache 类：  LRUCache(int capacity) 以正整数作为容量 capacity 初始化 LRU 缓存。 int get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。 void put(int key, int value) 如果关键字 ke">
@@ -55,7 +55,7 @@
   };
 </script>
 
-  <title>LRU 缓存 | 笑话人生</title>
+  <title>哈希表与双向链表实现LRU缓存（LeetCode 146） | 笑话人生</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77162231-1"></script>
     <script>
@@ -238,7 +238,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LRU 缓存
+          哈希表与双向链表实现LRU缓存（LeetCode 146）
         </h1>
 
         <div class="post-meta">
@@ -388,7 +388,7 @@
 <ul class="post-copyright">
   <li class="post-copyright-title">
     <strong>本文标题：</strong>
-    <a href="https://www.cylong.com/blog/2025/07/07/lru-cache/" title="LRU 缓存">LRU 缓存</a>
+    <a href="https://www.cylong.com/blog/2025/07/07/lru-cache/" title="哈希表与双向链表实现LRU缓存（LeetCode 146）">哈希表与双向链表实现LRU缓存（LeetCode 146）</a>
   </li>
   <li class="post-copyright-author">
     <strong>本文作者： </strong>
@@ -396,7 +396,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.cylong.com/blog/2025/07/07/lru-cache/" title="LRU 缓存">https://www.cylong.com/blog/2025/07/07/lru-cache/</a>
+    <a href="https://www.cylong.com/blog/2025/07/07/lru-cache/" title="哈希表与双向链表实现LRU缓存（LeetCode 146）">https://www.cylong.com/blog/2025/07/07/lru-cache/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处 <span class="far fa-laugh-beam"></span>
@@ -453,12 +453,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog/2025/07/01/intersection-of-two-linked-lists/" rel="prev" title="相交链表">
-      <i class="fa fa-chevron-left"></i> 相交链表
+    <a href="/blog/2025/07/01/intersection-of-two-linked-lists/" rel="prev" title="双指针法求解链表交点（LeetCode 160）">
+      <i class="fa fa-chevron-left"></i> 双指针法求解链表交点（LeetCode 160）
     </a></div>
       <div class="post-nav-item">
-    <a href="/blog/2025/07/09/rotting-oranges/" rel="next" title="腐烂的橘子">
-      腐烂的橘子 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2025/07/09/rotting-oranges/" rel="next" title="多源 BFS 解决腐烂橘子问题（LeetCode 994）">
+      多源 BFS 解决腐烂橘子问题（LeetCode 994） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -788,7 +788,7 @@
   var disqus_config = function() {
     this.page.url = "https://www.cylong.com/blog/2025/07/07/lru-cache/";
     this.page.identifier = "blog/2025/07/07/lru-cache/";
-    this.page.title = "LRU 缓存";
+    this.page.title = "哈希表与双向链表实现LRU缓存（LeetCode 146）";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {

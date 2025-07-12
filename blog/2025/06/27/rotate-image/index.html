@@ -24,7 +24,7 @@
 
   <meta name="description" content="题目描述给定一个 n × n 的二维矩阵 matrix 表示一个图像。请你将图像顺时针旋转 90 度。你必须在 原地 旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。 原地算法：在计算机科学中，一个原地算法（in-place algorithm）是一种使用小的，固定数量的额外之空间来转换资料的算法。当算法执行时，输入的资料通常会被要输出的部分覆盖掉。不是原地算法有">
 <meta property="og:type" content="article">
-<meta property="og:title" content="旋转图像">
+<meta property="og:title" content="矩阵原地旋转：分层遍历与坐标映射实现（LeetCode 48）">
 <meta property="og:url" content="https://www.cylong.com/blog/2025/06/27/rotate-image/index.html">
 <meta property="og:site_name" content="笑话人生">
 <meta property="og:description" content="题目描述给定一个 n × n 的二维矩阵 matrix 表示一个图像。请你将图像顺时针旋转 90 度。你必须在 原地 旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像。 原地算法：在计算机科学中，一个原地算法（in-place algorithm）是一种使用小的，固定数量的额外之空间来转换资料的算法。当算法执行时，输入的资料通常会被要输出的部分覆盖掉。不是原地算法有">
@@ -58,7 +58,7 @@
   };
 </script>
 
-  <title>旋转图像 | 笑话人生</title>
+  <title>矩阵原地旋转：分层遍历与坐标映射实现（LeetCode 48） | 笑话人生</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77162231-1"></script>
     <script>
@@ -241,7 +241,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          旋转图像
+          矩阵原地旋转：分层遍历与坐标映射实现（LeetCode 48）
         </h1>
 
         <div class="post-meta">
@@ -453,7 +453,7 @@
 <ul class="post-copyright">
   <li class="post-copyright-title">
     <strong>本文标题：</strong>
-    <a href="https://www.cylong.com/blog/2025/06/27/rotate-image/" title="旋转图像">旋转图像</a>
+    <a href="https://www.cylong.com/blog/2025/06/27/rotate-image/" title="矩阵原地旋转：分层遍历与坐标映射实现（LeetCode 48）">矩阵原地旋转：分层遍历与坐标映射实现（LeetCode 48）</a>
   </li>
   <li class="post-copyright-author">
     <strong>本文作者： </strong>
@@ -461,7 +461,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.cylong.com/blog/2025/06/27/rotate-image/" title="旋转图像">https://www.cylong.com/blog/2025/06/27/rotate-image/</a>
+    <a href="https://www.cylong.com/blog/2025/06/27/rotate-image/" title="矩阵原地旋转：分层遍历与坐标映射实现（LeetCode 48）">https://www.cylong.com/blog/2025/06/27/rotate-image/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处 <span class="far fa-laugh-beam"></span>
@@ -520,8 +520,8 @@
       <i class="fa fa-chevron-left"></i> Spring Boot 事件驱动编程：ApplicationEventPublisher 原理与实践指南
     </a></div>
       <div class="post-nav-item">
-    <a href="/blog/2025/07/01/intersection-of-two-linked-lists/" rel="next" title="相交链表">
-      相交链表 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2025/07/01/intersection-of-two-linked-lists/" rel="next" title="双指针法求解链表交点（LeetCode 160）">
+      双指针法求解链表交点（LeetCode 160） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -851,7 +851,7 @@
   var disqus_config = function() {
     this.page.url = "https://www.cylong.com/blog/2025/06/27/rotate-image/";
     this.page.identifier = "blog/2025/06/27/rotate-image/";
-    this.page.title = "旋转图像";
+    this.page.title = "矩阵原地旋转：分层遍历与坐标映射实现（LeetCode 48）";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {

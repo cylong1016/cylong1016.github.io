@@ -24,7 +24,7 @@
 
   <meta name="description" content="题目描述给定两个字符串 s 和 p，找到 s 中所有 p 的 异位词 的子串，返回这些子串的起始索引。不考虑答案输出的顺序。 字母异位词 是通过重新排列不同单词或短语的字母而形成的单词或短语，并使用所有原字母一次。 示例 1:  输入：s &#x3D; &quot;cbaebabacd&quot;, p &#x3D; &quot;abc&quot;输出：[0, 6]解释:起始索引等于 0 的子串是 &quot;cb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="找到字符串中所有字母异位词">
+<meta property="og:title" content="滑动窗口求解异位词：双指针与字符频次统计（LeetCode 438）">
 <meta property="og:url" content="https://www.cylong.com/blog/2025/03/02/find-all-anagrams-in-a-string/index.html">
 <meta property="og:site_name" content="笑话人生">
 <meta property="og:description" content="题目描述给定两个字符串 s 和 p，找到 s 中所有 p 的 异位词 的子串，返回这些子串的起始索引。不考虑答案输出的顺序。 字母异位词 是通过重新排列不同单词或短语的字母而形成的单词或短语，并使用所有原字母一次。 示例 1:  输入：s &#x3D; &quot;cbaebabacd&quot;, p &#x3D; &quot;abc&quot;输出：[0, 6]解释:起始索引等于 0 的子串是 &quot;cb">
@@ -54,7 +54,7 @@
   };
 </script>
 
-  <title>找到字符串中所有字母异位词 | 笑话人生</title>
+  <title>滑动窗口求解异位词：双指针与字符频次统计（LeetCode 438） | 笑话人生</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77162231-1"></script>
     <script>
@@ -237,7 +237,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          找到字符串中所有字母异位词
+          滑动窗口求解异位词：双指针与字符频次统计（LeetCode 438）
         </h1>
 
         <div class="post-meta">
@@ -411,7 +411,7 @@
 <ul class="post-copyright">
   <li class="post-copyright-title">
     <strong>本文标题：</strong>
-    <a href="https://www.cylong.com/blog/2025/03/02/find-all-anagrams-in-a-string/" title="找到字符串中所有字母异位词">找到字符串中所有字母异位词</a>
+    <a href="https://www.cylong.com/blog/2025/03/02/find-all-anagrams-in-a-string/" title="滑动窗口求解异位词：双指针与字符频次统计（LeetCode 438）">滑动窗口求解异位词：双指针与字符频次统计（LeetCode 438）</a>
   </li>
   <li class="post-copyright-author">
     <strong>本文作者： </strong>
@@ -419,7 +419,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.cylong.com/blog/2025/03/02/find-all-anagrams-in-a-string/" title="找到字符串中所有字母异位词">https://www.cylong.com/blog/2025/03/02/find-all-anagrams-in-a-string/</a>
+    <a href="https://www.cylong.com/blog/2025/03/02/find-all-anagrams-in-a-string/" title="滑动窗口求解异位词：双指针与字符频次统计（LeetCode 438）">https://www.cylong.com/blog/2025/03/02/find-all-anagrams-in-a-string/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处 <span class="far fa-laugh-beam"></span>
@@ -475,12 +475,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog/2025/03/01/move-zeroes/" rel="prev" title="移动零">
-      <i class="fa fa-chevron-left"></i> 移动零
+    <a href="/blog/2025/03/01/move-zeroes/" rel="prev" title="双指针法原地移动零元素（LeetCode 283）">
+      <i class="fa fa-chevron-left"></i> 双指针法原地移动零元素（LeetCode 283）
     </a></div>
       <div class="post-nav-item">
-    <a href="/blog/2025/05/24/longest-palindromic-substring/" rel="next" title="最长回文子串">
-      最长回文子串 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2025/05/24/longest-palindromic-substring/" rel="next" title="动态规划和中心扩散法求解最长回文子串（LeetCode 5）">
+      动态规划和中心扩散法求解最长回文子串（LeetCode 5） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -810,7 +810,7 @@
   var disqus_config = function() {
     this.page.url = "https://www.cylong.com/blog/2025/03/02/find-all-anagrams-in-a-string/";
     this.page.identifier = "blog/2025/03/02/find-all-anagrams-in-a-string/";
-    this.page.title = "找到字符串中所有字母异位词";
+    this.page.title = "滑动窗口求解异位词：双指针与字符频次统计（LeetCode 438）";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
