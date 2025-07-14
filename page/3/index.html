@@ -215,6 +215,123 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/03/02/find-all-anagrams-in-a-string/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="cylong">
+      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑话人生">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2025/03/02/find-all-anagrams-in-a-string/" class="post-title-link" itemprop="url">滑动窗口求解异位词：双指针与字符频次统计（LeetCode 438）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-03-02 23:00:44" itemprop="dateCreated datePublished" datetime="2025-03-02T23:00:44+08:00">2025-03-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/blog/2025/03/02/find-all-anagrams-in-a-string/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/03/02/find-all-anagrams-in-a-string/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定两个字符串 <code>s</code> 和 <code>p</code>，找到 <code>s</code> 中所有 <code>p</code> 的 <strong>异位词</strong> 的子串，返回这些子串的起始索引。不考虑答案输出的顺序。</p>
+<p><strong>字母异位词</strong> 是通过重新排列不同单词或短语的字母而形成的单词或短语，并使用所有原字母一次。</p>
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>s = &quot;cbaebabacd&quot;</code>, <code>p = &quot;abc&quot;</code><br><strong>输出：</strong><code>[0, 6]</code><br><strong>解释:</strong><br>起始索引等于 <code>0</code> 的子串是 <code>&quot;cba&quot;</code>, 它是 <code>&quot;abc&quot;</code> 的异位词。<br>起始索引等于 <code>6</code> 的子串是 <code>&quot;bac&quot;</code>, 它是 <code>&quot;abc&quot;</code> 的异位词。</p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>s = &quot;abab&quot;</code>, <code>p = &quot;ab&quot;</code><br><strong>输出：</strong><code>[0, 1, 2]</code><br><strong>解释:</strong><br>起始索引等于 <code>0</code> 的子串是 <code>&quot;ab&quot;</code>, 它是 <code>&quot;ab&quot;</code> 的异位词。<br>起始索引等于 <code>1</code> 的子串是 <code>&quot;ba&quot;</code>, 它是 <code>&quot;ab&quot;</code> 的异位词。<br>起始索引等于 <code>2</code> 的子串是 <code>&quot;ab&quot;</code>, 它是 <code>&quot;ab&quot;</code> 的异位词。</p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length</code>, <code>p.length &lt;= 3 * 10^4</code></li>
+<li><code>s</code> 和 <code>p</code> 仅包含小写字母</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2025/03/02/find-all-anagrams-in-a-string/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/03/01/move-zeroes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1028,115 +1145,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2020/10/29/sum-root-to-leaf-numbers/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="cylong">
-      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑话人生">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2020/10/29/sum-root-to-leaf-numbers/" class="post-title-link" itemprop="url">求根到叶子节点数字之和</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-10-29 22:52:29" itemprop="dateCreated datePublished" datetime="2020-10-29T22:52:29+08:00">2020-10-29</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/blog/2020/10/29/sum-root-to-leaf-numbers/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2020/10/29/sum-root-to-leaf-numbers/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个二叉树，它的每个结点都存放一个 0-9 的数字，每条从根到叶子节点的路径都代表一个数字。<br>例如，从根到叶子节点路径 1-&gt;2-&gt;3 代表数字 123。计算从根到叶子节点生成的所有数字之和。</p>
-<p><strong>说明:</strong> 叶子节点是指没有子节点的节点。</p>
-<p><strong>示例 1:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">输入: [1, 2, 3]</span><br><span class="line">    1</span><br><span class="line">   / \</span><br><span class="line">  2   3</span><br><span class="line">输出: 25</span><br><span class="line">解释:</span><br><span class="line">从根到叶子节点路径 1-&gt;2 代表数字 12.</span><br><span class="line">从根到叶子节点路径 1-&gt;3 代表数字 13.</span><br><span class="line">因此，数字总和 = 12 + 13 = 25.</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">输入: [4, 9, 0, 5, 1]</span><br><span class="line">    4</span><br><span class="line">   / \</span><br><span class="line">  9   0</span><br><span class="line"> / \</span><br><span class="line">5   1</span><br><span class="line">输出: 1026</span><br><span class="line">解释:</span><br><span class="line">从根到叶子节点路径 4-&gt;9-&gt;5 代表数字 495.</span><br><span class="line">从根到叶子节点路径 4-&gt;9-&gt;1 代表数字 491.</span><br><span class="line">从根到叶子节点路径 4-&gt;0 代表数字 40.</span><br><span class="line">因此，数字总和 = 495 + 491 + 40 = 1026.</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/2020/10/29/sum-root-to-leaf-numbers/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1208,7 +1216,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">117</span>
+          <span class="site-state-item-count">118</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1290,15 +1298,15 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">259k</span>
+    <span title="站点总字数">260k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:56</span>
+    <span title="站点阅读时长">3:57</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-    <span class="post-count">| 博客共115.9k字</span>
+    <span class="post-count">| 博客共116.5k字</span>
   </div>
 
         

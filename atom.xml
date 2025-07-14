@@ -6,7 +6,7 @@
   <link href="https://www.cylong.com/atom.xml" rel="self"/>
   
   <link href="https://www.cylong.com/"/>
-  <updated>2025-07-10T15:06:58.000Z</updated>
+  <updated>2025-07-14T14:26:46.000Z</updated>
   <id>https://www.cylong.com/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>二叉树展开为链表：简洁递归解法与深入分析（LeetCode 114）</title>
+    <link href="https://www.cylong.com/blog/2025/07/14/flatten-binary-tree-to-linked-list/"/>
+    <id>https://www.cylong.com/blog/2025/07/14/flatten-binary-tree-to-linked-list/</id>
+    <published>2025-07-14T14:26:46.000Z</published>
+    <updated>2025-07-14T14:26:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你二叉树的根结点 <code>root</code> ，请你将它展开为一个单链表：</p><ul><li>展开后的单链表应该同样使用 <code>TreeNode</code> ，其中 <code>right</code> 子指针指向链表中下一个结点，而左子指针始终为 <code>null</code>。</li><li>展开后的单链表应该与二叉树 <strong>先序遍历</strong> 顺序相同。</li></ul><p><strong>示例 1:</strong></p><img src="/blog/2025/07/14/flatten-binary-tree-to-linked-list/flaten.jpg" class=""><blockquote><p><strong>输入：</strong><code>root = [1, 2, 5, 3, 4, null, 6]</code><br><strong>输出：</strong><code>[1, null, 2, null, 3, null, 4, null, 5, null, 6]</code></p></blockquote><p><strong>示例 2:</strong></p><blockquote><p><strong>输入：</strong><code>root = []</code><br><strong>输出：</strong><code>[]</code></p></blockquote><p><strong>示例 3:</strong></p><blockquote><p><strong>输入：</strong><code>root = [0]</code><br><strong>输出：</strong><code>[0]</code></p></blockquote><p><strong>提示:</strong></p><ul><li>树中结点数在范围 <code>[0, 2000]</code> 内</li><li><code>-100 &lt;= Node.val &lt;= 100</code></li></ul><span id="more"></span><h1 id="递归后序遍历"><a href="#递归后序遍历" class="headerlink" title="递归后序遍历"></a>递归后序遍历</h1><h2 id="核心思路"><a href="#核心思路" class="headerlink" title="核心思路"></a>核心思路</h2><p>核心思路采用递归后序遍历：</p><ol><li>递归展开左右子树</li><li>将左子树插入根节点与右子树之间</li><li>遍历至新链表末端连接右子树</li></ol><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">flatten</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">null</span>) <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 递归展开左右子树</span></span><br><span class="line">    flatten(root.left);</span><br><span class="line">    flatten(root.right);</span><br><span class="line">    </span><br><span class="line">    <span class="type">TreeNode</span> <span class="variable">left</span> <span class="operator">=</span> root.left;   <span class="comment">// 保存左子树</span></span><br><span class="line">    <span class="type">TreeNode</span> <span class="variable">right</span> <span class="operator">=</span> root.right; <span class="comment">// 保存右子树</span></span><br><span class="line">    </span><br><span class="line">    root.left = <span class="literal">null</span>;            <span class="comment">// 切断左指针</span></span><br><span class="line">    root.right = left;           <span class="comment">// 左子树变为右子树</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 遍历至新链表末端</span></span><br><span class="line">    <span class="type">TreeNode</span> <span class="variable">cur</span> <span class="operator">=</span> root;</span><br><span class="line">    <span class="keyword">while</span> (cur.right != <span class="literal">null</span>) &#123;</span><br><span class="line">        cur = cur.right;</span><br><span class="line">    &#125;</span><br><span class="line">    cur.right = right;          <span class="comment">// 连接原右子树</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="算法流程详解"><a href="#算法流程详解" class="headerlink" title="算法流程详解"></a>算法流程详解</h2><ol><li><strong>递归终止：</strong>当前节点为 <code>null</code> 时返回</li><li><strong>后序遍历：</strong><ul><li>先递归处理左子树（<code>flatten(root.left)</code>）</li><li>再递归处理右子树（<code>flatten(root.right)</code>）</li></ul></li><li><strong>链表重组：</strong><ul><li>保存当前左右子树引用</li><li>将左子树作为新的右子树（<code>root.right = left</code>）</li><li>遍历新右子树找到末端节点</li><li>将原右子树接在末端节点后</li></ul></li></ol><h2 id="关键步骤图示"><a href="#关键步骤图示" class="headerlink" title="关键步骤图示"></a>关键步骤图示</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">原始结构：</span><br><span class="line">   root</span><br><span class="line">   /  \</span><br><span class="line">left  right</span><br><span class="line"></span><br><span class="line">重组后结构：</span><br><span class="line">root</span><br><span class="line">  \</span><br><span class="line">  left (展开的链表)</span><br><span class="line">     \</span><br><span class="line">    right (展开的链表)</span><br><span class="line"></span><br><span class="line">注：这里把 left 和 right 变为叶子节点，会更好理解</span><br></pre></td></tr></table></figure><h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul><li><strong>时间复杂度：</strong><code>O(n)</code>，每个节点被访问两次，递归展开时访问一次，寻找链表末端时访问一次。</li><li><strong>空间复杂度：</strong><code>O(n)</code>，递归栈深度取决于树的高度，最坏情况（链状树）空间复杂度为 <code>O(n)</code>，平衡树情况为 <code>O(logn)</code>。</li></ul><h1 id="关键点总结"><a href="#关键点总结" class="headerlink" title="关键点总结"></a>关键点总结</h1><ol><li><strong>后序遍历顺序：</strong>必须保证左右子树都已展开成链表后才能进行根节点的重组。</li><li><strong>链表拼接细节：</strong>左子树插入后需遍历到末端再连接右子树，注意切断左指针避免结构混乱。</li></ol><h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote><p><a href="https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/description/" title="114. 二叉树展开为链表 | 力扣（LeetCode）">114. 二叉树展开为链表 | 力扣（LeetCode）</a></p></blockquote><hr>]]></content>
+    
+    
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h1&gt;&lt;p&gt;给你二叉树的根结点 &lt;code&gt;root&lt;/code&gt; ，请你将它展开为一个单链表：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;展开后的单链表应该同样使用 &lt;code&gt;TreeNode&lt;/code&gt; ，其中 &lt;code&gt;right&lt;/code&gt; 子指针指向链表中下一个结点，而左子指针始终为 &lt;code&gt;null&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;展开后的单链表应该与二叉树 &lt;strong&gt;先序遍历&lt;/strong&gt; 顺序相同。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;示例 1:&lt;/strong&gt;&lt;/p&gt;
+&lt;img src=&quot;/blog/2025/07/14/flatten-binary-tree-to-linked-list/flaten.jpg&quot; class=&quot;&quot;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;code&gt;root = [1, 2, 5, 3, 4, null, 6]&lt;/code&gt;&lt;br&gt;&lt;strong&gt;输出：&lt;/strong&gt;&lt;code&gt;[1, null, 2, null, 3, null, 4, null, 5, null, 6]&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;示例 2:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;code&gt;root = []&lt;/code&gt;&lt;br&gt;&lt;strong&gt;输出：&lt;/strong&gt;&lt;code&gt;[]&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;示例 3:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;code&gt;root = [0]&lt;/code&gt;&lt;br&gt;&lt;strong&gt;输出：&lt;/strong&gt;&lt;code&gt;[0]&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;提示:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;树中结点数在范围 &lt;code&gt;[0, 2000]&lt;/code&gt; 内&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-100 &amp;lt;= Node.val &amp;lt;= 100&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="LeetCode" scheme="https://www.cylong.com/categories/LeetCode/"/>
+    
+    
+    <category term="Java" scheme="https://www.cylong.com/tags/Java/"/>
+    
+    <category term="LeetCode" scheme="https://www.cylong.com/tags/LeetCode/"/>
+    
+    <category term="学习笔记" scheme="https://www.cylong.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="链表" scheme="https://www.cylong.com/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+    <category term="树" scheme="https://www.cylong.com/tags/%E6%A0%91/"/>
+    
+    <category term="二叉树" scheme="https://www.cylong.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+    <category term="深度优先搜索" scheme="https://www.cylong.com/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
+    
+    <category term="LeetCode中等" scheme="https://www.cylong.com/tags/LeetCode%E4%B8%AD%E7%AD%89/"/>
+    
+  </entry>
   
   <entry>
     <title>前缀树（Trie）实现：插入、搜索与前缀匹配操作（LeetCode 208）</title>
@@ -1028,65 +1086,6 @@
     <category term="LeetCode中等" scheme="https://www.cylong.com/tags/LeetCode%E4%B8%AD%E7%AD%89/"/>
     
     <category term="数学公式" scheme="https://www.cylong.com/tags/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>利用完全二叉树特性递归统计节点数（LeetCode 222）</title>
-    <link href="https://www.cylong.com/blog/2025/02/06/count-complete-tree-nodes/"/>
-    <id>https://www.cylong.com/blog/2025/02/06/count-complete-tree-nodes/</id>
-    <published>2025-02-06T14:10:56.000Z</published>
-    <updated>2025-02-06T14:10:56.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一棵 <strong>完全二叉树</strong> 的根节点 <code>root</code> ，求出该树的节点个数。</p><p><strong>说明:</strong><br>完全二叉树：除了最底层节点可能没填满外，其余每层节点数都达到最大值，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 <code>h</code> 层（从第 <code>0</code> 层开始），则该层包含 <code>1 ~ 2h</code> 个节点。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     1</span><br><span class="line">   /   \</span><br><span class="line">  2     3</span><br><span class="line"> / \   /</span><br><span class="line">4   5 6</span><br></pre></td></tr></table></figure><p><strong>示例 1:</strong></p><blockquote><p><strong>输入：</strong><code>root = [1,2,3,4,5,6]</code><br><strong>输出：</strong>6</p></blockquote><p><strong>示例 2:</strong></p><blockquote><p><strong>输入：</strong><code>root = []</code><br><strong>输出：</strong>0</p></blockquote><p><strong>示例 3:</strong></p><blockquote><p><strong>输入：</strong><code>root = [1]</code><br><strong>输出：</strong>1</p></blockquote><p><strong>提示:</strong></p><ul><li>树中节点的数目范围是 <code>[0, 5 * 10^4]</code></li><li><code>0 &lt;= Node.val &lt;= 5 * 10^4</code></li><li>题目数据保证输入的树是 <strong>完全二叉树</strong></li></ul><span id="more"></span><h1 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h1><p>如果是普通二叉树的话，最直接的方法就是递归或者迭代遍历每个节点，然后统计个数，这样时间复杂度是 <code>O(n)</code>，其中 <code>n</code> 是树的节点总数。空间复杂度是 <code>O(h)</code>，其中 <code>h</code> 是树的高度。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">countNodes</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> + countNodes(root.left) + countNodes(root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>但这是一个普适的解法，对于此题给的完全二叉树的特点没有利用起来，我们先了解一下 <code>满二叉树</code> 的概念：一个二叉树，如果每一个层的结点数都达到最大值，则这个二叉树就是满二叉树，满二叉树的节点总数是 <code>(2^h) - 1 </code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     1</span><br><span class="line">   /   \</span><br><span class="line">  2     3</span><br><span class="line"> / \   / \</span><br><span class="line">4   5 6   7</span><br></pre></td></tr></table></figure><p>而完全二叉树的特点是除了最后一层外，其余层都是满的，并且最后一层的节点尽可能靠左。因此，可以利用这个特性来高效计算节点数，而不是普通的遍历方法。首先计算左子树高度 <code>left</code> 和右子树高度 <code>right</code>，接下来比较 <code>left</code> 和 <code>right</code>。</p><ul><li>如果两者相等，说明左子树是满的，此时左子树的节点数为 <code>2^left - 1</code>，加上根节点，总共是 <code>2^left</code>。然后递归计算右子树的节点数。</li><li>如果 <code>left</code> 不等于 <code>right</code>，则说明右子树是满的，但层数比左子树少一层，所以右子树的节点数是 <code>2^right - 1</code>，加上根节点，再递归计算左子树的节点数。</li></ul><p>这里的关键在于，当左右子树高度相等时，左子树一定是满的，可以快速计算其节点数，而无需递归下去；反之，右子树是满的，可以同样处理。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">countNodes</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 计算左子树高度</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> countLevel(root.left);</span><br><span class="line">    <span class="comment">// 计算右子树高度</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">right</span> <span class="operator">=</span> countLevel(root.right);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (left == right) &#123;</span><br><span class="line">        <span class="comment">// 左子树是满的，直接计算左子树节点数 (2^left)，递归计算右子树</span></span><br><span class="line">        <span class="keyword">return</span> countNodes(root.right) + (<span class="number">1</span> &lt;&lt; left);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 右子树是满的，直接计算右子树节点数 (2^right)，递归计算左子树</span></span><br><span class="line">        <span class="keyword">return</span> countNodes(root.left) + (<span class="number">1</span> &lt;&lt; right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="type">int</span> <span class="title function_">countLevel</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">level</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (root != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="comment">// 完全二叉树的高度由最左路径决定</span></span><br><span class="line">        level++;</span><br><span class="line">        root = root.left;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> level;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul><li><strong>时间复杂度：</strong><code>O((logN)^2)</code>，每次递归调用 countLevel 的时间为 <code>O(h)</code>（<code>h</code> 是当前子树高度），递归深度为树的高度 <code>O(logN)</code>（完全二叉树高度为 <code>logN</code>）。</li><li><strong>空间复杂度：</strong>递归深度为树的高度 <code>O(logN)</code>。</li></ul><h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote><p><a href="https://leetcode.cn/problems/count-complete-tree-nodes/description/" title="222. 完全二叉树的节点个数 | 力扣（LeetCode）">222. 完全二叉树的节点个数 | 力扣（LeetCode）</a></p></blockquote><hr>]]></content>
-    
-    
-    <summary type="html">&lt;hr&gt;
-&lt;h1 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h1&gt;&lt;p&gt;给你一棵 &lt;strong&gt;完全二叉树&lt;/strong&gt; 的根节点 &lt;code&gt;root&lt;/code&gt; ，求出该树的节点个数。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;说明:&lt;/strong&gt;&lt;br&gt;完全二叉树：除了最底层节点可能没填满外，其余每层节点数都达到最大值，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 &lt;code&gt;h&lt;/code&gt; 层（从第 &lt;code&gt;0&lt;/code&gt; 层开始），则该层包含 &lt;code&gt;1 ~ 2h&lt;/code&gt; 个节点。&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;     1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   /   &#92;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  2     3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; / &#92;   /&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4   5 6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;示例 1:&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;code&gt;root = [1,2,3,4,5,6]&lt;/code&gt;&lt;br&gt;&lt;strong&gt;输出：&lt;/strong&gt;6&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;示例 2:&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;code&gt;root = []&lt;/code&gt;&lt;br&gt;&lt;strong&gt;输出：&lt;/strong&gt;0&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;示例 3:&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;code&gt;root = [1]&lt;/code&gt;&lt;br&gt;&lt;strong&gt;输出：&lt;/strong&gt;1&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;提示:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;树中节点的数目范围是 &lt;code&gt;[0, 5 * 10^4]&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;0 &amp;lt;= Node.val &amp;lt;= 5 * 10^4&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;题目数据保证输入的树是 &lt;strong&gt;完全二叉树&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="https://www.cylong.com/categories/LeetCode/"/>
-    
-    
-    <category term="Java" scheme="https://www.cylong.com/tags/Java/"/>
-    
-    <category term="LeetCode" scheme="https://www.cylong.com/tags/LeetCode/"/>
-    
-    <category term="学习笔记" scheme="https://www.cylong.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="递归" scheme="https://www.cylong.com/tags/%E9%80%92%E5%BD%92/"/>
-    
-    <category term="树" scheme="https://www.cylong.com/tags/%E6%A0%91/"/>
-    
-    <category term="二叉树" scheme="https://www.cylong.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
-    <category term="LeetCode简单" scheme="https://www.cylong.com/tags/LeetCode%E7%AE%80%E5%8D%95/"/>
-    
-    <category term="完全二叉树" scheme="https://www.cylong.com/tags/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
-    <category term="满二叉树" scheme="https://www.cylong.com/tags/%E6%BB%A1%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
   </entry>
   
