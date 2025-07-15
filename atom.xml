@@ -17,7 +17,7 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>全排列</title>
+    <title>全排列问题的递归回溯解法实现（LeetCode 46）</title>
     <link href="https://www.cylong.com/blog/2025/07/15/permutations/"/>
     <id>https://www.cylong.com/blog/2025/07/15/permutations/</id>
     <published>2025-07-15T14:54:28.000Z</published>
