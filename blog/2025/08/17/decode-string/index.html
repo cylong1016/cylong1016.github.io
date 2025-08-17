@@ -24,7 +24,7 @@
 
   <meta name="description" content="题目描述给定一个经过编码的字符串，返回它解码后的字符串。编码规则为: k[encoded_string]，表示其中方括号内部的 encoded_string 正好重复 k 次。注意 k 保证为正整数。 你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像 3a 或 2[4">
 <meta property="og:type" content="article">
-<meta property="og:title" content="decode-string">
+<meta property="og:title" content="递归操作解析嵌套编码字符串：数字与字符分段处理（LeetCode 394）">
 <meta property="og:url" content="https://www.cylong.com/blog/2025/08/17/decode-string/index.html">
 <meta property="og:site_name" content="笑话人生">
 <meta property="og:description" content="题目描述给定一个经过编码的字符串，返回它解码后的字符串。编码规则为: k[encoded_string]，表示其中方括号内部的 encoded_string 正好重复 k 次。注意 k 保证为正整数。 你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像 3a 或 2[4">
@@ -53,7 +53,7 @@
   };
 </script>
 
-  <title>decode-string | 笑话人生</title>
+  <title>递归操作解析嵌套编码字符串：数字与字符分段处理（LeetCode 394） | 笑话人生</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77162231-1"></script>
     <script>
@@ -236,7 +236,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          decode-string
+          递归操作解析嵌套编码字符串：数字与字符分段处理（LeetCode 394）
         </h1>
 
         <div class="post-meta">
@@ -375,7 +375,7 @@
 <ul class="post-copyright">
   <li class="post-copyright-title">
     <strong>本文标题：</strong>
-    <a href="https://www.cylong.com/blog/2025/08/17/decode-string/" title="decode-string">decode-string</a>
+    <a href="https://www.cylong.com/blog/2025/08/17/decode-string/" title="递归操作解析嵌套编码字符串：数字与字符分段处理（LeetCode 394）">递归操作解析嵌套编码字符串：数字与字符分段处理（LeetCode 394）</a>
   </li>
   <li class="post-copyright-author">
     <strong>本文作者： </strong>
@@ -383,7 +383,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.cylong.com/blog/2025/08/17/decode-string/" title="decode-string">https://www.cylong.com/blog/2025/08/17/decode-string/</a>
+    <a href="https://www.cylong.com/blog/2025/08/17/decode-string/" title="递归操作解析嵌套编码字符串：数字与字符分段处理（LeetCode 394）">https://www.cylong.com/blog/2025/08/17/decode-string/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处 <span class="far fa-laugh-beam"></span>
@@ -770,7 +770,7 @@
   var disqus_config = function() {
     this.page.url = "https://www.cylong.com/blog/2025/08/17/decode-string/";
     this.page.identifier = "blog/2025/08/17/decode-string/";
-    this.page.title = "decode-string";
+    this.page.title = "递归操作解析嵌套编码字符串：数字与字符分段处理（LeetCode 394）";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
