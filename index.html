@@ -215,7 +215,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/08/17/min-stack/">
+    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/08/17/decode-string/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -229,7 +229,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/2025/08/17/min-stack/" class="post-title-link" itemprop="url">双栈结构实现最小栈功能：同步记录最小值（LeetCode 155）</a>
+            <a href="/blog/2025/08/17/decode-string/" class="post-title-link" itemprop="url">decode-string</a>
         </h2>
 
         <div class="post-meta">
@@ -239,7 +239,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2025-08-17 15:48:02" itemprop="dateCreated datePublished" datetime="2025-08-17T15:48:02+08:00">2025-08-17</time>
+              <time title="创建时间：2025-08-17 20:50:34" itemprop="dateCreated datePublished" datetime="2025-08-17T20:50:34+08:00">2025-08-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -260,8 +260,124 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/blog/2025/08/17/min-stack/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/08/17/min-stack/" itemprop="commentCount"></span>
+    <a title="disqus" href="/blog/2025/08/17/decode-string/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/08/17/decode-string/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个经过编码的字符串，返回它解码后的字符串。编码规则为: <code>k[encoded_string]</code>，表示其中方括号内部的 <code>encoded_string</code> 正好重复 <code>k</code> 次。注意 <code>k</code> 保证为正整数。</p>
+<p>你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 <code>k</code> ，例如不会出现像 <code>3a</code> 或 <code>2[4]</code> 的输入。</p>
+<p>测试用例保证输出的长度不会超过 <code>10^5</code>。</p>
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>s = &quot;3[a]2[bc]&quot;</code><br><strong>输出：</strong><code>&quot;aaabcbc&quot;</code><br><strong>示例 2:</strong><br><strong>输入：</strong><code>s = &quot;3[a2[c]]&quot;</code><br><strong>输出：</strong><code>&quot;accaccacc&quot;</code><br><strong>示例 3:</strong><br><strong>输入：</strong><code>s = &quot;2[abc]3[cd]ef&quot;</code><br><strong>输出：</strong><code>&quot;abcabccdcdcdef&quot;</code><br><strong>示例 4:</strong><br><strong>输入：</strong><code>s = &quot;abc3[cd]xyz&quot;</code><br><strong>输出：</strong><code>&quot;abccdcdcdxyz&quot;</code></p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 30</code></li>
+<li><code>s</code> 由小写英文字母、数字和方括号 <code>&#39;[]&#39;</code> 组成</li>
+<li><code>s</code> 保证是一个有效的输入。</li>
+<li><code>s</code> 中所有整数的取值范围为 <code>[1, 300] </code></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2025/08/17/decode-string/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/08/16/min-stack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="cylong">
+      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑话人生">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2025/08/16/min-stack/" class="post-title-link" itemprop="url">双栈结构实现最小栈功能：同步记录最小值（LeetCode 155）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-08-16 15:48:02" itemprop="dateCreated datePublished" datetime="2025-08-16T15:48:02+08:00">2025-08-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/blog/2025/08/16/min-stack/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/08/16/min-stack/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -311,7 +427,7 @@
 </ul>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/blog/2025/08/17/min-stack/#more" rel="contents">
+              <a class="btn" href="/blog/2025/08/16/min-stack/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1063,135 +1179,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/07/09/rotting-oranges/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="cylong">
-      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑话人生">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2025/07/09/rotting-oranges/" class="post-title-link" itemprop="url">多源 BFS 解决腐烂橘子问题（LeetCode 994）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-07-09 21:44:07" itemprop="dateCreated datePublished" datetime="2025-07-09T21:44:07+08:00">2025-07-09</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/blog/2025/07/09/rotting-oranges/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/07/09/rotting-oranges/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>在给定的 <code>m x n</code> 网格 <code>grid</code> 中，每个单元格可以有以下三个值之一：</p>
-<ul>
-<li>值 <code>0</code> 代表空单元格；</li>
-<li>值 <code>1</code> 代表新鲜橘子；</li>
-<li>值 <code>2</code> 代表腐烂的橘子。</li>
-</ul>
-<p>每分钟，腐烂的橘子 周围 <code>4</code> 个方向上相邻 的新鲜橘子都会腐烂。返回直到单元格中没有新鲜橘子为止所必须经过的最小分钟数。如果不可能，返回 <code>-1</code> 。</p>
-<p><strong>示例 1:</strong></p>
-<img src="/blog/2025/07/09/rotting-oranges/oranges.png" class="">
-<blockquote>
-<p><strong>输入：</strong><code>grid = [[2, 1, 1],[1, 1, 0],[0, 1, 1]]</code><br><strong>输出：</strong><code>4</code></p>
-</blockquote>
-<p><strong>示例 2:</strong></p>
-<blockquote>
-<p><strong>输入：</strong><code>grid = [[2, 1, 1],[0, 1, 1],[1, 0, 1]]</code><br><strong>输出：</strong><code>-1</code><br><strong>解释：</strong>左下角的橘子（第 <code>2</code> 行， 第 <code>0</code> 列）永远不会腐烂，因为腐烂只会发生在 <code>4</code> 个方向上。</p>
-</blockquote>
-<p><strong>示例 3:</strong></p>
-<blockquote>
-<p><strong>输入：</strong><code>grid = [[0, 2]]</code><br><strong>输出：</strong><code>0</code><br><strong>解释：</strong>因为 <code>0</code> 分钟时已经没有新鲜橘子了，所以答案就是 <code>0</code> 。</p>
-</blockquote>
-<p><strong>提示:</strong></p>
-<ul>
-<li><code>m == grid.length</code></li>
-<li><code>n == grid[i].length</code></li>
-<li><code>1 &lt;= m, n &lt;= 10</code></li>
-<li><code>grid[i][j]</code> 仅为 <code>0</code>、<code>1</code> 或 <code>2</code></li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/2025/07/09/rotting-oranges/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1263,7 +1250,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">123</span>
+          <span class="site-state-item-count">124</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1345,15 +1332,15 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">272k</span>
+    <span title="站点总字数">274k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:07</span>
+    <span title="站点阅读时长">4:09</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-    <span class="post-count">| 博客共121.5k字</span>
+    <span class="post-count">| 博客共122.2k字</span>
   </div>
 
         

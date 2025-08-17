@@ -22,24 +22,25 @@
     var CONFIG = {"hostname":"www.cylong.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Disqus 评论","order":1},"livere":{"text":"LiveRe 评论","order":2}},"activeClass":"disqus"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="题目描述设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。实现 MinStack 类:  MinStack() 初始化堆栈对象。 void push(int val) 将元素 val 推入堆栈。 void pop() 删除堆栈顶部的元素。 int top() 获取堆栈顶部的元素。 int getMin() 获取堆栈中的最小元素。  示例 1:  输入：[&amp;qu">
+  <meta name="description" content="题目描述给定一个经过编码的字符串，返回它解码后的字符串。编码规则为: k[encoded_string]，表示其中方括号内部的 encoded_string 正好重复 k 次。注意 k 保证为正整数。 你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像 3a 或 2[4">
 <meta property="og:type" content="article">
-<meta property="og:title" content="双栈结构实现最小栈功能：同步记录最小值（LeetCode 155）">
-<meta property="og:url" content="https://www.cylong.com/blog/2025/08/17/min-stack/index.html">
+<meta property="og:title" content="decode-string">
+<meta property="og:url" content="https://www.cylong.com/blog/2025/08/17/decode-string/index.html">
 <meta property="og:site_name" content="笑话人生">
-<meta property="og:description" content="题目描述设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。实现 MinStack 类:  MinStack() 初始化堆栈对象。 void push(int val) 将元素 val 推入堆栈。 void pop() 删除堆栈顶部的元素。 int top() 获取堆栈顶部的元素。 int getMin() 获取堆栈中的最小元素。  示例 1:  输入：[&amp;qu">
+<meta property="og:description" content="题目描述给定一个经过编码的字符串，返回它解码后的字符串。编码规则为: k[encoded_string]，表示其中方括号内部的 encoded_string 正好重复 k 次。注意 k 保证为正整数。 你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像 3a 或 2[4">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-08-17T07:48:02.000Z">
-<meta property="article:modified_time" content="2025-08-17T07:48:02.000Z">
+<meta property="article:published_time" content="2025-08-17T12:50:34.000Z">
+<meta property="article:modified_time" content="2025-08-17T12:50:34.000Z">
 <meta property="article:author" content="cylong">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="递归">
 <meta property="article:tag" content="栈">
 <meta property="article:tag" content="LeetCode中等">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://www.cylong.com/blog/2025/08/17/min-stack/">
+<link rel="canonical" href="https://www.cylong.com/blog/2025/08/17/decode-string/">
 
 
 <script id="page-configurations">
@@ -52,7 +53,7 @@
   };
 </script>
 
-  <title>双栈结构实现最小栈功能：同步记录最小值（LeetCode 155） | 笑话人生</title>
+  <title>decode-string | 笑话人生</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77162231-1"></script>
     <script>
@@ -222,7 +223,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/08/17/min-stack/">
+    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/08/17/decode-string/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -235,7 +236,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          双栈结构实现最小栈功能：同步记录最小值（LeetCode 155）
+          decode-string
         </h1>
 
         <div class="post-meta">
@@ -245,7 +246,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2025-08-17 15:48:02" itemprop="dateCreated datePublished" datetime="2025-08-17T15:48:02+08:00">2025-08-17</time>
+              <time title="创建时间：2025-08-17 20:50:34" itemprop="dateCreated datePublished" datetime="2025-08-17T20:50:34+08:00">2025-08-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -273,8 +274,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/blog/2025/08/17/min-stack/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/08/17/min-stack/" itemprop="commentCount"></span>
+    <a title="disqus" href="/blog/2025/08/17/decode-string/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/08/17/decode-string/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -284,14 +285,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -304,61 +305,42 @@
 
       
         <hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>设计一个支持 <code>push</code> ，<code>pop</code> ，<code>top</code> 操作，并能在常数时间内检索到最小元素的栈。<br>实现 <code>MinStack</code> 类:</p>
-<ul>
-<li><code>MinStack()</code> 初始化堆栈对象。</li>
-<li><code>void push(int val)</code> 将元素 <code>val</code> 推入堆栈。</li>
-<li><code>void pop()</code> 删除堆栈顶部的元素。</li>
-<li><code>int top()</code> 获取堆栈顶部的元素。</li>
-<li><code>int getMin()</code> 获取堆栈中的最小元素。</li>
-</ul>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个经过编码的字符串，返回它解码后的字符串。编码规则为: <code>k[encoded_string]</code>，表示其中方括号内部的 <code>encoded_string</code> 正好重复 <code>k</code> 次。注意 <code>k</code> 保证为正整数。</p>
+<p>你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 <code>k</code> ，例如不会出现像 <code>3a</code> 或 <code>2[4]</code> 的输入。</p>
+<p>测试用例保证输出的长度不会超过 <code>10^5</code>。</p>
 <p><strong>示例 1:</strong></p>
 <blockquote>
-<p><strong>输入：</strong><br><code>[&quot;MinStack&quot;, &quot;push&quot;, &quot;push&quot;, &quot;push&quot;, &quot;getMin&quot;, &quot;pop&quot;, &quot;top&quot;, &quot;getMin&quot;]</code><br><code>[[], [-2], [0], [-3], [], [], [], []]</code><br><strong>输出：</strong><code>[null, null, null, null, -3, null, 0, -2]</code><br><strong>解释：</strong><br>MinStack minStack = new MinStack();<br>minStack.push(-2);<br>minStack.push(0);<br>minStack.push(-3);<br>minStack.getMin();   –&gt; 返回 -3.<br>minStack.pop();<br>minStack.top();      –&gt; 返回 0.<br>minStack.getMin();   –&gt; 返回 -2.</p>
+<p><strong>输入：</strong><code>s = &quot;3[a]2[bc]&quot;</code><br><strong>输出：</strong><code>&quot;aaabcbc&quot;</code><br><strong>示例 2:</strong><br><strong>输入：</strong><code>s = &quot;3[a2[c]]&quot;</code><br><strong>输出：</strong><code>&quot;accaccacc&quot;</code><br><strong>示例 3:</strong><br><strong>输入：</strong><code>s = &quot;2[abc]3[cd]ef&quot;</code><br><strong>输出：</strong><code>&quot;abcabccdcdcdef&quot;</code><br><strong>示例 4:</strong><br><strong>输入：</strong><code>s = &quot;abc3[cd]xyz&quot;</code><br><strong>输出：</strong><code>&quot;abccdcdcdxyz&quot;</code></p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
-<li><code>-2^31 &lt;= val &lt;= 2^31 - 1</code></li>
-<li><code>pop</code>、<code>top</code> 和 <code>getMin</code> 操作总是在 非空栈 上调用</li>
-<li><code>push</code>, <code>pop</code>, <code>top</code>, 和 <code>getMin</code> 最多被调用 <code>3 * 10^4</code> 次</li>
+<li><code>1 &lt;= s.length &lt;= 30</code></li>
+<li><code>s</code> 由小写英文字母、数字和方括号 <code>&#39;[]&#39;</code> 组成</li>
+<li><code>s</code> 保证是一个有效的输入。</li>
+<li><code>s</code> 中所有整数的取值范围为 <code>[1, 300] </code></li>
 </ul>
 <span id="more"></span>
 
-<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>要设计一个支持常数时间内获取最小元素的栈，我们可以使用两个栈：</p>
+<h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><h2 id="核心思路"><a href="#核心思路" class="headerlink" title="核心思路"></a>核心思路</h2><p>使用<strong>递归（DFS）</strong> 逐层解析嵌套括号：</p>
 <ol>
-<li><strong>主栈（stack）：</strong>用于存储所有元素，支持常规的栈操作。</li>
-<li><strong>最小栈（minStack）：</strong>用于存储当前主栈中每个状态下的最小值。</li>
+<li>全局指针 <code>i</code>：记录当前处理的字符位置。</li>
+<li>递归函数 <code>decode()</code>：<ul>
+<li>遇到 <strong>字母</strong>：直接拼接到结果。</li>
+<li>遇到 <strong>数字</strong>：计算重复次数 <code>k</code>。</li>
+<li>遇到 <strong>左括号</strong> <code>[</code>：递归解析子字符串，并将结果重复 <code>k</code> 次拼接到当前结果。</li>
+<li>遇到 <strong>右括号</strong> <code>]</code>：结束当前递归层，返回结果。</li>
+</ul>
+</li>
+<li>重置 <code>k</code>：每次处理完 <code>k[encoded_string]</code> 后重置 <code>k</code>，避免影响后续数字。</li>
 </ol>
-<h2 id="关键操作"><a href="#关键操作" class="headerlink" title="关键操作"></a>关键操作</h2><ul>
-<li><strong>push 操作：</strong><ul>
-<li>将元素推入主栈。</li>
-<li>如果最小栈为空，或者新元素小于等于最小栈的栈顶元素，则将该元素也推入最小栈。</li>
-</ul>
-</li>
-<li><strong>pop 操作：</strong><ul>
-<li>弹出主栈的栈顶元素。</li>
-<li>如果弹出的元素等于最小栈的栈顶元素，则同时弹出最小栈的栈顶元素（表示当前最小值已从主栈移除）。</li>
-</ul>
-</li>
-<li><strong>top 操作：</strong>直接返回主栈的栈顶元素。</li>
-<li><strong>getMin 操作：</strong>直接返回最小栈的栈顶元素（即当前栈中的最小元素）。</li>
-</ul>
-<h2 id="为什么使用“小于等于”？"><a href="#为什么使用“小于等于”？" class="headerlink" title="为什么使用“小于等于”？"></a>为什么使用“小于等于”？</h2><p>当新元素等于最小栈的栈顶元素时，也需要将其推入最小栈。这样可以确保当多个相同的最小值存在时，最小栈中也有多个相同的值，避免在 <code>pop</code> 操作时提前将最小值移除。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.LinkedList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MinStack</span> &#123;</span><br><span class="line">    <span class="comment">// 注意不要使用 Stack 类，因为它继承自 Vector，是同步的，会导致一些性能问题</span></span><br><span class="line">    <span class="keyword">private</span> LinkedList&lt;Integer&gt; stack;    <span class="comment">// 主栈</span></span><br><span class="line">    <span class="keyword">private</span> LinkedList&lt;Integer&gt; minStack; <span class="comment">// 最小栈</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MinStack</span><span class="params">()</span> &#123;</span><br><span class="line">        stack = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">        minStack = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">push</span><span class="params">(<span class="type">int</span> val)</span> &#123;</span><br><span class="line">        stack.push(val);</span><br><span class="line">        <span class="comment">// 如果最小栈为空，或者新元素小于等于最小栈栈顶元素，则推入最小栈</span></span><br><span class="line">        <span class="keyword">if</span> (minStack.isEmpty() || val &lt;= minStack.peek()) &#123;</span><br><span class="line">            minStack.push(val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pop</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">popVal</span> <span class="operator">=</span> stack.pop();</span><br><span class="line">        <span class="comment">// 如果弹出的元素等于最小栈栈顶元素，则同时弹出最小栈栈顶元素</span></span><br><span class="line">        <span class="keyword">if</span> (popVal == minStack.peek()) &#123;</span><br><span class="line">            minStack.pop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">top</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> stack.peek();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getMin</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> minStack.peek();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 全局指针</span></span><br><span class="line"><span class="keyword">private</span> <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">decodeString</span><span class="params">(String s)</span> &#123;</span><br><span class="line">    i = <span class="number">0</span>; <span class="comment">// 重置指针（避免多次调用干扰）</span></span><br><span class="line">    <span class="keyword">return</span> decode(s.toCharArray());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> String <span class="title function_">decode</span><span class="params">(<span class="type">char</span>[] s)</span> &#123;</span><br><span class="line">    <span class="type">StringBuilder</span> <span class="variable">res</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">    <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 当前重复次数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (i &lt; s.length) &#123;</span><br><span class="line">        <span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> s[i];</span><br><span class="line">        i++;</span><br><span class="line">        <span class="keyword">if</span> (Character.isLetter(c)) &#123;</span><br><span class="line">            res.append(c); <span class="comment">// 字母直接拼接</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (Character.isDigit(c)) &#123;</span><br><span class="line">            k = k * <span class="number">10</span> + (c - <span class="string">&#x27;0&#x27;</span>); <span class="comment">// 计算重复次数（处理多位数）</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">&#x27;[&#x27;</span>) &#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">sub</span> <span class="operator">=</span> decode(s); <span class="comment">// 递归解析子字符串</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; k; j++) &#123;</span><br><span class="line">                res.append(sub); <span class="comment">// 重复拼接子字符串</span></span><br><span class="line">            &#125;</span><br><span class="line">            k = <span class="number">0</span>; <span class="comment">// 重置重复次数</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">&#x27;]&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">break</span>; <span class="comment">// 结束当前递归层</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li><strong>时间复杂度：</strong><ul>
-<li><strong>push：</strong><code>O(1)</code>，每次操作只涉及常数次栈操作。</li>
-<li><strong>pop：</strong><code>O(1)</code>，每次操作只涉及常数次栈操作。</li>
-<li><strong>top：</strong><code>O(1)</code>，直接返回主栈栈顶元素。</li>
-<li><strong>getMin：</strong><code>O(1)</code>，直接返回最小栈栈顶元素。</li>
+<li><strong>时间复杂度：</strong><code>O(n)</code>，其中 <code>n</code> 是解码后字符串的长度。每个字符只处理一次，但重复拼接操作会增加时间。</li>
+<li><strong>空间复杂度：</strong><code>O(m)</code>，<code>m</code> 是递归栈的最大深度（即嵌套括号层数）。</li>
 </ul>
-</li>
-<li><strong>空间复杂度：</strong><code>O(n)</code>，最坏情况下需要两个栈存储所有元素，但最小栈在优化后通常存储元素较少。</li>
-</ul>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>通过使用两个栈（主栈和最小栈），我们可以在常数时间内完成所有栈操作并获取当前栈中的最小元素。最小栈的维护确保了在每次操作后都能快速获取到最小值，而主栈则负责常规的栈功能。这种方法既高效又易于实现，是解决此类问题的经典方案。</p>
 <h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
-<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/min-stack/description/" title="155. 最小栈 | 力扣（LeetCode）">155. 最小栈 | 力扣（LeetCode）</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/decode-string/description/" title="394. 字符串解码 | 力扣（LeetCode）">394. 字符串解码 | 力扣（LeetCode）</a><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/decode-string/solutions/3744428/di-gui-yong-zhan-mo-ni-di-gui-pythonjava-kcsv/" title="394. 字符串解码 | 题解 | 灵茶山艾府">394. 字符串解码 | 题解 | 灵茶山艾府</a><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/decode-string/solutions/19447/decode-string-fu-zhu-zhan-fa-di-gui-fa-by-jyd/" title="394. 字符串解码 | 题解 | Krahets">394. 字符串解码 | 题解 | Krahets</a></p>
 </blockquote>
 <hr>
 
@@ -393,7 +375,7 @@
 <ul class="post-copyright">
   <li class="post-copyright-title">
     <strong>本文标题：</strong>
-    <a href="https://www.cylong.com/blog/2025/08/17/min-stack/" title="双栈结构实现最小栈功能：同步记录最小值（LeetCode 155）">双栈结构实现最小栈功能：同步记录最小值（LeetCode 155）</a>
+    <a href="https://www.cylong.com/blog/2025/08/17/decode-string/" title="decode-string">decode-string</a>
   </li>
   <li class="post-copyright-author">
     <strong>本文作者： </strong>
@@ -401,7 +383,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.cylong.com/blog/2025/08/17/min-stack/" title="双栈结构实现最小栈功能：同步记录最小值（LeetCode 155）">https://www.cylong.com/blog/2025/08/17/min-stack/</a>
+    <a href="https://www.cylong.com/blog/2025/08/17/decode-string/" title="decode-string">https://www.cylong.com/blog/2025/08/17/decode-string/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处 <span class="far fa-laugh-beam"></span>
@@ -445,6 +427,7 @@
               <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
               <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
               <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 学习笔记</a>
+              <a href="/tags/%E9%80%92%E5%BD%92/" rel="tag"><i class="fa fa-tag"></i> 递归</a>
               <a href="/tags/%E6%A0%88/" rel="tag"><i class="fa fa-tag"></i> 栈</a>
               <a href="/tags/LeetCode%E4%B8%AD%E7%AD%89/" rel="tag"><i class="fa fa-tag"></i> LeetCode中等</a>
           </div>
@@ -455,8 +438,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog/2025/08/02/find-first-and-last-position-of-element-in-sorted-array/" rel="prev" title="两次二分查找定位有序数组元素边界（LeetCode 34）">
-      <i class="fa fa-chevron-left"></i> 两次二分查找定位有序数组元素边界（LeetCode 34）
+    <a href="/blog/2025/08/16/min-stack/" rel="prev" title="双栈结构实现最小栈功能：同步记录最小值（LeetCode 155）">
+      <i class="fa fa-chevron-left"></i> 双栈结构实现最小栈功能：同步记录最小值（LeetCode 155）
     </a></div>
       <div class="post-nav-item"></div>
     </div>
@@ -564,7 +547,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">解题思路</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E6%93%8D%E4%BD%9C"><span class="nav-number">2.1.</span> <span class="nav-text">关键操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E2%80%9C%E5%B0%8F%E4%BA%8E%E7%AD%89%E4%BA%8E%E2%80%9D%EF%BC%9F"><span class="nav-number">2.2.</span> <span class="nav-text">为什么使用“小于等于”？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.3.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="nav-number">2.4.</span> <span class="nav-text">复杂度分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9D%A5%E6%BA%90"><span class="nav-number">4.</span> <span class="nav-text">来源</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%92%E5%BD%92"><span class="nav-number">2.</span> <span class="nav-text">递归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E8%B7%AF"><span class="nav-number">2.1.</span> <span class="nav-text">核心思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.2.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="nav-number">2.3.</span> <span class="nav-text">复杂度分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9D%A5%E6%BA%90"><span class="nav-number">3.</span> <span class="nav-text">来源</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -580,7 +563,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">123</span>
+          <span class="site-state-item-count">124</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -662,15 +645,15 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">272k</span>
+    <span title="站点总字数">274k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:07</span>
+    <span title="站点阅读时长">4:09</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-    <span class="post-count">| 博客共121.5k字</span>
+    <span class="post-count">| 博客共122.2k字</span>
   </div>
 
         
@@ -785,9 +768,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://www.cylong.com/blog/2025/08/17/min-stack/";
-    this.page.identifier = "blog/2025/08/17/min-stack/";
-    this.page.title = "双栈结构实现最小栈功能：同步记录最小值（LeetCode 155）";
+    this.page.url = "https://www.cylong.com/blog/2025/08/17/decode-string/";
+    this.page.identifier = "blog/2025/08/17/decode-string/";
+    this.page.title = "decode-string";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
