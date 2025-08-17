@@ -17,7 +17,7 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>min-stack</title>
+    <title>双栈结构实现最小栈功能：同步记录最小值（LeetCode 155）</title>
     <link href="https://www.cylong.com/blog/2025/08/17/min-stack/"/>
     <id>https://www.cylong.com/blog/2025/08/17/min-stack/</id>
     <published>2025-08-17T07:48:02.000Z</published>
