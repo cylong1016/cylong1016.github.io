@@ -17,7 +17,7 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>数组中的第K个最大元素</title>
+    <title>基于分治思想的第 K 大元素查找实现（LeetCode 215）</title>
     <link href="https://www.cylong.com/blog/2025/08/18/kth-largest-element-in-an-array/"/>
     <id>https://www.cylong.com/blog/2025/08/18/kth-largest-element-in-an-array/</id>
     <published>2025-08-18T15:14:00.000Z</published>
