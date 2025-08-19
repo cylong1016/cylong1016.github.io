@@ -229,7 +229,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/2025/08/19/top-k-frequent-elements/" class="post-title-link" itemprop="url">前 K 个高频元素</a>
+            <a href="/blog/2025/08/19/top-k-frequent-elements/" class="post-title-link" itemprop="url">哈希表统计与桶排序筛选前 K 个高频元素（LeetCode 347）</a>
         </h2>
 
         <div class="post-meta">
@@ -292,10 +292,14 @@
       
           <hr>
 <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code> ，请你返回其中出现频率前 <code>k</code> 高的元素。你可以按 <strong>任意顺序</strong> 返回答案。</p>
-<p>你所设计算法的时间复杂度 必须 优于 O(n log n) ，其中 n 是数组大小。</p>
+<p>你所设计算法的时间复杂度 <strong>必须</strong> 优于 <code>O(n log n)</code> ，其中 <code>n</code> 是数组大小。</p>
 <p><strong>示例 1:</strong></p>
 <blockquote>
-<p><strong>输入：</strong><code>nums = [1, 1, 1, 2, 2, 3]</code>, <code>k = 2</code><br><strong>输出：</strong><code>[1, 2]</code><br><strong>示例 2:</strong><br><strong>输入：</strong><code>nums = [1]</code>, <code>k = 1</code><br><strong>输出：</strong><code>[1]</code></p>
+<p><strong>输入：</strong><code>nums = [1, 1, 1, 2, 2, 3]</code>, <code>k = 2</code><br><strong>输出：</strong><code>[1, 2]</code></p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>nums = [1]</code>, <code>k = 1</code><br><strong>输出：</strong><code>[1]</code></p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
@@ -409,7 +413,11 @@
 <p>你必须设计并实现时间复杂度为 <code>O(n)</code> 的算法解决此问题。</p>
 <p><strong>示例 1:</strong></p>
 <blockquote>
-<p><strong>输入：</strong><code>[3, 2, 1, 5, 6, 4]</code>, <code>k = 2</code><br><strong>输出：</strong><code>5</code><br><strong>示例 2:</strong><br><strong>输入：</strong><code>[3, 2, 3, 1, 2, 4, 5, 5, 6]</code>, <code>k = 4</code><br><strong>输出：</strong><code>4</code></p>
+<p><strong>输入：</strong><code>[3, 2, 1, 5, 6, 4]</code>, <code>k = 2</code><br><strong>输出：</strong><code>5</code></p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>[3, 2, 3, 1, 2, 4, 5, 5, 6]</code>, <code>k = 4</code><br><strong>输出：</strong><code>4</code></p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
@@ -523,7 +531,19 @@
 <p>测试用例保证输出的长度不会超过 <code>10^5</code>。</p>
 <p><strong>示例 1:</strong></p>
 <blockquote>
-<p><strong>输入：</strong><code>s = &quot;3[a]2[bc]&quot;</code><br><strong>输出：</strong><code>&quot;aaabcbc&quot;</code><br><strong>示例 2:</strong><br><strong>输入：</strong><code>s = &quot;3[a2[c]]&quot;</code><br><strong>输出：</strong><code>&quot;accaccacc&quot;</code><br><strong>示例 3:</strong><br><strong>输入：</strong><code>s = &quot;2[abc]3[cd]ef&quot;</code><br><strong>输出：</strong><code>&quot;abcabccdcdcdef&quot;</code><br><strong>示例 4:</strong><br><strong>输入：</strong><code>s = &quot;abc3[cd]xyz&quot;</code><br><strong>输出：</strong><code>&quot;abccdcdcdxyz&quot;</code></p>
+<p><strong>输入：</strong><code>s = &quot;3[a]2[bc]&quot;</code><br><strong>输出：</strong><code>&quot;aaabcbc&quot;</code></p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>s = &quot;3[a2[c]]&quot;</code><br><strong>输出：</strong><code>&quot;accaccacc&quot;</code></p>
+</blockquote>
+<p><strong>示例 3:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>s = &quot;2[abc]3[cd]ef&quot;</code><br><strong>输出：</strong><code>&quot;abcabccdcdcdef&quot;</code></p>
+</blockquote>
+<p><strong>示例 4:</strong></p>
+<blockquote>
+<p><strong>输入：</strong><code>s = &quot;abc3[cd]xyz&quot;</code><br><strong>输出：</strong><code>&quot;abccdcdcdxyz&quot;</code></p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
