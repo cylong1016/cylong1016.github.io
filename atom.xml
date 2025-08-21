@@ -6,7 +6,7 @@
   <link href="https://www.cylong.com/atom.xml" rel="self"/>
   
   <link href="https://www.cylong.com/"/>
-  <updated>2025-08-19T15:10:03.000Z</updated>
+  <updated>2025-08-21T16:49:13.000Z</updated>
   <id>https://www.cylong.com/</id>
   
   <author>
@@ -15,6 +15,94 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>跳跃游戏</title>
+    <link href="https://www.cylong.com/blog/2025/08/22/jump-game/"/>
+    <id>https://www.cylong.com/blog/2025/08/22/jump-game/</id>
+    <published>2025-08-21T16:49:13.000Z</published>
+    <updated>2025-08-21T16:49:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个非负整数数组 <code>nums</code> ，你最初位于数组的第一个下标 。数组中的每个元素代表你在该位置可以跳跃的最大长度。</p><p>判断你是否能够到达最后一个下标，如果可以，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p><p><strong>示例 1:</strong></p><blockquote><p><strong>输入：</strong><code>nums = [2, 3, 1, 1, 4]</code><br><strong>输出：</strong><code>true</code><br><strong>解释：</strong>可以先跳 1 步，从下标 0 到达下标 1, 然后再从下标 1 跳 3 步到达最后一个下标。</p></blockquote><p><strong>示例 2:</strong></p><blockquote><p><strong>输入：</strong><code>nums = [3, 2, 1, 0, 4]</code><br><strong>输出：</strong><code>false</code><br><strong>解释：</strong>无论怎样，总会到达下标为 3 的位置。但该下标的最大跳跃长度是 0 ， 所以永远不可能到达最后一个下标。</p></blockquote><p><strong>提示:</strong></p><ul><li><code>1 &lt;= nums.length &lt;= 10^4</code></li><li><code>0 &lt;= nums[i] &lt;= 10^5</code></li></ul><span id="more"></span><h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><h2 id="核心思路"><a href="#核心思路" class="headerlink" title="核心思路"></a>核心思路</h2><p>维护一个变量 <code>max</code>，表示当前能够到达的最远位置。遍历数组时，对于每个位置 <code>i</code>，如果 <code>i</code> 在当前能够到达的范围内（即 <code>i &lt;= max</code>），则更新 <code>max</code> 为 <code>max</code> 和 <code>i + nums[i]</code> 中的较大值。如果 <code>max</code> 已经大于或等于数组的最后一个位置（即数组长度减一），则说明可以到达最后一个位置，返回 <code>true</code>。如果遍历结束都没有达到最后一个位置，则返回 <code>false</code>。</p><p>这种方法确保了在每一步都贪心地扩展最远可达距离，从而高效地判断是否可达。</p><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">canJump</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> nums.length; <span class="comment">// 数组长度</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 当前能到达的最远位置</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="comment">// 如果当前索引i在可达范围内，才更新最远位置</span></span><br><span class="line">        <span class="keyword">if</span> (i &lt;= max) &#123;</span><br><span class="line">            <span class="comment">// 更新最远可达位置：取当前最远位置和i + nums[i]的较大值</span></span><br><span class="line">            max = Math.max(max, i + nums[i]);</span><br><span class="line">            <span class="comment">// 如果最远可达位置已经超过或等于最后一个位置，则返回true</span></span><br><span class="line">            <span class="keyword">if</span> (max &gt;= len - <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// 遍历结束仍未到达最后位置，返回false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul><li><strong>时间复杂度：</strong><code>O(n)</code>，其中 <code>n</code> 是数组的长度。我们只需要遍历数组一次。</li><li><strong>空间复杂度：</strong><code>O(1)</code>，只使用了常数级别的额外空间。</li></ul><h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote><p><a href="https://leetcode.cn/problems/jump-game/description/" title="55. 跳跃游戏 | 力扣（LeetCode）">55. 跳跃游戏 | 力扣（LeetCode）</a></p></blockquote><hr>]]></content>
+    
+    
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h1&gt;&lt;p&gt;给你一个非负整数数组 &lt;code&gt;nums&lt;/code&gt; ，你最初位于数组的第一个下标 。数组中的每个元素代表你在该位置可以跳跃的最大长度。&lt;/p&gt;
+&lt;p&gt;判断你是否能够到达最后一个下标，如果可以，返回 &lt;code&gt;true&lt;/code&gt; ；否则，返回 &lt;code&gt;false&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;code&gt;nums = [2, 3, 1, 1, 4]&lt;/code&gt;&lt;br&gt;&lt;strong&gt;输出：&lt;/strong&gt;&lt;code&gt;true&lt;/code&gt;&lt;br&gt;&lt;strong&gt;解释：&lt;/strong&gt;可以先跳 1 步，从下标 0 到达下标 1, 然后再从下标 1 跳 3 步到达最后一个下标。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;示例 2:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;code&gt;nums = [3, 2, 1, 0, 4]&lt;/code&gt;&lt;br&gt;&lt;strong&gt;输出：&lt;/strong&gt;&lt;code&gt;false&lt;/code&gt;&lt;br&gt;&lt;strong&gt;解释：&lt;/strong&gt;无论怎样，总会到达下标为 3 的位置。但该下标的最大跳跃长度是 0 ， 所以永远不可能到达最后一个下标。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;提示:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums.length &amp;lt;= 10^4&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= nums[i] &amp;lt;= 10^5&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="LeetCode" scheme="https://www.cylong.com/categories/LeetCode/"/>
+    
+    
+    <category term="Java" scheme="https://www.cylong.com/tags/Java/"/>
+    
+    <category term="LeetCode" scheme="https://www.cylong.com/tags/LeetCode/"/>
+    
+    <category term="学习笔记" scheme="https://www.cylong.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="贪心算法" scheme="https://www.cylong.com/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="LeetCode中等" scheme="https://www.cylong.com/tags/LeetCode%E4%B8%AD%E7%AD%89/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>买卖股票的最佳时机</title>
+    <link href="https://www.cylong.com/blog/2025/08/21/best-time-to-buy-and-sell-stock/"/>
+    <id>https://www.cylong.com/blog/2025/08/21/best-time-to-buy-and-sell-stock/</id>
+    <published>2025-08-21T03:05:21.000Z</published>
+    <updated>2025-08-21T03:05:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个数组 <code>prices</code> ，它的第 <code>i</code> 个元素 <code>prices[i]</code> 表示一支给定股票第 <code>i</code> 天的价格。</p><p>你只能选择 <strong>某一天</strong> 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 <code>0</code> 。</p><p><strong>示例 1:</strong></p><blockquote><p><strong>输入：</strong><code>prices = [7, 1, 5, 3, 6, 4]</code><br><strong>输出：</strong><code>5</code><br><strong>解释：</strong>在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格；同时，你不能在买入前卖出股票。</p></blockquote><p><strong>示例 2:</strong></p><blockquote><p><strong>输入：</strong><code>prices = [7, 6, 4, 3, 1]</code><br><strong>输出：</strong><code>0</code><br><strong>解释：</strong>在这种情况下, 没有交易完成, 所以最大利润为 0。</p></blockquote><p><strong>提示:</strong></p><ul><li><code>1 &lt;= prices.length &lt;= 10^5</code></li><li><code>0 &lt;= prices[i] &lt;= 10^4</code></li></ul><span id="more"></span><h1 id="一次遍历"><a href="#一次遍历" class="headerlink" title="一次遍历"></a>一次遍历</h1><h2 id="核心思路"><a href="#核心思路" class="headerlink" title="核心思路"></a>核心思路</h2><p>我们可以通过遍历数组一次来计算最大利润。在遍历过程中，记录当前遇到的最小价格，并计算当前价格与最小价格的差值（即利润），同时更新最大利润。</p><ul><li><strong>初始化：</strong>将最小价格设置为一个很大的值（如 <code>Integer.MAX_VALUE</code>），将最大利润设置为 <code>0</code>。</li><li><strong>遍历数组：</strong><ul><li>如果当前价格小于最小价格，更新最小价格。</li><li>否则，计算当前价格与最小价格的差值，如果大于当前最大利润，则更新最大利润。</li></ul></li><li><strong>返回最大利润</strong></li></ul><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxProfit</span><span class="params">(<span class="type">int</span>[] prices)</span> &#123;</span><br><span class="line">    <span class="comment">// 如果数组为空或长度为零，直接返回0</span></span><br><span class="line">    <span class="keyword">if</span> (prices == <span class="literal">null</span> || prices.length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 初始化最小价格为最大整数，最大利润为0</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">minPrice</span> <span class="operator">=</span> Integer.MAX_VALUE;</span><br><span class="line">    <span class="type">int</span> <span class="variable">maxProfit</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 遍历价格数组</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; prices.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (prices[i] &lt; minPrice) &#123;</span><br><span class="line">            <span class="comment">// 如果当前价格小于最小价格，更新最小价格</span></span><br><span class="line">            minPrice = prices[i];</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (prices[i] - minPrice &gt; maxProfit) &#123;</span><br><span class="line">            <span class="comment">// 如果当前价格减去最小价格大于最大利润，更新最大利润</span></span><br><span class="line">            maxProfit = prices[i] - minPrice;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxProfit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul><li><strong>时间复杂度：</strong><code>O(n)</code>，其中 <code>n</code> 是数组的长度。我们只需要遍历数组一次。</li><li><strong>空间复杂度：</strong><code>O(1)</code>，只使用了常数级别的额外空间。</li></ul><h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote><p><a href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/description/" title="121. 买卖股票的最佳时机 | 力扣（LeetCode）">121. 买卖股票的最佳时机 | 力扣（LeetCode）</a></p></blockquote><hr>]]></content>
+    
+    
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h1&gt;&lt;p&gt;给定一个数组 &lt;code&gt;prices&lt;/code&gt; ，它的第 &lt;code&gt;i&lt;/code&gt; 个元素 &lt;code&gt;prices[i]&lt;/code&gt; 表示一支给定股票第 &lt;code&gt;i&lt;/code&gt; 天的价格。&lt;/p&gt;
+&lt;p&gt;你只能选择 &lt;strong&gt;某一天&lt;/strong&gt; 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 &lt;code&gt;0&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例 1:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;code&gt;prices = [7, 1, 5, 3, 6, 4]&lt;/code&gt;&lt;br&gt;&lt;strong&gt;输出：&lt;/strong&gt;&lt;code&gt;5&lt;/code&gt;&lt;br&gt;&lt;strong&gt;解释：&lt;/strong&gt;在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格；同时，你不能在买入前卖出股票。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;示例 2:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;code&gt;prices = [7, 6, 4, 3, 1]&lt;/code&gt;&lt;br&gt;&lt;strong&gt;输出：&lt;/strong&gt;&lt;code&gt;0&lt;/code&gt;&lt;br&gt;&lt;strong&gt;解释：&lt;/strong&gt;在这种情况下, 没有交易完成, 所以最大利润为 0。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;提示:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= prices.length &amp;lt;= 10^5&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 &amp;lt;= prices[i] &amp;lt;= 10^4&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="LeetCode" scheme="https://www.cylong.com/categories/LeetCode/"/>
+    
+    
+    <category term="Java" scheme="https://www.cylong.com/tags/Java/"/>
+    
+    <category term="LeetCode" scheme="https://www.cylong.com/tags/LeetCode/"/>
+    
+    <category term="学习笔记" scheme="https://www.cylong.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="贪心算法" scheme="https://www.cylong.com/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="LeetCode中等" scheme="https://www.cylong.com/tags/LeetCode%E4%B8%AD%E7%AD%89/"/>
+    
+  </entry>
   
   <entry>
     <title>哈希表统计与桶排序筛选前 K 个高频元素（LeetCode 347）</title>
@@ -999,104 +1087,6 @@
     <category term="前缀和" scheme="https://www.cylong.com/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
     <category term="子数组" scheme="https://www.cylong.com/tags/%E5%AD%90%E6%95%B0%E7%BB%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前缀和 + 哈希表解和为 K 的子数组问题（LeetCode 560）</title>
-    <link href="https://www.cylong.com/blog/2025/06/05/subarray-sum-equals-k/"/>
-    <id>https://www.cylong.com/blog/2025/06/05/subarray-sum-equals-k/</id>
-    <published>2025-06-05T15:43:23.000Z</published>
-    <updated>2025-06-05T15:43:23.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code> ，请你统计并返回 该数组中和为 <code>k</code> 的子数组的个数 。</p><p><strong>子数组</strong> 是数组中元素的连续非空序列。</p><p><strong>示例 1:</strong></p><blockquote><p><strong>输入：</strong><code>nums = [1, 1, 1]</code>, <code>k = 2</code><br><strong>输出：</strong><code>2</code></p></blockquote><p><strong>示例 2:</strong></p><blockquote><p><strong>输入：</strong><code>nums = [1, 2, 3]</code>, <code>k = 3</code><br><strong>输出：</strong><code>2</code></p></blockquote><p><strong>提示:</strong></p><ul><li><code>1 &lt;= nums.length &lt;= 2 * 10^4</code></li><li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li><li><code>-10^7 &lt;= k &lt;= 10^7</code></li></ul><span id="more"></span><h1 id="暴力枚举（双重循环）"><a href="#暴力枚举（双重循环）" class="headerlink" title="暴力枚举（双重循环）"></a>暴力枚举（双重循环）</h1><p>最直观的方法是枚举所有可能的连续子数组，计算它们的和并统计等于 <code>k</code> 的个数。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">subarraySum</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> k)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i; j &lt; nums.length; j++) &#123;</span><br><span class="line">            sum += nums[j];</span><br><span class="line">            <span class="keyword">if</span> (sum == k) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul><li><strong>时间复杂度：</strong><code>O(n²)</code>，其中 <code>n</code> 是数组长度。外层循环遍历每个元素作为起始点，内层循环遍历从起始点开始的所有子数组。</li><li><strong>空间复杂度：</strong><code>O(1)</code>，只使用了常数级别的额外空间。</li></ul><h1 id="前缀和-哈希表"><a href="#前缀和-哈希表" class="headerlink" title="前缀和 + 哈希表"></a>前缀和 + 哈希表</h1><p>在做这道题之前，我们先看之前做过的两道题：</p><ol><li><a href="/blog/2025/06/03/range-sum-query-immutable/" title="前缀和解法实现区间和查询（LeetCode 303） | 笑话人生">前缀和解法实现区间和查询（LeetCode 303） | 笑话人生</a></li><li><a href="/blog/2019/11/06/two-sum/" title="两数之和 | 笑话人生">两数之和 | 笑话人生</a></li></ol><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>利用 <strong>前缀和</strong> 技术优化计算过程：</p><ol><li>计算数组的前缀和数组 <code>prefix</code>，其中：<ul><li><code>prefix[0] = 0</code>，表示空数组的和，用于处理从第一个元素开始的子数组</li><li><code>prefix[i + 1] = nums[0] + nums[1] + ... + nums[i]（i ≥ 0）</code></li></ul></li><li>对于任意子数组 <code>nums[i..j]</code>（包含下标 <code>i</code> 到 <code>j</code>），其和可表示为 <code>prefix[j + 1] - prefix[i]</code></li><li>问题转化为：寻找满足 <code>prefix[j + 1] - prefix[i] = k</code> 且 <code>0 ≤ i &lt; j + 1 ≤ n</code> 的索引对 <code>(i, j)</code> 的数量</li><li>使用哈希表存储每个前缀和出现的次数，遍历时查询 <code>prefix[j] - k</code> 的出现次数并累加（这其实就是上面的两数之和）</li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">subarraySum</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> k)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">    <span class="type">int</span>[] prefix = <span class="keyword">new</span> <span class="title class_">int</span>[n + <span class="number">1</span>];</span><br><span class="line">    <span class="comment">// 计算前缀和</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        prefix[i + <span class="number">1</span>] = prefix[i] + nums[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 设置容量可以快 2ms</span></span><br><span class="line">    Map&lt;Integer, Integer&gt; countMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;(n + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> p : prefix) &#123;</span><br><span class="line">        <span class="comment">// 查找前缀和为 p - k 的出现次数</span></span><br><span class="line">        count += countMap.getOrDefault(p - k, <span class="number">0</span>);</span><br><span class="line">        <span class="comment">// 更新当前前缀和的出现次数</span></span><br><span class="line">        countMap.put(p, countMap.getOrDefault(p, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="示例解析"><a href="#示例解析" class="headerlink" title="示例解析"></a>示例解析</h2><p>以 <code>nums = [1, 1, 1]</code>, <code>k=2</code> 为例：</p><ol><li>前缀和数组：<code>prefix = [0, 1, 2, 3]</code></li><li>遍历过程：<ul><li><code>p=0</code>：查找 <code>-2</code> → 不存在，<code>count=0</code>；更新 <code>map&#123;0:1&#125;</code></li><li><code>p=1</code>：查找 <code>-1</code> → 不存在，<code>count=0</code>；更新 <code>map&#123;0:1, 1:1&#125;</code></li><li><code>p=2</code>：查找 <code>0</code> → 存在1次，<code>count=1</code>；更新 <code>map&#123;0:1, 1:1, 2:1&#125;</code></li><li><code>p=3</code>：查找 <code>1</code> → 存在1次，<code>count=2</code>；更新 <code>map&#123;0:1, 1:1, 2:1, 3:1&#125;</code></li></ul></li><li>返回结果：<code>2</code></li></ol><h2 id="常见问题解答"><a href="#常见问题解答" class="headerlink" title="常见问题解答"></a>常见问题解答</h2><ol><li>为什么需要 <code>prefix[0] = 0</code>？<br>考虑子数组从第一个元素开始的情况：子数组<code> nums[0..j]</code> 的和应为 <code>prefix[j + 1] - prefix[0]</code> 没有 <code>prefix[0]</code> 就无法表示从数组开头开始的子数组</li><li>哈希表如何处理重复前缀和？当不同位置产生相同的前缀和时，哈希表记录出现次数。例如：<ul><li><code>nums = [0, 0, 0]</code>, <code>k=0</code></li><li>前缀和：<code>[0, 0, 0, 0]</code></li><li>遍历时：<ul><li><code>p=0</code>：查找 <code>0</code> → 初始不存在，<code>count=0</code>；记录 <code>0:1</code></li><li><code>p=0</code>：查找 <code>0</code> → 存在1次，<code>count=1</code>；记录 <code>0:2</code></li><li><code>p=0</code>：查找 <code>0</code> → 存在2次，<code>count=3</code>；记录 <code>0:3</code></li><li><code>p=0</code>：查找 <code>0</code> → 存在3次，<code>count=6</code>；记录 <code>0:4</code></li></ul></li><li>返回结果：6（正确对应6个子数组）</li></ul></li></ol><h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul><li><strong>时间复杂度：</strong><code>O(n)</code>，其中 <code>n</code> 是数组长度。遍历数组两次（计算前缀和和统计子数组数量）。</li><li><strong>空间复杂度：</strong><code>O(n)</code>，哈希表最多存储 <code>n + 1</code> 个键值对。</li></ul><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol><li>暴力枚举简单直接，适合小规模数据（<code>n ≤ 1000</code>）</li><li>前缀和 + 哈希表是更高效的通用解法，时间复杂度 <code>O(n)</code>，能处理较大规模数据（<code>n ≤ 2×10⁴</code>）</li><li>实际应用中优先选择方法二，其线性时间复杂度能有效应对常见场景</li><li>关键点在于理解前缀和定义和索引映射关系：子数组和 = <code>prefix[j + 1] - prefix[i]</code></li></ol><h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote><p><a href="https://leetcode.cn/problems/subarray-sum-equals-k/description/" title="560. 和为 K 的子数组 | 力扣（LeetCode）">560. 和为 K 的子数组 | 力扣（LeetCode）</a><br><a href="https://leetcode.cn/problems/subarray-sum-equals-k/solutions/1/qian-zhui-he-ha-xi-biao-cong-liang-ci-bi-4mwr/?envType=study-plan-v2&envId=top-100-liked" title="560. 和为 K 的子数组 | 题解 | 灵茶山艾府">560. 和为 K 的子数组 | 题解 | 灵茶山艾府</a></p></blockquote><hr>]]></content>
-    
-    
-    <summary type="html">&lt;hr&gt;
-&lt;h1 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h1&gt;&lt;p&gt;给你一个整数数组 &lt;code&gt;nums&lt;/code&gt; 和一个整数 &lt;code&gt;k&lt;/code&gt; ，请你统计并返回 该数组中和为 &lt;code&gt;k&lt;/code&gt; 的子数组的个数 。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;子数组&lt;/strong&gt; 是数组中元素的连续非空序列。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;示例 1:&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;code&gt;nums = [1, 1, 1]&lt;/code&gt;, &lt;code&gt;k = 2&lt;/code&gt;&lt;br&gt;&lt;strong&gt;输出：&lt;/strong&gt;&lt;code&gt;2&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;示例 2:&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;code&gt;nums = [1, 2, 3]&lt;/code&gt;, &lt;code&gt;k = 3&lt;/code&gt;&lt;br&gt;&lt;strong&gt;输出：&lt;/strong&gt;&lt;code&gt;2&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;提示:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums.length &amp;lt;= 2 * 10^4&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-1000 &amp;lt;= nums[i] &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-10^7 &amp;lt;= k &amp;lt;= 10^7&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="https://www.cylong.com/categories/LeetCode/"/>
-    
-    
-    <category term="Java" scheme="https://www.cylong.com/tags/Java/"/>
-    
-    <category term="LeetCode" scheme="https://www.cylong.com/tags/LeetCode/"/>
-    
-    <category term="学习笔记" scheme="https://www.cylong.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="数组" scheme="https://www.cylong.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
-    <category term="哈希表" scheme="https://www.cylong.com/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/"/>
-    
-    <category term="LeetCode简单" scheme="https://www.cylong.com/tags/LeetCode%E7%AE%80%E5%8D%95/"/>
-    
-    <category term="前缀和" scheme="https://www.cylong.com/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前缀和解法实现区间和查询（LeetCode 303）</title>
-    <link href="https://www.cylong.com/blog/2025/06/03/range-sum-query-immutable/"/>
-    <id>https://www.cylong.com/blog/2025/06/03/range-sum-query-immutable/</id>
-    <published>2025-06-03T15:20:55.000Z</published>
-    <updated>2025-06-03T15:20:55.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr><h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个整数数组  <code>nums</code>，处理以下类型的多个查询:</p><p>计算索引 <code>left</code> 和 <code>right</code> （包含 <code>left</code> 和 <code>right</code>）之间的 <code>nums</code> 元素的和 ，其中 <code>left &lt;= right</code>。</p><p>实现 <code>NumArray</code> 类：</p><ul><li><code>NumArray(int[] nums)</code> 使用数组 <code>nums</code> 初始化对象</li><li><code>int sumRange(int i, int j)</code> 返回数组 <code>nums</code> 中索引 <code>left</code> 和 <code>right</code> 之间的元素的总和 ，包含 <code>left</code> 和 <code>right</code> 两点（也就是 <code>nums[left] + nums[left + 1] + ... + nums[right]</code> )</li></ul><p><strong>示例 1:</strong></p><blockquote><p><strong>输入：</strong><br><code>[&quot;NumArray&quot;, &quot;sumRange&quot;, &quot;sumRange&quot;, &quot;sumRange&quot;]</code><br><code>[[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]]</code><br><strong>输出：</strong><br><code>[null, 1, -1, -3]</code><br><strong>解释：</strong><br><code>NumArray numArray = new NumArray([-2, 0, 3, -5, 2, -1]);</code><br><code>numArray.sumRange(0, 2); // return 1 ((-2) + 0 + 3)</code><br><code>numArray.sumRange(2, 5); // return -1 (3 + (-5) + 2 + (-1)) </code><br><code>numArray.sumRange(0, 5); // return -3 ((-2) + 0 + 3 + (-5) + 2 + (-1))</code></p></blockquote><p><strong>提示:</strong></p><ul><li><code>1 &lt;= nums.length &lt;= 10^4</code></li><li><code>-10^5 &lt;= nums[i] &lt;= 10^5</code></li><li><code>0 &lt;= i &lt;= j &lt; nums.length</code></li><li>最多调用 <code>10*4</code> 次 <code>sumRange</code> 方法</li></ul><span id="more"></span><h1 id="直接计算"><a href="#直接计算" class="headerlink" title="直接计算"></a>直接计算</h1><p>最简单的思路，每次调用 <code>sumRange()</code> 时，直接遍历 <code>left</code> 到 <code>right</code> 的元素并求和。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">NumArray</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span>[] nums;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">NumArray</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.nums = nums;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">sumRange</span><span class="params">(<span class="type">int</span> left, <span class="type">int</span> right)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> left; i &lt;= right; i++) &#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul><li><strong>时间复杂度：</strong><code>O(mn)</code>，其中 <code>m</code> 为查询次数，<code>n</code> 为数组长度。</li><li><strong>空间复杂度：</strong><code>O(1)</code>，不考虑存储输入的数组。</li></ul><h1 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h1><p>前缀和是一种高效处理区间求和问题的预处理技术，其核心思想是通过数学变换将区间求和转化为两个端点的差值计算。下面我们通过数学推导详细解释前缀和的工作原理。</p><h2 id="步骤1：定义前缀和数组"><a href="#步骤1：定义前缀和数组" class="headerlink" title="步骤1：定义前缀和数组"></a>步骤1：定义前缀和数组</h2><p>给定数组 <code>nums[0...n-1]</code>，我们定义前缀和数组 <code>prefix</code>：</p><blockquote><p><code>prefix[0] = 0</code><br><code>prefix[1] = nums[0]</code><br><code>prefix[2] = nums[0] + nums[1]</code><br>…<br><code>prefix[i] = nums[0] + nums[1] + ... + nums[i-1]</code><br>…<br><code>prefix[n] = nums[0] + ... + nums[n-1]</code></p></blockquote><h2 id="步骤2：区间和与前缀和的数学关系"><a href="#步骤2：区间和与前缀和的数学关系" class="headerlink" title="步骤2：区间和与前缀和的数学关系"></a>步骤2：区间和与前缀和的数学关系</h2><p>考虑区间 <code>[left, right]</code> 的和：</p><blockquote><p><code>sum(left, right)</code><br><code>= nums[left] + nums[left+1] + ... + nums[right]</code><br><code>= (nums[0] + ... + nums[left-1] + nums[left] + ... + nums[right]) - (nums[0] + ... + nums[left-1])</code><br><code>= prefix[right+1] - prefix[left]</code></p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">NumArray</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span>[] prefix;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">NumArray</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="comment">// 多一位存储0位置</span></span><br><span class="line">        prefix = <span class="keyword">new</span> <span class="title class_">int</span>[nums.length + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="comment">// 递推关系：当前前缀和 = 前一个前缀和 + 当前元素</span></span><br><span class="line">            prefix[i + <span class="number">1</span>] = prefix[i] + nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">sumRange</span><span class="params">(<span class="type">int</span> left, <span class="type">int</span> right)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> prefix[right + <span class="number">1</span>] - prefix[left];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="前缀和的核心优势"><a href="#前缀和的核心优势" class="headerlink" title="前缀和的核心优势"></a>前缀和的核心优势</h2><ol><li><strong>查询高效化：</strong>将 <code>O(n)</code> 的求和操作转化为 <code>O(1)</code> 的差值计算。</li><li><strong>预处理思想：</strong>一次构建多次使用，特别适合查询密集型场景。</li><li><strong>数学简洁性：</strong>通过简单的数组差值实现复杂区间计算。</li></ol><h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul><li><strong>时间复杂度：</strong><code>O(n)</code>，初始化前缀和数组，其中 <code>n</code> 是数组长度。<code>sumRange</code> 是 <code>O(1)</code>。</li><li><strong>空间复杂度：</strong><code>O(n)</code>，存储前缀和数组。</li></ul><h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote><p><a href="https://leetcode.cn/problems/range-sum-query-immutable/description/" title="303. 区域和检索 - 数组不可变 | 力扣（LeetCode）">303. 区域和检索 - 数组不可变 | 力扣（LeetCode）</a></p></blockquote><hr>]]></content>
-    
-    
-    <summary type="html">&lt;hr&gt;
-&lt;h1 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h1&gt;&lt;p&gt;给定一个整数数组  &lt;code&gt;nums&lt;/code&gt;，处理以下类型的多个查询:&lt;/p&gt;
-&lt;p&gt;计算索引 &lt;code&gt;left&lt;/code&gt; 和 &lt;code&gt;right&lt;/code&gt; （包含 &lt;code&gt;left&lt;/code&gt; 和 &lt;code&gt;right&lt;/code&gt;）之间的 &lt;code&gt;nums&lt;/code&gt; 元素的和 ，其中 &lt;code&gt;left &amp;lt;= right&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;实现 &lt;code&gt;NumArray&lt;/code&gt; 类：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;NumArray(int[] nums)&lt;/code&gt; 使用数组 &lt;code&gt;nums&lt;/code&gt; 初始化对象&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;int sumRange(int i, int j)&lt;/code&gt; 返回数组 &lt;code&gt;nums&lt;/code&gt; 中索引 &lt;code&gt;left&lt;/code&gt; 和 &lt;code&gt;right&lt;/code&gt; 之间的元素的总和 ，包含 &lt;code&gt;left&lt;/code&gt; 和 &lt;code&gt;right&lt;/code&gt; 两点（也就是 &lt;code&gt;nums[left] + nums[left + 1] + ... + nums[right]&lt;/code&gt; )&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;示例 1:&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;br&gt;&lt;code&gt;[&amp;quot;NumArray&amp;quot;, &amp;quot;sumRange&amp;quot;, &amp;quot;sumRange&amp;quot;, &amp;quot;sumRange&amp;quot;]&lt;/code&gt;&lt;br&gt;&lt;code&gt;[[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]]&lt;/code&gt;&lt;br&gt;&lt;strong&gt;输出：&lt;/strong&gt;&lt;br&gt;&lt;code&gt;[null, 1, -1, -3]&lt;/code&gt;&lt;br&gt;&lt;strong&gt;解释：&lt;/strong&gt;&lt;br&gt;&lt;code&gt;NumArray numArray = new NumArray([-2, 0, 3, -5, 2, -1]);&lt;/code&gt;&lt;br&gt;&lt;code&gt;numArray.sumRange(0, 2); // return 1 ((-2) + 0 + 3)&lt;/code&gt;&lt;br&gt;&lt;code&gt;numArray.sumRange(2, 5); // return -1 (3 + (-5) + 2 + (-1)) &lt;/code&gt;&lt;br&gt;&lt;code&gt;numArray.sumRange(0, 5); // return -3 ((-2) + 0 + 3 + (-5) + 2 + (-1))&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;提示:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums.length &amp;lt;= 10^4&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-10^5 &amp;lt;= nums[i] &amp;lt;= 10^5&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;0 &amp;lt;= i &amp;lt;= j &amp;lt; nums.length&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;最多调用 &lt;code&gt;10*4&lt;/code&gt; 次 &lt;code&gt;sumRange&lt;/code&gt; 方法&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="https://www.cylong.com/categories/LeetCode/"/>
-    
-    
-    <category term="Java" scheme="https://www.cylong.com/tags/Java/"/>
-    
-    <category term="LeetCode" scheme="https://www.cylong.com/tags/LeetCode/"/>
-    
-    <category term="学习笔记" scheme="https://www.cylong.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="数组" scheme="https://www.cylong.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
-    <category term="LeetCode简单" scheme="https://www.cylong.com/tags/LeetCode%E7%AE%80%E5%8D%95/"/>
-    
-    <category term="前缀和" scheme="https://www.cylong.com/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
   </entry>
   
