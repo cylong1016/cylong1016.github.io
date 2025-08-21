@@ -24,7 +24,7 @@
 
   <meta name="description" content="题目描述给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。 你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。 示例 1:  输入：prices &#x3D; [7, 1, 5, 3, 6, 4]输出：5解释：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="买卖股票的最佳时机">
+<meta property="og:title" content="一次遍历计算买卖股票的最佳时机（LeetCode 121）">
 <meta property="og:url" content="https://www.cylong.com/blog/2025/08/21/best-time-to-buy-and-sell-stock/index.html">
 <meta property="og:site_name" content="笑话人生">
 <meta property="og:description" content="题目描述给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。 你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。 示例 1:  输入：prices &#x3D; [7, 1, 5, 3, 6, 4]输出：5解释：">
@@ -52,7 +52,7 @@
   };
 </script>
 
-  <title>买卖股票的最佳时机 | 笑话人生</title>
+  <title>一次遍历计算买卖股票的最佳时机（LeetCode 121） | 笑话人生</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77162231-1"></script>
     <script>
@@ -235,7 +235,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          买卖股票的最佳时机
+          一次遍历计算买卖股票的最佳时机（LeetCode 121）
         </h1>
 
         <div class="post-meta">
@@ -321,7 +321,7 @@
 </ul>
 <span id="more"></span>
 
-<h1 id="一次遍历"><a href="#一次遍历" class="headerlink" title="一次遍历"></a>一次遍历</h1><h2 id="核心思路"><a href="#核心思路" class="headerlink" title="核心思路"></a>核心思路</h2><p>我们可以通过遍历数组一次来计算最大利润。在遍历过程中，记录当前遇到的最小价格，并计算当前价格与最小价格的差值（即利润），同时更新最大利润。</p>
+<h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><h2 id="核心思路"><a href="#核心思路" class="headerlink" title="核心思路"></a>核心思路</h2><p>我们可以通过遍历数组一次来计算最大利润。在遍历过程中，记录当前遇到的最小价格，并计算当前价格与最小价格的差值（即利润），同时更新最大利润。</p>
 <ul>
 <li><strong>初始化：</strong>将最小价格设置为一个很大的值（如 <code>Integer.MAX_VALUE</code>），将最大利润设置为 <code>0</code>。</li>
 <li><strong>遍历数组：</strong><ul>
@@ -373,7 +373,7 @@
 <ul class="post-copyright">
   <li class="post-copyright-title">
     <strong>本文标题：</strong>
-    <a href="https://www.cylong.com/blog/2025/08/21/best-time-to-buy-and-sell-stock/" title="买卖股票的最佳时机">买卖股票的最佳时机</a>
+    <a href="https://www.cylong.com/blog/2025/08/21/best-time-to-buy-and-sell-stock/" title="一次遍历计算买卖股票的最佳时机（LeetCode 121）">一次遍历计算买卖股票的最佳时机（LeetCode 121）</a>
   </li>
   <li class="post-copyright-author">
     <strong>本文作者： </strong>
@@ -381,7 +381,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.cylong.com/blog/2025/08/21/best-time-to-buy-and-sell-stock/" title="买卖股票的最佳时机">https://www.cylong.com/blog/2025/08/21/best-time-to-buy-and-sell-stock/</a>
+    <a href="https://www.cylong.com/blog/2025/08/21/best-time-to-buy-and-sell-stock/" title="一次遍历计算买卖股票的最佳时机（LeetCode 121）">https://www.cylong.com/blog/2025/08/21/best-time-to-buy-and-sell-stock/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处 <span class="far fa-laugh-beam"></span>
@@ -439,8 +439,8 @@
       <i class="fa fa-chevron-left"></i> 哈希表统计与桶排序筛选前 K 个高频元素（LeetCode 347）
     </a></div>
       <div class="post-nav-item">
-    <a href="/blog/2025/08/22/jump-game/" rel="next" title="跳跃游戏">
-      跳跃游戏 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2025/08/22/jump-game/" rel="next" title="贪心算法判断数组终点可达性：维护最大位置（LeetCode 55）">
+      贪心算法判断数组终点可达性：维护最大位置（LeetCode 55） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -547,7 +547,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E6%AC%A1%E9%81%8D%E5%8E%86"><span class="nav-number">2.</span> <span class="nav-text">一次遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E8%B7%AF"><span class="nav-number">2.1.</span> <span class="nav-text">核心思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.2.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="nav-number">2.3.</span> <span class="nav-text">复杂度分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9D%A5%E6%BA%90"><span class="nav-number">3.</span> <span class="nav-text">来源</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">贪心算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E8%B7%AF"><span class="nav-number">2.1.</span> <span class="nav-text">核心思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.2.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="nav-number">2.3.</span> <span class="nav-text">复杂度分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9D%A5%E6%BA%90"><span class="nav-number">3.</span> <span class="nav-text">来源</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -770,7 +770,7 @@
   var disqus_config = function() {
     this.page.url = "https://www.cylong.com/blog/2025/08/21/best-time-to-buy-and-sell-stock/";
     this.page.identifier = "blog/2025/08/21/best-time-to-buy-and-sell-stock/";
-    this.page.title = "买卖股票的最佳时机";
+    this.page.title = "一次遍历计算买卖股票的最佳时机（LeetCode 121）";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
