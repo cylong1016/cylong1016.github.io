@@ -24,7 +24,7 @@
 
   <meta name="description" content="题目描述给定一个长度为 n 的 0 索引整数数组 nums。初始位置为 nums[0]。每个元素 nums[i] 表示从索引 i 向后跳转的最大长度。换句话说，如果你在索引 i 处，你可以跳转到任意 (i + j) 处：0 &lt;&#x3D; j &lt;&#x3D; nums[i] 且 i + j &lt; n 返回到达 n - 1 的最小跳跃次数。测试用例保证可以到达 n - 1。 示例 1:  输入：num">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跳跃游戏 II">
+<meta property="og:title" content="贪心算法求解最小跳跃次数（LeetCode 45）">
 <meta property="og:url" content="https://www.cylong.com/blog/2025/08/23/jump-game-ii/index.html">
 <meta property="og:site_name" content="笑话人生">
 <meta property="og:description" content="题目描述给定一个长度为 n 的 0 索引整数数组 nums。初始位置为 nums[0]。每个元素 nums[i] 表示从索引 i 向后跳转的最大长度。换句话说，如果你在索引 i 处，你可以跳转到任意 (i + j) 处：0 &lt;&#x3D; j &lt;&#x3D; nums[i] 且 i + j &lt; n 返回到达 n - 1 的最小跳跃次数。测试用例保证可以到达 n - 1。 示例 1:  输入：num">
@@ -52,7 +52,7 @@
   };
 </script>
 
-  <title>跳跃游戏 II | 笑话人生</title>
+  <title>贪心算法求解最小跳跃次数（LeetCode 45） | 笑话人生</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77162231-1"></script>
     <script>
@@ -235,7 +235,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          跳跃游戏 II
+          贪心算法求解最小跳跃次数（LeetCode 45）
         </h1>
 
         <div class="post-meta">
@@ -284,7 +284,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
+              <span>1.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -325,14 +325,14 @@
 <h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><h2 id="核心思路"><a href="#核心思路" class="headerlink" title="核心思路"></a>核心思路</h2><ol>
 <li>初始化三个变量：<ul>
 <li><code>max：</code>记录当前能够到达的最远位置</li>
-<li><code>end：</code>记录当前跳跃能够到达的边界</li>
-<li><code>step：</code>记录跳跃次数</li>
+<li><code>end：</code>记录当前跳跃能够到达的边界，到达边界时，步数需要加 1，并且更新边界为当前能够到达的最远位置 max</li>
+<li><code>step：</code>记录跳跃的步数</li>
 </ul>
 </li>
 <li>遍历数组：<ul>
 <li>更新当前能够到达的最远位置</li>
-<li>当遍历到当前边界时，意味着必须进行一次跳跃，更新边界为当前能够到达的最远位置，并增加跳跃次数</li>
-<li>注意不需要遍历最后一个元素，因为 <code>n − 1</code> 已经是终点了</li>
+<li>当遍历到当前边界时，意味着这一步已经无法再继续前进，须进行一次跳跃，更新边界为当前能够到达的最远位置，并增加跳跃次数</li>
+<li>注意不需要遍历最后一个元素，因为当到达最后一个元素时不需要再跳跃</li>
 </ul>
 </li>
 <li>返回跳跃次数</li>
@@ -379,7 +379,7 @@
 <ul class="post-copyright">
   <li class="post-copyright-title">
     <strong>本文标题：</strong>
-    <a href="https://www.cylong.com/blog/2025/08/23/jump-game-ii/" title="跳跃游戏 II">跳跃游戏 II</a>
+    <a href="https://www.cylong.com/blog/2025/08/23/jump-game-ii/" title="贪心算法求解最小跳跃次数（LeetCode 45）">贪心算法求解最小跳跃次数（LeetCode 45）</a>
   </li>
   <li class="post-copyright-author">
     <strong>本文作者： </strong>
@@ -387,7 +387,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.cylong.com/blog/2025/08/23/jump-game-ii/" title="跳跃游戏 II">https://www.cylong.com/blog/2025/08/23/jump-game-ii/</a>
+    <a href="https://www.cylong.com/blog/2025/08/23/jump-game-ii/" title="贪心算法求解最小跳跃次数（LeetCode 45）">https://www.cylong.com/blog/2025/08/23/jump-game-ii/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处 <span class="far fa-laugh-beam"></span>
@@ -760,22 +760,6 @@
   
 
 <script>
-NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
-  window.livereOptions = {
-    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
-});
-</script>
-
-<script>
   function loadCount() {
     var d = document, s = d.createElement('script');
     s.src = 'https://cylong1016.disqus.com/count.js';
@@ -789,7 +773,7 @@ NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
   var disqus_config = function() {
     this.page.url = "https://www.cylong.com/blog/2025/08/23/jump-game-ii/";
     this.page.identifier = "blog/2025/08/23/jump-game-ii/";
-    this.page.title = "跳跃游戏 II";
+    this.page.title = "贪心算法求解最小跳跃次数（LeetCode 45）";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
@@ -804,6 +788,22 @@ NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
       (d.head || d.body).appendChild(s);
     }
   });
+</script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
 </script>
 
 </body>
