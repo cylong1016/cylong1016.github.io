@@ -215,6 +215,164 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/07/01/intersection-of-two-linked-lists/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="cylong">
+      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑话人生">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2025/07/01/intersection-of-two-linked-lists/" class="post-title-link" itemprop="url">双指针法求解链表交点（LeetCode 160）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-07-01 00:41:55" itemprop="dateCreated datePublished" datetime="2025-07-01T00:41:55+08:00">2025-07-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/blog/2025/07/01/intersection-of-two-linked-lists/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/07/01/intersection-of-two-linked-lists/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你两个单链表的头节点 <code>headA</code> 和 <code>headB</code> ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 <code>null</code> 。题目数据保证整个链式结构中不存在环。</p>
+<p>图示两个链表在节点 <code>c1</code> 开始相交：</p>
+<img src="/blog/2025/07/01/intersection-of-two-linked-lists/160_statement.png" class="">
+
+<p><strong>注意：</strong>函数返回结果后，链表必须保持其原始结构 。</p>
+<p><strong>自定义评测：</strong><br>评测系统的输入如下（你设计的程序不适用此输入）：</p>
+<ul>
+<li><code>intersectVal</code> - 相交的起始节点的值。如果不存在相交节点，这一值为 <code>0</code></li>
+<li><code>listA</code> - 第一个链表</li>
+<li><code>listB</code> - 第二个链表</li>
+<li><code>skipA</code> - 在 <code>listA</code> 中（从头节点开始）跳到交叉节点的节点数</li>
+<li><code>skipB</code> - 在 <code>listB</code> 中（从头节点开始）跳到交叉节点的节点数</li>
+<li>评测系统将根据这些输入创建链式数据结构，并将两个头节点 <code>headA</code> 和 <code>headB</code> 传递给你的程序。如果程序能够正确返回相交节点，那么你的解决方案将被视作正确答案。</li>
+</ul>
+<p><strong>示例 1:</strong></p>
+<img src="/blog/2025/07/01/intersection-of-two-linked-lists/160_example_1.png" class="">
+<blockquote>
+<p><strong>输入：</strong><code>intersectVal = 8</code>, <code>listA = [4,1,8,4,5]</code>, <code>listB = [5, 6, 1, 8, 4, 5]</code>, <code>skipA = 2</code>, <code>skipB = 3</code><br><strong>输出：</strong><code>Intersected at &#39;8&#39;</code><br><strong>解释：</strong></p>
+<ul>
+<li>相交节点的值为 <code>8</code> （注意，如果两个链表相交则不能为 <code>0</code>）。</li>
+<li>从各自的表头开始算起，链表 <code>A</code> 为 <code>[4, 1, 8, 4, 5]</code>，链表 <code>B</code> 为 <code>[5, 6, 1, 8, 4, 5]</code>。</li>
+<li>在 <code>A</code> 中，相交节点前有 2 个节点；在 <code>B</code> 中，相交节点前有 3 个节点。</li>
+<li>请注意相交节点的值不为 1，因为在链表 <code>A</code> 和链表 <code>B</code> 之中值为 1 的节点 (<code>A</code> 中第二个节点和 <code>B</code> 中第三个节点) 是不同的节点。换句话说，它们在内存中指向两个不同的位置，而链表 <code>A</code> 和链表 <code>B</code> 中值为 8 的节点 (<code>A</code> 中第三个节点，<code>B</code> 中第四个节点) 在内存中指向相同的位置。</li>
+</ul>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<img src="/blog/2025/07/01/intersection-of-two-linked-lists/160_example_2.png" class="">
+<blockquote>
+<p><strong>输入：</strong><code>intersectVal = 2</code>, <code>listA = [1, 9, 1, 2, 4]</code>, <code>listB = [3, 2, 4]</code>, <code>skipA = 3</code>, <code>skipB = 1</code><br><strong>输出：</strong><code>Intersected at &#39;2&#39;</code><br><strong>解释：</strong></p>
+<ul>
+<li>相交节点的值为 2 （注意，如果两个链表相交则不能为 0）。</li>
+<li>从各自的表头开始算起，链表 <code>A</code> 为 <code>[1, 9, 1, 2, 4]</code>，链表 <code>B</code> 为 <code>[3, 2, 4]</code>。</li>
+<li>在 <code>A</code> 中，相交节点前有 3 个节点；在 <code>B</code> 中，相交节点前有 1 个节点。</li>
+</ul>
+</blockquote>
+<p><strong>示例 3:</strong></p>
+<img src="/blog/2025/07/01/intersection-of-two-linked-lists/160_example_3.png" class="">
+<blockquote>
+<p><strong>输入：</strong><code>intersectVal = 0</code>, <code>listA = [2, 6, 4]</code>, <code>listB = [1, 5]</code>, <code>skipA = 3</code>, <code>skipB = 2</code><br><strong>输出：</strong><code>No intersection</code><br><strong>解释：</strong></p>
+<ul>
+<li>从各自的表头开始算起，链表 <code>A</code> 为 <code>[2, 6, 4]</code>，链表 <code>B</code> 为 <code>[1, 5]</code>。</li>
+<li>由于这两个链表不相交，所以 <code>intersectVal</code> 必须为 0，而 <code>skipA</code> 和 <code>skipB</code> 可以是任意值。</li>
+<li>这两个链表不相交，因此返回 <code>null</code> 。</li>
+</ul>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>listA</code> 中节点数目为 <code>m</code></li>
+<li><code>listB</code> 中节点数目为 <code>n</code></li>
+<li><code>1 &lt;= m, n &lt;= 3 * 10^4</code></li>
+<li><code>1 &lt;= Node.val &lt;= 10^5</code></li>
+<li><code>0 &lt;= skipA &lt;= m</code></li>
+<li><code>0 &lt;= skipB &lt;= n</code></li>
+<li>如果 <code>listA</code> 和 <code>listB</code> 没有交点，<code>intersectVal</code> 为 0</li>
+<li>如果 <code>listA</code> 和 <code>listB</code> 有交点，<code>intersectVal == listA[skipA] == listB[skipB]</code></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2025/07/01/intersection-of-two-linked-lists/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/06/27/rotate-image/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1045,128 +1203,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/05/30/group-anagrams/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="cylong">
-      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑话人生">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2025/05/30/group-anagrams/" class="post-title-link" itemprop="url">哈希表分组字母异位词：排序与计数实现（LeetCode 49）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-05-30 00:28:11" itemprop="dateCreated datePublished" datetime="2025-05-30T00:28:11+08:00">2025-05-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/blog/2025/05/30/group-anagrams/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/05/30/group-anagrams/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个字符串数组，请你将 <strong>字母异位词</strong> 组合在一起。可以按任意顺序返回结果列表。</p>
-<p><strong>字母异位词</strong> 是由重新排列源单词的所有字母得到的一个新单词。</p>
-<p><strong>示例 1:</strong></p>
-<blockquote>
-<p><strong>输入：</strong><code>strs = [&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;]</code><br><strong>输出：</strong><code>[[&quot;bat&quot;], [&quot;nat&quot;, &quot;tan&quot;], [&quot;ate&quot;, &quot;eat&quot;, &quot;tea&quot;]]</code></p>
-</blockquote>
-<p><strong>示例 2:</strong></p>
-<blockquote>
-<p><strong>输入：</strong><code>strs = [&quot;&quot;]</code><br><strong>输出：</strong><code>[[&quot;&quot;]]</code></p>
-</blockquote>
-<p><strong>示例 3:</strong></p>
-<blockquote>
-<p><strong>输入：</strong><code>strs = [&quot;a&quot;]</code><br><strong>输出：</strong><code>[[&quot;a&quot;]]</code></p>
-</blockquote>
-<p><strong>提示:</strong></p>
-<ul>
-<li><code>1 &lt;= strs.length &lt;= 104</code></li>
-<li><code>0 &lt;= strs[i].length &lt;= 100</code></li>
-<li><code>strs[i]</code> 仅包含小写字母</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/2025/05/30/group-anagrams/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1238,7 +1274,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">129</span>
+          <span class="site-state-item-count">130</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1251,7 +1287,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">135</span>
+        <span class="site-state-item-count">137</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1320,15 +1356,15 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">283k</span>
+    <span title="站点总字数">286k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:17</span>
+    <span title="站点阅读时长">4:20</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-    <span class="post-count">| 博客共126.6k字</span>
+    <span class="post-count">| 博客共127.7k字</span>
   </div>
 
         
