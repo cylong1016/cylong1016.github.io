@@ -17,7 +17,7 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>combination_sum_m_n</title>
+    <title>组合总和问题：回溯与剪枝策略应用（面试题）</title>
     <link href="https://www.cylong.com/blog/2025/08/24/combination-sum-m-n/"/>
     <id>https://www.cylong.com/blog/2025/08/24/combination-sum-m-n/</id>
     <published>2025-08-24T14:08:40.000Z</published>
@@ -63,6 +63,8 @@
     <category term="后缀和" scheme="https://www.cylong.com/tags/%E5%90%8E%E7%BC%80%E5%92%8C/"/>
     
     <category term="剪枝" scheme="https://www.cylong.com/tags/%E5%89%AA%E6%9E%9D/"/>
+    
+    <category term="面试" scheme="https://www.cylong.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
