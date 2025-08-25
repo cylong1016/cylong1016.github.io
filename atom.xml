@@ -17,7 +17,7 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>118. 杨辉三角</title>
+    <title>动态规划生成杨辉三角：层序构建与递推关系（LeetCode 118）</title>
     <link href="https://www.cylong.com/blog/2025/08/25/pascals-triangle/"/>
     <id>https://www.cylong.com/blog/2025/08/25/pascals-triangle/</id>
     <published>2025-08-25T15:18:40.000Z</published>
