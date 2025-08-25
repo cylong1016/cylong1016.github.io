@@ -100,6 +100,8 @@
     
     <category term="深度优先搜索" scheme="https://www.cylong.com/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
     
+    <category term="剪枝" scheme="https://www.cylong.com/tags/%E5%89%AA%E6%9E%9D/"/>
+    
     <category term="LeetCode中等" scheme="https://www.cylong.com/tags/LeetCode%E4%B8%AD%E7%AD%89/"/>
     
     <category term="前缀和" scheme="https://www.cylong.com/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
@@ -107,8 +109,6 @@
     <category term="回溯" scheme="https://www.cylong.com/tags/%E5%9B%9E%E6%BA%AF/"/>
     
     <category term="后缀和" scheme="https://www.cylong.com/tags/%E5%90%8E%E7%BC%80%E5%92%8C/"/>
-    
-    <category term="剪枝" scheme="https://www.cylong.com/tags/%E5%89%AA%E6%9E%9D/"/>
     
     <category term="面试" scheme="https://www.cylong.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
@@ -668,11 +668,11 @@
     
     <category term="深度优先搜索" scheme="https://www.cylong.com/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
     
+    <category term="剪枝" scheme="https://www.cylong.com/tags/%E5%89%AA%E6%9E%9D/"/>
+    
     <category term="LeetCode中等" scheme="https://www.cylong.com/tags/LeetCode%E4%B8%AD%E7%AD%89/"/>
     
     <category term="回溯" scheme="https://www.cylong.com/tags/%E5%9B%9E%E6%BA%AF/"/>
-    
-    <category term="剪枝" scheme="https://www.cylong.com/tags/%E5%89%AA%E6%9E%9D/"/>
     
   </entry>
   
