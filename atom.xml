@@ -17,7 +17,7 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>322. 零钱兑换</title>
+    <title>动态规划求解零钱兑换的最少硬币数量（LeetCode 322）</title>
     <link href="https://www.cylong.com/blog/2025/09/01/coin-change/"/>
     <id>https://www.cylong.com/blog/2025/09/01/coin-change/</id>
     <published>2025-09-01T15:46:44.000Z</published>
