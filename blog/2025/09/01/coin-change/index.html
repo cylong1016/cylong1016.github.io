@@ -433,17 +433,17 @@
 <li><strong>空间复杂度：</strong><code>O(amount)</code>，用于 <code>dp</code> 数组。</li>
 </ul>
 <h1 id="如何思考这道题"><a href="#如何思考这道题" class="headerlink" title="如何思考这道题"></a>如何思考这道题</h1><ol>
-<li>识别问题类型：这是一个优化问题（最小硬币数），且具有重叠子问题（同一金额可能多次计算）和最优子结构（当前金额的解依赖于子问题的解），适合用动态规划解决。</li>
-<li>定义状态：通常定义 <code>dp[i]</code> 为金额 <code>i</code> 所需的最少硬币数。</li>
-<li>状态转移方程：对于每个硬币 <code>c</code>，如果 <code>dp[i - c]</code> 计算过，则 <code>dp[i] = min(dp[i], dp[i - c] + 1)</code>。</li>
-<li>初始化：<code>dp[0] = 0</code>，因为金额 <code>0</code> 不需要硬币；其他初始化为一个大值，表示未知。</li>
-<li>选择方法：<ul>
-<li>记忆化搜索：适合递归思维，避免重复计算，但可能有递归开销。</li>
-<li>动态规划：直接迭代填充数组，通常更高效。</li>
+<li><strong>识别问题类型：</strong>这是一个优化问题（最小硬币数），且具有重叠子问题（同一金额可能多次计算）和最优子结构（当前金额的解依赖于子问题的解），适合用动态规划解决。</li>
+<li><strong>定义状态：</strong>通常定义 <code>dp[i]</code> 为金额 <code>i</code> 所需的最少硬币数。</li>
+<li><strong>状态转移方程：</strong>对于每个硬币 <code>c</code>，如果 <code>dp[i - c]</code> 计算过，则 <code>dp[i] = min(dp[i], dp[i - c] + 1)</code>。</li>
+<li><strong>初始化：</strong><code>dp[0] = 0</code>，因为金额 <code>0</code> 不需要硬币；其他初始化为一个大值，表示未知。</li>
+<li><strong>选择方法：</strong><ul>
+<li><strong>记忆化搜索：</strong>适合递归思维，避免重复计算，但可能有递归开销。</li>
+<li><strong>动态规划：</strong>直接迭代填充数组，通常更高效。</li>
 </ul>
 </li>
-<li>考虑边界：金额为 <code>0</code> 时返回 <code>0</code>；硬币面值可能大于金额，需跳过。</li>
-<li>测试用例：用示例验证代码，例如 <code>coins = [2]</code>, amount = <code>3</code> 应返回 <code>-1</code>。</li>
+<li><strong>考虑边界：</strong>金额为 <code>0</code> 时返回 <code>0</code>；硬币面值可能大于金额，需跳过。</li>
+<li><strong>测试用例：</strong>用示例验证代码，例如 <code>coins = [2]</code>, amount = <code>3</code> 应返回 <code>-1</code>。</li>
 </ol>
 <p>通过以上步骤，可以系统地解决此类动态规划问题。实际应用中，自底向上的动态规划往往更受欢迎，因为它避免了递归开销且代码简洁。</p>
 <h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><blockquote>
@@ -550,7 +550,10 @@
     <a href="/blog/2025/08/26/perfect-squares/" rel="prev" title="动态规划求解完全平方数的最小数量（LeetCode 279）">
       <i class="fa fa-chevron-left"></i> 动态规划求解完全平方数的最小数量（LeetCode 279）
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/blog/2025/09/02/linked-list-task/" rel="next" title="单向链表重新组织任务流程（面试题）">
+      单向链表重新组织任务流程（面试题） <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -672,7 +675,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">133</span>
+          <span class="site-state-item-count">134</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -754,15 +757,15 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">292k</span>
+    <span title="站点总字数">294k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:26</span>
+    <span title="站点阅读时长">4:27</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-    <span class="post-count">| 博客共131.1k字</span>
+    <span class="post-count">| 博客共131.9k字</span>
   </div>
 
         
