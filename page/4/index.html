@@ -215,6 +215,127 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/06/13/set-matrix-zeroes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="cylong">
+      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑话人生">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2025/06/13/set-matrix-zeroes/" class="post-title-link" itemprop="url">矩阵置零的原地算法：首行列标记与空间优化（LeetCode 73）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-06-13 00:18:52" itemprop="dateCreated datePublished" datetime="2025-06-13T00:18:52+08:00">2025-06-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/blog/2025/06/13/set-matrix-zeroes/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/06/13/set-matrix-zeroes/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个 <code>m x n</code> 的矩阵，如果一个元素为 <code>0</code> ，则将其所在行和列的所有元素都设为 <code>0</code> 。请使用 <strong>原地算法</strong>。</p>
+<p><strong>原地算法：</strong>在计算机科学中，一个原地算法（in-place algorithm）是一种使用小的，固定数量的额外之空间来转换资料的算法。当算法执行时，输入的资料通常会被要输出的部分覆盖掉。不是原地算法有时候称为非原地（not-in-place）或不得其所（out-of-place）。</p>
+<p><strong>示例 1:</strong></p>
+<img src="/blog/2025/06/13/set-matrix-zeroes/mat1.jpg" class="">
+<blockquote>
+<p><strong>输入：</strong><code>matrix = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]</code><br><strong>输出：</strong><code>[[1, 0, 1], [0, 0, 0], [1, 0, 1]]</code></p>
+</blockquote>
+<p><strong>示例 2:</strong></p>
+<img src="/blog/2025/06/13/set-matrix-zeroes/mat2.jpg" class="">
+<blockquote>
+<p><strong>输入：</strong><code>matrix = [[0, 1, 2, 0], [3, 4, 5, 2], [1, 3, 1, 5]]</code><br><strong>输出：</strong><code>[[0, 0, 0, 0], [0, 4, 5, 0], [0, 3, 1, 0]]</code></p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>m == matrix.length</code></li>
+<li><code>n == matrix[0].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 200</code></li>
+<li><code>-2^31 &lt;= matrix[i][j] &lt;= 2^31 - 1</code></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2025/06/13/set-matrix-zeroes/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/06/12/spring-boot/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1050,127 +1171,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.cylong.com/blog/2025/05/24/longest-palindromic-substring/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="cylong">
-      <meta itemprop="description" content="见兔而顾犬，未为晚也；<br>亡羊而补牢，未为迟也。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑话人生">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2025/05/24/longest-palindromic-substring/" class="post-title-link" itemprop="url">动态规划和中心扩散法求解最长回文子串（LeetCode 5）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-05-24 12:02:04" itemprop="dateCreated datePublished" datetime="2025-05-24T12:02:04+08:00">2025-05-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/blog/2025/05/24/longest-palindromic-substring/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/2025/05/24/longest-palindromic-substring/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个字符串 <code>s</code>，找到 <code>s</code> 中最长的 <strong>回文子串</strong>。</p>
-<p><strong>说明:</strong></p>
-<ul>
-<li>如果字符串向前和向后读都相同，则它满足回文性。</li>
-<li>子字符串是字符串中连续的非空字符序列。</li>
-</ul>
-<p><strong>示例 1:</strong></p>
-<blockquote>
-<p><strong>输入：</strong><code>s = &quot;babad&quot;</code><br><strong>输出：</strong><code>&quot;bab&quot;</code><br><strong>解释：</strong><code>&quot;aba&quot;</code> 同样是符合题意的答案。</p>
-</blockquote>
-<p><strong>示例 2:</strong></p>
-<blockquote>
-<p><strong>输入：</strong><code>s = &quot;cbbd&quot;</code><br><strong>输出：</strong><code>&quot;bb&quot;</code></p>
-</blockquote>
-<p><strong>提示:</strong></p>
-<ul>
-<li><code>1 &lt;= s.length &lt;= 1000</code></li>
-<li><code>s</code> 仅由数字和英文字母组成</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/2025/05/24/longest-palindromic-substring/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1242,7 +1242,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">134</span>
+          <span class="site-state-item-count">135</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1324,15 +1324,15 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">294k</span>
+    <span title="站点总字数">297k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:27</span>
+    <span title="站点阅读时长">4:30</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-    <span class="post-count">| 博客共131.9k字</span>
+    <span class="post-count">| 博客共133.3k字</span>
   </div>
 
         
