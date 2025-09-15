@@ -24,7 +24,7 @@
 
   <meta name="description" content="题目描述请你来实现一个 atoi 函数，使其能将字符串转换成整数。首先，该函数会根据需要丢弃无用的开头空格字符，直到寻找到第一个非空格的字符为止。接下来的转化规则如下：  如果第一个非空字符为正或者负号时，则将该符号与之后面尽可能多的连续数字字符组合起来，形成一个有符号整数。 假如第一个非空字符是数字，则直接将其与之后连续的数字字符组合起来，形成一个整数。 该字符串在有效的整数部分之后也可能会存">
 <meta property="og:type" content="article">
-<meta property="og:title" content="字符串转换整数">
+<meta property="og:title" content="字符串转换整数：边界与溢出处理（LeetCode 8）">
 <meta property="og:url" content="https://www.cylong.com/blog/2019/12/21/string-to-integer-atoi/index.html">
 <meta property="og:site_name" content="笑话人生">
 <meta property="og:description" content="题目描述请你来实现一个 atoi 函数，使其能将字符串转换成整数。首先，该函数会根据需要丢弃无用的开头空格字符，直到寻找到第一个非空格的字符为止。接下来的转化规则如下：  如果第一个非空字符为正或者负号时，则将该符号与之后面尽可能多的连续数字字符组合起来，形成一个有符号整数。 假如第一个非空字符是数字，则直接将其与之后连续的数字字符组合起来，形成一个整数。 该字符串在有效的整数部分之后也可能会存">
@@ -55,7 +55,7 @@
   };
 </script>
 
-  <title>字符串转换整数 | 笑话人生</title>
+  <title>字符串转换整数：边界与溢出处理（LeetCode 8） | 笑话人生</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77162231-1"></script>
     <script>
@@ -238,7 +238,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          字符串转换整数
+          字符串转换整数：边界与溢出处理（LeetCode 8）
         </h1>
 
         <div class="post-meta">
@@ -490,7 +490,7 @@
 <ul class="post-copyright">
   <li class="post-copyright-title">
     <strong>本文标题：</strong>
-    <a href="https://www.cylong.com/blog/2019/12/21/string-to-integer-atoi/" title="字符串转换整数">字符串转换整数</a>
+    <a href="https://www.cylong.com/blog/2019/12/21/string-to-integer-atoi/" title="字符串转换整数：边界与溢出处理（LeetCode 8）">字符串转换整数：边界与溢出处理（LeetCode 8）</a>
   </li>
   <li class="post-copyright-author">
     <strong>本文作者： </strong>
@@ -498,7 +498,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.cylong.com/blog/2019/12/21/string-to-integer-atoi/" title="字符串转换整数">https://www.cylong.com/blog/2019/12/21/string-to-integer-atoi/</a>
+    <a href="https://www.cylong.com/blog/2019/12/21/string-to-integer-atoi/" title="字符串转换整数：边界与溢出处理（LeetCode 8）">https://www.cylong.com/blog/2019/12/21/string-to-integer-atoi/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处 <span class="far fa-laugh-beam"></span>
@@ -875,6 +875,22 @@
   
 
 <script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+<script>
   function loadCount() {
     var d = document, s = d.createElement('script');
     s.src = 'https://cylong1016.disqus.com/count.js';
@@ -888,7 +904,7 @@
   var disqus_config = function() {
     this.page.url = "https://www.cylong.com/blog/2019/12/21/string-to-integer-atoi/";
     this.page.identifier = "blog/2019/12/21/string-to-integer-atoi/";
-    this.page.title = "字符串转换整数";
+    this.page.title = "字符串转换整数：边界与溢出处理（LeetCode 8）";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
@@ -903,22 +919,6 @@
       (d.head || d.body).appendChild(s);
     }
   });
-</script>
-
-<script>
-NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
-  window.livereOptions = {
-    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
-});
 </script>
 
 </body>

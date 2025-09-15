@@ -433,8 +433,8 @@
       <i class="fa fa-chevron-left"></i> 两数相加
     </a></div>
       <div class="post-nav-item">
-    <a href="/blog/2019/12/21/string-to-integer-atoi/" rel="next" title="字符串转换整数">
-      字符串转换整数 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2019/12/21/string-to-integer-atoi/" rel="next" title="字符串转换整数：边界与溢出处理（LeetCode 8）">
+      字符串转换整数：边界与溢出处理（LeetCode 8） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -751,6 +751,22 @@
   
 
 <script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+<script>
   function loadCount() {
     var d = document, s = d.createElement('script');
     s.src = 'https://cylong1016.disqus.com/count.js';
@@ -779,22 +795,6 @@
       (d.head || d.body).appendChild(s);
     }
   });
-</script>
-
-<script>
-NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
-  window.livereOptions = {
-    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
-});
 </script>
 
 </body>
