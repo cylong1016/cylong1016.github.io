@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.cylong.com/blog/2019/12/21/string-to-integer-atoi/</loc>
+    <lastmod>2025-09-15</lastmod>
+  </url>
+  <url>
     <loc>https://www.cylong.com/blog/2025/09/05/word-break/</loc>
     <lastmod>2025-09-05</lastmod>
   </url>
@@ -223,10 +227,6 @@
   <url>
     <loc>https://www.cylong.com/blog/2020/09/08/hamming-distance/</loc>
     <lastmod>2020-09-07</lastmod>
-  </url>
-  <url>
-    <loc>https://www.cylong.com/blog/2019/12/21/string-to-integer-atoi/</loc>
-    <lastmod>2020-09-04</lastmod>
   </url>
   <url>
     <loc>https://www.cylong.com/blog/2020/09/01/predict-the-winner/</loc>
